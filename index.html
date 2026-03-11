@@ -162,7 +162,6 @@
     .node text {
       pointer-events: none;
       font-family: 'Crimson Pro', serif;
-      font-size: 11px;
       fill: #e8d8b0;
       text-anchor: middle;
       dominant-baseline: central;
@@ -171,14 +170,12 @@
 
     .node.center-node text {
       font-family: 'Cinzel', serif;
-      font-size: 13px;
       font-weight: 700;
       fill: var(--gold-lt);
     }
 
     .node.category-node text {
       font-family: 'Cinzel', serif;
-      font-size: 10px;
       font-weight: 600;
       letter-spacing: 0.5px;
       fill: var(--parch);
@@ -1335,16 +1332,40 @@
       .attr('stroke', d => d.stroke)
       .attr('stroke-width', 1.5);
 
-    // Multi-line labels
+    // Multi-line labels with dynamic sizing
     nodeSel.each(function (d) {
       const el = d3.select(this);
-      const lines = d.label.split(' ');
-      const lineH = 12;
+      const r = d.r;
+      const fontSize = r * 0.35;
+      const lineH = fontSize * 1.1;
+      const maxWidth = r * 1.7;
+      
+      const words = d.label.split(' ');
+      let lines = [];
+      let currentLine = [];
+      
+      const tempText = el.append('text')
+        .attr('font-size', fontSize)
+        .attr('font-family', d.group === 'CAT' || d.group === 'CENTER' ? "'Cinzel', serif" : "'Crimson Pro', serif")
+        .style('visibility', 'hidden');
+      
+      words.forEach(word => {
+        currentLine.push(word);
+        tempText.text(currentLine.join(' '));
+        if (tempText.node().getComputedTextLength() > maxWidth && currentLine.length > 1) {
+          currentLine.pop();
+          lines.push(currentLine.join(' '));
+          currentLine = [word];
+        }
+      });
+      if (currentLine.length > 0) lines.push(currentLine.join(' '));
+      tempText.remove();
+      
       const totalH = (lines.length - 1) * lineH;
       lines.forEach((line, i) => {
         el.append('text')
           .attr('y', i * lineH - totalH / 2)
-          .attr('font-size', d.group === 'CENTER' ? 11 : d.group === 'CAT' ? 9 : 9.5)
+          .attr('font-size', fontSize)
           .attr('font-family', d.group === 'CAT' || d.group === 'CENTER' ? "'Cinzel', serif" : "'Crimson Pro', serif")
           .attr('fill', d.group === 'CENTER' ? '#e8b96a' : d.group === 'CAT' ? '#e8d8b0' : '#d8c890')
           .attr('font-weight', d.group === 'CENTER' || d.group === 'CAT' ? '600' : '400')
