@@ -649,7 +649,7 @@
       },
       {
         id: 'agnar', label: 'Agnar', group: 'ELVAR', type: 'Personaje — Jefe',
-        desc: 'Jefe de la Batalla-Fiera. Trenza guerrera rubia, capote de oso negro, torc de plata. Carismático, valiente, implacable. Mató al Jarl Hrut sin dudar. Vende Tainted al mejor postor.',
+        desc: 'Jefe de la Batalla-Fiera. Franja gruesa de cabello rubio en el centro de la cabeza (warrior-braid), el resto rapado, capote de oso negro, torc de plata. Carismático, valiente, implacable. Mató al Jarl Hrut sin dudar. Planea llevar a Berak al Jarl Störr en Snakavik',
         star: ''
       },
       {
@@ -981,6 +981,11 @@
         star: '★ El colmillo marca el ascenso de Elvar. Toda la Batalla-Fiera la ve recibir el premio.'
       },
       {
+        id: 'anillo-oro', label: 'Anillo de Oro', group: 'ELVAR', type: 'Objeto — Distinción',
+        desc: '',
+        star: '★ El anillo marca el ascenso de Elvar. Toda la Batalla-Fiera la ve recibir el premio.'
+      },
+      {
         id: 'hueso-dios-fellur', label: 'Nudillo de Dios (Fellur)', group: 'VAESEN', type: 'Objeto Mágico — Reliquia',
         desc: 'Nudillo de un dios muerto clavado en el travesaño de la puerta de Fellur. Mantiene los vaesen fuera del pueblo. Breca reaccionó visiblemente al pasar junto a él. Los huesos de los dioses muertos conservan poder residual —incluso fragmentos pequeños son efectivos.',
         star: '★★ La reacción de Breca al hueso de dios es una de las señales más tempranas de su posible sangre Tainted. Un niño normal no debería sentir nada.'
@@ -1123,6 +1128,7 @@
       { source: 'juramento-sangre', target: 'liga', label: 'base en', type: 'geo' },
       { source: 'batalla-fiera', target: 'agnar', label: 'jefe', type: 'rel' },
       { source: 'batalla-fiera', target: 'elvar', label: 'miembro', type: 'rel' },
+      { source: 'batalla-fiera', target: 'grend', label: 'miembro', type: 'rel' },
       { source: 'helka', target: 'darl', label: 'sede', type: 'geo' },
       { source: 'helka', target: 'orna', label: 'huesos en fortaleza', type: 'lore' },
       { source: 'storr', target: 'snakavik', label: 'sede', type: 'geo' },
@@ -1131,12 +1137,12 @@
 
       // ── ENLACES PERSONAJES SECUNDARIOS ────────────────────────────
       { source: 'cat-varg', target: 'jarl-logur', label: '', type: 'arc' },
-        { source: 'cat-facciones', target: 'jarl-logur', label: '', type: 'arc' },
+      { source: 'cat-facciones', target: 'jarl-logur', label: '', type: 'arc' },
       { source: 'jarl-logur', target: 'liga', label: 'jarl de', type: 'geo' },
       { source: 'jarl-logur', target: 'juramento-sangre', label: 'hospeda', type: 'rel' },
       { source: 'leif', target: 'orl', label: 'Hird / compañero', type: 'rel' },
       { source: 'sighvat', target: 'hundur', label: 'controla', type: 'rel' },
-         { source: 'sighvat', target: 'batalla-fiera', label: 'navega en', type: 'rel' },
+      { source: 'sighvat', target: 'batalla-fiera', label: 'navega en', type: 'rel' },
       { source: 'hundur', target: 'berak', label: 'rastreó', type: 'event' },
       { source: 'vaesen-gen', target: 'hundur', label: 'Tainted tracker', type: 'lore' },
       { source: 'trud', target: 'batalla-fiera', label: 'miembro', type: 'rel' },
@@ -1145,7 +1151,8 @@
       { source: 'jokul', target: 'juramento-sangre', label: 'herrero', type: 'rel' },
       { source: 'jokul', target: 'einar', label: 'forjó protección', type: 'rel' },
       { source: 'jarl-hrut', target: 'iskalt', label: 'jarl de (†)', type: 'geo' },
-      { source: 'agnar', target: 'jarl-hrut', label: 'mató', type: 'conflict' },
+      { source: 'agnar', target: 'iskalt', label: 'asaltó buscando a Berak', type: 'geo' },
+      { source: 'agnar', target: 'jarl-hrut', label: 'Mató a Jarl Hrut durante el asalto a Iskalt', type: 'conflict' },
       { source: 'slyda', target: 'liga', label: 'guarda puerta', type: 'rel' },
       { source: 'slyda', target: 'varg', label: 'dejó pasar', type: 'event' },
       { source: 'falki', target: 'oath-rock', label: 'asiste Althing', type: 'event' },
@@ -1178,7 +1185,9 @@
       // ── ENLACES OBJETOS ────────────────────────────────────────────
       { source: 'batalla-fiera', target: 'wave-jarl', label: 'navega en', type: 'rel' },
       { source: 'kraka', target: 'wave-jarl', label: 'protege con Seiðr', type: 'magic' },
+      { source: 'agnar', target: 'wave-jarl', label: 'capitan', type: 'rel' },
       { source: 'colmillo-trol', target: 'elvar', label: 'otorgado a', type: 'rel' },
+      { source: 'anillo-oro', target: 'elvar', label: 'otorgado a', type: 'rel' },
       { source: 'agnar', target: 'colmillo-trol', label: 'otorga', type: 'rel' },
       { source: 'trol', target: 'colmillo-trol', label: 'origen', type: 'lore' },
       { source: 'hueso-dios-fellur', target: 'fellur', label: 'protege', type: 'magic' },
