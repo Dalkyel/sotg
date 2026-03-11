@@ -447,7 +447,7 @@ const nodes = [
 
   // ── PERSONAJES ORKA ─────────────────────────────────────────────
   { id: 'orka',    label: 'Orka', group: 'ORKA', type: 'POV — Personaje',
-    desc: 'Mujer alta y rubia, ojos gris-verde. Casada con Thorkel. Madre de Breca. Trampera que vive aislada. Flashbacks violentos, episodios de rabia que casi la ciegan. Capturó a Spert mediante vínculo de sangre. Exguerrera con un pasado que ella intenta olvidar.',
+    desc: 'Mujer alta (más que Guðvarr) y rubia, ojos gris-verde. Vive aislada con sun familia. Flashbacks violentos, episodios de rabia que casi la ciegan. Capturó a Spert mediante vínculo de sangre. Exguerrera con un pasado que ella intenta olvidar.',
     star: 'Su ira casi la desborda ante Guðvarr. Sabe controlar vaesen. ¿Qué batalla dejó esas cicatrices invisibles?' },
   { id: 'thorkel', label: 'Thorkel', group: 'ORKA', type: 'Personaje — Orka',
     desc: 'Grande como un peñasco. Barba trenzada con cicatriz de mejilla a mandíbula. Ex-thrall (igual que Varg). El mejor rastreador. Elige mirar hacia adelante en vez de al pasado. Profundamente amoroso con Orka y Breca.',
@@ -650,8 +650,8 @@ const links = [
 
   // Cat-orka to orka chars
   { source: 'cat-orka', target: 'orka',    label: '', type: 'arc' },
-  { source: 'orka',  target: 'thorkel',   label: 'casada con', type: 'rel' },
-  { source: 'orka',  target: 'breca',     label: 'madre', type: 'rel' },
+  { source: 'orka',  target: 'thorkel',   label: 'Esposo', type: 'rel' },
+  { source: 'orka',  target: 'breca',     label: 'Hijo', type: 'rel' },
   { source: 'orka',  target: 'spert',     label: 'vínculo sangre', type: 'magic' },
   { source: 'breca', target: 'vesli',     label: 'protege / jura', type: 'magic' },
   { source: 'cat-orka', target: 'gudvarr', label: '', type: 'arc' },
