@@ -541,7 +541,7 @@
       },
       {
         id: 'spert', label: 'Spert', group: 'ORKA', type: 'Vaesen — Guardián',
-        desc: 'Spertus. Artrópodo segmentado con cara casi humana, aguijón, antenas, vapor negro venenoso. Capturado por Orka con vínculo de sangre. Protege el steading de otros vaesen. Irritable, posesivo de sus dientes.',
+        desc: 'Spertus. Artrópodo segmentado con cara casi humana, aguijón, antenas, vapor negro venenoso. Capturado por Orka con vínculo de sangre. Protege el steading de otros vaesen. Irritable, posesivo de sus dientes. come papilla mezclada con la sangre y saliva de Orka cada mañana',
         star: 'Orka sabe rituales de vínculo con vaesen. Habilidad inusual para una trampera.'
       },
       {
@@ -654,18 +654,23 @@
       },
       {
         id: 'kraka', label: 'Kráka', group: 'ELVAR', type: 'Personaje — Thrall Tainted',
-        desc: 'Thrall Tainted de la Batalla-Fiera. Pelo negro, cara gris agotada. Canta magia Seiðr para proteger el casco de serpientes marinas. El canto la destruye físicamente. Maltratada por los guardias.',
+        desc: 'Thrall Tainted de la Batalla-Fiera. Cabello negro como un cuervo, tatuajes azules en mandíbula y garganta (similar a Vol), cara gris agotada. Canta magia Seiðr para proteger el casco de serpientes marinas. El canto la destruye físicamente. Maltratada por los guardias. Agnar le dio un asta de trol como fuente de poder para el viaje de regreso',
         star: 'El uso de Seiðr la desgasta hasta la muerte lenta. Agnar le da un asta de trol como "combustible".'
       },
       {
         id: 'berak', label: 'Berak Bjornasson', group: 'ELVAR', type: 'Personaje — Berserkir',
-        desc: 'Alto, ancho, barba hasta el cinturón. Sangre del dios muerto Berser. Ojos ambarinos cuando entra en furia, dientes afilados, fuerza brutal. Capturado en Iskalt. Destino: Snakavik, Jarl Störr.',
+        desc: 'Alto y grande con cicatrices en la cara, barba hasta el cinturón. Sangre del dios muerto Berser. Ojos ambarinos cuando entra en furia, dientes afilados, fuerza brutal. Vivia escondido y fue Capturado en Iskalt. Se le acusa de haber matado a tres Jarls. El collar de hierro suprime su transformación Berserkir. Destino: Snakavik, Jarl Störr.',
         star: 'Prototype de los Tainted Berserkir. El collar de hierro lo controla con palabras Galdur.'
       },
       {
         id: 'mujer-berak', label: 'Mujer de Berak', group: 'ELVAR', type: 'Personaje — Tainted',
         desc: 'Rubia, ojos gris-azul pálido. Tatuajes espirales bajo la ropa. Arrojó un objeto (¿pergamino/tablilla?) al lago de lava para destruirlo antes de ser capturada. Controló la serpiente marina con canto Seiðr. Sangre de Snaka.',
         star: '¿Qué destruyó antes de ser capturada? Acto deliberado para que no caiga en manos de Agnar.'
+      },
+           {
+        id: 'hijo-berak', label: 'Hijo de Berak', group: 'ELVAR', type: 'Personaje — Tainted',
+        desc: '',
+        star: ''
       },
       {
         id: 'biorr', label: 'Biórr', group: 'ELVAR', type: 'Personaje — Batalla-Fiera',
@@ -1053,6 +1058,8 @@
       { source: 'agnar', target: 'berak', label: 'capturó', type: 'conflict' },
       { source: 'elvar', target: 'biorr', label: 'tensión', type: 'rel' },
       { source: 'berak', target: 'mujer-berak', label: 'esposa', type: 'rel' },
+      { source: 'berak', target: 'hijo-berak', label: 'esposa', type: 'rel' },
+       { source: 'berak', target: 'batalla-fiera', label: 'Buscado y capturado', type: 'trama' },
 
       // Cat-mundo
       { source: 'cat-mundo', target: 'gudfall', label: '', type: 'arc' },
@@ -1128,6 +1135,7 @@
       { source: 'juramento-sangre', target: 'liga', label: 'base en', type: 'geo' },
       { source: 'batalla-fiera', target: 'agnar', label: 'jefe', type: 'rel' },
       { source: 'batalla-fiera', target: 'elvar', label: 'miembro', type: 'rel' },
+            { source: 'batalla-fiera', target: 'biorr', label: 'miembro', type: 'rel' },
       { source: 'batalla-fiera', target: 'grend', label: 'miembro', type: 'rel' },
       { source: 'helka', target: 'darl', label: 'sede', type: 'geo' },
       { source: 'helka', target: 'orna', label: 'huesos en fortaleza', type: 'lore' },
@@ -1143,6 +1151,8 @@
       { source: 'leif', target: 'orl', label: 'Hird / compañero', type: 'rel' },
       { source: 'sighvat', target: 'hundur', label: 'controla', type: 'rel' },
       { source: 'sighvat', target: 'batalla-fiera', label: 'navega en', type: 'rel' },
+       { source: 'hundur', target: 'batalla-fiera', label: 'miembro', type: 'rel' },
+         { source: 'kraka', target: 'batalla-fiera', label: 'miembro', type: 'rel' },
       { source: 'hundur', target: 'berak', label: 'rastreó', type: 'event' },
       { source: 'vaesen-gen', target: 'hundur', label: 'Tainted tracker', type: 'lore' },
       { source: 'trud', target: 'batalla-fiera', label: 'miembro', type: 'rel' },
