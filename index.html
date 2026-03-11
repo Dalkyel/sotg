@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Sombra de los Dioses — Mapa Mental Caps. 1–11</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+  :root {
+    --bg:        #0f0c08;
+    --bg2:       #1a1510;
+    --parch:     #f0e6cc;
+    --gold:      #c9933a;
+    --gold-lt:   #e8b96a;
+    --crimson:   #8b1a1a;
+    --crimson-lt:#c03030;
+    --amber:     #b87820;
+    --steel:     #3a5c7a;
+    --steel-lt:  #6a9cbf;
+    --purple:    #5a3070;
+    --purple-lt: #9060b0;
+    --forest:    #2a5a3a;
+    --forest-lt: #4a9a6a;
+    --teal:      #1a5a5a;
+    --teal-lt:   #3a9a9a;
+    --orange:    #a04a10;
+    --orange-lt: #e07830;
+    --navy:      #1a2a4a;
+    --navy-lt:   #3a5a9a;
+    --panel-w:   320px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--parch);
+    font-family: 'Crimson Pro', Georgia, serif;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ─── Header ─── */
+  header {
+    background: linear-gradient(90deg, var(--bg2) 0%, #2a1a0a 50%, var(--bg2) 100%);
+    border-bottom: 1px solid var(--gold);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    z-index: 100;
+  }
+  .header-title {
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gold-lt);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .header-sub {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: #9a8060;
+    margin-top: 1px;
+  }
+  .header-hint {
+    font-size: 11px;
+    color: #6a5a40;
+    font-style: italic;
+  }
+
+  /* ─── Legend ─── */
+  .legend {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+    color: #9a8870;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .legend-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.3);
+  }
+
+  /* ─── Main area ─── */
+  .main {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* ─── SVG Canvas ─── */
+  #graph-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+  }
+  svg:active { cursor: grabbing; }
+
+  /* ─── Nodes ─── */
+  .node circle {
+    transition: r 0.2s ease, filter 0.2s ease;
+    cursor: pointer;
+    stroke-width: 1.5px;
+  }
+  .node:hover circle {
+    filter: brightness(1.4) drop-shadow(0 0 8px currentColor);
+  }
+  .node.selected circle {
+    stroke-width: 3px;
+    filter: brightness(1.6) drop-shadow(0 0 12px currentColor);
+  }
+  .node.faded circle { opacity: 0.2; }
+  .node.faded text { opacity: 0.15; }
+
+  .node text {
+    pointer-events: none;
+    font-family: 'Crimson Pro', serif;
+    font-size: 11px;
+    fill: #e8d8b0;
+    text-anchor: middle;
+    dominant-baseline: central;
+    user-select: none;
+  }
+  .node.center-node text {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    font-weight: 700;
+    fill: var(--gold-lt);
+  }
+  .node.category-node text {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    fill: var(--parch);
+  }
+
+  /* ─── Links ─── */
+  .link {
+    stroke-opacity: 0.5;
+    stroke-width: 1.2px;
+    transition: stroke-opacity 0.2s, stroke-width 0.2s;
+  }
+  .link.highlighted {
+    stroke-opacity: 0.9;
+    stroke-width: 2.5px;
+  }
+  .link.faded {
+    stroke-opacity: 0.06;
+  }
+  .link-label {
+    font-size: 8.5px;
+    fill: #7a6a50;
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    pointer-events: none;
+    text-anchor: middle;
+  }
+
+  /* ─── Detail Panel ─── */
+  #detail-panel {
+    width: var(--panel-w);
+    background: linear-gradient(180deg, #1e160a 0%, #130e06 100%);
+    border-left: 1px solid #3a2a12;
+    padding: 0;
+    overflow-y: auto;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  #detail-panel.hidden {
+    transform: translateX(var(--panel-w));
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    z-index: 10;
+  }
+  .panel-header {
+    background: linear-gradient(90deg, var(--crimson) 0%, #4a0a0a 100%);
+    padding: 14px 16px 10px;
+    border-bottom: 1px solid var(--gold);
+  }
+  .panel-type {
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 3px;
+  }
+  .panel-name {
+    font-family: 'Cinzel', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--parch);
+    line-height: 1.2;
+  }
+  .panel-body {
+    padding: 14px 16px;
+    flex: 1;
+  }
+  .panel-desc {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #c8b890;
+    margin-bottom: 14px;
+    font-style: italic;
+  }
+  .connections-title {
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #3a2a12;
+  }
+  .conn-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+    padding: 6px 8px;
+    background: rgba(255,255,255,0.03);
+    border-left: 2px solid transparent;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .conn-item:hover {
+    background: rgba(255,255,255,0.07);
+  }
+  .conn-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+  .conn-name {
+    font-size: 12px;
+    color: var(--parch);
+    font-weight: 600;
+  }
+  .conn-rel {
+    font-size: 10px;
+    color: #7a6a50;
+    font-style: italic;
+  }
+  .star-note {
+    background: rgba(139, 26, 26, 0.15);
+    border: 1px solid rgba(201, 147, 58, 0.3);
+    border-radius: 3px;
+    padding: 8px 10px;
+    margin-top: 10px;
+    font-size: 11.5px;
+    color: #e8c880;
+    line-height: 1.5;
+  }
+  .star-note::before {
+    content: '★ ';
+    color: var(--gold);
+  }
+  .panel-close {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    cursor: pointer;
+    color: #9a7a4a;
+    font-size: 18px;
+    line-height: 1;
+    font-family: sans-serif;
+    transition: color 0.15s;
+  }
+  .panel-close:hover { color: var(--parch); }
+
+  /* ─── Controls ─── */
+  .controls {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 50;
+  }
+  .ctrl-btn {
+    width: 32px; height: 32px;
+    background: rgba(26, 20, 10, 0.85);
+    border: 1px solid #3a2a12;
+    color: var(--gold);
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, border-color 0.15s;
+    font-family: sans-serif;
+  }
+  .ctrl-btn:hover {
+    background: rgba(50, 35, 15, 0.95);
+    border-color: var(--gold);
+  }
+
+  .rune-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Ctext x='10' y='40' font-size='28' fill='white'%3Eᚱᚢᚾᚨ%3C/text%3E%3Ctext x='10' y='80' font-size='28' fill='white'%3Eᚠᚢᚦᚨ%3C/text%3E%3Ctext x='10' y='115' font-size='22' fill='white'%3Eᚷᚹᚺᚾ%3C/text%3E%3C/svg%3E");
+  }
+
+  /* ─── Tooltip ─── */
+  .tooltip {
+    position: fixed;
+    background: rgba(20, 14, 6, 0.96);
+    border: 1px solid var(--gold);
+    padding: 7px 11px;
+    font-size: 12px;
+    color: var(--parch);
+    border-radius: 3px;
+    pointer-events: none;
+    z-index: 9999;
+    max-width: 220px;
+    font-family: 'Crimson Pro', serif;
+    opacity: 0;
+    transition: opacity 0.15s;
+  }
+  .tooltip.visible { opacity: 1; }
+  .tooltip strong {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 2px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="header-title">La Sombra de los Dioses</div>
+    <div class="header-sub">Mapa Mental Interactivo · Capítulos 1–11</div>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#c03030"></div>Orka POV</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#c99030"></div>Varg POV</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#4a8cbf"></div>Elvar POV</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#9060b0"></div>Cosmología</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#4a9a6a"></div>Lugares</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#3a9a9a"></div>Vaesen & Magia</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#e07830"></div>Tramas</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#3a5a9a"></div>Facciones</div>
+  </div>
+  <div class="header-hint">Clic en nodo para explorar · Arrastrar para mover · Scroll para zoom</div>
+</header>
+
+<div class="main">
+  <div id="graph-container">
+    <div class="rune-bg"></div>
+    <svg id="graph"></svg>
+    <div class="controls">
+      <button class="ctrl-btn" id="btn-zoom-in" title="Acercar">+</button>
+      <button class="ctrl-btn" id="btn-zoom-out" title="Alejar">−</button>
+      <button class="ctrl-btn" id="btn-reset" title="Restablecer vista">⟳</button>
+    </div>
+  </div>
+
+  <div id="detail-panel" class="hidden">
+    <div class="panel-header" style="position:relative">
+      <div class="panel-type" id="p-type">Personaje</div>
+      <div class="panel-name" id="p-name">Nombre</div>
+      <span class="panel-close" id="panel-close">✕</span>
+    </div>
+    <div class="panel-body">
+      <div class="panel-desc" id="p-desc">Descripción</div>
+      <div class="connections-title">Conexiones</div>
+      <div id="p-connections"></div>
+      <div id="p-star"></div>
+    </div>
+  </div>
+</div>
+
+<div class="tooltip" id="tooltip">
+  <strong id="tt-name"></strong>
+  <span id="tt-desc"></span>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════
+// DATA
+// ═══════════════════════════════════════════════════════
+const GROUPS = {
+  CENTER:   { color: '#c9933a', stroke: '#e8b96a', r: 32, label: 'Centro' },
+  CAT:      { color: '#2a1e10', stroke: '#7a5a2a', r: 24, label: 'Categoría' },
+  ORKA:     { color: '#8b1a1a', stroke: '#c03030', r: 14, label: 'Orka POV' },
+  VARG:     { color: '#6a4010', stroke: '#c09030', r: 14, label: 'Varg POV' },
+  ELVAR:    { color: '#1a3a5c', stroke: '#4a8cbf', r: 14, label: 'Elvar POV' },
+  COSMO:    { color: '#3a1a5a', stroke: '#9060b0', r: 14, label: 'Cosmología' },
+  LUGAR:    { color: '#1a3a2a', stroke: '#4a9a6a', r: 13, label: 'Lugar' },
+  VAESEN:   { color: '#1a4a4a', stroke: '#3a9a9a', r: 13, label: 'Vaesen & Magia' },
+  TRAMA:    { color: '#4a2010', stroke: '#e07830', r: 14, label: 'Trama' },
+  FACCION:  { color: '#1a2a4a', stroke: '#3a5a9a', r: 14, label: 'Facción' },
+};
+
+const nodes = [
+  // ── CENTRO ──────────────────────────────────────────────────────
+  { id: 'root', label: 'La Sombra\nde los Dioses', group: 'CENTER', type: 'Obra',
+    desc: 'Libro I de la Trilogía Bloodsworn. John Gwynne. Año 297 del Friðaröld. Tres líneas narrativas convergen en un mundo roto por la guerra de los dioses.',
+    star: '' },
+
+  // ── CATEGORÍAS ──────────────────────────────────────────────────
+  { id: 'cat-orka',   label: 'ARCO\nORKA',    group: 'CAT', type: 'Arco Narrativo', desc: 'POV 1. Trampera en las colinas sobre Fellur. Madre feroz, exguerrera con un pasado oscuro que regresa.', star: '' },
+  { id: 'cat-varg',   label: 'ARCO\nVARG',    group: 'CAT', type: 'Arco Narrativo', desc: 'POV 2. Ex-thrall en busca de un Seiðr para invocar a su hermana muerta. Recién reclutado por los Juramentados de Sangre.', star: '' },
+  { id: 'cat-elvar',  label: 'ARCO\nELVAR',   group: 'CAT', type: 'Arco Narrativo', desc: 'POV 3 (nuevo en Cap.5). Guerrera joven de la Batalla-Fiera. Caza Tainted para venderlos a jarls ricos.', star: '' },
+  { id: 'cat-mundo',  label: 'MUNDO &\nCOSMOS', group: 'CAT', type: 'Worldbuilding', desc: 'Los dioses muertos, el Guðfalla, los Tainted, los vaesen. La realidad rota de Vigríð.', star: '' },
+  { id: 'cat-tramas', label: 'TRAMAS\nACTIVAS', group: 'CAT', type: 'Tramas', desc: 'Los hilos narrativos abiertos al final del Cap. 10.', star: '' },
+  { id: 'cat-facciones', label: 'FACCIONES\nY PODER', group: 'CAT', type: 'Política', desc: 'El tablero político de Vigríð: jarls, reinas, mercenarios.', star: '' },
+
+  // ── PERSONAJES ORKA ─────────────────────────────────────────────
+  { id: 'orka',    label: 'Orka', group: 'ORKA', type: 'POV — Personaje',
+    desc: 'Mujer alta y rubia, ojos gris-verde. Casada con Thorkel. Madre de Breca. Trampera que vive aislada. Flashbacks violentos, episodios de rabia que casi la ciegan. Capturó a Spert mediante vínculo de sangre. Exguerrera con un pasado que ella intenta olvidar.',
+    star: 'Su ira casi la desborda ante Guðvarr. Sabe controlar vaesen. ¿Qué batalla dejó esas cicatrices invisibles?' },
+  { id: 'thorkel', label: 'Thorkel', group: 'ORKA', type: 'Personaje — Orka',
+    desc: 'Grande como un peñasco. Barba trenzada con cicatriz de mejilla a mandíbula. Ex-thrall (igual que Varg). El mejor rastreador. Elige mirar hacia adelante en vez de al pasado. Profundamente amoroso con Orka y Breca.',
+    star: 'Ex-thrall: paralelo directo con Varg. Ambos llevan el collar en el pasado.' },
+  { id: 'breca',   label: 'Breca', group: 'ORKA', type: 'Personaje — Orka',
+    desc: '10 inviernos. Pelo negro como cuervo, ojos de Orka. Sensible, curioso, valiente a su manera. Se comunicó con Vesli la tennúr y le dio un diente de leche para calmarla. Vinculado a Vesli por juramento de sangre.',
+    star: 'Afinidad especial con vaesen. ¿Tiene sangre Tainted? Vesli lo protegerá de por vida.' },
+  { id: 'vesli',   label: 'Vesli', group: 'ORKA', type: 'Vaesen — Aliada de Breca',
+    desc: 'Tennúr hembra. Pequeña, alas membranosas, dos filas de dientes, venas oscuras en piel rosada. Herida y expulsada de su manada. Breca la salvó. Juró lealtad de sangre al niño.',
+    star: 'Deuda de sangre vitalicia con Breca. Un vaesen guardian que crecerá con él.' },
+  { id: 'spert',   label: 'Spert', group: 'ORKA', type: 'Vaesen — Guardián',
+    desc: 'Spertus. Artrópodo segmentado con cara casi humana, aguijón, antenas, vapor negro venenoso. Capturado por Orka con vínculo de sangre. Protege el steading de otros vaesen. Irritable, posesivo de sus dientes.',
+    star: 'Orka sabe rituales de vínculo con vaesen. Habilidad inusual para una trampera.' },
+  { id: 'gudvarr', label: 'Guðvarr', group: 'ORKA', type: 'Personaje — Antagonista menor',
+    desc: 'Sobrino de Jarl Sigrún. Drengr. Pelo negro aceitado, espada al cinto, gota permanente de moco. Vanidoso, incompetente, arrogante. Amenazó a Orka en Fellur. Desafió a Virk al holmganga en el Althing.',
+    star: '' },
+  { id: 'sigrun',  label: 'Jarl Sigrún', group: 'ORKA', type: 'Personaje — Política',
+    desc: 'Jarl de Fellur durante 8 años. Guerrera con mail de malla y torc de plata. Juró lealtad a Reina Helka en Cap. 10. Tiene una thrall-guerrera de mirada letal a su lado. Pragmática y directa.',
+    star: 'La thrall-guerrera: cara cicatrizada, ojos de animal atrapado, dos seaxes. ¿Quién era antes?' },
+  { id: 'virk',    label: 'Virk', group: 'ORKA', type: 'Personaje — Aliado',
+    desc: 'Pescador de Fellur. Grande, cara ancha. Brazo herido por tormenta. Ex-guerrero que no lo declara. Sabe que hay un patrón en los robos de niños. Desafió a Guðvarr al holmganga. Pidió a Orka de segundo.',
+    star: '' },
+  { id: 'harek',   label: 'Harek (†?)', group: 'TRAMA', type: 'Personaje — Desaparecido',
+    desc: 'Hijo de Asgrim e Idrun. Amigo de Breca. Desaparecido cuando sus padres fueron asesinados en Cap. 1. Los asesinos huyeron en barcas por el río Skarpain.',
+    star: 'Primer eslabón del patrón de robos de niños.' },
+
+  // ── PERSONAJES VARG ─────────────────────────────────────────────
+  { id: 'varg',    label: 'Varg', group: 'VARG', type: 'POV — Personaje',
+    desc: 'Ex-thrall. ~30 inviernos. Cabeza rapada. Hermana Frøya muerta. Episodios de furia roja disociativa que no recuerda. Boxeador formidable (100 combates para Kolskegg). Cap.11: 6 días inconsciente por fiebre de herida de lanza de Leif, ya recuperado. Recibe entrenamiento de escudo de Røkia por órdenes de Glornir.',
+    star: 'Furia roja sin memoria = posible sangre Tainted. La bolsita al cinturón probablemente contiene algo de Frøya. Instintos de combate naturales que sorprenden a Røkia.' },
+  { id: 'froya',   label: 'Frøya (†)', group: 'VARG', type: 'Personaje — Muerta',
+    desc: 'Hermana de Varg, 4 inviernos menor. Ambos fueron vendidos a los 5 y 4 años por sus padres. Murió en circunstancias desconocidas. Su muerte es el motor de toda la historia de Varg.',
+    star: 'Varg necesita un akáll (invocación Seiðr) para descubrir cómo murió y quién la mató.' },
+  { id: 'glornir', label: 'Glornir', group: 'VARG', type: 'Personaje — Jefe',
+    desc: 'Jefe de los Juramentados de Sangre. Calvo, barba gris trenzada. Long-axe como bastón. Oro y plata en brazos y cuello. Habla lengua Galdur para controlar collares. Rápido como el rayo. Epítetos: Rompe-Escudos y Dador-de-Oro.',
+    star: '' },
+  { id: 'vol',     label: 'Vol', group: 'VARG', type: 'Personaje — Seiðr',
+    desc: 'Bruja Seiðr de los Juramentados. Tatuajes azules en mandíbula y garganta. Collar de hierro (es thrall de los Juramentados). Realiza akáll y otras magias. La razón por la que Varg buscó al grupo.',
+    star: 'Thrall Seiðr: paralelo con Kráka (Batalla-Fiera). Ambas usan magia encadenadas.' },
+  { id: 'einar',   label: 'Einar\nMedio-Trol', group: 'VARG', type: 'Personaje — Juramentados',
+    desc: 'Campeón de los Juramentados. Enorme, barba roja hasta la cintura, manos como yunques. Protección de hierro en la entrepierna (forjada por Jökul el herrero). Golpeó a decenas de candidatos.',
+    star: '' },
+  { id: 'svik',    label: 'Svik', group: 'VARG', type: 'Personaje — Juramentados',
+    desc: 'Pelo rojo trenzado, barba aceitada. Cap.11: túnica verde de espiga de trigo, anillos de plata enrollados en los brazos, torc de plata retorcida con dos cabezas de serpiente en los extremos. Apodo: Pelo-Enredado (irónico). Sarcástico, cuidó a Varg 6 días durante la fiebre. Reclutador/negociador.',
+    star: '' },
+  { id: 'leif',    label: 'Leif\nKolskeggson', group: 'VARG', type: 'Personaje — Antagonista',
+    desc: 'Hijo del antiguo amo de Varg, Kolskegg (asesinado por Varg en un episodio de furia roja). Cicatriz en el labio. Quiso esclavizar a Varg y amputarle la mano. Derrotado por los Juramentados en Cap. 4. En Cap.11 se revela que hirió a Varg con una lanza antes de huir.',
+    star: '' },
+  { id: 'rokia',   label: 'Røkia', group: 'VARG', type: 'Personaje — Juramentados',
+    desc: 'Cap.11. Guerrera alta, rubia, mirada de halcón predador. Lleva escudo negro (Juramentados) a la espalda. Por órdenes de Glornir, entrena a Varg en combate con escudo. Directa, fría, poco tolerante con la incompetencia. Llama a Svik "pavo real engreído".',
+    star: '¿Por qué le fue asignada a Varg específicamente? Su entrenamiento es metódico y revelador de sus habilidades.' },
+  { id: 'guerrero-oscuro', label: 'Guerrero\nDesconocido', group: 'VARG', type: 'Personaje — ¿Misterio?',
+    desc: 'Cap.11. Delgado, estatura media. Cabeza rapada excepto una larga trenza negra brillante como azabache. Piel oscura (único así entre los Juramentados de tez clara). Kaftan gris de lana abrochado al centro, calzones anchos con vendas ajustadas tobillo-rodilla. Escudo negro con salpicaduras rojas. Espada curva de un solo filo. Sparring con Glornir. Varg lo ve familiar, sin saber por qué.',
+    star: '★★★ Sin nombre. Sin presentación. Varg lo reconoce de algo pero no sabe de qué. Origen posiblemente en Iskidan (piel oscura, kaftan, espada curva = estética del sur). Presencia muy deliberada del autor.' },
+  { id: 'mujer-plateada', label: 'Mujer de\nCabello Plateado', group: 'VARG', type: 'Personaje — Juramentados',
+    desc: 'Cap.11. Miembro de los Juramentados de Sangre. Cabello plateado. Sparring en el patio con un compañero. Dos sabuesos tumbados en el sol mirándola. Sin nombre aún.',
+    star: '¿Tiene un rol especial? Sus dos sabuesos sugieren que puede ser rastreadora o tener habilidades Tainted de tipo Hundur.' },
+
+  // ── PERSONAJES ELVAR ─────────────────────────────────────────────
+  { id: 'elvar',   label: 'Elvar', group: 'ELVAR', type: 'POV — Personaje',
+    desc: 'Guerrera más joven de la Batalla-Fiera. Rubia, trenza guerrera, escudo rojo con armas cruzadas. Impulsiva y valiente hasta la temeridad. Saltó al mar helado para salvar al hijo de Berak. Reacciona ante el nombre de Snakavik.',
+    star: 'Su reacción al destino Snakavik/Jarl Störr es personal. ¿Familia allí? ¿Pasado?' },
+  { id: 'grend',   label: 'Grend', group: 'ELVAR', type: 'Personaje — Guardián',
+    desc: 'Guerrero mayor, barba gris. Siempre junto a Elvar. No es su padre (él lo niega). Lacónico. Salta al mar helado tras Elvar. Le sirve gachas y le cubre los turnos de guardia.',
+    star: '¿Qué le debe a Elvar para protegerla así? La relación no está explicada.' },
+  { id: 'agnar',   label: 'Agnar', group: 'ELVAR', type: 'Personaje — Jefe',
+    desc: 'Jefe de la Batalla-Fiera. Trenza guerrera rubia, capote de oso negro, torc de plata. Carismático, valiente, implacable. Mató al Jarl Hrut sin dudar. Vende Tainted al mejor postor.',
+    star: '' },
+  { id: 'kraka',   label: 'Kráka', group: 'ELVAR', type: 'Personaje — Thrall Tainted',
+    desc: 'Thrall Tainted de la Batalla-Fiera. Pelo negro, cara gris agotada. Canta magia Seiðr para proteger el casco de serpientes marinas. El canto la destruye físicamente. Maltratada por los guardias.',
+    star: 'El uso de Seiðr la desgasta hasta la muerte lenta. Agnar le da un asta de trol como "combustible".' },
+  { id: 'berak',   label: 'Berak\nBjornasson', group: 'ELVAR', type: 'Personaje — Berserkir',
+    desc: 'Alto, ancho, barba hasta el cinturón. Sangre del dios muerto Berser. Ojos ambarinos cuando entra en furia, dientes afilados, fuerza brutal. Capturado en Iskalt. Destino: Snakavik, Jarl Störr.',
+    star: 'Prototype de los Tainted Berserkir. El collar de hierro lo controla con palabras Galdur.' },
+  { id: 'mujer-berak', label: 'Mujer\nde Berak', group: 'ELVAR', type: 'Personaje — Tainted',
+    desc: 'Rubia, ojos gris-azul pálido. Tatuajes espirales bajo la ropa. Arrojó un objeto (¿pergamino/tablilla?) al lago de lava para destruirlo antes de ser capturada. Controló la serpiente marina con canto Seiðr. Sangre de Snaka.',
+    star: '¿Qué destruyó antes de ser capturada? Acto deliberado para que no caiga en manos de Agnar.' },
+  { id: 'biorr',   label: 'Biórr', group: 'ELVAR', type: 'Personaje — Batalla-Fiera',
+    desc: 'Pelo negro, botas largas (objeto de burlas). Interesado en Elvar. Sigue sus pasos en el bosque de Iskalt. Grend lo odia. Ofrece gachas al prisionero Berak y su familia.',
+    star: '¿Por qué sigue a Elvar? ¿Genuino interés o misión oculta?' },
+  { id: 'sighvat', label: 'Sighvat', group: 'ELVAR', type: 'Personaje — Batalla-Fiera',
+    desc: 'Obeso, brutal, fornido. Suboficial de la Batalla-Fiera. Marca el ritmo de remo con un barril. Cadenas y collares para prisioneros. Golpea a Kráka. Hundur-thrall bajo su control.',
+    star: '' },
+
+  // ── COSMOLOGÍA ─────────────────────────────────────────────────
+  { id: 'gudfall',  label: 'Guðfalla\n(Caída de Dioses)', group: 'COSMO', type: 'Evento Histórico',
+    desc: 'Hace ~300 años. Los hijos de Snaka se rebelaron contra su padre. La guerra de los dioses rompió el mundo: continentes hundidos, mares desbordados. Los vaesen escaparon de su foso. El mundo nunca se recuperó.',
+    star: 'Todo el mundo actual es consecuencia directa de este evento.' },
+  { id: 'snaka',   label: 'Snaka', group: 'COSMO', type: 'Dios Muerto — Padre',
+    desc: 'El dios-serpiente primordial. Padre de todos los dioses. El más grande y antiguo. Sus huesos forman las cordilleras del norte de Vigríð. Fue derrocado y muerto por sus propios hijos.',
+    star: 'La mujer de Berak porta su sangre. ¿Qué otros Tainted de Snaka hay en Vigríð?' },
+  { id: 'orna',    label: 'Orna\n(Dios-Águila)', group: 'COSMO', type: 'Dios Muerto',
+    desc: 'El dios-águila, hijo de Snaka. Muerto en el Guðfalla. Sus huesos (incluyendo sus alas) están en la fortaleza de la Reina Helka en Darl, como símbolo de poder.',
+    star: 'Helka gobierna bajo las alas de un dios muerto. ¿Solo símbolo, o hay poder real en esos huesos?' },
+  { id: 'berser',  label: 'Berser\n(Dios-Oso)', group: 'COSMO', type: 'Dios Muerto',
+    desc: 'El dios-oso, hijo de Snaka. Muerto en el Guðfalla. Sus descendientes son los Berserkir: Tainted con fuerza sobrehumana, ojos ambarinos y transformación parcial en combate.',
+    star: 'Berak Bjornasson porta su sangre. Los Berserkir son muy cotizados por los jarls como guardia personal.' },
+  { id: 'likrafa', label: 'Lik-Rifa\n(Diosa-Dragón)', group: 'COSMO', type: 'Dios — ¿Vivo?',
+    desc: 'La diosa-dragón, hija de Snaka. NO murió en el Guðfalla: fue encadenada bajo Oskutreð, el Árbol de Ceniza. Habita Vergelmir, cámara subterránea por donde pasan los guerreros muertos. Los terremotos de Iskalt sugieren que sigue viva.',
+    star: '★★★ LA amenaza cósmica. Si escapa, el equilibrio del mundo colapsa. Los guerreros mueren con armas para luchar contra ella en Vergelmir.' },
+  { id: 'tainted', label: 'Los Tainted', group: 'COSMO', type: 'Facción — Perseguidos',
+    desc: 'Descendientes de los dioses muertos. Portadores de poderes heredados. Perseguidos y cazados desde el Guðfalla. Controlados con collares de hierro activados por lengua Galdur. Vendidos a jarls poderosos.',
+    star: '¿Varg tiene sangre Tainted? ¿Y Breca? Los dos protagonistas muestran señales.' },
+
+  // ── LUGARES ─────────────────────────────────────────────────────
+  { id: 'vigrið',   label: 'Vigríð', group: 'LUGAR', type: 'Lugar — Continente',
+    desc: 'La Llanura de Batalla. El continente principal. Construido literalmente sobre los huesos de Snaka. Dividido entre jarls, reinas y hombres libres. Los vaesen son una presencia constante en las zonas remotas.',
+    star: '' },
+  { id: 'fellur',   label: 'Fellur', group: 'LUGAR', type: 'Lugar — Villa',
+    desc: 'Villa pesquera en el fiordo. ~100 habitantes. Longhouse central, muralla parcialmente podrida. Knuckle-bone de dios muerto en el umbral: protege contra vaesen. Dominio de Jarl Sigrún.',
+    star: '' },
+  { id: 'liga',     label: 'Liga', group: 'LUGAR', type: 'Lugar — Ciudad',
+    desc: 'Ciudad mercado y puerto al pie del fiordo. Sala del Jarl Logur en la colina. Plaza de combate donde Varg luchó contra Einar. Mercado con vaesen disecados, marfil, moneda Helka.',
+    star: '' },
+  { id: 'iskalt',   label: 'Isla de Iskalt', group: 'LUGAR', type: 'Lugar — Isla',
+    desc: 'Isla volcánica al norte con montaña de fuego y venas de lava. Clima ártico extremo. Villa de pescadores en la costa. Los terremotos aquí son atribuidos a Lik-Rifa forcejeando bajo el Árbol de Ceniza.',
+    star: 'El volcán tiembla. Lik-Rifa está activa.' },
+  { id: 'snakavik', label: 'Snakavik', group: 'LUGAR', type: 'Lugar — Ciudad del Jarl Störr',
+    desc: 'Fortaleza del Jarl Störr al noroeste. Destino del Wave-Jarl y de Berak. Nombre: "Villa de Snaka". Störr tiene guardia personal de Berserkir-thrall.',
+    star: 'Elvar reacciona emocionalmente ante este nombre. Algo personal la une a este lugar.' },
+  { id: 'darl',     label: 'Darl', group: 'LUGAR', type: 'Lugar — Capital de Helka',
+    desc: 'Sede de la Reina Helka. Los huesos del dios Orna, incluyendo sus alas, coronan la fortaleza. Centro del poder político emergente de Vigríð.',
+    star: '' },
+  { id: 'oath-rock', label: 'Roca del\nJuramento', group: 'LUGAR', type: 'Lugar — Althing',
+    desc: 'Islote en el fiordo de Fellur. Monolito de runas destruido a martillazos (adorar a los dioses es ilegal). Aquí se celebra el Althing de Cap. 10.',
+    star: '' },
+  { id: 'oskutred', label: 'Oskutreð\n(Árbol de Ceniza)', group: 'LUGAR', type: 'Lugar — Mítico',
+    desc: 'El gran árbol bajo el cual Lik-Rifa fue encadenada. Vergelmir, su cámara subterránea, es el paso del alma de los guerreros muertos. Por esto los guerreros mueren con armas en la mano.',
+    star: '' },
+
+  // ── VAESEN Y MAGIA ─────────────────────────────────────────────
+  { id: 'seidr',    label: 'Seiðr', group: 'VAESEN', type: 'Magia',
+    desc: 'Magia de influencia, invocación y canto. El akáll invoca espíritus de muertos para interrogarlos. El canto protege de vaesen o los controla. Practicado por brujas. El uso extenuante desgasta el cuerpo. Ligado frecuentemente a sangre divina.',
+    star: '' },
+  { id: 'galdur',   label: 'Galdur', group: 'VAESEN', type: 'Magia — Lengua',
+    desc: 'Lengua mágica de comandos. Activa los collares de hierro sobre los Tainted. Palabras conocidas: Hlýða (obedece), Á HNÉN (de rodillas), Halda (detente). Saber esta lengua es poder absoluto sobre los Tainted.',
+    star: '' },
+  { id: 'collares', label: 'Collares\nde Hierro', group: 'VAESEN', type: 'Objeto Mágico',
+    desc: 'Collar de hierro que controla a los Tainted mediante palabras Galdur. El metal se calienta con venas de fuego rojo al activarse. Símbolo de esclavitud y control. Vol, Kráka y los Tainted capturados los llevan.',
+    star: 'El control de los Tainted depende de que solo los "dueños" conozcan las palabras Galdur.' },
+  { id: 'runa-ward', label: 'Runa\nWarding', group: 'VAESEN', type: 'Magia — Protección',
+    desc: 'Runas talladas en puertas/umbrales. Repelen vaesen menores. No detienen a seres de gran poder ni a humanos. Reforzadas con knuckle-bone de dios muerto (Fellur, Asgrim). Confirma que Asgrim no fue atacado por vaesen.',
+    star: '' },
+  { id: 'vaesen-gen', label: 'Vaesen', group: 'VAESEN', type: 'Criatura',
+    desc: 'Criaturas del mundo subterráneo liberadas en el Guðfalla. Presencia en zonas remotas. Van desde peligrosos (trol, serpiente marina, araña de hielo) hasta domesticables (tennúr, Spertus). Los vaesen traders venden sus partes.',
+    star: '' },
+  { id: 'fell-wolf', label: 'Fell-Wolf', group: 'VAESEN', type: 'Vaesen — Cap.1',
+    desc: 'Lobo vaesen enorme, pelaje gris pizarra, garras largas. Encontrado herido en Cap. 1 —alguien ya lo había atacado antes de que llegaran Orka y su familia. Irrumpió en el calvero y dispersó los renos.',
+    star: '¿Quién hirió al fell-wolf antes del Cap. 1? Posible pista sobre los asesinos de Asgrim.' },
+  { id: 'trol',     label: 'Trol\n(bull-troll)', group: 'VAESEN', type: 'Vaesen — Cap.7',
+    desc: 'Joven macho. Astas en el cráneo cubierto de musgo, piel escamada, colmillos de marfil, testiculos y territorios propios. Mató a varios guerreros de la Batalla-Fiera antes de ser abatido. Sus partes se venden a buen precio.',
+    star: '' },
+  { id: 'sjavarom',  label: 'Sjávarorm\n(Serpiente Marina)', group: 'VAESEN', type: 'Vaesen — Cap.9',
+    desc: 'Cabeza del tamaño de una cabaña, hileras de dientes, cuerpo sinuoso gris-verde. Atacó el Wave-Jarl en Cap. 9. Controlada por la mujer de Berak con canto Seiðr (sangre de Snaka).',
+    star: 'Revela el poder de la mujer de Berak: sangre de Snaka controla criaturas del mar.' },
+
+  // ── TRAMAS ACTIVAS ─────────────────────────────────────────────
+  { id: 'ninos-robados', label: 'Robos\nde Niños', group: 'TRAMA', type: 'Trama — Abierta',
+    desc: 'Patrón organizado: Harek (colinas de Fellur), 3 hijos de los Haraldurson (Howbyr, 10-12 leguas norte), varios hijos de familia en Kergarth (6 leguas este). Huyen por ríos en barcas. Orka sospecha thralls secuestrados.',
+    star: '★★★ Trama central del arco de Orka. ¿Quién los está robando y por qué? ¿Destino: thralls, sacrificios (Iskidan), algo peor?' },
+  { id: 'akall',    label: 'Akáll\nde Varg', group: 'TRAMA', type: 'Trama — Abierta',
+    desc: 'Varg necesita que Vol realice un akáll para invocar el espíritu de Frøya y descubrir cómo murió. Cap.11: Vol no está en el cuartel de los Juramentados. Røkia esquiva la pregunta de Varg sobre su paradero. El acceso a Vol sigue bloqueado.',
+    star: '¿Dónde está Vol? Røkia no responde. ¿Y si su muerte fue algo más que un accidente?' },
+  { id: 'holmganga', label: 'Holmganga\nVirk vs Guðvarr', group: 'TRAMA', type: 'Trama — Inmediata',
+    desc: 'Desafío de duelo en el Althing (Cap. 10). Guðvarr vs Virk. Orka es el segundo de Virk. Si Virk muere, Orka debe poner el hacha en su mano y contener a sus hijos. Se celebrará en el Althing.',
+    star: 'Orka rompe el pacto de silencio con Thorkel al involucrarse. Consecuencias por venir.' },
+  { id: 'berak-venta', label: 'Venta de\nBerak a Störr', group: 'TRAMA', type: 'Trama — Abierta',
+    desc: 'Agnar navega hacia Snakavik para vender a Berak el Berserkir al Jarl Störr. Elvar reacciona personalmente ante este destino. La mujer de Berak (sangre de Snaka) también está a bordo.',
+    star: 'Elvar tiene historia no revelada con Snakavik o Jarl Störr.' },
+  { id: 'helka-poder', label: 'Expansión\nde Helka', group: 'TRAMA', type: 'Trama — Política',
+    desc: 'Helka absorbe los dominios de los jarls menores. Sigrún juró. Störr es su rival al noroeste. Orka advierte en el Althing: habrá hird-offering (leva de guerreros). La guerra de Vigríð se acerca.',
+    star: 'El destino de Fellur está ligado al resultado de la guerra Helka-Störr.' },
+  { id: 'lik-rifa-amenaza', label: 'Lik-Rifa\nDespertando', group: 'TRAMA', type: 'Trama — Cósmica',
+    desc: 'Los terremotos de Iskalt y las venas de lava parpadeando sugieren que la diosa-dragón Lik-Rifa no está muerta, sino activa bajo el Árbol de Ceniza. Grend lo afirma; Elvar es escéptica.',
+    star: '★★★ Si Lik-Rifa rompe sus cadenas, todo cambia. ¿Alguien la está ayudando a escapar?' },
+
+  // ── FACCIONES ─────────────────────────────────────────────
+  { id: 'juramento-sangre', label: 'Juramentados\nde Sangre', group: 'FACCION', type: 'Facción — Mercenarios',
+    desc: 'Compañía mercenaria de élite, legendaria en Vigríð. Escudo negro con salpicaduras rojas. Cazan vaesen, buscan reliquias, protegen ricos. Drakkar propio. Jefe: Glornir. Seiðr-thrall: Vol.',
+    star: '' },
+  { id: 'batalla-fiera', label: 'Batalla-Fiera\n(Battle-Grim)', group: 'FACCION', type: 'Facción — Mercenarios',
+    desc: 'Compañía mercenaria rival. Drakkar: Wave-Jarl. Cazan Tainted para venderlos a jarls. Jefe: Agnar. Thrall Tainted: Kráka (Seiðr) y Hundur (rastreador).',
+    star: '' },
+  { id: 'helka', label: 'Reina Helka', group: 'FACCION', type: 'Facción — Poder político',
+    desc: 'Auto-proclamada reina de media Vigríð. Sede: Darl. Moneda propia. Fortaleza coronada con huesos de Orna. Absorbe jarls menores. Rival: Jarl Störr. Una leva de guerreros llegará.',
+    star: '' },
+  { id: 'storr', label: 'Jarl Störr', group: 'FACCION', type: 'Facción — Amenaza',
+    desc: 'Jarl poderoso al noroeste. En expansión constante hacia el sur y este. Tiene guardia personal de Berserkir-thrall. Destino de Berak. Tiene algo que ver con el pasado de Elvar.',
+    star: '' },
+];
+
+const links = [
+  // Root to cats
+  { source: 'root', target: 'cat-orka',      label: 'POV 1', type: 'cat' },
+  { source: 'root', target: 'cat-varg',      label: 'POV 2', type: 'cat' },
+  { source: 'root', target: 'cat-elvar',     label: 'POV 3', type: 'cat' },
+  { source: 'root', target: 'cat-mundo',     label: 'mundo', type: 'cat' },
+  { source: 'root', target: 'cat-tramas',    label: 'tramas', type: 'cat' },
+  { source: 'root', target: 'cat-facciones', label: 'poder', type: 'cat' },
+
+  // Cat-orka to orka chars
+  { source: 'cat-orka', target: 'orka',    label: '', type: 'arc' },
+  { source: 'orka',  target: 'thorkel',   label: 'casada con', type: 'rel' },
+  { source: 'orka',  target: 'breca',     label: 'madre', type: 'rel' },
+  { source: 'orka',  target: 'spert',     label: 'vínculo sangre', type: 'magic' },
+  { source: 'breca', target: 'vesli',     label: 'protege / jura', type: 'magic' },
+  { source: 'cat-orka', target: 'gudvarr', label: '', type: 'arc' },
+  { source: 'gudvarr',  target: 'sigrun', label: 'sobrino', type: 'rel' },
+  { source: 'cat-orka', target: 'virk',   label: '', type: 'arc' },
+  { source: 'orka', target: 'sigrun',     label: 'Althing', type: 'event' },
+  { source: 'virk', target: 'harek',      label: 'patrón niños', type: 'trama' },
+
+  // Cat-varg to varg chars
+  { source: 'cat-varg', target: 'varg',   label: '', type: 'arc' },
+  { source: 'varg', target: 'froya',      label: 'hermana muerta', type: 'rel' },
+  { source: 'varg', target: 'leif',       label: 'enemigo', type: 'conflict' },
+  { source: 'rokia', target: 'varg',       label: 'entrena (Cap.11)', type: 'rel' },
+  { source: 'rokia', target: 'glornir',    label: 'órdenes de', type: 'rel' },
+  { source: 'rokia', target: 'juramento-sangre', label: 'miembro', type: 'rel' },
+  { source: 'guerrero-oscuro', target: 'glornir', label: 'sparring / misterio', type: 'trama' },
+  { source: 'guerrero-oscuro', target: 'juramento-sangre', label: 'miembro', type: 'rel' },
+  { source: 'mujer-plateada', target: 'juramento-sangre', label: 'miembro', type: 'rel' },
+  { source: 'varg', target: 'guerrero-oscuro', label: 'lo reconoce sin saber', type: 'trama' },
+  { source: 'cat-varg', target: 'glornir', label: '', type: 'arc' },
+  { source: 'glornir', target: 'vol',     label: 'jefe / thrall', type: 'rel' },
+  { source: 'glornir', target: 'einar',   label: 'jefe / campeón', type: 'rel' },
+  { source: 'glornir', target: 'svik',    label: 'jefe', type: 'rel' },
+  { source: 'varg', target: 'vol',        label: 'busca akáll', type: 'goal' },
+
+  // Cat-elvar to elvar chars
+  { source: 'cat-elvar', target: 'elvar',  label: '', type: 'arc' },
+  { source: 'elvar', target: 'grend',      label: 'guardián', type: 'rel' },
+  { source: 'cat-elvar', target: 'agnar',  label: '', type: 'arc' },
+  { source: 'agnar', target: 'sighvat',   label: 'jefe/subof.', type: 'rel' },
+  { source: 'agnar', target: 'kraka',     label: 'jefe/thrall', type: 'rel' },
+  { source: 'agnar', target: 'berak',     label: 'capturó', type: 'conflict' },
+  { source: 'elvar', target: 'biorr',     label: 'tensión', type: 'rel' },
+  { source: 'berak', target: 'mujer-berak', label: 'esposa', type: 'rel' },
+
+  // Cat-mundo
+  { source: 'cat-mundo', target: 'gudfall', label: '', type: 'arc' },
+  { source: 'gudfall', target: 'snaka',    label: 'murió en', type: 'history' },
+  { source: 'gudfall', target: 'orna',     label: 'murió en', type: 'history' },
+  { source: 'gudfall', target: 'berser',   label: 'murió en', type: 'history' },
+  { source: 'gudfall', target: 'likrafa',  label: 'encadenada', type: 'history' },
+  { source: 'cat-mundo', target: 'tainted', label: '', type: 'arc' },
+  { source: 'cat-mundo', target: 'vigrið', label: '', type: 'arc' },
+  { source: 'snaka', target: 'vigrið',    label: 'sus huesos = montañas', type: 'lore' },
+  { source: 'tainted', target: 'berak',   label: 'Berserkir', type: 'lore' },
+  { source: 'tainted', target: 'kraka',   label: 'Tainted', type: 'lore' },
+  { source: 'tainted', target: 'mujer-berak', label: 'sangre Snaka', type: 'lore' },
+  { source: 'berser', target: 'berak',    label: 'herencia', type: 'lore' },
+  { source: 'snaka', target: 'mujer-berak', label: 'herencia', type: 'lore' },
+  { source: 'likrafa', target: 'oskutred', label: 'encadenada bajo', type: 'lore' },
+
+  // Lugares
+  { source: 'cat-mundo', target: 'fellur',  label: '', type: 'arc' },
+  { source: 'vigrið', target: 'fellur',    label: 'ciudad en', type: 'geo' },
+  { source: 'vigrið', target: 'liga',      label: 'ciudad en', type: 'geo' },
+  { source: 'vigrið', target: 'iskalt',    label: 'isla en', type: 'geo' },
+  { source: 'vigrið', target: 'snakavik',  label: 'ciudad en', type: 'geo' },
+  { source: 'vigrið', target: 'darl',      label: 'capital', type: 'geo' },
+  { source: 'fellur', target: 'oath-rock', label: 'isla en el fiordo', type: 'geo' },
+  { source: 'iskalt', target: 'oskutred',  label: 'terremotos = Lik-Rifa', type: 'magic' },
+
+  // Vaesen y magia
+  { source: 'cat-mundo', target: 'vaesen-gen', label: '', type: 'arc' },
+  { source: 'vaesen-gen', target: 'vesli',   label: 'tennúr', type: 'lore' },
+  { source: 'vaesen-gen', target: 'spert',   label: 'spertus', type: 'lore' },
+  { source: 'vaesen-gen', target: 'fell-wolf', label: '', type: 'lore' },
+  { source: 'vaesen-gen', target: 'trol',    label: '', type: 'lore' },
+  { source: 'vaesen-gen', target: 'sjavarom', label: '', type: 'lore' },
+  { source: 'cat-mundo', target: 'seidr',    label: '', type: 'arc' },
+  { source: 'seidr', target: 'vol',          label: 'practica', type: 'magic' },
+  { source: 'seidr', target: 'kraka',        label: 'practica', type: 'magic' },
+  { source: 'seidr', target: 'mujer-berak',  label: 'practica', type: 'magic' },
+  { source: 'seidr', target: 'akall',        label: 'técnica', type: 'magic' },
+  { source: 'cat-mundo', target: 'galdur',   label: '', type: 'arc' },
+  { source: 'galdur', target: 'collares',    label: 'activa', type: 'magic' },
+  { source: 'collares', target: 'tainted',   label: 'controla', type: 'magic' },
+  { source: 'cat-mundo', target: 'runa-ward', label: '', type: 'arc' },
+
+  // Tramas
+  { source: 'cat-tramas', target: 'ninos-robados', label: '', type: 'arc' },
+  { source: 'cat-tramas', target: 'akall',          label: '', type: 'arc' },
+  { source: 'cat-tramas', target: 'holmganga',       label: '', type: 'arc' },
+  { source: 'cat-tramas', target: 'berak-venta',     label: '', type: 'arc' },
+  { source: 'cat-tramas', target: 'helka-poder',     label: '', type: 'arc' },
+  { source: 'cat-tramas', target: 'lik-rifa-amenaza', label: '', type: 'arc' },
+  { source: 'ninos-robados', target: 'harek',    label: 'primer caso', type: 'trama' },
+  { source: 'ninos-robados', target: 'orka',     label: 'investiga', type: 'trama' },
+  { source: 'akall', target: 'varg',             label: 'necesita', type: 'goal' },
+  { source: 'akall', target: 'froya',            label: 'invocará a', type: 'goal' },
+  { source: 'holmganga', target: 'virk',         label: 'combatiente', type: 'event' },
+  { source: 'holmganga', target: 'gudvarr',      label: 'combatiente', type: 'event' },
+  { source: 'holmganga', target: 'orka',         label: 'segundo', type: 'event' },
+  { source: 'berak-venta', target: 'berak',      label: 'vendido', type: 'trama' },
+  { source: 'berak-venta', target: 'snakavik',   label: 'destino', type: 'geo' },
+  { source: 'berak-venta', target: 'elvar',      label: 'reacción personal', type: 'trama' },
+  { source: 'helka-poder', target: 'helka',      label: 'protagoniza', type: 'trama' },
+  { source: 'helka-poder', target: 'sigrun',     label: 'juró lealtad', type: 'event' },
+  { source: 'lik-rifa-amenaza', target: 'likrafa', label: 'es ella', type: 'trama' },
+  { source: 'lik-rifa-amenaza', target: 'iskalt', label: 'epicentro', type: 'geo' },
+
+  // Facciones
+  { source: 'cat-facciones', target: 'juramento-sangre', label: '', type: 'arc' },
+  { source: 'cat-facciones', target: 'batalla-fiera',    label: '', type: 'arc' },
+  { source: 'cat-facciones', target: 'helka',            label: '', type: 'arc' },
+  { source: 'cat-facciones', target: 'storr',            label: '', type: 'arc' },
+  { source: 'juramento-sangre', target: 'glornir',       label: 'jefe', type: 'rel' },
+  { source: 'juramento-sangre', target: 'liga',          label: 'base en', type: 'geo' },
+  { source: 'batalla-fiera', target: 'agnar',            label: 'jefe', type: 'rel' },
+  { source: 'batalla-fiera', target: 'elvar',            label: 'miembro', type: 'rel' },
+  { source: 'helka', target: 'darl',                     label: 'sede', type: 'geo' },
+  { source: 'helka', target: 'orna',                     label: 'huesos en fortaleza', type: 'lore' },
+  { source: 'storr', target: 'snakavik',                 label: 'sede', type: 'geo' },
+  { source: 'storr', target: 'berak',                    label: 'comprador', type: 'trama' },
+  { source: 'sigrun', target: 'fellur',                  label: 'jarl de', type: 'geo' },
+
+  // Cross-arc connections
+  { source: 'thorkel', target: 'juramento-sangre', label: 'ex-thrall (paralelo)', type: 'lore' },
+  { source: 'varg', target: 'juramento-sangre',    label: 'nuevo miembro', type: 'rel' },
+  { source: 'mujer-berak', target: 'sjavarom',     label: 'controló', type: 'magic' },
+  { source: 'sighvat', target: 'kraka',            label: 'controla', type: 'rel' },
+  { source: 'fell-wolf', target: 'ninos-robados',  label: 'pista: herido antes', type: 'trama' },
+];
+
+// ═══════════════════════════════════════════════════════
+// COLOR MAP
+// ═══════════════════════════════════════════════════════
+const linkColors = {
+  cat:      '#6a5a30',
+  arc:      '#4a4a3a',
+  rel:      '#5a4a70',
+  magic:    '#2a7a7a',
+  conflict: '#7a2a2a',
+  goal:     '#7a6a20',
+  event:    '#6a4a20',
+  lore:     '#3a5a3a',
+  history:  '#5a3a5a',
+  geo:      '#2a4a2a',
+  trama:    '#7a5a20',
+};
+
+// ═══════════════════════════════════════════════════════
+// D3 SETUP
+// ═══════════════════════════════════════════════════════
+const svg = d3.select('#graph');
+const container = document.getElementById('graph-container');
+const width = () => container.clientWidth;
+const height = () => container.clientHeight;
+
+const g = svg.append('g');
+
+// Zoom
+const zoom = d3.zoom()
+  .scaleExtent([0.15, 3])
+  .on('zoom', e => g.attr('transform', e.transform));
+svg.call(zoom);
+
+// Arrow markers
+const defs = svg.append('defs');
+Object.entries(linkColors).forEach(([type, color]) => {
+  defs.append('marker')
+    .attr('id', `arrow-${type}`)
+    .attr('viewBox', '0 -4 8 8')
+    .attr('refX', 18)
+    .attr('refY', 0)
+    .attr('markerWidth', 4)
+    .attr('markerHeight', 4)
+    .attr('orient', 'auto')
+    .append('path')
+      .attr('d', 'M0,-4L8,0L0,4')
+      .attr('fill', color)
+      .attr('opacity', 0.6);
+});
+
+// ── Force simulation ─────────────────────────────────
+const nodeMap = {};
+nodes.forEach(n => {
+  n.r = GROUPS[n.group]?.r || 12;
+  n.color = GROUPS[n.group]?.color || '#3a3a3a';
+  n.stroke = GROUPS[n.group]?.stroke || '#8a8a8a';
+  nodeMap[n.id] = n;
+});
+
+const simulation = d3.forceSimulation(nodes)
+  .force('link', d3.forceLink(links).id(d => d.id).distance(d => {
+    if (d.type === 'cat') return 160;
+    if (d.type === 'arc') return 120;
+    return 95;
+  }).strength(d => d.type === 'cat' ? 0.8 : 0.5))
+  .force('charge', d3.forceManyBody().strength(d => {
+    if (d.group === 'CENTER') return -800;
+    if (d.group === 'CAT') return -500;
+    return -250;
+  }))
+  .force('center', d3.forceCenter(width() / 2, height() / 2))
+  .force('collision', d3.forceCollide(d => d.r + 18))
+  .alphaDecay(0.02)
+  .velocityDecay(0.3);
+
+// ── Draw links ─────────────────────────────────────────
+const linkSel = g.append('g').attr('class', 'links')
+  .selectAll('line')
+  .data(links)
+  .join('line')
+    .attr('class', 'link')
+    .attr('stroke', d => linkColors[d.type] || '#4a4a3a')
+    .attr('marker-end', d => `url(#arrow-${d.type})`);
+
+// ── Draw nodes ──────────────────────────────────────────
+const nodeSel = g.append('g').attr('class', 'nodes')
+  .selectAll('g')
+  .data(nodes)
+  .join('g')
+    .attr('class', d => `node ${d.group === 'CENTER' ? 'center-node' : ''} ${d.group === 'CAT' ? 'category-node' : ''}`)
+    .call(d3.drag()
+      .on('start', (e, d) => {
+        if (!e.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x; d.fy = d.y;
+      })
+      .on('drag', (e, d) => { d.fx = e.x; d.fy = e.y; })
+      .on('end', (e, d) => {
+        if (!e.active) simulation.alphaTarget(0);
+        d.fx = null; d.fy = null;
+      })
+    );
+
+nodeSel.append('circle')
+  .attr('r', d => d.r)
+  .attr('fill', d => d.color)
+  .attr('stroke', d => d.stroke)
+  .attr('stroke-width', 1.5);
+
+// Multi-line labels
+nodeSel.each(function(d) {
+  const el = d3.select(this);
+  const lines = d.label.split('\n');
+  const lineH = 12;
+  const totalH = (lines.length - 1) * lineH;
+  lines.forEach((line, i) => {
+    el.append('text')
+      .attr('y', i * lineH - totalH / 2)
+      .attr('font-size', d.group === 'CENTER' ? 11 : d.group === 'CAT' ? 9 : 9.5)
+      .attr('font-family', d.group === 'CAT' || d.group === 'CENTER' ? "'Cinzel', serif" : "'Crimson Pro', serif")
+      .attr('fill', d.group === 'CENTER' ? '#e8b96a' : d.group === 'CAT' ? '#e8d8b0' : '#d8c890')
+      .attr('font-weight', d.group === 'CENTER' || d.group === 'CAT' ? '600' : '400')
+      .attr('text-anchor', 'middle')
+      .attr('dominant-baseline', 'central')
+      .attr('pointer-events', 'none')
+      .attr('user-select', 'none')
+      .text(line);
+  });
+});
+
+// ── Tick ───────────────────────────────────────────────
+simulation.on('tick', () => {
+  linkSel
+    .attr('x1', d => d.source.x)
+    .attr('y1', d => d.source.y)
+    .attr('x2', d => d.target.x)
+    .attr('y2', d => d.target.y);
+  nodeSel.attr('transform', d => `translate(${d.x},${d.y})`);
+});
+
+// ── Tooltip ────────────────────────────────────────────
+const tooltip = document.getElementById('tooltip');
+const ttName = document.getElementById('tt-name');
+const ttDesc = document.getElementById('tt-desc');
+
+nodeSel
+  .on('mouseenter', (e, d) => {
+    ttName.textContent = d.label.replace('\n', ' ');
+    ttDesc.textContent = d.type;
+    tooltip.classList.add('visible');
+  })
+  .on('mousemove', e => {
+    tooltip.style.left = (e.clientX + 14) + 'px';
+    tooltip.style.top  = (e.clientY - 8) + 'px';
+  })
+  .on('mouseleave', () => tooltip.classList.remove('visible'));
+
+// ── Panel ──────────────────────────────────────────────
+const panel = document.getElementById('detail-panel');
+const pType = document.getElementById('p-type');
+const pName = document.getElementById('p-name');
+const pDesc = document.getElementById('p-desc');
+const pConns = document.getElementById('p-connections');
+const pStar = document.getElementById('p-star');
+let selectedNode = null;
+
+function showPanel(d) {
+  pType.textContent = d.type;
+  pName.textContent = d.label.replace('\n', ' ');
+  pDesc.textContent = d.desc;
+  pStar.innerHTML = d.star ? `<div class="star-note">${d.star}</div>` : '';
+
+  // Find connections
+  const conns = links
+    .filter(l => l.source.id === d.id || l.target.id === d.id)
+    .map(l => {
+      const other = l.source.id === d.id ? l.target : l.source;
+      return { node: other, label: l.label, dir: l.source.id === d.id ? '→' : '←' };
+    });
+
+  pConns.innerHTML = '';
+  conns.forEach(c => {
+    const div = document.createElement('div');
+    div.className = 'conn-item';
+    div.style.borderLeftColor = c.node.stroke;
+    div.innerHTML = `
+      <div class="conn-dot" style="background:${c.node.color};border-color:${c.node.stroke}"></div>
+      <div>
+        <div class="conn-name">${c.node.label.replace('\n', ' ')}</div>
+        ${c.label ? `<div class="conn-rel">${c.dir} ${c.label}</div>` : ''}
+      </div>`;
+    div.addEventListener('click', () => {
+      const target = nodeMap[c.node.id];
+      if (target) selectNode(target);
+    });
+    pConns.appendChild(div);
+  });
+
+  panel.classList.remove('hidden');
+}
+
+function selectNode(d) {
+  selectedNode = d;
+  showPanel(d);
+
+  // Highlight connected
+  const connectedIds = new Set([d.id]);
+  links.forEach(l => {
+    if (l.source.id === d.id) connectedIds.add(l.target.id);
+    if (l.target.id === d.id) connectedIds.add(l.source.id);
+  });
+
+  nodeSel
+    .classed('selected', nd => nd.id === d.id)
+    .classed('faded', nd => !connectedIds.has(nd.id));
+
+  linkSel
+    .classed('highlighted', l => l.source.id === d.id || l.target.id === d.id)
+    .classed('faded', l => l.source.id !== d.id && l.target.id !== d.id);
+}
+
+function clearSelection() {
+  selectedNode = null;
+  nodeSel.classed('selected faded', false);
+  linkSel.classed('highlighted faded', false);
+  panel.classList.add('hidden');
+}
+
+nodeSel.on('click', (e, d) => {
+  e.stopPropagation();
+  if (selectedNode && selectedNode.id === d.id) clearSelection();
+  else selectNode(d);
+});
+
+svg.on('click', clearSelection);
+document.getElementById('panel-close').addEventListener('click', clearSelection);
+
+// ── Zoom controls ─────────────────────────────────────
+document.getElementById('btn-zoom-in').addEventListener('click', () => {
+  svg.transition().duration(300).call(zoom.scaleBy, 1.4);
+});
+document.getElementById('btn-zoom-out').addEventListener('click', () => {
+  svg.transition().duration(300).call(zoom.scaleBy, 0.7);
+});
+document.getElementById('btn-reset').addEventListener('click', () => {
+  svg.transition().duration(500).call(
+    zoom.transform,
+    d3.zoomIdentity.translate(width() / 2, height() / 2).scale(0.75).translate(-width() / 2, -height() / 2)
+  );
+});
+
+// Initial zoom
+setTimeout(() => {
+  svg.call(zoom.transform,
+    d3.zoomIdentity.translate(width() / 2, height() / 2).scale(0.75).translate(-width() / 2, -height() / 2)
+  );
+}, 100);
+
+// Resize
+window.addEventListener('resize', () => {
+  simulation.force('center', d3.forceCenter(width() / 2, height() / 2));
+  simulation.alpha(0.1).restart();
+});
+</script>
+</body>
+</html>
