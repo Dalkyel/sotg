@@ -8,6 +8,7 @@ const links = [
     { source: 'root', target: 'cat-facciones', label: 'poder', type: 'cat' },
     { source: 'root', target: 'cat-eventos', label: '', type: 'arc' },
     { source: 'root', target: 'cat-norse', label: 'cultura', type: 'cat' },
+    // -------------------------------------------------------------------------------------- //
     // Cat-orka to orka chars
     { source: 'cat-orka', target: 'orka', label: '', type: 'arc' },
     { source: 'cat-orka', target: 'gudvarr', label: '', type: 'arc' },
@@ -58,7 +59,7 @@ const links = [
     { source: 'vesli', target: 'tennur', label: 'Es un', type: 'lore' },
     // Spert
     { source: 'spert', target: 'spertus', label: 'Es un', type: 'lore' },
-
+// -------------------------------------------------------------------------------------- //
     // Cat-varg to varg chars
     { source: 'cat-varg', target: 'varg', label: '', type: 'arc' },
     { source: 'cat-varg', target: 'bloodsworn', label: '', type: 'arc' },
@@ -88,41 +89,47 @@ const links = [
     { source: 'svik', target: 'bloodsworn', label: 'miembro', type: 'rel' },
     // Vol
     { source: 'vol', target: 'bloodsworn', label: 'miembro / thrall', type: 'rel' },
+    { source: 'vol', target: 'seidr', label: 'practica', type: 'magic' },
     // Glornir
     { source: 'glornir', target: 'bloodsworn', label: 'jefe', type: 'rel' },
     // Snepil
     { source: 'snepil', target: 'varg', label: 'fue su amo', type: 'rel' },
     { source: 'snepil', target: 'leif', label: 'padre', type: 'rel' },
     { source: 'snepil', target: 'orl', label: 'thrall de confianza', type: 'rel' },
-
+// -------------------------------------------------------------------------------------- //
     // Cat-elvar to elvar chars
     { source: 'cat-elvar', target: 'elvar', label: '', type: 'arc' },
-    { source: 'cat-elvar', target: 'agnar', label: '', type: 'arc' },
+    { source: 'cat-elvar', target: 'battle-grim', label: '', type: 'arc' },
+    // Elvar
     { source: 'elvar', target: 'grend', label: 'guardián', type: 'rel' },
-    { source: 'elvar', target: 'biorr', label: 'tensión', type: 'rel' },
+    { source: 'elvar', target: 'biorr', label: 'tensión', type: 'trama' },
+    // Agnar
     { source: 'agnar', target: 'sighvat', label: 'jefe/subof.', type: 'rel' },
-    { source: 'agnar', target: 'kraka', label: 'jefe/thrall', type: 'rel' },
-    { source: 'agnar', target: 'berak', label: 'capturó', type: 'conflict' },
     { source: 'agnar', target: 'iskalt', label: 'asaltó buscando a Berak', type: 'geo' },
-    { source: 'agnar', target: 'jarl-hrut', label: 'Mató a Jarl Hrut durante el asalto a Iskalt', type: 'conflict' },
-    { source: 'agnar', target: 'wave-jarl', label: 'capitan', type: 'rel' },
-    { source: 'berak', target: 'mujer-berak', label: 'esposa', type: 'rel' },
-    { source: 'berak', target: 'hijo-berak', label: 'esposa', type: 'rel' },
-    { source: 'berak', target: 'battle-grim', label: 'Buscado y capturado', type: 'trama' },
+    { source: 'agnar', target: 'jarl-hrut', label: 'Mató a Jarl Hrut durante el asalto a Iskalt', type: 'event' },
+    // Berak
+    { source: 'berak', target: 'mujer-berak', label: 'esposo', type: 'rel' },
+    { source: 'berak', target: 'hijo-berak', label: 'padre', type: 'rel' },
+    // battle Grim
+    { source: 'battle-grim', target: 'berak', label: 'Buscado y capturado', type: 'event' },
+    { source: 'battle-grim', target: 'wave-jarl', label: 'Navio', type: 'rel' },
     { source: 'battle-grim', target: 'sjavarom', label: 'Pelearon contra', type: 'Evento' },
+    // mujer Berak
     { source: 'mujer-berak', target: 'sjavarom', label: 'controló', type: 'magic' },
     { source: 'mujer-berak', target: 'seidr', label: 'practica', type: 'magic' },
     { source: 'mujer-berak', target: 'snaka', label: 'sangre confirmada', type: 'lore' },
     { source: 'mujer-berak', target: 'tainted', label: 'sangre Snaka', type: 'lore' },
+    // Sighvat
     { source: 'sighvat', target: 'kraka', label: 'controla', type: 'rel' },
     { source: 'sighvat', target: 'hundur', label: 'controla', type: 'rel' },
-    { source: 'kraka', target: 'battle-grim', label: 'miembro', type: 'rel' },
+    // kraka
+    { source: 'kraka', target: 'battle-grim', label: 'miembro/thrall', type: 'rel' },
     { source: 'kraka', target: 'wave-jarl', label: 'protege con Seiðr', type: 'magic' },
     { source: 'kraka', target: 'seidr', label: 'practica', type: 'magic' },
-    { source: 'hundur', target: 'battle-grim', label: 'miembro', type: 'rel' },
+    // hundur
+    { source: 'hundur', target: 'battle-grim', label: 'miembro/thrall', type: 'rel' },
     { source: 'hundur', target: 'berak', label: 'rastreó', type: 'event' },
-    { source: 'vol', target: 'seidr', label: 'practica', type: 'magic' },
-
+// -------------------------------------------------------------------------------------- //
     // Cat-mundo
     { source: 'cat-mundo', target: 'tainted', label: '', type: 'arc' },
     { source: 'cat-mundo', target: 'vigrið', label: '', type: 'arc' },
