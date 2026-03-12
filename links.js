@@ -8,41 +8,55 @@ const links = [
     { source: 'root', target: 'cat-facciones', label: 'poder', type: 'cat' },
     { source: 'root', target: 'cat-eventos', label: '', type: 'arc' },
     { source: 'root', target: 'cat-norse', label: 'cultura', type: 'cat' },
-
     // Cat-orka to orka chars
     { source: 'cat-orka', target: 'orka', label: '', type: 'arc' },
     { source: 'cat-orka', target: 'gudvarr', label: '', type: 'arc' },
     { source: 'cat-orka', target: 'virk', label: '', type: 'arc' },
     { source: 'cat-orka', target: 'asgrim', label: '', type: 'arc' },
+    // Orka
     { source: 'orka', target: 'thorkel', label: 'Esposo', type: 'rel' },
     { source: 'orka', target: 'breca', label: 'Hijo', type: 'rel' },
-    { source: 'orka', target: 'asgrim-death', label: 'descubre', type: 'rel' },
+    { source: 'orka', target: 'asgrim-death', label: 'descubre', type: 'event' },
     { source: 'orka', target: 'spert', label: 'vínculo sangre', type: 'magic' },
     { source: 'orka', target: 'virk', label: 'comercian', type: 'event' },
     { source: 'orka', target: 'sigrun', label: 'la cuestiona en el Althing', type: 'event' },
-    { source: 'thorkel', target: 'virk', label: 'comercian', type: 'event' },
+    { source: 'orka', target: 'thrall-sigrun', label: 'observa lamiendo sangre', type: 'event' },
+    // Thorkel
+    { source: 'thorkel', target: 'virk', label: 'comercian', type: 'history' },
     { source: 'thorkel', target: 'breca', label: 'Hijo', type: 'rel' },
-    { source: 'thorkel', target: 'asgrim-death', label: 'descubre', type: 'rel' },
+    { source: 'thorkel', target: 'asgrim-death', label: 'descubre', type: 'event' },
+    { source: 'thorkel', target: 'thrall-sigrun', label: 'pateó / identificó Ulfrir-kin', type: 'event' },
+    // Breca
     { source: 'breca', target: 'vesli', label: 'protege / jura', type: 'magic' },
     { source: 'breca', target: 'hueso-dios-fellur', label: 'reacción', type: 'trama' },
-    { source: 'breca', target: 'asgrim-death', label: 'descubre', type: 'rel' },
+    { source: 'breca', target: 'asgrim-death', label: 'descubre', type: 'event' },
+    { source: 'breca', target: 'tainted', label: 'posible sangre', type: 'trama' },
+    // Gudvarr
     { source: 'gudvarr', target: 'sigrun', label: 'sobrino', type: 'rel' },
-    { source: 'helka', target: 'sigrun', label: 'juro lealtad', type: 'rel' },
-    { source: 'virk', target: 'harek', label: 'patrón niños', type: 'trama' },
-    { source: 'virk', target: 'mord-lif', label: 'hijos', type: 'trama' },
-    { source: 'thrall-sigrun', target: 'sigrun', label: 'sirve a / guardaespaldas', type: 'rel' },
-    { source: 'thrall-sigrun', target: 'tainted', label: '¿sangre divina?', type: 'trama' },
-    { source: 'thrall-sigrun', target: 'ulfrir', label: 'Poder de', type: 'rel' },
-    { source: 'asgrim', target: 'idrun', label: 'esposo/a', type: 'rel' },
-    { source: 'asgrim', target: 'asgrim-death', label: 'muerto en', type: 'rel' },
-    { source: 'asgrim', target: 'harek', label: 'padre', type: 'rel' },
-    { source: 'idrun', target: 'harek', label: 'madre', type: 'rel' },
-    { source: 'idrun', target: 'asgrim-death', label: 'muerta en', type: 'rel' },
-    { source: 'sigrun', target: 'fellur', label: 'jarl de', type: 'geo' },
+    // Arild
     { source: 'arild', target: 'sigrun', label: 'Drengr de', type: 'rel' },
     { source: 'arild', target: 'gudvarr', label: 'acompaña a', type: 'rel' },
+    // Virk
+    { source: 'virk', target: 'mord-lif', label: 'hijos', type: 'trama' },
+    // Thrall de Sigrun
+    { source: 'thrall-sigrun', target: 'sigrun', label: 'sirve a / guardaespaldas', type: 'rel' },
+    { source: 'thrall-sigrun', target: 'tainted', label: '¿sangre divina?', type: 'trama' },
+    { source: 'thrall-sigrun', target: 'ulfrir', label: 'sangre confirmada', type: 'rel' },
+    // Asgrim
+    { source: 'asgrim', target: 'idrun', label: 'esposo/a', type: 'rel' },
+    { source: 'asgrim', target: 'asgrim-death', label: 'muerto en', type: 'event' },
+    { source: 'asgrim', target: 'harek', label: 'padre', type: 'rel' },
+    // Idrun
+    { source: 'idrun', target: 'harek', label: 'madre', type: 'rel' },
+    { source: 'idrun', target: 'asgrim-death', label: 'muerta en', type: 'event' },
+    // Sigrun
+    { source: 'sigrun', target: 'fellur', label: 'jarl de', type: 'arc' },
+    { source: 'sigrun', target: 'helka', label: 'juro lealtad', type: 'rel' },
+    // Falki
     { source: 'falki', target: 'oath-rock', label: 'asiste Althing', type: 'event' },
-    { source: 'vesli', target: 'tennur', label: 'tennúr', type: 'Criatura' },
+    // Vesli
+    { source: 'vesli', target: 'tennur', label: 'Es un', type: 'lore' },
+    // Spert
     { source: 'spert', target: 'spertus', label: 'Es un', type: 'lore' },
 
     // Cat-varg to varg chars
@@ -50,16 +64,20 @@ const links = [
     { source: 'cat-varg', target: 'glornir', label: '', type: 'arc' },
     { source: 'cat-varg', target: 'snepil', label: '', type: 'arc' },
     { source: 'cat-varg', target: 'jarl-logur', label: '', type: 'arc' },
+    // Varg
     { source: 'varg', target: 'froya', label: 'hermana muerta', type: 'rel' },
     { source: 'varg', target: 'leif', label: 'enemigo', type: 'conflict' },
     { source: 'varg', target: 'liga', label: 'visita', type: 'geo' },
     { source: 'varg', target: 'svik', label: 'compañero', type: 'rel' },
     { source: 'varg', target: 'guerrero-oscuro', label: 'lo reconoce sin saber', type: 'trama' },
     { source: 'varg', target: 'vol', label: 'la busca para akáll', type: 'goal' },
-    { source: 'varg', target: 'bloodsworn', label: 'nuevo miembro', type: 'rel' },
-    { source: 'rokia', target: 'varg', label: 'entrena (Cap.11)', type: 'rel' },
-    { source: 'rokia', target: 'glornir', label: 'órdenes de', type: 'rel' },
+    { source: 'varg', target: 'bloodsworn', label: 'nuevo miembro', type: 'event' },
+    { source: 'varg', target: 'akall', label: 'necesita', type: 'goal' },
+    { source: 'varg', target: 'tainted', label: 'posible sangre', type: 'trama' },
+    // Rokia
+    { source: 'rokia', target: 'varg', label: 'entrena', type: 'goal' },
     { source: 'rokia', target: 'bloodsworn', label: 'miembro', type: 'rel' },
+    // Guerrero Oscuro
     { source: 'guerrero-oscuro', target: 'glornir', label: 'sparring / misterio', type: 'trama' },
     { source: 'guerrero-oscuro', target: 'bloodsworn', label: 'miembro', type: 'rel' },
     { source: 'mujer-plateada', target: 'bloodsworn', label: 'miembro', type: 'rel' },
@@ -92,6 +110,8 @@ const links = [
     { source: 'battle-grim', target: 'sjavarom', label: 'Pelearon contra', type: 'Evento' },
     { source: 'mujer-berak', target: 'sjavarom', label: 'controló', type: 'magic' },
     { source: 'mujer-berak', target: 'seidr', label: 'practica', type: 'magic' },
+    { source: 'mujer-berak', target: 'snaka', label: 'sangre confirmada', type: 'lore' },
+    { source: 'mujer-berak', target: 'tainted', label: 'sangre Snaka', type: 'lore' },
     { source: 'sighvat', target: 'kraka', label: 'controla', type: 'rel' },
     { source: 'sighvat', target: 'hundur', label: 'controla', type: 'rel' },
     { source: 'kraka', target: 'battle-grim', label: 'miembro', type: 'rel' },
@@ -117,7 +137,6 @@ const links = [
     { source: 'snaka', target: 'vigrið', label: 'sus huesos = montañas', type: 'lore' },
     { source: 'tainted', target: 'berak', label: 'Berserkir', type: 'lore' },
     { source: 'tainted', target: 'kraka', label: 'Tainted', type: 'lore' },
-    { source: 'tainted', target: 'mujer-berak', label: 'sangre Snaka', type: 'lore' },
     { source: 'berser', target: 'berak', label: 'herencia', type: 'lore' },
     { source: 'snaka', target: 'mujer-berak', label: 'herencia', type: 'lore' },
     { source: 'likrafa', target: 'oskutred', label: 'encadenada bajo', type: 'lore' },
@@ -126,9 +145,14 @@ const links = [
     { source: 'gudfall', target: 'cat-eventos', label: '', type: 'history' },
     { source: 'cat-eventos', target: 'holmganga-event', label: '', type: 'event' },
     { source: 'cat-eventos', target: 'asgrim-death', label: '', type: 'event' },
+    // holmganga virk vs gudvarr
     { source: 'holmganga-event', target: 'virk', label: 'combatiente', type: 'event' },
     { source: 'holmganga-event', target: 'gudvarr', label: 'combatiente', type: 'event' },
-    { source: 'holmganga-event', target: 'orka', label: 'segundo', type: 'event' },
+    { source: 'holmganga-event', target: 'orka', label: 'segundo de Virk', type: 'event' },
+    { source: 'holmganga-event', target: 'thrall-sigrun', label: 'mató a Virk', type: 'event' },
+    { source: 'holmganga-event', target: 'arild', label: 'segundo de Guðvarr', type: 'event' },
+    { source: 'holmganga-event', target: 'mord-lif', label: 'presenciaron', type: 'event' },
+    { source: 'holmganga-event', target: 'oath-rock', label: 'lugar', type: 'geo' },
 
     // Cat-dioses
     { source: 'snaka', target: 'cat-dioses', label: '', type: 'lore' },
@@ -180,7 +204,6 @@ const links = [
     { source: 'ninos-robados', target: 'harek', label: 'primer caso', type: 'trama' },
     { source: 'ninos-robados', target: 'asgrim-death', label: 'conecta con', type: 'trama' },
     { source: 'ninos-robados', target: 'orka', label: 'investiga', type: 'trama' },
-    { source: 'akall', target: 'varg', label: 'necesita', type: 'goal' },
     { source: 'akall', target: 'froya', label: 'invocará a', type: 'goal' },
     { source: 'berak-venta', target: 'berak', label: 'vendido', type: 'trama' },
     { source: 'berak-venta', target: 'snakavik', label: 'destino', type: 'geo' },
@@ -225,6 +248,7 @@ const links = [
     { source: 'slyda', target: 'varg', label: 'dejó pasar', type: 'event' },
     { source: 'jarl-orlyg', target: 'svelgarth', label: 'jarl de', type: 'geo' },
     { source: 'haraldurson', target: 'howbyr', label: 'viven en', type: 'geo' },
+    { source: 'emp-kirill', target: 'gravka', label: 'gobierna desde', type: 'geo' },
 
     // ── ENLACES LUGARES ADICIONALES ───────────────────────────────
     { source: 'vigrið', target: 'howbyr', label: 'villa en', type: 'geo' },
@@ -235,6 +259,8 @@ const links = [
     { source: 'oskutred', target: 'vergelmir', label: 'bajo él', type: 'lore' },
     { source: 'likrafa', target: 'vergelmir', label: 'encadenada en', type: 'lore' },
     { source: 'iskalt', target: 'islas-hielo', label: 'al sur de', type: 'geo' },
+    { source: 'iskidan', target: 'gravka', label: 'capital', type: 'geo' },
+    { source: 'iskidan', target: 'cat-mundo', label: 'capital', type: 'geo' },
 
     // ── ENLACES OBJETOS ────────────────────────────────────────────
     { source: 'collares', target: 'cat-objetos', label: '', type: 'rel' },
@@ -277,9 +303,6 @@ const links = [
     { source: 'cat-norse', target: 'hjalmar', label: '', type: 'arc' },
     { source: 'cat-norse', target: 'torc', label: '', type: 'arc' },
     { source: 'cat-norse', target: 'armring', label: '', type: 'arc' },
-    { source: 'holmganga', target: 'virk', label: 'participó', type: 'event' },
-    { source: 'holmganga', target: 'gudvarr', label: 'participó', type: 'event' },
-    { source: 'holmganga', target: 'oath-rock', label: 'lugar', type: 'geo' },
     { source: 'althing', target: 'oath-rock', label: 'lugar', type: 'geo' },
     { source: 'althing', target: 'sigrun', label: 'anunció juramento', type: 'event' },
     { source: 'niding', target: 'gudvarr', label: 'insultó a Virk', type: 'event' },
@@ -404,17 +427,4 @@ const links = [
     { source: 'second-combat', target: 'arild', label: 'segundo de Guðvarr', type: 'event' },
     { source: 'second-combat', target: 'orka', label: 'segundo de Virk', type: 'event' },
     { source: 'second-combat', target: 'holmganga', label: 'rol en duelo', type: 'lore' },
-    // ── ENLACES ADICIONALES CAP 12 Y CONEXIONES MENORES ──────────
-    { source: 'thorkel', target: 'thrall-sigrun', label: 'pateó / identificó Ulfrir-kin', type: 'event' },
-    { source: 'orka', target: 'thrall-sigrun', label: 'observa lamiendo sangre', type: 'event' },
-    { source: 'holmganga-event', target: 'thrall-sigrun', label: 'mató a Virk', type: 'event' },
-    { source: 'holmganga-event', target: 'arild', label: 'segundo de Guðvarr', type: 'event' },
-    { source: 'holmganga-event', target: 'mord-lif', label: 'presenciaron', type: 'event' },
-    { source: 'iskidan', target: 'gravka', label: 'capital', type: 'geo' },
-    { source: 'iskidan', target: 'cat-mundo', label: 'capital', type: 'geo' },
-    { source: 'emp-kirill', target: 'gravka', label: 'gobierna desde', type: 'geo' },
-    { source: 'varg', target: 'tainted', label: 'posible sangre', type: 'trama' },
-    { source: 'breca', target: 'tainted', label: 'posible sangre', type: 'trama' },
-    { source: 'mujer-berak', target: 'snaka', label: 'sangre confirmada', type: 'lore' },
-    { source: 'thrall-sigrun', target: 'ulfrir', label: 'sangre confirmada', type: 'lore' },
 ];
