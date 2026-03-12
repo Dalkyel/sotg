@@ -224,7 +224,6 @@ const links = [
     { source: 'slyda', target: 'liga', label: 'guarda puerta', type: 'rel' },
     { source: 'slyda', target: 'varg', label: 'dejó pasar', type: 'event' },
     { source: 'jarl-orlyg', target: 'svelgarth', label: 'jarl de', type: 'geo' },
-    { source: 'emp-kirill', target: 'iskidan', label: 'gobierna', type: 'geo' },
     { source: 'haraldurson', target: 'howbyr', label: 'viven en', type: 'geo' },
 
     // ── ENLACES LUGARES ADICIONALES ───────────────────────────────
@@ -405,4 +404,17 @@ const links = [
     { source: 'second-combat', target: 'arild', label: 'segundo de Guðvarr', type: 'event' },
     { source: 'second-combat', target: 'orka', label: 'segundo de Virk', type: 'event' },
     { source: 'second-combat', target: 'holmganga', label: 'rol en duelo', type: 'lore' },
+    // ── ENLACES ADICIONALES CAP 12 Y CONEXIONES MENORES ──────────
+    { source: 'thorkel', target: 'thrall-sigrun', label: 'pateó / identificó Ulfrir-kin', type: 'event' },
+    { source: 'orka', target: 'thrall-sigrun', label: 'observa lamiendo sangre', type: 'event' },
+    { source: 'holmganga-event', target: 'thrall-sigrun', label: 'mató a Virk', type: 'event' },
+    { source: 'holmganga-event', target: 'arild', label: 'segundo de Guðvarr', type: 'event' },
+    { source: 'holmganga-event', target: 'mord-lif', label: 'presenciaron', type: 'event' },
+    { source: 'iskidan', target: 'gravka', label: 'capital', type: 'geo' },
+    { source: 'iskidan', target: 'cat-mundo', label: 'capital', type: 'geo' },
+    { source: 'emp-kirill', target: 'gravka', label: 'gobierna desde', type: 'geo' },
+    { source: 'varg', target: 'tainted', label: 'posible sangre', type: 'trama' },
+    { source: 'breca', target: 'tainted', label: 'posible sangre', type: 'trama' },
+    { source: 'mujer-berak', target: 'snaka', label: 'sangre confirmada', type: 'lore' },
+    { source: 'thrall-sigrun', target: 'ulfrir', label: 'sangre confirmada', type: 'lore' },
 ];
