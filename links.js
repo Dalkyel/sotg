@@ -25,6 +25,7 @@ const links = [
     { source: 'thorkel', target: 'breca', label: 'Hijo', type: 'rel' },
     { source: 'thorkel', target: 'asgrim-death', label: 'descubre', type: 'event' },
     { source: 'thorkel', target: 'thrall-sigrun', label: 'pateó / identificó Ulfrir-kin', type: 'event' },
+    { source: 'thorkel', target: 'drengr', label: 'se considera', type: 'rel' },
     // Breca
     { source: 'breca', target: 'vesli', label: 'protege / jura', type: 'magic' },
     { source: 'breca', target: 'hueso-dios-fellur', label: 'reacción', type: 'trama' },
@@ -42,6 +43,7 @@ const links = [
     { source: 'thrall-sigrun', target: 'sigrun', label: 'sirve a / guardaespaldas', type: 'rel' },
     { source: 'thrall-sigrun', target: 'tainted', label: '¿sangre divina?', type: 'trama' },
     { source: 'thrall-sigrun', target: 'ulfrir', label: 'sangre confirmada', type: 'rel' },
+    { source: 'thrall-sigrun', target: 'seax', label: 'usa dos', type: 'rel' },
     // Asgrim
     { source: 'asgrim', target: 'idrun', label: 'esposo/a', type: 'rel' },
     { source: 'asgrim', target: 'asgrim-death', label: 'muerto en', type: 'event' },
@@ -226,6 +228,8 @@ const links = [
     // iskidan
     { source: 'iskidan', target: 'cat-mundo', label: 'capital', type: 'geo' },
     { source: 'gravka', target: 'iskidan', label: 'capital', type: 'geo' },
+    // oath-rock
+    { source: 'oath-rock', target: 'althing', label: 'lugar', type: 'geo' },
     // -------------------------------------------------------------------------------------- //
     // Vaesen y magia
     { source: 'vaesen-gen', target: 'cat-mundo', label: '', type: 'arc' },
@@ -300,6 +304,9 @@ const links = [
     // ── ENLACES CULTURA NÓRDICA ────────────────────────────────────
     { source: 'holmganga', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'holmganga', target: 'second-combat', label: 'rol en duelo', type: 'lore' },
+    { source: 'holmgang-rules', target: 'holmganga', label: 'reglas del', type: 'lore' },
+    { source: 'holmgang-rules', target: 'virk', label: 'violó reglas', type: 'event' },
+    { source: 'holmgang-rules', target: 'gudvarr', label: 'se rindió legalmente', type: 'event' },
     { source: 'althing', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'niding', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'drengr', target: 'cat-norse', label: '', type: 'arc' },
@@ -324,11 +331,9 @@ const links = [
     { source: 'hjalmar', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'torc', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'armring', target: 'cat-norse', label: '', type: 'arc' },
-    { source: 'althing', target: 'oath-rock', label: 'lugar', type: 'geo' },
     { source: 'niding', target: 'gudvarr', label: 'insultó a Virk', type: 'event' },
     { source: 'niding', target: 'virk', label: 'insultado', type: 'event' },
     { source: 'drengr', target: 'gudvarr', label: 'se considera', type: 'rel' },
-    { source: 'drengr', target: 'thorkel', label: 'se considera', type: 'rel' },
     { source: 'thrall', target: 'varg', label: 'ex-thrall', type: 'rel' },
     { source: 'thrall', target: 'thorkel', label: 'ex-thrall', type: 'rel' },
     { source: 'thrall', target: 'vol', label: 'thrall', type: 'rel' },
@@ -346,7 +351,6 @@ const links = [
     { source: 'warrior-braid', target: 'guerrero-oscuro', label: 'lleva', type: 'rel' },
     { source: 'wyrd', target: 'vergelmir', label: 'destino tras muerte', type: 'lore' },
     { source: 'drakkar', target: 'wave-jarl', label: 'Wave-Jarl es un drakkar', type: 'rel' },
-    { source: 'drakkar', target: 'battle-grim', label: 'tienen uno', type: 'rel' },
     { source: 'drakkar', target: 'bloodsworn', label: 'tienen uno', type: 'rel' },
     { source: 'faering', target: 'virk', label: 'probablemente tenía', type: 'rel' },
     { source: 'faering', target: 'rio-skarpain', label: 'huyeron en barcas', type: 'trama' },
@@ -355,7 +359,6 @@ const links = [
     { source: 'karvi', target: 'sigrun', label: 'probable embarcación', type: 'rel' },
     { source: 'knarr', target: 'liga', label: 'comercio', type: 'geo' },
     { source: 'byrding', target: 'helka', label: 'necesita para expansión', type: 'trama' },
-    { source: 'seax', target: 'thrall-sigrun', label: 'usa dos', type: 'rel' },
     { source: 'seax', target: 'thorkel', label: 'usa ritualmente', type: 'rel' },
     { source: 'seax', target: 'virk', label: 'asesinado con', type: 'event' },
     { source: 'seax', target: 'nacken', label: 'ritual protección', type: 'magic' },
@@ -387,7 +390,7 @@ const links = [
     { source: 'armring', target: 'svik', label: 'lleva plata enrollados', type: 'rel' },
     { source: 'armring', target: 'glornir', label: 'Dador-de-Oro', type: 'rel' },
     { source: 'armring', target: 'bloodsworn', label: 'sistema lealtad', type: 'lore' },
-    { source: 'cat-norse', target: 'hird', label: '', type: 'arc' },
+    { source: 'hird', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'cat-norse', target: 'skjaldborg', label: '', type: 'arc' },
     { source: 'cat-norse', target: 'holmgang-rules', label: '', type: 'arc' },
     { source: 'cat-norse', target: 'funeral-rites', label: '', type: 'arc' },
@@ -411,9 +414,6 @@ const links = [
     { source: 'skjaldborg', target: 'varg', label: 'entrena para', type: 'rel' },
     { source: 'skjaldborg', target: 'rokia', label: 'entrena a Varg', type: 'rel' },
     { source: 'skjaldborg', target: 'skjoldr', label: 'usa escudos', type: 'lore' },
-    { source: 'holmgang-rules', target: 'holmganga', label: 'reglas del', type: 'lore' },
-    { source: 'holmgang-rules', target: 'virk', label: 'violó reglas', type: 'event' },
-    { source: 'holmgang-rules', target: 'gudvarr', label: 'se rindió legalmente', type: 'event' },
     { source: 'funeral-rites', target: 'vergelmir', label: 'razón de armas', type: 'lore' },
     { source: 'funeral-rites', target: 'virk', label: 'cuerpo envuelto', type: 'event' },
     { source: 'funeral-rites', target: 'mord-lif', label: 'envuelven a padre', type: 'event' },
