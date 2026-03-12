@@ -323,3 +323,28 @@ window.addEventListener('resize', () => {
   simulation.force('center', d3.forceCenter(width() / 2, height() / 2));
   simulation.alpha(0.1).restart();
 });
+
+// ── Summary Panel ─────────────────────────────────────
+const summaryPanel = document.getElementById('summary-panel');
+const summaryContent = document.getElementById('summary-content');
+const btnSummaries = document.getElementById('btn-summaries');
+const summaryClose = document.getElementById('summary-close');
+
+function loadSummaries() {
+  summaryContent.innerHTML = chapterSummaries.map(ch => `
+    <div class="chapter-item">
+      <div class="chapter-title">${ch.title}</div>
+      <div class="chapter-text">${ch.summary}</div>
+    </div>
+  `).join('');
+}
+
+function toggleSummaryPanel() {
+  summaryPanel.classList.toggle('visible');
+  if (summaryPanel.classList.contains('visible') && summaryContent.innerHTML === '') {
+    loadSummaries();
+  }
+}
+
+btnSummaries.addEventListener('click', toggleSummaryPanel);
+summaryClose.addEventListener('click', () => summaryPanel.classList.remove('visible'));
