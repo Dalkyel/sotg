@@ -67,6 +67,7 @@ const links = [
     { source: 'einar', target: 'varg', label: 'combate por puesto', type: 'rel' },
     { source: 'svik', target: 'bloodsworn', label: 'miembro', type: 'rel' },
     { source: 'vol', target: 'bloodsworn', label: 'miembro', type: 'rel' },
+    { source: 'glornir', target: 'bloodsworn', label: 'jefe', type: 'rel' },
     { source: 'glornir', target: 'vol', label: 'jefe / thrall', type: 'rel' },
     { source: 'glornir', target: 'einar', label: 'jefe / campeón', type: 'rel' },
     { source: 'glornir', target: 'svik', label: 'jefe', type: 'rel' },
@@ -123,11 +124,11 @@ const links = [
 
     // Cat-eventos
     { source: 'gudfall', target: 'cat-eventos', label: '', type: 'history' },
-    { source: 'cat-eventos', target: 'holmganga', label: '', type: 'event' },
+    { source: 'cat-eventos', target: 'holmganga-event', label: '', type: 'event' },
     { source: 'cat-eventos', target: 'asgrim-death', label: '', type: 'event' },
-    { source: 'holmganga', target: 'virk', label: 'combatiente', type: 'event' },
-    { source: 'holmganga', target: 'gudvarr', label: 'combatiente', type: 'event' },
-    { source: 'holmganga', target: 'orka', label: 'segundo', type: 'event' },
+    { source: 'holmganga-event', target: 'virk', label: 'combatiente', type: 'event' },
+    { source: 'holmganga-event', target: 'gudvarr', label: 'combatiente', type: 'event' },
+    { source: 'holmganga-event', target: 'orka', label: 'segundo', type: 'event' },
 
     // Cat-dioses
     { source: 'snaka', target: 'cat-dioses', label: '', type: 'lore' },
@@ -256,6 +257,7 @@ const links = [
     { source: 'cat-norse', target: 'thrall', label: '', type: 'arc' },
     { source: 'cat-norse', target: 'karl', label: '', type: 'arc' },
     { source: 'cat-norse', target: 'jarl', label: '', type: 'arc' },
+    { source: 'cat-norse', target: 'blood-oath', label: '', type: 'arc' },
     { source: 'cat-norse', target: 'wyrd', label: '', type: 'arc' },
     { source: 'cat-norse', target: 'warrior-braid', label: '', type: 'arc' },
     { source: 'cat-norse', target: 'skald', label: '', type: 'arc' },
@@ -295,8 +297,8 @@ const links = [
     { source: 'jarl', target: 'sigrun', label: 'es', type: 'rel' },
     { source: 'jarl', target: 'storr', label: 'es', type: 'rel' },
     { source: 'jarl', target: 'jarl-logur', label: 'es', type: 'rel' },
-    { source: 'bloodsworn', target: 'breca', label: 'juramento con Vesli', type: 'magic' },
-    { source: 'bloodsworn', target: 'sigrun', label: 'juró a Helka', type: 'event' },
+    { source: 'blood-oath', target: 'breca', label: 'juramento con Vesli', type: 'magic' },
+    { source: 'blood-oath', target: 'sigrun', label: 'juró a Helka', type: 'event' },
     { source: 'warrior-braid', target: 'agnar', label: 'lleva', type: 'rel' },
     { source: 'warrior-braid', target: 'elvar', label: 'lleva', type: 'rel' },
     { source: 'warrior-braid', target: 'guerrero-oscuro', label: 'lleva', type: 'rel' },
