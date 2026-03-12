@@ -56,7 +56,7 @@ const links = [
     { source: 'vesli', target: 'tennur', label: 'Es un', type: 'lore' },
     // Spert
     { source: 'spert', target: 'spertus', label: 'Es un', type: 'lore' },
-// -------------------------------------------------------------------------------------- //
+    // -------------------------------------------------------------------------------------- //
     // Cat-varg to varg chars
     // Varg
     { source: 'varg', target: 'cat-varg', label: '', type: 'arc' },
@@ -94,7 +94,7 @@ const links = [
     { source: 'snepil', target: 'varg', label: 'fue su amo', type: 'rel' },
     { source: 'snepil', target: 'leif', label: 'padre', type: 'rel' },
     { source: 'snepil', target: 'orl', label: 'thrall de confianza', type: 'rel' },
-// -------------------------------------------------------------------------------------- //
+    // -------------------------------------------------------------------------------------- //
     // Cat-elvar to elvar chars
     // Elvar
     { source: 'elvar', target: 'cat-elvar', label: '', type: 'arc' },
@@ -162,7 +162,7 @@ const links = [
     { source: 'snaka', target: 'cat-dioses', label: '', type: 'lore' },
     { source: 'snaka', target: 'vigrið', label: 'sus huesos = montañas', type: 'lore' },
     { source: 'likrafa', target: 'cat-dioses', label: '', type: 'lore' },
-    { source: 'likrafa', target: 'oskutred', label: 'encadenada bajo', type: 'lore' },
+    { source: 'likrafa', target: 'vergelmir', label: 'encadenada en oskutred', type: 'lore' },
     { source: 'orna', target: 'cat-dioses', label: '', type: 'lore' },
     { source: 'ulfrir', target: 'cat-dioses', label: '', type: 'lore' },
     // -------------------------------------------------------------------------------------- //
@@ -174,25 +174,38 @@ const links = [
     { source: 'galdramadr', target: 'cat-magia', label: '', type: 'arc' },
     // -------------------------------------------------------------------------------------- //
     // Lugares
+    // vigrið
     { source: 'vigrið', target: 'cat-mundo', label: '', type: 'arc' },
-    { source: 'vigrið', target: 'iskalt', label: 'isla en', type: 'geo' },
-    { source: 'vigrið', target: 'snakavik', label: 'ciudad en', type: 'geo' },
-    { source: 'vigrið', target: 'darl', label: 'capital', type: 'geo' },
-    { source: 'vigrið', target: 'howbyr', label: 'villa en', type: 'geo' },
-    { source: 'vigrið', target: 'kergarth', label: 'villa en', type: 'geo' },
-    { source: 'vigrið', target: 'svelgarth', label: 'ciudad en', type: 'geo' },
-    { source: 'vigrið', target: 'rio-skarpain', label: 'río en', type: 'geo' },
-    { source: 'vigrið', target: 'islas-hielo', label: 'islas al norte', type: 'geo' },
+    // iskalt
+    { source: 'iskalt', target: 'vigrið', label: 'isla en', type: 'geo' },
+    { source: 'iskalt', target: 'oskutred', label: 'terremotos = Lik-Rifa', type: 'magic' },
+    // snakavik
+    { source: 'snakavik', target: 'vigrið', label: 'ciudad en', type: 'geo' },
+    // darl
+    { source: 'darl', target: 'vigrið', label: 'capital', type: 'geo' },
+    // howbyr
+    { source: 'howbyr', target: 'vigrið', label: 'villa en', type: 'geo' },
+    // kergarth
+    { source: 'kergarth', target: 'vigrið', label: 'villa en', type: 'geo' },
+    // svelgarth
+    { source: 'svelgarth', target: 'vigrið', label: 'ciudad en', type: 'geo' },
+    // skarpain
+    { source: 'rio-skarpain', target: 'vigrið', label: 'río en', type: 'geo' },
+    // islas hielo
+    { source: 'islas-hielo', target: 'vigrið', label: 'islas al norte', type: 'geo' },
+    { source: 'islas-hielo', target: 'iskalt', label: 'al sur de', type: 'geo' },
+    { source: 'islas-hielo', target: 'araña-hielo', label: 'hábitat', type: 'lore' },
+    // fellur
     { source: 'fellur', target: 'vigrið', label: 'ciudad en', type: 'geo' },
     { source: 'fellur', target: 'oath-rock', label: 'isla en el fiordo', type: 'geo' },
+    // liga
     { source: 'liga', target: 'vigrið', label: 'ciudad en', type: 'geo' },
-    { source: 'iskalt', target: 'oskutred', label: 'terremotos = Lik-Rifa', type: 'magic' },
-    { source: 'iskalt', target: 'islas-hielo', label: 'al sur de', type: 'geo' },
-    { source: 'islas-hielo', target: 'araña-hielo', label: 'hábitat', type: 'lore' },
-    { source: 'oskutred', target: 'vergelmir', label: 'bajo él', type: 'lore' },
-    { source: 'likrafa', target: 'vergelmir', label: 'encadenada en', type: 'lore' },
-    { source: 'iskidan', target: 'gravka', label: 'capital', type: 'geo' },
+    // vergelmir
+    { source: 'vergelmir', target: 'oskutred', label: 'bajo él', type: 'lore' },
+    // iskidan
     { source: 'iskidan', target: 'cat-mundo', label: 'capital', type: 'geo' },
+    { source: 'gravka', target: 'iskidan', label: 'capital', type: 'geo' },
+    // -------------------------------------------------------------------------------------- //
     // Vaesen y magia
     { source: 'vaesen-gen', target: 'cat-mundo', label: '', type: 'arc' },
     { source: 'vaesen-gen', target: 'tennur', label: 'Es un', type: 'lore' },
@@ -206,7 +219,6 @@ const links = [
     { source: 'vaesen-gen', target: 'skraeling', label: '', type: 'lore' },
     { source: 'vaesen-gen', target: 'faunir', label: '', type: 'lore' },
     { source: 'vaesen-gen', target: 'froa', label: '', type: 'lore' },
-
     { source: 'nacken', target: 'rio-skarpain', label: 'posible hábitat', type: 'lore' },
     // Tramas
     { source: 'cat-tramas', target: 'ninos-robados', label: '', type: 'arc' },
