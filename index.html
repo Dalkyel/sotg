@@ -456,6 +456,9 @@
       <div class="legend-item">
         <div class="legend-dot" style="background:#6a2a6a"></div>Dioses
       </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#8a3a8a"></div>Magia
+      </div>
     </div>
     <div class="header-hint">Clic en nodo para explorar · Arrastrar para mover · Scroll para zoom</div>
   </header>
@@ -509,6 +512,7 @@
       EVENTO: { color: '#4a1a1a', stroke: '#7a3a3a', r: 14, label: 'Evento' },
       OBJETO: { color: '#3a3a1a', stroke: '#5a5a2a', r: 13, label: 'Objeto' },
       DIOS: { color: '#3a1a3a', stroke: '#6a2a6a', r: 15, label: 'Dios' },
+      MAGIA: { color: '#4a1a4a', stroke: '#8a3a8a', r: 14, label: 'Magia' },
     };
 
     const nodes = [
@@ -529,6 +533,7 @@
       { id: 'cat-eventos', label: 'EVENTOS CLAVE', group: 'CAT', type: 'Cronología', desc: 'Sucesos históricos y actuales que moldean la narrativa.', star: '' },
       { id: 'cat-objetos', label: 'OBJETOS', group: 'CAT', type: 'Artefactos', desc: 'Armas, artefactos mágicos y objetos significativos.', star: '' },
       { id: 'cat-dioses', label: 'PANTEÓN DIVINO', group: 'CAT', type: 'Mitología', desc: 'Los dioses caídos y su legado en Vigríð.', star: '' },
+      { id: 'cat-magia', label: 'MAGIA', group: 'CAT', type: 'Sistema Mágico', desc: 'Seiðr, Galdur, vínculos de sangre y el poder residual de los dioses muertos.', star: '' },
 
       // ── PERSONAJES ORKA ─────────────────────────────────────────────
       {
@@ -805,17 +810,17 @@
       },
       // ──  MAGIA ─────────────────────────────────────────────
       {
-        id: 'seidr', label: 'Seiðr', group: 'VAESEN', type: 'Magia',
+        id: 'seidr', label: 'Seiðr', group: 'MAGIA', type: 'Magia',
         desc: 'Magia de influencia, invocación y canto. El akáll invoca espíritus de muertos para interrogarlos. El canto protege de vaesen o los controla. Practicado por brujas (völva). El uso extenuante desgasta el cuerpo. Ligado frecuentemente a sangre divina. [Contexto: en la mitología nórdica histórica, el Seiðr era una práctica ritual chamánica de Freyja y Odín, usada para profecía y manipulación del destino. Las völvur viajaban entre comunidades sentadas en plataformas elevadas (seiðhjallr). En Vigríð este saber sobrevive en las thrall-brujas que los mercenarios encadenan.]',
         star: 'Las dos brujas conocidas (Vol, Kráka) son thralls encadenadas. ¿Hay Seiðr libre en Vigríð?'
       },
       {
-        id: 'galdur', label: 'Galdur', group: 'VAESEN', type: 'Magia — Lengua',
+        id: 'galdur', label: 'Galdur', group: 'MAGIA', type: 'Magia — Lengua',
         desc: 'Lengua mágica de comandos rúnicos. Activa los collares de hierro sobre los Tainted. Palabras conocidas: Hlýða (obedece / escucha), Á HNÉN (de rodillas), Hlýða og fá verðlaun (obedece y recibe recompensa). Cap.12: NIðUR, Á JÖRðU, HLŸDDU MÉR (abajo, al suelo, obedéceme) — comando de sometimiento total; Brenna, sársauki (arde, dolor) — castigo de quemadura directa a través del collar. [Contexto: el galdr histórico nórdico era el canto o recitación de runas mágicas —opuesto al seiðr, era más público y menos estigmatizado. En Vigríð Gwynne lo convierte en lengua de control sobre la herencia divina.]',
         star: 'Saber esta lengua es poder absoluto sobre los Tainted. ¿Cuántos la conocen realmente?'
       },
       {
-        id: 'gods-bones', label: 'Huesos de los Dioses', group: 'magia', type: 'Objeto — Magia',
+        id: 'gods-bones', label: 'Huesos de los Dioses', group: 'MAGIA', type: 'Objeto — Magia',
         desc: 'Los huesos de los dioses muertos (Snaka, Orna, Berser, Ulfrir) son objetos de gran poder. Se usan para protección (knuckle-bone en umbrales), como fuente de poder para magia (asta de trol para Kráka), y como símbolos de autoridad (alas de Orna en la fortaleza de Helka). El poder específico que otorgan varía según el dios y el contexto.',
         star: ''
       },
@@ -1144,12 +1149,11 @@
       { source: 'cat-mundo', target: 'tainted', label: '', type: 'arc' },
       { source: 'cat-mundo', target: 'vigrið', label: '', type: 'arc' },
       { source: 'cat-mundo', target: 'vaesen-gen', label: '', type: 'arc' },
-      { source: 'cat-mundo', target: 'seidr', label: '', type: 'arc' },
       { source: 'cat-mundo', target: 'galdur', label: '', type: 'arc' },
-      { source: 'cat-mundo', target: 'runa-ward', label: '', type: 'arc' },
       { source: 'cat-mundo', target: 'cat-dioses', label: '', type: 'arc' },
       { source: 'cat-mundo', target: 'gods-bones', label: '', type: 'magic' },
       { source: 'cat-mundo', target: 'cat-objetos', label: '', type: 'arc' },
+      { source: 'cat-mundo', target: 'cat-magia', label: '', type: 'arc' },
       { source: 'gudfall', target: 'snaka', label: 'murió en', type: 'history' },
       { source: 'gudfall', target: 'orna', label: 'murió en', type: 'history' },
       { source: 'gudfall', target: 'berser', label: 'murió en', type: 'history' },
@@ -1175,6 +1179,13 @@
       { source: 'likrafa', target: 'cat-dioses', label: '', type: 'lore' },
       { source: 'orna', target: 'cat-dioses', label: '', type: 'lore' },
       { source: 'ulfrir', target: 'cat-dioses', label: '', type: 'lore' },
+
+      // Cat-magia
+      { source: 'cat-magia', target: 'seidr', label: '', type: 'arc' },
+      { source: 'cat-magia', target: 'galdur', label: '', type: 'arc' },
+      { source: 'cat-magia', target: 'gods-bones', label: '', type: 'arc' },
+      { source: 'cat-magia', target: 'runa-ward', label: '', type: 'arc' },
+      { source: 'cat-magia', target: 'collares', label: '', type: 'arc' },
 
       // Lugares
       { source: 'fellur', target: 'vigrið', label: 'ciudad en', type: 'geo' },
