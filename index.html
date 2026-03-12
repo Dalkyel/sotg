@@ -88,20 +88,20 @@
     // DATA
     // ═══════════════════════════════════════════════════════
     const GROUPS = {
-      CENTER: { color: '#c9933a', stroke: '#e8b96a', r: 32, label: 'Centro' },
-      CAT: { color: '#2a1e10', stroke: '#7a5a2a', r: 24, label: 'Categoría' },
-      ORKA: { color: '#8b1a1a', stroke: '#c03030', r: 14, label: 'Orka POV' },
-      VARG: { color: '#6a4010', stroke: '#c09030', r: 14, label: 'Varg POV' },
-      ELVAR: { color: '#1a3a5c', stroke: '#4a8cbf', r: 14, label: 'Elvar POV' },
-      COSMO: { color: '#3a1a5a', stroke: '#9060b0', r: 14, label: 'Cosmología' },
-      LUGAR: { color: '#1a3a2a', stroke: '#4a9a6a', r: 13, label: 'Lugar' },
-      VAESEN: { color: '#1a4a4a', stroke: '#3a9a9a', r: 13, label: 'Vaesen' },
-      TRAMA: { color: '#4a2010', stroke: '#e07830', r: 14, label: 'Trama' },
-      FACCION: { color: '#1a2a4a', stroke: '#3a5a9a', r: 14, label: 'Facción' },
-      EVENTO: { color: '#4a1a1a', stroke: '#7a3a3a', r: 14, label: 'Evento' },
-      OBJETO: { color: '#3a3a1a', stroke: '#5a5a2a', r: 13, label: 'Objeto' },
-      DIOS: { color: '#3a1a3a', stroke: '#6a2a6a', r: 15, label: 'Dios' },
-      MAGIA: { color: '#4a1a4a', stroke: '#8a3a8a', r: 14, label: 'Magia' },
+      CENTER: { color: '#c9933a', stroke: '#e8b96a', r: 32 },
+      CAT: { color: '#2a1e10', stroke: '#7a5a2a', r: 24 },
+      ORKA: { color: '#8b1a1a', stroke: '#c03030', r: 14 },
+      VARG: { color: '#6a4010', stroke: '#c09030', r: 14 },
+      ELVAR: { color: '#1a3a5c', stroke: '#4a8cbf', r: 14 },
+      COSMO: { color: '#3a1a5a', stroke: '#9060b0', r: 14 },
+      LUGAR: { color: '#1a3a2a', stroke: '#4a9a6a', r: 13 },
+      VAESEN: { color: '#1a4a4a', stroke: '#3a9a9a', r: 13 },
+      TRAMA: { color: '#4a2010', stroke: '#e07830', r: 14 },
+      FACCION: { color: '#1a2a4a', stroke: '#3a5a9a', r: 14 },
+      EVENTO: { color: '#4a1a1a', stroke: '#7a3a3a', r: 14 },
+      OBJETO: { color: '#3a3a1a', stroke: '#5a5a2a', r: 13 },
+      DIOS: { color: '#3a1a3a', stroke: '#6a2a6a', r: 15 },
+      MAGIA: { color: '#4a1a4a', stroke: '#8a3a8a', r: 14 },
     };
 
     const nodes = [
@@ -936,9 +936,10 @@
     // ── Force simulation ─────────────────────────────────
     const nodeMap = {};
     nodes.forEach(n => {
-      n.r = GROUPS[n.group]?.r || 12;
-      n.color = GROUPS[n.group]?.color || '#3a3a3a';
-      n.stroke = GROUPS[n.group]?.stroke || '#8a8a8a';
+      const g = GROUPS[n.group];
+      n.r = g?.r || 12;
+      n.color = g?.color || '#3a3a3a';
+      n.stroke = g?.stroke || '#8a8a8a';
       nodeMap[n.id] = n;
     });
 
@@ -1003,9 +1004,12 @@
       let lines = [];
       let currentLine = [];
 
+      const isTitled = d.group === 'CAT' || d.group === 'CENTER';
+      const fontFamily = isTitled ? "'Cinzel', serif" : "'Crimson Pro', serif";
+
       const tempText = el.append('text')
         .attr('font-size', fontSize)
-        .attr('font-family', d.group === 'CAT' || d.group === 'CENTER' ? "'Cinzel', serif" : "'Crimson Pro', serif")
+        .attr('font-family', fontFamily)
         .style('visibility', 'hidden');
 
       words.forEach(word => {
@@ -1025,9 +1029,9 @@
         el.append('text')
           .attr('y', i * lineH - totalH / 2)
           .attr('font-size', fontSize)
-          .attr('font-family', d.group === 'CAT' || d.group === 'CENTER' ? "'Cinzel', serif" : "'Crimson Pro', serif")
-          .attr('fill', d.group === 'CENTER' ? '#e8b96a' : d.group === 'CAT' ? '#e8d8b0' : '#d8c890')
-          .attr('font-weight', d.group === 'CENTER' || d.group === 'CAT' ? '600' : '400')
+          .attr('font-family', fontFamily)
+          .attr('fill', d.group === 'CENTER' ? '#e8b96a' : isTitled ? '#e8d8b0' : '#d8c890')
+          .attr('font-weight', isTitled ? '600' : '400')
           .attr('text-anchor', 'middle')
           .attr('dominant-baseline', 'central')
           .attr('pointer-events', 'none')
@@ -1082,8 +1086,8 @@
       const conns = links
         .filter(l => l.source.id === d.id || l.target.id === d.id)
         .map(l => {
-          const other = l.source.id === d.id ? l.target : l.source;
-          return { node: other, label: l.label, dir: l.source.id === d.id ? '→' : '←' };
+          const fromSrc = l.source.id === d.id;
+          return { node: fromSrc ? l.target : l.source, label: l.label, dir: fromSrc ? '→' : '←' };
         });
 
       pConns.innerHTML = '';
@@ -1098,8 +1102,7 @@
         ${c.label ? `<div class="conn-rel">${c.dir} ${c.label}</div>` : ''}
       </div>`;
         div.addEventListener('click', () => {
-          const target = nodeMap[c.node.id];
-          if (target) selectNode(target);
+          if (c.node) selectNode(c.node);
         });
         pConns.appendChild(div);
       });
@@ -1150,19 +1153,15 @@
     document.getElementById('btn-zoom-out').addEventListener('click', () => {
       svg.transition().duration(300).call(zoom.scaleBy, 0.7);
     });
-    document.getElementById('btn-reset').addEventListener('click', () => {
-      svg.transition().duration(500).call(
-        zoom.transform,
-        d3.zoomIdentity.translate(width() / 2, height() / 2).scale(0.75).translate(-width() / 2, -height() / 2)
-      );
-    });
+    function resetZoom(animate) {
+      const t = d3.zoomIdentity.translate(width() / 2, height() / 2).scale(0.75).translate(-width() / 2, -height() / 2);
+      (animate ? svg.transition().duration(500) : svg).call(zoom.transform, t);
+    }
+
+    document.getElementById('btn-reset').addEventListener('click', () => resetZoom(true));
 
     // Initial zoom
-    setTimeout(() => {
-      svg.call(zoom.transform,
-        d3.zoomIdentity.translate(width() / 2, height() / 2).scale(0.75).translate(-width() / 2, -height() / 2)
-      );
-    }, 100);
+    setTimeout(() => resetZoom(false), 100);
 
     // Resize
     window.addEventListener('resize', () => {
