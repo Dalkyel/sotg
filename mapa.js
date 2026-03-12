@@ -335,9 +335,9 @@ function loadSummaries() {
     <div class="chapter-item" data-chapter="${ch.chapter}">
       <div class="chapter-title">
         <span>${ch.title}</span>
-        <span class="chapter-toggle expanded">▼</span>
+        <span class="chapter-toggle">▼</span>
       </div>
-      <div class="chapter-text">${ch.summary}</div>
+      <div class="chapter-text collapsed">${ch.summary}</div>
     </div>
   `).join('');
   
