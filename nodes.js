@@ -6,11 +6,11 @@ const nodes = [
     },
     {
         id: 'akall', label: 'Akáll de Varg', group: 'TRAMA', type: 'Trama — Abierta', desc: 'Varg necesita que Vol realice un akáll para invocar el espíritu de Frøya y descubrir cómo murió. Cap.11: Vol no está en el cuartel de los Hermanos. Røkia esquiva la pregunta de Varg sobre su paradero. El acceso a Vol sigue bloqueado.',
-        star: '¿Dónde está Vol? Røkia no responde. ¿Y si su muerte fue algo más que un accidente?'
+        star: '¿Dónde está Vol? Røkia no responde.'
     },
     {
         id: 'althing', label: 'Alþing (Althing)', group: 'NORSE', type: 'Institución — Asamblea', desc: 'Asamblea pública donde se anuncian juramentos, se resuelven disputas y se proclaman leyes. Celebrada en la Roca del Juramento en Fellur. Sigrún anunció allí su lealtad a Helka. [Histórico: el Alþingi islandés (fundado 930 d.C.) es el parlamento más antiguo del mundo. Era asamblea anual donde se recitaban leyes, se juzgaban casos y se hacían alianzas. Gwynne lo adapta como institución política clave en Vigríð.]',
-        star: 'El Althing es donde el poder se legitima públicamente. Sigrún usó el de Fellur para consolidar su alianza con Helka.'
+        star: ''
     },
     {
         id: 'anillo-oro', label: 'Anillo de Oro', group: 'ELVAR', type: 'Objeto — Distinción', desc: '',
@@ -26,11 +26,11 @@ const nodes = [
     },
     {
         id: 'armring', label: 'Armring (Anillo de Brazo)', group: 'NORSE', type: 'Símbolo — Lealtad', desc: 'Anillo de metal (plata, oro, bronce) enrollado en el brazo. Símbolo de lealtad a un señor. Los jarls los otorgan a guerreros leales ("dador de anillos" = epíteto de buen jarl). Sigrún lleva "anillos en los brazos". Svik lleva "anillos de plata enrollados en los brazos". Glornir es llamado "Dador-de-Oro". [Histórico: los armrings eran la moneda social vikinga. Un jarl generoso distribuía anillos a su séquito. Romper un anillo para pagar era común. Símbolo físico del vínculo señor-guerrero.]',
-        star: '★★ Glornir "Dador-de-Oro" distribuye anillos a Hermanos de Sangre. Sistema de lealtad económica: el oro compra juramentos. Orka y Thorkel no llevan anillos — no deben lealtad a nadie.'
+        star: 'Glornir "Dador-de-Oro" distribuye anillos a Hermanos de Sangre. Sistema de lealtad económica: el oro compra juramentos. Orka y Thorkel no llevan anillos — no deben lealtad a nadie.'
     },
     {
         id: 'asgrim', label: 'Asgrim (†)', group: 'ORKA', type: 'Personaje — Muerto', desc: 'Vecino de Orka y Thorkel en las colinas sobre el fiordo de Fellur. Esposo de Idrun, padre de Harek. Encontrado muerto de una estocada al corazón en el umbral de su steading (Cap.1). Tenía runa de warding en la puerta —el asesino fue humano, no vaesen.',
-        star: '★ Que un hombre con runa warding fuera asesinado confirma que la amenaza viene de personas, no de criaturas.'
+        star: 'Que un hombre con runa warding fuera asesinado confirma que la amenaza viene de personas, no de criaturas.'
     },
     {
         id: 'asgrim-death', label: 'Tragedia de Familia Asgrim', group: 'EVENTO', type: 'Evento', desc: 'Asgrim y su esposa son encontrados muertos en su granja a las afueras de Fellur por Orka. Su hijo esta desaparecido. Orka lleva los cuerpos a Fellur. Thorkel investiga que sucedió',
@@ -42,7 +42,7 @@ const nodes = [
     },
     {
         id: 'berak', label: 'Berak Bjornasson', group: 'ELVAR', type: 'Personaje — Berserkir', desc: 'Alto y grande con cicatrices en la cara, barba hasta el cinturón. Sangre del dios muerto Berser. Ojos ambarinos cuando entra en furia, dientes afilados, fuerza brutal. Vivia escondido y fue Capturado en Iskalt. Se le acusa de haber matado a tres Jarls. El collar de hierro suprime su transformación Berserkir. Destino: Snakavik, Jarl Störr.',
-        star: 'Prototype de los Tainted Berserkir. El collar de hierro lo controla con palabras Galdur.'
+        star: ''
     },
     {
         id: 'berak-venta', label: 'Venta de Berak a Störr', group: 'TRAMA', type: 'Trama — Abierta', desc: 'Agnar navega hacia Snakavik para vender a Berak el Berserkir al Jarl Störr. Elvar reacciona personalmente ante este destino. La mujer de Berak (sangre de Snaka) también está a bordo.',
@@ -54,7 +54,7 @@ const nodes = [
     },
     {
         id: 'berserkergang', label: 'Berserkergang (Furia de Batalla)', group: 'NORSE', type: 'Combate — Trance', desc: 'Estado de furia disociativa en combate. Ojos ambarinos, dientes afilados, fuerza sobrehumana, pérdida de control racional. Berak entra en berserkergang cuando se transforma. Varg tiene episodios de "furia roja" que no recuerda — posible berserkergang. [Histórico: los berserkir históricos entraban en trance de batalla (quizá con drogas/rituales). Mordían escudos, aullaban, peleaban sin armadura. Gwynne lo reinterpreta como manifestación literal de sangre divina Tainted.]',
-        star: '★★★ Varg tiene furia roja sin memoria = posible sangre Tainted no descubierta. Berak en berserkergang es imparable — el collar de hierro es lo único que lo detiene.'
+        star: 'Varg tiene furia roja sin memoria = posible sangre Tainted no descubierta. Berak en berserkergang es imparable — el collar de hierro es lo único que lo detiene.'
     },
     {
         id: 'biorr', label: 'Biórr', group: 'ELVAR', type: 'Personaje — Terrores de la batalla', desc: 'Pelo negro, botas largas (objeto de burlas). Interesado en Elvar. Sigue sus pasos en el bosque de Iskalt. Grend lo odia. Ofrece gachas al prisionero Berak y su familia.',
