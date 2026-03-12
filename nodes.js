@@ -412,7 +412,7 @@ const nodes = [
         star: '¿Por qué le fue asignada a Varg específicamente? Su entrenamiento es metódico y revelador de sus habilidades.'
     },
     {
-        id: 'root', label: 'La Sombra de los Dioses', group: 'CENTER', type: 'Obra', desc: 'Libro I de la Trilogía Bloodsworn. John Gwynne. Año 297 del Friðaröld. Tres líneas narrativas convergen en un mundo roto por la guerra de los dioses. Capítulos 1–12.', star: ''
+        id: 'root', label: 'La Sombra de los Dioses', group: 'CENTER', type: 'Obra', desc: 'Libro I de la Trilogía Bloodsworn. John Gwynne. Año 297 del Friðaröld. Tres líneas narrativas convergen en un mundo roto por la guerra de los dioses.', star: ''
     },
 
     {
