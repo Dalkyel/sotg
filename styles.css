@@ -66,3 +66,5 @@ svg:active{cursor:grabbing}
 .tooltip{position:fixed;background:rgba(20,14,6,.96);border:1px solid var(--gold);padding:7px 11px;font-size:12px;color:var(--parch);border-radius:3px;pointer-events:none;z-index:9999;max-width:220px;font-family:'Crimson Pro',serif;opacity:0;transition:opacity .15s}
 .tooltip.visible{opacity:1}
 .tooltip strong{font-family:'Cinzel',serif;font-size:11px;color:var(--gold);display:block;margin-bottom:2px}
+
+@media(max-width:768px){header{flex-direction:column;gap:8px;padding:8px 12px;align-items:flex-start}.header-title{font-size:14px}.header-sub{font-size:11px}.legend{gap:8px;font-size:9px}.legend-dot{width:8px;height:8px}:root{--panel-w:100vw}#detail-panel{width:100vw;height:calc(100vh - 80px);position:fixed;bottom:0;left:0;top:auto;border-left:none;border-top:2px solid var(--gold);z-index:200}#detail-panel.hidden{transform:translateY(100%)}.panel-header{padding:12px 14px}.panel-name{font-size:15px}.panel-body{padding:12px 14px}.controls{bottom:12px;left:12px;gap:4px}.ctrl-btn{width:36px;height:36px;font-size:18px}.tooltip{max-width:180px;font-size:11px}svg{cursor:default}}
