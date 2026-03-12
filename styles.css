@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
 
-:root{--bg:#0f0c08;--bg2:#1a1510;--parch:#f0e6cc;--gold:#c9933a;--gold-lt:#e8b96a;--crimson:#8b1a1a;--crimson-lt:#c03030;--amber:#b87820;--steel:#3a5c7a;--steel-lt:#6a9cbf;--purple:#5a3070;--purple-lt:#9060b0;--forest:#2a5a3a;--forest-lt:#4a9a6a;--teal:#1a5a5a;--teal-lt:#3a9a9a;--orange:#a04a10;--orange-lt:#e07830;--navy:#1a2a4a;--navy-lt:#3a5a9a;--panel-w:320px}
+:root{--bg:#0f0c08;--bg2:#1a1510;--parch:#f0e6cc;--gold:#c9933a;--gold-lt:#e8b96a;--crimson:#8b1a1a;--panel-w:320px}
 *{box-sizing:border-box;margin:0;padding:0}
 
 body{background:var(--bg);color:var(--parch);font-family:'Crimson Pro',Georgia,serif;overflow:hidden;height:100vh;display:flex;flex-direction:column}
