@@ -1,13 +1,7 @@
 
 const nodes = [
-    // ── CENTRO ──────────────────────────────────────────────────────
-    {
-        id: 'root', label: 'La Sombra de los Dioses', group: 'CENTER', type: 'Obra',
-        desc: 'Libro I de la Trilogía Bloodsworn. John Gwynne. Año 297 del Friðaröld. Tres líneas narrativas convergen en un mundo roto por la guerra de los dioses. Capítulos 1–12.',
-        star: ''
-    },
-
     // ── CATEGORÍAS ──────────────────────────────────────────────────
+    {id: 'root', label: 'La Sombra de los Dioses', group: 'CENTER', type: 'Obra', desc: 'Libro I de la Trilogía Bloodsworn. John Gwynne. Año 297 del Friðaröld. Tres líneas narrativas convergen en un mundo roto por la guerra de los dioses. Capítulos 1–12.', star: ''},
     { id: 'cat-orka', label: 'ARCO ORKA', group: 'CAT', type: 'Arco Narrativo', desc: 'POV 1. Trampera en las colinas sobre Fellur. Madre feroz, exguerrera con un pasado oscuro que regresa.', star: '' },
     { id: 'cat-varg', label: 'ARCO VARG', group: 'CAT', type: 'Arco Narrativo', desc: 'POV 2. Ex-thrall en busca de un Seiðr para invocar a su hermana muerta. Recién reclutado por los Hermanos de Sangre.', star: '' },
     { id: 'cat-elvar', label: 'ARCO ELVAR', group: 'CAT', type: 'Arco Narrativo', desc: 'POV 3 (nuevo en Cap.5). Guerrera joven de Terrores de la batalla. Caza Tainted para venderlos a jarls ricos.', star: '' },
@@ -22,8 +16,7 @@ const nodes = [
 
     // ── PERSONAJES ORKA ─────────────────────────────────────────────
     {
-        id: 'orka', label: 'Orka', group: 'ORKA', type: 'POV — Personaje',
-        desc: 'Mujer alta (más que Guðvarr) y rubia, ojos gris-verde. Vive aislada con sun familia. Flashbacks violentos, episodios de rabia que casi la ciegan. Capturó a Spert mediante vínculo de sangre. Exguerrera con un pasado que ella intenta olvidar.',
+        id: 'orka', label: 'Orka', group: 'ORKA', type: 'POV — Personaje', desc: 'Mujer alta (más que Guðvarr) y rubia, ojos gris-verde. Vive aislada con sun familia. Flashbacks violentos, episodios de rabia que casi la ciegan. Capturó a Spert mediante vínculo de sangre. Exguerrera con un pasado que ella intenta olvidar.',
         star: 'Su ira casi la desborda ante Guðvarr. Sabe controlar vaesen. ¿Qué batalla dejó esas cicatrices invisibles?'
     },
     {
@@ -72,8 +65,7 @@ const nodes = [
         star: 'Primer eslabón del patrón de robos de niños.'
     },
     {
-        id: 'asgrim', label: 'Asgrim (†)', group: 'ORKA', type: 'Personaje — Muerto',
-        desc: 'Vecino de Orka y Thorkel en las colinas sobre el fiordo de Fellur. Esposo de Idrun, padre de Harek. Encontrado muerto de una estocada al corazón en el umbral de su steading (Cap.1). Tenía runa de warding en la puerta —el asesino fue humano, no vaesen.',
+        id: 'asgrim', label: 'Asgrim (†)', group: 'ORKA', type: 'Personaje — Muerto', desc: 'Vecino de Orka y Thorkel en las colinas sobre el fiordo de Fellur. Esposo de Idrun, padre de Harek. Encontrado muerto de una estocada al corazón en el umbral de su steading (Cap.1). Tenía runa de warding en la puerta —el asesino fue humano, no vaesen.',
         star: '★ Que un hombre con runa warding fuera asesinado confirma que la amenaza viene de personas, no de criaturas.'
     },
     {
