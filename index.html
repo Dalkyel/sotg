@@ -59,6 +59,7 @@
       <div class="rune-bg"></div>
       <svg id="graph"></svg>
       <div class="controls">
+        <input type="text" id="search-input" placeholder="Buscar nodo..." aria-label="Buscar nodo">
         <button class="ctrl-btn" id="btn-zoom-in" title="Acercar" aria-label="Acercar">+</button>
         <button class="ctrl-btn" id="btn-zoom-out" title="Alejar" aria-label="Alejar">−</button>
         <button class="ctrl-btn" id="btn-reset" title="Restablecer vista" aria-label="Restablecer">⟳</button>
@@ -1159,6 +1160,34 @@
     }
 
     document.getElementById('btn-reset').addEventListener('click', () => resetZoom(true));
+
+    // ── Search functionality ──────────────────────────────
+    const searchInput = document.getElementById('search-input');
+    let searchTimeout;
+    searchInput.addEventListener('input', (e) => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        const query = e.target.value.toLowerCase().trim();
+        if (!query) {
+          clearSelection();
+          return;
+        }
+        const matchIds = new Set();
+        nodes.forEach(n => {
+          if (n.id.toLowerCase().includes(query) || n.label.toLowerCase().includes(query)) {
+            matchIds.add(n.id);
+          }
+        });
+        if (matchIds.size) {
+          nodeSel
+            .classed('selected', n => matchIds.has(n.id))
+            .classed('faded', n => !matchIds.has(n.id));
+          linkSel.classed('highlighted faded', false);
+        } else {
+          clearSelection();
+        }
+      }, 150);
+    });
 
     // Initial zoom
     setTimeout(() => resetZoom(false), 100);
