@@ -754,4 +754,9 @@ const nodes = [
         desc: 'Hace ~300 años. Los hijos de Snaka se rebelaron contra su padre. La guerra de los dioses rompió el mundo: continentes hundidos, mares desbordados. Los vaesen escaparon de su foso. El mundo nunca se recuperó.',
         star: 'Todo el mundo actual es consecuencia directa de este evento.'
     },
+    {
+        id: 'gravka', label: 'Gravka', group: 'LUGAR', type: 'Lugar — Capital Imperial',
+        desc: 'Gran ciudad capital del Imperio de Iskidan. Sede del Emperador Kirill. Lejana al este, más allá del mar. Representa el mundo exterior a Vigríð.',
+        star: ''
+    },
 ];
