@@ -284,11 +284,11 @@ const nodes = [
         star: 'Los jarls son el tablero político de Vigríð. Helka los está unificando bajo su corona.'
     },
     {
-        id: 'jarl-hrut', label: 'Jarl Hrut (†)', group: 'ELVAR', type: 'Personaje — Muerto', desc: 'Jarl de Iskalt. Barba trenzada múltiples veces con anillos de hueso. Vestido en pieles y piel de foca. Empuñadura de cuchillo tallada en marfil de morsa. Asesinado sin dudar por Agnar cuando se interpuso al desembarco de Terrores de la batalla.',
+        id: 'jarl-hrut', label: 'Jarl Hrut (†)', group: 'ELVAR', type: 'Personaje — Muerto', desc: 'Barba trenzada múltiples veces con anillos de hueso. Vestido en pieles y piel de foca. Empuñadura de cuchillo tallada en marfil de morsa. Asesinado sin dudar por Agnar cuando se interpuso al desembarco de Terrores de la batalla.',
         star: ''
     },
     {
-        id: 'jarl-logur', label: 'Jarl Logur', group: 'FACCION', type: 'Personaje — Política', desc: 'Jarl de Liga. Aloja a los Hermanos de Sangre en su sala de festín. Sus escudos son azules y sus velas rojas. El juicio de Varg tiene lugar en su sala.',
+        id: 'jarl-logur', label: 'Jarl Logur', group: 'FACCION', type: 'Personaje — Política', desc: 'Aloja a los Hermanos de Sangre en su sala de festín. Sus escudos son azules y sus velas rojas. El juicio de Varg tiene lugar en su sala.',
         star: ''
     },
     {
