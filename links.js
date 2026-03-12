@@ -182,7 +182,7 @@ const links = [
     { source: 'vigrið', target: 'svelgarth', label: 'ciudad en', type: 'geo' },
     { source: 'vigrið', target: 'rio-skarpain', label: 'río en', type: 'geo' },
     { source: 'vigrið', target: 'islas-hielo', label: 'islas al norte', type: 'geo' },
-    { source: 'fellur', target: '`vigrið`', label: 'ciudad en', type: 'geo' },
+    { source: 'fellur', target: 'vigrið', label: 'ciudad en', type: 'geo' },
     { source: 'fellur', target: 'oath-rock', label: 'isla en el fiordo', type: 'geo' },
     { source: 'liga', target: 'vigrið', label: 'ciudad en', type: 'geo' },
     { source: 'iskalt', target: 'oskutred', label: 'terremotos = Lik-Rifa', type: 'magic' },
