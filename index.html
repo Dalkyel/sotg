@@ -1163,38 +1163,45 @@
 
     // ── Search functionality ──────────────────────────────
     const searchInput = document.getElementById('search-input');
-    let searchTimeout;
-    const isMobile = 'ontouchstart' in window;
-    searchInput.addEventListener('input', (e) => {
-      clearTimeout(searchTimeout);
-      searchTimeout = setTimeout(() => {
-        const query = e.target.value.toLowerCase().trim();
-        if (!query) {
-          clearSelection();
-          return;
-        }
-        const matchIds = new Set();
-        nodes.forEach(n => {
-          if (n.id.toLowerCase().includes(query) || n.label.toLowerCase().includes(query)) {
-            matchIds.add(n.id);
+    if (!searchInput) {
+      console.error('Search input not found');
+    } else {
+      let searchTimeout;
+      const isMobile = 'ontouchstart' in window;
+      searchInput.addEventListener('input', (e) => {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+          const query = e.target.value.toLowerCase().trim();
+          if (!query) {
+            nodeSel.classed('selected faded', false);
+            linkSel.classed('highlighted faded', false);
+            panel.classList.add('hidden');
+            return;
           }
-        });
-        if (matchIds.size) {
-          nodeSel
-            .classed('selected', n => matchIds.has(n.id))
-            .classed('faded', n => !matchIds.has(n.id));
-          linkSel.classed('highlighted faded', false);
-          if (isMobile && matchIds.size === 1) {
-            const match = nodes.find(n => matchIds.has(n.id));
-            if (match) selectNode(match);
+          const matchIds = new Set();
+          nodes.forEach(n => {
+            if (n.id.toLowerCase().includes(query) || n.label.toLowerCase().includes(query)) {
+              matchIds.add(n.id);
+            }
+          });
+          if (matchIds.size) {
+            nodeSel
+              .classed('selected', n => matchIds.has(n.id))
+              .classed('faded', n => !matchIds.has(n.id));
+            linkSel.classed('highlighted', false).classed('faded', false);
+            if (isMobile && matchIds.size === 1) {
+              const match = nodes.find(n => matchIds.has(n.id));
+              if (match) selectNode(match);
+            }
+          } else {
+            nodeSel.classed('selected', false).classed('faded', true);
+            linkSel.classed('highlighted', false).classed('faded', true);
           }
-        } else {
-          clearSelection();
-        }
-      }, isMobile ? 300 : 150);
-    });
-    if (isMobile) {
-      searchInput.addEventListener('focus', () => searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' }));
+        }, isMobile ? 300 : 150);
+      });
+      if (isMobile) {
+        searchInput.addEventListener('focus', () => searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' }));
+      }
     }
 
     // Initial zoom
