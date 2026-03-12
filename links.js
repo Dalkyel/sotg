@@ -108,6 +108,7 @@ const links = [
     { source: 'berak', target: 'mujer-berak', label: 'esposo', type: 'rel' },
     { source: 'berak', target: 'hijo-berak', label: 'padre', type: 'rel' },
     { source: 'berak', target: 'berser', label: 'sangre y herencia confirmada', type: 'lore' },
+    { source: 'berak', target: 'tainted', label: 'Berserkir', type: 'lore' },
     // battle Grim
     { source: 'battle-grim', target: 'cat-elvar', label: '', type: 'arc' },
     { source: 'battle-grim', target: 'berak', label: 'Buscado y capturado', type: 'event' },
@@ -125,6 +126,7 @@ const links = [
     { source: 'kraka', target: 'battle-grim', label: 'miembro/thrall', type: 'rel' },
     { source: 'kraka', target: 'wave-jarl', label: 'protege con Seiðr', type: 'magic' },
     { source: 'kraka', target: 'seidr', label: 'practica', type: 'magic' },
+    { source: 'kraka', target: 'tainted', label: 'Tainted', type: 'lore' },
     // hundur
     { source: 'hundur', target: 'battle-grim', label: 'miembro/thrall', type: 'rel' },
     { source: 'hundur', target: 'berak', label: 'rastreó', type: 'event' },
@@ -132,13 +134,10 @@ const links = [
     // Lenguajes
     { source: 'galdur', target: 'galdur', label: '', type: 'arc' },
     { source: 'galdur', target: 'cat-magia', label: 'Lenguaje Magico', type: 'arc' },
+    { source: 'galdur', target: 'collares', label: 'activa', type: 'magic' },
     // -------------------------------------------------------------------------------------- //
     // Cat-mundo
     { source: 'tainted', target: 'cat-mundo', label: '', type: 'arc' },
-    { source: 'tainted', target: 'berak', label: 'Berserkir', type: 'lore' },
-    { source: 'tainted', target: 'kraka', label: 'Tainted', type: 'lore' },
-
-    { source: 'likrafa', target: 'oskutred', label: 'encadenada bajo', type: 'lore' },
     // Cat-eventos
     { source: 'cat-eventos', target: 'holmganga-event', label: '', type: 'event' },
     { source: 'cat-eventos', target: 'asgrim-death', label: '', type: 'event' },
@@ -162,6 +161,7 @@ const links = [
     { source: 'snaka', target: 'cat-dioses', label: '', type: 'lore' },
     { source: 'snaka', target: 'vigrið', label: 'sus huesos = montañas', type: 'lore' },
     { source: 'likrafa', target: 'cat-dioses', label: '', type: 'lore' },
+    { source: 'likrafa', target: 'oskutred', label: 'encadenada bajo', type: 'lore' },
     { source: 'orna', target: 'cat-dioses', label: '', type: 'lore' },
     { source: 'ulfrir', target: 'cat-dioses', label: '', type: 'lore' },
     // -------------------------------------------------------------------------------------- //
@@ -169,6 +169,7 @@ const links = [
     { source: 'cat-magia', target: 'cat-mundo', label: '', type: 'arc' },
     { source: 'runa-ward', target: 'cat-magia', label: '', type: 'arc' },
     { source: 'seidr', target: 'cat-magia', label: '', type: 'arc' },
+    { source: 'seidr', target: 'akall', label: 'técnica', type: 'magic' },
     { source: 'galdramadr', target: 'cat-magia', label: '', type: 'arc' },
     // -------------------------------------------------------------------------------------- //
     // Lugares
@@ -181,14 +182,14 @@ const links = [
     { source: 'vigrið', target: 'svelgarth', label: 'ciudad en', type: 'geo' },
     { source: 'vigrið', target: 'rio-skarpain', label: 'río en', type: 'geo' },
     { source: 'vigrið', target: 'islas-hielo', label: 'islas al norte', type: 'geo' },
-    { source: 'fellur', target: 'vigrið', label: 'ciudad en', type: 'geo' },
-    { source: 'liga', target: 'vigrið', label: 'ciudad en', type: 'geo' },
+    { source: 'fellur', target: '`vigrið`', label: 'ciudad en', type: 'geo' },
     { source: 'fellur', target: 'oath-rock', label: 'isla en el fiordo', type: 'geo' },
+    { source: 'liga', target: 'vigrið', label: 'ciudad en', type: 'geo' },
     { source: 'iskalt', target: 'oskutred', label: 'terremotos = Lik-Rifa', type: 'magic' },
+    { source: 'iskalt', target: 'islas-hielo', label: 'al sur de', type: 'geo' },
     { source: 'islas-hielo', target: 'araña-hielo', label: 'hábitat', type: 'lore' },
     { source: 'oskutred', target: 'vergelmir', label: 'bajo él', type: 'lore' },
     { source: 'likrafa', target: 'vergelmir', label: 'encadenada en', type: 'lore' },
-    { source: 'iskalt', target: 'islas-hielo', label: 'al sur de', type: 'geo' },
     { source: 'iskidan', target: 'gravka', label: 'capital', type: 'geo' },
     { source: 'iskidan', target: 'cat-mundo', label: 'capital', type: 'geo' },
     // Vaesen y magia
@@ -204,9 +205,7 @@ const links = [
     { source: 'vaesen-gen', target: 'skraeling', label: '', type: 'lore' },
     { source: 'vaesen-gen', target: 'faunir', label: '', type: 'lore' },
     { source: 'vaesen-gen', target: 'froa', label: '', type: 'lore' },
-    { source: 'seidr', target: 'akall', label: 'técnica', type: 'magic' },
-    { source: 'galdur', target: 'collares', label: 'activa', type: 'magic' },
-    { source: 'collares', target: 'tainted', label: 'controla', type: 'magic' },
+
     { source: 'nacken', target: 'rio-skarpain', label: 'posible hábitat', type: 'lore' },
     // Tramas
     { source: 'cat-tramas', target: 'ninos-robados', label: '', type: 'arc' },
@@ -265,6 +264,7 @@ const links = [
     { source: 'cat-objetos', target: 'cat-mundo', label: '', type: 'arc' },
     { source: 'collares', target: 'cat-objetos', label: '', type: 'rel' },
     { source: 'collares', target: 'cat-magia', label: '', type: 'arc' },
+    { source: 'collares', target: 'tainted', label: 'controla', type: 'magic' },
     { source: 'hueso-dios-fellur', target: 'cat-objetos', label: 'protege', type: 'magic' },
     { source: 'colmillo-trol', target: 'cat-objetos', label: '', type: 'rel' },
     { source: 'colmillo-trol', target: 'elvar', label: 'otorgado a', type: 'rel' },
@@ -275,7 +275,6 @@ const links = [
     { source: 'gods-bones', target: 'cat-mundo', label: '', type: 'magic' },
     { source: 'hueso-dios-fellur', target: 'fellur', label: 'protege', type: 'magic' },
     { source: 'hueso-dios-fellur', target: 'gods-bones', label: 'Es un', type: 'rel' },
-
     // ── ENLACES CULTURA NÓRDICA ────────────────────────────────────
     { source: 'cat-norse', target: 'holmganga', label: '', type: 'arc' },
     { source: 'cat-norse', target: 'althing', label: '', type: 'arc' },
