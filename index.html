@@ -1164,6 +1164,7 @@
     // ── Search functionality ──────────────────────────────
     const searchInput = document.getElementById('search-input');
     let searchTimeout;
+    const isMobile = 'ontouchstart' in window;
     searchInput.addEventListener('input', (e) => {
       clearTimeout(searchTimeout);
       searchTimeout = setTimeout(() => {
@@ -1183,11 +1184,18 @@
             .classed('selected', n => matchIds.has(n.id))
             .classed('faded', n => !matchIds.has(n.id));
           linkSel.classed('highlighted faded', false);
+          if (isMobile && matchIds.size === 1) {
+            const match = nodes.find(n => matchIds.has(n.id));
+            if (match) selectNode(match);
+          }
         } else {
           clearSelection();
         }
-      }, 150);
+      }, isMobile ? 300 : 150);
     });
+    if (isMobile) {
+      searchInput.addEventListener('focus', () => searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' }));
+    }
 
     // Initial zoom
     setTimeout(() => resetZoom(false), 100);
