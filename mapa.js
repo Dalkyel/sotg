@@ -332,11 +332,26 @@ const summaryClose = document.getElementById('summary-close');
 
 function loadSummaries() {
   summaryContent.innerHTML = chapterSummaries.map(ch => `
-    <div class="chapter-item">
-      <div class="chapter-title">${ch.title}</div>
+    <div class="chapter-item" data-chapter="${ch.chapter}">
+      <div class="chapter-title">
+        <span>${ch.title}</span>
+        <span class="chapter-toggle expanded">▼</span>
+      </div>
       <div class="chapter-text">${ch.summary}</div>
     </div>
   `).join('');
+  
+  // Add click handlers for toggling
+  document.querySelectorAll('.chapter-item').forEach(item => {
+    const title = item.querySelector('.chapter-title');
+    const text = item.querySelector('.chapter-text');
+    const toggle = item.querySelector('.chapter-toggle');
+    
+    title.addEventListener('click', () => {
+      text.classList.toggle('collapsed');
+      toggle.classList.toggle('expanded');
+    });
+  });
 }
 
 function toggleSummaryPanel() {
