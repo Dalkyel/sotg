@@ -372,7 +372,6 @@ const links = [
     { source: 'faering', target: 'rio-skarpain', label: 'huyeron en barcas', type: 'trama' },
     { source: 'faering', target: 'fellur', label: 'villa pesquera', type: 'geo' },
     { source: 'snekkja', target: 'ninos-robados', label: 'posible embarcación raptores', type: 'trama' },
-    { source: 'karvi', target: 'sigrun', label: 'probable embarcación', type: 'rel' },
     { source: 'knarr', target: 'liga', label: 'comercio', type: 'geo' },
     { source: 'seax', target: 'thorkel', label: 'usa ritualmente', type: 'rel' },
     { source: 'seax', target: 'virk', label: 'asesinado con', type: 'event' },
