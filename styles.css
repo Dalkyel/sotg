@@ -58,6 +58,9 @@ svg:active{cursor:grabbing}
 .panel-close:hover{color:var(--parch)}
 
 .controls{position:absolute;bottom:16px;left:16px;display:flex;flex-direction:column;gap:6px;z-index:50}
+#search-input{width:200px;height:32px;background:rgba(26,20,10,.85);border:1px solid #3a2a12;color:var(--parch);font-size:13px;padding:0 10px;border-radius:4px;font-family:'Crimson Pro',serif;transition:background .15s,border-color .15s}
+#search-input:focus{outline:none;background:rgba(50,35,15,.95);border-color:var(--gold)}
+#search-input::placeholder{color:#6a5a40}
 .ctrl-btn{width:32px;height:32px;background:rgba(26,20,10,.85);border:1px solid #3a2a12;color:var(--gold);font-size:16px;cursor:pointer;border-radius:4px;display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s;font-family:sans-serif}
 .ctrl-btn:hover{background:rgba(50,35,15,.95);border-color:var(--gold)}
 
