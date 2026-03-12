@@ -15,7 +15,7 @@ const GROUPS = {
   FACCION: { color: '#1a2a4a', stroke: '#3a5a9a', r: 14 },
   EVENTO: { color: '#4a1a1a', stroke: '#7a3a3a', r: 14 },
   OBJETO: { color: '#3a3a1a', stroke: '#5a5a2a', r: 13 },
-  DIOS: { color: '#3a1a3a', stroke: '#6a2a6a', r: 15 },
+  DIOS: { color: '#3a3a3a', stroke: '#6a6a6a', r: 15 },
   MAGIA: { color: '#4a1a4a', stroke: '#8a3a8a', r: 14 },
   NORSE: { color: '#2a3a1a', stroke: '#5a7a3a', r: 14 },
 };
