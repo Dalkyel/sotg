@@ -15,6 +15,7 @@
       <div class="header-title">La Sombra de los Dioses</div>
       <div class="header-sub">Mapa Mental Interactivo · Capítulos 1–12</div>
     </div>
+    <button id="btn-summaries" class="ctrl-btn" title="Ver resúmenes de capítulos" aria-label="Resúmenes">📖</button>
     <div class="legend">
       <div class="legend-item">
         <div class="legend-dot" style="background:#c03030"></div>Orka POV
@@ -87,7 +88,16 @@
     <span id="tt-desc"></span>
   </div>
 
+  <div id="summary-panel" class="hidden">
+    <div class="panel-header">
+      <div class="panel-name">Resúmenes de Capítulos</div>
+      <span class="panel-close" id="summary-close">✕</span>
+    </div>
+    <div class="panel-body" id="summary-content"></div>
+  </div>
+
   <script src="data.js"></script>
+  <script src="summaries.js"></script>
   <script src="mapa.js"></script>
 </body>
 </body></html>
