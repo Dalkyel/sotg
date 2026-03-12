@@ -436,7 +436,7 @@ const nodes = [
         star: ''
     },
     {
-        id: 'sigrun', label: 'Jarl Sigrún', group: 'ORKA', type: 'Personaje — Política', desc: 'Jarl de Fellur durante 8 años. Mujer alta y guerrera. Lleva torc de plata, anillos en los brazos, cota de mallas remachada. Convocada a Darl por la Reina Helka; allí juró lealtad de sangre. Anunció el juramento en el Althing. Siempre acompañada por su thrall-guerrera de cara cicatrizada y mirada letal.',
+        id: 'sigrun', label: 'Jarl Sigrún', group: 'ORKA', type: 'Personaje — Política', desc: 'Jarl de Fellur durante 8 años. Mujer alta y guerrera. Lleva torc de plata, anillos en los brazos. Convocada a Darl por la Reina Helka; allí juró lealtad de sangre. Siempre acompañada por su thrall-guerrera',
         star: 'La thrall-guerrera que la sigue es un misterio: ojos planos que hielan hasta a Orka. ¿Quién era antes de ser encadenada?'
     },
     {
