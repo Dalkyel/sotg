@@ -138,10 +138,11 @@ const links = [
     // -------------------------------------------------------------------------------------- //
     // Cat-mundo
     { source: 'tainted', target: 'cat-mundo', label: '', type: 'arc' },
+    // -------------------------------------------------------------------------------------- //
     // Cat-eventos
-    { source: 'cat-eventos', target: 'holmganga-event', label: '', type: 'event' },
-    { source: 'cat-eventos', target: 'asgrim-death', label: '', type: 'event' },
+    { source: 'asgrim-death', target: 'cat-eventos', label: '', type: 'event' },
     // holmganga virk vs gudvarr
+    { source: 'holmganga-event', target: 'cat-eventos', label: '', type: 'event' },
     { source: 'holmganga-event', target: 'virk', label: 'combatiente', type: 'rel' },
     { source: 'holmganga-event', target: 'gudvarr', label: 'combatiente', type: 'rel' },
     { source: 'holmganga-event', target: 'orka', label: 'segundo de Virk', type: 'rel' },
@@ -155,7 +156,7 @@ const links = [
     { source: 'gudfall', target: 'orna', label: 'murió en', type: 'history' },
     { source: 'gudfall', target: 'berser', label: 'murió en', type: 'history' },
     { source: 'gudfall', target: 'likrafa', label: 'encadenada', type: 'history' },
-
+    // -------------------------------------------------------------------------------------- //
     // Cat-dioses
     { source: 'cat-dioses', target: 'cat-mundo', label: '', type: 'arc' },
     { source: 'snaka', target: 'cat-dioses', label: '', type: 'lore' },
