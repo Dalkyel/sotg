@@ -20,12 +20,15 @@ const links = [
     { source: 'orka', target: 'sigrun', label: 'la cuestiona en el Althing', type: 'event' },
     { source: 'orka', target: 'thrall-sigrun', label: 'observa lamiendo sangre', type: 'event' },
     { source: 'orka', target: 'second-combat', label: 'segundo de Virk', type: 'event' },
+    { source: 'orka', target: 'karl', label: 'vive como', type: 'rel' },
     // Thorkel
     { source: 'thorkel', target: 'virk', label: 'comercian', type: 'history' },
     { source: 'thorkel', target: 'breca', label: 'Hijo', type: 'rel' },
     { source: 'thorkel', target: 'asgrim-death', label: 'descubre', type: 'event' },
     { source: 'thorkel', target: 'thrall-sigrun', label: 'pateó / identificó Ulfrir-kin', type: 'event' },
     { source: 'thorkel', target: 'drengr', label: 'se considera', type: 'rel' },
+    { source: 'thorkel', target: 'thrall', label: 'ex-thrall', type: 'rel' },
+    { source: 'thorkel', target: 'karl', label: 'vive como', type: 'rel' },
     // Breca
     { source: 'breca', target: 'vesli', label: 'protege / jura', type: 'magic' },
     { source: 'breca', target: 'hueso-dios-fellur', label: 'reacción', type: 'trama' },
@@ -82,6 +85,7 @@ const links = [
     { source: 'varg', target: 'bloodsworn', label: 'nuevo miembro', type: 'event' },
     { source: 'varg', target: 'akall', label: 'necesita', type: 'goal' },
     { source: 'varg', target: 'tainted', label: 'posible sangre', type: 'trama' },
+    { source: 'varg', target: 'thrall', label: 'ex-thrall', type: 'rel' },
     // bloodsworn
     { source: 'bloodsworn', target: 'cat-varg', label: '', type: 'arc' },
     { source: 'bloodsworn', target: 'cat-facciones', label: '', type: 'arc' },
@@ -103,6 +107,7 @@ const links = [
     // Vol
     { source: 'vol', target: 'bloodsworn', label: 'miembro / thrall', type: 'rel' },
     { source: 'vol', target: 'seidr', label: 'practica', type: 'magic' },
+    { source: 'vol', target: 'thrall', label: 'thrall', type: 'rel' },
     // Glornir
     { source: 'glornir', target: 'bloodsworn', label: 'jefe', type: 'rel' },
     // Snepil
@@ -148,6 +153,7 @@ const links = [
     { source: 'kraka', target: 'wave-jarl', label: 'protege con Seiðr', type: 'magic' },
     { source: 'kraka', target: 'seidr', label: 'practica', type: 'magic' },
     { source: 'kraka', target: 'tainted', label: 'Tainted', type: 'lore' },
+    { source: 'kraka', target: 'thrall', label: 'thrall', type: 'rel' },
     // hundur
     { source: 'hundur', target: 'battle-grim', label: 'miembro/thrall', type: 'rel' },
     { source: 'hundur', target: 'berak', label: 'rastreó', type: 'event' },
@@ -350,13 +356,7 @@ const links = [
     { source: 'berserkergang', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'second-combat', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'drengr', target: 'gudvarr', label: 'se considera', type: 'rel' },
-    { source: 'thrall', target: 'varg', label: 'ex-thrall', type: 'rel' },
-    { source: 'thrall', target: 'thorkel', label: 'ex-thrall', type: 'rel' },
-    { source: 'thrall', target: 'vol', label: 'thrall', type: 'rel' },
-    { source: 'thrall', target: 'kraka', label: 'thrall', type: 'rel' },
     { source: 'thrall', target: 'tainted', label: 'esclavizados', type: 'lore' },
-    { source: 'karl', target: 'orka', label: 'vive como', type: 'rel' },
-    { source: 'karl', target: 'thorkel', label: 'vive como', type: 'rel' },
     { source: 'jarl', target: 'sigrun', label: 'es', type: 'rel' },
     { source: 'jarl', target: 'storr', label: 'es', type: 'rel' },
     { source: 'jarl', target: 'jarl-logur', label: 'es', type: 'rel' },
