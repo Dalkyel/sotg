@@ -16,7 +16,7 @@ const nodes = [
     { id: 'cat-facciones', label: 'FACCIONES Y PODER', group: 'CAT', type: 'Política', desc: 'El tablero político de Vigríð: jarls, reinas, mercenarios.', star: '' },
     { id: 'cat-eventos', label: 'EVENTOS CLAVE', group: 'CAT', type: 'Cronología', desc: 'Sucesos históricos y actuales que moldean la narrativa.', star: '' },
     { id: 'cat-objetos', label: 'OBJETOS', group: 'CAT', type: 'Artefactos', desc: 'Armas, artefactos mágicos y objetos significativos.', star: '' },
-    { id: 'cat-dioses', label: 'PANTEÓN DIVINO', group: 'CAT', type: 'Mitología', desc: 'Los dioses caídos y su legado en Vigríð.', star: '' },
+    { id: 'cat-dioses', label: 'PANTEÓN DIVINO', group: 'CAT', type: 'Mitología', desc: 'Los dioses caídos y su legado en Vigríð. Adorar a los dioses muertos está prohibido y se castiga con la muerte', star: '' },
     { id: 'cat-magia', label: 'MAGIA', group: 'CAT', type: 'Sistema Mágico', desc: 'Seiðr, Galdur, vínculos de sangre y el poder residual de los dioses muertos.', star: '' },
     { id: 'cat-norse', label: 'CULTURA NÓRDICA', group: 'CAT', type: 'Tradiciones', desc: 'Costumbres, rituales, leyes y tradiciones del mundo de Vigríð basadas en la cultura nórdica histórica.', star: '' },
 
@@ -348,12 +348,12 @@ const nodes = [
     // ── VAESEN ─────────────────────────────────────────────
     {
         id: 'tennur', label: 'Tennur', group: 'VAESEN', type: 'Criatura',
-        desc: 'Los Tennur',
+        desc: 'A los Tennur les gustan los dientes y en manada son letales',
         star: ''
     },
     {
         id: 'vaesen-gen', label: 'Vaesen', group: 'VAESEN', type: 'Criatura',
-        desc: 'Criaturas del mundo subterráneo liberadas en el Guðfalla. Presencia en zonas remotas. Van desde peligrosos (trol, serpiente marina, araña de hielo) hasta domesticables (tennúr, Spertus). Los vaesen traders venden sus partes.',
+        desc: 'Criaturas del mundo subterráneo liberadas en el Guðfalla. Presencia en zonas remotas. Van desde peligrosos (trol, serpiente marina, araña de hielo) hasta domesticables (tennúr, Spertus). Los vaesen traders venden sus partes. Se vinculan con sangre a las criaturas ',
         star: ''
     },
     {
@@ -363,7 +363,7 @@ const nodes = [
     },
     {
         id: 'trol', label: 'Trol (bull-troll)', group: 'VAESEN', type: 'Vaesen — Cap.7',
-        desc: 'Joven macho. Astas en el cráneo cubierto de musgo, piel escamada, colmillos de marfil, testiculos y territorios propios. Mató a varios guerreros de Terrores de la batalla antes de ser abatido. Sus partes se venden a buen precio.',
+        desc: 'Joven macho. Astas en el cráneo cubierto de musgo, piel escamada con musgo y liquen, colmillos de marfil, testiculos y territorios propios. Solitarios salvo en época de celo. Mató a varios guerreros de Terrores de la batalla antes de ser abatido. Sus partes (dientes, piel, testículos, corazón, hígado, uñas en polvo) se venden a buen precio.',
         star: ''
     },
     {
