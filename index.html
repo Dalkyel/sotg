@@ -447,6 +447,15 @@
       <div class="legend-item">
         <div class="legend-dot" style="background:#3a5a9a"></div>Facciones
       </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#7a3a3a"></div>Eventos
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#5a5a2a"></div>Objetos
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#6a2a6a"></div>Dioses
+      </div>
     </div>
     <div class="header-hint">Clic en nodo para explorar · Arrastrar para mover · Scroll para zoom</div>
   </header>
@@ -497,6 +506,9 @@
       VAESEN: { color: '#1a4a4a', stroke: '#3a9a9a', r: 13, label: 'Vaesen & Magia' },
       TRAMA: { color: '#4a2010', stroke: '#e07830', r: 14, label: 'Trama' },
       FACCION: { color: '#1a2a4a', stroke: '#3a5a9a', r: 14, label: 'Facción' },
+      EVENTO: { color: '#4a1a1a', stroke: '#7a3a3a', r: 14, label: 'Evento' },
+      OBJETO: { color: '#3a3a1a', stroke: '#5a5a2a', r: 13, label: 'Objeto' },
+      DIOS: { color: '#3a1a3a', stroke: '#6a2a6a', r: 15, label: 'Dios' },
     };
 
     const nodes = [
@@ -514,6 +526,9 @@
       { id: 'cat-mundo', label: 'MUNDO & COSMOS', group: 'CAT', type: 'Worldbuilding', desc: 'Los dioses muertos, el Guðfalla, los Tainted, los vaesen. La realidad rota de Vigríð.', star: '' },
       { id: 'cat-tramas', label: 'TRAMAS ACTIVAS', group: 'CAT', type: 'Tramas', desc: 'Los hilos narrativos abiertos al final del Cap. 10.', star: '' },
       { id: 'cat-facciones', label: 'FACCIONES Y PODER', group: 'CAT', type: 'Política', desc: 'El tablero político de Vigríð: jarls, reinas, mercenarios.', star: '' },
+      { id: 'cat-eventos', label: 'EVENTOS CLAVE', group: 'CAT', type: 'Cronología', desc: 'Sucesos históricos y actuales que moldean la narrativa.', star: '' },
+      { id: 'cat-objetos', label: 'OBJETOS DE PODER', group: 'CAT', type: 'Artefactos', desc: 'Armas, artefactos mágicos y objetos significativos.', star: '' },
+      { id: 'cat-dioses', label: 'PANTEÓN DIVINO', group: 'CAT', type: 'Mitología', desc: 'Los dioses caídos y su legado en Vigríð.', star: '' },
 
       // ── PERSONAJES ORKA ─────────────────────────────────────────────
       {
@@ -664,7 +679,7 @@
         desc: 'Rubia, ojos gris-azul pálido. Tatuajes espirales bajo la ropa. Arrojó un objeto (¿pergamino/tablilla?) al lago de lava para destruirlo antes de ser capturada. Controló la serpiente marina con canto Seiðr. Sangre de Snaka.',
         star: '¿Qué destruyó antes de ser capturada? Acto deliberado para que no caiga en manos de Agnar.'
       },
-           {
+      {
         id: 'hijo-berak', label: 'Hijo de Berak', group: 'ELVAR', type: 'Personaje — Tainted',
         desc: '',
         star: ''
@@ -680,29 +695,31 @@
         star: ''
       },
 
-      // ── COSMOLOGÍA ─────────────────────────────────────────────────
+      // ── EVENTOS ─────────────────────────────────────────────────
       {
-        id: 'gudfall', label: 'Guðfalla (Caída de Dioses)', group: 'COSMO', type: 'Evento Histórico',
+        id: 'gudfall', label: 'Guðfalla (Caída de Dioses)', group: 'EVENTO', type: 'Evento Histórico',
         desc: 'Hace ~300 años. Los hijos de Snaka se rebelaron contra su padre. La guerra de los dioses rompió el mundo: continentes hundidos, mares desbordados. Los vaesen escaparon de su foso. El mundo nunca se recuperó.',
         star: 'Todo el mundo actual es consecuencia directa de este evento.'
       },
+
+      // ── DIOSES ─────────────────────────────────────────────────
       {
-        id: 'snaka', label: 'Snaka', group: 'COSMO', type: 'Dios Muerto — Padre',
+        id: 'snaka', label: 'Snaka', group: 'DIOS', type: 'Dios Muerto — Padre',
         desc: 'El dios-serpiente primordial. Padre de todos los dioses. El más grande y antiguo. Sus huesos forman las cordilleras del norte de Vigríð. Fue derrocado y muerto por sus propios hijos.',
         star: 'La mujer de Berak porta su sangre. ¿Qué otros Tainted de Snaka hay en Vigríð?'
       },
       {
-        id: 'orna', label: 'Orna (Dios-Águila)', group: 'COSMO', type: 'Dios Muerto',
+        id: 'orna', label: 'Orna (Dios-Águila)', group: 'DIOS', type: 'Dios Muerto',
         desc: 'El dios-águila, hijo de Snaka. Muerto en el Guðfalla. Sus huesos (incluyendo sus alas) están en la fortaleza de la Reina Helka en Darl, como símbolo de poder.',
         star: 'Helka gobierna bajo las alas de un dios muerto. ¿Solo símbolo, o hay poder real en esos huesos?'
       },
       {
-        id: 'berser', label: 'Berser (Dios-Oso)', group: 'COSMO', type: 'Dios Muerto',
+        id: 'berser', label: 'Berser (Dios-Oso)', group: 'DIOS', type: 'Dios Muerto',
         desc: 'El dios-oso, hijo de Snaka. Muerto en el Guðfalla. Sus descendientes son los Berserkir: Tainted con fuerza sobrehumana, ojos ambarinos y transformación parcial en combate. [Nota histórica: en la mitología nórdica real, berserkr significa «camisa de oso» — guerreros sagrados de Odín que entraban en trance de furia animal (berserkergang). Gwynne reinterpreta esto como herencia de sangre divina literal: el «oso» fue un dios real que murió.]',
         star: 'Berak Bjornasson porta su sangre. Los Berserkir son muy cotizados por los jarls como guardia personal. El collar de hierro los detiene — pero ¿cuánto tiempo?'
       },
       {
-        id: 'likrafa', label: 'Lik-Rifa (Diosa-Dragón)', group: 'COSMO', type: 'Dios — ¿Vivo?',
+        id: 'likrafa', label: 'Lik-Rifa (Diosa-Dragón)', group: 'DIOS', type: 'Dios — ¿Vivo?',
         desc: 'La diosa-dragón, hija de Snaka. NO murió en el Guðfalla: fue encadenada bajo Oskutreð, el Árbol de Ceniza. Habita Vergelmir, cámara subterránea por donde pasan los guerreros muertos. Los terremotos de Iskalt sugieren que sigue viva.',
         star: '★★★ LA amenaza cósmica. Si escapa, el equilibrio del mundo colapsa. Los guerreros mueren con armas para luchar contra ella en Vergelmir.'
       },
@@ -800,13 +817,15 @@
         desc: 'Lengua mágica de comandos rúnicos. Activa los collares de hierro sobre los Tainted. Palabras conocidas: Hlýða (obedece / escucha), Á HNÉN (de rodillas), Hlýða og fá verðlaun (obedece y recibe recompensa). [Contexto: el galdr histórico nórdico era el canto o recitación de runas mágicas —opuesto al seiðr, era más público y menos estigmatizado. En Vigríð Gwynne lo convierte en lengua de control sobre la herencia divina.]',
         star: 'Saber esta lengua es poder absoluto sobre los Tainted. ¿Cuántos la conocen realmente?'
       },
+
+      // ── OBJETOS ─────────────────────────────────────────────────
       {
-        id: 'collares', label: 'Collares de Hierro', group: 'VAESEN', type: 'Objeto Mágico',
+        id: 'collares', label: 'Collares de Hierro', group: 'OBJETO', type: 'Objeto Mágico',
         desc: 'Collar de hierro que controla a los Tainted mediante palabras Galdur. El metal se calienta con venas de fuego rojo al activarse. Símbolo de esclavitud y control. Vol, Kráka y los Tainted capturados los llevan.',
         star: 'El control de los Tainted depende de que solo los "dueños" conozcan las palabras Galdur.'
       },
       {
-        id: 'runa-ward', label: 'Runa Warding', group: 'VAESEN', type: 'Magia — Protección',
+        id: 'runa-ward', label: 'Runa Warding', group: 'OBJETO', type: 'Magia — Protección',
         desc: 'Runas talladas en puertas/umbrales. Repelen vaesen menores. No detienen a seres de gran poder ni a humanos. Reforzadas con knuckle-bone de dios muerto (Fellur, Asgrim). Confirma que Asgrim no fue atacado por vaesen.',
         star: ''
       },
@@ -868,7 +887,7 @@
       },
       {
         id: 'holmganga', label: 'Holmganga Virk vs Guðvarr', group: 'TRAMA', type: 'Trama — Inmediata',
-        desc: 'Desafío de duelo en el Althing (Cap. 10). Guðvarr vs Virk. Orka es el segundo de Virk. Si Virk muere, Orka debe poner el hacha en su mano y contener a sus hijos. Se celebrará en el Althing.',
+        desc: 'Desafío de duelo en el Althing. Guðvarr vs Virk. Orka es el segundo de Virk. Si Virk muere, Orka debe poner el hacha en su mano y contener a sus hijos. Se celebrará en el Althing.',
         star: 'Orka rompe el pacto de silencio con Thorkel al involucrarse. Consecuencias por venir.'
       },
       {
@@ -889,12 +908,12 @@
 
       // ── FACCIONES ─────────────────────────────────────────────
       {
-        id:  'bloodsworn', label: 'Bloodsworn (Hermanos de Sangre)', group: 'FACCION', type: 'Facción — Mercenarios',
-        desc: 'Compañía mercenaria de élite, legendaria y famosa en Vigríð. Escudo negro con salpicaduras rojas. Cazan vaesen, buscan reliquias, protegen ricos. Drakkar propio. Jefe: Glornir. Seiðr-thrall: Vol.',
+        id: 'bloodsworn', label: 'Bloodsworn (Hermanos de Sangre)', group: 'FACCION', type: 'Facción — Mercenarios',
+        desc: 'Compañía mercenaria de élite, legendaria y famosa en Vigríð. Escudo negro con salpicaduras rojas. Cazan vaesen, buscan reliquias, protegen ricos. Drakkar propio. Jefe: Glornir. Seiðr-thrall: Vol. Un miembro muere y van a Liga a buscar reemplazo',
         star: ''
       },
       {
-        id: 'batalla-fiera', label: 'Terrores de la batalla (Battle-Grim)', group: 'FACCION', type: 'Facción — Mercenarios',
+        id: 'battle-grim', label: 'Terrores de la batalla (Battle-Grim)', group: 'FACCION', type: 'Facción — Mercenarios',
         desc: 'Compañía mercenaria rival. Drakkar: Wave-Jarl. Cazan Tainted para venderlos a jarls. Jefe: Agnar. Thrall Tainted: Kráka (Seiðr) y Hundur (rastreador).',
         star: ''
       },
@@ -1002,70 +1021,101 @@
       { source: 'root', target: 'cat-mundo', label: 'mundo', type: 'cat' },
       { source: 'root', target: 'cat-tramas', label: 'tramas', type: 'cat' },
       { source: 'root', target: 'cat-facciones', label: 'poder', type: 'cat' },
+      { source: 'root', target: 'cat-eventos', label: '', type: 'arc' },
+      { source: 'root', target: 'cat-objetos', label: '', type: 'arc' },
 
       // Cat-orka to orka chars
       { source: 'cat-orka', target: 'orka', label: '', type: 'arc' },
+      { source: 'cat-orka', target: 'gudvarr', label: '', type: 'arc' },
+      { source: 'cat-orka', target: 'virk', label: '', type: 'arc' },
+      { source: 'cat-orka', target: 'asgrim', label: '', type: 'arc' },
       { source: 'orka', target: 'thorkel', label: 'Esposo', type: 'rel' },
       { source: 'orka', target: 'breca', label: 'Hijo', type: 'rel' },
-      { source: 'thorkel', target: 'breca', label: 'Hijo', type: 'rel' },
       { source: 'orka', target: 'spert', label: 'vínculo sangre', type: 'magic' },
+      { source: 'orka', target: 'virk', label: 'comercian', type: 'event' },
+      { source: 'orka', target: 'sigrun', label: 'la cuestiona en el Althing', type: 'event' },
+      { source: 'thorkel', target: 'virk', label: 'comercian', type: 'event' },
+      { source: 'thorkel', target: 'breca', label: 'Hijo', type: 'rel' },
       { source: 'breca', target: 'vesli', label: 'protege / jura', type: 'magic' },
-      { source: 'cat-orka', target: 'gudvarr', label: '', type: 'arc' },
+      { source: 'breca', target: 'hueso-dios-fellur', label: 'reacción', type: 'trama' },
       { source: 'gudvarr', target: 'sigrun', label: 'sobrino', type: 'rel' },
       { source: 'helka', target: 'sigrun', label: 'juro lealtad', type: 'rel' },
-      { source: 'cat-orka', target: 'virk', label: '', type: 'arc' },
-      { source: 'orka', target: 'sigrun', label: 'la cuestiona en el Althing', type: 'event' },
       { source: 'virk', target: 'harek', label: 'patrón niños', type: 'trama' },
-      { source: 'orka', target: 'virk', label: 'comercian', type: 'event' },
-      { source: 'thorkel', target: 'virk', label: 'comercian', type: 'event' },
+      { source: 'thrall-sigrun', target: 'sigrun', label: 'sirve a / guardaespaldas', type: 'rel' },
+      { source: 'thrall-sigrun', target: 'tainted', label: '¿sangre divina?', type: 'trama' },
+      // Asgrim e Idrun
+      { source: 'asgrim', target: 'idrun', label: 'esposo/a', type: 'rel' },
+      { source: 'asgrim', target: 'harek', label: 'padre', type: 'rel' },
+      { source: 'idrun', target: 'harek', label: 'madre', type: 'rel' },
 
       // Cat-varg to varg chars
       { source: 'cat-varg', target: 'varg', label: '', type: 'arc' },
+      { source: 'cat-varg', target: 'glornir', label: '', type: 'arc' },
+      { source: 'cat-varg', target: 'snepil', label: '', type: 'arc' },
+      { source: 'cat-varg', target: 'jarl-logur', label: '', type: 'arc' },
       { source: 'varg', target: 'froya', label: 'hermana muerta', type: 'rel' },
       { source: 'varg', target: 'leif', label: 'enemigo', type: 'conflict' },
       { source: 'varg', target: 'liga', label: 'visita', type: 'geo' },
       { source: 'varg', target: 'svik', label: 'compañero', type: 'rel' },
+      { source: 'varg', target: 'guerrero-oscuro', label: 'lo reconoce sin saber', type: 'trama' },
+      { source: 'varg', target: 'vol', label: 'la busca para akáll', type: 'goal' },
+      { source: 'varg', target: 'bloodsworn', label: 'nuevo miembro', type: 'rel' },
       { source: 'rokia', target: 'varg', label: 'entrena (Cap.11)', type: 'rel' },
       { source: 'rokia', target: 'glornir', label: 'órdenes de', type: 'rel' },
-      { source: 'rokia', target:  'bloodsworn', label: 'miembro', type: 'rel' },
+      { source: 'rokia', target: 'bloodsworn', label: 'miembro', type: 'rel' },
       { source: 'guerrero-oscuro', target: 'glornir', label: 'sparring / misterio', type: 'trama' },
-      { source: 'guerrero-oscuro', target:  'bloodsworn', label: 'miembro', type: 'rel' },
-      { source: 'mujer-plateada', target:  'bloodsworn', label: 'miembro', type: 'rel' },
-      { source: 'einar', target:  'bloodsworn', label: 'miembro', type: 'rel' },
+      { source: 'guerrero-oscuro', target: 'bloodsworn', label: 'miembro', type: 'rel' },
+      { source: 'mujer-plateada', target: 'bloodsworn', label: 'miembro', type: 'rel' },
+      { source: 'einar', target: 'bloodsworn', label: 'miembro', type: 'rel' },
       { source: 'einar', target: 'varg', label: 'combate por puesto', type: 'rel' },
-      { source: 'svik', target:  'bloodsworn', label: 'miembro', type: 'rel' },
-      { source: 'vol', target:  'bloodsworn', label: 'miembro', type: 'rel' },
-      { source: 'varg', target: 'guerrero-oscuro', label: 'lo reconoce sin saber', type: 'trama' },
-      { source: 'cat-varg', target: 'glornir', label: '', type: 'arc' },
+      { source: 'svik', target: 'bloodsworn', label: 'miembro', type: 'rel' },
+      { source: 'vol', target: 'bloodsworn', label: 'miembro', type: 'rel' },
       { source: 'glornir', target: 'vol', label: 'jefe / thrall', type: 'rel' },
       { source: 'glornir', target: 'einar', label: 'jefe / campeón', type: 'rel' },
       { source: 'glornir', target: 'svik', label: 'jefe', type: 'rel' },
-      { source: 'varg', target: 'vol', label: 'la busca para akáll', type: 'goal' },
       { source: 'snepil', target: 'varg', label: 'fue su amo', type: 'rel' },
       { source: 'snepil', target: 'leif', label: 'padre', type: 'rel' },
       { source: 'snepil', target: 'orl', label: 'thrall de confianza', type: 'rel' },
-      { source: 'cat-varg', target: 'snepil', label: '', type: 'arc' },
 
       // Cat-elvar to elvar chars
       { source: 'cat-elvar', target: 'elvar', label: '', type: 'arc' },
-      { source: 'elvar', target: 'grend', label: 'guardián', type: 'rel' },
       { source: 'cat-elvar', target: 'agnar', label: '', type: 'arc' },
+      { source: 'elvar', target: 'grend', label: 'guardián', type: 'rel' },
+      { source: 'elvar', target: 'biorr', label: 'tensión', type: 'rel' },
       { source: 'agnar', target: 'sighvat', label: 'jefe/subof.', type: 'rel' },
       { source: 'agnar', target: 'kraka', label: 'jefe/thrall', type: 'rel' },
       { source: 'agnar', target: 'berak', label: 'capturó', type: 'conflict' },
-      { source: 'elvar', target: 'biorr', label: 'tensión', type: 'rel' },
+      { source: 'agnar', target: 'iskalt', label: 'asaltó buscando a Berak', type: 'geo' },
+      { source: 'agnar', target: 'jarl-hrut', label: 'Mató a Jarl Hrut durante el asalto a Iskalt', type: 'conflict' },
+      { source: 'agnar', target: 'wave-jarl', label: 'capitan', type: 'rel' },
       { source: 'berak', target: 'mujer-berak', label: 'esposa', type: 'rel' },
       { source: 'berak', target: 'hijo-berak', label: 'esposa', type: 'rel' },
-       { source: 'berak', target: 'batalla-fiera', label: 'Buscado y capturado', type: 'trama' },
+      { source: 'berak', target: 'battle-grim', label: 'Buscado y capturado', type: 'trama' },
+      { source: 'mujer-berak', target: 'sjavarom', label: 'controló', type: 'magic' },
+      { source: 'mujer-berak', target: 'seidr', label: 'practica', type: 'magic' },
+      { source: 'sighvat', target: 'kraka', label: 'controla', type: 'rel' },
+      { source: 'sighvat', target: 'hundur', label: 'controla', type: 'rel' },
+      { source: 'kraka', target: 'battle-grim', label: 'miembro', type: 'rel' },
+      { source: 'kraka', target: 'wave-jarl', label: 'protege con Seiðr', type: 'magic' },
+      { source: 'kraka', target: 'seidr', label: 'practica', type: 'magic' },
+      { source: 'hundur', target: 'battle-grim', label: 'miembro', type: 'rel' },
+      { source: 'hundur', target: 'berak', label: 'rastreó', type: 'event' },
+      { source: 'vol', target: 'seidr', label: 'practica', type: 'magic' },
 
       // Cat-mundo
       { source: 'cat-mundo', target: 'gudfall', label: '', type: 'arc' },
+      { source: 'cat-mundo', target: 'tainted', label: '', type: 'arc' },
+      { source: 'cat-mundo', target: 'vigrið', label: '', type: 'arc' },
+      { source: 'cat-mundo', target: 'vaesen-gen', label: '', type: 'arc' },
+      { source: 'cat-mundo', target: 'seidr', label: '', type: 'arc' },
+      { source: 'cat-mundo', target: 'galdur', label: '', type: 'arc' },
+      { source: 'cat-mundo', target: 'runa-ward', label: '', type: 'arc' },
+      { source: 'cat-mundo', target: 'hueso-dios-fellur', label: '', type: 'arc' },
+      { source: 'cat-mundo', target: 'cat-dioses', label: '', type: 'arc' },
       { source: 'gudfall', target: 'snaka', label: 'murió en', type: 'history' },
       { source: 'gudfall', target: 'orna', label: 'murió en', type: 'history' },
       { source: 'gudfall', target: 'berser', label: 'murió en', type: 'history' },
       { source: 'gudfall', target: 'likrafa', label: 'encadenada', type: 'history' },
-      { source: 'cat-mundo', target: 'tainted', label: '', type: 'arc' },
-      { source: 'cat-mundo', target: 'vigrið', label: '', type: 'arc' },
       { source: 'snaka', target: 'vigrið', label: 'sus huesos = montañas', type: 'lore' },
       { source: 'tainted', target: 'berak', label: 'Berserkir', type: 'lore' },
       { source: 'tainted', target: 'kraka', label: 'Tainted', type: 'lore' },
@@ -1073,6 +1123,14 @@
       { source: 'berser', target: 'berak', label: 'herencia', type: 'lore' },
       { source: 'snaka', target: 'mujer-berak', label: 'herencia', type: 'lore' },
       { source: 'likrafa', target: 'oskutred', label: 'encadenada bajo', type: 'lore' },
+
+      // Cat-eventos
+      { source: 'gudfall', target: 'cat-eventos', label: '', type: 'history' },
+
+      // Cat-dioses
+      { source: 'snaka', target: 'cat-dioses', label: '', type: 'lore' },
+      { source: 'likrafa', target: 'cat-dioses', label: '', type: 'lore' },
+      { source: 'orna', target: 'cat-dioses', label: '', type: 'lore' },
 
       // Lugares
       { source: 'vigrið', target: 'fellur', label: 'ciudad en', type: 'geo' },
@@ -1084,21 +1142,20 @@
       { source: 'iskalt', target: 'oskutred', label: 'terremotos = Lik-Rifa', type: 'magic' },
 
       // Vaesen y magia
-      { source: 'cat-mundo', target: 'vaesen-gen', label: '', type: 'arc' },
       { source: 'vaesen-gen', target: 'vesli', label: 'tennúr', type: 'lore' },
       { source: 'vaesen-gen', target: 'spert', label: 'spertus', type: 'lore' },
       { source: 'vaesen-gen', target: 'fell-wolf', label: '', type: 'lore' },
       { source: 'vaesen-gen', target: 'trol', label: '', type: 'lore' },
       { source: 'vaesen-gen', target: 'sjavarom', label: '', type: 'lore' },
-      { source: 'cat-mundo', target: 'seidr', label: '', type: 'arc' },
-      { source: 'seidr', target: 'vol', label: 'practica', type: 'magic' },
-      { source: 'seidr', target: 'kraka', label: 'practica', type: 'magic' },
-      { source: 'seidr', target: 'mujer-berak', label: 'practica', type: 'magic' },
+      { source: 'vaesen-gen', target: 'hundur', label: 'Tainted tracker', type: 'lore' },
+      { source: 'vaesen-gen', target: 'nacken', label: 'vaesen agua', type: 'lore' },
+      { source: 'vaesen-gen', target: 'araña-hielo', label: 'vaesen ártico', type: 'lore' },
+      { source: 'vaesen-gen', target: 'skraeling', label: '', type: 'lore' },
+      { source: 'vaesen-gen', target: 'faunir', label: '', type: 'lore' },
+      { source: 'vaesen-gen', target: 'froa', label: '', type: 'lore' },
       { source: 'seidr', target: 'akall', label: 'técnica', type: 'magic' },
-      { source: 'cat-mundo', target: 'galdur', label: '', type: 'arc' },
       { source: 'galdur', target: 'collares', label: 'activa', type: 'magic' },
       { source: 'collares', target: 'tainted', label: 'controla', type: 'magic' },
-      { source: 'cat-mundo', target: 'runa-ward', label: '', type: 'arc' },
 
       // Tramas
       { source: 'cat-tramas', target: 'ninos-robados', label: '', type: 'arc' },
@@ -1123,16 +1180,18 @@
       { source: 'lik-rifa-amenaza', target: 'iskalt', label: 'epicentro', type: 'geo' },
 
       // Facciones
-      { source: 'cat-facciones', target:  'bloodsworn', label: '', type: 'arc' },
-      { source: 'cat-facciones', target: 'batalla-fiera', label: '', type: 'arc' },
+      { source: 'cat-facciones', target: 'bloodsworn', label: '', type: 'arc' },
+      { source: 'cat-facciones', target: 'battle-grim', label: '', type: 'arc' },
       { source: 'cat-facciones', target: 'helka', label: '', type: 'arc' },
       { source: 'cat-facciones', target: 'storr', label: '', type: 'arc' },
-      { source:  'bloodsworn', target: 'glornir', label: 'jefe', type: 'rel' },
-      { source:  'bloodsworn', target: 'liga', label: 'base en', type: 'geo' },
-      { source: 'batalla-fiera', target: 'agnar', label: 'jefe', type: 'rel' },
-      { source: 'batalla-fiera', target: 'elvar', label: 'miembro', type: 'rel' },
-            { source: 'batalla-fiera', target: 'biorr', label: 'miembro', type: 'rel' },
-      { source: 'batalla-fiera', target: 'grend', label: 'miembro', type: 'rel' },
+      { source: 'cat-facciones', target: 'emp-kirill', label: '', type: 'arc' },
+      { source: 'cat-facciones', target: 'jarl-logur', label: '', type: 'arc' },
+      { source: 'bloodsworn', target: 'glornir', label: 'jefe', type: 'rel' },
+      { source: 'bloodsworn', target: 'liga', label: 'base en', type: 'geo' },
+      { source: 'battle-grim', target: 'agnar', label: 'jefe', type: 'rel' },
+      { source: 'battle-grim', target: 'elvar', label: 'miembro', type: 'rel' },
+      { source: 'battle-grim', target: 'biorr', label: 'miembro', type: 'rel' },
+      { source: 'battle-grim', target: 'grend', label: 'miembro', type: 'rel' },
       { source: 'helka', target: 'darl', label: 'sede', type: 'geo' },
       { source: 'helka', target: 'orna', label: 'huesos en fortaleza', type: 'lore' },
       { source: 'storr', target: 'snakavik', label: 'sede', type: 'geo' },
@@ -1140,41 +1199,28 @@
       { source: 'sigrun', target: 'fellur', label: 'jarl de', type: 'geo' },
 
       // ── ENLACES PERSONAJES SECUNDARIOS ────────────────────────────
-      { source: 'cat-varg', target: 'jarl-logur', label: '', type: 'arc' },
-      { source: 'cat-facciones', target: 'jarl-logur', label: '', type: 'arc' },
       { source: 'jarl-logur', target: 'liga', label: 'jarl de', type: 'geo' },
-      { source: 'jarl-logur', target:  'bloodsworn', label: 'hospeda', type: 'rel' },
+      { source: 'jarl-logur', target: 'bloodsworn', label: 'hospeda', type: 'rel' },
       { source: 'leif', target: 'orl', label: 'Hird / compañero', type: 'rel' },
-      { source: 'sighvat', target: 'hundur', label: 'controla', type: 'rel' },
-      { source: 'sighvat', target: 'batalla-fiera', label: 'navega en', type: 'rel' },
-       { source: 'hundur', target: 'batalla-fiera', label: 'miembro', type: 'rel' },
-         { source: 'kraka', target: 'batalla-fiera', label: 'miembro', type: 'rel' },
-      { source: 'hundur', target: 'berak', label: 'rastreó', type: 'event' },
-      { source: 'vaesen-gen', target: 'hundur', label: 'Tainted tracker', type: 'lore' },
-      { source: 'trud', target: 'batalla-fiera', label: 'miembro', type: 'rel' },
+      { source: 'trud', target: 'battle-grim', label: 'miembro', type: 'rel' },
       { source: 'arild', target: 'sigrun', label: 'Drengr de', type: 'rel' },
       { source: 'arild', target: 'gudvarr', label: 'acompaña a', type: 'rel' },
-      { source: 'jokul', target:  'bloodsworn', label: 'herrero', type: 'rel' },
+      { source: 'jokul', target: 'bloodsworn', label: 'herrero', type: 'rel' },
       { source: 'jokul', target: 'einar', label: 'forjó protección', type: 'rel' },
       { source: 'jarl-hrut', target: 'iskalt', label: 'jarl de (†)', type: 'geo' },
-      { source: 'agnar', target: 'iskalt', label: 'asaltó buscando a Berak', type: 'geo' },
-      { source: 'agnar', target: 'jarl-hrut', label: 'Mató a Jarl Hrut durante el asalto a Iskalt', type: 'conflict' },
       { source: 'slyda', target: 'liga', label: 'guarda puerta', type: 'rel' },
       { source: 'slyda', target: 'varg', label: 'dejó pasar', type: 'event' },
       { source: 'falki', target: 'oath-rock', label: 'asiste Althing', type: 'event' },
       { source: 'jarl-orlyg', target: 'svelgarth', label: 'jarl de', type: 'geo' },
-      { source: 'cat-facciones', target: 'emp-kirill', label: '', type: 'arc' },
       { source: 'emp-kirill', target: 'iskidan', label: 'gobierna', type: 'geo' },
       { source: 'haraldurson', target: 'howbyr', label: 'viven en', type: 'geo' },
       { source: 'ninos-robados', target: 'haraldurson', label: 'víctima', type: 'trama' },
       { source: 'ninos-robados', target: 'kergarth', label: 'caso en', type: 'trama' },
       { source: 'ninos-robados', target: 'howbyr', label: 'caso en', type: 'trama' },
       { source: 'ninos-robados', target: 'rio-skarpain', label: 'ruta de huida', type: 'trama' },
+      { source: 'ninos-robados', target: 'asgrim', label: 'víctimas', type: 'trama' },
 
       // ── ENLACES VAESEN ADICIONALES ─────────────────────────────────
-      { source: 'vaesen-gen', target: 'nacken', label: 'vaesen agua', type: 'lore' },
-      { source: 'vaesen-gen', target: 'araña-hielo', label: 'vaesen ártico', type: 'lore' },
-      { source: 'vaesen-gen', target: 'skraeling', label: '', type: 'lore' },
       { source: 'islas-hielo', target: 'araña-hielo', label: 'hábitat', type: 'lore' },
       { source: 'nacken', target: 'rio-skarpain', label: 'posible hábitat', type: 'lore' },
 
@@ -1189,38 +1235,12 @@
       { source: 'iskalt', target: 'islas-hielo', label: 'al sur de', type: 'geo' },
 
       // ── ENLACES OBJETOS ────────────────────────────────────────────
-      { source: 'batalla-fiera', target: 'wave-jarl', label: 'navega en', type: 'rel' },
-      { source: 'kraka', target: 'wave-jarl', label: 'protege con Seiðr', type: 'magic' },
-      { source: 'agnar', target: 'wave-jarl', label: 'capitan', type: 'rel' },
+      { source: 'battle-grim', target: 'wave-jarl', label: 'navega en', type: 'rel' },
       { source: 'colmillo-trol', target: 'elvar', label: 'otorgado a', type: 'rel' },
+      { source: 'colmillo-trol', target: 'agnar', label: 'otorga', type: 'rel' },
+      { source: 'colmillo-trol', target: 'trol', label: 'origen', type: 'lore' },
       { source: 'anillo-oro', target: 'elvar', label: 'otorgado a', type: 'rel' },
-      { source: 'agnar', target: 'colmillo-trol', label: 'otorga', type: 'rel' },
-      { source: 'trol', target: 'colmillo-trol', label: 'origen', type: 'lore' },
       { source: 'hueso-dios-fellur', target: 'fellur', label: 'protege', type: 'magic' },
-      { source: 'hueso-dios-fellur', target: 'breca', label: 'reacción ★', type: 'trama' },
-      { source: 'cat-mundo', target: 'hueso-dios-fellur', label: '', type: 'arc' },
-
-      // ── CROSS-ARC CONNECTIONS ──────────────────────────────────────
-      //{ source: 'thorkel', target:  'bloodsworn', label: 'ex-thrall (paralelo)', type: 'lore' },
-      { source: 'varg', target:  'bloodsworn', label: 'nuevo miembro', type: 'rel' },
-      { source: 'mujer-berak', target: 'sjavarom', label: 'controló', type: 'magic' },
-      { source: 'sighvat', target: 'kraka', label: 'controla', type: 'rel' },
-      { source: 'fell-wolf', target: 'ninos-robados', label: 'pista: herido antes', type: 'trama' },
-      // Thrall de Sigrún
-      { source: 'thrall-sigrun', target: 'sigrun', label: 'sirve a / guardaespaldas', type: 'rel' },
-      { source: 'thrall-sigrun', target: 'tainted', label: '¿sangre divina?', type: 'trama' },
-      { source: 'cat-orka', target: 'thrall-sigrun', label: '', type: 'arc' },
-
-      // Asgrim e Idrun
-      { source: 'asgrim', target: 'idrun', label: 'esposo/a', type: 'rel' },
-      { source: 'asgrim', target: 'harek', label: 'padre', type: 'rel' },
-      { source: 'idrun', target: 'harek', label: 'madre', type: 'rel' },
-      { source: 'ninos-robados', target: 'asgrim', label: 'víctimas', type: 'trama' },
-      { source: 'cat-orka', target: 'asgrim', label: '', type: 'arc' },
-
-      // Faunir y Frøa
-      { source: 'vaesen-gen', target: 'faunir', label: '', type: 'lore' },
-      { source: 'vaesen-gen', target: 'froa', label: '', type: 'lore' },
     ];
 
     // ═══════════════════════════════════════════════════════
@@ -1338,16 +1358,16 @@
       const fontSize = r * 0.35;
       const lineH = fontSize * 1.1;
       const maxWidth = r * 1.7;
-      
+
       const words = d.label.split(' ');
       let lines = [];
       let currentLine = [];
-      
+
       const tempText = el.append('text')
         .attr('font-size', fontSize)
         .attr('font-family', d.group === 'CAT' || d.group === 'CENTER' ? "'Cinzel', serif" : "'Crimson Pro', serif")
         .style('visibility', 'hidden');
-      
+
       words.forEach(word => {
         currentLine.push(word);
         tempText.text(currentLine.join(' '));
@@ -1359,7 +1379,7 @@
       });
       if (currentLine.length > 0) lines.push(currentLine.join(' '));
       tempText.remove();
-      
+
       const totalH = (lines.length - 1) * lineH;
       lines.forEach((line, i) => {
         el.append('text')
