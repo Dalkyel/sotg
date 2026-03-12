@@ -10,11 +10,8 @@ const links = [
     { source: 'root', target: 'cat-norse', label: 'cultura', type: 'cat' },
     // -------------------------------------------------------------------------------------- //
     // Cat-orka to orka chars
-    { source: 'cat-orka', target: 'orka', label: '', type: 'arc' },
-    { source: 'cat-orka', target: 'gudvarr', label: '', type: 'arc' },
-    { source: 'cat-orka', target: 'virk', label: '', type: 'arc' },
-    { source: 'cat-orka', target: 'asgrim', label: '', type: 'arc' },
     // Orka
+    { source: 'orka', target: 'cat-orka', label: '', type: 'arc' },
     { source: 'orka', target: 'thorkel', label: 'Esposo', type: 'rel' },
     { source: 'orka', target: 'breca', label: 'Hijo', type: 'rel' },
     { source: 'orka', target: 'asgrim-death', label: 'descubre', type: 'event' },
@@ -61,10 +58,8 @@ const links = [
     { source: 'spert', target: 'spertus', label: 'Es un', type: 'lore' },
 // -------------------------------------------------------------------------------------- //
     // Cat-varg to varg chars
-    { source: 'cat-varg', target: 'varg', label: '', type: 'arc' },
-    { source: 'cat-varg', target: 'bloodsworn', label: '', type: 'arc' },
-    { source: 'cat-varg', target: 'snepil', label: '', type: 'arc' },
     // Varg
+    { source: 'varg', target: 'cat-varg', label: '', type: 'arc' },
     { source: 'varg', target: 'froya', label: 'hermana', type: 'rel' },
     { source: 'varg', target: 'leif', label: 'enemigo', type: 'conflict' },
     { source: 'varg', target: 'liga', label: 'visita', type: 'geo' },
@@ -74,6 +69,8 @@ const links = [
     { source: 'varg', target: 'bloodsworn', label: 'nuevo miembro', type: 'event' },
     { source: 'varg', target: 'akall', label: 'necesita', type: 'goal' },
     { source: 'varg', target: 'tainted', label: 'posible sangre', type: 'trama' },
+    // bloodsworn
+    { source: 'bloodsworn', target: 'cat-varg', label: '', type: 'arc' },
     // Rokia
     { source: 'rokia', target: 'varg', label: 'entrena', type: 'goal' },
     { source: 'rokia', target: 'bloodsworn', label: 'miembro', type: 'rel' },
@@ -84,7 +81,7 @@ const links = [
     { source: 'mujer-plateada', target: 'bloodsworn', label: 'miembro', type: 'rel' },
     // Einar
     { source: 'einar', target: 'bloodsworn', label: 'miembro', type: 'rel' },
-    { source: 'einar', target: 'varg', label: 'enfrenta por puesto', type: 'event' },
+    { source: 'snepil', target: 'cat-varg', label: '', type: 'arc' },
     // Svik
     { source: 'svik', target: 'bloodsworn', label: 'miembro', type: 'rel' },
     // Vol
@@ -93,14 +90,14 @@ const links = [
     // Glornir
     { source: 'glornir', target: 'bloodsworn', label: 'jefe', type: 'rel' },
     // Snepil
+    { source: 'einar', target: 'varg', label: 'enfrenta por puesto', type: 'event' },
     { source: 'snepil', target: 'varg', label: 'fue su amo', type: 'rel' },
     { source: 'snepil', target: 'leif', label: 'padre', type: 'rel' },
     { source: 'snepil', target: 'orl', label: 'thrall de confianza', type: 'rel' },
 // -------------------------------------------------------------------------------------- //
     // Cat-elvar to elvar chars
-    { source: 'cat-elvar', target: 'elvar', label: '', type: 'arc' },
-    { source: 'cat-elvar', target: 'battle-grim', label: '', type: 'arc' },
     // Elvar
+    { source: 'elvar', target: 'cat-elvar', label: '', type: 'arc' },
     { source: 'elvar', target: 'grend', label: 'guardián', type: 'rel' },
     { source: 'elvar', target: 'biorr', label: 'tensión', type: 'trama' },
     // Agnar
@@ -110,14 +107,16 @@ const links = [
     // Berak
     { source: 'berak', target: 'mujer-berak', label: 'esposo', type: 'rel' },
     { source: 'berak', target: 'hijo-berak', label: 'padre', type: 'rel' },
+    { source: 'berak', target: 'berser', label: 'sangre y herencia confirmada', type: 'lore' },
     // battle Grim
+    { source: 'battle-grim', target: 'cat-elvar', label: '', type: 'arc' },
     { source: 'battle-grim', target: 'berak', label: 'Buscado y capturado', type: 'event' },
     { source: 'battle-grim', target: 'wave-jarl', label: 'Navio', type: 'rel' },
     { source: 'battle-grim', target: 'sjavarom', label: 'Pelearon contra', type: 'Evento' },
     // mujer Berak
     { source: 'mujer-berak', target: 'sjavarom', label: 'controló', type: 'magic' },
     { source: 'mujer-berak', target: 'seidr', label: 'practica', type: 'magic' },
-    { source: 'mujer-berak', target: 'snaka', label: 'sangre confirmada', type: 'lore' },
+    { source: 'mujer-berak', target: 'snaka', label: 'sangre y herencia confirmada', type: 'lore' },
     { source: 'mujer-berak', target: 'tainted', label: 'sangre Snaka', type: 'lore' },
     // Sighvat
     { source: 'sighvat', target: 'kraka', label: 'controla', type: 'rel' },
@@ -129,65 +128,71 @@ const links = [
     // hundur
     { source: 'hundur', target: 'battle-grim', label: 'miembro/thrall', type: 'rel' },
     { source: 'hundur', target: 'berak', label: 'rastreó', type: 'event' },
-// -------------------------------------------------------------------------------------- //
+    // -------------------------------------------------------------------------------------- //
+    // Lenguajes
+    { source: 'galdur', target: 'galdur', label: '', type: 'arc' },
+    { source: 'galdur', target: 'cat-magia', label: 'Lenguaje Magico', type: 'arc' },
+    // -------------------------------------------------------------------------------------- //
     // Cat-mundo
-    { source: 'cat-mundo', target: 'tainted', label: '', type: 'arc' },
-    { source: 'cat-mundo', target: 'vigrið', label: '', type: 'arc' },
-    { source: 'cat-mundo', target: 'vaesen-gen', label: '', type: 'arc' },
-    { source: 'cat-mundo', target: 'galdur', label: '', type: 'arc' },
-    { source: 'cat-mundo', target: 'cat-dioses', label: '', type: 'arc' },
-    { source: 'cat-mundo', target: 'gods-bones', label: '', type: 'magic' },
-    { source: 'cat-mundo', target: 'cat-objetos', label: '', type: 'arc' },
-    { source: 'cat-mundo', target: 'cat-magia', label: '', type: 'arc' },
+    { source: 'tainted', target: 'cat-mundo', label: '', type: 'arc' },
+    { source: 'tainted', target: 'berak', label: 'Berserkir', type: 'lore' },
+    { source: 'tainted', target: 'kraka', label: 'Tainted', type: 'lore' },
+
+    { source: 'likrafa', target: 'oskutred', label: 'encadenada bajo', type: 'lore' },
+    // Cat-eventos
+    { source: 'cat-eventos', target: 'holmganga-event', label: '', type: 'event' },
+    { source: 'cat-eventos', target: 'asgrim-death', label: '', type: 'event' },
+    // holmganga virk vs gudvarr
+    { source: 'holmganga-event', target: 'virk', label: 'combatiente', type: 'rel' },
+    { source: 'holmganga-event', target: 'gudvarr', label: 'combatiente', type: 'rel' },
+    { source: 'holmganga-event', target: 'orka', label: 'segundo de Virk', type: 'rel' },
+    { source: 'holmganga-event', target: 'thrall-sigrun', label: 'mató a Virk', type: 'event' },
+    { source: 'holmganga-event', target: 'arild', label: 'segundo de Guðvarr', type: 'rel' },
+    { source: 'holmganga-event', target: 'mord-lif', label: 'presenciaron', type: 'event' },
+    { source: 'holmganga-event', target: 'oath-rock', label: 'lugar', type: 'geo' },
+    // gudfall
+    { source: 'gudfall', target: 'cat-eventos', label: '', type: 'history' },
     { source: 'gudfall', target: 'snaka', label: 'murió en', type: 'history' },
     { source: 'gudfall', target: 'orna', label: 'murió en', type: 'history' },
     { source: 'gudfall', target: 'berser', label: 'murió en', type: 'history' },
     { source: 'gudfall', target: 'likrafa', label: 'encadenada', type: 'history' },
-    { source: 'snaka', target: 'vigrið', label: 'sus huesos = montañas', type: 'lore' },
-    { source: 'tainted', target: 'berak', label: 'Berserkir', type: 'lore' },
-    { source: 'tainted', target: 'kraka', label: 'Tainted', type: 'lore' },
-    { source: 'berser', target: 'berak', label: 'herencia', type: 'lore' },
-    { source: 'snaka', target: 'mujer-berak', label: 'herencia', type: 'lore' },
-    { source: 'likrafa', target: 'oskutred', label: 'encadenada bajo', type: 'lore' },
-
-    // Cat-eventos
-    { source: 'gudfall', target: 'cat-eventos', label: '', type: 'history' },
-    { source: 'cat-eventos', target: 'holmganga-event', label: '', type: 'event' },
-    { source: 'cat-eventos', target: 'asgrim-death', label: '', type: 'event' },
-    // holmganga virk vs gudvarr
-    { source: 'holmganga-event', target: 'virk', label: 'combatiente', type: 'event' },
-    { source: 'holmganga-event', target: 'gudvarr', label: 'combatiente', type: 'event' },
-    { source: 'holmganga-event', target: 'orka', label: 'segundo de Virk', type: 'event' },
-    { source: 'holmganga-event', target: 'thrall-sigrun', label: 'mató a Virk', type: 'event' },
-    { source: 'holmganga-event', target: 'arild', label: 'segundo de Guðvarr', type: 'event' },
-    { source: 'holmganga-event', target: 'mord-lif', label: 'presenciaron', type: 'event' },
-    { source: 'holmganga-event', target: 'oath-rock', label: 'lugar', type: 'geo' },
 
     // Cat-dioses
+    { source: 'cat-dioses', target: 'cat-mundo', label: '', type: 'arc' },
     { source: 'snaka', target: 'cat-dioses', label: '', type: 'lore' },
+    { source: 'snaka', target: 'vigrið', label: 'sus huesos = montañas', type: 'lore' },
     { source: 'likrafa', target: 'cat-dioses', label: '', type: 'lore' },
     { source: 'orna', target: 'cat-dioses', label: '', type: 'lore' },
     { source: 'ulfrir', target: 'cat-dioses', label: '', type: 'lore' },
-
+    // -------------------------------------------------------------------------------------- //
     // Cat-magia
-    { source: 'cat-magia', target: 'seidr', label: '', type: 'arc' },
-    { source: 'cat-magia', target: 'galdramadr', label: '', type: 'arc' },
-    { source: 'cat-magia', target: 'galdur', label: '', type: 'arc' },
-    { source: 'cat-magia', target: 'gods-bones', label: '', type: 'arc' },
-    { source: 'cat-magia', target: 'runa-ward', label: '', type: 'arc' },
-    { source: 'cat-magia', target: 'collares', label: '', type: 'arc' },
-
+    { source: 'cat-magia', target: 'cat-mundo', label: '', type: 'arc' },
+    { source: 'runa-ward', target: 'cat-magia', label: '', type: 'arc' },
+    { source: 'seidr', target: 'cat-magia', label: '', type: 'arc' },
+    { source: 'galdramadr', target: 'cat-magia', label: '', type: 'arc' },
+    // -------------------------------------------------------------------------------------- //
     // Lugares
-    { source: 'fellur', target: 'vigrið', label: 'ciudad en', type: 'geo' },
-    { source: 'liga', target: 'vigrið', label: 'ciudad en', type: 'geo' },
+    { source: 'vigrið', target: 'cat-mundo', label: '', type: 'arc' },
     { source: 'vigrið', target: 'iskalt', label: 'isla en', type: 'geo' },
     { source: 'vigrið', target: 'snakavik', label: 'ciudad en', type: 'geo' },
     { source: 'vigrið', target: 'darl', label: 'capital', type: 'geo' },
+    { source: 'vigrið', target: 'howbyr', label: 'villa en', type: 'geo' },
+    { source: 'vigrið', target: 'kergarth', label: 'villa en', type: 'geo' },
+    { source: 'vigrið', target: 'svelgarth', label: 'ciudad en', type: 'geo' },
+    { source: 'vigrið', target: 'rio-skarpain', label: 'río en', type: 'geo' },
+    { source: 'vigrið', target: 'islas-hielo', label: 'islas al norte', type: 'geo' },
+    { source: 'fellur', target: 'vigrið', label: 'ciudad en', type: 'geo' },
+    { source: 'liga', target: 'vigrið', label: 'ciudad en', type: 'geo' },
     { source: 'fellur', target: 'oath-rock', label: 'isla en el fiordo', type: 'geo' },
     { source: 'iskalt', target: 'oskutred', label: 'terremotos = Lik-Rifa', type: 'magic' },
     { source: 'islas-hielo', target: 'araña-hielo', label: 'hábitat', type: 'lore' },
-
+    { source: 'oskutred', target: 'vergelmir', label: 'bajo él', type: 'lore' },
+    { source: 'likrafa', target: 'vergelmir', label: 'encadenada en', type: 'lore' },
+    { source: 'iskalt', target: 'islas-hielo', label: 'al sur de', type: 'geo' },
+    { source: 'iskidan', target: 'gravka', label: 'capital', type: 'geo' },
+    { source: 'iskidan', target: 'cat-mundo', label: 'capital', type: 'geo' },
     // Vaesen y magia
+    { source: 'vaesen-gen', target: 'cat-mundo', label: '', type: 'arc' },
     { source: 'vaesen-gen', target: 'tennur', label: 'Es un', type: 'lore' },
     { source: 'vaesen-gen', target: 'spertus', label: 'Es un', type: 'lore' },
     { source: 'vaesen-gen', target: 'fell-wolf', label: '', type: 'lore' },
@@ -203,7 +208,6 @@ const links = [
     { source: 'galdur', target: 'collares', label: 'activa', type: 'magic' },
     { source: 'collares', target: 'tainted', label: 'controla', type: 'magic' },
     { source: 'nacken', target: 'rio-skarpain', label: 'posible hábitat', type: 'lore' },
-
     // Tramas
     { source: 'cat-tramas', target: 'ninos-robados', label: '', type: 'arc' },
     { source: 'cat-tramas', target: 'akall', label: '', type: 'arc' },
@@ -226,7 +230,6 @@ const links = [
     { source: 'ninos-robados', target: 'howbyr', label: 'caso en', type: 'trama' },
     { source: 'ninos-robados', target: 'rio-skarpain', label: 'ruta de huida', type: 'trama' },
     { source: 'ninos-robados', target: 'asgrim', label: 'víctimas', type: 'trama' },
-
     // Facciones
     { source: 'cat-facciones', target: 'bloodsworn', label: '', type: 'arc' },
     { source: 'cat-facciones', target: 'battle-grim', label: '', type: 'arc' },
@@ -258,28 +261,18 @@ const links = [
     { source: 'jarl-orlyg', target: 'svelgarth', label: 'jarl de', type: 'geo' },
     { source: 'haraldurson', target: 'howbyr', label: 'viven en', type: 'geo' },
     { source: 'emp-kirill', target: 'gravka', label: 'gobierna desde', type: 'geo' },
-
-    // ── ENLACES LUGARES ADICIONALES ───────────────────────────────
-    { source: 'vigrið', target: 'howbyr', label: 'villa en', type: 'geo' },
-    { source: 'vigrið', target: 'kergarth', label: 'villa en', type: 'geo' },
-    { source: 'vigrið', target: 'svelgarth', label: 'ciudad en', type: 'geo' },
-    { source: 'vigrið', target: 'rio-skarpain', label: 'río en', type: 'geo' },
-    { source: 'vigrið', target: 'islas-hielo', label: 'islas al norte', type: 'geo' },
-    { source: 'oskutred', target: 'vergelmir', label: 'bajo él', type: 'lore' },
-    { source: 'likrafa', target: 'vergelmir', label: 'encadenada en', type: 'lore' },
-    { source: 'iskalt', target: 'islas-hielo', label: 'al sur de', type: 'geo' },
-    { source: 'iskidan', target: 'gravka', label: 'capital', type: 'geo' },
-    { source: 'iskidan', target: 'cat-mundo', label: 'capital', type: 'geo' },
-
     // ── ENLACES OBJETOS ────────────────────────────────────────────
+    { source: 'cat-objetos', target: 'cat-mundo', label: '', type: 'arc' },
     { source: 'collares', target: 'cat-objetos', label: '', type: 'rel' },
-    { source: 'colmillo-trol', target: 'cat-objetos', label: '', type: 'rel' },
+    { source: 'collares', target: 'cat-magia', label: '', type: 'arc' },
     { source: 'hueso-dios-fellur', target: 'cat-objetos', label: 'protege', type: 'magic' },
-    { source: 'battle-grim', target: 'wave-jarl', label: 'navega en', type: 'rel' },
+    { source: 'colmillo-trol', target: 'cat-objetos', label: '', type: 'rel' },
     { source: 'colmillo-trol', target: 'elvar', label: 'otorgado a', type: 'rel' },
     { source: 'colmillo-trol', target: 'agnar', label: 'otorga', type: 'rel' },
     { source: 'colmillo-trol', target: 'trol', label: 'origen', type: 'lore' },
     { source: 'anillo-oro', target: 'elvar', label: 'otorgado a', type: 'rel' },
+    { source: 'gods-bones', target: 'cat-magia', label: '', type: 'arc' },
+    { source: 'gods-bones', target: 'cat-mundo', label: '', type: 'magic' },
     { source: 'hueso-dios-fellur', target: 'fellur', label: 'protege', type: 'magic' },
     { source: 'hueso-dios-fellur', target: 'gods-bones', label: 'Es un', type: 'rel' },
 
