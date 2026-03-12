@@ -52,6 +52,9 @@
       <div class="legend-item">
         <div class="legend-dot" style="background:#8a3a8a"></div>Magia
       </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#5a7a3a"></div>Cultura Nórdica
+      </div>
     </div>
   </header>
   <div class="main">
@@ -103,6 +106,7 @@
       OBJETO: { color: '#3a3a1a', stroke: '#5a5a2a', r: 13 },
       DIOS: { color: '#3a1a3a', stroke: '#6a2a6a', r: 15 },
       MAGIA: { color: '#4a1a4a', stroke: '#8a3a8a', r: 14 },
+      NORSE: { color: '#2a3a1a', stroke: '#5a7a3a', r: 14 },
     };
 
     const nodes = [
@@ -124,6 +128,7 @@
       { id: 'cat-objetos', label: 'OBJETOS', group: 'CAT', type: 'Artefactos', desc: 'Armas, artefactos mágicos y objetos significativos.', star: '' },
       { id: 'cat-dioses', label: 'PANTEÓN DIVINO', group: 'CAT', type: 'Mitología', desc: 'Los dioses caídos y su legado en Vigríð.', star: '' },
       { id: 'cat-magia', label: 'MAGIA', group: 'CAT', type: 'Sistema Mágico', desc: 'Seiðr, Galdur, vínculos de sangre y el poder residual de los dioses muertos.', star: '' },
+      { id: 'cat-norse', label: 'CULTURA NÓRDICA', group: 'CAT', type: 'Tradiciones', desc: 'Costumbres, rituales, leyes y tradiciones del mundo de Vigríð basadas en la cultura nórdica histórica.', star: '' },
 
       // ── PERSONAJES ORKA ─────────────────────────────────────────────
       {
@@ -405,6 +410,11 @@
         star: 'Las dos brujas conocidas (Vol, Kráka) son thralls encadenadas. ¿Hay Seiðr libre en Vigríð?'
       },
       {
+        id: 'galdramadr', label: 'Galdramaðr', group: 'MAGIA', type: 'Magia',
+        desc: 'Hechicero',
+        star: ''
+      },
+      {
         id: 'galdur', label: 'Galdur', group: 'MAGIA', type: 'Magia — Lengua',
         desc: 'Lengua mágica de comandos rúnicos. Activa los collares de hierro sobre los Tainted. Palabras conocidas: Hlýða (obedece / escucha), Á HNÉN (de rodillas), Hlýða og fá verðlaun (obedece y recibe recompensa). Cap.12: NIðUR, Á JÖRðU, HLŸDDU MÉR (abajo, al suelo, obedéceme) — comando de sometimiento total; Brenna, sársauki (arde, dolor) — castigo de quemadura directa a través del collar. [Contexto: el galdr histórico nórdico era el canto o recitación de runas mágicas —opuesto al seiðr, era más público y menos estigmatizado. En Vigríð Gwynne lo convierte en lengua de control sobre la herencia divina.]',
         star: 'Saber esta lengua es poder absoluto sobre los Tainted. ¿Cuántos la conocen realmente?'
@@ -500,6 +510,63 @@
         id: 'froa', label: 'Frøa', group: 'VAESEN', type: 'Vaesen',
         desc: 'Vaesen del catálogo de criaturas liberadas en el Guðfalla. Mencionado en la mitología de Vigríð. Sus características específicas aún no han sido detalladas en los capítulos leídos.',
         star: '¿Aparecerá en capítulos posteriores? Su nombre puede relacionarse con Freyja (nórdico: Frøya/Frøa).'
+      },
+
+      // ── CULTURA NÓRDICA ────────────────────────────────────────────
+      {
+        id: 'holmganga', label: 'Holmganga', group: 'NORSE', type: 'Ritual — Duelo',
+        desc: 'Duelo legal en isla o terreno delimitado. Reglas estrictas: rendirse es válido, pero atacar tras la rendición rompe el código y justifica ejecución. Virk violó esto contra Guðvarr en Cap.12. [Histórico: el hólmganga era un duelo formal nórdico para resolver disputas de honor, herencias o insultos. Se realizaba en una isla (hólmr) o en un espacio marcado con mantos. Gwynne lo preserva como institución legal vigente en Vigríð.]',
+        star: '★ El holmganga de Cap.12 muestra que las leyes nórdicas antiguas siguen vivas en Vigríð. Romperlas tiene consecuencias letales.'
+      },
+      {
+        id: 'althing', label: 'Alþing (Althing)', group: 'NORSE', type: 'Institución — Asamblea',
+        desc: 'Asamblea pública donde se anuncian juramentos, se resuelven disputas y se proclaman leyes. Celebrada en la Roca del Juramento en Fellur. Sigrún anunció allí su lealtad a Helka. [Histórico: el Alþingi islandés (fundado 930 d.C.) es el parlamento más antiguo del mundo. Era asamblea anual donde se recitaban leyes, se juzgaban casos y se hacían alianzas. Gwynne lo adapta como institución política clave en Vigríð.]',
+        star: 'El Althing es donde el poder se legitima públicamente. Sigrún usó el de Fellur para consolidar su alianza con Helka.'
+      },
+      {
+        id: 'niding', label: 'Níðing', group: 'NORSE', type: 'Concepto — Deshonra',
+        desc: 'El peor insulto en la cultura nórdica: cobarde sin honor. Guðvarr llamó níðing a Virk tras perder el holmganga, provocando que Virk intentara matarlo. Ser níðing es estar socialmente muerto. [Histórico: níð era la deshonra absoluta en la sociedad nórdica. Acusar a alguien de níðing (cobardía, homosexualidad pasiva, falta de honor) podía justificar violencia legal. Gwynne lo usa como detonante de conflicto en Cap.12.]',
+        star: '★★ Guðvarr usó la palabra como arma tras perder. Virk prefirió morir antes que aceptar el insulto.'
+      },
+      {
+        id: 'drengr', label: 'Drengr', group: 'NORSE', type: 'Concepto — Honor',
+        desc: 'Guerrero honorable, valiente, leal. Título de respeto. Guðvarr se considera drengr pero su conducta lo contradice. [Histórico: drengr era el ideal del guerrero nórdico: valentía, lealtad, generosidad, autocontrol. Lo opuesto al níðing. Gwynne lo usa como marcador de estatus social y moral.]',
+        star: 'Guðvarr reclama el título pero no vive según él. Contraste con Thorkel, que nunca lo reclama pero lo encarna.'
+      },
+      {
+        id: 'thrall', label: 'Thrall (Esclavo)', group: 'NORSE', type: 'Clase Social',
+        desc: 'Esclavo. Collar de hierro como símbolo. Sin derechos legales. Varg y Thorkel fueron thralls. Los Tainted son esclavizados sistemáticamente. [Histórico: los þræll eran la clase más baja en la sociedad nórdica: prisioneros de guerra, deudores, hijos de esclavos. Gwynne expande esto: en Vigríð los Tainted son thralls por ley, controlados con collares mágicos.]',
+        star: '★★★ La esclavitud es institución central en Vigríð. Los tres POV tienen conexión directa con ella: Varg y Thorkel ex-thralls, Orka usa thrall-vaesen.'
+      },
+      {
+        id: 'karl', label: 'Karl (Hombre Libre)', group: 'NORSE', type: 'Clase Social',
+        desc: 'Hombre libre. Granjeros, artesanos, comerciantes. Pueden portar armas, poseer tierra, hablar en el Althing. Orka y Thorkel viven como karls en las colinas. [Histórico: los karlar eran la clase media nórdica: libres pero no nobles. Gwynne preserva la estructura social tripartita (thrall-karl-jarl) como base de Vigríð.]',
+        star: 'Orka y Thorkel eligieron vida de karls aislados tras dejar su pasado. Libertad comprada con sangre.'
+      },
+      {
+        id: 'jarl', label: 'Jarl (Noble)', group: 'NORSE', type: 'Clase Social',
+        desc: 'Noble, señor de tierras. Controla villas, recauda tributos, administra justicia. Sigrún (Fellur), Störr (Snakavik), Logur (Liga). Por encima: reinas como Helka. [Histórico: jarl era título de nobleza escandinava, equivalente a conde. Gwynne los convierte en señores feudales de Vigríð, compitiendo por poder en la era post-Guðfalla.]',
+        star: 'Los jarls son el tablero político de Vigríð. Helka los está unificando bajo su corona.'
+      },
+      {
+        id: 'bloodsworn', label: 'Juramento de Sangre', group: 'NORSE', type: 'Ritual — Pacto',
+        desc: 'Pacto inquebrantable sellado con sangre. Sigrún juró lealtad de sangre a Helka. Breca y Vesli están unidos por juramento de sangre. Romperlo es traición absoluta. [Histórico: los juramentos de sangre (blóðbræðralag) creaban hermandad artificial entre guerreros nórdicos. Gwynne lo eleva a magia vinculante: el juramento de sangre en Vigríð tiene poder literal.]',
+        star: '★★ El título de la trilogía (Bloodsworn) se refiere a esto. Los juramentos de sangre son el tejido que une (y rompe) Vigríð.'
+      },
+      {
+        id: 'wyrd', label: 'Wyrd (Destino)', group: 'NORSE', type: 'Concepto — Filosofía',
+        desc: 'Destino inevitable. Los guerreros nórdicos de Vigríð creen que su wyrd está tejido y no puede evitarse. Morir con honor es cumplir el wyrd. [Histórico: wyrd (nórdico antiguo: urðr) era el concepto nórdico del destino tejido por las Nornas. No era predestinación cristiana sino red de consecuencias. Gwynne lo preserva como filosofía de vida en Vigríð.]',
+        star: 'Los personajes hablan de wyrd como fuerza real. ¿Es solo creencia o hay magia del destino en Vigríð?'
+      },
+      {
+        id: 'warrior-braid', label: 'Trenza de Guerrero', group: 'NORSE', type: 'Símbolo — Estatus',
+        desc: 'Trenza o mechón largo en cabeza rapada/parcialmente rapada. Símbolo de estatus guerrero. Agnar (franja central), Elvar (trenza rubia), el guerrero oscuro de los Hermanos (trenza negra). [Histórico: evidencia arqueológica sugiere que algunos guerreros vikingos llevaban el cabello rapado en los lados con mechón largo arriba. Gwynne lo convierte en marcador visual de guerreros profesionales.]',
+        star: 'Marcador visual instantáneo: si lleva trenza de guerrero, es combatiente experimentado.'
+      },
+      {
+        id: 'skald', label: 'Skald (Bardo)', group: 'NORSE', type: 'Rol Social',
+        desc: 'Poeta y narrador oral. Preservan historia, genealogías, hazañas. Aún no aparece skald prominente en la narrativa pero la tradición oral es fuerte (Grend cuenta mitos a Elvar). [Histórico: los skalds eran poetas cortesanos escandinavos que componían en metros complejos (dróttkvætt). Gwynne aún no los ha destacado pero la cultura oral de Vigríð los implica.]',
+        star: '¿Aparecerá un skald en capítulos posteriores? La tradición oral es clave para entender cómo se recuerda el Guðfalla.'
       },
       // ── TRAMAS ACTIVAS ─────────────────────────────────────────────
       {
@@ -643,6 +710,7 @@
       { source: 'root', target: 'cat-tramas', label: 'tramas', type: 'cat' },
       { source: 'root', target: 'cat-facciones', label: 'poder', type: 'cat' },
       { source: 'root', target: 'cat-eventos', label: '', type: 'arc' },
+      { source: 'root', target: 'cat-norse', label: 'cultura', type: 'cat' },
 
       // Cat-orka to orka chars
       { source: 'cat-orka', target: 'orka', label: '', type: 'arc' },
@@ -773,6 +841,7 @@
 
       // Cat-magia
       { source: 'cat-magia', target: 'seidr', label: '', type: 'arc' },
+      { source: 'cat-magia', target: 'galdramadr', label: '', type: 'arc' },
       { source: 'cat-magia', target: 'galdur', label: '', type: 'arc' },
       { source: 'cat-magia', target: 'gods-bones', label: '', type: 'arc' },
       { source: 'cat-magia', target: 'runa-ward', label: '', type: 'arc' },
@@ -882,6 +951,43 @@
       { source: 'anillo-oro', target: 'elvar', label: 'otorgado a', type: 'rel' },
       { source: 'hueso-dios-fellur', target: 'fellur', label: 'protege', type: 'magic' },
       { source: 'hueso-dios-fellur', target: 'gods-bones', label: 'Es un', type: 'rel' },
+
+      // ── ENLACES CULTURA NÓRDICA ────────────────────────────────────
+      { source: 'cat-norse', target: 'holmganga', label: '', type: 'arc' },
+      { source: 'cat-norse', target: 'althing', label: '', type: 'arc' },
+      { source: 'cat-norse', target: 'niding', label: '', type: 'arc' },
+      { source: 'cat-norse', target: 'drengr', label: '', type: 'arc' },
+      { source: 'cat-norse', target: 'thrall', label: '', type: 'arc' },
+      { source: 'cat-norse', target: 'karl', label: '', type: 'arc' },
+      { source: 'cat-norse', target: 'jarl', label: '', type: 'arc' },
+      { source: 'cat-norse', target: 'wyrd', label: '', type: 'arc' },
+      { source: 'cat-norse', target: 'warrior-braid', label: '', type: 'arc' },
+      { source: 'cat-norse', target: 'skald', label: '', type: 'arc' },
+      { source: 'holmganga', target: 'virk', label: 'participó', type: 'event' },
+      { source: 'holmganga', target: 'gudvarr', label: 'participó', type: 'event' },
+      { source: 'holmganga', target: 'oath-rock', label: 'lugar', type: 'geo' },
+      { source: 'althing', target: 'oath-rock', label: 'lugar', type: 'geo' },
+      { source: 'althing', target: 'sigrun', label: 'anunció juramento', type: 'event' },
+      { source: 'niding', target: 'gudvarr', label: 'insultó a Virk', type: 'event' },
+      { source: 'niding', target: 'virk', label: 'insultado', type: 'event' },
+      { source: 'drengr', target: 'gudvarr', label: 'se considera', type: 'rel' },
+      { source: 'drengr', target: 'thorkel', label: 'lo encarna', type: 'rel' },
+      { source: 'thrall', target: 'varg', label: 'ex-thrall', type: 'rel' },
+      { source: 'thrall', target: 'thorkel', label: 'ex-thrall', type: 'rel' },
+      { source: 'thrall', target: 'vol', label: 'thrall', type: 'rel' },
+      { source: 'thrall', target: 'kraka', label: 'thrall', type: 'rel' },
+      { source: 'thrall', target: 'tainted', label: 'esclavizados', type: 'lore' },
+      { source: 'karl', target: 'orka', label: 'vive como', type: 'rel' },
+      { source: 'karl', target: 'thorkel', label: 'vive como', type: 'rel' },
+      { source: 'jarl', target: 'sigrun', label: 'es', type: 'rel' },
+      { source: 'jarl', target: 'storr', label: 'es', type: 'rel' },
+      { source: 'jarl', target: 'jarl-logur', label: 'es', type: 'rel' },
+      { source: 'bloodsworn', target: 'breca', label: 'juramento con Vesli', type: 'magic' },
+      { source: 'bloodsworn', target: 'sigrun', label: 'juró a Helka', type: 'event' },
+      { source: 'warrior-braid', target: 'agnar', label: 'lleva', type: 'rel' },
+      { source: 'warrior-braid', target: 'elvar', label: 'lleva', type: 'rel' },
+      { source: 'warrior-braid', target: 'guerrero-oscuro', label: 'lleva', type: 'rel' },
+      { source: 'wyrd', target: 'vergelmir', label: 'destino tras muerte', type: 'lore' },
     ];
 
     // ═══════════════════════════════════════════════════════
