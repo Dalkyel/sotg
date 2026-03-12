@@ -455,6 +455,11 @@ const nodes = [
         star: '★★★ La esclavitud es institución central en Vigríð. Los tres POV tienen conexión directa con ella: Varg y Thorkel ex-thralls, Orka usa thrall-vaesen.'
       },
       {
+        id: 'destral', label: 'Destral (Hacha con Barba)', group: 'NORSE', type: 'Arma',
+        desc: 'Hacha de guerra nórdica con hoja extendida hacia abajo en forma de "barba". Arma característica de los guerreros nórdicos. Thorkel porta un hacha de mango largo (tan alto como él) con hoja "con barba". Virk usó un hacha de granjero en el holmganga contra Guðvarr. [Histórico: el skeggøx o "hacha barbada" era común entre vikingos por su versatilidad: la extensión inferior permitía enganchar escudos enemigos y proteger la mano del portador. Podía usarse con una o dos manos.]',
+        star: 'Arma icónica del mundo nórdico. Thorkel la domina con maestría letal.'
+      },
+      {
         id: 'karl', label: 'Karl (Hombre Libre)', group: 'NORSE', type: 'Clase Social',
         desc: 'Hombre libre. Granjeros, artesanos, comerciantes. Pueden portar armas, poseer tierra, hablar en el Althing. Orka y Thorkel viven como karls en las colinas. [Histórico: los karlar eran la clase media nórdica: libres pero no nobles. Gwynne preserva la estructura social tripartita (thrall-karl-jarl) como base de Vigríð.]',
         star: 'Orka y Thorkel eligieron vida de karls aislados tras dejar su pasado. Libertad comprada con sangre.'
@@ -1117,6 +1122,8 @@ const links = [
       { source: 'ox', target: 'virk', label: 'usó en holmganga', type: 'event' },
       { source: 'ox', target: 'glornir', label: 'long-axe', type: 'rel' },
       { source: 'ox', target: 'gudvarr', label: 'herido por', type: 'event' },
+      { source: 'destral', target: 'thorkel', label: 'arma principal', type: 'rel' },
+      { source: 'destral', target: 'virk', label: 'usó en holmganga', type: 'event' },
       { source: 'bogi', target: 'trud', label: 'herida por flecha', type: 'event' },
       { source: 'torc', target: 'sigrun', label: 'lleva plata', type: 'rel' },
       { source: 'torc', target: 'svik', label: 'lleva plata con serpientes', type: 'rel' },
