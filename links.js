@@ -61,11 +61,10 @@ const links = [
 
     // Cat-varg to varg chars
     { source: 'cat-varg', target: 'varg', label: '', type: 'arc' },
-    { source: 'cat-varg', target: 'glornir', label: '', type: 'arc' },
+    { source: 'cat-varg', target: 'bloodsworn', label: '', type: 'arc' },
     { source: 'cat-varg', target: 'snepil', label: '', type: 'arc' },
-    { source: 'cat-varg', target: 'jarl-logur', label: '', type: 'arc' },
     // Varg
-    { source: 'varg', target: 'froya', label: 'hermana muerta', type: 'rel' },
+    { source: 'varg', target: 'froya', label: 'hermana', type: 'rel' },
     { source: 'varg', target: 'leif', label: 'enemigo', type: 'conflict' },
     { source: 'varg', target: 'liga', label: 'visita', type: 'geo' },
     { source: 'varg', target: 'svik', label: 'compañero', type: 'rel' },
@@ -80,15 +79,18 @@ const links = [
     // Guerrero Oscuro
     { source: 'guerrero-oscuro', target: 'glornir', label: 'sparring / misterio', type: 'trama' },
     { source: 'guerrero-oscuro', target: 'bloodsworn', label: 'miembro', type: 'rel' },
+    // Mujer Plateada
     { source: 'mujer-plateada', target: 'bloodsworn', label: 'miembro', type: 'rel' },
+    // Einar
     { source: 'einar', target: 'bloodsworn', label: 'miembro', type: 'rel' },
-    { source: 'einar', target: 'varg', label: 'combate por puesto', type: 'rel' },
+    { source: 'einar', target: 'varg', label: 'enfrenta por puesto', type: 'event' },
+    // Svik
     { source: 'svik', target: 'bloodsworn', label: 'miembro', type: 'rel' },
-    { source: 'vol', target: 'bloodsworn', label: 'miembro', type: 'rel' },
+    // Vol
+    { source: 'vol', target: 'bloodsworn', label: 'miembro / thrall', type: 'rel' },
+    // Glornir
     { source: 'glornir', target: 'bloodsworn', label: 'jefe', type: 'rel' },
-    { source: 'glornir', target: 'vol', label: 'jefe / thrall', type: 'rel' },
-    { source: 'glornir', target: 'einar', label: 'jefe / campeón', type: 'rel' },
-    { source: 'glornir', target: 'svik', label: 'jefe', type: 'rel' },
+    // Snepil
     { source: 'snepil', target: 'varg', label: 'fue su amo', type: 'rel' },
     { source: 'snepil', target: 'leif', label: 'padre', type: 'rel' },
     { source: 'snepil', target: 'orl', label: 'thrall de confianza', type: 'rel' },
