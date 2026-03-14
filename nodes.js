@@ -73,8 +73,8 @@ const nodes = [
         star: 'Trud (Terrores de la batalla) fue herida por flecha en Iskalt. Los arcos aparecen en combate pero no son armas de héroes.'
     },
     {
-        id: 'breca', label: 'Breca', group: 'ORKA', type: 'Personaje — Orka', desc: '10 inviernos. Pelo negro como cuervo, ojos de Orka. Sensible, curioso, valiente a su manera. Reacciona al hueso de dios en la entrada a Fellur. Se comunicó con Vesli la tennúr y le dio un diente de leche para calmarla. Vinculado a Vesli por juramento de sangre.',
-        star: 'Afinidad especial con vaesen. ¿Tiene sangre Tainted? Vesli lo protegerá de por vida.'
+        id: 'breca', label: 'Breca', group: 'ORKA', type: 'Personaje -- Orka', desc: '10 inviernos. Pelo negro como cuervo, ojos de Orka. Sensible, curioso, valiente a su manera. Reacciona al hueso de dios en la entrada a Fellur. Se comunico con Vesli la tennur y le dio un diente de leche para calmarla. Vinculado a Vesli por juramento de sangre. Llora por Mord y Lif. Pide aprender espada -- no hacha -- ; Thorkel le da una leccion sobre armas y elecciones sabias. Convence a Orka con logica de salvar una polilla atrapada en una telarana (argumento: si alguien pudiera ayudarte en una trampa y se alejara, que dirias). Orka cede. Lleva un colgante de madera con forma de espada de tres lobulos en cordon de cuero -- hecho por Thorkel -- como recordatorio de su deseo de aprender espada.',
+        star: '*** Su argumento de la polilla revela inteligencia emocional y logica moral inusual para su edad. El colgante de espada anticipa su destino guerrero. Su empatia con Mord y Lif crece -- los considera iguales.'
     },
     {
         id: 'brynja', label: 'Brynja (Cota de Mallas)', group: 'NORSE', type: 'Armadura — Torso', desc: 'Cota de mallas de anillos entrelazados. Protección flexible contra cortes. Cara de fabricar: 20,000-30,000 anillos por cota. Símbolo de riqueza y estatus guerrero. Sigrún lleva una "remachada" (anillos remachados = calidad superior). [Histórico: la brynja era la armadura de élite vikinga. Pesaba 10-15kg. Solo jarls, campeones y guerreros ricos podían pagarla. La mayoría luchaba con cuero o sin armadura. Gwynne la usa como marcador visual de poder.]',
@@ -152,8 +152,8 @@ const nodes = [
         star: ''
     },
     {
-        id: 'froa', label: 'Frøa', group: 'VAESEN', type: 'Vaesen', desc: 'Vaesen del catálogo de criaturas liberadas en el Guðfalla. Mencionado en la mitología de Vigríð. Sus características específicas aún no han sido detalladas en los capítulos leídos.',
-        star: '¿Aparecerá en capítulos posteriores? Su nombre puede relacionarse con Freyja (nórdico: Frøya/Frøa).'
+        id: 'froa', label: 'Froa (dagger)', group: 'VAESEN', type: 'Vaesen -- Espiritu del Arbol (Muerta)', desc: 'Espiritu guardian ligado a un arbol de fresno nacido de una semilla del gran Osktured. Forma: mujer-estatua tallada en madera, mas alta que Orka, edad indeterminada, pelo largo hasta la cintura entretejido de hojas y ramitas. Las Froa viven y mueren con su arbol y luchan salvajemente para defenderlo. El arbol del bosque de Orka fue destruido -- derribado a golpes de multiples hachas y quemado en grandes manchas. La Froa fue encontrada muerta en la ladera del montIculo: cuerpo picado a hachazos y quemado, boca abierta en un grito de agonia congelado, brazos extendidos hacia el tronco caido. Hubo bajas entre los atacantes -- manchas de sangre oscura congelada y tierra levantada donde las raices del arbol azotaron a sus agresores. Orka la describe como alguien que en su ultimo encuentro "reia y bailaba y le ofrecio la mano".',
+        star: '*** ASESINADA junto con su arbol. Alguien con recursos y poder suficiente para matar a un vaesen guardian poderoso recorrio el bosque de Orka. La conexion con los asesinos de Asgrim es inevitable. Los gritos al oeste al final del capitulo sugieren que la amenaza ya esta actuando cerca del steading.'
     },
     {
         id: 'froya', label: 'Frøya (†)', group: 'VARG', type: 'Personaje — Muerta', desc: 'Hermana de Varg, 4 inviernos menor. Ambos fueron vendidos a los 5 y 4 años por sus padres. Murió en circunstancias desconocidas. Su muerte es el motor de toda la historia de Varg.',
@@ -348,8 +348,8 @@ const nodes = [
         star: 'La sala de Logur es donde Varg es juzgado — espacio público para justicia. El longhouse de Fellur es donde Sigrún gobierna.'
     },
     {
-        id: 'mord-lif', label: 'Mord y Lif', group: 'ORKA', type: 'Personaje — Huérfanos', desc: 'Hijos de Virk. Mord es el mayor, Lif el menor. Presenciaron la muerte brutal de su padre en el holmganga. Mord exigió justicia a Jarl Sigrún; Lif llamó niðing a Guðvarr con rabia. Sigrún desestimó su reclamo. Thorkel los ayudó a envolver el cuerpo. Marchan cargando el cuerpo de su padre.',
-        star: '★ Dos jóvenes con motivo de venganza contra Guðvarr y la jarl. Con Virk muerto, el patrón de robos de niños que él documentaba queda sin quien lo persiga —¿lo asumirán ellos?'
+        id: 'mord-lif', label: 'Mord y Lif', group: 'ORKA', type: 'Personaje -- Huerfanos', desc: 'Hijos de Virk. Mord mayor, Lif menor. Presenciaron la muerte de su padre. Mord exigio justicia; Lif llamo niding a Gudvarr. Sigrun desestimo su reclamo. Construyeron el tumulo (barrow) de Virk con ayuda de Orka y Thorkel. Los recibieron con bacalao salado y salmon ahumado. Lif llora sin parar; Mord murmura juramentos de venganza. Mord casi agarro el hacha de su padre sobre Gudvarr -- Orka y Thorkel lo contuvieron. Thorkel les advierte que no regresen al Althing. Declinaron la invitacion de refugiarse en el steading. Se quedan palidos y ojerosos.',
+        star: '** Su sed de venganza es real pero son demasiado jovenes e inexpertos. Thorkel les aconseja apartarse del Althing -- sabe que podrian cometer una locura que los mataria.'
     },
     {
         id: 'uspa', label: 'Uspa', group: 'ELVAR', type: 'Personaje — Tainted (Snaka)', desc: 'Rubia, ojos gris-azul pálido. Tatuajes espirales bajo la ropa. Arrojó un objeto al lago de lava antes de ser capturada. Controló la serpiente marina con canto Seiðr. Sangre de Snaka. Se ofrece voluntariamente a activar la piedra de juramento — pide que le corten la palma, deja que la sangre se derrame, la presiona contra la roca y la piedra entera se ilumina como metal fundido, revelando el tapiz completo del Guðfalla. Sabe la causa verdadera de la guerra de los dioses cuando nadie más la conoce: Lik-Rifa mató a la primogénita de Orna y Ulfrir por paranoia alimentada por Rotta, y creó los vaesen en secreto. Cuando Elvar afirma que los dragon-born son un cuento de hadas, Uspa escupe sin decir una palabra.',
@@ -364,8 +364,8 @@ const nodes = [
         star: '★★ Guðvarr usó la palabra como arma tras perder. Virk prefirió morir antes que aceptar el insulto.'
     },
     {
-        id: 'ninos-robados', label: 'Robos de Niños', group: 'TRAMA', type: 'Trama — Abierta', desc: 'Patrón organizado: Harek (colinas de Fellur), 3 hijos de los Haraldurson (Howbyr, 10-12 leguas norte), varios hijos de familia en Kergarth (6 leguas este). Huyen por ríos en barcas. Orka sospecha thralls secuestrados.',
-        star: '★★★ Trama central del arco de Orka. ¿Quién los está robando y por qué? ¿Destino: thralls, sacrificios (Iskidan), algo peor?'
+        id: 'ninos-robados', label: 'Robos de Ninos', group: 'TRAMA', type: 'Trama -- Abierta', desc: 'Patron organizado: Harek (colinas de Fellur), 3 hijos de los Haraldurson (Howbyr, 10-12 leguas norte), varios hijos de familia en Kergarth (6 leguas este). Huyen por rios en barcas. Orka sospecha thralls secuestrados. Orka conecta mentalmente a los asesinos de Asgrim con el grupo que destruyo el arbol de Froa -- misma zona, misma organizacion, misma brutalidad. La destruccion del arbol requirio muchos hombres armados que sufrieron bajas. La escala supera la de simples raptores oportunistas.',
+        star: '*** La destruccion de Froa escala la amenaza. Ya no es solo un patron de robos -- es una fuerza organizada con capacidad para matar vaesen guardianes poderosos. Los gritos al oeste al final del capitulo sugieren que ya estan actuando cerca del steading de Orka.'
     },
     {
         id: 'oath-stone-fellur', label: 'Roca del Juramento de Fellur', group: 'OBJETO', type: 'Objeto — Althing', desc: 'Islote en el fiordo de Fellur. Monolito de runas destruido a martillazos (adorar a los dioses es ilegal). Aquí se celebra el Althing de Fellur.',
@@ -376,8 +376,8 @@ const nodes = [
         star: '★★★ Es un archivo de la historia del mundo, activable solo con sangre Tainted. Su supervivencia es casi un milagro. La luz que emite puede atraer vaesen. ¿Existen otras piedras ocultas en lugares remotos?'
     },
     {
-        id: 'orka', label: 'Orka', group: 'ORKA', type: 'POV — Personaje', desc: 'Mujer alta (más que Guðvarr) y rubia, ojos gris-verde. Vive aislada con sun familia. Flashbacks violentos, episodios de rabia que casi la ciegan. Capturó a Spert mediante vínculo de sangre. Exguerrera con un pasado que ella intenta olvidar.',
-        star: 'Su ira casi la desborda ante Guðvarr. Sabe controlar vaesen. ¿Qué batalla dejó esas cicatrices invisibles?'
+        id: 'orka', label: 'Orka', group: 'ORKA', type: 'POV -- Personaje', desc: 'Mujer alta (mas que Gudvarr) y rubia, ojos gris-verde. Vive aislada con su familia. Flashbacks violentos, episodios de rabia que casi la ciegan. Capturo a Spert mediante vinculo de sangre. Exguerrera con pasado que intenta olvidar. Fragmento de infancia: sus padres murieron cuando tenia 10-11 inviernos. Guarda imagenes flotantes: la sonrisa y el pelo rojo de su madre... y en silencio, los gritos de su madre y el dorso de la mano de su padre. Propone a Thorkel huir del steading por la amenaza de la Ulfhednar de Sigrun -- Thorkel acepta sin resistencia. Madruga antes del amanecer para buscar consejo de Froa en el bosque. Encuentra el arbol destruido y a Froa muerta. Escucha gritos al oeste al final del capitulo.',
+        star: '*** La decision de huir es de Orka y Thorkel la acepta -- eso revela que el tambien siente la gravedad de la amenaza. El hallazgo de Froa muerta y los gritos finales elevan la tension al maximo del arco.'
     },
     {
         id: 'orl', label: 'Orl', group: 'VARG', type: 'Personaje — Antagonista menor', desc: 'Viejo de cabello gris lacio. Lleva collar de thrall. Compañero personal de armas (Hird) de Leif Kolskeggson. Tiene una perra/hound. Cuida al perro quemado por la hoguera de Varg en la granja de Kolskegg, revelando así la conexión de Leif con el lugar.',
@@ -484,8 +484,8 @@ const nodes = [
         star: 'Varg mató a su amo sin recordarlo. La furia roja que borró el acto es la misma que lo hace sospechoso de sangre Tainted.'
     },
     {
-        id: 'spert', label: 'Spert', group: 'ORKA', type: 'Vaesen — Guardián', desc: 'Spertus. Artrópodo segmentado con cara casi humana, aguijón, antenas, vapor negro venenoso. Capturado por Orka con vínculo de sangre. Protege el steading de otros vaesen. Irritable, posesivo de sus dientes. come papilla mezclada con la sangre y saliva de Orka cada mañana',
-        star: 'Orka sabe rituales de vínculo con vaesen. Habilidad inusual para una trampera.'
+        id: 'spert', label: 'Spert', group: 'ORKA', type: 'Vaesen -- Guardian', desc: 'Spertus. Artropodo segmentado con cara casi humana, aguijon, antenas, vapor negro venenoso. Capturado por Orka con vinculo de sangre. Protege el steading de otros vaesen. Irritable, posesivo de sus dientes. Come papilla mezclada con la sangre y saliva de Orka cada manana. Protesto que conspiraban para matarlo de hambre por llegar tarde. Breca lo aplaco con un cuenco doble. Duerme en su cueva subacuatica satisfecho e hinchado. Antes del amanecer Orka le prepara un cuenco de sangre y saliva, lo despierta con su lanza y le encarga vigilar el steading hasta que regrese. Acepta de mala gana.',
+        star: 'La gestion de Spert es parte del protocolo de seguridad de Orka -- sin su porridge de sangre diario el vinculo se debilita. Su queja es comica pero el protocolo es critico.'
     },
     {
         id: 'spertus', label: 'Spertus', group: 'VAESEN', type: 'Vaesen — Agua', desc: 'Spertus',
@@ -520,16 +520,16 @@ const nodes = [
         star: ''
     },
     {
-        id: 'thorkel', label: 'Thorkel Ulfsson', group: 'ORKA', type: 'Personaje — Orka', desc: 'Grande como un peñasco. Barba trenzada con cicatriz de mejilla a mandíbula. Ex-thrall: de joven llevó collar de hierro y tuvo la espalda abierta a latigazos —igual que Varg. El mejor rastreador. Elige mirar hacia adelante en vez de al pasado. Profundamente amoroso con Orka y Breca. Su arma principal es un hacha de mango largo (tan alto como él, con hoja "con barba"). Viste capa de lobo.',
-        star: '★★ Ex-thrall con espalda marcada a latigazos. Conoce el término «Ulfrir-kin» —¿cómo? Pateó a la thrall-lobo con tal fuerza que la hizo volar metros. Recibió un corte de seax («un rasguño», según él). Su pasado esconde más de lo que dice.'
+        id: 'thorkel', label: 'Thorkel Ulfsson', group: 'ORKA', type: 'Personaje -- Orka', desc: 'Grande como un penasco. Barba trenzada con cicatriz de mejilla a mandibula. Ex-thrall: llevo collar de hierro y tuvo la espalda abierta a latigazos. El mejor rastreador. Elige mirar hacia adelante. Profundamente amoroso con Orka y Breca. Arma principal: hacha de mango largo con hoja barbada. Viste capa de lobo. Confirma a Orka en privado que la thrall de Sigrun es Ulfhednar -- guerrera-lobo de elite, no solo Ulfrir-kin. Senala que una Ulfhednar lamer sangre no implica rastreo (son lobas, no sabuesos), aunque admite que los Tainted estan mestizados y podria ser ambas. Acepta la propuesta de huir sin resistencia. Lecciona a Breca sobre el hacha frente a la espada y sobre decisiones prudentes. Talla un colgante de madera con forma de espada para Breca.',
+        star: '*** ULFHEDNAR confirmado -- guerrera-lobo de elite dentro de los Ulfrir-kin. Su conocimiento preciso del termino sin titubear sigue siendo la senal mas reveladora de su pasado. Acepta huir inmediatamente -- sabe bien lo que es una Ulfhednar y lo que puede hacer.'
     },
     {
         id: 'thrall', label: 'Thrall (Esclavo)', group: 'NORSE', type: 'Clase Social', desc: 'Esclavo. Collar de hierro como símbolo. Sin derechos legales. Varg y Thorkel fueron thralls. Los Tainted son esclavizados sistemáticamente. [Histórico: los þræll eran la clase más baja en la sociedad nórdica: prisioneros de guerra, deudores, hijos de esclavos. Gwynne expande esto: en Vigríð los Tainted son thralls por ley, controlados con collares mágicos.]',
         star: '★★★ La esclavitud es institución central en Vigríð. Los tres POV tienen conexión directa con ella: Varg y Thorkel ex-thralls, Orka usa thrall-vaesen.'
     },
     {
-        id: 'thrall-sigrun', label: 'Thrall-Guerrera de Sigrún (Ulfrir-kin)', group: 'ORKA', type: 'Personaje — Tainted (Lobo)', desc: 'Sin nombre revelado. Mató a Virk con sus dos seaxes en un frenesí bestial; le mordió la cara antes de ser detenida. Ojos ambarinos en combate, dientes que se agudizan, fuerza para saltar varios metros. Thorkel la identifica como «Ulfrir-kin» —sangre del dios-lobo Ulfrir—. Sigrún usa «Brenna, sársauki» para doblegarla; incluso con el collar ardiendo, la thrall desafía hasta que el dolor es insoportable. Al retirarse Orka, la thrall lame la sangre de Virk de su seax con ojos aún ambarinos.',
-        star: '★★★ CONFIRMADA como Tainted de linaje del dios-lobo Ulfrir. Su transformación es tan o más salvaje que la de Berak (Berser). Que Thorkel conozca el término «Ulfrir-kin» es muy significativo: ¿cómo sabe él eso? Desafía a Sigrún incluso bajo dolor del collar —¿hasta cuándo seguirá obedeciendo?'
+        id: 'thrall-sigrun', label: 'Thrall-Guerrera de Sigrun (Ulfhednar)', group: 'ORKA', type: 'Personaje -- Tainted (Lobo)', desc: 'Sin nombre revelado. Mato a Virk con sus dos seaxes en frenesi bestial; le mordio la cara. Ojos ambarinos en combate, dientes que se agudizan, fuerza para saltar metros. Thorkel la identifica como Ulfrir-kin. Thorkel la identifica mas precisamente como Ulfhednar -- guerrera-lobo de elite. Lamer la sangre de Thorkel preocupa a Orka como posible rastreo, aunque Thorkel senala que las Ulfhednar no son rastreoadores de sangre como los Hundur-kin -- aunque admite que los Tainted estan mestizados. Su existencia es la razon principal por la que Orka y Thorkel deciden huir del steading.',
+        star: '*** ULFHEDNAR -- clase guerrera-lobo de elite dentro de los Ulfrir-kin. Si tiene sangre Hundur mezclada podria seguirlos a cualquier lugar. Su existencia fuerza la huida de la familia.'
     },
     {
         id: 'torc', label: 'Torc (Collar de Estatus)', group: 'NORSE', type: 'Símbolo — Riqueza', desc: 'Collar rígido de metal precioso (plata, oro) retorcido. Símbolo de riqueza, poder, juramentos. Sigrún lleva torc de plata. Svik lleva torc de plata retorcida con cabezas de serpiente. Agnar lleva torc de plata. Se otorgan como recompensa por servicio. [Histórico: los torcs eran joyas de estatus en culturas celtas y germánicas. En contexto nórdico, los anillos de brazo (armrings) eran más comunes, pero los torcs aparecen. Gwynne los usa como marcador visual de rango.]',
@@ -560,8 +560,8 @@ const nodes = [
         star: '★★ Los terremotos de Iskalt son interpretados por Grend como Lik-Rifa forcejeando en Vergelmir. El umbral entre el mundo de los vivos y los muertos está vibrando.'
     },
     {
-        id: 'vesli', label: 'Vesli', group: 'ORKA', type: 'Vaesen — Aliada de Breca', desc: 'Tennúr hembra. Pequeña, alas membranosas, dos filas de dientes, venas oscuras en piel rosada. Herida y expulsada de su manada. Breca la salvó. Juró lealtad de sangre al niño.',
-        star: 'Deuda de sangre vitalicia con Breca. Un vaesen guardian que crecerá con él.'
+        id: 'vesli', label: 'Vesli', group: 'ORKA', type: 'Vaesen -- Aliada de Breca', desc: 'Tennur hembra. Pequena, alas membranosas, dos filas de dientes, venas oscuras en piel rosada. Herida y expulsada de su manada. Breca la salvo. Juro lealtad de sangre al nino. Heridas en proceso de curacion. Sigue los pasos de Breca sin separarse. Come junto a la familia en el hogar -- Orka le da sobras de jamon y cebolla que devora con sus dos filas de dientes en segundos. Pregunta si Virk tenia buenos dientes (los muertos no los necesitan), lo que arranca una risa a Thorkel. Monta guardia silenciosa junto a la cuna de Breca mientras duerme, ojos brillando en la oscuridad.',
+        star: '* Plenamente integrada en la dinamica familiar. Su pregunta sobre los dientes de Virk es inquietante y comica -- sigue siendo un vaesen con instintos de vaesen.'
     },
     {
         id: 'vigrið', label: 'Vigríð', group: 'LUGAR', type: 'Lugar — Continente', desc: 'La Llanura de Batalla. El continente principal. Construido literalmente sobre los huesos de Snaka. Dividido entre jarls, reinas y hombres libres. Los vaesen son una presencia constante en las zonas remotas.',
@@ -682,4 +682,37 @@ const nodes = [
         star: '★★★ PREGUNTA ABIERTA MÁXIMA. El escupitajo de Uspa es la señal más importante del capítulo. No niega — reacciona con desprecio. ¿Sabe de dragon-born vivos? ¿El pergamino que destruyó contenía información sobre ellos? Gwynne no habría planteado esta pregunta si no fuera a responderla.'
     },
 
+    // ==========================================================
+    // CAPITULO 15 -- NUEVOS NODOS
+    // ==========================================================
+    {
+        id: 'ulfhednar', label: 'Ulfhednar (Guerrera-Lobo)', group: 'COSMO', type: 'Concepto -- Elite Tainted Lobo',
+        desc: 'Clase de elite dentro de los Tainted de sangre Ulfrir. No son simplemente portadores de sangre de dios-lobo -- son guerreros-lobo de elite, equivalente lupino a los Berserkir de Berser. Thorkel identifica a la thrall de Sigrun como Ulfhednar con certeza, sin titubear. Distingue entre Ulfhednar (guerreras-lobo) y Hundur-kin (rastreadores de sangre) -- son tipos distintos de Tainted, aunque los linajes pueden mezclarse. [Historico: los ulfhednar nordicos eran guerreros consagrados a Odín que vestian pieles de lobo y entraban en trance de furia animal, paralelos a los berserkir pero de lobo en vez de oso. Gwynne los reinterpreta como linaje divino real de Ulfrir.]',
+        star: '*** Confirmar Ulfhednar (no solo Ulfrir-kin) eleva la amenaza considerablemente. Thorkel sabe distinguir subtipos de Tainted -- su pasado le dio ese conocimiento. ¿Cuantas Ulfhednar hay en Vigrið? ¿Sigrun sabe lo que tiene?'
+    },
+    {
+        id: 'arbol-froa', label: 'Arbol de Froa (destruido)', group: 'LUGAR', type: 'Lugar -- Destruido',
+        desc: 'Arbol de fresno en un montIculo sobre un prado cruzado por un rio, al sureste del steading de Orka. Froa lo habitaba y guardaba. Nacido de una semilla del gran Oskutred. Destruido -- derribado con muchas hachas y quemado en grandes manchas. El tronco yace astillado. Las raices azotaron a los atacantes levantando la tierra. Manchas de sangre oscura congelada confirman bajas entre los agresores. Significado para Orka: era su lugar de paz y referencia espiritual en el bosque. Acudia alli a pedir consejo y agradecer la proteccion.',
+        star: '** Su destruccion es deliberada y organizada. Requirio muchos hombres y sufrieron perdidas. Alguien esta eliminando sistematicamente los guardianes del bosque. ¿Por que? ¿Para que la region quede sin proteccion?'
+    },
+    {
+        id: 'decision-huida', label: 'Decision de Huir', group: 'TRAMA', type: 'Trama -- Activa',
+        desc: 'Orka propone a Thorkel abandonar el steading antes de que sea demasiado tarde, motivada por la amenaza de la Ulfhednar de Sigrun que probo la sangre de Thorkel. Thorkel acepta sorprendentemente rapido -- sin resistencia. Plan de Orka: pedir consejo a Froa sobre adonde ir, a un lugar donde haya otro de sus parientes. El plan queda en suspension al encontrar a Froa muerta y escuchar gritos al oeste.',
+        star: '*** Trama activa urgente. El plan de huida se rompe antes de ejecutarse. Los gritos al oeste sugieren que la amenaza ya llego a su umbral. ¿Podran huir a tiempo?'
+    },
+    {
+        id: 'colgante-espada', label: 'Colgante de Espada (Breca)', group: 'OBJETO', type: 'Objeto -- Simbolico',
+        desc: 'Pequeno colgante de madera tallado con forma de espada, con pomo de tres lobulos y guarda curva. Colgado de un cordon de cuero al cuello de Breca. Orka lo ve cuando mira a Breca dormido -- lo describe como bien tallado. Thorkel debe haberlo taladrado y encontrado el cordon. Recordatorio del deseo de Breca de aprender esgrima, y tension con la preferencia de Thorkel por el hacha. [Nota: el pomo de tres lobulos es un diseno tipico de espada vikinga de los s. IX-X.]',
+        star: '* Pequeno objeto con peso simbolico grande -- anticipa el destino guerrero de Breca. El que Thorkel lo haya hecho revela que acepta, aunque no comparta, la aspiracion de su hijo.'
+    },
+    {
+        id: 'barrow-virk', label: 'Tumulo de Virk', group: 'EVENTO', type: 'Evento',
+        desc: 'Tumulo funerario (barrow) construido sobre la tumba de Virk en Fellur por sus hijos Mord y Lif con ayuda de Orka y Thorkel. Despues del Althing, la familia de Orka se quedo en Fellur el tiempo necesario para ayudar a levantarlo. Mord y Lif recibieron a Orka y familia en su hogar con bacalao salado y salmon ahumado. [Historico: los tumulos funerarios nordicos (haugr) eran montIculos de tierra sobre la tumba del guerrero, marcadores de honor en el paisaje. Enterrar al muerto correctamente era obligacion de los vivos para asegurar su paso por Vergelmir.]',
+        star: 'El barrow convierte la muerte de Virk en hecho permanente del paisaje. Mord y Lif cumplieron con su deber de hijos -- ahora la venganza pesa sobre ellos.'
+    },
+    {
+        id: 'gritos-oeste', label: 'Gritos al Oeste (Cliffhanger)', group: 'TRAMA', type: 'Trama -- Abierta Urgente',
+        desc: 'Mientras Orka esta arrodillada junto al cuerpo de Froa muerta, escucha gritos lejanos llegando del oeste, mas alla del ridge que cruzo para llegar alli. El oeste es la direccion de su steading. Thorkel, Breca y Vesli estan alli. La amenaza que destruyo el arbol de Froa podria estar atacando el steading en ese momento.',
+        star: '*** CLIFFHANGER de maxima tension. Los gritos vienen del lado de su familia. Froa muerta, amenaza activa, familia sin ella. Fin del capitulo.'
+    },
 ];
