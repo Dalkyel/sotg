@@ -239,7 +239,6 @@ const nodes = [
         id: 'holmganga', label: 'Holmganga', group: 'NORSE', type: 'Ritual — Duelo', desc: 'Duelo legal para resolver disputas de honor, herencias o insultos. Se realiza en isla (hólmr) o terreno delimitado. Código estricto: cuadrado marcado con varas de avellano; un pie fuera = rendición; dos pies fuera = huida; tres escudos destruidos = derrota; se puede pactar primera herida, rendición o muerte. Atacar tras rendición rompe el código y justifica ejecución inmediata. Virk violó esto contra Guðvarr y fue ejecutado por la thrall de Sigrún. [Histórico: el hólmganga era un duelo formal nórdico. El espacio sagrado (vǫllr) estaba delimitado. Las reglas eran precisas y documentadas en sagas — romperlas era deshonra absoluta. Gwynne lo preserva como institución legal vigente en Vigríð: las reglas son ley, no sugerencia.]',
         star: '★★ Virk ganó el duelo pero perdió su vida al romper las reglas. Las leyes del holmganga están por encima de la victoria: el honor importa más que ganar. Las leyes nórdicas antiguas siguen vivas en Vigríð — romperlas tiene consecuencias letales.'
     },
-    //---------------------------------------Revisado----------------------------------//
     {
         id: 'holmganga-event', label: 'Holmganga Virk vs Guðvarr', group: 'EVENTO', type: 'Evento', desc: 'Guðvarr reta a duelo a Virk. Virk acepta y ganó el duelo —le hundió el hacha en el hombro a Guðvarr, seccionándole los músculos—. Pero Virk alzó el arma para matar tras la rendición, violando las reglas. La thrall de Sigrún intervino y lo mató.',
         star: 'Virk murió. Sus hijos Mord y Lif presenciaron todo. La thrall de Sigrún desbordó el control y mordió el cadáver — Sigrún misma parece incómoda con lo sucedido. Thorkel recibió un corte de seax.'
@@ -249,11 +248,11 @@ const nodes = [
         star: ''
     },
     {
-        id: 'hueso-dios-fellur', label: 'Nudillo de Dios (Fellur)', group: 'VAESEN', type: 'Objeto Mágico — Reliquia', desc: 'Nudillo de un dios muerto clavado en el travesaño de la puerta de Fellur. Mantiene los vaesen fuera del pueblo. Breca reaccionó visiblemente al pasar junto a él. Los huesos de los dioses muertos conservan poder residual —incluso fragmentos pequeños son efectivos.',
+        id: 'hueso-dios-fellur', label: 'Nudillo de Dios (Fellur)', group: 'VAESEN', type: 'Objeto Mágico — Reliquia', desc: 'Nudillo de un dios muerto clavado en el travesaño de la puerta de Fellur. Mantiene los vaesen fuera del pueblo. Breca reaccionó visiblemente al pasar junto a él.',
         star: '★★ La reacción de Breca al hueso de dios es una de las señales más tempranas de su posible sangre Tainted. Un niño normal no debería sentir nada.'
     },
     {
-        id: 'hundur', label: 'Hundur (Thrall)', group: 'ELVAR', type: 'Personaje — Thrall Tainted', desc: 'Thrall de Terrores de la batalla con olfato sobrehumano de sabueso. Camina encorvado con ojos hundidos como pozos negros. Controlado por Sighvat con cadena de hierro. El collar se activa con la palabra Galdur «Hlýða» (obedece). Fue clave para rastrear a Berak en Iskalt. Elvar lo señala explícitamente ante la piedra de juramento: "Veo la sangre de Hundur el Sabueso en ti" — confirmando que su nombre y sus poderes de rastreo vienen del dios-sabueso Hundur, uno de los hijos de Snaka. También detecta el olor de "sangre derramada y juramentos" en la piedra de juramento, lo cual confirma que tiene capacidades olfativas que van más allá de lo físico.',
+        id: 'hundur', label: 'Hundur (Thrall)', group: 'ELVAR', type: 'Personaje — Thrall Tainted', desc: 'Thrall de Terrores de la batalla con olfato sobrehumano de sabueso. Camina encorvado con ojos hundidos como pozos negros. Controlado por Sighvat con cadena de hierro. Fue clave para rastrear a Berak en Iskalt. Elvar lo señala explícitamente ante la piedra de juramento: "Veo la sangre de Hundur el Sabueso en ti" — confirmando que su nombre y sus poderes de rastreo vienen del dios-sabueso Hundur, uno de los hijos de Snaka. También detecta el olor de "sangre derramada y juramentos" en la piedra de juramento, lo cual confirma que tiene capacidades olfativas que van más allá de lo físico.',
         star: '★★ Su amo es Sighvat — ¿seguirá siendo así toda la historia? Nótese la ironía: un sabueso-dios rastreando a sus propios parientes Tainted.'
     },
     {
@@ -265,7 +264,7 @@ const nodes = [
         star: 'El volcán tiembla. Lik-Rifa está activa.'
     },
     {
-        id: 'iskidan', label: 'Iskidan', group: 'LUGAR', type: 'Lugar — Imperio Lejano', desc: 'Imperio lejano al sur/este, gobernado por el Gran Khagan Kirill el Magnífico desde Gravka. su presencia es directa por primera vez — el Príncipe Jaromir y su guardia druzhina llegan a Liga en barco. Sus guerreros visten armadura laminar (lamellar plate) que brilla como escamas de pez, yelmos de hierro con plumón de crin de caballo y cortinas de malla remachada para proteger el cuello, portan carcajs y arcos, sables curvos y hachas de asta larga. Cabello en una sola trenza larga desde bajo el yelmo. El sistema político es de Khagan/príncipes, no jarls.',
+        id: 'iskidan', label: 'Iskidan', group: 'LUGAR', type: 'Lugar — Imperio Lejano', desc: 'Imperio lejano al sur/este, gobernado por el Gran Khagan Kirill desde Gravka. El Príncipe Jaromir y su guardia druzhina llegan a Liga en barco. Sus guerreros visten armadura laminar (lamellar plate) que brilla como escamas de pez, yelmos de hierro con plumón de crin de caballo y cortinas de malla remachada para proteger el cuello, portan carcajs y arcos, sables curvos y hachas de asta larga. Cabello en una sola trenza larga desde bajo el yelmo. El sistema político es de Khagan/príncipes, no jarls.',
         star: '★★ Iskidan ya no es solo rumor — sus guerreros están en Liga. El sistema de poder (Khagan → príncipes → druzhina) es radicalmente distinto al sistema jarl nórdico de Vigríð.'
     },
     {
@@ -281,7 +280,7 @@ const nodes = [
         star: ''
     },
     {
-        id: 'jarl-logur', label: 'Jarl Logur', group: 'FACCION', type: 'Personaje -- Politica', desc: 'Jarl de Liga. Sus escudos son azules y sus velas rojas. Barriludo, vientre que estira la tunica bordada, cabello gris largo y trenzado con hilo de oro, oro en cuello y brazos. Hombre que rie mucho. Viejo amigo de Sergei el mercader. Sienta a Glornir a su izquierda. Defensor de la ley ante Jaromir. Despide a los Hermanos con generosidad. Promete enviarlos con barriles llenos y vientres llenos. Abraza a Glornir. Su esposa Salla puntualiza con ironia que en realidad sera ella quien lo organice todo.',
+        id: 'jarl-logur', label: 'Jarl Logur', group: 'FACCION', type: 'Personaje -- Politica', desc: 'Jarl de Liga. Sus escudos son azules y sus velas rojas. Barriludo, vientre que estira la tunica bordada, cabello gris largo y trenzado con hilo de oro, oro en cuello y brazos. Hombre que rie mucho. Viejo amigo de Sergei el mercader. Sienta a Glornir a su izquierda. Defensor de la ley ante Jaromir. Despide a los Hermanos con generosidad. Promete enviarlos con barriles llenos y vientres llenos. Abraza a Glornir.',
         star: '* Su hospitalidad es genuina y sin condicion. La dinamica con Salla -- ella gestiona, el promete -- es un detalle humano que los hace reales.'
     },
     {
@@ -289,7 +288,7 @@ const nodes = [
         star: ''
     },
     {
-        id: 'jokul', label: 'Jökul Mano-Martillo', group: 'VARG', type: 'Personaje — Hermanos', desc: 'Herrero de los Hermanos de Sangre. Apodo: Mano-Martillo. descrito como ancho de cintura, sentado cerca de Svik y Røkia (lugar de honor). Torvik lo describe como "el mejor herrero de todo Vigríð" — y también el más rápido, para mantener el equipo de la compañía en campaña. Forjó el armring de plata y bronce de Torvik (dos cabezas de sabueso en los terminales) — pieza de belleza y valor excepcionales. También forjó la protección de hierro en la entrepierna de Einar Medio-Trol.',
+        id: 'jokul', label: 'Jökul Mano-Martillo', group: 'VARG', type: 'Personaje — Hermanos', desc: 'Herrero de los Hermanos de Sangre. Apodo: Mano-Martillo. Ancho de cintura, sentado cerca de Svik y Røkia (lugar de honor). Torvik lo describe como "el mejor herrero de todo Vigríð" — y también el más rápido, para mantener el equipo de la compañía en campaña. Forjó el armring de plata y bronce de Torvik (dos cabezas de sabueso en los terminales) — pieza de belleza y valor excepcionales. También forjó la protección de hierro en la entrepierna de Einar Medio-Trol.',
         star: '★ Su habilidad va más allá de la utilidad — crea arte. El armring de Torvik vale más que todo lo que Varg ganó en el ring de boxeo.'
     },
     {
@@ -302,7 +301,7 @@ const nodes = [
     },
     {
         id: 'kennings', label: 'Kennings / Epítetos', group: 'NORSE', type: 'Lenguaje — Poético', desc: 'Nombres poéticos descriptivos. Glornir: "Rompe-Escudos" (Røkia), "Dador-de-Oro" (él mismo), "Robador-de-Almas" (Svik), "Cortador-Golpeador-Aplastador" (Einar). Einar "Medio-Trol". Svik "Pelo-Enredado" (irónico). Jökul "Mano-Martillo". Varg "Sin-Sentido" (Varg No-Sense — por morder a Einar). Los epítetos describen hazañas, características, o son irónicos. [Histórico: los kennings eran metáforas poéticas nórdicas complejas ("camino de la ballena" = mar). Los epítetos (viðrnefni) eran más simples: apodos descriptivos. Gwynne los usa para caracterización rápida.]',
-        star: '★ Glornir acumula al menos 4 kennings distintos en una sola escena — cada compañero lo ve diferente. Varg recibe su primer apodo: "Sin-Sentido". Los kennings son identidad en Vigríð.'
+        star: '★ Glornir acumula al menos 4 kennings distintos, cada compañero lo ve diferente. Varg recibe su primer apodo: "Sin-Sentido". Los kennings son identidad en Vigríð.'
     },
     {
         id: 'kergarth', label: 'Kergarth', group: 'LUGAR', type: 'Lugar — Villa', desc: 'Villa a 6 leguas al este de Fellur. Una familia entera fue asesinada y sus hijos desaparecieron. Tercer caso conocido del patrón de robos. El patrón se extiende por un radio de al menos 12 leguas.',
@@ -333,19 +332,19 @@ const nodes = [
         star: '★★★ Si Lik-Rifa rompe sus cadenas, todo cambia. ¿Alguien la está ayudando a escapar?'
     },
     {
-        id: 'likrafa', label: 'Lik-Rifa (Diosa-Dragón)', group: 'DIOS', type: 'Dios — ¿Vivo?', desc: 'La diosa-dragón, hija de Snaka. NO murió en el Guðfalla: fue encadenada bajo Oskutreð, el Árbol de Ceniza. Habita Vergelmir, cámara subterránea por donde pasan los guerreros muertos. Los terremotos de Iskalt sugieren que sigue viva. Causa del Guðfalla (Uspa): Lik-Rifa creyó que Orna planeaba matarla; Rotta alimentó esa paranoia. Mató a la primogénita de Orna y Ulfrir, arrancó sus alas. Creó vaesen en secreto como arma. Orna la atrapó en las raíces de Oskutreð y la encadenó con sus hermanos — eso desató la guerra total. Dragon-born Tainted: Elvar argumenta que nunca ha existido ninguno confirmado (nadie en toda la Battle-Grim lo ha visto). Uspa escupe ante esa afirmación.',
-        star: '★★★ LA amenaza cósmica. Elvar dice que los dragon-born son un cuento — Uspa escupe al oír eso. ¿Sabe Uspa algo que los demás no? Si Lik-Rifa escapa y tiene descendencia viva en el mundo, todo cambia.'
+        id: 'likrafa', label: 'Lik-Rifa (Diosa-Dragón)', group: 'DIOS', type: 'Dios — ¿Vivo?', desc: 'La diosa-dragón, hija de Snaka. NO murió en el Guðfalla: fue encadenada bajo Oskutreð, el Árbol de Ceniza. Habita Vergelmir, cámara subterránea por donde pasan los guerreros muertos. Los terremotos de Iskalt sugieren que sigue viva. Causa del Guðfalla (Uspa). Dragon-born Tainted: Elvar argumenta que nunca ha existido ninguno confirmado (nadie en toda la Battle-Grim lo ha visto). Uspa escupe ante esa afirmación.',
+        star: '★★★ LA amenaza cósmica. ¿Sabe Uspa algo que los demás no? Si Lik-Rifa escapa y tiene descendencia viva en el mundo, todo cambia.'
     },
     {
         id: 'mead-hall', label: 'Mead Hall / Longhouse', group: 'NORSE', type: 'Vida Diaria — Arquitectura', desc: 'Centro social y político. Sala larga con hogar central, bancos a los lados. El jarl preside desde el asiento alto. Aquí se festeja, se distribuyen recompensas, se toman decisiones. Fellur tiene longhouse central. Jarl Logur hospeda a Hermanos de Sangre en su sala. [Histórico: el hall (hǫll) era corazón de la comunidad nórdica. Símbolo de poder del jarl. Quemar el hall de un enemigo era insulto máximo. Gwynne los preserva como centros de poder político.]',
-        star: 'La sala de Logur es donde Varg es juzgado — espacio público para justicia. El longhouse de Fellur es donde Sigrún gobierna.'
+        star: 'La sala de Logur es donde Varg es juzgado. El longhouse de Fellur es donde Sigrún gobierna.'
     },
     {
         id: 'mord-lif', label: 'Mord y Lif', group: 'ORKA', type: 'Personaje -- Huerfanos', desc: 'Hijos de Virk. Mord mayor, Lif menor. Presenciaron la muerte de su padre. Mord exigio justicia; Lif llamo niding a Gudvarr. Sigrun desestimo su reclamo. Construyeron el tumulo (barrow) de Virk con ayuda de Orka y Thorkel. Los recibieron con bacalao salado y salmon ahumado. Lif llora sin parar; Mord murmura juramentos de venganza. Mord casi agarro el hacha de su padre sobre Gudvarr -- Orka y Thorkel lo contuvieron. Thorkel les advierte que no regresen al Althing. Declinaron la invitacion de refugiarse en el steading. Se quedan palidos y ojerosos.',
-        star: '** Su sed de venganza es real pero son demasiado jovenes e inexpertos. Thorkel les aconseja apartarse del Althing -- sabe que podrian cometer una locura que los mataria.'
+        star: '** Su sed de venganza es real pero son demasiado jovenes e inexpertos.'
     },
     {
-        id: 'uspa', label: 'Uspa', group: 'ELVAR', type: 'Personaje — Tainted (Snaka)', desc: 'Rubia, ojos gris-azul pálido. Tatuajes espirales bajo la ropa. Arrojó un objeto al lago de lava antes de ser capturada. Controló la serpiente marina con canto Seiðr. Sangre de Snaka. Se ofrece voluntariamente a activar la piedra de juramento — pide que le corten la palma, deja que la sangre se derrame, la presiona contra la roca y la piedra entera se ilumina como metal fundido, revelando el tapiz completo del Guðfalla. Sabe la causa verdadera de la guerra de los dioses cuando nadie más la conoce: Lik-Rifa mató a la primogénita de Orna y Ulfrir por paranoia alimentada por Rotta, y creó los vaesen en secreto. Cuando Elvar afirma que los dragon-born son un cuento de hadas, Uspa escupe sin decir una palabra.',
+        id: 'uspa', label: 'Uspa', group: 'ELVAR', type: 'Personaje — Tainted (Snaka)', desc: 'Rubia, ojos gris-azul pálido. Tatuajes espirales bajo la ropa. Arrojó un objeto al lago de lava antes de ser capturada. Controló la serpiente marina con canto Seiðr. Sangre de Snaka. Se ofrece voluntariamente a activar la piedra de juramento — pide que le corten la palma, deja que la sangre se derrame, la presiona contra la roca y la piedra entera se ilumina como metal fundido, revelando el tapiz completo del Guðfalla. Sabe la causa verdadera de la guerra de los dioses cuando nadie más la conoce. Cuando Elvar afirma que los dragon-born son un cuento de hadas, Uspa escupe sin decir una palabra.',
         star: 'Su sangre activa la piedra de juramento. Su conocimiento del Guðfalla es enciclopédico. El escupitajo ante la afirmación de Elvar sobre los dragon-born es la señal más cargada del capítulo — ¿sabe de dragon-born vivos? ¿Qué había en el pergamino que destruyó?'
     },
     {
@@ -356,6 +355,7 @@ const nodes = [
         id: 'niding', label: 'Níðing', group: 'NORSE', type: 'Concepto — Deshonra', desc: 'El peor insulto en la cultura nórdica: cobarde sin honor. Guðvarr llamó níðing a Virk tras perder el holmganga, provocando que Virk intentara matarlo. Ser níðing es estar socialmente muerto. [Histórico: níð era la deshonra absoluta en la sociedad nórdica. Acusar a alguien de níðing (cobardía, homosexualidad pasiva, falta de honor) podía justificar violencia legal. Gwynne lo usa como detonante de conflicto.]',
         star: '★★ Guðvarr usó la palabra como arma tras perder. Virk prefirió morir antes que aceptar el insulto.'
     },
+    //---------------------------------------Revisado----------------------------------//
     {
         id: 'ninos-robados', label: 'Robos de Ninos', group: 'TRAMA', type: 'Trama -- Abierta', desc: 'Patron organizado: Harek (colinas de Fellur), 3 hijos de los Haraldurson (Howbyr, 10-12 leguas norte), varios hijos de familia en Kergarth (6 leguas este). Huyen por rios en barcas. Orka sospecha thralls secuestrados. Orka conecta mentalmente a los asesinos de Asgrim con el grupo que destruyo el arbol de Froa -- misma zona, misma organizacion, misma brutalidad. La destruccion del arbol requirio muchos hombres armados que sufrieron bajas. La escala supera la de simples raptores oportunistas.',
         star: '*** La destruccion de Froa escala la amenaza. Ya no es solo un patron de robos -- es una fuerza organizada con capacidad para matar vaesen guardianes poderosos. Los gritos al oeste al final del capitulo sugieren que ya estan actuando cerca del steading de Orka.'
