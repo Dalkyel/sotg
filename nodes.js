@@ -2,10 +2,10 @@
 const nodes = [
     {
         id: 'agnar', label: 'Agnar', group: 'ELVAR', type: 'Personaje — Jefe', desc: 'Jefe de Terrores de la batalla. Franja gruesa de cabello rubio en el centro de la cabeza (warrior-braid), el resto rapado, capote de oso negro, torc de plata. Carismático, valiente, implacable. Mató al Jarl Hrut sin dudar. Planea llevar a Berak al Jarl Störr en Snakavik. Ante la piedra de juramento iluminada, revela su filosofía: no caza Tainted solo por dinero. Los dioses destruyeron casi el mundo por celos, asesinatos y venganza de sangre — "nunca pueden volver a tener poder en este mundo, ni siquiera en forma de sus hijos Tainted." Escupe en el suelo. Sobrevive al ataque de los gusanos nocturnos; es el primero en rescatar a Elvar, aplastando y cortando wyrms.',
-        star: '★★ Cap.14: Su motivación ideológica queda clara — no es solo mercenario, es creyente de que la herencia divina es un peligro para el mundo. Esto lo convierte en antagonista más matizado y más peligroso.'
+        star: '★★ Su motivación ideológica queda clara — no es solo mercenario, es creyente de que la herencia divina es un peligro para el mundo. Esto lo convierte en antagonista más matizado y más peligroso.'
     },
     {
-        id: 'akall', label: 'Akáll de Varg', group: 'TRAMA', type: 'Trama — Abierta', desc: 'Varg necesita que Vol realice un akáll para invocar el espíritu de Frøya y descubrir cómo murió. Cap.11: Vol no está en el cuartel de los Hermanos. Røkia esquiva la pregunta de Varg sobre su paradero. El acceso a Vol sigue bloqueado.',
+        id: 'akall', label: 'Akáll de Varg', group: 'TRAMA', type: 'Trama — Abierta', desc: 'Varg necesita que Vol realice un akáll para invocar el espíritu de Frøya y descubrir cómo murió. Vol no está en el cuartel de los Hermanos. Røkia esquiva la pregunta de Varg sobre su paradero. El acceso a Vol sigue bloqueado.',
         star: '¿Dónde está Vol? Røkia no responde.'
     },
     {
@@ -21,7 +21,7 @@ const nodes = [
         star: ''
     },
     {
-        id: 'arild', label: 'Arild', group: 'ORKA', type: 'Personaje — Drengr (mujer)', desc: 'Drengr mujer de la Jarl Sigrún. Acompañó a Guðvarr al steading de Orka para convocar el Althing. Cap.12: fue el segundo de Guðvarr en el holmganga, le aconsejó en voz baja antes del duelo y le vendó el hombro tras la derrota.',
+        id: 'arild', label: 'Arild', group: 'ORKA', type: 'Personaje — Drengr (mujer)', desc: 'Drengr mujer de la Jarl Sigrún. Acompañó a Guðvarr al steading de Orka para convocar el Althing. Fue el segundo de Guðvarr en el holmganga, le aconsejó en voz baja antes del duelo y le vendó el hombro tras la derrota.',
         star: '¿Qué le aconsejó a Guðvarr antes del duelo? Sigrún también le habló —pero su consejo fue distinto al de Arild.'
     },
     {
@@ -29,7 +29,7 @@ const nodes = [
         star: 'Glornir "Dador-de-Oro" distribuye anillos a Hermanos de Sangre. Sistema de lealtad económica: el oro compra juramentos. Orka y Thorkel no llevan anillos — no deben lealtad a nadie.'
     },
     {
-        id: 'asgrim', label: 'Asgrim (†)', group: 'ORKA', type: 'Personaje — Muerto', desc: 'Vecino de Orka y Thorkel en las colinas sobre el fiordo de Fellur. Esposo de Idrun, padre de Harek. Encontrado muerto de una estocada al corazón en el umbral de su steading (Cap.1). Tenía runa de warding en la puerta —el asesino fue humano, no vaesen.',
+        id: 'asgrim', label: 'Asgrim (†)', group: 'ORKA', type: 'Personaje — Muerto', desc: 'Vecino de Orka y Thorkel en las colinas sobre el fiordo de Fellur. Esposo de Idrun, padre de Harek. Encontrado muerto de una estocada al corazón en el umbral de su steading. Tenía runa de warding en la puerta —el asesino fue humano, no vaesen.',
         star: 'Que un hombre con runa warding fuera asesinado confirma que la amenaza viene de personas, no de criaturas.'
     },
     {
@@ -85,7 +85,7 @@ const nodes = [
         star: 'Helka necesita byrðings para consolidar su reino: transportar piedra para fortalezas, provisiones para ejércitos.'
     },
     { id: 'cat-dioses', label: 'PANTEÓN DIVINO', group: 'CAT', type: 'Mitología', desc: 'Los dioses caídos y su legado en Vigríð. Adorar a los dioses muertos está prohibido y se castiga con la muerte', star: '' },
-    { id: 'cat-elvar', label: 'ARCO ELVAR', group: 'CAT', type: 'Arco Narrativo', desc: 'POV 3 (nuevo en Cap.5). Guerrera joven de Terrores de la batalla. Caza Tainted para venderlos a jarls ricos.', star: '' },
+    { id: 'cat-elvar', label: 'ARCO ELVAR', group: 'CAT', type: 'Arco Narrativo', desc: 'POV 3. Guerrera joven de Terrores de la batalla. Caza Tainted para venderlos a jarls ricos.', star: '' },
     { id: 'cat-eventos', label: 'EVENTOS CLAVE', group: 'CAT', type: 'Cronología', desc: 'Sucesos históricos y actuales que moldean la narrativa.', star: '' },
     { id: 'cat-facciones', label: 'FACCIONES Y PODER', group: 'CAT', type: 'Política', desc: 'El tablero político de Vigríð: jarls, reinas, mercenarios.', star: '' },
     { id: 'cat-magia', label: 'MAGIA', group: 'CAT', type: 'Sistema Mágico', desc: 'Seiðr, Galdur, vínculos de sangre y el poder residual de los dioses muertos.', star: '' },
@@ -93,7 +93,7 @@ const nodes = [
     { id: 'cat-norse', label: 'CULTURA NÓRDICA', group: 'CAT', type: 'Tradiciones', desc: 'Costumbres, rituales, leyes y tradiciones del mundo de Vigríð basadas en la cultura nórdica histórica.', star: '' },
     { id: 'cat-objetos', label: 'OBJETOS', group: 'CAT', type: 'Artefactos', desc: 'Armas, artefactos mágicos y objetos significativos.', star: '' },
     { id: 'cat-orka', label: 'ARCO ORKA', group: 'CAT', type: 'Arco Narrativo', desc: 'POV 1. Trampera en las colinas sobre Fellur. Madre feroz, exguerrera con un pasado oscuro que regresa.', star: '' },
-    { id: 'cat-tramas', label: 'TRAMAS ACTIVAS', group: 'CAT', type: 'Tramas', desc: 'Los hilos narrativos abiertos al final del Cap. 10.', star: '' },
+    { id: 'cat-tramas', label: 'TRAMAS ACTIVAS', group: 'CAT', type: 'Tramas', desc: 'Los hilos narrativos abiertos', star: '' },
     { id: 'cat-varg', label: 'ARCO VARG', group: 'CAT', type: 'Arco Narrativo', desc: 'POV 2. Ex-thrall en busca de un Seiðr para invocar a su hermana muerta. Recién reclutado por los Hermanos de Sangre.', star: '' },
     {
         id: 'collares', label: 'Collares de Hierro', group: 'OBJETO', type: 'Objeto Mágico', desc: 'Collar de hierro que controla a los Tainted mediante palabras Galdur. El metal se calienta con venas de fuego rojo al activarse. Símbolo de esclavitud y control. Vol, Kráka y los Tainted capturados los llevan.',
@@ -144,8 +144,8 @@ const nodes = [
         star: '¿Aparecerá en capítulos posteriores? Gwynne menciona vaesen por nombre antes de introducirlos en acción.'
     },
     {
-        id: 'fell-wolf', label: 'Fell-Wolf', group: 'VAESEN', type: 'Vaesen — Cap.1', desc: 'Lobo vaesen enorme, pelaje gris pizarra, garras largas. Encontrado herido en Cap. 1 —alguien ya lo había atacado antes de que llegaran Orka y su familia. Irrumpió en el calvero y dispersó los renos.',
-        star: '¿Quién hirió al fell-wolf antes del Cap. 1? Posible pista sobre los asesinos de Asgrim.'
+        id: 'fell-wolf', label: 'Fell-Wolf', group: 'VAESEN', type: 'Vaesen', desc: 'Lobo vaesen enorme, pelaje gris pizarra, garras largas. Encontrado herido, alguien ya lo había atacado antes de que llegaran Orka y su familia. Irrumpió en el calvero y dispersó los renos.',
+        star: '¿Quién hirió al fell-wolf antes? Posible pista sobre los asesinos de Asgrim.'
     },
     {
         id: 'fellur', label: 'Fellur', group: 'LUGAR', type: 'Lugar — Villa', desc: 'Villa pesquera en el fiordo. ~100 habitantes. Longhouse central, muralla parcialmente podrida. Knuckle-bone de dios muerto en el umbral: protege contra vaesen. Dominio de Jarl Sigrún.',
@@ -172,7 +172,7 @@ const nodes = [
         star: ''
     },
     {
-        id: 'galdur', label: 'Galdur', group: 'MAGIA', type: 'Magia — Lengua', desc: 'Lengua mágica de comandos rúnicos. Activa los collares de hierro sobre los Tainted. Palabras conocidas: Hlýða (obedece / escucha), Á HNÉN (de rodillas), Hlýða og fá verðlaun (obedece y recibe recompensa). Cap.12: NIðUR, Á JÖRðU, HLŸDDU MÉR (abajo, al suelo, obedéceme) — comando de sometimiento total; Brenna, sársauki (arde, dolor) — castigo de quemadura directa a través del collar. [Contexto: el galdr histórico nórdico era el canto o recitación de runas mágicas —opuesto al seiðr, era más público y menos estigmatizado. En Vigríð Gwynne lo convierte en lengua de control sobre la herencia divina.]',
+        id: 'galdur', label: 'Galdur', group: 'MAGIA', type: 'Magia — Lengua', desc: 'Lengua mágica de comandos rúnicos. Activa los collares de hierro sobre los Tainted. Palabras conocidas: Hlýða (obedece / escucha), Á HNÉN (de rodillas), Hlýða og fá verðlaun (obedece y recibe recompensa). NIðUR, Á JÖRðU, HLŸDDU MÉR (abajo, al suelo, obedéceme) — comando de sometimiento total; Brenna, sársauki (arde, dolor) — castigo de quemadura directa a través del collar. [Contexto: el galdr histórico nórdico era el canto o recitación de runas mágicas —opuesto al seiðr, era más público y menos estigmatizado. En Vigríð Gwynne lo convierte en lengua de control sobre la herencia divina.]',
         star: 'Saber esta lengua es poder absoluto sobre los Tainted. ¿Cuántos la conocen realmente?'
     },
     {
@@ -192,15 +192,15 @@ const nodes = [
         star: '¿Qué le debe a Elvar para protegerla así? La relación no está explicada.'
     },
     {
-        id: 'gudfall', label: 'Guðfalla (Caída de Dioses)', group: 'EVENTO', type: 'Evento Histórico', desc: 'Hace ~300 años. Los hijos de Snaka se rebelaron contra su padre. La guerra de los dioses rompió el mundo: continentes hundidos, mares desbordados. Los vaesen escaparon de su foso. El mundo nunca se recuperó. Cap.13 (saga de Galinn): el Vackna sonó al alba; Ulfrir corrió aullando; Orna llegó con garras; Lik-Rifa desde las Colinas de Luna Oscura; Berser en furia; Svin, Tosk, Rotta también combatieron. Resultado: Berser perforado, Orna desgarrada, Ulfrir muerto, Lik-Rifa encadenada bajo Oskutreð, Snaka caído sobre el Monte Eldrafell. CAUSA VERDADERA (Uspa, ante la piedra de juramento): Lik-Rifa creyó que Orna planeaba asesinarla — Rotta el Traidor alimentó activamente esa paranoia. Por eso Lik-Rifa mató a la hija primogénita de Orna y Ulfrir y le arrancó las alas (el Bosque de las Horcas). Creó los vaesen en secreto como arma. Orna descubrió el plan, tendió una trampa y encadenó a Lik-Rifa en las raíces de Oskutreð — eso detonó la guerra total. Lo que empezó como una vendetta doméstica casi destruyó todo.',
+        id: 'gudfall', label: 'Guðfalla (Caída de Dioses)', group: 'EVENTO', type: 'Evento Histórico', desc: 'Hace ~300 años. Los hijos de Snaka se rebelaron contra su padre. La guerra de los dioses rompió el mundo: continentes hundidos, mares desbordados. Los vaesen escaparon de su foso. El mundo nunca se recuperó. (saga de Galinn): el Vackna sonó al alba; Ulfrir corrió aullando; Orna llegó con garras; Lik-Rifa desde las Colinas de Luna Oscura; Berser en furia; Svin, Tosk, Rotta también combatieron. Resultado: Berser perforado, Orna desgarrada, Ulfrir muerto, Lik-Rifa encadenada bajo Oskutreð, Snaka caído sobre el Monte Eldrafell. CAUSA VERDADERA (Uspa, ante la piedra de juramento): Lik-Rifa creyó que Orna planeaba asesinarla — Rotta el Traidor alimentó activamente esa paranoia. Por eso Lik-Rifa mató a la hija primogénita de Orna y Ulfrir y le arrancó las alas (el Bosque de las Horcas). Creó los vaesen en secreto como arma. Orna descubrió el plan, tendió una trampa y encadenó a Lik-Rifa en las raíces de Oskutreð — eso detonó la guerra total. Lo que empezó como una vendetta doméstica casi destruyó todo.',
         star: '★★★ No fue una rebelión abstracta sino una venganza de sangre detonada por Rotta el Manipulador. La primera víctima: la hija sin nombre de Orna y Ulfrir. El blood-eagle nació como imitación del crimen de Lik-Rifa.'
     },
     {
-        id: 'gudvarr', label: 'Guðvarr', group: 'ORKA', type: 'Personaje — Antagonista menor', desc: 'Sobrino de Jarl Sigrún. Drengr. Pelo negro aceitado, espada al cinto, gota permanente de moco. Vanidoso, arrogante, con algo de técnica de combate pero sin experiencia real en batalla. Cap.12: Perdió el holmganga ante Virk —le seccionaron los músculos del hombro derecho—. Se rindió pero luego insultó a Virk tras el duelo, provocando que este intentara matarlo. Se salvó gracias a la intervención de la thrall. Sigue siendo niðing moral aunque sobrevivió.',
+        id: 'gudvarr', label: 'Guðvarr', group: 'ORKA', type: 'Personaje — Antagonista menor', desc: 'Sobrino de Jarl Sigrún. Drengr. Pelo negro aceitado, espada al cinto, gota permanente de moco. Vanidoso, arrogante, con algo de técnica de combate pero sin experiencia real en batalla. Perdió el holmganga ante Virk —le seccionaron los músculos del hombro derecho—. Se rindió pero luego insultó a Virk tras el duelo, provocando que este intentara matarlo. Se salvó gracias a la intervención de la thrall. Sigue siendo niðing moral aunque sobrevivió.',
         star: '★ Humillado públicamente pero vivo. Tiene una deuda no resuelta con Mord y Lif. Su arrogancia postduelo dejó claro que no ha aprendido nada.'
     },
     {
-        id: 'guerrero-oscuro', label: 'Sulich', group: 'VARG', type: 'Personaje — Hermanos (Iskidano)', desc: 'Cap.11: Delgado, estatura media. Cabeza rapada excepto una larga trenza negra brillante como azabache. Piel oscura (único de tez oscura entre los Hermanos). Kaftan gris de lana abrochado al centro, calzones anchos con vendas ajustadas tobillo-rodilla. Escudo negro con salpicaduras rojas. Espada curva de un solo filo. Sparring con Glornir. Varg lo reconoce sin saber por qué. Nombre revelado — Sulich. Miembro pleno de los Hermanos de Sangre, ha prestado juramento de sangre. Origen: Iskidan (su apariencia y armamento coinciden con los druzhina del Príncipe Jaromir). Jaromir irrumpe en el mead-hall reclamándolo por "grandes crímenes". Sulich come mutton ahumado con total calma mientras el príncipe lo confronta, sin dignarse mirarlo. Glornir se niega a entregarlo — el juramento de sangre es inviolable.',
+        id: 'guerrero-oscuro', label: 'Sulich', group: 'VARG', type: 'Personaje — Hermanos (Iskidano)', desc: 'Delgado, estatura media. Cabeza rapada excepto una larga trenza negra brillante como azabache. Piel oscura (único de tez oscura entre los Hermanos). Kaftan gris de lana abrochado al centro, calzones anchos con vendas ajustadas tobillo-rodilla. Escudo negro con salpicaduras rojas. Espada curva de un solo filo. Sparring con Glornir. Varg lo reconoce sin saber por qué. Nombre revelado — Sulich. Miembro pleno de los Hermanos de Sangre, ha prestado juramento de sangre. Origen: Iskidan (su apariencia y armamento coinciden con los druzhina del Príncipe Jaromir). Jaromir irrumpe en el mead-hall reclamándolo por "grandes crímenes". Sulich come mutton ahumado con total calma mientras el príncipe lo confronta, sin dignarse mirarlo. Glornir se niega a entregarlo — el juramento de sangre es inviolable.',
         star: '★★★ Nombre confirmado: Sulich. ¿Qué crímenes cometió en Iskidan que hacen que un príncipe cruce el whale road para reclamarlo? Su calma es inquietante. El enfrentamiento queda sin resolver — Jaromir regresará mañana con evidencia.'
     },
     {
@@ -212,7 +212,7 @@ const nodes = [
         star: ''
     },
     {
-        id: 'harek', label: 'Harek (†?)', group: 'TRAMA', type: 'Personaje — Desaparecido', desc: 'Hijo de Asgrim e Idrun. Amigo de Breca. Desaparecido cuando sus padres fueron asesinados en Cap. 1. Los asesinos huyeron en barcas por el río Skarpain.',
+        id: 'harek', label: 'Harek (†?)', group: 'TRAMA', type: 'Personaje — Desaparecido', desc: 'Hijo de Asgrim e Idrun. Amigo de Breca. Desaparecido cuando sus padres fueron asesinados. Los asesinos huyeron en barcas por el río Skarpain.',
         star: 'Primer eslabón del patrón de robos de niños.'
     },
     {
@@ -244,8 +244,8 @@ const nodes = [
         star: '★★ Virk ganó el duelo pero perdió su vida al romper las reglas. Las leyes del holmganga están por encima de la victoria: el honor importa más que ganar.'
     },
     {
-        id: 'holmganga', label: 'Holmganga', group: 'NORSE', type: 'Ritual — Duelo', desc: 'Duelo legal en isla o terreno delimitado. Reglas estrictas: rendirse es válido, pero atacar tras la rendición rompe el código y justifica ejecución. Virk violó esto contra Guðvarr en Cap.12. [Histórico: el hólmganga era un duelo formal nórdico para resolver disputas de honor, herencias o insultos. Se realizaba en una isla (hólmr) o en un espacio marcado con mantos. Gwynne lo preserva como institución legal vigente en Vigríð.]',
-        star: '★ El holmganga de Cap.12 muestra que las leyes nórdicas antiguas siguen vivas en Vigríð. Romperlas tiene consecuencias letales.'
+        id: 'holmganga', label: 'Holmganga', group: 'NORSE', type: 'Ritual — Duelo', desc: 'Duelo legal en isla o terreno delimitado. Reglas estrictas: rendirse es válido, pero atacar tras la rendición rompe el código y justifica ejecución. Virk violó esto contra Guðvarr. [Histórico: el hólmganga era un duelo formal nórdico para resolver disputas de honor, herencias o insultos. Se realizaba en una isla (hólmr) o en un espacio marcado con mantos. Gwynne lo preserva como institución legal vigente en Vigríð.]',
+        star: '★ El holmganga muestra que las leyes nórdicas antiguas siguen vivas en Vigríð. Romperlas tiene consecuencias letales.'
     },
     {
         id: 'holmganga-event', label: 'Holmganga', group: 'EVENTO', type: 'Evento', desc: 'Guðvarr reta a duelo a Virk. Virk acepta y ganó el duelo —le hundió el hacha en el hombro a Guðvarr, seccionándole los músculos—. Pero Virk alzó el arma para matar tras la rendición, violando las reglas. La thrall de Sigrún intervino y lo mató. Reglas del holmganga: cuadrado marcado con varas de avellano; un pie fuera = rendición; dos pies fuera = huida; tres escudos destruidos = derrota; se puede pactar primera herida, rendición o muerte. «Holmganga» significa literalmente «ir a la isla».',
@@ -264,7 +264,7 @@ const nodes = [
         star: '★★ Su amo es Sighvat — ¿seguirá siendo así toda la historia? Nótese la ironía: un sabueso-dios rastreando a sus propios parientes Tainted.'
     },
     {
-        id: 'idrun', label: 'Idrun (†)', group: 'ORKA', type: 'Personaje — Muerta', desc: 'Esposa de Asgrim. Encontrada crucificada en el portón del steading con el vientre abierto (Cap.1). La brutalidad del acto sugiere un mensaje deliberado o una ejecución ritual. Su hijo Harek desapareció.',
+        id: 'idrun', label: 'Idrun (†)', group: 'ORKA', type: 'Personaje — Muerta', desc: 'Esposa de Asgrim. Encontrada crucificada en el portón del steading con el vientre abierto. La brutalidad del acto sugiere un mensaje deliberado o una ejecución ritual. Su hijo Harek desapareció.',
         star: '★ La forma de su muerte —crucificada, vientre abierto— podría ser un rito, no solo un asesinato. ¿A qué tradición pertenece?'
     },
     {
@@ -328,7 +328,7 @@ const nodes = [
         star: 'Guðvarr lleva espada pero no sabe usarla bien. Contraste con guerreros reales como Glornir. La espada curva del guerrero oscuro confirma origen extranjero.'
     },
     {
-        id: 'leif', label: 'Leif Kolskeggson', group: 'VARG', type: 'Personaje — Antagonista', desc: 'Hijo de Snepil Kolskegg. Cicatriz en el labio. Quiso esclavizar a Varg y amputarle la mano como castigo. Derrotado por los Hermanos en Cap. 4. En Cap.11 se revela que hirió a Varg con una lanza antes de huir.',
+        id: 'leif', label: 'Leif Kolskeggson', group: 'VARG', type: 'Personaje — Antagonista', desc: 'Hijo de Snepil Kolskegg. Cicatriz en el labio. Quiso esclavizar a Varg y amputarle la mano como castigo. Derrotado por los Hermanos. Se revela que hirió a Varg con una lanza antes de huir.',
         star: '¿Volverá Leif con más recursos? Tiene motivo de venganza y a Orl como Hird leal.'
     },
     {
@@ -348,7 +348,7 @@ const nodes = [
         star: 'La sala de Logur es donde Varg es juzgado — espacio público para justicia. El longhouse de Fellur es donde Sigrún gobierna.'
     },
     {
-        id: 'mord-lif', label: 'Mord y Lif', group: 'ORKA', type: 'Personaje — Huérfanos', desc: 'Hijos de Virk. Mord es el mayor, Lif el menor. Cap.12: presenciaron la muerte brutal de su padre en el holmganga. Mord exigió justicia a Jarl Sigrún; Lif llamó niðing a Guðvarr con rabia. Sigrún desestimó su reclamo. Thorkel los ayudó a envolver el cuerpo. Marchan cargando el cuerpo de su padre.',
+        id: 'mord-lif', label: 'Mord y Lif', group: 'ORKA', type: 'Personaje — Huérfanos', desc: 'Hijos de Virk. Mord es el mayor, Lif el menor. Presenciaron la muerte brutal de su padre en el holmganga. Mord exigió justicia a Jarl Sigrún; Lif llamó niðing a Guðvarr con rabia. Sigrún desestimó su reclamo. Thorkel los ayudó a envolver el cuerpo. Marchan cargando el cuerpo de su padre.',
         star: '★ Dos jóvenes con motivo de venganza contra Guðvarr y la jarl. Con Virk muerto, el patrón de robos de niños que él documentaba queda sin quien lo persiga —¿lo asumirán ellos?'
     },
     {
@@ -360,7 +360,7 @@ const nodes = [
         star: ''
     },
     {
-        id: 'niding', label: 'Níðing', group: 'NORSE', type: 'Concepto — Deshonra', desc: 'El peor insulto en la cultura nórdica: cobarde sin honor. Guðvarr llamó níðing a Virk tras perder el holmganga, provocando que Virk intentara matarlo. Ser níðing es estar socialmente muerto. [Histórico: níð era la deshonra absoluta en la sociedad nórdica. Acusar a alguien de níðing (cobardía, homosexualidad pasiva, falta de honor) podía justificar violencia legal. Gwynne lo usa como detonante de conflicto en Cap.12.]',
+        id: 'niding', label: 'Níðing', group: 'NORSE', type: 'Concepto — Deshonra', desc: 'El peor insulto en la cultura nórdica: cobarde sin honor. Guðvarr llamó níðing a Virk tras perder el holmganga, provocando que Virk intentara matarlo. Ser níðing es estar socialmente muerto. [Histórico: níð era la deshonra absoluta en la sociedad nórdica. Acusar a alguien de níðing (cobardía, homosexualidad pasiva, falta de honor) podía justificar violencia legal. Gwynne lo usa como detonante de conflicto.]',
         star: '★★ Guðvarr usó la palabra como arma tras perder. Virk prefirió morir antes que aceptar el insulto.'
     },
     {
@@ -372,7 +372,7 @@ const nodes = [
         star: ''
     },
     {
-        id: 'oath-stone-frost-isles', label: 'Roca de Juramento de Islas de Escarcha', group: 'OBJETO', type: 'Objeto Mágico — Reliquia', desc: 'Monolito de granito cubierto de musgo y líquenes, tan alto y ancho como un mead hall. Grabada con runas e imágenes de la cosmología de Vigríð. Activada mediante sangre de un Tainted: la sangre corre por la roca, se ilumina como metal fundido, quema el musgo y revela el tapiz completo grabado. Las imágenes muestran el Guðfalla: Lik-Rifa enjaulada, Ulfrir encadenado, el Bosque de las Horcas, los dioses en guerra, Snaka coiling sobre todos. Huele a "sangre derramada y juramentos" según Hundur. Cap.14: única piedra de juramento que sobrevivió a la destrucción sistemática (los demás fueron destruidos por mandato post-Guðfalla). Ubicada en la meseta más al sur de las Islas de la Escarcha. [Histórico: las piedras de juramento (vé-steinn) eran lugares sagrados nórdicos donde se juraban alianzas. La destrucción sistemática de estas piedras es el equivalente de borrar la historia religiosa del mundo.]',
+        id: 'oath-stone-frost-isles', label: 'Roca de Juramento de Islas de Escarcha', group: 'OBJETO', type: 'Objeto Mágico — Reliquia', desc: 'Monolito de granito cubierto de musgo y líquenes, tan alto y ancho como un mead hall. Grabada con runas e imágenes de la cosmología de Vigríð. Activada mediante sangre de un Tainted: la sangre corre por la roca, se ilumina como metal fundido, quema el musgo y revela el tapiz completo grabado. Las imágenes muestran el Guðfalla: Lik-Rifa enjaulada, Ulfrir encadenado, el Bosque de las Horcas, los dioses en guerra, Snaka coiling sobre todos. Huele a "sangre derramada y juramentos" según Hundur. única piedra de juramento que sobrevivió a la destrucción sistemática (los demás fueron destruidos por mandato post-Guðfalla). Ubicada en la meseta más al sur de las Islas de la Escarcha. [Histórico: las piedras de juramento (vé-steinn) eran lugares sagrados nórdicos donde se juraban alianzas. La destrucción sistemática de estas piedras es el equivalente de borrar la historia religiosa del mundo.]',
         star: '★★★ Es un archivo de la historia del mundo, activable solo con sangre Tainted. Su supervivencia es casi un milagro. La luz que emite puede atraer vaesen. ¿Existen otras piedras ocultas en lugares remotos?'
     },
     {
@@ -408,7 +408,7 @@ const nodes = [
         star: '★ Los raptores viajan por ríos, no por tierra. Organización logística detrás del patrón de robos.'
     },
     {
-        id: 'rokia', label: 'Røkia', group: 'VARG', type: 'Personaje — Hermanos', desc: 'Cap.11. Guerrera alta, rubia, mirada de halcón predador. Lleva escudo negro (Hermanos) a la espalda. Por órdenes de Glornir, entrena a Varg en combate con escudo. Directa, fría, poco tolerante con la incompetencia. Llama a Svik "pavo real engreído".',
+        id: 'rokia', label: 'Røkia', group: 'VARG', type: 'Personaje — Hermanos', desc: 'Guerrera alta, rubia, mirada de halcón predador. Lleva escudo negro (Hermanos) a la espalda. Por órdenes de Glornir, entrena a Varg en combate con escudo. Directa, fría, poco tolerante con la incompetencia. Llama a Svik "pavo real engreído".',
         star: '¿Por qué le fue asignada a Varg específicamente? Su entrenamiento es metódico y revelador de sus habilidades.'
     },
     {
@@ -440,7 +440,7 @@ const nodes = [
         star: 'La thrall-guerrera que la sigue es un misterio: ojos planos que hielan hasta a Orka. ¿Quién era antes de ser encadenada?'
     },
     {
-        id: 'sjavarom', label: 'Sjávarorm (Serpiente Marina)', group: 'VAESEN', type: 'Vaesen — Cap.9', desc: 'Cabeza del tamaño de una cabaña, hileras de dientes, cuerpo sinuoso gris-verde. Atacó el Wave-Jarl en Cap. 9. Controlada por la mujer de Berak con canto Seiðr (sangre de Snaka).',
+        id: 'sjavarom', label: 'Sjávarorm (Serpiente Marina)', group: 'VAESEN', type: 'Vaesen', desc: 'Cabeza del tamaño de una cabaña, hileras de dientes, cuerpo sinuoso gris-verde. Atacó el Wave-Jarl. Controlada por la mujer de Berak con canto Seiðr (sangre de Snaka).',
         star: 'Revela el poder de la mujer de Berak: sangre de Snaka controla criaturas del mar.'
     },
     {
@@ -521,7 +521,7 @@ const nodes = [
     },
     {
         id: 'thorkel', label: 'Thorkel Ulfsson', group: 'ORKA', type: 'Personaje — Orka', desc: 'Grande como un peñasco. Barba trenzada con cicatriz de mejilla a mandíbula. Ex-thrall: de joven llevó collar de hierro y tuvo la espalda abierta a latigazos —igual que Varg. El mejor rastreador. Elige mirar hacia adelante en vez de al pasado. Profundamente amoroso con Orka y Breca. Su arma principal es un hacha de mango largo (tan alto como él, con hoja "con barba"). Viste capa de lobo.',
-        star: '★★ Ex-thrall con espalda marcada a latigazos. Cap.12: Conoce el término «Ulfrir-kin» —¿cómo? Pateó a la thrall-lobo con tal fuerza que la hizo volar metros. Recibió un corte de seax («un rasguño», según él). Su pasado esconde más de lo que dice.'
+        star: '★★ Ex-thrall con espalda marcada a latigazos. Conoce el término «Ulfrir-kin» —¿cómo? Pateó a la thrall-lobo con tal fuerza que la hizo volar metros. Recibió un corte de seax («un rasguño», según él). Su pasado esconde más de lo que dice.'
     },
     {
         id: 'thrall', label: 'Thrall (Esclavo)', group: 'NORSE', type: 'Clase Social', desc: 'Esclavo. Collar de hierro como símbolo. Sin derechos legales. Varg y Thorkel fueron thralls. Los Tainted son esclavizados sistemáticamente. [Histórico: los þræll eran la clase más baja en la sociedad nórdica: prisioneros de guerra, deudores, hijos de esclavos. Gwynne expande esto: en Vigríð los Tainted son thralls por ley, controlados con collares mágicos.]',
@@ -536,7 +536,7 @@ const nodes = [
         star: '★ Torc = poder visible. Sigrún, Agnar, Svik los llevan. Contraste con Orka y Thorkel que no llevan joyas — rechazo deliberado de su pasado.'
     },
     {
-        id: 'trol', label: 'Trol (bull-troll)', group: 'VAESEN', type: 'Vaesen — Cap.7', desc: 'Joven macho. Astas en el cráneo cubierto de musgo, piel escamada con musgo y liquen, colmillos de marfil, testiculos y territorios propios. Solitarios salvo en época de celo. Mató a varios guerreros de Terrores de la batalla antes de ser abatido. Sus partes (dientes, piel, testículos, corazón, hígado, uñas en polvo) se venden a buen precio.',
+        id: 'trol', label: 'Trol (bull-troll)', group: 'VAESEN', type: 'Vaesen', desc: 'Joven macho. Astas en el cráneo cubierto de musgo, piel escamada con musgo y liquen, colmillos de marfil, testiculos y territorios propios. Solitarios salvo en época de celo. Mató a varios guerreros de Terrores de la batalla antes de ser abatido. Sus partes (dientes, piel, testículos, corazón, hígado, uñas en polvo) se venden a buen precio.',
         star: ''
     },
     {
@@ -545,7 +545,7 @@ const nodes = [
     },
     {
         id: 'ulfrir', label: 'Ulfrir (Dios-Lobo)', group: 'DIOS', type: 'Dios Muerto — Lobo', desc: 'El dios-lobo, hijo de Snaka. Muerto en el Guðfalla. Sus descendientes son los Ulfrir-kin: Tainted con transformación parcial de lobo —ojos ambarinos, dientes que se agudizan, fuerza y velocidad bestiales, instinto depredador que supera el raciocinio—. La thrall-guerrera de Sigrún porta su sangre. [En la mitología nórdica real, los lobos Fenrir, Sköll y Háti son hijos del dios Loki, no de Odín. Gwynne reinterpreta la figura del lobo divino como un dios-padre independiente al igual que hizo con el oso Berser.]',
-        star: '★★★ Confirmado en Cap.12. La thrall de Sigrún es Ulfrir-kin. Que Thorkel conozca el nombre exacto «Ulfrir-kin» sin titubear sugiere que tiene experiencia directa con este tipo de Tainted —o que su pasado oculto lo conecta con este mundo.'
+        star: '★★★ La thrall de Sigrún es Ulfrir-kin. Que Thorkel conozca el nombre exacto «Ulfrir-kin» sin titubear sugiere que tiene experiencia directa con este tipo de Tainted —o que su pasado oculto lo conecta con este mundo.'
     },
     {
         id: 'vaesen-gen', label: 'Vaesen', group: 'VAESEN', type: 'Criatura', desc: 'Criaturas del mundo subterráneo liberadas en el Guðfalla. Presencia en zonas remotas. Van desde peligrosos (trol, serpiente marina, araña de hielo) hasta domesticables (tennúr, Spertus). Los vaesen traders venden sus partes. Se vinculan con sangre a las criaturas ',
@@ -584,7 +584,7 @@ const nodes = [
         star: ''
     },
     {
-        id: 'weregild', label: 'Weregild (Precio de Sangre)', group: 'NORSE', type: 'Ley — Compensación', desc: 'Compensación monetaria por asesinato. Alternativa a la venganza de sangre. El asesino/su familia paga al clan de la víctima. Evita ciclos de venganza interminables. No mencionado explícitamente en Cap.1-12 pero implícito en el sistema legal nórdico de Vigríð. [Histórico: el wergild era fundamental en ley germánica/nórdica. Cada persona tenía un "precio" según su estatus. Pagar wergild cerraba la deuda de sangre legalmente. Gwynne probablemente lo usa off-screen.]',
+        id: 'weregild', label: 'Weregild (Precio de Sangre)', group: 'NORSE', type: 'Ley — Compensación', desc: 'Compensación monetaria por asesinato. Alternativa a la venganza de sangre. El asesino/su familia paga al clan de la víctima. Evita ciclos de venganza interminables. No mencionado explícitamente pero implícito en el sistema legal nórdico de Vigríð. [Histórico: el wergild era fundamental en ley germánica/nórdica. Cada persona tenía un "precio" según su estatus. Pagar wergild cerraba la deuda de sangre legalmente. Gwynne probablemente lo usa off-screen.]',
         star: 'Mord y Lif no reciben weregild por Virk — Sigrún justificó la muerte como legal. Esto alimenta su sed de venganza: sin compensación, solo queda la sangre.'
     },
     {
@@ -666,23 +666,23 @@ const nodes = [
         star: 'Ubicación de la piedra de juramento superviviente. Su aislamiento explica por qué nadie la destruyó.'
     },
     {
-        id: 'gallows-wood', label: 'Bosque de las Horcas', group: 'COSMO', type: 'Evento Mítico', desc: 'El primer acto de venganza de sangre en la historia de Vigríð. Lik-Rifa mató a la hija primogénita de Orna y Ulfrir y le arrancó las alas de la espalda. Como venganza, Orna y Ulfrir cazaron a la descendencia Tainted de Lik-Rifa, les abrieron la espalda, les arrancaron las costillas hacia afuera imitando alas, y colgaron los cadáveres de los árboles. Ese acto fundacional se convirtió en el blood-eagle (Águila de Sangre) —una forma de ejecución que los humanos de Vigríð heredaron de los dioses. Cap.14: revelado ante la piedra de juramento a través de las imágenes grabadas — figuras con alas esqueléticas colgadas de ramas. Elvar recuerda la historia.',
+        id: 'gallows-wood', label: 'Bosque de las Horcas', group: 'COSMO', type: 'Evento Mítico', desc: 'El primer acto de venganza de sangre en la historia de Vigríð. Lik-Rifa mató a la hija primogénita de Orna y Ulfrir y le arrancó las alas de la espalda. Como venganza, Orna y Ulfrir cazaron a la descendencia Tainted de Lik-Rifa, les abrieron la espalda, les arrancaron las costillas hacia afuera imitando alas, y colgaron los cadáveres de los árboles. Ese acto fundacional se convirtió en el blood-eagle (Águila de Sangre) —una forma de ejecución que los humanos de Vigríð heredaron de los dioses. Revelado ante la piedra de juramento a través de las imágenes grabadas — figuras con alas esqueléticas colgadas de ramas. Elvar recuerda la historia.',
         star: '★★★ El blood-eagle no es una invención humana — es un ritual copiado del primer acto de venganza divina. Los humanos de Vigríð están repitiendo sin saberlo los crímenes de los dioses. La violencia sagrada tiene un linaje.'
     },
     {
-        id: 'blood-eagle', label: 'Águila de Sangre (Blood-Eagle)', group: 'NORSE', type: 'Ritual — Ejecución', desc: 'Forma extrema de ejecución ritual: abrir la espalda, separar las costillas hacia afuera como alas, exponer los pulmones. En Vigríð se practica como acto de venganza máxima. Cap.14: origen revelado — es una imitación directa de cómo Orna y Ulfrir ejecutaron a los hijos Tainted de Lik-Rifa en venganza por el asesinato de su hija. El primer blood-eagle lo practicaron los propios dioses. [Histórico: el blóðörn aparece en sagas nórdicas como ejecución de alta traición. Su historicidad es debatida, pero Gwynne lo reinterpreta dándole un origen mítico explícito: los dioses lo inventaron.]',
+        id: 'blood-eagle', label: 'Águila de Sangre (Blood-Eagle)', group: 'NORSE', type: 'Ritual — Ejecución', desc: 'Forma extrema de ejecución ritual: abrir la espalda, separar las costillas hacia afuera como alas, exponer los pulmones. En Vigríð se practica como acto de venganza máxima. Origen revelado — es una imitación directa de cómo Orna y Ulfrir ejecutaron a los hijos Tainted de Lik-Rifa en venganza por el asesinato de su hija. El primer blood-eagle lo practicaron los propios dioses. [Histórico: el blóðörn aparece en sagas nórdicas como ejecución de alta traición. Su historicidad es debatida, pero Gwynne lo reinterpreta dándole un origen mítico explícito: los dioses lo inventaron.]',
         star: '★★ Los humanos de Vigríð practican rituales que copiaron inconscientemente de los dioses. La violencia tiene memoria más larga que quienes la ejercen.'
     },
     {
-        id: 'hundur-dios', label: 'Hundur (Dios-Sabueso)', group: 'DIOS', type: 'Dios Muerto — Sabueso', desc: 'Uno de los hijos de Snaka. Dios-sabueso. Su sangre en el Hundur-thrall confiere olfato sobrehumano que puede detectar rastros de "sangre derramada y juramentos" en una piedra cubierta de musgo. Cap.14: Elvar lo nombra explícitamente al señalar al thrall-Hundur: "Veo la sangre de Hundur el Sabueso en ti." Su muerte en el Guðfalla no ha sido detallada. [Posible paralelo con Garm, el perro guardián del Hel nórdico, o con los sabuesos de Odín, Geri y Freki.]',
+        id: 'hundur-dios', label: 'Hundur (Dios-Sabueso)', group: 'DIOS', type: 'Dios Muerto — Sabueso', desc: 'Uno de los hijos de Snaka. Dios-sabueso. Su sangre en el Hundur-thrall confiere olfato sobrehumano que puede detectar rastros de "sangre derramada y juramentos" en una piedra cubierta de musgo. Elvar lo nombra explícitamente al señalar al thrall-Hundur: "Veo la sangre de Hundur el Sabueso en ti." Su muerte en el Guðfalla no ha sido detallada. [Posible paralelo con Garm, el perro guardián del Hel nórdico, o con los sabuesos de Odín, Geri y Freki.]',
         star: '¿Qué otros poderes tiene la sangre de Hundur además del olfato? ¿Sus Tainted pueden rastrear magia además de personas?'
     },
     {
-        id: 'dragon-born', label: 'Dragon-Born (Tainted de Lik-Rifa)', group: 'TRAMA', type: 'Trama — Pregunta Abierta', desc: 'Posibles Tainted con sangre de la diosa-dragón Lik-Rifa. Cap.14: Elvar argumenta que NUNCA ha existido un dragon-born confirmado — ni ella ni nadie en la Battle-Grim los ha visto en todos sus viajes, incluyendo Iskidan. Propone que son un cuento de hadas para entretener y asustar niños. Agnar, más cauteloso, dice que la ausencia de evidencia no es evidencia de ausencia — y que si existieran, valdrían una fortuna. Uspa escupe al oír a Elvar. Kráka contempla el serpenteo de Snaka en la piedra sin responder.',
+        id: 'dragon-born', label: 'Dragon-Born (Tainted de Lik-Rifa)', group: 'TRAMA', type: 'Trama — Pregunta Abierta', desc: 'Posibles Tainted con sangre de la diosa-dragón Lik-Rifa. Elvar argumenta que NUNCA ha existido un dragon-born confirmado — ni ella ni nadie en la Battle-Grim los ha visto en todos sus viajes, incluyendo Iskidan. Propone que son un cuento de hadas para entretener y asustar niños. Agnar, más cauteloso, dice que la ausencia de evidencia no es evidencia de ausencia — y que si existieran, valdrían una fortuna. Uspa escupe al oír a Elvar. Kráka contempla el serpenteo de Snaka en la piedra sin responder.',
         star: '★★★ PREGUNTA ABIERTA MÁXIMA. El escupitajo de Uspa es la señal más importante del capítulo. No niega — reacciona con desprecio. ¿Sabe de dragon-born vivos? ¿El pergamino que destruyó contenía información sobre ellos? Gwynne no habría planteado esta pregunta si no fuera a responderla.'
     },
     {
-        id: 'berak-venta-event', label: 'Viaje a Snakavik (Cap.14)', group: 'EVENTO', type: 'Evento', desc: 'Terrores de la batalla navega dos días al sur desde Iskalt, cubriendo ya la mitad del camino a Snakavik con viento noroeste. En Cap.14 el viento cambia al este y los ralentiza. Atracan en las Islas de la Escarcha para refugiarse de una tormenta. Allí descubren la piedra de juramento y son atacados por gusanos nocturnos. Agnar ordena regresar al Wave-Jarl inmediatamente tras el ataque. El destino final sigue siendo Snakavik y el Jarl Störr.',
+        id: 'berak-venta-event', label: 'Viaje a Snakavik', group: 'EVENTO', type: 'Evento', desc: 'Terrores de la batalla navega dos días al sur desde Iskalt, cubriendo ya la mitad del camino a Snakavik con viento noroeste. El viento cambia al este y los ralentiza. Atracan en las Islas de la Escarcha para refugiarse de una tormenta. Allí descubren la piedra de juramento y son atacados por gusanos nocturnos. Agnar ordena regresar al Wave-Jarl inmediatamente tras el ataque. El destino final sigue siendo Snakavik y el Jarl Störr.',
         star: 'Cada parada del viaje añade información cosmológica. La tormenta y el vaesen no son obstáculos casuales — el camino a Snakavik está sembrado de revelaciones.'
     },
 ];
