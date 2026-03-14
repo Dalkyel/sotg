@@ -5,8 +5,8 @@ const nodes = [
         star: '★★ Su motivación ideológica queda clara — no es solo mercenario, es creyente de que la herencia divina es un peligro para el mundo. Esto lo convierte en antagonista más matizado y más peligroso.'
     },
     {
-        id: 'akall', label: 'Akáll de Varg', group: 'TRAMA', type: 'Trama — Abierta', desc: 'Varg necesita que Vol realice un akáll para invocar el espíritu de Frøya y descubrir cómo murió. Vol no está en el cuartel de los Hermanos. Røkia esquiva la pregunta de Varg sobre su paradero. El acceso a Vol sigue bloqueado.',
-        star: '¿Dónde está Vol? Røkia no responde.'
+        id: 'akall', label: 'Akall de Varg', group: 'TRAMA', type: 'Trama -- Abierta', desc: 'Varg necesita que Vol realice un akall para invocar el espiritu de Froya y descubrir como murio. Cap.11: Vol no estaba en el cuartel. Cap.16: Varg le hace la peticion directamente a Glornir y Vol en presencia de toda la compania -- la primera vez que lo pide en voz alta. Vol escucha y comienza a responder afirmativamente pero Glornir la interrumpe y dice no. Glornir explica que Varg no es aun Hermano de Sangre -- es aprendiz -- y debe ganarse el derecho primero. La peticion sigue en pie pero ahora es publica y tanto Glornir como Vol la conocen.',
+        star: '*** Cap.16: la peticion ya no es secreta. Glornir la bloquea pero no la niega para siempre -- dice que Varg debe probarse primero. Vol empezo a responder positivamente antes de ser interrumpida: ella esta dispuesta. La tension narrativa cambia: el obstaculo ya no es llegar a Vol sino ganarse el derecho ante Glornir.'
     },
     {
         id: 'althing', label: 'Alþing (Althing)', group: 'NORSE', type: 'Institución — Asamblea', desc: 'Asamblea pública donde se anuncian juramentos, se resuelven disputas y se proclaman leyes. Celebrada en la Roca del Juramento en Fellur. Sigrún anunció allí su lealtad a Helka. [Histórico: el Alþingi islandés (fundado 930 d.C.) es el parlamento más antiguo del mundo. Era asamblea anual donde se recitaban leyes, se juzgaban casos y se hacían alianzas. Gwynne lo adapta como institución política clave en Vigríð.]',
@@ -65,8 +65,8 @@ const nodes = [
         star: '★★ El título de la trilogía (Bloodsworn) se refiere a esto. Los juramentos de sangre son el tejido que une (y rompe) Vigríð.'
     },
     {
-        id: 'bloodsworn', label: 'Bloodsworn (Hermanos de Sangre)', group: 'FACCION', type: 'Facción — Mercenarios', desc: 'Compañía mercenaria de élite, legendaria y famosa en Vigríð. Escudo negro con salpicaduras rojas. Cazan vaesen, buscan reliquias, protegen ricos. Drakkar propio. Jefe: Glornir. Seiðr-thrall: Vol. Un miembro muere y van a Liga a buscar reemplazo',
-        star: ''
+        id: 'bloodsworn', label: 'Bloodsworn (Hermanos de Sangre)', group: 'FACCION', type: 'Faccion -- Mercenarios', desc: 'Compania mercenaria de elite, legendaria y famosa en Vigrið. Escudo negro con salpicaduras rojas. Cazan vaesen, buscan reliquias, protegen ricos. Drakkar propio. Jefe: Glornir. Seidr-thrall: Vol. Cap.16: zarpan de Liga con la marea. Glornir da las gracias a Logur, rechaza mas hospitalidad (la tripulacion esta inquieta por la inactividad). Llevan a Varg como aprendiz con equipo comprado con el dinero de Glornir.',
+        star: 'Cap.16: dejan Liga. Nueva fase del arco de Varg: en movimiento, como parte de la compania, sin haber prestado juramento todavia.'
     },
     {
         id: 'bogi', label: 'Bogi (Arco)', group: 'NORSE', type: 'Arma — Distancia', desc: 'Arco largo de madera (tejo, fresno, olmo). Alcance 200+ metros. Caza y guerra. Menos prestigioso que combate cuerpo a cuerpo pero tácticamente vital. Flechas con punta de hierro. [Histórico: los vikingos eran arqueros competentes pero el arco tenía menos prestigio cultural que espada/hacha. Matar desde lejos era menos "honorable". Gwynne probablemente lo usa para emboscadas y caza.]',
@@ -176,8 +176,8 @@ const nodes = [
         star: 'Saber esta lengua es poder absoluto sobre los Tainted. ¿Cuántos la conocen realmente?'
     },
     {
-        id: 'glornir', label: 'Glornir', group: 'VARG', type: 'Personaje — Jefe', desc: 'Jefe de los Hermanos de Sangre. Calvo, barba gris trenzada. Long-axe como bastón. Oro y plata en brazos y cuello. Habla lengua Galdur para controlar collares. Rápido como el rayo. Cuando el Príncipe Jaromir exige a Sulich, Glornir se levanta lentamente, chasquea el cuello y declara que el juramento de sangre es inviolable — protegerá a Sulich cueste lo que cueste. Epítetos múltiples: Rompe-Escudos (Røkia), Dador-de-Oro (él mismo), Robador-de-Almas (Svik), Cortador-Golpeador-Aplastador (Einar).',
-        star: '★★ Sus múltiples kennings revelan que su reputación es terror y generosidad al mismo tiempo. En  se coloca entre Sulich y un príncipe de Iskidan sin titubear.'
+        id: 'glornir', label: 'Glornir', group: 'VARG', type: 'Personaje -- Jefe', desc: 'Jefe de los Hermanos de Sangre. Calvo, barba gris trenzada. Long-axe como baston. Oro y plata en brazos y cuello. Habla lengua Galdur para controlar collares. Rapido como el rayo. Epítetos: Rompe-Escudos, Dador-de-Oro, Robador-de-Almas, Cortador-Golpeador-Aplastador. Cap.16: define el sistema de aprendizaje -- Varg no es Hermano aun, es aprendiz. Lo que busca en un futuro Hermano: habilidad en combate + cualidades de la cabeza (lealtad) + cualidades del corazon (devocion hasta la muerte). Le da a Varg una bolsa de monedas para comprar equipo antes de zarpar. Anuncia la partida de Liga con la marea. Interrumpe a Vol cuando esta a punto de aceptar el akall de Varg.',
+        star: '** Cap.16: la filosofia del Bloodsworn en sus propias palabras. Tres pilares: habilidad, lealtad, devocion. Le da dinero a Varg -- gesto de inversion genuina en el aprendiz. Bloquear el akall es pragmatico, no cruel -- Varg tiene que ganarse el derecho.'
     },
     {
         id: 'gods-bones', label: 'Huesos de los Dioses', group: 'MAGIA', type: 'Objeto — Magia', desc: 'Los huesos de los dioses muertos (Snaka, Orna, Berser, Ulfrir) son objetos de gran poder. Se usan para protección (knuckle-bone en umbrales), como fuente de poder para magia (asta de trol para Kráka), y como símbolos de autoridad (alas de Orna en la fortaleza de Helka). El poder específico que otorgan varía según el dios y el contexto.',
@@ -288,8 +288,8 @@ const nodes = [
         star: ''
     },
     {
-        id: 'jarl-logur', label: 'Jarl Logur', group: 'FACCION', type: 'Personaje — Política', desc: 'Jarl de Liga. Aloja a los Hermanos de Sangre en su sala de festín. Sus escudos son azules y sus velas rojas. Aspecto físico revelado — barriludo, vientre que estira la túnica bordada, cabello gris largo y trenzado con hilo de oro, oro en cuello y brazos. Hombre que ríe mucho. Viejo amigo y cómplice de Sergei el mercader ("viejo zorro"). Sienta a Glornir a su izquierda en la mesa de honor. Cuando Jaromir reclama a Sulich, Logur defiende la ley: sin pruebas ante el Althing, no puede apoyar la demanda del príncipe. Equilibrista político — no desafía a Jaromir abiertamente pero tampoco traiciona a los Hermanos.',
-        star: '★ Su hospitalidad y lealtad a Glornir son genuinas, no solo diplomáticas. Frena la escalada con Jaromir citando la ley del Althing.'
+        id: 'jarl-logur', label: 'Jarl Logur', group: 'FACCION', type: 'Personaje -- Politica', desc: 'Jarl de Liga. Sus escudos son azules y sus velas rojas. Barriludo, vientre que estira la tunica bordada, cabello gris largo y trenzado con hilo de oro, oro en cuello y brazos. Hombre que rie mucho. Viejo amigo de Sergei el mercader. Sienta a Glornir a su izquierda. Defensor de la ley ante Jaromir. Cap.16: despide a los Hermanos con generosidad. Promete enviarlos con barriles llenos y vientres llenos. Abraza a Glornir. Su esposa Salla puntualiza con ironia que en realidad sera ella quien lo organice todo.',
+        star: '* Su hospitalidad es genuina y sin condicion. La dinamica con Salla -- ella gestiona, el promete -- es un detalle humano que los hace reales.'
     },
     {
         id: 'jarl-orlyg', label: 'Jarl Orlyg', group: 'ORKA', type: 'Personaje — Política', desc: 'Jarl de Svelgarth, al este de Vigríð. Presente en el contexto político del Althing. Otro jarl menor cuya posición ante la expansión de Helka y Störr está por definirse.',
@@ -332,8 +332,8 @@ const nodes = [
         star: '¿Volverá Leif con más recursos? Tiene motivo de venganza y a Orl como Hird leal.'
     },
     {
-        id: 'liga', label: 'Liga', group: 'LUGAR', type: 'Lugar — Ciudad', desc: 'Ciudad mercado y puerto al pie del fiordo. Sala del Jarl Logur en la colina. Plaza de combate donde Varg luchó contra Einar. Mercado con vaesen disecados, marfil, moneda Helka.',
-        star: ''
+        id: 'liga', label: 'Liga', group: 'LUGAR', type: 'Lugar -- Ciudad', desc: 'Ciudad mercado y puerto al pie del fiordo. Sala del Jarl Logur en la colina. Plaza de combate donde Varg lucho contra Einar. Mercado con vaesen disecados, marfil, moneda Helka. Cap.16: los Hermanos de Sangre zarpan de aqui con la marea. Crisis por Sulich sin resolver -- Jaromir prometio regresar pero los Hermanos se van antes de que pueda.',
+        star: '¿Se resolvio la crisis de Jaromir/Sulich antes de la partida? No se menciona en Cap.16 -- podrian haberse ido sin esperar el Althing prometido por Logur.'
     },
     {
         id: 'lik-rifa-amenaza', label: 'Lik-Rifa Despertando', group: 'TRAMA', type: 'Trama — Cósmica', desc: 'Los terremotos de Iskalt y las venas de lava parpadeando sugieren que la diosa-dragón Lik-Rifa no está muerta, sino activa bajo el Árbol de Ceniza. Grend lo afirma; Elvar es escéptica.',
@@ -408,8 +408,8 @@ const nodes = [
         star: '★ Los raptores viajan por ríos, no por tierra. Organización logística detrás del patrón de robos.'
     },
     {
-        id: 'rokia', label: 'Røkia', group: 'VARG', type: 'Personaje — Hermanos', desc: 'Guerrera alta, rubia, mirada de halcón predador. Lleva escudo negro (Hermanos) a la espalda. Por órdenes de Glornir, entrena a Varg en combate con escudo. Directa, fría, poco tolerante con la incompetencia. Llama a Svik "pavo real engreído".',
-        star: '¿Por qué le fue asignada a Varg específicamente? Su entrenamiento es metódico y revelador de sus habilidades.'
+        id: 'rokia', label: 'Rokia', group: 'VARG', type: 'Personaje -- Hermanos', desc: 'Guerrera alta, rubia, mirada de halcon predador. Lleva escudo negro (Hermanos) a la espalda. Por ordenes de Glornir, entrena a Varg en combate con escudo. Directa, fria, poco tolerante con la incompetencia. Llama a Svik pavo real engreido. Cap.16: el entrenamiento del dia anterior dejo a Varg con cicatrices de lanza deliberadas (lo pinchaba intencionalmente), mano derecha ampollada de sostener la lanza, y todo el cuerpo dolorido del trabajo de escudo. Esto confirma que el entrenamiento de Rokia no solo es fisico -- es habituacion al dolor y al hierro. Informa a Glornir de Varg: le dice que es rapido, tiene equilibrio y espiritu guerrero.',
+        star: '** Cap.16: su informe a Glornir sobre Varg es positivo -- rapido, equilibrio, espiritu guerrero. Eso es lo que mueve a Glornir a invertir la bolsa de monedas en el. Exigente pero justa.'
     },
     {
         id: 'root', label: 'La Sombra de los Dioses', group: 'CENTER', type: 'Obra', desc: 'Libro I de la Trilogía Bloodsworn. John Gwynne. Año 297 del Friðaröld. Tres líneas narrativas convergen en un mundo roto por la guerra de los dioses.', star: ''
@@ -508,8 +508,8 @@ const nodes = [
         star: ''
     },
     {
-        id: 'svik', label: 'Svik Hrulfsson', group: 'VARG', type: 'Personaje — Hermanos', desc: 'Pelo rojo trenzado, apuesto de barba aceitada. Túnica verde de espiga de trigo, anillos de plata enrollados en los brazos, torc de plata retorcida con dos cabezas de serpiente en los extremos. Apodo: Pelo-Enredado (irónico). Sarcástico, cuidó a Varg 6 días durante la fiebre. Reclutador/negociador.',
-        star: ''
+        id: 'svik', label: 'Svik Hrulfsson', group: 'VARG', type: 'Personaje -- Hermanos', desc: 'Pelo rojo trenzado, apuesto de barba aceitada. Tunica verde de espiga de trigo, anillos de plata enrollados en los brazos, torc de plata retorcida con dos cabezas de serpiente en los extremos. Apodo: Pelo-Enredado (ironico). Sarcastico, cuidó a Varg 6 dias durante la fiebre. Reclutador/negociador. Cap.16: momento de profundidad -- cuando Varg rechaza instintivamente su mano de ayuda al levantarse, Svik dice en serio (sin sonrisa) que aceptar ayuda no es debilidad. Lo ayuda a levantarse de todas formas. Luego retoma su humor habitual. Acompana a Varg a comprar equipo con el dinero de Glornir.',
+        star: '* Cap.16: su momento sin sonrisa revela que detras del sarcasmo hay alguien que entiende lo que es no tener nadie. Ha observado a Varg lo suficiente para saber que esa desconfianza no es arrogancia -- es cicatriz.'
     },
     {
         id: 'tainted', label: 'Tainted', group: 'COSMO', type: 'Facción — Perseguidos', desc: 'Descendientes de los dioses muertos. Portadores de poderes heredados. Perseguidos y cazados desde el Guðfalla. Controlados con collares de hierro activados por lengua Galdur. Vendidos a jarls poderosos. Hundur el Sabueso (Hundur-thrall), Berser el Oso (Berak), Snaka la Serpiente (Kráka y Uspa). Linajes vistos en Iskidan: el Toro, el Halcón, el Caballo — confirma que los Tainted están dispersos por todo el mundo conocido, no solo en Vigríð. Linaje NO confirmado: dragon-born de Lik-Rifa — Elvar arguye que ninguno ha sido visto jamás; Uspa escupe ante eso.',
@@ -552,8 +552,8 @@ const nodes = [
         star: ''
     },
     {
-        id: 'varg', label: 'Varg', group: 'VARG', type: 'POV — Personaje', desc: 'Ex-thrall de Snepil, por ~30 inviernos en la granja de Kolskegg, lo asesino y escapo. Cabeza rapada. Hermana Frøya muerta. Episodios de furia roja disociativa que no recuerda. Boxeador formidable (100 combates para Kolskegg). Llevaba de 9–10 días huyendo antes de llegar a Liga buscando que una Seiðr-witch haga un akáll (invocación). Lleva una bolsa de cuero en el cinturón que parece contener algo relacionado con Frøya. 6 días inconsciente por fiebre de herida de lanza de Leif, ya recuperado. Recibe entrenamiento de escudo de Røkia por órdenes de Glornir. primer festín en la sala del Jarl Logur. Se sienta en el lugar menos honrado (extremo más lejano del jarl). Conoce a Torvik, otro aspirante a Hermano. Apodo que le ponen: "Varg Sin-Sentido" por haber mordido a Einar. Siente un destello de alegría al verse libre, comiendo en mesa de jarl — seguido de culpa inmediata por disfrutar algo cuando Frøya está muerta. Comprende que debe probarse antes de poder unirse plenamente.',
-        star: 'Furia roja sin memoria = posible sangre Tainted. La bolsita al cinturón probablemente contiene algo de Frøya. el apodo "Sin-Sentido" y la culpa/alegría revelan su conflicto interno — quiere vivir pero siente que no tiene derecho todavía.'
+        id: 'varg', label: 'Varg', group: 'VARG', type: 'POV -- Personaje', desc: 'Ex-thrall de Snepil, ~30 inviernos. Asesino a Kolskegg en furia roja y escapo. Cabeza rapada. Hermana Froya muerta. Episodios de furia roja disociativa. Boxeador formidable (100 combates). Bolsa de cuero al cinturon con algo de Froya. 6 dias con fiebre por lanza de Leif. Entrenado por Rokia (escudo y lanza). Apodo: Varg Sin-Sentido. Cap.16: se despierta con resaca de hidromiel por primera vez -- nuevo mundo social para un ex-thrall. Dolor en todo el cuerpo por el entrenamiento: cicatrices de lanza intencionales de Rokia, ampolla en mano derecha por lanza, musculos de escudo. Confronta directamente a Glornir exigiendo el akall como prometido. Glornir lo llama aprendiz, no Hermano. Glornir le da una bolsa de monedas para comprar equipo. Zarpa con los Hermanos. Nota un objeto misterioso incrustado en la viga del hall -- palido, largo como astilla de hueso, con un extremo que brilla como plata.',
+        star: '*** Cap.16: primer acto de agencia real -- enfrenta a Glornir en publico, lo llama Mentiroso-a-sus-nombres si no cumple. No se echa atras ante la presion de toda la sala. El objeto en la viga es un detalle deliberado de Gwynne que Varg nota -- sin explicacion. ¿Que es?'
     },
     {
         id: 'vergelmir', label: 'Vergelmir', group: 'LUGAR', type: 'Lugar — Mítico', desc: 'Cámara subterránea bajo Oskutreð. Allí Lik-Rifa está encadenada y devora almas de guerreros muertos. El camino de los muertos pasa por aquí: por eso los guerreros nórdicos son enterrados con armas en la mano, para poder combatirla. Grend afirma que los guerreros «atraviesan Vergelmir en el camino del alma».',
@@ -572,8 +572,8 @@ const nodes = [
         star: '★★ Su muerte deja a Mord y Lif huérfanos y con deseos de venganza. Los robos de niños que él documentaba quedan sin investigador. La información que tenía sobre el patrón muere con él —¿o la heredó alguien?'
     },
     {
-        id: 'vol', label: 'Vol', group: 'VARG', type: 'Personaje — Seiðr', desc: 'Bruja Seiðr de los Hermanos. Tatuajes azules en mandíbula y garganta. Collar de hierro (es thrall de los Hermanos). Realiza akáll y otras magias. La razón por la que Varg buscó al grupo.',
-        star: 'Thrall Seiðr: paralelo con Kráka (Terrores de la batalla). Ambas usan magia encadenadas.'
+        id: 'vol', label: 'Vol', group: 'VARG', type: 'Personaje -- Seidr', desc: 'Bruja Seidr de los Hermanos. Cap.16: descripcion fisica expandida -- cara de lineas duras acentuada por tatuajes azules anudados en cuello y mandibula inferior. Collar de thrall bajo los tatuajes. Voz sorprendentemente suave para su aspecto severo. Actua con confianza y dignidad absolutamente inusuales en un thrall -- Varg lo nota. Cap.16: primera interaccion directa con Varg. Cuando el pide el akall, ella comienza a responder afirmativamente (insinuando que esta dispuesta) pero Glornir la interrumpe. La mira un largo momento antes de seguirlo.',
+        star: '*** Cap.16: Vol esta DISPUESTA a hacer el akall -- es Glornir quien lo bloquea, no ella. Su mirada larga a Varg antes de seguir a Glornir puede ser curiosidad, simpatia o algo mas. Su dignidad a pesar del collar es uno de los paralelos mas fuertes con Kráka (Terrores de la batalla).'
     },
     {
         id: 'warrior-braid', label: 'Trenza de Guerrero', group: 'NORSE', type: 'Símbolo — Estatus', desc: 'Trenza o mechón largo en cabeza rapada/parcialmente rapada. Símbolo de estatus guerrero. Agnar (franja central), Elvar (trenza rubia), el guerrero oscuro de los Hermanos (trenza negra). [Histórico: evidencia arqueológica sugiere que algunos guerreros vikingos llevaban el cabello rapado en los lados con mechón largo arriba. Gwynne lo convierte en marcador visual de guerreros profesionales.]',
@@ -647,8 +647,8 @@ const nodes = [
         star: '★★ Rotta no solo luchó en la guerra — la CAUSÓ. Convirtió una paranoia en un asesinato y ese asesinato en apocalipsis. El Tainted de sangre Rotta sería maestro de desinformación y traición.'
     },
     {
-        id: 'logur-wife', label: 'Esposa de Logur (sin nombre)', group: 'FACCION', type: 'Personaje', desc: 'Esposa del Jarl Logur de Liga. Alta y elegante, cara abierta y honesta. Cabello trenzado y apilado en la cabeza, más gris que rubio. Viste vestido de lana azul profundo con un hangerock (delantal) bordado encima, y un cinturón de tablet-weave que tintinea con llaves — las llaves del hall, símbolo de la señora del hogar. Se sienta a la derecha del Jarl Logur en la mesa de honor. Ríe y empuja el hombro de Logur cuando este le susurra algo al oído. Nombre no revelado.',
-        star: 'Las llaves en el cinturón = administradora del hall. En el mundo nórdico la señora del hogar controlaba los almacenes, las provisiones, la economía doméstica. Su elegancia contrasta con el estilo barrigón de Logur.'
+        id: 'salla', label: 'Salla', group: 'FACCION', type: 'Personaje -- Secundario', desc: 'Nombre revelado en Cap.16: Salla. Esposa del Jarl Logur de Liga. Alta y elegante, cara abierta y honesta. Cabello trenzado y apilado, mas gris que rubio. Viste vestido de lana azul profundo con hangerock bordado y cinturon de tablet-weave con llaves -- senora del hall. Se sienta a la derecha de Logur en la mesa de honor. Cap.16: cuando Logur promete generosamente enviar a los Hermanos con barriles y vientres llenos, Salla se queda un momento y dice con una sonrisa a Glornir: "Quiere decir que me pedira a mi que lo organice todo." Glornir le hace una reverencia de cabeza y la llama por su nombre.',
+        star: 'Nombre confirmado: Salla. Su comentario ironico sobre Logur revela una relacion de pareja real -- ella gestiona, el promete y se lleva el credito. Glornir le hace una reverencia -- la respeta.'
     },
     {
         id: 'gudfall-saga-galinn', label: 'Saga del Guðfalla (Galinn)', group: 'EVENTO', type: 'Evento', desc: 'El Skáld Galinn recita la saga completa del Guðfalla en el festín del Jarl Logur. Es la primera narración poética completa de la caída de los dioses en la novela. Revela: el Vackna que inició la guerra, los nombres y epítetos de todos los dioses que combatieron, cómo murieron (Berser perforado, Orna desgarrada, Ulfrir muerto, Lik-Rifa encadenada, Snaka caído en Eldrafell), y que los vaesen "treparon desde el foso" tras la caída. Toda la sala queda absorta — Varg siente que está de pie en la Llanura de Batalla viendo la guerra. La saga se interrumpe cuando los mensajeros de Iskidan aporrean las puertas.',
@@ -714,5 +714,23 @@ const nodes = [
         id: 'gritos-oeste', label: 'Gritos al Oeste (Cliffhanger)', group: 'TRAMA', type: 'Trama -- Abierta Urgente',
         desc: 'Mientras Orka esta arrodillada junto al cuerpo de Froa muerta, escucha gritos lejanos llegando del oeste, mas alla del ridge que cruzo para llegar alli. El oeste es la direccion de su steading. Thorkel, Breca y Vesli estan alli. La amenaza que destruyo el arbol de Froa podria estar atacando el steading en ese momento.',
         star: '*** CLIFFHANGER de maxima tension. Los gritos vienen del lado de su familia. Froa muerta, amenaza activa, familia sin ella. Fin del capitulo.'
+    },
+    // ==========================================================
+    // CAPITULO 16 -- NUEVOS NODOS
+    // ==========================================================
+    {
+        id: 'objeto-viga', label: 'Objeto en la Viga (Misterio)', group: 'OBJETO', type: 'Objeto -- Misterio',
+        desc: 'Cap.16: Varg nota algo incrustado en una viga del techo de la sala del Jarl Logur mientras camina hacia el grupo de Glornir. Descripcion: palido y largo, como una astilla de hueso, con un extremo que destellea como plata. Un cuervo esta sentado justo en esa viga, mirando con su ojo negro brillante. Nadie mas parece prestarle atencion. Gwynne lo introduce con la intencion deliberada de que el lector lo note -- pero Varg no pregunta ni investiga.',
+        star: '*** Detalle plantado de forma muy deliberada. Un objeto similar al hueso (reliquia de dios?) con extremo de plata (magia?) en la viga de un jarl, con un cuervo encima. En la mitologia nordica los cuervos son mensajeros divinos. ¿Es una proteccion magica del hall? ¿Un arma? ¿Conecta con los huesos de los dioses?'
+    },
+    {
+        id: 'varg-aprendiz', label: 'Estatus de Aprendiz (Varg)', group: 'TRAMA', type: 'Trama -- Estado Actual',
+        desc: 'Cap.16: Glornir define el estatus formal de Varg dentro de los Hermanos de Sangre. No es Hermano -- es aprendiz. Los tres pilares que debe demostrar para convertirse en Hermano pleno: (1) habilidad en combate (Rokia dice que es rapido, equilibrado y tiene espiritu guerrero -- el bloque es la falta de tecnica con armas), (2) cualidades de la cabeza = lealtad, y (3) cualidades del corazon = devocion hasta la muerte. Durante el periodo de aprendizaje: la compania lo alimenta, protege y ensena; el obedece, aprende y lucha. El juramento de sangre y el akall de Froya quedan suspendidos hasta que se gane el derecho.',
+        star: '*** Marco narrativo claro para el arco de Varg: el lector sabe exactamente que tiene que demostrar y que obtendra a cambio. El akall es el premio al final del camino de prueba.'
+    },
+    {
+        id: 'partida-liga', label: 'Partida de Liga (Bloodsworn)', group: 'EVENTO', type: 'Evento',
+        desc: 'Cap.16: los Hermanos de Sangre zarpan de Liga con la marea. Glornir declina la hospitalidad adicional de Logur (la tripulacion esta inquieta por la inactividad). Logur los despide prometiendo barriles llenos -- Salla sera quien lo organice. Varg zarpa con ellos como aprendiz, con equipo comprado con la bolsa de monedas de Glornir. NOTA: la crisis de Sulich/Jaromir queda sin resolucion visible -- Jaromir prometio regresar al dia siguiente pero los Hermanos se van.',
+        star: '** La partida sin resolver el asunto de Jaromir es llamativa. ¿Se fueron antes de que llegara? ¿Se resolvio off-screen? ¿O Glornir deliberadamente huyo de la confrontacion del Althing?'
     },
 ];
