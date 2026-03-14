@@ -45,8 +45,8 @@ const nodes = [
         star: '★ Incluso encadenado y con el collar puesto, su fuerza es prodigiosa. El gesto de proteger primero a su familia revela que bajo la bestia hay un padre.'
     },
     {
-        id: 'berak-venta', label: 'Venta de Berak a Störr', group: 'TRAMA', type: 'Trama — Abierta', desc: 'Agnar navega hacia Snakavik para vender a Berak el Berserkir al Jarl Störr. Elvar reacciona personalmente ante este destino. La mujer de Berak (sangre de Snaka) también está a bordo.',
-        star: 'Elvar tiene historia no revelada con Snakavik o Jarl Störr.'
+        id: 'berak-venta', label: 'Viaje a Snakavik para venta de Berak a Störr', group: 'TRAMA', type: 'Trama — Abierta', desc: 'Agnar navega hacia Snakavik para vender a Berak el Berserkir al Jarl Störr. Elvar reacciona personalmente ante este destino. La mujer de Berak (sangre de Snaka) también está a bordo. Terrores de la batalla navega dos días al sur desde Iskalt, cubriendo ya la mitad del camino a Snakavik con viento noroeste. El viento cambia al este y los ralentiza. Atracan en las Islas de la Escarcha para refugiarse de una tormenta. Allí descubren la piedra de juramento y son atacados por gusanos nocturnos. Agnar ordena regresar al Wave-Jarl inmediatamente tras el ataque. El destino final sigue siendo Snakavik y el Jarl Störr.',
+        star: 'Elvar tiene historia no revelada con Snakavik o Jarl Störr. Cada parada del viaje añade información cosmológica. La tormenta y el vaesen no son obstáculos casuales — el camino a Snakavik está sembrado de revelaciones.'
     },
     {
         id: 'berser', label: 'Berser (Dios-Oso)', group: 'DIOS', type: 'Dios Muerto', desc: 'El dios-oso, hijo de Snaka. Muerto en el Guðfalla. Sus descendientes son los Berserkir: Tainted con fuerza sobrehumana, ojos ambarinos y transformación parcial en combate. [Nota histórica: en la mitología nórdica real, berserkr significa «camisa de oso» — guerreros sagrados de Odín que entraban en trance de furia animal (berserkergang). Gwynne reinterpreta esto como herencia de sangre divina literal: el «oso» fue un dios real que murió.]',
@@ -681,8 +681,5 @@ const nodes = [
         id: 'dragon-born', label: 'Dragon-Born (Tainted de Lik-Rifa)', group: 'TRAMA', type: 'Trama — Pregunta Abierta', desc: 'Posibles Tainted con sangre de la diosa-dragón Lik-Rifa. Elvar argumenta que NUNCA ha existido un dragon-born confirmado — ni ella ni nadie en la Battle-Grim los ha visto en todos sus viajes, incluyendo Iskidan. Propone que son un cuento de hadas para entretener y asustar niños. Agnar, más cauteloso, dice que la ausencia de evidencia no es evidencia de ausencia — y que si existieran, valdrían una fortuna. Uspa escupe al oír a Elvar. Kráka contempla el serpenteo de Snaka en la piedra sin responder.',
         star: '★★★ PREGUNTA ABIERTA MÁXIMA. El escupitajo de Uspa es la señal más importante del capítulo. No niega — reacciona con desprecio. ¿Sabe de dragon-born vivos? ¿El pergamino que destruyó contenía información sobre ellos? Gwynne no habría planteado esta pregunta si no fuera a responderla.'
     },
-    {
-        id: 'berak-venta-event', label: 'Viaje a Snakavik', group: 'EVENTO', type: 'Evento', desc: 'Terrores de la batalla navega dos días al sur desde Iskalt, cubriendo ya la mitad del camino a Snakavik con viento noroeste. El viento cambia al este y los ralentiza. Atracan en las Islas de la Escarcha para refugiarse de una tormenta. Allí descubren la piedra de juramento y son atacados por gusanos nocturnos. Agnar ordena regresar al Wave-Jarl inmediatamente tras el ataque. El destino final sigue siendo Snakavik y el Jarl Störr.',
-        star: 'Cada parada del viaje añade información cosmológica. La tormenta y el vaesen no son obstáculos casuales — el camino a Snakavik está sembrado de revelaciones.'
-    },
+
 ];
