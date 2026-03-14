@@ -77,7 +77,7 @@ svg:active{cursor:grabbing}
 .chapter-title{font-family:'Cinzel',serif;font-size:13px;color:var(--gold-lt);margin-bottom:6px;font-weight:600;display:flex;justify-content:space-between;align-items:center}
 .chapter-toggle{font-size:14px;color:#7a6a50;transition:transform .2s}
 .chapter-toggle.expanded{transform:rotate(180deg)}
-.chapter-text{font-size:12px;line-height:1.6;color:#c8b890;max-height:1000px;overflow:hidden;transition:max-height .3s,margin-top .3s;margin-top:6px}
+.chapter-text{font-size:12px;line-height:1.6;color:#c8b890;max-height:10000px;overflow:hidden;transition:max-height .3s,margin-top .3s;margin-top:6px}
 .chapter-text.collapsed{max-height:0;margin-top:0}
 
 @media(max-width:768px){header{flex-direction:column;gap:8px;padding:8px 12px;align-items:flex-start;position:relative}.header-title{font-size:14px}.header-sub{font-size:11px}#btn-summaries{position:absolute;top:8px;right:12px;width:36px;height:36px;font-size:20px}.legend{gap:8px;font-size:9px}.legend-dot{width:8px;height:8px}:root{--panel-w:100vw}#detail-panel{width:100vw;height:calc(100vh - 80px);position:fixed;bottom:0;left:0;top:auto;border-left:none;border-top:2px solid var(--gold);z-index:200;display:flex}#detail-panel.hidden{display:none}.panel-header{padding:12px 14px}.panel-name{font-size:15px}.panel-body{padding:12px 14px}.controls{bottom:12px;left:12px;gap:4px;flex-direction:row;flex-wrap:wrap;max-width:calc(100vw - 24px)}#search-input{width:calc(100vw - 180px);min-width:120px;height:36px;font-size:14px}.ctrl-btn{width:36px;height:36px;font-size:18px}.tooltip{max-width:180px;font-size:11px}svg{cursor:default}#summary-panel{width:100vw;height:100vh}}
