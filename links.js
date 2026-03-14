@@ -97,8 +97,9 @@ const links = [
     // Guerrero Oscuro
     { source: 'guerrero-oscuro', target: 'glornir', label: 'sparring / misterio', type: 'trama' },
     { source: 'guerrero-oscuro', target: 'bloodsworn', label: 'miembro', type: 'rel' },
-    // Mujer Plateada
-    { source: 'mujer-plateada', target: 'bloodsworn', label: 'miembro', type: 'rel' },
+    // Edel
+    { source: 'edel', target: 'cat-varg', label: '', type: 'arc' },
+    { source: 'edel', target: 'bloodsworn', label: 'escoutmaestre', type: 'rel' },
     // Einar
     { source: 'einar', target: 'bloodsworn', label: 'miembro', type: 'rel' },
     { source: 'snepil', target: 'cat-varg', label: '', type: 'arc' },
@@ -128,8 +129,8 @@ const links = [
     { source: 'agnar', target: 'jarl-hrut', label: 'Mató a Jarl Hrut durante el asalto a Iskalt', type: 'event' },
     { source: 'agnar', target: 'battle-grim', label: 'jefe', type: 'rel' },
     // Berak
-    { source: 'berak', target: 'mujer-berak', label: 'esposo', type: 'rel' },
-    { source: 'berak', target: 'hijo-berak', label: 'padre', type: 'rel' },
+    { source: 'berak', target: 'uspa', label: 'esposo', type: 'rel' },
+    { source: 'berak', target: 'bjarn', label: 'padre', type: 'rel' },
     { source: 'berak', target: 'berser', label: 'sangre y herencia confirmada', type: 'lore' },
     { source: 'berak', target: 'tainted', label: 'Berserkir', type: 'lore' },
     // battle Grim
@@ -141,10 +142,10 @@ const links = [
     // grend
     { source: 'grend', target: 'battle-grim', label: 'miembro', type: 'rel' },
     // mujer Berak
-    { source: 'mujer-berak', target: 'sjavarom', label: 'controló', type: 'magic' },
-    { source: 'mujer-berak', target: 'seidr', label: 'practica', type: 'magic' },
-    { source: 'mujer-berak', target: 'snaka', label: 'sangre y herencia confirmada', type: 'lore' },
-    { source: 'mujer-berak', target: 'tainted', label: 'sangre Snaka', type: 'lore' },
+    { source: 'uspa', target: 'sjavarom', label: 'controló', type: 'magic' },
+    { source: 'uspa', target: 'seidr', label: 'practica', type: 'magic' },
+    { source: 'uspa', target: 'snaka', label: 'sangre y herencia confirmada', type: 'lore' },
+    { source: 'uspa', target: 'tainted', label: 'sangre Snaka', type: 'lore' },
     // Sighvat
     { source: 'sighvat', target: 'kraka', label: 'controla', type: 'rel' },
     { source: 'sighvat', target: 'hundur', label: 'controla', type: 'rel' },
@@ -450,9 +451,6 @@ const links = [
     { source: 'torvik', target: 'edel', label: 'scout bajo mando de', type: 'rel' },
     { source: 'torvik', target: 'jokul', label: 'aprendiz de', type: 'rel' },
     { source: 'torvik', target: 'varg', label: 'compañero aspirante', type: 'rel' },
-    // Edel
-    { source: 'edel', target: 'cat-varg', label: '', type: 'arc' },
-    { source: 'edel', target: 'bloodsworn', label: 'escoutmaestre', type: 'rel' },
     // Galinn
     { source: 'galinn', target: 'liga', label: 'skáld de', type: 'geo' },
     { source: 'galinn', target: 'gudfall-saga-galinn', label: 'recita', type: 'event' },
@@ -517,4 +515,66 @@ const links = [
     { source: 'guerrero-oscuro', target: 'iskidan', label: 'origen probable', type: 'trama' },
     { source: 'jarl-logur', target: 'logur-wife', label: 'esposo', type: 'rel' },
     { source: 'skald', target: 'galinn', label: 'Es un', type: 'lore' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 14 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    // Uspa (uspa) — nombre actualizado, nuevas conexiones
+    { source: 'uspa', target: 'oath-stone', label: 'activa con sangre', type: 'magic' },
+    { source: 'uspa', target: 'gudfall', label: 'explica causa', type: 'lore' },
+    { source: 'uspa', target: 'bjarn', label: 'madre de Bjarn', type: 'rel' },
+    { source: 'uspa', target: 'dragon-born', label: 'escupitajo sospechoso', type: 'trama' },
+    // Hijo-berak (Bjarn)
+    { source: 'bjarn', target: 'berak', label: 'hijo de', type: 'rel' },
+    { source: 'bjarn', target: 'snaka', label: 'sangre (por Uspa)', type: 'lore' },
+    { source: 'bjarn', target: 'berser', label: 'sangre (por Berak)', type: 'lore' },
+    { source: 'bjarn', target: 'tainted', label: 'doble linaje divino', type: 'lore' },
+    // Hundur (dios) — nuevo nodo
+    { source: 'hundur-dios', target: 'cat-dioses', label: '', type: 'lore' },
+    { source: 'hundur-dios', target: 'gudfall', label: 'combatió en', type: 'history' },
+    { source: 'hundur-dios', target: 'hundur', label: 'fuente del linaje', type: 'lore' },
+    // Hundur (thrall) — linaje confirmado
+    { source: 'hundur', target: 'hundur-dios', label: 'sangre de', type: 'lore' },
+    { source: 'hundur', target: 'oath-stone', label: 'detectó con olfato', type: 'event' },
+    // Night-wyrm
+    { source: 'night-wyrm', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
+    { source: 'night-wyrm', target: 'berak-venta-event', label: 'atacó en', type: 'event' },
+    { source: 'night-wyrm', target: 'oath-stone', label: 'posiblemente atraídos por', type: 'trama' },
+    { source: 'night-wyrm', target: 'biorr', label: 'repelidos con fuego por', type: 'event' },
+    // Oath Stone
+    { source: 'oath-stone', target: 'cat-objetos', label: '', type: 'arc' },
+    { source: 'oath-stone', target: 'frost-isles', label: 'ubicada en', type: 'geo' },
+    { source: 'oath-stone', target: 'gudfall', label: 'narra', type: 'lore' },
+    { source: 'oath-stone', target: 'gallows-wood', label: 'muestra imagen de', type: 'lore' },
+    { source: 'oath-stone', target: 'gods-bones', label: 'conecta con reliquias', type: 'lore' },
+    // Frost-Isles
+    { source: 'frost-isles', target: 'vigrið', label: 'archipiélago en', type: 'geo' },
+    { source: 'frost-isles', target: 'iskalt', label: 'al sur de', type: 'geo' },
+    { source: 'frost-isles', target: 'berak-venta-event', label: 'escala del viaje', type: 'geo' },
+    // Gallows Wood
+    { source: 'gallows-wood', target: 'cat-dioses', label: '', type: 'lore' },
+    { source: 'gallows-wood', target: 'likrafa', label: 'crimen que lo detonó', type: 'history' },
+    { source: 'gallows-wood', target: 'orna', label: 'Orna vengó a su hija', type: 'history' },
+    { source: 'gallows-wood', target: 'ulfrir', label: 'Ulfrir vengó a su hija', type: 'history' },
+    { source: 'gallows-wood', target: 'blood-eagle', label: 'origen del ritual', type: 'lore' },
+    // Blood-Eagle
+    { source: 'blood-eagle', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'blood-eagle', target: 'gallows-wood', label: 'imitación humana de', type: 'lore' },
+    // Dragon-born
+    { source: 'dragon-born', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'dragon-born', target: 'likrafa', label: 'posible descendencia', type: 'trama' },
+    { source: 'dragon-born', target: 'tainted', label: 'linaje no confirmado', type: 'trama' },
+    { source: 'dragon-born', target: 'elvar', label: 'niega su existencia', type: 'conflict' },
+    { source: 'dragon-born', target: 'uspa', label: 'reacción de Uspa', type: 'trama' },
+    // Berak-venta-event
+    { source: 'berak-venta-event', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'berak-venta-event', target: 'wave-jarl', label: 'navegado en', type: 'rel' },
+    { source: 'berak-venta-event', target: 'snakavik', label: 'destino', type: 'geo' },
+    // Elvar — nueva conexión con oath stone y Agnar's philosophy
+    { source: 'elvar', target: 'oath-stone', label: 'presenció activación', type: 'event' },
+    { source: 'elvar', target: 'dragon-born', label: 'niega existencia', type: 'conflict' },
+    { source: 'agnar', target: 'oath-stone', label: 'presenció / reflexionó', type: 'event' },
+    { source: 'agnar', target: 'dragon-born', label: 'esperaría encontrar', type: 'trama' },
+    { source: 'kraka', target: 'oath-stone', label: 'identificó / reconoció', type: 'magic' },
+    { source: 'rotta', target: 'likrafa', label: 'alimentó su paranoia', type: 'history' },
+    { source: 'rotta', target: 'gallows-wood', label: 'detonante indirecto', type: 'history' },
 ];
