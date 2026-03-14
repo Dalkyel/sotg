@@ -86,7 +86,7 @@ const links = [
     { source: 'varg', target: 'leif', label: 'enemigo', type: 'conflict' },
     { source: 'varg', target: 'liga', label: 'visita', type: 'geo' },
     { source: 'varg', target: 'svik', label: 'compañero', type: 'rel' },
-    { source: 'varg', target: 'guerrero-oscuro', label: 'lo reconoce sin saber', type: 'trama' },
+    { source: 'varg', target: 'sulich', label: 'lo reconoce sin saber', type: 'trama' },
     { source: 'varg', target: 'vol', label: 'la busca para akáll', type: 'goal' },
     { source: 'varg', target: 'bloodsworn', label: 'nuevo miembro', type: 'event' },
     { source: 'varg', target: 'akall', label: 'necesita', type: 'goal' },
@@ -104,8 +104,8 @@ const links = [
     { source: 'rokia', target: 'varg', label: 'entrena', type: 'goal' },
     { source: 'rokia', target: 'bloodsworn', label: 'miembro', type: 'rel' },
     // Guerrero Oscuro
-    { source: 'guerrero-oscuro', target: 'glornir', label: 'sparring / misterio', type: 'trama' },
-    { source: 'guerrero-oscuro', target: 'bloodsworn', label: 'miembro', type: 'rel' },
+    { source: 'sulich', target: 'glornir', label: 'sparring / misterio', type: 'trama' },
+    { source: 'sulich', target: 'bloodsworn', label: 'miembro', type: 'rel' },
     // Edel
     { source: 'edel', target: 'cat-varg', label: '', type: 'arc' },
     { source: 'edel', target: 'bloodsworn', label: 'escoutmaestre', type: 'rel' },
@@ -151,7 +151,7 @@ const links = [
     { source: 'jaromir', target: 'cat-facciones', label: '', type: 'arc' },
     { source: 'jaromir', target: 'emp-kirill', label: 'hijo del', type: 'rel' },
     { source: 'jaromir', target: 'sulich-crisis', label: 'protagoniza', type: 'event' },
-    { source: 'jaromir', target: 'guerrero-oscuro', label: 'exige por crímenes', type: 'conflict' },
+    { source: 'jaromir', target: 'sulich', label: 'exige por crímenes', type: 'conflict' },
     { source: 'jaromir', target: 'glornir', label: 'confrontación', type: 'conflict' },
     { source: 'jaromir', target: 'jarl-logur', label: 'visita / ultimátum', type: 'event' },
     { source: 'jaromir', target: 'ilia', label: 'druzhina', type: 'rel' },
@@ -484,7 +484,7 @@ const links = [
     { source: 'blood-oath', target: 'sigrun', label: 'juró a Helka', type: 'event' },
     { source: 'warrior-braid', target: 'agnar', label: 'lleva', type: 'rel' },
     { source: 'warrior-braid', target: 'elvar', label: 'lleva', type: 'rel' },
-    { source: 'warrior-braid', target: 'guerrero-oscuro', label: 'lleva', type: 'rel' },
+    { source: 'warrior-braid', target: 'sulich', label: 'lleva', type: 'rel' },
     { source: 'wyrd', target: 'vergelmir', label: 'destino tras muerte', type: 'lore' },
     { source: 'drakkar', target: 'wave-jarl', label: 'Wave-Jarl es un drakkar', type: 'rel' },
     { source: 'drakkar', target: 'bloodsworn', label: 'tienen uno', type: 'rel' },
@@ -508,7 +508,7 @@ const links = [
     { source: 'spjot', target: 'varg', label: 'herido por', type: 'event' },
     { source: 'langsoex', target: 'gudvarr', label: 'lleva al cinto', type: 'rel' },
     { source: 'langsoex', target: 'svik', label: 'lleva', type: 'rel' },
-    { source: 'langsoex', target: 'guerrero-oscuro', label: 'espada curva', type: 'rel' },
+    { source: 'langsoex', target: 'sulich', label: 'espada curva', type: 'rel' },
     { source: 'ox', target: 'thorkel', label: 'hacha larga barbada', type: 'rel' },
     { source: 'ox', target: 'virk', label: 'usó en holmganga', type: 'event' },
     { source: 'ox', target: 'glornir', label: 'long-axe', type: 'rel' },
@@ -573,7 +573,7 @@ const links = [
     { source: 'druzhina', target: 'iskidan', label: 'institución de', type: 'lore' },
     // Sulich crisis
     { source: 'sulich-crisis', target: 'cat-tramas', label: '', type: 'arc' },
-    { source: 'sulich-crisis', target: 'guerrero-oscuro', label: 'reclamado', type: 'conflict' },
+    { source: 'sulich-crisis', target: 'sulich', label: 'reclamado', type: 'conflict' },
     { source: 'sulich-crisis', target: 'glornir', label: 'defiende a Sulich', type: 'event' },
     { source: 'sulich-crisis', target: 'jarl-logur', label: 'árbitro potencial', type: 'rel' },
     { source: 'sulich-crisis', target: 'althing', label: 'resolución prevista', type: 'event' },
@@ -586,8 +586,8 @@ const links = [
     { source: 'gudfall-saga-galinn', target: 'vackna', label: 'menciona', type: 'lore' },
     { source: 'gudfall-saga-galinn', target: 'eldrafell', label: 'menciona', type: 'lore' },
     // Relaciones nuevas de nodos ya existentes
-    { source: 'guerrero-oscuro', target: 'sulich-crisis', label: 'centro de la crisis', type: 'conflict' },
-    { source: 'guerrero-oscuro', target: 'iskidan', label: 'origen probable', type: 'trama' },
+    { source: 'sulich', target: 'sulich-crisis', label: 'centro de la crisis', type: 'conflict' },
+    { source: 'sulich', target: 'iskidan', label: 'origen probable', type: 'trama' },
     { source: 'jarl-logur', target: 'salla', label: 'esposo', type: 'rel' },
     // ══════════════════════════════════════════════════════════════
     // CAPÍTULO 14 — NUEVOS ENLACES
