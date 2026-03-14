@@ -95,7 +95,6 @@ const nodes = [
     { id: 'cat-orka', label: 'ARCO ORKA', group: 'CAT', type: 'Arco Narrativo', desc: 'Trampera en las colinas sobre Fellur. Madre feroz, exguerrera con un pasado oscuro que regresa.', star: '' },
     { id: 'cat-tramas', label: 'TRAMAS ACTIVAS', group: 'CAT', type: 'Tramas', desc: 'Los hilos narrativos abiertos', star: '' },
     { id: 'cat-varg', label: 'ARCO VARG', group: 'CAT', type: 'Arco Narrativo', desc: 'Ex-thrall en busca de un Seiðr para invocar a su hermana muerta. Recién reclutado por los Hermanos de Sangre.', star: '' },
-    //---------------------------------------Revisado----------------------------------//
     {
         id: 'collares', label: 'Collares de Hierro', group: 'OBJETO', type: 'Objeto Mágico', desc: 'Collar de hierro que controla a los Tainted mediante palabras Galdur. El metal se calienta con venas de fuego rojo al activarse. Símbolo de esclavitud y control. Vol, Kráka y los Tainted capturados los llevan.',
         star: 'El control de los Tainted depende de que solo los "dueños" conozcan las palabras Galdur.'
@@ -129,7 +128,7 @@ const nodes = [
         star: '★★ Su epistemología es su rasgo más interesante — es la escéptica del grupo, lo cual la hace narrativamente incómoda cuando la magia la contradice. ¿Seguirá negando los dragon-born cuando se enfrente a uno?'
     },
     {
-        id: 'emp-kirill', label: 'Gran Khagan Kirill', group: 'FACCION', type: 'Personaje — Poder Lejano', desc: 'Título oficial confirmado: "Gran Khagan, Kirill el Magnífico". Gobierna el vasto Iskidan desde la gran ciudad de Gravka. tiene 200 concubinas, mil hijos (según Torvik) y una guardia druzhina de 200 guerreros que lo escolta en todo momento. Donde un príncipe tiene solo 2 druzhina, el Khagan tiene 200 — escala del poder. Virk lo acusó de tener más thralls que hombres libres y de sacrificar niños —rumores que Sigrun descartó como saga.',
+        id: 'emp-kirill', label: 'Gran Khagan Kirill', group: 'FACCION', type: 'Personaje — Poder Lejano', desc: '"Gran Khagan, Kirill el Magnífico". Gobierna el vasto Iskidan desde la gran ciudad de Gravka. tiene 200 concubinas, mil hijos (según Torvik) y una guardia druzhina de 200 guerreros que lo escolta en todo momento. Donde un príncipe tiene solo 2 druzhina, el Khagan tiene 200 — escala del poder. Virk lo acusó de tener más thralls que hombres libres y de sacrificar niños —rumores que Sigrun descartó como saga.',
         star: '★★ El enviado de Kirill (su hijo Jaromir) ya está en Liga reclamando a Sulich. Iskidan tiene presencia activa en Vigríð. ¿Tiene el patrón de robos de niños alguna conexión con Iskidan?'
     },
     {
@@ -141,11 +140,11 @@ const nodes = [
         star: ''
     },
     {
-        id: 'faunir', label: 'Faunir', group: 'VAESEN', type: 'Vaesen', desc: 'Vaesen del catálogo de criaturas liberadas en el Guðfalla. Mencionado en la mitología de Vigríð. Sus características específicas aún no han sido detalladas en los capítulos leídos.',
-        star: '¿Aparecerá en capítulos posteriores? Gwynne menciona vaesen por nombre antes de introducirlos en acción.'
+        id: 'faunir', label: 'Faunir', group: 'VAESEN', type: 'Vaesen', desc: 'Vaesen del catálogo de criaturas liberadas en el Guðfalla. Sus características específicas aún no han sido detalladas en los capítulos leídos.',
+        star: 'Gwynne menciona vaesen por nombre antes de introducirlos en acción.'
     },
     {
-        id: 'fell-wolf', label: 'Fell-Wolf', group: 'VAESEN', type: 'Vaesen', desc: 'Lobo vaesen enorme, pelaje gris pizarra, garras largas. Encontrado herido, alguien ya lo había atacado antes de que llegaran Orka y su familia. Irrumpió en el calvero y dispersó los renos.',
+        id: 'fell-wolf', label: 'Fell-Wolf', group: 'VAESEN', type: 'Vaesen', desc: 'Lobo enorme, pelaje gris pizarra, garras largas. Encontrado herido, alguien ya lo había atacado antes de que llegaran Orka y su familia. Irrumpió en el calvero y dispersó los renos.',
         star: '¿Quién hirió al fell-wolf antes? Posible pista sobre los asesinos de Asgrim.'
     },
     {
@@ -153,7 +152,7 @@ const nodes = [
         star: ''
     },
     {
-        id: 'froa', label: 'Froa (dagger)', group: 'VAESEN', type: 'Vaesen -- Espiritu del Arbol (Muerta)', desc: 'Espiritu guardian ligado a un arbol de fresno nacido de una semilla del gran Osktured. Forma: mujer-estatua tallada en madera, mas alta que Orka, edad indeterminada, pelo largo hasta la cintura entretejido de hojas y ramitas. Las Froa viven y mueren con su arbol y luchan salvajemente para defenderlo. El arbol del bosque de Orka fue destruido -- derribado a golpes de multiples hachas y quemado en grandes manchas. La Froa fue encontrada muerta en la ladera del montIculo: cuerpo picado a hachazos y quemado, boca abierta en un grito de agonia congelado, brazos extendidos hacia el tronco caido. Hubo bajas entre los atacantes -- manchas de sangre oscura congelada y tierra levantada donde las raices del arbol azotaron a sus agresores. Orka la describe como alguien que en su ultimo encuentro "reia y bailaba y le ofrecio la mano".',
+        id: 'froa', label: 'Froa (dagger)', group: 'VAESEN', type: 'Vaesen -- Espiritu del Arbol (Muerta)', desc: 'Espiritu guardian ligado a un arbol de fresno nacido de una semilla del gran Osktured. Forma: mujer-estatua tallada en madera, mas alta que Orka, pelo largo hasta la cintura entretejido de hojas y ramitas. Las Froa viven y mueren con su arbol y luchan salvajemente para defenderlo. El arbol del bosque de Orka fue destruido -- derribado a golpes de multiples hachas y quemado en grandes manchas. La Froa fue encontrada muerta en la ladera del montIculo: cuerpo picado a hachazos y quemado, boca abierta en un grito de agonia congelado, brazos extendidos hacia el tronco caido. Hubo bajas entre los atacantes -- manchas de sangre oscura congelada y tierra levantada donde las raices del arbol azotaron a sus agresores. Orka la describe como alguien que en su ultimo encuentro "reia y bailaba y le ofrecio la mano".',
         star: '*** ASESINADA junto con su arbol. Alguien con recursos y poder suficiente para matar a un vaesen guardian poderoso recorrio el bosque de Orka. La conexion con los asesinos de Asgrim es inevitable. Los gritos al oeste al final del capitulo sugieren que la amenaza ya esta actuando cerca del steading.'
     },
     {
@@ -161,7 +160,7 @@ const nodes = [
         star: 'Varg necesita un akáll (invocación Seiðr) para descubrir cómo murió y quién la mató.'
     },
     {
-        id: 'funeral-rites', label: 'Ritos Funerarios', group: 'NORSE', type: 'Ritual — Muerte', desc: 'Los guerreros son enterrados con armas en la mano para luchar en Vergelmir contra Lik-Rifa en su camino al más allá. Morir con arma = morir con honor. Grend explica esto a Elvar: "los guerreros atraviesan Vergelmir en el camino del alma". Mord y Lif envuelven el cuerpo de Virk con ayuda de Thorkel. [Histórico: los vikingos enterraban a guerreros con armas, herramientas, incluso barcos. La creencia era que llevarían estos objetos al más allá. Gwynne lo reinterpreta: las armas son necesarias literalmente para combatir a Lik-Rifa en el inframundo.]',
+        id: 'funeral-rites', label: 'Ritos Funerarios', group: 'NORSE', type: 'Ritual — Muerte', desc: 'Los guerreros son enterrados con armas en la mano para luchar en Vergelmir contra Lik-Rifa en su camino al más allá. Morir con arma = morir con honor. Grend explica esto a Elvar: "los guerreros atraviesan Vergelmir en el camino del alma". Mord y Lif envuelven el cuerpo de Virk con ayuda de Thorkel. [Histórico: los vikingos enterraban a guerreros con armas, herramientas, incluso barcos. La creencia era que llevarían estos objetos al más allá]',
         star: '★★ La creencia en Vergelmir hace que los ritos funerarios sean preparación para batalla post-mortem, no solo honor simbólico.'
     },
     {
@@ -172,6 +171,7 @@ const nodes = [
         id: 'galdramadr', label: 'Galdramaðr', group: 'MAGIA', type: 'Magia', desc: 'Hechicero',
         star: ''
     },
+    //---------------------------------------Revisado----------------------------------//
     {
         id: 'galdur', label: 'Galdur', group: 'MAGIA', type: 'Magia — Lengua', desc: 'Lengua mágica de comandos rúnicos. Activa los collares de hierro sobre los Tainted. Palabras conocidas: Hlýða (obedece / escucha), Á HNÉN (de rodillas), Hlýða og fá verðlaun (obedece y recibe recompensa). NIðUR, Á JÖRðU, HLŸDDU MÉR (abajo, al suelo, obedéceme) — comando de sometimiento total; Brenna, sársauki (arde, dolor) — castigo de quemadura directa a través del collar. [Contexto: el galdr histórico nórdico era el canto o recitación de runas mágicas —opuesto al seiðr, era más público y menos estigmatizado. En Vigríð Gwynne lo convierte en lengua de control sobre la herencia divina.]',
         star: 'Saber esta lengua es poder absoluto sobre los Tainted. ¿Cuántos la conocen realmente?'
