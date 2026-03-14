@@ -50,7 +50,7 @@ const links = [
     // Virk
     { source: 'virk', target: 'mord-lif', label: 'hijos', type: 'trama' },
     { source: 'virk', target: 'funeral-rites', label: 'cuerpo envuelto', type: 'event' },
-    { source: 'virk', target: 'holmganga-event', label: 'combatiente', type: 'rel' },
+    { source: 'virk', target: 'holmganga-event', label: 'combatiente y violó las reglas', type: 'rel' },
     // Thrall de Sigrun
     { source: 'thrall-sigrun', target: 'sigrun', label: 'sirve a / guardaespaldas', type: 'rel' },
     { source: 'thrall-sigrun', target: 'tainted', label: '¿sangre divina?', type: 'trama' },
@@ -434,7 +434,6 @@ const links = [
     { source: 'holmganga', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'holmganga', target: 'second-combat', label: 'rol en duelo', type: 'lore' },
     { source: 'holmganga', target: 'holmganga', label: 'reglas del', type: 'lore' },
-    { source: 'holmganga', target: 'virk', label: 'violó reglas', type: 'event' },
     { source: 'holmganga', target: 'gudvarr', label: 'se rindió legalmente', type: 'event' },
     { source: 'holmganga', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'althing', target: 'cat-norse', label: '', type: 'arc' },
