@@ -48,9 +48,8 @@ const nodes = [
         id: 'berak-venta', label: 'Viaje a Snakavik para venta de Berak a Störr', group: 'TRAMA', type: 'Trama — Abierta', desc: 'Agnar navega hacia Snakavik para vender a Berak el Berserkir al Jarl Störr. Elvar reacciona personalmente ante este destino. Uspa La mujer de Berak también está a bordo. Terrores de la batalla navega dos días al sur desde Iskalt, cubriendo ya la mitad del camino a Snakavik con viento noroeste. El viento cambia al este y los ralentiza. Atracan en las Islas de la Escarcha para refugiarse de una tormenta. Allí descubren la piedra de juramento y son atacados por gusanos nocturnos. Agnar ordena regresar al Wave-Jarl inmediatamente tras el ataque. El destino final sigue siendo Snakavik y el Jarl Störr.',
         star: 'Elvar tiene historia no revelada con Snakavik o Jarl Störr. Cada parada del viaje añade información cosmológica. La tormenta y el vaesen no son obstáculos casuales — el camino a Snakavik está sembrado de revelaciones.'
     },
-    //---------------------------------------Revisado----------------------------------//
     {
-        id: 'berser', label: 'Berser (Dios-Oso)', group: 'DIOS', type: 'Dios Muerto', desc: 'El dios-oso, hijo de Snaka. Muerto en el Guðfalla. Sus descendientes son los Berserkir: Tainted con fuerza sobrehumana, ojos ambarinos y transformación parcial en combate. [Nota histórica: en la mitología nórdica real, berserkr significa «camisa de oso» — guerreros sagrados de Odín que entraban en trance de furia animal (berserkergang). Gwynne reinterpreta esto como herencia de sangre divina literal: el «oso» fue un dios real que murió.]',
+        id: 'berser', label: 'Berser (Dios-Oso)', group: 'DIOS', type: 'Dios Muerto', desc: 'Hijo de Snaka. Muerto en el Guðfalla. Sus descendientes son los Berserkir: Tainted con fuerza sobrehumana, ojos ambarinos y transformación parcial en combate. [Nota histórica: en la mitología nórdica real, berserkr significa «camisa de oso» — guerreros sagrados de Odín que entraban en trance de furia animal (berserkergang). Gwynne reinterpreta esto como herencia de sangre divina literal: el «oso» fue un dios real que murió.]',
         star: 'Berak Bjornasson porta su sangre. Los Berserkir son muy cotizados por los jarls como guardia personal. El collar de hierro los detiene — pero ¿cuánto tiempo?'
     },
     {
@@ -66,7 +65,7 @@ const nodes = [
         star: '★★ El título de la trilogía (Bloodsworn) se refiere a esto. Los juramentos de sangre son el tejido que une (y rompe) Vigríð.'
     },
     {
-        id: 'bloodsworn', label: 'Bloodsworn (Hermanos de Sangre)', group: 'FACCION', type: 'Faccion -- Mercenarios', desc: 'Compania mercenaria de elite, legendaria y famosa en Vigrið. Escudo negro con salpicaduras rojas. Cazan vaesen, buscan reliquias, protegen ricos. Drakkar propio. Jefe: Glornir. Seidr-thrall: Vol. Zarpan de Liga con la marea. Glornir da las gracias a Logur, rechaza mas hospitalidad (la tripulacion esta inquieta por la inactividad). Llevan a Varg como aprendiz con equipo comprado con el dinero de Glornir.',
+        id: 'bloodsworn', label: 'Bloodsworn (Hermanos de Sangre)', group: 'FACCION', type: 'Faccion -- Mercenarios', desc: 'Compania mercenaria de elite, legendaria y famosa en Vigrið. Escudo negro con salpicaduras rojas. Cazan vaesen, buscan reliquias, protegen ricos. Drakkar propio. Jefe: Glornir. Seidr-thrall: Vol. Zarpan de Liga con la marea. Glornir da las gracias a Logur, rechaza mas hospitalidad. Llevan a Varg como aprendiz con equipo comprado con el dinero de Glornir.',
         star: 'Dejan Liga. Nueva fase del arco de Varg: en movimiento, como parte de la compania, sin haber prestado juramento todavia.'
     },
     {
@@ -77,6 +76,7 @@ const nodes = [
         id: 'breca', label: 'Breca', group: 'ORKA', type: 'Personaje -- Orka', desc: '10 inviernos. Pelo negro como cuervo, ojos de Orka. Sensible, curioso, valiente a su manera. Reacciona al hueso de dios en la entrada a Fellur. Se comunico con Vesli la tennur y le dio un diente de leche para calmarla. Vinculado a Vesli por juramento de sangre. Llora por Mord y Lif. Pide aprender espada -- no hacha -- ; Thorkel le da una leccion sobre armas y elecciones sabias. Convence a Orka con logica de salvar una polilla atrapada en una telarana (argumento: si alguien pudiera ayudarte en una trampa y se alejara, que dirias). Orka cede. Lleva un colgante de madera con forma de espada de tres lobulos en cordon de cuero -- hecho por Thorkel -- como recordatorio de su deseo de aprender espada.',
         star: '*** Su argumento de la polilla revela inteligencia emocional y logica moral inusual para su edad. El colgante de espada anticipa su destino guerrero. Su empatia con Mord y Lif crece -- los considera iguales.'
     },
+    //---------------------------------------Revisado----------------------------------//
     {
         id: 'brynja', label: 'Brynja (Cota de Mallas)', group: 'NORSE', type: 'Armadura — Torso', desc: 'Cota de mallas de anillos entrelazados. Protección flexible contra cortes. Cara de fabricar: 20,000-30,000 anillos por cota. Símbolo de riqueza y estatus guerrero. Sigrún lleva una "remachada" (anillos remachados = calidad superior). [Histórico: la brynja era la armadura de élite vikinga. Pesaba 10-15kg. Solo jarls, campeones y guerreros ricos podían pagarla. La mayoría luchaba con cuero o sin armadura. Gwynne la usa como marcador visual de poder.]',
         star: 'Sigrún lleva brynja remachada = jarl guerrera de verdad, no solo política. Agnar probablemente también.'
