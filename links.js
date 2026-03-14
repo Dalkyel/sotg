@@ -18,7 +18,7 @@ const links = [
     { source: 'orka', target: 'spert', label: 'vínculo sangre', type: 'magic' },
     { source: 'orka', target: 'virk', label: 'comercian', type: 'event' },
     { source: 'orka', target: 'sigrun', label: 'la cuestiona en el Althing', type: 'event' },
-    { source: 'orka', target: 'thrall-sigrun', label: 'observa lamiendo sangre', type: 'event' },
+    { source: 'orka', target: 'thrall-sigrun', label: 'observa lamiendo sangre de Thorkel', type: 'event' },
     { source: 'orka', target: 'second-combat', label: 'segundo de Virk', type: 'event' },
     { source: 'orka', target: 'karl', label: 'vive como', type: 'rel' },
     { source: 'orka', target: 'froa', label: 'encontro muerta', type: 'event' },
@@ -92,6 +92,9 @@ const links = [
     { source: 'varg', target: 'akall', label: 'necesita', type: 'goal' },
     { source: 'varg', target: 'tainted', label: 'posible sangre', type: 'trama' },
     { source: 'varg', target: 'thrall', label: 'ex-thrall', type: 'rel' },
+    { source: 'varg', target: 'varg-aprendiz', label: 'definido como', type: 'rel' },
+    { source: 'varg', target: 'partida-liga', label: 'zarpa en', type: 'event' },
+    { source: 'varg', target: 'objeto-viga', label: 'nota pero no pregunta', type: 'trama' },
     // bloodsworn
     { source: 'bloodsworn', target: 'cat-varg', label: '', type: 'arc' },
     { source: 'bloodsworn', target: 'cat-facciones', label: '', type: 'arc' },
@@ -111,12 +114,17 @@ const links = [
     { source: 'snepil', target: 'cat-varg', label: '', type: 'arc' },
     // Svik
     { source: 'svik', target: 'bloodsworn', label: 'miembro', type: 'rel' },
+    { source: 'svik', target: 'varg-aprendiz', label: 'guia al aprendiz', type: 'rel' },
     // Vol
     { source: 'vol', target: 'bloodsworn', label: 'miembro / thrall', type: 'rel' },
     { source: 'vol', target: 'seidr', label: 'practica', type: 'magic' },
     { source: 'vol', target: 'thrall', label: 'thrall', type: 'rel' },
+    { source: 'vol', target: 'akall', label: 'dispuesta pero bloqueada', type: 'goal' },
+    { source: 'vol', target: 'partida-liga', label: 'zarpa con Hermanos', type: 'event' },
     // Glornir
     { source: 'glornir', target: 'bloodsworn', label: 'jefe', type: 'rel' },
+    { source: 'glornir', target: 'varg-aprendiz', label: 'define condiciones', type: 'rel' },
+    { source: 'glornir', target: 'partida-liga', label: 'ordena', type: 'event' },
     // Snepil
     { source: 'einar', target: 'varg', label: 'enfrenta por puesto', type: 'event' },
     { source: 'snepil', target: 'varg', label: 'fue su amo', type: 'rel' },
@@ -132,6 +140,7 @@ const links = [
     { source: 'galinn', target: 'liga', label: 'skáld de', type: 'geo' },
     { source: 'galinn', target: 'gudfall-saga-galinn', label: 'recita', type: 'event' },
     { source: 'galinn', target: 'cat-varg', label: '', type: 'arc' },
+    { source: 'galinn', target: 'skald', label: 'Es un', type: 'lore' },
     // Sergei
     { source: 'sergei', target: 'cat-facciones', label: '', type: 'arc' },
     { source: 'sergei', target: 'jaromir', label: 'herald de', type: 'rel' },
@@ -368,8 +377,10 @@ const links = [
     { source: 'jarl-logur', target: 'liga', label: 'jarl de', type: 'geo' },
     { source: 'jarl-logur', target: 'bloodsworn', label: 'hospeda', type: 'rel' },
     // Esposa de Logur
-    { source: 'logur-wife', target: 'jarl-logur', label: 'esposa de', type: 'rel' },
-    { source: 'logur-wife', target: 'liga', label: 'señora del hall de', type: 'geo' },
+    { source: 'salla', target: 'jarl-logur', label: 'esposa de', type: 'rel' },
+    { source: 'salla', target: 'liga', label: 'señora del hall de', type: 'geo' },
+    { source: 'salla', target: 'partida-liga', label: 'organiza la despedida', type: 'event' },
+    { source: 'salla', target: 'glornir', label: 'Glornir la llama Salla', type: 'rel' },
     { source: 'orl', target: 'leif', label: 'Hird / compañero', type: 'rel' },
     { source: 'trud', target: 'battle-grim', label: 'miembro', type: 'rel' },
     { source: 'jokul', target: 'bloodsworn', label: 'herrero', type: 'rel' },
@@ -413,6 +424,11 @@ const links = [
     { source: 'arbol-froa', target: 'cat-orka', label: '', type: 'arc' },
     { source: 'arbol-froa', target: 'ninos-robados', label: 'destruido por mismos agresores?', type: 'trama' },
     { source: 'arbol-froa', target: 'decision-huida', label: 'hallazgo rompe el plan', type: 'event' },
+    // Objeto en la viga
+    { source: 'objeto-viga', target: 'cat-objetos', label: '', type: 'arc' },
+    { source: 'objeto-viga', target: 'liga', label: 'ubicado en hall de', type: 'geo' },
+    { source: 'objeto-viga', target: 'varg', label: 'lo nota sin entender', type: 'trama' },
+    { source: 'objeto-viga', target: 'gods-bones', label: 'posible reliquia', type: 'trama' },
     // -------------------------------------------------------------------------------------- //
     // ── ENLACES CULTURA NÓRDICA ────────────────────────────────────
     { source: 'holmganga', target: 'cat-norse', label: '', type: 'arc' },
@@ -572,8 +588,7 @@ const links = [
     // Relaciones nuevas de nodos ya existentes
     { source: 'guerrero-oscuro', target: 'sulich-crisis', label: 'centro de la crisis', type: 'conflict' },
     { source: 'guerrero-oscuro', target: 'iskidan', label: 'origen probable', type: 'trama' },
-    { source: 'jarl-logur', target: 'logur-wife', label: 'esposo', type: 'rel' },
-    { source: 'skald', target: 'galinn', label: 'Es un', type: 'lore' },
+    { source: 'jarl-logur', target: 'salla', label: 'esposo', type: 'rel' },
     // ══════════════════════════════════════════════════════════════
     // CAPÍTULO 14 — NUEVOS ENLACES
     // ══════════════════════════════════════════════════════════════
@@ -624,4 +639,19 @@ const links = [
     { source: 'gritos-oeste', target: 'steading', label: 'direccion del steading de Orka', type: 'geo' },
     // Mord y Lif
     { source: 'mord-lif', target: 'barrow-virk', label: 'construyeron', type: 'event' },
+    // ==========================================================
+    // CAPITULO 16 -- NUEVOS ENLACES
+    // ==========================================================
+    // Varg-aprendiz
+    { source: 'varg-aprendiz', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'varg-aprendiz', target: 'varg', label: 'define estatus de', type: 'rel' },
+    { source: 'varg-aprendiz', target: 'glornir', label: 'dictado por', type: 'rel' },
+    { source: 'varg-aprendiz', target: 'akall', label: 'condiciona el', type: 'trama' },
+    { source: 'varg-aprendiz', target: 'bloodsworn', label: 'paso previo a unirse a', type: 'rel' },
+    // Partida de Liga
+    { source: 'partida-liga', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'partida-liga', target: 'bloodsworn', label: 'protagonista', type: 'rel' },
+    { source: 'partida-liga', target: 'liga', label: 'desde', type: 'geo' },
+    { source: 'partida-liga', target: 'varg', label: 'zarpa como aprendiz', type: 'event' },
+    { source: 'partida-liga', target: 'sulich-crisis', label: 'sin resolver al partir', type: 'trama' },
 ];
