@@ -63,7 +63,7 @@ const links = [
     { source: 'sigrun', target: 'althing', label: 'anunció juramento', type: 'event' },
     { source: 'sigrun', target: 'brynja', label: 'lleva remachada', type: 'rel' },
     // Falki
-    { source: 'falki', target: 'oath-rock', label: 'asiste Althing', type: 'event' },
+    { source: 'falki', target: 'oath-stone-fellur', label: 'asiste Althing', type: 'event' },
     // Vesli
     { source: 'vesli', target: 'tennur', label: 'Es un', type: 'lore' },
     // Spert
@@ -182,7 +182,7 @@ const links = [
     { source: 'holmganga-event', target: 'thrall-sigrun', label: 'mató a Virk', type: 'event' },
     { source: 'holmganga-event', target: 'arild', label: 'segundo de Guðvarr', type: 'rel' },
     { source: 'holmganga-event', target: 'mord-lif', label: 'presenciaron', type: 'event' },
-    { source: 'holmganga-event', target: 'oath-rock', label: 'lugar', type: 'geo' },
+    { source: 'holmganga-event', target: 'oath-stone-fellur', label: 'lugar', type: 'geo' },
     // gudfall
     { source: 'gudfall', target: 'cat-eventos', label: '', type: 'history' },
     { source: 'gudfall', target: 'snaka', label: 'murió en', type: 'history' },
@@ -230,7 +230,7 @@ const links = [
     { source: 'islas-hielo', target: 'araña-hielo', label: 'hábitat', type: 'lore' },
     // fellur
     { source: 'fellur', target: 'vigrið', label: 'ciudad en', type: 'geo' },
-    { source: 'fellur', target: 'oath-rock', label: 'isla en el fiordo', type: 'geo' },
+    { source: 'fellur', target: 'oath-stone-fellur', label: 'isla en el fiordo', type: 'geo' },
     // liga
     { source: 'liga', target: 'vigrið', label: 'ciudad en', type: 'geo' },
     // vergelmir
@@ -238,8 +238,8 @@ const links = [
     // iskidan
     { source: 'iskidan', target: 'cat-mundo', label: 'capital', type: 'geo' },
     { source: 'gravka', target: 'iskidan', label: 'capital', type: 'geo' },
-    // oath-rock
-    { source: 'oath-rock', target: 'althing', label: 'lugar', type: 'geo' },
+    // oath-stone-fellur
+    { source: 'oath-stone-fellur', target: 'althing', label: 'lugar', type: 'geo' },
     // -------------------------------------------------------------------------------------- //
     // Vaesen y magia
     { source: 'vaesen-gen', target: 'cat-mundo', label: '', type: 'arc' },
@@ -519,7 +519,7 @@ const links = [
     // CAPÍTULO 14 — NUEVOS ENLACES
     // ══════════════════════════════════════════════════════════════
     // Uspa (uspa) — nombre actualizado, nuevas conexiones
-    { source: 'uspa', target: 'oath-stone', label: 'activa con sangre', type: 'magic' },
+    { source: 'uspa', target: 'oath-stone-frost-isles', label: 'activa con sangre', type: 'magic' },
     { source: 'uspa', target: 'gudfall', label: 'explica causa', type: 'lore' },
     { source: 'uspa', target: 'bjarn', label: 'madre de Bjarn', type: 'rel' },
     { source: 'uspa', target: 'dragon-born', label: 'escupitajo sospechoso', type: 'trama' },
@@ -534,18 +534,18 @@ const links = [
     { source: 'hundur-dios', target: 'hundur', label: 'fuente del linaje', type: 'lore' },
     // Hundur (thrall) — linaje confirmado
     { source: 'hundur', target: 'hundur-dios', label: 'sangre de', type: 'lore' },
-    { source: 'hundur', target: 'oath-stone', label: 'detectó con olfato', type: 'event' },
+    { source: 'hundur', target: 'oath-stone-frost-isles', label: 'detectó con olfato', type: 'event' },
     // Night-wyrm
     { source: 'night-wyrm', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
     { source: 'night-wyrm', target: 'berak-venta-event', label: 'atacó en', type: 'event' },
-    { source: 'night-wyrm', target: 'oath-stone', label: 'posiblemente atraídos por', type: 'trama' },
+    { source: 'night-wyrm', target: 'oath-stone-frost-isles', label: 'posiblemente atraídos por', type: 'trama' },
     { source: 'night-wyrm', target: 'biorr', label: 'repelidos con fuego por', type: 'event' },
     // Oath Stone
-    { source: 'oath-stone', target: 'cat-objetos', label: '', type: 'arc' },
-    { source: 'oath-stone', target: 'frost-isles', label: 'ubicada en', type: 'geo' },
-    { source: 'oath-stone', target: 'gudfall', label: 'narra', type: 'lore' },
-    { source: 'oath-stone', target: 'gallows-wood', label: 'muestra imagen de', type: 'lore' },
-    { source: 'oath-stone', target: 'gods-bones', label: 'conecta con reliquias', type: 'lore' },
+    { source: 'oath-stone-frost-isles', target: 'cat-objetos', label: '', type: 'arc' },
+    { source: 'oath-stone-frost-isles', target: 'frost-isles', label: 'ubicada en', type: 'geo' },
+    { source: 'oath-stone-frost-isles', target: 'gudfall', label: 'narra', type: 'lore' },
+    { source: 'oath-stone-frost-isles', target: 'gallows-wood', label: 'muestra imagen de', type: 'lore' },
+    { source: 'oath-stone-frost-isles', target: 'gods-bones', label: 'conecta con reliquias', type: 'lore' },
     // Frost-Isles
     { source: 'frost-isles', target: 'vigrið', label: 'archipiélago en', type: 'geo' },
     { source: 'frost-isles', target: 'iskalt', label: 'al sur de', type: 'geo' },
@@ -570,11 +570,11 @@ const links = [
     { source: 'berak-venta-event', target: 'wave-jarl', label: 'navegado en', type: 'rel' },
     { source: 'berak-venta-event', target: 'snakavik', label: 'destino', type: 'geo' },
     // Elvar — nueva conexión con oath stone y Agnar's philosophy
-    { source: 'elvar', target: 'oath-stone', label: 'presenció activación', type: 'event' },
+    { source: 'elvar', target: 'oath-stone-frost-isles', label: 'presenció activación', type: 'event' },
     { source: 'elvar', target: 'dragon-born', label: 'niega existencia', type: 'conflict' },
-    { source: 'agnar', target: 'oath-stone', label: 'presenció / reflexionó', type: 'event' },
+    { source: 'agnar', target: 'oath-stone-frost-isles', label: 'presenció / reflexionó', type: 'event' },
     { source: 'agnar', target: 'dragon-born', label: 'esperaría encontrar', type: 'trama' },
-    { source: 'kraka', target: 'oath-stone', label: 'identificó / reconoció', type: 'magic' },
+    { source: 'kraka', target: 'oath-stone-frost-isles', label: 'identificó / reconoció', type: 'magic' },
     { source: 'rotta', target: 'likrafa', label: 'alimentó su paranoia', type: 'history' },
     { source: 'rotta', target: 'gallows-wood', label: 'detonante indirecto', type: 'history' },
 ];
