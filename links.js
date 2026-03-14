@@ -539,7 +539,7 @@ const links = [
     // ══════════════════════════════════════════════════════════════
     // Night-wyrm
     { source: 'night-wyrm', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
-    { source: 'night-wyrm', target: 'berak-venta-event', label: 'atacó en', type: 'event' },
+    { source: 'night-wyrm', target: 'berak-venta', label: 'atacó en', type: 'event' },
     { source: 'night-wyrm', target: 'oath-stone-frost-isles', label: 'posiblemente atraídos por', type: 'trama' },
     { source: 'night-wyrm', target: 'biorr', label: 'repelidos con fuego por', type: 'event' },
     // Oath Stone
@@ -551,7 +551,7 @@ const links = [
     // Frost-Isles
     { source: 'frost-isles', target: 'vigrið', label: 'archipiélago en', type: 'geo' },
     { source: 'frost-isles', target: 'iskalt', label: 'al sur de', type: 'geo' },
-    { source: 'frost-isles', target: 'berak-venta-event', label: 'escala del viaje', type: 'geo' },
+    { source: 'frost-isles', target: 'berak-venta', label: 'escala del viaje', type: 'geo' },
     // Gallows Wood
     { source: 'gallows-wood', target: 'cat-dioses', label: '', type: 'lore' },
     { source: 'gallows-wood', target: 'likrafa', label: 'crimen que lo detonó', type: 'history' },
