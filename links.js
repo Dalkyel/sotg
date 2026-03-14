@@ -21,6 +21,9 @@ const links = [
     { source: 'orka', target: 'thrall-sigrun', label: 'observa lamiendo sangre', type: 'event' },
     { source: 'orka', target: 'second-combat', label: 'segundo de Virk', type: 'event' },
     { source: 'orka', target: 'karl', label: 'vive como', type: 'rel' },
+    { source: 'orka', target: 'froa', label: 'encontro muerta', type: 'event' },
+    { source: 'orka', target: 'barrow-virk', label: 'ayudo a construir', type: 'event' },
+    { source: 'orka', target: 'decision-huida', label: 'propone huir', type: 'event' },
     // Thorkel
     { source: 'thorkel', target: 'virk', label: 'comercian', type: 'history' },
     { source: 'thorkel', target: 'breca', label: 'Hijo', type: 'rel' },
@@ -29,6 +32,9 @@ const links = [
     { source: 'thorkel', target: 'drengr', label: 'se considera', type: 'rel' },
     { source: 'thorkel', target: 'thrall', label: 'ex-thrall', type: 'rel' },
     { source: 'thorkel', target: 'karl', label: 'vive como', type: 'rel' },
+    { source: 'thorkel', target: 'ulfhednar', label: 'identifica el tipo', type: 'trama' },
+    { source: 'thorkel', target: 'decision-huida', label: 'acepta sin resistencia', type: 'event' },
+    { source: 'thorkel', target: 'colgante-espada', label: 'tallo para Breca', type: 'rel' },
     // Breca
     { source: 'breca', target: 'vesli', label: 'protege / jura', type: 'magic' },
     { source: 'breca', target: 'hueso-dios-fellur', label: 'reacción', type: 'trama' },
@@ -152,11 +158,15 @@ const links = [
     { source: 'elvar', target: 'grend', label: 'guardián', type: 'rel' },
     { source: 'elvar', target: 'biorr', label: 'tensión', type: 'trama' },
     { source: 'elvar', target: 'battle-grim', label: 'miembro', type: 'rel' },
+    { source: 'elvar', target: 'oath-stone-frost-isles', label: 'presenció activación', type: 'event' },
+    { source: 'elvar', target: 'dragon-born', label: 'niega existencia', type: 'conflict' },
     // Agnar
     { source: 'agnar', target: 'sighvat', label: 'jefe/subof.', type: 'rel' },
     { source: 'agnar', target: 'iskalt', label: 'asaltó buscando a Berak', type: 'geo' },
     { source: 'agnar', target: 'jarl-hrut', label: 'Mató a Jarl Hrut durante el asalto a Iskalt', type: 'event' },
     { source: 'agnar', target: 'battle-grim', label: 'jefe', type: 'rel' },
+    { source: 'agnar', target: 'oath-stone-frost-isles', label: 'presenció / reflexionó', type: 'event' },
+    { source: 'agnar', target: 'dragon-born', label: 'esperaría encontrar', type: 'trama' },
     // Berak
     { source: 'berak', target: 'uspa', label: 'esposo', type: 'rel' },
     { source: 'berak', target: 'bjarn', label: 'padre', type: 'rel' },
@@ -193,6 +203,7 @@ const links = [
     { source: 'kraka', target: 'seidr', label: 'practica', type: 'magic' },
     { source: 'kraka', target: 'tainted', label: 'Tainted', type: 'lore' },
     { source: 'kraka', target: 'thrall', label: 'thrall', type: 'rel' },
+    { source: 'kraka', target: 'oath-stone-frost-isles', label: 'identificó / reconoció', type: 'magic' },
     // hundur (thrall)
     { source: 'hundur', target: 'battle-grim', label: 'miembro/thrall', type: 'rel' },
     { source: 'hundur', target: 'berak', label: 'rastreó', type: 'event' },
@@ -567,12 +578,49 @@ const links = [
     { source: 'dragon-born', target: 'tainted', label: 'linaje no confirmado', type: 'trama' },
     { source: 'dragon-born', target: 'elvar', label: 'niega su existencia', type: 'conflict' },
     { source: 'dragon-born', target: 'uspa', label: 'reacción de Uspa', type: 'trama' },
-    // Elvar — nueva conexión con oath stone y Agnar's philosophy
-    { source: 'elvar', target: 'oath-stone-frost-isles', label: 'presenció activación', type: 'event' },
-    { source: 'elvar', target: 'dragon-born', label: 'niega existencia', type: 'conflict' },
-    { source: 'agnar', target: 'oath-stone-frost-isles', label: 'presenció / reflexionó', type: 'event' },
-    { source: 'agnar', target: 'dragon-born', label: 'esperaría encontrar', type: 'trama' },
-    { source: 'kraka', target: 'oath-stone-frost-isles', label: 'identificó / reconoció', type: 'magic' },
     { source: 'rotta', target: 'likrafa', label: 'alimentó su paranoia', type: 'history' },
     { source: 'rotta', target: 'gallows-wood', label: 'detonante indirecto', type: 'history' },
+    // ==========================================================
+    // CAPITULO 15 -- NUEVOS ENLACES
+    // ==========================================================
+    // Froa -- redefinida como vaesen muerta con nodo de lugar
+    { source: 'froa', target: 'arbol-froa', label: 'ligada a / murio con', type: 'lore' },
+    { source: 'froa', target: 'oskutred', label: 'nacida de semilla de', type: 'lore' },
+    { source: 'froa', target: 'orka', label: 'conocidas -- Orka buscaba consejo', type: 'rel' },
+    { source: 'froa', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
+    { source: 'froa', target: 'ninos-robados', label: 'destruida por mismos agresores?', type: 'trama' },
+    // Arbol-Froa
+    { source: 'arbol-froa', target: 'cat-orka', label: '', type: 'arc' },
+    { source: 'arbol-froa', target: 'ninos-robados', label: 'destruido por mismos agresores?', type: 'trama' },
+    { source: 'arbol-froa', target: 'decision-huida', label: 'hallazgo rompe el plan', type: 'event' },
+    // Ulfhednar (concepto)
+    { source: 'ulfhednar', target: 'thrall-sigrun', label: 'es una', type: 'lore' },
+    { source: 'ulfhednar', target: 'ulfrir', label: 'linaje de', type: 'lore' },
+    { source: 'ulfhednar', target: 'tainted', label: 'subtipo de', type: 'lore' },
+    { source: 'ulfhednar', target: 'thorkel', label: 'conoce el termino', type: 'trama' },
+    { source: 'ulfhednar', target: 'decision-huida', label: 'amenaza que motiva', type: 'trama' },
+    // Decision de huida
+    { source: 'decision-huida', label: '', target: 'cat-tramas', type: 'arc' },
+    { source: 'decision-huida', target: 'orka', label: 'propone', type: 'event' },
+    { source: 'decision-huida', target: 'thorkel', label: 'acepta', type: 'event' },
+    { source: 'decision-huida', target: 'thrall-sigrun', label: 'motivada por amenaza de', type: 'trama' },
+    { source: 'decision-huida', target: 'gritos-oeste', label: 'interrumpida por', type: 'event' },
+    // Barrow de Virk
+    { source: 'barrow-virk', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'barrow-virk', target: 'virk', label: 'tumulo de', type: 'event' },
+    { source: 'barrow-virk', target: 'mord-lif', label: 'construido por', type: 'event' },
+    { source: 'barrow-virk', target: 'orka', label: 'ayudo a construir', type: 'event' },
+    { source: 'barrow-virk', target: 'thorkel', label: 'ayudo a construir', type: 'event' },
+    { source: 'barrow-virk', target: 'funeral-rites', label: 'practica de', type: 'lore' },
+    // Colgante espada Breca
+    { source: 'colgante-espada', target: 'breca', label: 'lo lleva', type: 'rel' },
+    { source: 'colgante-espada', target: 'thorkel', label: 'lo tallo', type: 'rel' },
+    { source: 'colgante-espada', target: 'cat-objetos', label: '', type: 'arc' },
+    // Gritos al oeste
+    { source: 'gritos-oeste', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'gritos-oeste', target: 'orka', label: 'escucha -- steading en peligro?', type: 'event' },
+    { source: 'gritos-oeste', target: 'ninos-robados', label: 'posiblemente relacionados', type: 'trama' },
+    { source: 'gritos-oeste', target: 'steading', label: 'direccion del steading de Orka', type: 'geo' },
+    // Mord y Lif
+    { source: 'mord-lif', target: 'barrow-virk', label: 'construyeron', type: 'event' },
 ];
