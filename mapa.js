@@ -300,10 +300,6 @@ if (!searchInput) {
           .classed('selected', n => matchIds.has(n.id))
           .classed('faded', n => !matchIds.has(n.id));
         linkSel.classed('highlighted', false).classed('faded', false);
-        if (isMobile && matchIds.size === 1) {
-          const match = nodes.find(n => matchIds.has(n.id));
-          if (match) selectNode(match);
-        }
       } else {
         nodeSel.classed('selected', false).classed('faded', true);
         linkSel.classed('highlighted', false).classed('faded', true);
