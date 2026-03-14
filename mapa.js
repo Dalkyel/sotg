@@ -167,17 +167,19 @@ const tooltip = document.getElementById('tooltip');
 const ttName = document.getElementById('tt-name');
 const ttDesc = document.getElementById('tt-desc');
 
-nodeSel
-  .on('mouseenter', (e, d) => {
-    ttName.textContent = d.label.replace(' ', ' ');
-    ttDesc.textContent = d.type;
-    tooltip.classList.add('visible');
-  })
-  .on('mousemove', e => {
-    tooltip.style.left = (e.clientX + 14) + 'px';
-    tooltip.style.top = (e.clientY - 8) + 'px';
-  })
-  .on('mouseleave', () => tooltip.classList.remove('visible'));
+if (!('ontouchstart' in window)) {
+  nodeSel
+    .on('mouseenter', (e, d) => {
+      ttName.textContent = d.label.replace(' ', ' ');
+      ttDesc.textContent = d.type;
+      tooltip.classList.add('visible');
+    })
+    .on('mousemove', e => {
+      tooltip.style.left = (e.clientX + 14) + 'px';
+      tooltip.style.top = (e.clientY - 8) + 'px';
+    })
+    .on('mouseleave', () => tooltip.classList.remove('visible'));
+}
 
 // ── Panel ──────────────────────────────────────────────
 const panel = document.getElementById('detail-panel');
