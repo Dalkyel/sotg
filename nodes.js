@@ -223,7 +223,6 @@ const nodes = [
         id: 'helka-poder', label: 'Expansión de Helka', group: 'TRAMA', type: 'Trama — Política', desc: 'Helka absorbe los dominios de los jarls menores. Sigrún juró. Störr es su rival al noroeste. Orka advierte en el Althing: habrá hird-offering (leva de guerreros). La guerra de Vigríð se acerca.',
         star: 'El destino de Fellur está ligado al resultado de la guerra Helka-Störr.'
     },
-    //---------------------------------------Revisado----------------------------------//
     {
         id: 'hird', label: 'Hird (Séquito)', group: 'NORSE', type: 'Institución — Militar', desc: 'Guardia personal y compañeros de armas de un jarl o señor. Vínculo de lealtad mutua: el señor da protección y riqueza, el Hird da servicio militar. Orl es Hird de Leif. Los jarls tienen su propio Hird. Orka advierte en el Althing sobre "hird-offering" (leva militar obligatoria). [Histórico: el hirð era la guardia personal del rey/jarl nórdico. Vivían en su hall, comían en su mesa, luchaban a su lado. Vínculo más fuerte que simple empleo: hermandad de armas. Gwynne lo preserva como institución militar básica de Vigríð.]',
         star: '★ Orl es Hird de Leif — lealtad personal que sobrevive la muerte de Snepil. El "hird-offering" que Orka menciona es conscripción forzada: Helka exigirá guerreros a los jarls sometidos.'
@@ -236,6 +235,7 @@ const nodes = [
         id: 'hjalmar', label: 'Hjálmr (Yelmo)', group: 'NORSE', type: 'Armadura — Cabeza', desc: 'Yelmo de hierro. Diseños: cónico simple, con protección nasal, con protección facial completa (más raro). Muy caro: solo élite guerrera. La mayoría luchaba sin yelmo o con gorro de cuero. [Histórico: los yelmos vikingos eran raros y caros. NO tenían cuernos (mito moderno). Diseño cónico para desviar golpes. Encontrados en tumbas de élite. Gwynne probablemente los reserva para jarls y campeones.]',
         star: 'Aún no se describe yelmo específicamente en los POV, pero Sigrún, Agnar y Glornir probablemente los usan en batalla.'
     },
+    //---------------------------------------Revisado----------------------------------//
     {
         id: 'holmgang-rules', label: 'Reglas del Holmganga', group: 'NORSE', type: 'Ritual — Código', desc: 'Código estricto del duelo: cuadrado marcado con varas de avellano; un pie fuera = rendición; dos pies fuera = huida; tres escudos destruidos = derrota; se puede pactar primera herida, rendición o muerte. Atacar tras rendición rompe el código y justifica ejecución inmediata. Virk violó esto y fue ejecutado por la thrall de Sigrún. [Histórico: el hólmganga tenía reglas precisas documentadas en sagas. El espacio sagrado (vǫllr) estaba delimitado. Romper las reglas era deshonra absoluta. Gwynne preserva esto: las reglas son ley, no sugerencia.]',
         star: '★★ Virk ganó el duelo pero perdió su vida al romper las reglas. Las leyes del holmganga están por encima de la victoria: el honor importa más que ganar.'
