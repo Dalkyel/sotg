@@ -441,4 +441,80 @@ const links = [
     { source: 'berserkergang', target: 'varg', label: 'furia roja similar', type: 'trama' },
     { source: 'berserkergang', target: 'thrall-sigrun', label: 'furia de lobo', type: 'rel' },
     { source: 'berserkergang', target: 'berser', label: 'origen divino', type: 'lore' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 13 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    // Torvik
+    { source: 'torvik', target: 'cat-varg', label: '', type: 'arc' },
+    { source: 'torvik', target: 'bloodsworn', label: 'aspirante', type: 'rel' },
+    { source: 'torvik', target: 'edel', label: 'scout bajo mando de', type: 'rel' },
+    { source: 'torvik', target: 'jokul', label: 'aprendiz de', type: 'rel' },
+    { source: 'torvik', target: 'varg', label: 'compañero aspirante', type: 'rel' },
+    // Edel
+    { source: 'edel', target: 'cat-varg', label: '', type: 'arc' },
+    { source: 'edel', target: 'bloodsworn', label: 'escoutmaestre', type: 'rel' },
+    // Galinn
+    { source: 'galinn', target: 'liga', label: 'skáld de', type: 'geo' },
+    { source: 'galinn', target: 'gudfall-saga-galinn', label: 'recita', type: 'event' },
+    { source: 'galinn', target: 'cat-varg', label: '', type: 'arc' },
+    // Sergei
+    { source: 'sergei', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'sergei', target: 'jaromir', label: 'herald de', type: 'rel' },
+    { source: 'sergei', target: 'jarl-logur', label: 'viejo amigo', type: 'rel' },
+    { source: 'sergei', target: 'iskidan', label: 'mercader de', type: 'geo' },
+    { source: 'sergei', target: 'sulich-crisis', label: 'mediador', type: 'event' },
+    // Jaromir
+    { source: 'jaromir', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'jaromir', target: 'emp-kirill', label: 'hijo del', type: 'rel' },
+    { source: 'jaromir', target: 'sulich-crisis', label: 'protagoniza', type: 'event' },
+    { source: 'jaromir', target: 'guerrero-oscuro', label: 'exige por crímenes', type: 'conflict' },
+    { source: 'jaromir', target: 'glornir', label: 'confrontación', type: 'conflict' },
+    { source: 'jaromir', target: 'jarl-logur', label: 'visita / ultimátum', type: 'event' },
+    { source: 'jaromir', target: 'ilia', label: 'druzhina', type: 'rel' },
+    { source: 'jaromir', target: 'druzhina', label: 'escoltado por', type: 'rel' },
+    // Ilia
+    { source: 'ilia', target: 'jaromir', label: 'druzhina de', type: 'rel' },
+    { source: 'ilia', target: 'druzhina', label: 'es', type: 'lore' },
+    { source: 'ilia', target: 'sulich-crisis', label: 'dispuesta a matar', type: 'event' },
+    // Druzhina (concepto)
+    { source: 'druzhina', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'druzhina', target: 'emp-kirill', label: 'guardia del', type: 'rel' },
+    { source: 'druzhina', target: 'iskidan', label: 'institución de', type: 'lore' },
+    // Sulich crisis
+    { source: 'sulich-crisis', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'sulich-crisis', target: 'guerrero-oscuro', label: 'reclamado', type: 'conflict' },
+    { source: 'sulich-crisis', target: 'glornir', label: 'defiende a Sulich', type: 'event' },
+    { source: 'sulich-crisis', target: 'jarl-logur', label: 'árbitro potencial', type: 'rel' },
+    { source: 'sulich-crisis', target: 'althing', label: 'resolución prevista', type: 'event' },
+    // Vackna
+    { source: 'vackna', target: 'cat-dioses', label: '', type: 'arc' },
+    { source: 'vackna', target: 'gudfall', label: 'inició la batalla', type: 'lore' },
+    { source: 'vackna', target: 'gudfall-saga-galinn', label: 'mencionado en', type: 'lore' },
+    // Eldrafell
+    { source: 'eldrafell', target: 'vigrið', label: 'montaña en', type: 'geo' },
+    { source: 'eldrafell', target: 'snaka', label: 'lugar de caída', type: 'lore' },
+    { source: 'eldrafell', target: 'gudfall-saga-galinn', label: 'mencionado en', type: 'lore' },
+    // Svin, Tosk, Rotta
+    { source: 'svin', target: 'cat-dioses', label: '', type: 'lore' },
+    { source: 'svin', target: 'gudfall', label: 'combatió en', type: 'history' },
+    { source: 'tosk', target: 'cat-dioses', label: '', type: 'lore' },
+    { source: 'tosk', target: 'gudfall', label: 'combatió en', type: 'history' },
+    { source: 'rotta', target: 'cat-dioses', label: '', type: 'lore' },
+    { source: 'rotta', target: 'gudfall', label: 'combatió en', type: 'history' },
+    // Esposa de Logur
+    { source: 'logur-wife', target: 'jarl-logur', label: 'esposa de', type: 'rel' },
+    { source: 'logur-wife', target: 'liga', label: 'señora del hall de', type: 'geo' },
+    // Saga del Gudfall (evento)
+    { source: 'gudfall-saga-galinn', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'gudfall-saga-galinn', target: 'gudfall', label: 'narra', type: 'lore' },
+    { source: 'gudfall-saga-galinn', target: 'svin', label: 'menciona', type: 'lore' },
+    { source: 'gudfall-saga-galinn', target: 'tosk', label: 'menciona', type: 'lore' },
+    { source: 'gudfall-saga-galinn', target: 'rotta', label: 'menciona', type: 'lore' },
+    { source: 'gudfall-saga-galinn', target: 'vackna', label: 'menciona', type: 'lore' },
+    { source: 'gudfall-saga-galinn', target: 'eldrafell', label: 'menciona', type: 'lore' },
+    // Relaciones nuevas de nodos ya existentes
+    { source: 'guerrero-oscuro', target: 'sulich-crisis', label: 'centro de la crisis', type: 'conflict' },
+    { source: 'guerrero-oscuro', target: 'iskidan', label: 'origen probable', type: 'trama' },
+    { source: 'jarl-logur', target: 'logur-wife', label: 'esposo', type: 'rel' },
+    { source: 'skald', target: 'galinn', label: 'Es un', type: 'lore' },
 ];
