@@ -310,6 +310,7 @@ if (!searchInput) {
   });
   if (isMobile) {
     searchInput.addEventListener('focus', () => searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' }));
+    document.querySelector('.controls').addEventListener('touchstart', e => e.stopPropagation(), { passive: false });
   }
 }
 
