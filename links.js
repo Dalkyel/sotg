@@ -43,6 +43,7 @@ const links = [
     // Gudvarr
     { source: 'gudvarr', target: 'sigrun', label: 'sobrino', type: 'rel' },
     { source: 'gudvarr', target: 'niding', label: 'insultó a Virk', type: 'event' },
+    { source: 'gudvarr', target: 'holmganga-event', label: 'Combatiente y se rindió legalmente', type: 'event' },
     // Arild
     { source: 'arild', target: 'sigrun', label: 'Drengr de', type: 'rel' },
     { source: 'arild', target: 'gudvarr', label: 'acompaña a', type: 'rel' },
@@ -237,12 +238,12 @@ const links = [
     { source: 'asgrim-death', target: 'cat-eventos', label: '', type: 'event' },
     // holmganga virk vs gudvarr
     { source: 'holmganga-event', target: 'cat-eventos', label: '', type: 'event' },
-    { source: 'holmganga-event', target: 'gudvarr', label: 'combatiente', type: 'rel' },
     { source: 'holmganga-event', target: 'orka', label: 'segundo de Virk', type: 'rel' },
     { source: 'holmganga-event', target: 'thrall-sigrun', label: 'mató a Virk', type: 'event' },
     { source: 'holmganga-event', target: 'arild', label: 'segundo de Guðvarr', type: 'rel' },
     { source: 'holmganga-event', target: 'mord-lif', label: 'presenciaron', type: 'event' },
     { source: 'holmganga-event', target: 'oath-stone-fellur', label: 'lugar', type: 'geo' },
+    { source: 'holmganga-event', target: 'holmganga', label: 'Reglas', type: 'rel' },
     // gudfall
     { source: 'gudfall', target: 'cat-eventos', label: '', type: 'history' },
     { source: 'gudfall', target: 'snaka', label: 'murió en', type: 'history' },
@@ -433,8 +434,6 @@ const links = [
     // ── ENLACES CULTURA NÓRDICA ────────────────────────────────────
     { source: 'holmganga', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'holmganga', target: 'second-combat', label: 'rol en duelo', type: 'lore' },
-    { source: 'holmganga', target: 'holmganga', label: 'reglas del', type: 'lore' },
-    { source: 'holmganga', target: 'gudvarr', label: 'se rindió legalmente', type: 'event' },
     { source: 'holmganga', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'althing', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'niding', target: 'cat-norse', label: '', type: 'arc' },
