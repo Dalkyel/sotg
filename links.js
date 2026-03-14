@@ -249,7 +249,18 @@ const links = [
     { source: 'likrafa', target: 'vergelmir', label: 'encadenada en oskutred', type: 'lore' },
     { source: 'orna', target: 'cat-dioses', label: '', type: 'lore' },
     { source: 'ulfrir', target: 'cat-dioses', label: '', type: 'lore' },
-    // Hundur (dios)
+    // Svin
+    { source: 'svin', target: 'cat-dioses', label: '', type: 'lore' },
+    { source: 'svin', target: 'gudfall', label: 'combatió en', type: 'history' },
+    // Tosk
+    { source: 'tosk', target: 'cat-dioses', label: '', type: 'lore' },
+    { source: 'tosk', target: 'gudfall', label: 'combatió en', type: 'history' },
+    // Rotta
+    { source: 'rotta', target: 'cat-dioses', label: '', type: 'lore' },
+    { source: 'rotta', target: 'gudfall', label: 'combatió en', type: 'history' },
+    { source: 'rotta', target: 'likrafa', label: 'alimentó su paranoia', type: 'history' },
+    { source: 'rotta', target: 'gallows-wood', label: 'detonante indirecto', type: 'history' },
+    // Hundur
     { source: 'hundur-dios', target: 'cat-dioses', label: '', type: 'lore' },
     { source: 'hundur-dios', target: 'gudfall', label: 'combatió en', type: 'history' },
     { source: 'hundur-dios', target: 'hundur', label: 'fuente del linaje', type: 'lore' },
@@ -295,6 +306,14 @@ const links = [
     { source: 'gravka', target: 'iskidan', label: 'capital', type: 'geo' },
     // oath-stone-fellur
     { source: 'oath-stone-fellur', target: 'althing', label: 'lugar', type: 'geo' },
+    // Frost-Isles
+    { source: 'frost-isles', target: 'vigrið', label: 'archipiélago en', type: 'geo' },
+    { source: 'frost-isles', target: 'iskalt', label: 'al sur de', type: 'geo' },
+    { source: 'frost-isles', target: 'berak-venta', label: 'escala del viaje', type: 'geo' },
+    // Eldrafell
+    { source: 'eldrafell', target: 'vigrið', label: 'montaña en', type: 'geo' },
+    { source: 'eldrafell', target: 'snaka', label: 'lugar de caída', type: 'lore' },
+    { source: 'eldrafell', target: 'gudfall-saga-galinn', label: 'mencionado en', type: 'lore' },
     // -------------------------------------------------------------------------------------- //
     // Vaesen y magia
     { source: 'vaesen-gen', target: 'cat-mundo', label: '', type: 'arc' },
@@ -309,6 +328,16 @@ const links = [
     { source: 'skraeling', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
     { source: 'faunir', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
     { source: 'froa', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
+    { source: 'froa', target: 'arbol-froa', label: 'ligada a / murio con', type: 'lore' },
+    { source: 'froa', target: 'oskutred', label: 'nacida de semilla de', type: 'lore' },
+    { source: 'froa', target: 'orka', label: 'conocidas -- Orka buscaba consejo', type: 'rel' },
+    { source: 'froa', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
+    { source: 'froa', target: 'ninos-robados', label: 'destruida por mismos agresores?', type: 'trama' },
+    // Night-wyrm
+    { source: 'night-wyrm', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
+    { source: 'night-wyrm', target: 'berak-venta', label: 'atacó en', type: 'event' },
+    { source: 'night-wyrm', target: 'oath-stone-frost-isles', label: 'posiblemente atraídos por', type: 'trama' },
+    { source: 'night-wyrm', target: 'biorr', label: 'repelidos con fuego por', type: 'event' },
     // -------------------------------------------------------------------------------------- //
     // Tramas
     { source: 'akall', target: 'cat-tramas', label: '', type: 'arc' },
@@ -372,6 +401,18 @@ const links = [
     { source: 'seax', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'brynja', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'brynja', target: 'cat-objetos', label: '', type: 'arc' },
+    // Colgante espada Breca
+    { source: 'colgante-espada', target: 'breca', label: 'lo lleva', type: 'rel' },
+    { source: 'colgante-espada', target: 'thorkel', label: 'lo tallo', type: 'rel' },
+    { source: 'colgante-espada', target: 'cat-objetos', label: '', type: 'arc' },
+    // Vackna
+    { source: 'vackna', target: 'cat-dioses', label: '', type: 'arc' },
+    { source: 'vackna', target: 'gudfall', label: 'inició la batalla', type: 'lore' },
+    { source: 'vackna', target: 'gudfall-saga-galinn', label: 'mencionado en', type: 'lore' },
+    // Arbol-Froa
+    { source: 'arbol-froa', target: 'cat-orka', label: '', type: 'arc' },
+    { source: 'arbol-froa', target: 'ninos-robados', label: 'destruido por mismos agresores?', type: 'trama' },
+    { source: 'arbol-froa', target: 'decision-huida', label: 'hallazgo rompe el plan', type: 'event' },
     // -------------------------------------------------------------------------------------- //
     // ── ENLACES CULTURA NÓRDICA ────────────────────────────────────
     { source: 'holmganga', target: 'cat-norse', label: '', type: 'arc' },
@@ -504,6 +545,9 @@ const links = [
     { source: 'berserkergang', target: 'varg', label: 'furia roja similar', type: 'trama' },
     { source: 'berserkergang', target: 'thrall-sigrun', label: 'furia de lobo', type: 'rel' },
     { source: 'berserkergang', target: 'berser', label: 'origen divino', type: 'lore' },
+    // Blood-Eagle
+    { source: 'blood-eagle', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'blood-eagle', target: 'gallows-wood', label: 'imitación humana de', type: 'lore' },
     // ══════════════════════════════════════════════════════════════
     // CAPÍTULO 13 — NUEVOS ENLACES
     // ══════════════════════════════════════════════════════════════
@@ -517,21 +561,6 @@ const links = [
     { source: 'sulich-crisis', target: 'glornir', label: 'defiende a Sulich', type: 'event' },
     { source: 'sulich-crisis', target: 'jarl-logur', label: 'árbitro potencial', type: 'rel' },
     { source: 'sulich-crisis', target: 'althing', label: 'resolución prevista', type: 'event' },
-    // Vackna
-    { source: 'vackna', target: 'cat-dioses', label: '', type: 'arc' },
-    { source: 'vackna', target: 'gudfall', label: 'inició la batalla', type: 'lore' },
-    { source: 'vackna', target: 'gudfall-saga-galinn', label: 'mencionado en', type: 'lore' },
-    // Eldrafell
-    { source: 'eldrafell', target: 'vigrið', label: 'montaña en', type: 'geo' },
-    { source: 'eldrafell', target: 'snaka', label: 'lugar de caída', type: 'lore' },
-    { source: 'eldrafell', target: 'gudfall-saga-galinn', label: 'mencionado en', type: 'lore' },
-    // Svin, Tosk, Rotta
-    { source: 'svin', target: 'cat-dioses', label: '', type: 'lore' },
-    { source: 'svin', target: 'gudfall', label: 'combatió en', type: 'history' },
-    { source: 'tosk', target: 'cat-dioses', label: '', type: 'lore' },
-    { source: 'tosk', target: 'gudfall', label: 'combatió en', type: 'history' },
-    { source: 'rotta', target: 'cat-dioses', label: '', type: 'lore' },
-    { source: 'rotta', target: 'gudfall', label: 'combatió en', type: 'history' },
     // Saga del Gudfall (evento)
     { source: 'gudfall-saga-galinn', target: 'cat-eventos', label: '', type: 'event' },
     { source: 'gudfall-saga-galinn', target: 'gudfall', label: 'narra', type: 'lore' },
@@ -548,51 +577,27 @@ const links = [
     // ══════════════════════════════════════════════════════════════
     // CAPÍTULO 14 — NUEVOS ENLACES
     // ══════════════════════════════════════════════════════════════
-    // Night-wyrm
-    { source: 'night-wyrm', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
-    { source: 'night-wyrm', target: 'berak-venta', label: 'atacó en', type: 'event' },
-    { source: 'night-wyrm', target: 'oath-stone-frost-isles', label: 'posiblemente atraídos por', type: 'trama' },
-    { source: 'night-wyrm', target: 'biorr', label: 'repelidos con fuego por', type: 'event' },
     // Oath Stone
     { source: 'oath-stone-frost-isles', target: 'cat-objetos', label: '', type: 'arc' },
     { source: 'oath-stone-frost-isles', target: 'frost-isles', label: 'ubicada en', type: 'geo' },
     { source: 'oath-stone-frost-isles', target: 'gudfall', label: 'narra', type: 'lore' },
     { source: 'oath-stone-frost-isles', target: 'gallows-wood', label: 'muestra imagen de', type: 'lore' },
     { source: 'oath-stone-frost-isles', target: 'gods-bones', label: 'conecta con reliquias', type: 'lore' },
-    // Frost-Isles
-    { source: 'frost-isles', target: 'vigrið', label: 'archipiélago en', type: 'geo' },
-    { source: 'frost-isles', target: 'iskalt', label: 'al sur de', type: 'geo' },
-    { source: 'frost-isles', target: 'berak-venta', label: 'escala del viaje', type: 'geo' },
     // Gallows Wood
     { source: 'gallows-wood', target: 'cat-dioses', label: '', type: 'lore' },
     { source: 'gallows-wood', target: 'likrafa', label: 'crimen que lo detonó', type: 'history' },
     { source: 'gallows-wood', target: 'orna', label: 'Orna vengó a su hija', type: 'history' },
     { source: 'gallows-wood', target: 'ulfrir', label: 'Ulfrir vengó a su hija', type: 'history' },
     { source: 'gallows-wood', target: 'blood-eagle', label: 'origen del ritual', type: 'lore' },
-    // Blood-Eagle
-    { source: 'blood-eagle', target: 'cat-norse', label: '', type: 'arc' },
-    { source: 'blood-eagle', target: 'gallows-wood', label: 'imitación humana de', type: 'lore' },
     // Dragon-born
     { source: 'dragon-born', target: 'cat-tramas', label: '', type: 'arc' },
     { source: 'dragon-born', target: 'likrafa', label: 'posible descendencia', type: 'trama' },
     { source: 'dragon-born', target: 'tainted', label: 'linaje no confirmado', type: 'trama' },
     { source: 'dragon-born', target: 'elvar', label: 'niega su existencia', type: 'conflict' },
     { source: 'dragon-born', target: 'uspa', label: 'reacción de Uspa', type: 'trama' },
-    { source: 'rotta', target: 'likrafa', label: 'alimentó su paranoia', type: 'history' },
-    { source: 'rotta', target: 'gallows-wood', label: 'detonante indirecto', type: 'history' },
     // ==========================================================
     // CAPITULO 15 -- NUEVOS ENLACES
     // ==========================================================
-    // Froa -- redefinida como vaesen muerta con nodo de lugar
-    { source: 'froa', target: 'arbol-froa', label: 'ligada a / murio con', type: 'lore' },
-    { source: 'froa', target: 'oskutred', label: 'nacida de semilla de', type: 'lore' },
-    { source: 'froa', target: 'orka', label: 'conocidas -- Orka buscaba consejo', type: 'rel' },
-    { source: 'froa', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
-    { source: 'froa', target: 'ninos-robados', label: 'destruida por mismos agresores?', type: 'trama' },
-    // Arbol-Froa
-    { source: 'arbol-froa', target: 'cat-orka', label: '', type: 'arc' },
-    { source: 'arbol-froa', target: 'ninos-robados', label: 'destruido por mismos agresores?', type: 'trama' },
-    { source: 'arbol-froa', target: 'decision-huida', label: 'hallazgo rompe el plan', type: 'event' },
     // Ulfhednar (concepto)
     { source: 'ulfhednar', target: 'thrall-sigrun', label: 'es una', type: 'lore' },
     { source: 'ulfhednar', target: 'ulfrir', label: 'linaje de', type: 'lore' },
@@ -612,10 +617,6 @@ const links = [
     { source: 'barrow-virk', target: 'orka', label: 'ayudo a construir', type: 'event' },
     { source: 'barrow-virk', target: 'thorkel', label: 'ayudo a construir', type: 'event' },
     { source: 'barrow-virk', target: 'funeral-rites', label: 'practica de', type: 'lore' },
-    // Colgante espada Breca
-    { source: 'colgante-espada', target: 'breca', label: 'lo lleva', type: 'rel' },
-    { source: 'colgante-espada', target: 'thorkel', label: 'lo tallo', type: 'rel' },
-    { source: 'colgante-espada', target: 'cat-objetos', label: '', type: 'arc' },
     // Gritos al oeste
     { source: 'gritos-oeste', target: 'cat-tramas', label: '', type: 'arc' },
     { source: 'gritos-oeste', target: 'orka', label: 'escucha -- steading en peligro?', type: 'event' },
