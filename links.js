@@ -116,6 +116,35 @@ const links = [
     { source: 'snepil', target: 'varg', label: 'fue su amo', type: 'rel' },
     { source: 'snepil', target: 'leif', label: 'padre', type: 'rel' },
     { source: 'snepil', target: 'orl', label: 'thrall de confianza', type: 'rel' },
+    // Torvik
+    { source: 'torvik', target: 'cat-varg', label: '', type: 'arc' },
+    { source: 'torvik', target: 'bloodsworn', label: 'aspirante', type: 'rel' },
+    { source: 'torvik', target: 'edel', label: 'scout bajo mando de', type: 'rel' },
+    { source: 'torvik', target: 'jokul', label: 'aprendiz de', type: 'rel' },
+    { source: 'torvik', target: 'varg', label: 'compañero aspirante', type: 'rel' },
+    // Galinn
+    { source: 'galinn', target: 'liga', label: 'skáld de', type: 'geo' },
+    { source: 'galinn', target: 'gudfall-saga-galinn', label: 'recita', type: 'event' },
+    { source: 'galinn', target: 'cat-varg', label: '', type: 'arc' },
+    // Sergei
+    { source: 'sergei', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'sergei', target: 'jaromir', label: 'herald de', type: 'rel' },
+    { source: 'sergei', target: 'jarl-logur', label: 'viejo amigo', type: 'rel' },
+    { source: 'sergei', target: 'iskidan', label: 'mercader de', type: 'geo' },
+    { source: 'sergei', target: 'sulich-crisis', label: 'mediador', type: 'event' },
+    // Jaromir
+    { source: 'jaromir', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'jaromir', target: 'emp-kirill', label: 'hijo del', type: 'rel' },
+    { source: 'jaromir', target: 'sulich-crisis', label: 'protagoniza', type: 'event' },
+    { source: 'jaromir', target: 'guerrero-oscuro', label: 'exige por crímenes', type: 'conflict' },
+    { source: 'jaromir', target: 'glornir', label: 'confrontación', type: 'conflict' },
+    { source: 'jaromir', target: 'jarl-logur', label: 'visita / ultimátum', type: 'event' },
+    { source: 'jaromir', target: 'ilia', label: 'druzhina', type: 'rel' },
+    { source: 'jaromir', target: 'druzhina', label: 'escoltado por', type: 'rel' },
+    // Ilia
+    { source: 'ilia', target: 'jaromir', label: 'druzhina de', type: 'rel' },
+    { source: 'ilia', target: 'druzhina', label: 'es', type: 'lore' },
+    { source: 'ilia', target: 'sulich-crisis', label: 'dispuesta a matar', type: 'event' },
     // -------------------------------------------------------------------------------------- //
     // Cat-elvar to elvar chars
     // Elvar
@@ -141,11 +170,20 @@ const links = [
     { source: 'battle-grim', target: 'sjavarom', label: 'Pelearon contra', type: 'Evento' },
     // grend
     { source: 'grend', target: 'battle-grim', label: 'miembro', type: 'rel' },
-    // mujer Berak
+    // Uspa mujer Berak
     { source: 'uspa', target: 'sjavarom', label: 'controló', type: 'magic' },
     { source: 'uspa', target: 'seidr', label: 'practica', type: 'magic' },
     { source: 'uspa', target: 'snaka', label: 'sangre y herencia confirmada', type: 'lore' },
     { source: 'uspa', target: 'tainted', label: 'sangre Snaka', type: 'lore' },
+    { source: 'uspa', target: 'oath-stone-frost-isles', label: 'activa con sangre', type: 'magic' },
+    { source: 'uspa', target: 'gudfall', label: 'explica causa', type: 'lore' },
+    { source: 'uspa', target: 'bjarn', label: 'madre de Bjarn', type: 'rel' },
+    { source: 'uspa', target: 'dragon-born', label: 'escupitajo sospechoso', type: 'trama' },
+    // Hijo-berak (Bjarn)
+    { source: 'bjarn', target: 'berak', label: 'hijo de', type: 'rel' },
+    { source: 'bjarn', target: 'snaka', label: 'sangre (por Uspa)', type: 'lore' },
+    { source: 'bjarn', target: 'berser', label: 'sangre (por Berak)', type: 'lore' },
+    { source: 'bjarn', target: 'tainted', label: 'doble linaje divino', type: 'lore' },
     // Sighvat
     { source: 'sighvat', target: 'kraka', label: 'controla', type: 'rel' },
     { source: 'sighvat', target: 'hundur', label: 'controla', type: 'rel' },
@@ -155,9 +193,11 @@ const links = [
     { source: 'kraka', target: 'seidr', label: 'practica', type: 'magic' },
     { source: 'kraka', target: 'tainted', label: 'Tainted', type: 'lore' },
     { source: 'kraka', target: 'thrall', label: 'thrall', type: 'rel' },
-    // hundur
+    // hundur (thrall)
     { source: 'hundur', target: 'battle-grim', label: 'miembro/thrall', type: 'rel' },
     { source: 'hundur', target: 'berak', label: 'rastreó', type: 'event' },
+    { source: 'hundur', target: 'hundur-dios', label: 'sangre de', type: 'lore' },
+    { source: 'hundur', target: 'oath-stone-frost-isles', label: 'detectó con olfato', type: 'event' },
     // biorr
     { source: 'biorr', target: 'battle-grim', label: 'miembro', type: 'rel' },
     // storr
@@ -198,6 +238,10 @@ const links = [
     { source: 'likrafa', target: 'vergelmir', label: 'encadenada en oskutred', type: 'lore' },
     { source: 'orna', target: 'cat-dioses', label: '', type: 'lore' },
     { source: 'ulfrir', target: 'cat-dioses', label: '', type: 'lore' },
+    // Hundur (dios)
+    { source: 'hundur-dios', target: 'cat-dioses', label: '', type: 'lore' },
+    { source: 'hundur-dios', target: 'gudfall', label: 'combatió en', type: 'history' },
+    { source: 'hundur-dios', target: 'hundur', label: 'fuente del linaje', type: 'lore' },
     // -------------------------------------------------------------------------------------- //
     // Cat-magia
     { source: 'cat-magia', target: 'cat-mundo', label: '', type: 'arc' },
@@ -266,8 +310,12 @@ const links = [
     { source: 'ninos-robados', target: 'howbyr', label: 'caso en', type: 'geo' },
     { source: 'ninos-robados', target: 'rio-skarpain', label: 'ruta de huida', type: 'geo' },
     { source: 'ninos-robados', target: 'asgrim', label: 'víctimas', type: 'trama' },
+    // Berak-venta-event
     { source: 'berak-venta', target: 'cat-tramas', label: '', type: 'arc' },
     { source: 'berak-venta', target: 'berak', label: 'Sera vendido', type: 'trama' },
+    { source: 'berak-venta', target: 'snakavik', label: 'destino', type: 'geo' },
+    { source: 'berak-venta', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'berak-venta', target: 'wave-jarl', label: 'navegado en', type: 'rel' },
     { source: 'berak-venta', target: 'snakavik', label: 'destino', type: 'geo' },
     { source: 'helka-poder', target: 'cat-tramas', label: '', type: 'arc' },
     { source: 'helka-poder', target: 'helka', label: 'protagoniza', type: 'trama' },
@@ -279,6 +327,9 @@ const links = [
     // ── ENLACES PERSONAJES SECUNDARIOS ────────────────────────────
     { source: 'jarl-logur', target: 'liga', label: 'jarl de', type: 'geo' },
     { source: 'jarl-logur', target: 'bloodsworn', label: 'hospeda', type: 'rel' },
+    // Esposa de Logur
+    { source: 'logur-wife', target: 'jarl-logur', label: 'esposa de', type: 'rel' },
+    { source: 'logur-wife', target: 'liga', label: 'señora del hall de', type: 'geo' },
     { source: 'orl', target: 'leif', label: 'Hird / compañero', type: 'rel' },
     { source: 'trud', target: 'battle-grim', label: 'miembro', type: 'rel' },
     { source: 'jokul', target: 'bloodsworn', label: 'herrero', type: 'rel' },
@@ -445,35 +496,6 @@ const links = [
     // ══════════════════════════════════════════════════════════════
     // CAPÍTULO 13 — NUEVOS ENLACES
     // ══════════════════════════════════════════════════════════════
-    // Torvik
-    { source: 'torvik', target: 'cat-varg', label: '', type: 'arc' },
-    { source: 'torvik', target: 'bloodsworn', label: 'aspirante', type: 'rel' },
-    { source: 'torvik', target: 'edel', label: 'scout bajo mando de', type: 'rel' },
-    { source: 'torvik', target: 'jokul', label: 'aprendiz de', type: 'rel' },
-    { source: 'torvik', target: 'varg', label: 'compañero aspirante', type: 'rel' },
-    // Galinn
-    { source: 'galinn', target: 'liga', label: 'skáld de', type: 'geo' },
-    { source: 'galinn', target: 'gudfall-saga-galinn', label: 'recita', type: 'event' },
-    { source: 'galinn', target: 'cat-varg', label: '', type: 'arc' },
-    // Sergei
-    { source: 'sergei', target: 'cat-facciones', label: '', type: 'arc' },
-    { source: 'sergei', target: 'jaromir', label: 'herald de', type: 'rel' },
-    { source: 'sergei', target: 'jarl-logur', label: 'viejo amigo', type: 'rel' },
-    { source: 'sergei', target: 'iskidan', label: 'mercader de', type: 'geo' },
-    { source: 'sergei', target: 'sulich-crisis', label: 'mediador', type: 'event' },
-    // Jaromir
-    { source: 'jaromir', target: 'cat-facciones', label: '', type: 'arc' },
-    { source: 'jaromir', target: 'emp-kirill', label: 'hijo del', type: 'rel' },
-    { source: 'jaromir', target: 'sulich-crisis', label: 'protagoniza', type: 'event' },
-    { source: 'jaromir', target: 'guerrero-oscuro', label: 'exige por crímenes', type: 'conflict' },
-    { source: 'jaromir', target: 'glornir', label: 'confrontación', type: 'conflict' },
-    { source: 'jaromir', target: 'jarl-logur', label: 'visita / ultimátum', type: 'event' },
-    { source: 'jaromir', target: 'ilia', label: 'druzhina', type: 'rel' },
-    { source: 'jaromir', target: 'druzhina', label: 'escoltado por', type: 'rel' },
-    // Ilia
-    { source: 'ilia', target: 'jaromir', label: 'druzhina de', type: 'rel' },
-    { source: 'ilia', target: 'druzhina', label: 'es', type: 'lore' },
-    { source: 'ilia', target: 'sulich-crisis', label: 'dispuesta a matar', type: 'event' },
     // Druzhina (concepto)
     { source: 'druzhina', target: 'cat-facciones', label: '', type: 'arc' },
     { source: 'druzhina', target: 'emp-kirill', label: 'guardia del', type: 'rel' },
@@ -499,9 +521,6 @@ const links = [
     { source: 'tosk', target: 'gudfall', label: 'combatió en', type: 'history' },
     { source: 'rotta', target: 'cat-dioses', label: '', type: 'lore' },
     { source: 'rotta', target: 'gudfall', label: 'combatió en', type: 'history' },
-    // Esposa de Logur
-    { source: 'logur-wife', target: 'jarl-logur', label: 'esposa de', type: 'rel' },
-    { source: 'logur-wife', target: 'liga', label: 'señora del hall de', type: 'geo' },
     // Saga del Gudfall (evento)
     { source: 'gudfall-saga-galinn', target: 'cat-eventos', label: '', type: 'event' },
     { source: 'gudfall-saga-galinn', target: 'gudfall', label: 'narra', type: 'lore' },
@@ -518,23 +537,6 @@ const links = [
     // ══════════════════════════════════════════════════════════════
     // CAPÍTULO 14 — NUEVOS ENLACES
     // ══════════════════════════════════════════════════════════════
-    // Uspa (uspa) — nombre actualizado, nuevas conexiones
-    { source: 'uspa', target: 'oath-stone-frost-isles', label: 'activa con sangre', type: 'magic' },
-    { source: 'uspa', target: 'gudfall', label: 'explica causa', type: 'lore' },
-    { source: 'uspa', target: 'bjarn', label: 'madre de Bjarn', type: 'rel' },
-    { source: 'uspa', target: 'dragon-born', label: 'escupitajo sospechoso', type: 'trama' },
-    // Hijo-berak (Bjarn)
-    { source: 'bjarn', target: 'berak', label: 'hijo de', type: 'rel' },
-    { source: 'bjarn', target: 'snaka', label: 'sangre (por Uspa)', type: 'lore' },
-    { source: 'bjarn', target: 'berser', label: 'sangre (por Berak)', type: 'lore' },
-    { source: 'bjarn', target: 'tainted', label: 'doble linaje divino', type: 'lore' },
-    // Hundur (dios) — nuevo nodo
-    { source: 'hundur-dios', target: 'cat-dioses', label: '', type: 'lore' },
-    { source: 'hundur-dios', target: 'gudfall', label: 'combatió en', type: 'history' },
-    { source: 'hundur-dios', target: 'hundur', label: 'fuente del linaje', type: 'lore' },
-    // Hundur (thrall) — linaje confirmado
-    { source: 'hundur', target: 'hundur-dios', label: 'sangre de', type: 'lore' },
-    { source: 'hundur', target: 'oath-stone-frost-isles', label: 'detectó con olfato', type: 'event' },
     // Night-wyrm
     { source: 'night-wyrm', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
     { source: 'night-wyrm', target: 'berak-venta-event', label: 'atacó en', type: 'event' },
@@ -565,10 +567,6 @@ const links = [
     { source: 'dragon-born', target: 'tainted', label: 'linaje no confirmado', type: 'trama' },
     { source: 'dragon-born', target: 'elvar', label: 'niega su existencia', type: 'conflict' },
     { source: 'dragon-born', target: 'uspa', label: 'reacción de Uspa', type: 'trama' },
-    // Berak-venta-event
-    { source: 'berak-venta-event', target: 'cat-eventos', label: '', type: 'event' },
-    { source: 'berak-venta-event', target: 'wave-jarl', label: 'navegado en', type: 'rel' },
-    { source: 'berak-venta-event', target: 'snakavik', label: 'destino', type: 'geo' },
     // Elvar — nueva conexión con oath stone y Agnar's philosophy
     { source: 'elvar', target: 'oath-stone-frost-isles', label: 'presenció activación', type: 'event' },
     { source: 'elvar', target: 'dragon-born', label: 'niega existencia', type: 'conflict' },
