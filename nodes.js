@@ -128,8 +128,8 @@ const nodes = [
         star: 'Su reacción al destino Snakavik/Jarl Störr es personal. ¿Familia allí? ¿Pasado?'
     },
     {
-        id: 'emp-kirill', label: 'Emperador Kirill', group: 'FACCION', type: 'Personaje — Poder Lejano', desc: 'Gobierna el vasto Iskidan desde la gran ciudad de Gravka. Virk lo acusa de tener más thralls que hombres libres y de sacrificar niños —rumores que Sigrun descarta como saga. Amenaza exterior potencial a Vigríð.',
-        star: '★ ¿Tiene el patrón de robos de niños alguna conexión con Iskidan? Gwynne planta la semilla sin confirmarla.'
+        id: 'emp-kirill', label: 'Gran Khagan Kirill', group: 'FACCION', type: 'Personaje — Poder Lejano', desc: 'Título oficial confirmado: "Gran Khagan, Kirill el Magnífico". Gobierna el vasto Iskidan desde la gran ciudad de Gravka. Cap.13: tiene 200 concubinas, mil hijos (según Torvik) y una guardia druzhina de 200 guerreros que lo escolta en todo momento. Donde un príncipe tiene solo 2 druzhina, el Khagan tiene 200 — escala del poder. Virk lo acusó de tener más thralls que hombres libres y de sacrificar niños —rumores que Sigrun descartó como saga.',
+        star: '★★ El enviado de Kirill (su hijo Jaromir) ya está en Liga reclamando a Sulich. Iskidan tiene presencia activa en Vigríð. ¿Tiene el patrón de robos de niños alguna conexión con Iskidan?'
     },
     {
         id: 'faering', label: 'Færing', group: 'NORSE', type: 'Embarcación — Pesca', desc: 'Bote pequeño de remos (2-4 remos). Pesca costera, transporte local entre villa y granja. Diseño simple pero robusto. Cada familia de pescadores tiene uno. [Histórico: el færing ("de cuatro remos") era el bote de trabajo diario en Noruega. Aún se construyen réplicas hoy. Diseño casi idéntico por 1000+ años. En Vigríð serían omnipresentes en villas costeras como Fellur.]',
@@ -176,8 +176,8 @@ const nodes = [
         star: 'Saber esta lengua es poder absoluto sobre los Tainted. ¿Cuántos la conocen realmente?'
     },
     {
-        id: 'glornir', label: 'Glornir', group: 'VARG', type: 'Personaje — Jefe', desc: 'Jefe de los Hermanos de Sangre. Calvo, barba gris trenzada. Long-axe como bastón. Oro y plata en brazos y cuello. Habla lengua Galdur para controlar collares. Rápido como el rayo. Epítetos: Rompe-Escudos y Dador-de-Oro.',
-        star: ''
+        id: 'glornir', label: 'Glornir', group: 'VARG', type: 'Personaje — Jefe', desc: 'Jefe de los Hermanos de Sangre. Calvo, barba gris trenzada. Long-axe como bastón. Oro y plata en brazos y cuello. Habla lengua Galdur para controlar collares. Rápido como el rayo. Cap.13: Cuando el Príncipe Jaromir exige a Sulich, Glornir se levanta lentamente, chasquea el cuello y declara que el juramento de sangre es inviolable — protegerá a Sulich cueste lo que cueste. Epítetos múltiples: Rompe-Escudos (Røkia), Dador-de-Oro (él mismo), Robador-de-Almas (Svik), Cortador-Golpeador-Aplastador (Einar).',
+        star: '★★ Sus múltiples kennings revelan que su reputación es terror y generosidad al mismo tiempo. En Cap.13 se coloca entre Sulich y un príncipe de Iskidan sin titubear.'
     },
     {
         id: 'gods-bones', label: 'Huesos de los Dioses', group: 'MAGIA', type: 'Objeto — Magia', desc: 'Los huesos de los dioses muertos (Snaka, Orna, Berser, Ulfrir) son objetos de gran poder. Se usan para protección (knuckle-bone en umbrales), como fuente de poder para magia (asta de trol para Kráka), y como símbolos de autoridad (alas de Orna en la fortaleza de Helka). El poder específico que otorgan varía según el dios y el contexto.',
@@ -192,16 +192,16 @@ const nodes = [
         star: '¿Qué le debe a Elvar para protegerla así? La relación no está explicada.'
     },
     {
-        id: 'gudfall', label: 'Guðfalla (Caída de Dioses)', group: 'EVENTO', type: 'Evento Histórico', desc: 'Hace ~300 años. Los hijos de Snaka se rebelaron contra su padre. La guerra de los dioses rompió el mundo: continentes hundidos, mares desbordados. Los vaesen escaparon de su foso. El mundo nunca se recuperó.',
-        star: 'Todo el mundo actual es consecuencia directa de este evento.'
+        id: 'gudfall', label: 'Guðfalla (Caída de Dioses)', group: 'EVENTO', type: 'Evento Histórico', desc: 'Hace ~300 años. Los hijos de Snaka se rebelaron contra su padre. La guerra de los dioses rompió el mundo: continentes hundidos, mares desbordados. Los vaesen escaparon de su foso. El mundo nunca se recuperó. Cap.13: la saga de Galinn el Skáld añade detalles cruciales — el Vackna (Cuerno-Despertador) sonó en las colinas al alba iniciando la batalla. Ulfrir "rompeencadenado" corrió al Guðfalla aullando. Orna llegó volando con garras y pico. Lik-Rifa barrió desde las Colinas de Luna Oscura con su cola. Berser entró en furia de mandíbula espumarajeante. También lucharon: Svin el Valiente, Tosk el Travieso, Rotta el Engañoso. Resultado: "Berser perforado, Orna desgarrada, Ulfrir muerto. Lik-Rifa derribada y encadenada en cámara profunda bajo las ramas de Oskutreð. Y Snaka cayó — su veneno ardiente, su cuerpo rompiendo la tierra, quebró las laderas del Monte Eldrafell." Tras la caída: "Escarcha y fuego, llama y nieve — los vaesen treparon desde el foso y el mundo terminó... y nació de nuevo."',
+        star: '★★★ Cap.13 proporciona la primera versión completa del mito de la Guðfalla en formato saga. Nuevos dioses revelados: Svin, Tosk, Rotta. Nueva geografía mítica: Monte Eldrafell (donde cayó Snaka), Colinas de Luna Oscura (origen de Lik-Rifa). El Vackna inició la batalla.'
     },
     {
         id: 'gudvarr', label: 'Guðvarr', group: 'ORKA', type: 'Personaje — Antagonista menor', desc: 'Sobrino de Jarl Sigrún. Drengr. Pelo negro aceitado, espada al cinto, gota permanente de moco. Vanidoso, arrogante, con algo de técnica de combate pero sin experiencia real en batalla. Cap.12: Perdió el holmganga ante Virk —le seccionaron los músculos del hombro derecho—. Se rindió pero luego insultó a Virk tras el duelo, provocando que este intentara matarlo. Se salvó gracias a la intervención de la thrall. Sigue siendo niðing moral aunque sobrevivió.',
         star: '★ Humillado públicamente pero vivo. Tiene una deuda no resuelta con Mord y Lif. Su arrogancia postduelo dejó claro que no ha aprendido nada.'
     },
     {
-        id: 'guerrero-oscuro', label: 'Guerrero Desconocido', group: 'VARG', type: 'Personaje — ¿Misterio?', desc: 'Cap.11. Delgado, estatura media. Cabeza rapada excepto una larga trenza negra brillante como azabache. Piel oscura (único así entre los Hermanos de tez clara). Kaftan gris de lana abrochado al centro, calzones anchos con vendas ajustadas tobillo-rodilla. Escudo negro con salpicaduras rojas. Espada curva de un solo filo. Sparring con Glornir. Varg lo ve familiar, sin saber por qué.',
-        star: '★★★ Sin nombre. Sin presentación. Varg lo reconoce de algo pero no sabe de qué. Origen posiblemente en Iskidan (piel oscura, kaftan, espada curva = estética del sur). Presencia muy deliberada del autor.'
+        id: 'guerrero-oscuro', label: 'Sulich', group: 'VARG', type: 'Personaje — Hermanos (Iskidano)', desc: 'Cap.11: Delgado, estatura media. Cabeza rapada excepto una larga trenza negra brillante como azabache. Piel oscura (único de tez oscura entre los Hermanos). Kaftan gris de lana abrochado al centro, calzones anchos con vendas ajustadas tobillo-rodilla. Escudo negro con salpicaduras rojas. Espada curva de un solo filo. Sparring con Glornir. Varg lo reconoce sin saber por qué. Cap.13: Nombre revelado — Sulich. Miembro pleno de los Hermanos de Sangre, ha prestado juramento de sangre. Origen: Iskidan (su apariencia y armamento coinciden con los druzhina del Príncipe Jaromir). Jaromir irrumpe en el mead-hall reclamándolo por "grandes crímenes". Sulich come mutton ahumado con total calma mientras el príncipe lo confronta, sin dignarse mirarlo. Glornir se niega a entregarlo — el juramento de sangre es inviolable.',
+        star: '★★★ Nombre confirmado: Sulich. ¿Qué crímenes cometió en Iskidan que hacen que un príncipe cruce el whale road para reclamarlo? Su calma es inquietante. El enfrentamiento queda sin resolver — Jaromir regresará mañana con evidencia.'
     },
     {
         id: 'guest-right', label: 'Derecho de Huésped', group: 'NORSE', type: 'Ley — Hospitalidad', desc: 'Obligación sagrada de proteger y alimentar a huéspedes bajo tu techo. Romperlo es deshonra grave. Jarl Logur hospeda a los Hermanos de Sangre en su sala. Agnar ofrece gachas a Berak prisionero (mínima cortesía incluso a enemigos). [Histórico: la hospitalidad (gestrisni) era ley sagrada nórdica. Matar a un huésped bajo tu techo era uno de los peores crímenes. Las sagas están llenas de traiciones que violan guest-right. Gwynne lo preserva como código social vigente.]',
@@ -272,8 +272,8 @@ const nodes = [
         star: 'El volcán tiembla. Lik-Rifa está activa.'
     },
     {
-        id: 'iskidan', label: 'Iskidan', group: 'LUGAR', type: 'Lugar — Imperio Lejano', desc: 'Imperio lejano gobernado por el Emperador Kirill desde la gran ciudad de Gravka. Acusado de uso masivo de thralls y de sacrificar niños —aunque Sigrun lo descarta. Posible amenaza exterior o conexión con los misterios de Vigríð.',
-        star: ''
+        id: 'iskidan', label: 'Iskidan', group: 'LUGAR', type: 'Lugar — Imperio Lejano', desc: 'Imperio lejano al sur/este, gobernado por el Gran Khagan Kirill el Magnífico desde Gravka. Cap.13: su presencia es directa por primera vez — el Príncipe Jaromir y su guardia druzhina llegan a Liga en barco. Sus guerreros visten armadura laminar (lamellar plate) que brilla como escamas de pez, yelmos de hierro con plumón de crin de caballo y cortinas de malla remachada para proteger el cuello, portan carcajs y arcos, sables curvos y hachas de asta larga. Cabello en una sola trenza larga desde bajo el yelmo. El sistema político es de Khagan/príncipes, no jarls.',
+        star: '★★ Iskidan ya no es solo rumor — sus guerreros están en Liga. El sistema de poder (Khagan → príncipes → druzhina) es radicalmente distinto al sistema jarl nórdico de Vigríð.'
     },
     {
         id: 'islas-hielo', label: 'Islas del Hielo', group: 'LUGAR', type: 'Lugar — Ártico', desc: 'Al norte de Iskalt. En primavera el hielo se rompe y deriva hacia el sur, afectando la navegación. Hogar de las Arañas del Hielo y vaesen del ártico. Frontera natural del mundo conocido.',
@@ -288,16 +288,16 @@ const nodes = [
         star: ''
     },
     {
-        id: 'jarl-logur', label: 'Jarl Logur', group: 'FACCION', type: 'Personaje — Política', desc: 'Aloja a los Hermanos de Sangre en su sala de festín. Sus escudos son azules y sus velas rojas. El juicio de Varg tiene lugar en su sala.',
-        star: ''
+        id: 'jarl-logur', label: 'Jarl Logur', group: 'FACCION', type: 'Personaje — Política', desc: 'Jarl de Liga. Aloja a los Hermanos de Sangre en su sala de festín. Sus escudos son azules y sus velas rojas. Cap.13: Aspecto físico revelado — barriludo, vientre que estira la túnica bordada, cabello gris largo y trenzado con hilo de oro, oro en cuello y brazos. Hombre que ríe mucho. Viejo amigo y cómplice de Sergei el mercader ("viejo zorro"). Sienta a Glornir a su izquierda en la mesa de honor. Cuando Jaromir reclama a Sulich, Logur defiende la ley: sin pruebas ante el Althing, no puede apoyar la demanda del príncipe. Equilibrista político — no desafía a Jaromir abiertamente pero tampoco traiciona a los Hermanos.',
+        star: '★ Su hospitalidad y lealtad a Glornir son genuinas, no solo diplomáticas. Frena la escalada con Jaromir citando la ley del Althing.'
     },
     {
         id: 'jarl-orlyg', label: 'Jarl Orlyg', group: 'ORKA', type: 'Personaje — Política', desc: 'Jarl de Svelgarth, al este de Vigríð. Presente en el contexto político del Althing. Otro jarl menor cuya posición ante la expansión de Helka y Störr está por definirse.',
         star: ''
     },
     {
-        id: 'jokul', label: 'Jökul', group: 'VARG', type: 'Personaje — Hermanos', desc: 'Herrero de los Hermanos de Sangre. Forjó la protección de hierro en la entrepierna de Einar Medio-Trol, protección que se hizo famosa y objeto de burlas. Artesano vital para el equipo de la compañía.',
-        star: ''
+        id: 'jokul', label: 'Jökul Mano-Martillo', group: 'VARG', type: 'Personaje — Hermanos', desc: 'Herrero de los Hermanos de Sangre. Apodo: Mano-Martillo. Cap.13: descrito como ancho de cintura, sentado cerca de Svik y Røkia (lugar de honor). Torvik lo describe como "el mejor herrero de todo Vigríð" — y también el más rápido, para mantener el equipo de la compañía en campaña. Forjó el armring de plata y bronce de Torvik (dos cabezas de sabueso en los terminales) — pieza de belleza y valor excepcionales. También forjó la protección de hierro en la entrepierna de Einar Medio-Trol.',
+        star: '★ Su habilidad va más allá de la utilidad — crea arte. El armring de Torvik vale más que todo lo que Varg ganó en el ring de boxeo.'
     },
     {
         id: 'karl', label: 'Karl (Hombre Libre)', group: 'NORSE', type: 'Clase Social', desc: 'Hombre libre. Granjeros, artesanos, comerciantes. Pueden portar armas, poseer tierra, hablar en el Althing. Orka y Thorkel viven como karls en las colinas. [Histórico: los karlar eran la clase media nórdica: libres pero no nobles. Gwynne preserva la estructura social tripartita (thrall-karl-jarl) como base de Vigríð.]',
@@ -308,8 +308,8 @@ const nodes = [
         star: 'Probable embarcación de jarls menores como Sigrún para patrullar fiordos y cobrar tributos.'
     },
     {
-        id: 'kennings', label: 'Kennings / Epítetos', group: 'NORSE', type: 'Lenguaje — Poético', desc: 'Nombres poéticos descriptivos. Glornir "Rompe-Escudos" y "Dador-de-Oro". Einar "Medio-Trol". Svik "Pelo-Enredado" (irónico). Los epítetos describen hazañas, características, o son irónicos. [Histórico: los kennings eran metáforas poéticas nórdicas complejas ("camino de la ballena" = mar). Los epítetos (viðrnefni) eran más simples: apodos descriptivos. Gwynne usa epítetos para caracterización rápida.]',
-        star: '★ Los epítetos revelan reputación: "Rompe-Escudos" = guerrero temible, "Dador-de-Oro" = líder generoso. Svik "Pelo-Enredado" es irónico — su pelo está perfectamente trenzado.'
+        id: 'kennings', label: 'Kennings / Epítetos', group: 'NORSE', type: 'Lenguaje — Poético', desc: 'Nombres poéticos descriptivos. Glornir: "Rompe-Escudos" (Røkia), "Dador-de-Oro" (él mismo), "Robador-de-Almas" (Svik), "Cortador-Golpeador-Aplastador" (Einar). Einar "Medio-Trol". Svik "Pelo-Enredado" (irónico). Jökul "Mano-Martillo". Varg "Sin-Sentido" (Varg No-Sense — por morder a Einar). Los epítetos describen hazañas, características, o son irónicos. [Histórico: los kennings eran metáforas poéticas nórdicas complejas ("camino de la ballena" = mar). Los epítetos (viðrnefni) eran más simples: apodos descriptivos. Gwynne los usa para caracterización rápida.]',
+        star: '★ Cap.13: Glornir acumula al menos 4 kennings distintos en una sola escena — cada compañero lo ve diferente. Varg recibe su primer apodo: "Sin-Sentido". Los kennings son identidad en Vigríð.'
     },
     {
         id: 'kergarth', label: 'Kergarth', group: 'LUGAR', type: 'Lugar — Villa', desc: 'Villa a 6 leguas al este de Fellur. Una familia entera fue asesinada y sus hijos desaparecieron. Tercer caso conocido del patrón de robos. El patrón se extiende por un radio de al menos 12 leguas.',
@@ -552,8 +552,8 @@ const nodes = [
         star: ''
     },
     {
-        id: 'varg', label: 'Varg', group: 'VARG', type: 'POV — Personaje', desc: 'Ex-thrall de Snepil, por ~30 inviernos en la granja de Kolskegg, lo asesino y escapo. Cabeza rapada. Hermana Frøya muerta. Episodios de furia roja disociativa que no recuerda. Boxeador formidable (100 combates para Kolskegg). Llevaba de 9–10 días huyendo antes de llegar a Liga buscando que una Seiðr-witch haga un akáll (invocación). Lleva una bolsa de cuero en el cinturón que parece contener algo relacionado con Frøya. 6 días inconsciente por fiebre de herida de lanza de Leif, ya recuperado. Recibe entrenamiento de escudo de Røkia por órdenes de Glornir.',
-        star: 'Furia roja sin memoria = posible sangre Tainted. La bolsita al cinturón probablemente contiene algo de Frøya. Instintos de combate naturales que sorprenden a Røkia.'
+        id: 'varg', label: 'Varg', group: 'VARG', type: 'POV — Personaje', desc: 'Ex-thrall de Snepil, por ~30 inviernos en la granja de Kolskegg, lo asesino y escapo. Cabeza rapada. Hermana Frøya muerta. Episodios de furia roja disociativa que no recuerda. Boxeador formidable (100 combates para Kolskegg). Llevaba de 9–10 días huyendo antes de llegar a Liga buscando que una Seiðr-witch haga un akáll (invocación). Lleva una bolsa de cuero en el cinturón que parece contener algo relacionado con Frøya. 6 días inconsciente por fiebre de herida de lanza de Leif, ya recuperado. Recibe entrenamiento de escudo de Røkia por órdenes de Glornir. Cap.13: primer festín en la sala del Jarl Logur. Se sienta en el lugar menos honrado (extremo más lejano del jarl). Conoce a Torvik, otro aspirante a Hermano. Apodo que le ponen: "Varg Sin-Sentido" por haber mordido a Einar. Siente un destello de alegría al verse libre, comiendo en mesa de jarl — seguido de culpa inmediata por disfrutar algo cuando Frøya está muerta. Comprende que debe probarse antes de poder unirse plenamente.',
+        star: 'Furia roja sin memoria = posible sangre Tainted. La bolsita al cinturón probablemente contiene algo de Frøya. Cap.13: el apodo "Sin-Sentido" y la culpa/alegría revelan su conflicto interno — quiere vivir pero siente que no tiene derecho todavía.'
     },
     {
         id: 'vergelmir', label: 'Vergelmir', group: 'LUGAR', type: 'Lugar — Mítico', desc: 'Cámara subterránea bajo Oskutreð. Allí Lik-Rifa está encadenada y devora almas de guerreros muertos. El camino de los muertos pasa por aquí: por eso los guerreros nórdicos son enterrados con armas en la mano, para poder combatirla. Grend afirma que los guerreros «atraviesan Vergelmir en el camino del alma».',
@@ -590,5 +590,65 @@ const nodes = [
     {
         id: 'wyrd', label: 'Wyrd (Destino)', group: 'NORSE', type: 'Concepto — Filosofía', desc: 'Destino inevitable. Los guerreros nórdicos de Vigríð creen que su wyrd está tejido y no puede evitarse. Morir con honor es cumplir el wyrd. [Histórico: wyrd (nórdico antiguo: urðr) era el concepto nórdico del destino tejido por las Nornas. No era predestinación cristiana sino red de consecuencias. Gwynne lo preserva como filosofía de vida en Vigríð.]',
         star: 'Los personajes hablan de wyrd como fuerza real. ¿Es solo creencia o hay magia del destino en Vigríð?'
+    },
+    {
+        id: 'torvik', label: 'Torvik', group: 'VARG', type: 'Personaje — Aspirante Hermanos', desc: 'Joven con la mitad de la edad de Varg. Pelo negro alborotado, mechones torcidos en la barbilla, ojos azules agudos. Túnica chamuscada con marcas de quemaduras y muñecas gruesas (por el trabajo de herrería). Scout de los Hermanos bajo la escoutmaestre Edel; también aprendiz de Jökul Mano-Martillo. Aún no ha prestado el juramento de sangre —debe probar valentía o lealtad primero, igual que Varg. Entusiasta hasta la imprudencia: en el festín declara que él y Varg serán "como hermanos". Porta un armring de plata con hilos de bronce y dos cabezas de sabueso en los terminales, forjado por Jökul — vale más que todo lo que Varg ganó boxeando.',
+        star: '★ Él y Varg están en el mismo camino: aspirantes sin juramento. Su confianza contrasta con la desconfianza instintiva de Varg. ¿Competirán por el mismo puesto o se convertirán en aliados?'
+    },
+    {
+        id: 'edel', label: 'Edel', group: 'VARG', type: 'Personaje — Escoutmaestre', desc: 'Escoutmaestre de los Hermanos de Sangre. Mujer de cabello plateado que se sienta cerca de la mesa de honor en el festín, alimentando a sus sabuesos con coyunturas de carnero. Sus hounds son su herramienta de trabajo y su compañía constante. Torvik es su scout bajo su mando. Personalidad aún no explorada en detalle.',
+        star: '¿Qué habilidades especiales tiene como escoutmaestre? Sus sabuesos podrían rastrear vaesen o Tainted — paralelo con Hundur de los Terrores de la batalla.'
+    },
+    {
+        id: 'galinn', label: 'Galinn el Skáld', group: 'VARG', type: 'Personaje — Skáld', desc: 'El Skáld de Liga. Según Jarl Logur: "el mejor skáld de todo el mundo." Apariencia: pelo oscuro, apuesto, túnica verde de lana con trabajo de nudos bordado en cuello y dobladillo, anillos de plata brillando rojos en la luz de las antorchas. Toca una lira de siete cuerdas con música "dulce y melancólica". Cap.13: interpreta la saga completa de la Guðfalla ante toda la asamblea, llevando a los oyentes mentalmente al campo de batalla de los dioses. Desaparece en las sombras cuando llegan los visitantes de Iskidan.',
+        star: '★ La saga que recita es la descripción más completa del Guðfalla hasta ahora en la novela. Nuevo detalle cosmológico: Svin, Tosk, Rotta, el Vackna, el Monte Eldrafell. El skáld como portador de historia y memoria del mundo.'
+    },
+    {
+        id: 'sergei', label: 'Sergei Yanasson de Ulaz', group: 'FACCION', type: 'Personaje — Mercader Iskidano', desc: 'Mercader de Ulaz (ciudad o región de Iskidan). Viejo amigo y "viejo zorro" según Jarl Logur — se conocen hace mucho. Vestimenta: kaftan fino de lana, gorro con ribete de piel, pantalones amplios y a rayas con vendas ajustadas desde el tobillo hasta la rodilla. Sirve de intermediario y herald para el Príncipe Jaromir: anuncia su llegada de forma ceremonial aunque Logur le corta el protocolo por ser viejos amigos. Cuando el enfrentamiento entre Glornir y Jaromir escala, salta entre ellos para evitar el derramamiento de sangre en el hall.',
+        star: '★ Su papel de mediador es clave. Conoce las costumbres de Vigríð ("sus maneras no son las nuestras") y las usa para calmar al príncipe. ¿Tiene agenda propia además de servir a Jaromir?'
+    },
+    {
+        id: 'jaromir', label: 'Príncipe Jaromir', group: 'FACCION', type: 'Personaje — Poder Externo', desc: 'Hijo del Gran Khagan Kirill el Magnífico de Iskidan. Príncipe de Gravka y todo Iskidan. Cabeza rapada, trenza rubia sobre el hombro, ojos azules penetrantes, cara angular y guapa, barba corta bien recortada. Armadura laminar glistening, yelmo de hierro con borde de oro, empuñadura de espada con hilo de oro. Un halcón en el antebrazo (símbolo de rango). Escoltado por dos druzhina (Ilia y otro). Cap.13: llega sin aviso a Liga para reclamar a Sulich de los Hermanos, alegando "grandes crímenes". Es directo, intimidante y condescendiente ("el mejor latrine-pit de Gravka es mejor que este hall"), pero se contiene cuando Sergei intercede. Da un ultimátum: regresará mañana con pruebas y testigos y exigirá justicia ante el Althing. No preguntará una tercera vez.',
+        star: '★★★ Su llegada sacude todo el arco de Varg. ¿Qué crímenes cometió Sulich en Iskidan? El ultimátum está abierto — esto no termina aquí.'
+    },
+    {
+        id: 'ilia', label: 'Ilia', group: 'FACCION', type: 'Personaje — Druzhina', desc: 'Una de las dos druzhina que escoltan al Príncipe Jaromir. Mujer. Armadura laminar, yelmo con penacho de crin, malla remachada. Cap.13: cuando Glornir se niega a entregar a Sulich, Ilia da un paso al frente y agarra su sable, ofreciéndose a "tomar su cabeza por su insolencia". El príncipe la detiene con una palabra ("Hold, Ilia"). Temperamento: leal, explosiva, sin miedo a confrontar a toda una sala de guerreros.',
+        star: 'Dispuesta a desafiar a 60+ Hermanos de Sangre armados sin dudarlo — o es fanática o confía ciegamente en Jaromir.'
+    },
+    {
+        id: 'druzhina', label: 'Druzhina (Élite de Iskidan)', group: 'FACCION', type: 'Concepto — Institución Militar', desc: 'Guardia de élite personal de los príncipes y del Gran Khagan de Iskidan. Escalan con el rango: un príncipe tiene 2 druzhina; el Gran Khagan tiene 200. Equipo distintivo: armadura laminar (lamellar plate) que brilla como escamas de pez, yelmos de hierro con plumón de crin de caballo y cortinas de malla remachada, carcajs y arcos, sables curvos, hachas de asta larga y hoja pequeña. Cabello en una sola trenza larga. [Histórico: la druzhina histórica era la guardia personal de los príncipes eslavos y rusos (s. IX-XIII). Sistema de lealtad personal similar al hird nórdico. Gwynne la adapta a Iskidan como equivalente oriental del hird.]',
+        star: '★ Paralelo cultural con el hird nórdico: en ambos sistemas la lealtad personal al señor lo es todo. La diferencia es la escala — el Khagan proyecta poder a escala imperial.'
+    },
+    {
+        id: 'sulich-crisis', label: 'Crisis por Sulich', group: 'TRAMA', type: 'Trama — Abierta (urgente)', desc: 'Cap.13: el Príncipe Jaromir de Iskidan llega a Liga reclamando a Sulich de los Hermanos de Sangre, alegando que cometió "grandes crímenes" en Iskidan. Glornir se niega rotundamente — el juramento de sangre protege a todos los Hermanos. Toda la sala (60+ guerreros) se pone en pie junto a Glornir. Sergei intercede para evitar la batalla. Jaromir se retira pero promete regresar mañana con evidencia y testigos para presentar ante el Althing de Logur. "No preguntaré una tercera vez." El conflicto está en pausa — no resuelto.',
+        star: '★★★ TRAMA ABIERTA URGENTE. Jaromir regresa mañana. Glornir defenderá a Sulich con la vida. ¿Qué crímenes cometió Sulich? ¿Tiene el Althing jurisdicción sobre disputas con Iskidan? ¿Puede Logur ignorar a un príncipe y mantener el comercio con Iskidan?'
+    },
+    {
+        id: 'vackna', label: 'Vackna (Cuerno-Despertador)', group: 'COSMO', type: 'Objeto Mítico — Cosmología', desc: 'El cuerno que inició la Guðfalla. Según la saga de Galinn: "El Vackna sonó fuerte, cuerno-despertador audaz y sonoro, resonando en las colinas mientras el sol rojo ascendía, llenando todo Vigríð." Su sonido despertó a los dioses de su sueño y señaló el comienzo de la guerra divina que destruyó el viejo mundo. [Paralelo con el Gjallarhorn de la mitología nórdica real, tocado por Heimdallr para convocar a los dioses al Ragnarök. Gwynne lo transforma en "Vackna" (del nórdico vakna = despertar) con función similar pero integrada en su cosmología propia.]',
+        star: '¿Existe todavía el Vackna? ¿Puede volver a sonar? En el Ragnarök nórdico original el cuerno marca tanto el fin del mundo viejo como el nacimiento del nuevo.'
+    },
+    {
+        id: 'eldrafell', label: 'Monte Eldrafell', group: 'LUGAR', type: 'Lugar — Mítico', desc: 'Montaña volcánica donde cayó Snaka durante el Guðfalla. Según la saga de Galinn: "Snaka cayó — su veneno ardiente, su cuerpo rompiendo la tierra, montaña quebrando, quebró las laderas del Monte Eldrafell." Su caída formó el volcán o lo amplió. [Eldrafell = posiblemente del nórdico "eldur" (fuego) + "fell" (montaña) = "Montaña de Fuego". En la mitología real nórdica, el cuerpo de Ymir formó el mundo; Gwynne hace que el cuerpo de Snaka forme el paisaje volcánico de Vigríð.]',
+        star: '¿Es Eldrafell la misma montaña de fuego de Iskalt que tiembla en los capítulos anteriores? Si Snaka cayó allí, su cuerpo podría ser el origen literal de los temblores — no Lik-Rifa.'
+    },
+    {
+        id: 'svin', label: 'Svin (Dios-Jabalí)', group: 'DIOS', type: 'Dios Muerto — Secundario', desc: 'Uno de los hijos de Snaka. Epíteto en la saga de Galinn: "Svin el Valiente". Combatió en la Guðfalla. Su linaje entre los Tainted y su forma de muerte no han sido revelados aún en los capítulos leídos. [Del nórdico svín = jabalí. En la mitología nórdica, el jabalí era animal sagrado asociado con Freyr y la fertilidad. Gwynne lo convierte en una deidad independiente dentro de su panteón de hijos de Snaka.]',
+        star: '¿Cuál es el poder de los Tainted con sangre de Svin? ¿Dónde está su cuerpo muerto?'
+    },
+    {
+        id: 'tosk', label: 'Tosk (Dios Travieso)', group: 'DIOS', type: 'Dios Muerto — Secundario', desc: 'Uno de los hijos de Snaka. Epíteto en la saga de Galinn: "Tosk el Travieso". Combatió en la Guðfalla. Su aspecto, linaje y muerte no han sido revelados aún. [Paralelo posible con Loki nórdico: el embaucador/trickster del panteón. Gwynne lo incluye entre los hijos de Snaka que lucharon en la guerra de los dioses.]',
+        star: '¿Hay Tainted de sangre Tosk con poderes de engaño o ilusión? Su epíteto "travieso" insinúa habilidades no directamente marciales.'
+    },
+    {
+        id: 'rotta', label: 'Rotta (Dios Engañoso)', group: 'DIOS', type: 'Dios Muerto — Secundario', desc: 'Uno de los hijos de Snaka. Epíteto en la saga de Galinn: "Rotta el Engañoso". Combatió en la Guðfalla. Su nombre puede venir del nórdico antiguo rotta (rata) — animal asociado con la traición y los secretos. Podría ser el dios del sigilo, la traición o la información. Su muerte y descendencia Tainted no han sido reveladas.',
+        star: '★ El nombre "Rotta" (rata) + epíteto "engañoso" sugiere que su sangre Tainted podría conferir habilidades de sigilo, infiltración o manipulación. El dios más peligroso en la sombra.'
+    },
+    {
+        id: 'logur-wife', label: 'Esposa de Logur (sin nombre)', group: 'FACCION', type: 'Personaje — Secundario', desc: 'Esposa del Jarl Logur de Liga. Alta y elegante, cara abierta y honesta. Cabello trenzado y apilado en la cabeza, más gris que rubio. Viste vestido de lana azul profundo con un hangerock (delantal) bordado encima, y un cinturón de tablet-weave que tintinea con llaves — las llaves del hall, símbolo de la señora del hogar. Se sienta a la derecha del Jarl Logur en la mesa de honor. Ríe y empuja el hombro de Logur cuando este le susurra algo al oído. Nombre no revelado.',
+        star: 'Las llaves en el cinturón = administradora del hall. En el mundo nórdico la señora del hogar controlaba los almacenes, las provisiones, la economía doméstica. Su elegancia contrasta con el estilo barrigón de Logur.'
+    },
+    {
+        id: 'gudfall-saga-galinn', label: 'Saga del Guðfalla (Galinn)', group: 'EVENTO', type: 'Evento — Cap.13', desc: 'El Skáld Galinn recita la saga completa del Guðfalla en el festín del Jarl Logur. Es la primera narración poética completa de la caída de los dioses en la novela. Revela: el Vackna que inició la guerra, los nombres y epítetos de todos los dioses que combatieron, cómo murieron (Berser perforado, Orna desgarrada, Ulfrir muerto, Lik-Rifa encadenada, Snaka caído en Eldrafell), y que los vaesen "treparon desde el foso" tras la caída. Toda la sala queda absorta — Varg siente que está de pie en la Llanura de Batalla viendo la guerra. La saga se interrumpe cuando los mensajeros de Iskidan aporrean las puertas.',
+        star: '★★ Función narrativa dual: proporciona al lector la cosmología completa Y el timing de la llegada de Jaromir genera tensión dramática máxima al interrumpir el momento más épico del festín.'
     },
 ];
