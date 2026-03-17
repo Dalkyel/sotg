@@ -684,7 +684,7 @@ const links = [
     { source: 'decision-huida', target: 'orka', label: 'propone', type: 'event' },
     { source: 'decision-huida', target: 'thorkel', label: 'acepta', type: 'event' },
     { source: 'decision-huida', target: 'thrall-sigrun', label: 'motivada por amenaza de', type: 'trama' },
-    { source: 'decision-huida', target: 'gritos-oeste', label: 'interrumpida por', type: 'event' },
+    { source: 'decision-huida', target: 'ataque-steading', label: 'interrumpida por', type: 'event' },
     // Barrow de Virk
     { source: 'barrow-virk', target: 'cat-eventos', label: '', type: 'event' },
     { source: 'barrow-virk', target: 'virk', label: 'tumulo de', type: 'event' },
@@ -692,11 +692,6 @@ const links = [
     { source: 'barrow-virk', target: 'orka', label: 'ayudo a construir', type: 'event' },
     { source: 'barrow-virk', target: 'thorkel', label: 'ayudo a construir', type: 'event' },
     { source: 'barrow-virk', target: 'funeral-rites', label: 'practica de', type: 'lore' },
-    // Gritos al oeste
-    { source: 'gritos-oeste', target: 'cat-tramas', label: '', type: 'arc' },
-    { source: 'gritos-oeste', target: 'orka', label: 'escucha -- steading en peligro?', type: 'event' },
-    { source: 'gritos-oeste', target: 'ninos-robados', label: 'posiblemente relacionados', type: 'trama' },
-    { source: 'gritos-oeste', target: 'steading', label: 'direccion del steading de Orka', type: 'geo' },
     // Mord y Lif
     { source: 'mord-lif', target: 'barrow-virk', label: 'construyeron', type: 'event' },
     // ==========================================================
@@ -718,6 +713,7 @@ const links = [
     // CAPITULO 17 -- NUEVOS ENLACES
     // ==========================================================
     // Ataque steading
+    { source: 'ataque-steading', target: 'orka', label: 'escucha gritos al oeste en direccion del steading de Orka', type: 'geo' },
     { source: 'ataque-steading', target: 'cat-eventos', label: '', type: 'event' },
     { source: 'ataque-steading', target: 'thorkel-muerte', label: 'causa', type: 'event' },
     { source: 'ataque-steading', target: 'breca', label: 'Breca raptado en', type: 'event' },
