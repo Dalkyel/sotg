@@ -22,7 +22,7 @@ const links = [
     { source: 'orka', target: 'thrall-sigrun', label: 'observa lamiendo sangre de Thorkel', type: 'event' },
     { source: 'orka', target: 'second-combat', label: 'segundo de Virk', type: 'event' },
     { source: 'orka', target: 'karl', label: 'vive como', type: 'rel' },
-    { source: 'orka', target: 'froa', label: 'encontro muerta', type: 'event' },
+    { source: 'orka', target: 'froa', label: 'encontro muerta / buscaba consejo', type: 'event' },
     { source: 'orka', target: 'barrow-virk', label: 'ayudo a construir', type: 'event' },
     { source: 'orka', target: 'decision-huida', label: 'propone huir', type: 'event' },
     { source: 'orka', target: 'thorkel-muerte', label: 'presencio', type: 'event' },
@@ -97,7 +97,6 @@ const links = [
     { source: 'drekr', target: 'cat-orka', label: '', type: 'arc' },
     { source: 'drekr', target: 'ninos-robados', label: 'lider de la operacion', type: 'rel' },
     { source: 'drekr', target: 'ataque-steading', label: 'ordeno el ataque', type: 'event' },
-    { source: 'drekr', target: 'breca', label: 'rapto a', type: 'conflict' },
     { source: 'drekr', target: 'galdurman-drekr', label: 'tiene en su banda', type: 'rel' },
     { source: 'drekr', target: 'dragon-born', label: 'opera con al menos uno', type: 'trama' },
     { source: 'drekr', target: 'asgrim-death', label: 'posiblemente ordeno', type: 'trama' },
@@ -152,7 +151,6 @@ const links = [
     { source: 'vol', target: 'akall', label: 'dispuesta pero bloqueada', type: 'goal' },
     { source: 'vol', target: 'partida-liga', label: 'zarpa con Hermanos', type: 'event' },
     // Glornir
-    { source: 'glornir', target: 'bloodsworn', label: 'jefe', type: 'rel' },
     { source: 'glornir', target: 'varg-aprendiz', label: 'define condiciones', type: 'rel' },
     { source: 'glornir', target: 'partida-liga', label: 'ordena', type: 'event' },
     { source: 'glornir', target: 'batalla-muelles', label: 'lidera en', type: 'event' },
@@ -191,7 +189,6 @@ const links = [
     { source: 'jaromir', target: 'ilia', label: 'druzhina', type: 'rel' },
     { source: 'jaromir', target: 'druzhina', label: 'escoltado por', type: 'rel' },
     // Ilia
-    { source: 'ilia', target: 'jaromir', label: 'druzhina de', type: 'rel' },
     { source: 'ilia', target: 'druzhina', label: 'es', type: 'lore' },
     { source: 'ilia', target: 'sulich-crisis', label: 'dispuesta a matar', type: 'event' },
     // sea-wolf
@@ -245,7 +242,6 @@ const links = [
     { source: 'uspa', target: 'bjarn', label: 'madre de Bjarn', type: 'rel' },
     { source: 'uspa', target: 'dragon-born', label: 'escupitajo sospechoso', type: 'trama' },
     // Hijo-berak (Bjarn)
-    { source: 'bjarn', target: 'berak', label: 'hijo de', type: 'rel' },
     { source: 'bjarn', target: 'snaka', label: 'sangre (por Uspa)', type: 'lore' },
     { source: 'bjarn', target: 'berser', label: 'sangre (por Berak)', type: 'lore' },
     { source: 'bjarn', target: 'tainted', label: 'doble linaje divino', type: 'lore' },
@@ -275,7 +271,6 @@ const links = [
 
     // -------------------------------------------------------------------------------------- //
     // Lenguajes
-    { source: 'galdur', target: 'galdur', label: '', type: 'arc' },
     { source: 'galdur', target: 'cat-magia', label: 'Lenguaje Magico', type: 'arc' },
     { source: 'galdur', target: 'collares', label: 'activa', type: 'magic' },
 
@@ -324,7 +319,6 @@ const links = [
     // Hundur
     { source: 'hundur-dios', target: 'cat-dioses', label: '', type: 'lore' },
     { source: 'hundur-dios', target: 'gudfall', label: 'combatió en', type: 'history' },
-    { source: 'hundur-dios', target: 'hundur', label: 'fuente del linaje', type: 'lore' },
 
     // -------------------------------------------------------------------------------------- //
     // Cat-magia
@@ -394,7 +388,6 @@ const links = [
     { source: 'froa', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
     { source: 'froa', target: 'arbol-froa', label: 'ligada a / murio con', type: 'lore' },
     { source: 'froa', target: 'oskutred', label: 'nacida de semilla de', type: 'lore' },
-    { source: 'froa', target: 'orka', label: 'conocidas -- Orka buscaba consejo', type: 'rel' },
     { source: 'froa', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
     { source: 'froa', target: 'ninos-robados', label: 'destruida por mismos agresores?', type: 'trama' },
     // Night-wyrm
@@ -415,7 +408,6 @@ const links = [
     { source: 'ninos-robados', target: 'howbyr', label: 'caso en', type: 'geo' },
     { source: 'ninos-robados', target: 'rio-skarpain', label: 'ruta de huida', type: 'geo' },
     { source: 'ninos-robados', target: 'asgrim', label: 'víctimas', type: 'trama' },
-    { source: 'ninos-robados', target: 'drekr', label: 'liderado por', type: 'rel' },
     // Berak-venta-event
     { source: 'berak-venta', target: 'cat-tramas', label: '', type: 'arc' },
     { source: 'berak-venta', target: 'berak', label: 'Sera vendido', type: 'trama' },
@@ -473,7 +465,6 @@ const links = [
     { source: 'brynja', target: 'cat-objetos', label: '', type: 'arc' },
     // Colgante espada Breca
     { source: 'colgante-espada', target: 'breca', label: 'lo lleva', type: 'rel' },
-    { source: 'colgante-espada', target: 'thorkel', label: 'lo tallo', type: 'rel' },
     { source: 'colgante-espada', target: 'cat-objetos', label: '', type: 'arc' },
     // Vackna
     { source: 'vackna', target: 'cat-dioses', label: '', type: 'arc' },
@@ -489,7 +480,6 @@ const links = [
     { source: 'objeto-viga', target: 'cat-objetos', label: '', type: 'arc' },
     { source: 'objeto-viga', target: 'liga', label: 'ubicado en hall de', type: 'geo' },
     { source: 'objeto-viga', target: 'gods-bones', label: 'posible reliquia', type: 'trama' },
-    { source: 'objeto-viga', target: 'skullsplitter', label: 'regalo de', type: 'lore' },
 
     // -------------------------------------------------------------------------------------- //
     // ── ENLACES CULTURA NÓRDICA ────────────────────────────────────
@@ -621,6 +611,7 @@ const links = [
     // Blood-Eagle
     { source: 'blood-eagle', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'blood-eagle', target: 'gallows-wood', label: 'imitación humana de', type: 'lore' },
+
     // ══════════════════════════════════════════════════════════════
     // CAPÍTULO 13 — NUEVOS ENLACES
     // ══════════════════════════════════════════════════════════════
@@ -640,12 +631,9 @@ const links = [
     { source: 'gudfall-saga-galinn', target: 'svin', label: 'menciona', type: 'lore' },
     { source: 'gudfall-saga-galinn', target: 'tosk', label: 'menciona', type: 'lore' },
     { source: 'gudfall-saga-galinn', target: 'rotta', label: 'menciona', type: 'lore' },
-    { source: 'gudfall-saga-galinn', target: 'vackna', label: 'menciona', type: 'lore' },
-    { source: 'gudfall-saga-galinn', target: 'eldrafell', label: 'menciona', type: 'lore' },
     // Relaciones nuevas de nodos ya existentes
-    { source: 'sulich', target: 'sulich-crisis', label: 'centro de la crisis', type: 'conflict' },
     { source: 'sulich', target: 'iskidan', label: 'origen probable', type: 'trama' },
-    { source: 'jarl-logur', target: 'salla', label: 'esposo', type: 'rel' },
+
     // ══════════════════════════════════════════════════════════════
     // CAPÍTULO 14 — NUEVOS ENLACES
     // ══════════════════════════════════════════════════════════════
@@ -660,15 +648,13 @@ const links = [
     { source: 'gallows-wood', target: 'likrafa', label: 'crimen que lo detonó', type: 'history' },
     { source: 'gallows-wood', target: 'orna', label: 'Orna vengó a su hija', type: 'history' },
     { source: 'gallows-wood', target: 'ulfrir', label: 'Ulfrir vengó a su hija', type: 'history' },
-    { source: 'gallows-wood', target: 'blood-eagle', label: 'origen del ritual', type: 'lore' },
     // Dragon-born
     { source: 'dragon-born', target: 'cat-tramas', label: '', type: 'arc' },
     { source: 'dragon-born', target: 'likrafa', label: 'posible descendencia', type: 'trama' },
     { source: 'dragon-born', target: 'tainted', label: 'linaje no confirmado', type: 'trama' },
-    { source: 'dragon-born', target: 'elvar', label: 'niega su existencia', type: 'conflict' },
-    { source: 'dragon-born', target: 'uspa', label: 'reacción de Uspa', type: 'trama' },
     { source: 'dragon-born', target: 'thorkel-muerte', label: 'confirmado al morir', type: 'lore' },
     { source: 'dragon-born', target: 'likrafa', label: 'descendencia activa de', type: 'lore' },
+
     // ==========================================================
     // CAPITULO 15 -- NUEVOS ENLACES
     // ==========================================================
@@ -676,11 +662,9 @@ const links = [
     { source: 'ulfhednar', target: 'thrall-sigrun', label: 'es una', type: 'lore' },
     { source: 'ulfhednar', target: 'ulfrir', label: 'linaje de', type: 'lore' },
     { source: 'ulfhednar', target: 'tainted', label: 'subtipo de', type: 'lore' },
-    { source: 'ulfhednar', target: 'thorkel', label: 'conoce el termino', type: 'trama' },
     { source: 'ulfhednar', target: 'decision-huida', label: 'amenaza que motiva', type: 'trama' },
     // Decision de huida
     { source: 'decision-huida', label: '', target: 'cat-tramas', type: 'arc' },
-    { source: 'decision-huida', target: 'thorkel', label: 'acepta', type: 'event' },
     { source: 'decision-huida', target: 'thrall-sigrun', label: 'motivada por amenaza de', type: 'trama' },
     { source: 'decision-huida', target: 'ataque-steading', label: 'interrumpida por', type: 'event' },
     // Barrow de Virk
@@ -689,39 +673,31 @@ const links = [
     { source: 'barrow-virk', target: 'mord-lif', label: 'construido por', type: 'event' },
     { source: 'barrow-virk', target: 'thorkel', label: 'ayudo a construir', type: 'event' },
     { source: 'barrow-virk', target: 'funeral-rites', label: 'practica de', type: 'lore' },
-    // Mord y Lif
-    { source: 'mord-lif', target: 'barrow-virk', label: 'construyeron', type: 'event' },
+
     // ==========================================================
     // CAPITULO 16 -- NUEVOS ENLACES
     // ==========================================================
     // Varg-aprendiz
     { source: 'varg-aprendiz', target: 'cat-tramas', label: '', type: 'arc' },
-    { source: 'varg-aprendiz', target: 'varg', label: 'define estatus de', type: 'rel' },
-    { source: 'varg-aprendiz', target: 'glornir', label: 'dictado por', type: 'rel' },
     { source: 'varg-aprendiz', target: 'akall', label: 'condiciona el', type: 'trama' },
     { source: 'varg-aprendiz', target: 'bloodsworn', label: 'paso previo a unirse a', type: 'rel' },
     // Partida de Liga
     { source: 'partida-liga', target: 'cat-eventos', label: '', type: 'event' },
     { source: 'partida-liga', target: 'bloodsworn', label: 'protagonista', type: 'rel' },
     { source: 'partida-liga', target: 'liga', label: 'desde', type: 'geo' },
-    { source: 'partida-liga', target: 'varg', label: 'zarpa como aprendiz', type: 'event' },
     { source: 'partida-liga', target: 'sulich-crisis', label: 'sin resolver al partir', type: 'trama' },
     // ==========================================================
     // CAPITULO 17 -- NUEVOS ENLACES
     // ==========================================================
     // Ataque steading
-    { source: 'ataque-steading', target: 'orka', label: 'escucha gritos al oeste en direccion del steading de Orka', type: 'geo' },
     { source: 'ataque-steading', target: 'cat-eventos', label: '', type: 'event' },
     { source: 'ataque-steading', target: 'thorkel-muerte', label: 'causa', type: 'event' },
-    { source: 'ataque-steading', target: 'breca', label: 'Breca raptado en', type: 'event' },
     { source: 'ataque-steading', target: 'spert', label: 'Spert herido en', type: 'event' },
     { source: 'ataque-steading', target: 'vesli', label: 'Vesli herida en', type: 'event' },
     { source: 'ataque-steading', target: 'galdurman-drekr', label: 'destruyo runas en', type: 'magic' },
-    { source: 'ataque-steading', target: 'chico-joven', label: 'abrio puerta en', type: 'event' },
     { source: 'ataque-steading', target: 'steading', label: 'destruyo el', type: 'event' },
     // Muerte de Thorkel
     { source: 'thorkel-muerte', target: 'cat-eventos', label: '', type: 'event' },
-    { source: 'thorkel-muerte', target: 'orka', label: 'encontro a Thorkel', type: 'event' },
     { source: 'thorkel-muerte', target: 'funeral-rites', label: 'axe en manos', type: 'lore' },
     // Galdurman de Drekr
     { source: 'galdurman-drekr', target: 'cat-tramas', label: '', type: 'arc' },
@@ -729,7 +705,6 @@ const links = [
     { source: 'galdurman-drekr', target: 'dragon-born', label: 'podria ser el mismo', type: 'trama' },
     // Caza de Drekr
     { source: 'drekr-cazadora', target: 'cat-tramas', label: '', type: 'arc' },
-    { source: 'drekr-cazadora', target: 'orka', label: 'protagonizada por', type: 'rel' },
     { source: 'drekr-cazadora', target: 'drekr', label: 'busca a', type: 'conflict' },
     { source: 'drekr-cazadora', target: 'breca', label: 'para recuperar a', type: 'goal' },
     // ==========================================================
@@ -737,16 +712,12 @@ const links = [
     // ==========================================================
     { source: 'batalla-muelles', target: 'cat-eventos', label: '', type: 'event' },
     { source: 'batalla-muelles', target: 'sulich-crisis', label: 'escalacion de', type: 'event' },
-    { source: 'batalla-muelles', target: 'glornir', label: 'derriba flecha en', type: 'event' },
     { source: 'batalla-muelles', target: 'jaromir', label: 'iniciada por', type: 'event' },
-    { source: 'batalla-muelles', target: 'varg', label: 'primera batalla de', type: 'event' },
     { source: 'batalla-muelles', target: 'einar', label: 'lanza la lanza en', type: 'event' },
     { source: 'batalla-muelles', target: 'edel', label: 'hounds en', type: 'event' },
     { source: 'batalla-muelles', target: 'llegada-helka', label: 'interrumpida por', type: 'event' },
     { source: 'batalla-muelles', target: 'liga', label: 'ocurre en', type: 'geo' },
     { source: 'llegada-helka', target: 'cat-eventos', label: '', type: 'event' },
-    { source: 'llegada-helka', target: 'helka', label: 'protagonizada por', type: 'rel' },
     { source: 'llegada-helka', target: 'liga', label: 'destino', type: 'geo' },
-    { source: 'llegada-helka', target: 'batalla-muelles', label: 'interrumpe', type: 'event' },
     { source: 'llegada-helka', target: 'orna', label: 'aguila en velas = emblema de', type: 'lore' },
 ];
