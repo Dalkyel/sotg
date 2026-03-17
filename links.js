@@ -104,7 +104,6 @@ const links = [
     // Chico joven
     { source: 'chico-joven', target: 'drekr', label: 'revelo el nombre', type: 'event' },
     { source: 'chico-joven', target: 'ataque-steading', label: 'abrio la puerta', type: 'event' },
-    { source: 'chico-joven', target: 'orka', label: 'interrogado y matado por', type: 'event' },
 
     // -------------------------------------------------------------------------------------- //
     // Cat-varg to varg chars
@@ -681,7 +680,6 @@ const links = [
     { source: 'ulfhednar', target: 'decision-huida', label: 'amenaza que motiva', type: 'trama' },
     // Decision de huida
     { source: 'decision-huida', label: '', target: 'cat-tramas', type: 'arc' },
-    { source: 'decision-huida', target: 'orka', label: 'propone', type: 'event' },
     { source: 'decision-huida', target: 'thorkel', label: 'acepta', type: 'event' },
     { source: 'decision-huida', target: 'thrall-sigrun', label: 'motivada por amenaza de', type: 'trama' },
     { source: 'decision-huida', target: 'ataque-steading', label: 'interrumpida por', type: 'event' },
@@ -689,7 +687,6 @@ const links = [
     { source: 'barrow-virk', target: 'cat-eventos', label: '', type: 'event' },
     { source: 'barrow-virk', target: 'virk', label: 'tumulo de', type: 'event' },
     { source: 'barrow-virk', target: 'mord-lif', label: 'construido por', type: 'event' },
-    { source: 'barrow-virk', target: 'orka', label: 'ayudo a construir', type: 'event' },
     { source: 'barrow-virk', target: 'thorkel', label: 'ayudo a construir', type: 'event' },
     { source: 'barrow-virk', target: 'funeral-rites', label: 'practica de', type: 'lore' },
     // Mord y Lif
