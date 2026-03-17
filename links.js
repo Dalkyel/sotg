@@ -122,7 +122,7 @@ const links = [
     { source: 'varg', target: 'thrall', label: 'ex-thrall', type: 'rel' },
     { source: 'varg', target: 'varg-aprendiz', label: 'definido como', type: 'rel' },
     { source: 'varg', target: 'partida-liga', label: 'zarpa en', type: 'event' },
-    { source: 'varg', target: 'objeto-viga', label: 'nota pero no pregunta', type: 'trama' },
+    { source: 'varg', target: 'objeto-viga', label: 'nota sin entender pero no pregunta', type: 'trama' },
     { source: 'varg', target: 'batalla-muelles', label: 'primera batalla', type: 'event' },
     { source: 'varg', target: 'aslog', label: 'hereda lanza y banco de', type: 'rel' },
     { source: 'varg', target: 'sea-wolf', label: 'servira en', type: 'rel' },
@@ -202,7 +202,6 @@ const links = [
     { source: 'sea-wolf', target: 'batalla-muelles', label: 'amenazado en', type: 'event' },
     // aslog
     { source: 'aslog', target: 'bloodsworn', label: 'fue miembro de', type: 'rel' },
-    { source: 'aslog', target: 'varg', label: 'lanza heredada por', type: 'rel' },
     // skullsplitter
     { source: 'skullsplitter', target: 'bloodsworn', label: 'jefe anterior de', type: 'rel' },
     { source: 'skullsplitter', target: 'jarl-logur', label: 'regalo relic a', type: 'rel' },
@@ -490,7 +489,6 @@ const links = [
     // Objeto en la viga
     { source: 'objeto-viga', target: 'cat-objetos', label: '', type: 'arc' },
     { source: 'objeto-viga', target: 'liga', label: 'ubicado en hall de', type: 'geo' },
-    { source: 'objeto-viga', target: 'varg', label: 'lo nota sin entender', type: 'trama' },
     { source: 'objeto-viga', target: 'gods-bones', label: 'posible reliquia', type: 'trama' },
     { source: 'objeto-viga', target: 'skullsplitter', label: 'regalo de', type: 'lore' },
 
