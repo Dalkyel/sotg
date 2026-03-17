@@ -652,4 +652,60 @@ const links = [
     { source: 'partida-liga', target: 'liga', label: 'desde', type: 'geo' },
     { source: 'partida-liga', target: 'varg', label: 'zarpa como aprendiz', type: 'event' },
     { source: 'partida-liga', target: 'sulich-crisis', label: 'sin resolver al partir', type: 'trama' },
+    // ==========================================================
+    // CAPITULO 17 -- NUEVOS ENLACES
+    // ==========================================================
+    // Thorkel -- muerte
+    { source: 'thorkel', target: 'thorkel-muerte', label: 'muere en', type: 'event' },
+    { source: 'thorkel', target: 'ataque-steading', label: 'defensor', type: 'event' },
+    { source: 'thorkel', target: 'dragon-born', label: 'confirma con ultima palabra', type: 'lore' },
+    { source: 'thorkel', target: 'drekr', label: 'muerto por banda de', type: 'conflict' },
+    // Drekr
+    { source: 'drekr', target: 'cat-orka', label: '', type: 'arc' },
+    { source: 'drekr', target: 'ninos-robados', label: 'lider de la operacion', type: 'rel' },
+    { source: 'drekr', target: 'ataque-steading', label: 'ordeno el ataque', type: 'event' },
+    { source: 'drekr', target: 'breca', label: 'rapto a', type: 'conflict' },
+    { source: 'drekr', target: 'galdurman-drekr', label: 'tiene en su banda', type: 'rel' },
+    { source: 'drekr', target: 'dragon-born', label: 'opera con al menos uno', type: 'trama' },
+    { source: 'drekr', target: 'asgrim-death', label: 'posiblemente ordeno', type: 'trama' },
+    // Ataque steading
+    { source: 'ataque-steading', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'ataque-steading', target: 'thorkel-muerte', label: 'causa', type: 'event' },
+    { source: 'ataque-steading', target: 'breca', label: 'Breca raptado en', type: 'event' },
+    { source: 'ataque-steading', target: 'spert', label: 'Spert herido en', type: 'event' },
+    { source: 'ataque-steading', target: 'vesli', label: 'Vesli herida en', type: 'event' },
+    { source: 'ataque-steading', target: 'galdurman-drekr', label: 'destruyo runas en', type: 'magic' },
+    { source: 'ataque-steading', target: 'chico-joven', label: 'abrio puerta en', type: 'event' },
+    { source: 'ataque-steading', target: 'steading', label: 'destruyo el', type: 'event' },
+    // Muerte de Thorkel
+    { source: 'thorkel-muerte', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'thorkel-muerte', target: 'orka', label: 'encontro a Thorkel', type: 'event' },
+    { source: 'thorkel-muerte', target: 'funeral-rites', label: 'axe en manos', type: 'lore' },
+    // Galdurman de Drekr
+    { source: 'galdurman-drekr', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'galdurman-drekr', target: 'runa-ward', label: 'destruyo', type: 'magic' },
+    { source: 'galdurman-drekr', target: 'dragon-born', label: 'podria ser el mismo', type: 'trama' },
+    // Chico joven
+    { source: 'chico-joven', target: 'drekr', label: 'revelo el nombre', type: 'event' },
+    { source: 'chico-joven', target: 'ataque-steading', label: 'abrio la puerta', type: 'event' },
+    { source: 'chico-joven', target: 'orka', label: 'interrogado y matado por', type: 'event' },
+    // Caza de Drekr
+    { source: 'drekr-cazadora', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'drekr-cazadora', target: 'orka', label: 'protagonizada por', type: 'rel' },
+    { source: 'drekr-cazadora', target: 'drekr', label: 'busca a', type: 'conflict' },
+    { source: 'drekr-cazadora', target: 'breca', label: 'para recuperar a', type: 'goal' },
+    // Dragon-born confirmado
+    { source: 'dragon-born', target: 'thorkel-muerte', label: 'confirmado al morir', type: 'lore' },
+    { source: 'dragon-born', target: 'likrafa', label: 'descendencia activa de', type: 'lore' },
+    // Orka -- nuevas conexiones
+    { source: 'orka', target: 'thorkel-muerte', label: 'presencio', type: 'event' },
+    { source: 'orka', target: 'ataque-steading', label: 'llego tarde a', type: 'event' },
+    { source: 'orka', target: 'drekr-cazadora', label: 'protagoniza', type: 'rel' },
+    { source: 'orka', target: 'drekr', label: 'caza a', type: 'conflict' },
+    { source: 'orka', target: 'chico-joven', label: 'interrogo y mato', type: 'event' },
+    // Breca -- raptado
+    { source: 'breca', target: 'drekr', label: 'raptado por', type: 'conflict' },
+    { source: 'breca', target: 'ataque-steading', label: 'raptado en', type: 'event' },
+    // Ninos robados -- nueva conexion con Drekr
+    { source: 'ninos-robados', target: 'drekr', label: 'liderado por', type: 'rel' },
 ];
