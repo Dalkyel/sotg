@@ -706,11 +706,6 @@ const nodes = [
         desc: 'Tumulo funerario (barrow) construido sobre la tumba de Virk en Fellur por sus hijos Mord y Lif con ayuda de Orka y Thorkel. Despues del Althing, la familia de Orka se quedo en Fellur el tiempo necesario para ayudar a levantarlo. Mord y Lif recibieron a Orka y familia en su hogar con bacalao salado y salmon ahumado. [Historico: los tumulos funerarios nordicos (haugr) eran montIculos de tierra sobre la tumba del guerrero, marcadores de honor en el paisaje. Enterrar al muerto correctamente era obligacion de los vivos para asegurar su paso por Vergelmir.]',
         star: 'El barrow convierte la muerte de Virk en hecho permanente del paisaje. Mord y Lif cumplieron con su deber de hijos -- ahora la venganza pesa sobre ellos.'
     },
-    {
-        id: 'gritos-oeste', label: 'Gritos al Oeste (Cliffhanger)', group: 'TRAMA', type: 'Trama -- Abierta Urgente',
-        desc: 'Mientras Orka esta arrodillada junto al cuerpo de Froa muerta, escucha gritos lejanos llegando del oeste, mas alla del ridge que cruzo para llegar alli. El oeste es la direccion de su steading. Thorkel, Breca y Vesli estan alli. La amenaza que destruyo el arbol de Froa podria estar atacando el steading en ese momento.',
-        star: '*** CLIFFHANGER de maxima tension. Los gritos vienen del lado de su familia. Froa muerta, amenaza activa, familia sin ella. Fin del capitulo.'
-    },
     // ==========================================================
     // CAPITULO 16 -- NUEVOS NODOS
     // ==========================================================
