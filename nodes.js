@@ -33,7 +33,7 @@ const nodes = [
         star: 'Que un hombre con runa warding fuera asesinado confirma que la amenaza viene de personas, no de criaturas.'
     },
     {
-        id: 'asgrim-death', label: 'Tragedia de Familia Asgrim', group: 'EVENTO', type: 'Evento', desc: 'Asgrim y su esposa son encontrados muertos en su granja a las afueras de Fellur por Orka. Su hijo Harek esta desaparecido. Orka lleva los cuerpos a Fellur. Thorkel investiga: tres botes en el rio Skarpain. El modus operandi del ataque al steading de Orka es identico al de Asgrim -- misma banda. Orka lo confirma al ver las huellas en el rio: tres botes, ruta fluvial, escala similar. El lider de esa banda es Drekr.',
+        id: 'asgrim-death', label: 'Tragedia de Familia Asgrim', group: 'EVENTO', type: 'Evento', desc: 'Asgrim y su esposa son encontrados muertos en su granja a las afueras de Fellur por Orka. Su hijo Harek esta desaparecido. Orka lleva los cuerpos a Fellur. Thorkel investiga: tres botes en el rio Skarpain. El modus operandi es identico al ataque posterior al steading de Orka (ver nodo ataque-steading) -- misma banda, mismo lider: Drekr (ver nodo drekr).',
         star: '** Harek fue el primer caso de Drekr en la zona. Ahora Breca es el mas reciente. La misma organizacion opero en ambos casos con anos de diferencia -- o la red de Drekr es antigua y extensa.'
     },
     {
@@ -69,7 +69,7 @@ const nodes = [
         star: '★★ El título de la trilogía (Bloodsworn) se refiere a esto. Los juramentos de sangre son el tejido que une (y rompe) Vigríð.'
     },
     {
-        id: 'bloodsworn', label: 'Bloodsworn (Hermanos de Sangre)', group: 'FACCION', type: 'Faccion -- Mercenarios', desc: 'Compania mercenaria de elite, legendaria. Escudo negro con salpicaduras rojas. Cazan vaesen, buscan reliquias, protegen ricos. Drakkar: Sea-Wolf. Jefe: Glornir. Seidr-thrall: Vol. Funcion en Liga: protegen el puerto de piratas y saqueadores a cambio de hospitalidad de Logur. El jefe anterior, Skullsplitter, regalo a Logur una astilla del Cuerno Vackna. Muro de escudos en el muelle contra la caballeria de Jaromir. Paralizados por la llegada de Helka.',
+        id: 'bloodsworn', label: 'Bloodsworn (Hermanos de Sangre)', group: 'FACCION', type: 'Faccion -- Mercenarios', desc: 'Compania mercenaria de elite, legendaria. Escudo negro con salpicaduras rojas. Cazan vaesen, buscan reliquias, protegen ricos. Drakkar: Sea-Wolf. Jefe: Glornir. Seidr-thrall: Vol. Funcion en Liga: protegen el puerto de piratas y saqueadores a cambio de hospitalidad de Logur. El jefe anterior, Skullsplitter, regalo a Logur una astilla del Cuerno Vackna.',
         star: '* Nombre del drakkar revelado: Sea-Wolf. Su relacion con Logur es simbiosis: proteccion a cambio de hospitalidad y el relic del Vackna.'
     },
     {
@@ -124,8 +124,8 @@ const nodes = [
         star: 'Guðvarr reclama el título pero no vive según él. Contraste con Thorkel, que nunca lo reclama pero lo encarna.'
     },
     {
-        id: 'einar', label: 'Einar Medio-Trol', group: 'VARG', type: 'Personaje — Hermanos', desc: 'Campeon de los Hermanos. Enorme, barba roja hasta la cintura, manos como yunques. Proteccion de hierro en la entrepierna (forjada por Jokul). Pelea con Varg para ganarse su puesto. Durante la batalla del muelle, cuando llueven las flechas druzhina, se pone en pie sobre el muro de escudos y lanza una lanza que atraviesa el pecho de un druzhina y lo derriba del caballo en explosion de sangre.',
-        star: '* La escena del lanzamiento demuestra precision real en combate, no solo fuerza bruta. Es el primero en atacar desde el muro.'
+        id: 'einar', label: 'Einar Medio-Trol', group: 'VARG', type: 'Personaje — Hermanos', desc: 'Campeon de los Hermanos. Enorme, barba roja hasta la cintura, manos como yunques. Proteccion de hierro en la entrepierna (forjada por Jokul). Pelea con Varg para ganarse su puesto. En la batalla del muelle (ver nodo batalla-muelles) demuestra precision letal ademas de fuerza bruta.',
+        star: '* Precision real en combate, no solo fuerza. Es el primero en atacar desde el muro.'
     },
     {
         id: 'elvar', label: 'Elvar', group: 'ELVAR', type: 'POV — Personaje', desc: 'Guerrera más joven de Terrores de la batalla. Rubia, trenza guerrera, escudo rojo con armas cruzadas. Impulsiva y valiente hasta la temeridad. Siempre trata de hacer más que los demás, así ganó su puesto en el muro de escudos. Saltó al mar helado para salvar al hijo de Berak. Reacciona ante el nombre de Snakavik. Ante la piedra de juramento iluminada defiende el escepticismo empírico — solo cree en lo que puede ver y tocar. Acepta la existencia de los Tainted porque hay evidencia directa (Berak, Kráka, Uspa, Hundur). Pero niega que existan dragon-born porque nadie en sus viajes —ni en Iskidan— ha visto uno jamás. Sobrevive al ataque de los gusanos nocturnos: un wyrm llega a introducirse en su nariz antes de que pueda extraerlo. Grend y Agnar la liberan.',
@@ -216,7 +216,7 @@ const nodes = [
         star: 'Primer eslabón del patrón de robos de niños.'
     },
     {
-        id: 'helka', label: 'Reina Helka', group: 'FACCION', type: 'Faccion -- Poder politico', desc: 'Auto-proclamada reina de media Vigrið. Sede: Darl. Moneda propia. Fortaleza coronada con huesos de Orna. Rival: Jarl Storr. Llega a Liga con tres drakkars enormes, velas negras con aguila (alas extendidas, pico y garras en ataque) -- emblema del poder sobre los huesos de Orna. La llegada detiene la batalla entre Hermanos y druzhina. Hasta Varg reconoce ese emblema.',
+        id: 'helka', label: 'Reina Helka', group: 'FACCION', type: 'Faccion -- Poder politico', desc: 'Auto-proclamada reina de media Vigrið. Sede: Darl. Moneda propia. Fortaleza coronada con huesos de Orna. Rival: Jarl Storr. Emblema: aguila de alas extendidas, pico y garras en ataque (velas negras). Primera aparicion fisica en Liga (ver nodo llegada-helka).',
         star: '*** Llega a Liga -- no al frente contra Storr, sino al puerto de un jarl menor. ¿Por que? ¿Viene por los Hermanos? ¿Por relics? ¿Por Sulich? Su llegada cambia el tablero completo.'
     },
     {
@@ -324,7 +324,7 @@ const nodes = [
         star: '¿Volverá Leif con más recursos? Tiene motivo de venganza y a Orl como Hird leal.'
     },
     {
-        id: 'liga', label: 'Liga', group: 'LUGAR', type: 'Lugar -- Ciudad Puerto', desc: 'Ciudad mercado y puerto al pie del fiordo. Sala del Jarl Logur en la colina. Plaza de combate donde Varg lucho contra Einar. Mercado con vaesen disecados, marfil, moneda Helka. Los muelles son el escenario de la batalla entre los Hermanos y los druzhina de Jaromir. Logur acude con guardias de escudo azul. La flota de Helka (3 drakkars, velas negras, aguila) entra al fiordo y detiene la batalla. Liga es ahora cruce de tres poderes: Logur, Jaromir, Helka.',
+        id: 'liga', label: 'Liga', group: 'LUGAR', type: 'Lugar -- Ciudad Puerto', desc: 'Ciudad mercado y puerto al pie del fiordo. Sala del Jarl Logur en la colina. Plaza de combate donde Varg lucho contra Einar. Mercado con vaesen disecados, marfil, moneda Helka. Escenario de la batalla entre Hermanos y druzhina (ver nodo batalla-muelles) y la llegada de Helka (ver nodo llegada-helka). Liga es ahora cruce de tres poderes: Logur, Jaromir, Helka.',
         star: '*** Liga pasa de puerto tranquilo a punto de convergencia de poderes. La llegada de Helka aqui -- no en Darl -- tiene implicaciones politicas enormes.'
     },
     {
@@ -340,7 +340,7 @@ const nodes = [
         star: 'La sala de Logur es donde Varg es juzgado. El longhouse de Fellur es donde Sigrún gobierna.'
     },
     {
-        id: 'mord-lif', label: 'Mord y Lif', group: 'ORKA', type: 'Personaje -- Huerfanos', desc: 'Hijos de Virk. Mord mayor, Lif menor. Presenciaron la muerte de su padre. Mord exigio justicia; Lif llamo niding a Gudvarr. Sigrun desestimo su reclamo. Construyeron el tumulo (barrow) de Virk con ayuda de Orka y Thorkel. Los recibieron con bacalao salado y salmon ahumado. Lif llora sin parar; Mord murmura juramentos de venganza. Mord casi agarro el hacha de su padre sobre Gudvarr -- Orka y Thorkel lo contuvieron. Thorkel les advierte que no regresen al Althing. Declinaron la invitacion de refugiarse en el steading. Se quedan palidos y ojerosos.',
+        id: 'mord-lif', label: 'Mord y Lif', group: 'ORKA', type: 'Personaje -- Huerfanos', desc: 'Hijos de Virk. Mord mayor, Lif menor. Presenciaron la muerte de su padre (ver nodo holmganga-event). Mord exigio justicia; Lif llamo niding a Gudvarr. Sigrun desestimo su reclamo. Construyeron el tumulo de Virk con ayuda de Orka y Thorkel (ver nodo barrow-virk). Lif llora sin parar; Mord murmura juramentos de venganza. Mord casi agarro el hacha de su padre sobre Gudvarr -- Orka y Thorkel lo contuvieron. Thorkel les advierte que no regresen al Althing. Declinaron la invitacion de refugiarse en el steading. Se quedan palidos y ojerosos.',
         star: '** Su sed de venganza es real pero son demasiado jovenes e inexpertos.'
     },
     {
@@ -352,7 +352,7 @@ const nodes = [
         star: ''
     },
     {
-        id: 'niding', label: 'Níðing', group: 'NORSE', type: 'Concepto — Deshonra', desc: 'El peor insulto en la cultura nórdica: cobarde sin honor. Guðvarr llamó níðing a Virk tras perder el holmganga, provocando que Virk intentara matarlo. Ser níðing es estar socialmente muerto. [Histórico: níð era la deshonra absoluta en la sociedad nórdica. Acusar a alguien de níðing (cobardía, homosexualidad pasiva, falta de honor) podía justificar violencia legal. Gwynne lo usa como detonante de conflicto.]',
+        id: 'niding', label: 'Níðing', group: 'NORSE', type: 'Concepto — Deshonra', desc: 'El peor insulto en la cultura nórdica: cobarde sin honor. Ser níðing es estar socialmente muerto. [Histórico: níð era la deshonra absoluta en la sociedad nórdica. Acusar a alguien de níðing (cobardía, homosexualidad pasiva, falta de honor) podía justificar violencia legal. Gwynne lo usa como detonante de conflicto (ver nodo holmganga-event para caso Guðvarr/Virk).]',
         star: '★★ Guðvarr usó la palabra como arma tras perder. Virk prefirió morir antes que aceptar el insulto.'
     },
     {
@@ -400,7 +400,7 @@ const nodes = [
         star: '★ Los raptores viajan por ríos, no por tierra. Organización logística detrás del patrón de robos.'
     },
     {
-        id: 'rokia', label: 'Rokia', group: 'VARG', type: 'Personaje -- Hermanos', desc: 'Guerrera alta, rubia, mirada de halcon. Escudo negro a la espalda. Entrena a Varg en escudo y lanza con pinchazos intencionales. Informa positivamente de Varg a Glornir. Guia a Varg en la compra de equipo en Liga. Recomienda el hacha de lanzar y el yelmo como mas importantes que la brynja (filosofia: ganar la brynja del cadaver del enemigo es la batalla-fama). En el muelle forma parte del muro de escudos que protege a Glornir de las flechas druzhina.',
+        id: 'rokia', label: 'Rokia', group: 'VARG', type: 'Personaje -- Hermanos', desc: 'Guerrera alta, rubia, mirada de halcon. Escudo negro a la espalda. Entrena a Varg en escudo y lanza con pinchazos intencionales. Informa positivamente de Varg a Glornir. Guia a Varg en la compra de equipo en Liga. Recomienda el hacha de lanzar y el yelmo como mas importantes que la brynja (filosofia: ganar la brynja del cadaver del enemigo es la batalla-fama). Participa en el muro de escudos en la batalla del muelle (ver nodo batalla-muelles).',
         star: '** Pragmatismo de guerrera veterana: el yelmo salva mas vidas que la brynja porque un golpe en la cabeza mata siempre. Entra al muro de escudos alrededor de Glornir instintivamente.'
     },
     {
@@ -440,7 +440,7 @@ const nodes = [
         star: '¿Aparecerá un skald en capítulos posteriores? La tradición oral es clave para entender cómo se recuerda el Guðfalla.'
     },
     {
-        id: 'skjaldborg', label: 'Skjaldborg (Muro de Escudos)', group: 'NORSE', type: 'Tactica -- Formacion', desc: 'Formacion de combate: guerreros hombro con hombro, escudos superpuestos formando muro. Primera linea usa lanzas. Tactica defensiva de infanteria nordica. Elvar gano su puesto en el muro. Rokia entrena a Varg para el muro. Usado en combate real en los muelles de Liga contra la caballeria de Jaromir. Glornir lo ordena con un grito. Varg participa pero abandona el muro para subirse al caballo -- accion que funciona pero va contra toda la doctrina.',
+        id: 'skjaldborg', label: 'Skjaldborg (Muro de Escudos)', group: 'NORSE', type: 'Tactica -- Formacion', desc: 'Formacion de combate: guerreros hombro con hombro, escudos superpuestos formando muro. Primera linea usa lanzas. Tactica defensiva de infanteria nordica. Elvar gano su puesto en el muro. Rokia entrena a Varg para el muro. Usado en combate real en los muelles de Liga (ver nodo batalla-muelles).',
         star: '** Primer combate real de Varg en el muro. Su instinto de abandonarlo y montar el caballo enemigo es tacticamente incorrecto pero funciona. La tension entre doctrina e instinto define su potencial como guerrero.'
     },
     {
@@ -496,7 +496,7 @@ const nodes = [
         star: ''
     },
     {
-        id: 'sulich', label: 'Sulich', group: 'VARG', type: 'Personaje — Hermanos (Iskidano)', desc: 'Delgado, estatura media. Cabeza rapada excepto una larga trenza negra brillante como azabache. Piel oscura (único de tez oscura entre los Hermanos). Kaftan gris de lana abrochado al centro, calzones anchos con vendas ajustadas tobillo-rodilla. Escudo negro con salpicaduras rojas. Espada curva de un solo filo. Varg lo reconoce sin saber por qué. Miembro pleno de los Hermanos de Sangre, ha prestado juramento de sangre. Origen: Iskidan (su apariencia y armamento coinciden con los druzhina del Príncipe Jaromir). Jaromir irrumpe en el mead-hall reclamándolo por "grandes crímenes". Sulich come mutton ahumado con total calma mientras el príncipe lo confronta, sin dignarse mirarlo. Glornir se niega a entregarlo — el juramento de sangre es inviolable.',
+        id: 'sulich', label: 'Sulich', group: 'VARG', type: 'Personaje — Hermanos (Iskidano)', desc: 'Delgado, estatura media. Cabeza rapada excepto una larga trenza negra brillante como azabache. Piel oscura (único de tez oscura entre los Hermanos). Kaftan gris de lana abrochado al centro, calzones anchos con vendas ajustadas tobillo-rodilla. Escudo negro con salpicaduras rojas. Espada curva de un solo filo. Varg lo reconoce sin saber por qué. Miembro pleno de los Hermanos de Sangre, ha prestado juramento de sangre. Origen: Iskidan (su apariencia y armamento coinciden con los druzhina). Jaromir lo reclama por "grandes crímenes" (ver nodo sulich-crisis). Sulich come mutton ahumado con total calma mientras el príncipe lo confronta, sin dignarse mirarlo.',
         star: '★★★ ¿Qué crímenes cometió en Iskidan que hacen que un príncipe cruce el whale road para reclamarlo? Su calma es inquietante. El enfrentamiento queda sin resolver'
     },
     {
@@ -504,11 +504,11 @@ const nodes = [
         star: ''
     },
     {
-        id: 'svik', label: 'Svik Hrulfsson', group: 'VARG', type: 'Personaje -- Hermanos', desc: 'Pelo rojo trenzado, apuesto de barba aceitada. Tunica verde, anillos de plata, torc de serpientes. Apodo: Pelo-Enredado (ironico). Sarcastico, cuido a Varg de fiebre. Reclutador/negociador. Momento de profundidad: aceptar ayuda no es debilidad. Acompana a Varg a comprar equipo. Grita a Varg que se ponga el yelmo y vuelva al muro de escudos. Cuando Varg baja del caballo muerto, le sonrie con la cara salpicada de sangre y le pregunta que demonios hacia ahi arriba. Lucha en el muro de escudos.',
-        star: '* La sonrisa de sangre y la pregunta a Varg revelan admiracion bajo el sarcasmo habitual. Es el primero en reconocer que lo que hizo Varg, aunque incorrecto tacticamente, funciono.'
+        id: 'svik', label: 'Svik Hrulfsson', group: 'VARG', type: 'Personaje -- Hermanos', desc: 'Pelo rojo trenzado, apuesto de barba aceitada. Tunica verde, anillos de plata, torc de serpientes. Apodo: Pelo-Enredado (ironico). Sarcastico, cuido a Varg de fiebre. Reclutador/negociador. Momento de profundidad: aceptar ayuda no es debilidad. Acompana a Varg a comprar equipo. Lucha en el muro de escudos en la batalla del muelle (ver nodo batalla-muelles).',
+        star: '* Su sonrisa salpicada de sangre y la pregunta a Varg tras el combate revelan admiracion bajo el sarcasmo habitual. Es el primero en reconocer que lo que hizo Varg, aunque incorrecto tacticamente, funciono.'
     },
     {
-        id: 'tainted', label: 'Tainted', group: 'COSMO', type: 'Facción — Perseguidos', desc: 'Descendientes de los dioses muertos. Portadores de poderes heredados. Perseguidos y cazados desde el Guðfalla. Controlados con collares de hierro activados por lengua Galdur. Vendidos a jarls poderosos. Hundur el Sabueso (Hundur-thrall), Berser el Oso (Berak), Snaka la Serpiente (Kráka y Uspa). Linajes vistos en Iskidan: el Toro, el Halcón, el Caballo — confirma que los Tainted están dispersos por todo el mundo conocido, no solo en Vigríð. Linaje NO confirmado: dragon-born de Lik-Rifa — Elvar arguye que ninguno ha sido visto jamás; Uspa escupe ante eso.',
+        id: 'tainted', label: 'Tainted', group: 'COSMO', type: 'Facción — Perseguidos', desc: 'Descendientes de los dioses muertos. Portadores de poderes heredados. Perseguidos y cazados desde el Guðfalla. Controlados con collares de hierro activados por lengua Galdur. Vendidos a jarls poderosos. Hundur el Sabueso (Hundur-thrall), Berser el Oso (Berak), Snaka la Serpiente (Kráka y Uspa). Linajes vistos en Iskidan: el Toro, el Halcón, el Caballo — confirma que los Tainted están dispersos por todo el mundo conocido, no solo en Vigríð. Linaje dragon-born de Lik-Rifa: confirmado (ver nodo dragon-born).',
         star: '★★★ ¿Varg tiene sangre Tainted? ¿Y Breca? Los dos protagonistas muestran señales. Y el linaje de Lik-Rifa sigue sin confirmar... o sin que nadie quiera admitirlo.'
     },
     {
@@ -524,7 +524,7 @@ const nodes = [
         star: '★★★ La esclavitud es institución central en Vigríð. Los tres POV tienen conexión directa con ella: Varg y Thorkel ex-thralls, Orka usa thrall-vaesen.'
     },
     {
-        id: 'thrall-sigrun', label: 'Thrall-Guerrera de Sigrun (Ulfhednar)', group: 'ORKA', type: 'Personaje -- Tainted (Lobo)', desc: 'Sin nombre revelado. Mato a Virk con sus dos seaxes en frenesi bestial; le mordio la cara. Ojos ambarinos en combate, dientes que se agudizan, fuerza para saltar metros. Thorkel la identifica como Ulfrir-kin. Thorkel la identifica mas precisamente como Ulfhednar -- guerrera-lobo de elite. Lamer la sangre de Thorkel preocupa a Orka como posible rastreo, aunque Thorkel senala que las Ulfhednar no son rastreoadores de sangre como los Hundur-kin -- aunque admite que los Tainted estan mestizados. Su existencia es la razon principal por la que Orka y Thorkel deciden huir del steading.',
+        id: 'thrall-sigrun', label: 'Thrall-Guerrera de Sigrun (Ulfhednar)', group: 'ORKA', type: 'Personaje -- Tainted (Lobo)', desc: 'Sin nombre revelado. Ojos ambarinos en combate, dientes que se agudizan, fuerza para saltar metros. Ejecuto a Virk en el holmganga con dos seaxes en frenesi bestial; le mordio la cara (ver nodo holmganga-event). Thorkel la identifica como Ulfrir-kin y mas precisamente como Ulfhednar -- guerrera-lobo de elite. Lamer la sangre de Thorkel preocupa a Orka como posible rastreo, aunque Thorkel senala que las Ulfhednar no son rastreadores de sangre como los Hundur-kin -- aunque admite que los Tainted estan mestizados. Su existencia es la razon principal por la que Orka y Thorkel deciden huir del steading.',
         star: '*** ULFHEDNAR -- clase guerrera-lobo de elite dentro de los Ulfrir-kin. Si tiene sangre Hundur mezclada podria seguirlos a cualquier lugar. Su existencia fuerza la huida de la familia.'
     },
     {
@@ -607,8 +607,8 @@ const nodes = [
         star: '★ Su papel de mediador es clave. Conoce las costumbres de Vigríð ("sus maneras no son las nuestras") y las usa para calmar al príncipe. ¿Tiene agenda propia además de servir a Jaromir?'
     },
     {
-        id: 'jaromir', label: 'Principe Jaromir', group: 'FACCION', type: 'Personaje — Poder Externo', desc: 'Hijo del Gran Khagan Kirill. Principe de Gravka. Cabeza rapada, trenza rubia, armadura laminar, yelmo de borde de oro, halcon. llega a Liga reclamando a Sulich, ultimatum al Althing. Bloquea el muelle con caballeria druzhina cuando ve zarpar el Sea-Wolf. Solo huyen los culpables. Ofrece ultima oportunidad. Cuando Glornir dice no, le lanza una flecha directamente -- Glornir la derriba en el aire. Grita LOOSE, desata 40-50 flechas. Ordena carga de caballeria. Detiene el combate al ver llegar los tres drakkars de Helka.',
-        star: '*** escala de ultimatum a combate total en segundos. Lanzar una flecha a Glornir en persona es un insulto extremo -- Glornir la derriba. La llegada de Helka es lo unico que lo para.'
+        id: 'jaromir', label: 'Principe Jaromir', group: 'FACCION', type: 'Personaje — Poder Externo', desc: 'Hijo del Gran Khagan Kirill. Principe de Gravka. Cabeza rapada, trenza rubia, armadura laminar, yelmo de borde de oro, halcon. Llega a Liga reclamando a Sulich (ver nodo sulich-crisis). Escala de ultimatum a combate total cuando Glornir se niega (ver nodo batalla-muelles). Detiene el combate al ver llegar los tres drakkars de Helka.',
+        star: '*** Lanzar una flecha a Glornir en persona es un insulto extremo. Escala de ultimatum a combate total en segundos. La llegada de Helka es lo unico que lo para.'
     },
     {
         id: 'ilia', label: 'Ilia', group: 'FACCION', type: 'Personaje — Druzhina', desc: 'Una de las dos druzhina que escoltan al Príncipe Jaromir. Mujer. Armadura laminar, yelmo con penacho de crin, malla remachada. cuando Glornir se niega a entregar a Sulich, Ilia da un paso al frente y agarra su sable, ofreciéndose a "tomar su cabeza por su insolencia". El príncipe la detiene con una palabra ("Hold, Ilia"). Temperamento: leal, explosiva, sin miedo a confrontar a toda una sala de guerreros.',
@@ -623,7 +623,7 @@ const nodes = [
         star: '** Resuelta provisionalmente por la llegada de Helka. Jaromir no tiene a Sulich, Glornir no ha zarpado, y ahora hay una reina de media Vigrið en el puerto. La dinamica de poder cambia completamente.'
     },
     {
-        id: 'vackna', label: 'Vackna (Cuerno-Despertador)', group: 'COSMO', type: 'Objeto Mitico -- Reliquia Real', desc: 'El cuerno que sono al alba e inicio el Gudfalla, llamando a los dioses a la batalla. Cantado por Galinn. CONFIRMADO como reliquia fisica real -- una astilla del Cuerno Vackna esta incrustada en la viga de la sala de Logur. El jefe anterior de los Hermanos, Skullsplitter, la regalo a Logur. El relic ha enriquecido al jarl. Varg habia notado la astilla sintiendo una sensacion extraña.',
+        id: 'vackna', label: 'Vackna (Cuerno-Despertador)', group: 'COSMO', type: 'Objeto Mitico -- Reliquia Real', desc: 'El cuerno que sono al alba e inicio el Gudfalla, llamando a los dioses a la batalla. Cantado por Galinn. CONFIRMADO como reliquia fisica real -- una astilla sobrevive incrustada en la viga de la sala de Logur (ver nodo objeto-viga).',
         star: '*** Reliquia fisica activa en el mundo. El relic confiere riqueza -- los relics divinos tienen poder real en Vigrið, no solo simbolico. ¿Cuantos fragmentos del Vackna existen? ¿Quien tiene los demas?'
     },
     {
