@@ -81,11 +81,11 @@ const nodes = [
         star: '*** RAPTADO. El mismo patron que Harek y los otros ninos. Llevado vivo -- tienen algun uso para los ninos. ¿Sabe Drekr que Breca tiene posible sangre Tainted? ¿Es ese el criterio de seleccion para todos los raptos?'
     },
     {
-        id: 'brynja', label: 'Brynja (Cota de Mallas)', group: 'NORSE', type: 'Armadura — Torso', desc: 'Cota de mallas de anillos entrelazados. Protección flexible contra cortes. Cara de fabricar: 20,000-30,000 anillos por cota. Símbolo de riqueza y estatus guerrero. Sigrún lleva una "remachada" (anillos remachados = calidad superior). [Histórico: la brynja era la armadura de élite vikinga. Pesaba 10-15kg. Solo jarls, campeones y guerreros ricos podían pagarla. La mayoría luchaba con cuero o sin armadura. Gwynne la usa como marcador visual de poder.]',
+        id: 'brynja', label: 'Brynja (Cota de Mallas)', group: 'NORSE', type: 'Armadura — Torso', desc: '[Pronunciación: "Brynya" — la j suena como la "y" de "yellow".] Cota de mallas de anillos entrelazados. Protección flexible contra cortes. Cara de fabricar: 20,000-30,000 anillos por cota. Símbolo de riqueza y estatus guerrero. Sigrún lleva una "remachada" (anillos remachados = calidad superior). [Histórico: la brynja era la armadura de élite vikinga. Pesaba 10-15kg. Solo jarls, campeones y guerreros ricos podían pagarla. La mayoría luchaba con cuero o sin armadura. Gwynne la usa como marcador visual de poder.]',
         star: 'Sigrún lleva brynja remachada = jarl guerrera de verdad, no solo política. Agnar probablemente también.'
     },
     {
-        id: 'byrding', label: 'Byrðingr', group: 'NORSE', type: 'Embarcación — Carga Pesada', desc: 'Barco de carga pesada. Más grande y robusto que knarr. Transporte de materiales de construcción, piedra, madera, grandes cantidades de grano. Diseño sacrifica velocidad por capacidad. [Histórico: el byrðingr era el "camión de carga" nórdico. Usado para proyectos de construcción grandes: iglesias, fortalezas, puentes.]',
+        id: 'byrding', label: 'Byrðingr', group: 'NORSE', type: 'Embarcación — Carga Pesada', desc: '[Pronunciación: "Byrthing" — la ð suena como la "th" de "they".] Barco de carga pesada. Más grande y robusto que knarr. Transporte de materiales de construcción, piedra, madera, grandes cantidades de grano. Diseño sacrifica velocidad por capacidad. [Histórico: el byrðingr era el "camión de carga" nórdico. Usado para proyectos de construcción grandes: iglesias, fortalezas, puentes.]',
         star: ''
     },
     { id: 'cat-dioses', label: 'PANTEÓN DIVINO', group: 'CAT', type: 'Mitología', desc: 'Los dioses caídos y su legado en Vigríð. Adorar a los dioses muertos está prohibido y se castiga con la muerte', star: '' },
@@ -160,7 +160,7 @@ const nodes = [
         star: '*** ASESINADA junto con su arbol. La destruccion requirio muchos hombres con hachas y magia de fuego -- misma organizacion que opera los robos de ninos (ver nodo ninos-robados).'
     },
     {
-        id: 'froya', label: 'Frøya (†)', group: 'VARG', type: 'Personaje — Muerta', desc: 'Hermana de Varg, 1 invierno menor. Ambos fueron vendidos a los 5 y 4 años por sus padres. Murió en circunstancias desconocidas. Su muerte es el motor de toda la historia de Varg.',
+        id: 'froya', label: 'Frøya (†)', group: 'VARG', type: 'Personaje — Muerta', desc: '[Pronunciación: "Frirya" — la ø suena como la "ir" de "bird".] Hermana de Varg, 1 invierno menor. Ambos fueron vendidos a los 5 y 4 años por sus padres. Murió en circunstancias desconocidas. Su muerte es el motor de toda la historia de Varg.',
         star: 'Varg necesita un akáll (invocación Seiðr) para descubrir cómo murió y quién la mató.'
     },
     {
@@ -172,7 +172,7 @@ const nodes = [
         star: 'Grend cuida a Elvar sirviéndole gachas — gesto paternal. Incluso prisioneros reciben gachas: mínimo de humanidad.'
     },
     {
-        id: 'galdramadr', label: 'Galdramaðr', group: 'MAGIA', type: 'Magia', desc: 'Hechicero',
+        id: 'galdramadr', label: 'Galdramaðr', group: 'MAGIA', type: 'Magia — Runas', desc: '[Pronunciación: "Galdramathr" — la ð suena como la "th" de "they".] Hechicero especializado en magia rúnica (galdrar). A diferencia de los practicantes de Seiðr, el galdramaðr trabaja con runas grabadas y cantadas, no con invocación de espíritus. Usa el galdrabók como texto de referencia. [Histórico: galdrar eran los hechizos rúnicos nórdicos, distintos del seiðr. La distinción era de género y método: seiðr se asociaba con mujeres, galdrar con hombres. Gwynne preserva esta distinción.]',
         star: ''
     },
     {
@@ -196,11 +196,11 @@ const nodes = [
         star: '¿Qué le debe a Elvar para protegerla así?'
     },
     {
-        id: 'gudfall', label: 'Guðfalla (Caída de Dioses)', group: 'EVENTO', type: 'Evento Histórico', desc: 'Hace ~300 años. Los hijos de Snaka entraron en guerra entre si. La guerra de los dioses rompió el mundo: continentes hundidos, mares desbordados. Los vaesen escaparon de su foso. El mundo nunca se recuperó. (saga de Galinn, ver nodo gudfall-saga-galinn): el Vackna sonó al alba; todos los dioses combatieron. Resultado: Berser perforado, Orna desgarrada, Ulfrir muerto, Lik-Rifa encadenada bajo Oskutreð, Snaka caído sobre el Monte Eldrafell. CAUSA VERDADERA (Uspa, ver nodo oath-stone-frost-isles): Rotta alimentó la paranoia de Lik-Rifa, que mató a la hija de Orna y Ulfrir (ver nodo gallows-wood). Orna encadenó a Lik-Rifa — eso detonó la guerra total.',
+        id: 'gudfall', label: 'Guðfalla (Caída de Dioses) [pron. Guthfalla]', group: 'EVENTO', type: 'Evento Histórico', desc: 'Hace ~300 años. Los hijos de Snaka entraron en guerra entre si. La guerra de los dioses rompió el mundo: continentes hundidos, mares desbordados. Los vaesen escaparon de su foso. El mundo nunca se recuperó. (saga de Galinn, ver nodo gudfall-saga-galinn): el Vackna sonó al alba; todos los dioses combatieron. Resultado: Berser perforado, Orna desgarrada, Ulfrir muerto, Lik-Rifa encadenada bajo Oskutreð, Snaka caído sobre el Monte Eldrafell. CAUSA VERDADERA (Uspa, ver nodo oath-stone-frost-isles): Rotta alimentó la paranoia de Lik-Rifa, que mató a la hija de Orna y Ulfrir (ver nodo gallows-wood). Orna encadenó a Lik-Rifa — eso detonó la guerra total.',
         star: '★★★ No fue una rebelión abstracta sino una venganza de sangre detonada por Rotta el Manipulador. La primera víctima: la hija sin nombre de Orna y Ulfrir. El blood-eagle nació como imitación del crimen de Lik-Rifa.'
     },
     {
-        id: 'gudvarr', label: 'Guðvarr', group: 'ORKA', type: 'Personaje — Antagonista menor', desc: 'Drengr, Sobrino de Jarl Sigrún. Pelo negro aceitado, espada al cinto, gota permanente de moco. Vanidoso, arrogante, con algo de técnica de combate pero sin experiencia real en batalla. Humillado en el holmganga contra Virk: hombro derecho seccionado, se rindió (ver nodo holmganga-event). Su insulto post-duelo provocó la muerte de Virk. Sigue siendo niðing moral aunque sobrevivió.',
+        id: 'gudvarr', label: 'Guðvarr', group: 'ORKA', type: 'Personaje — Antagonista menor', desc: '[Pronunciación: "Guthvarr" — la ð suena como la "th" de "they".] Drengr, Sobrino de Jarl Sigrún. Pelo negro aceitado, espada al cinto, gota permanente de moco. Vanidoso, arrogante, con algo de técnica de combate pero sin experiencia real en batalla. Humillado en el holmganga contra Virk: hombro derecho seccionado, se rindió (ver nodo holmganga-event). Su insulto post-duelo provocó la muerte de Virk. Sigue siendo niðing moral aunque sobrevivió.',
         star: '★ Humillado públicamente pero vivo. Tiene una deuda no resuelta con Mord y Lif. Su arrogancia postduelo dejó claro que no ha aprendido nada.'
     },
     {
@@ -272,7 +272,7 @@ const nodes = [
         star: ''
     },
     {
-        id: 'jarl', label: 'Jarl (Noble)', group: 'NORSE', type: 'Clase Social', desc: 'Noble, señor de tierras. Controla villas, recauda tributos, administra justicia. Sigrún (Fellur), Störr (Snakavik), Logur (Liga). Por encima: reinas como Helka. [Histórico: jarl era título de nobleza escandinava, equivalente a conde. Gwynne los convierte en señores feudales de Vigríð, compitiendo por poder en la era post-Guðfalla.]',
+        id: 'jarl', label: 'Jarl (Noble)', group: 'NORSE', type: 'Clase Social', desc: '[Pronunciación: "Yarl" — la j suena como la "y" de "yellow".] Noble, señor de tierras. Controla villas, recauda tributos, administra justicia. Sigrún (Fellur), Störr (Snakavik), Logur (Liga). Por encima: reinas como Helka. [Histórico: jarl era título de nobleza escandinava, equivalente a conde. Gwynne los convierte en señores feudales de Vigríð, compitiendo por poder en la era post-Guðfalla.]',
         star: 'Los jarls son el tablero político de Vigríð. Helka los está unificando bajo su corona.'
     },
     {
@@ -352,7 +352,7 @@ const nodes = [
         star: ''
     },
     {
-        id: 'niding', label: 'Níðing', group: 'NORSE', type: 'Concepto — Deshonra', desc: 'El peor insulto en la cultura nórdica: cobarde sin honor. Ser níðing es estar socialmente muerto. [Histórico: níð era la deshonra absoluta en la sociedad nórdica. Acusar a alguien de níðing (cobardía, homosexualidad pasiva, falta de honor) podía justificar violencia legal. Gwynne lo usa como detonante de conflicto (ver nodo holmganga-event para caso Guðvarr/Virk).]',
+        id: 'niding', label: 'Níðing', group: 'NORSE', type: 'Concepto — Deshonra', desc: '[Pronunciación: "Nithing" — la ð suena como la "th" de "they".] El peor insulto en la cultura nórdica: cobarde sin honor. Ser níðing es estar socialmente muerto. [Histórico: níð era la deshonra absoluta en la sociedad nórdica. Acusar a alguien de níðing (cobardía, homosexualidad pasiva, falta de honor) podía justificar violencia legal. Gwynne lo usa como detonante de conflicto (ver nodo holmganga-event para caso Guðvarr/Virk).]',
         star: '★★ Guðvarr usó la palabra como arma tras perder. Virk prefirió morir antes que aceptar el insulto.'
     },
     {
@@ -380,7 +380,7 @@ const nodes = [
         star: 'Helka gobierna bajo las alas de un dios muerto. ¿Solo símbolo, o hay poder real en esos huesos?'
     },
     {
-        id: 'oskutred', label: 'Oskutreð (Árbol de Ceniza)', group: 'LUGAR', type: 'Lugar — Mítico', desc: 'El gran árbol fresno bajo el cual Lik-Rifa fue encadenada. Vergelmir, su cámara subterránea, es el paso del alma de los guerreros muertos. Por esto los guerreros mueren con armas en la mano.',
+        id: 'oskutred', label: 'Oskutreð (Árbol de Ceniza) [pron. Oskutreth]', group: 'LUGAR', type: 'Lugar — Mítico', desc: 'El gran árbol fresno bajo el cual Lik-Rifa fue encadenada. Vergelmir, su cámara subterránea, es el paso del alma de los guerreros muertos. Por esto los guerreros mueren con armas en la mano.',
         star: ''
     },
     {
@@ -400,7 +400,7 @@ const nodes = [
         star: '★ Los raptores viajan por ríos, no por tierra. Organización logística detrás del patrón de robos.'
     },
     {
-        id: 'rokia', label: 'Rokia', group: 'VARG', type: 'Personaje -- Hermanos', desc: 'Guerrera alta, rubia, mirada de halcon. Escudo negro a la espalda. Entrena a Varg en escudo y lanza con pinchazos intencionales. Informa positivamente de Varg a Glornir. Guia a Varg en la compra de equipo en Liga. Recomienda el hacha de lanzar y el yelmo como mas importantes que la brynja (filosofia: ganar la brynja del cadaver del enemigo es la batalla-fama). Participa en el muro de escudos en la batalla del muelle (ver nodo batalla-muelles).',
+        id: 'rokia', label: 'Røkia', group: 'VARG', type: 'Personaje -- Hermanos', desc: '[Pronunciación: "Rirkia" — la ø suena como la "ir" de "bird".] Guerrera alta, rubia, mirada de halcon. Escudo negro a la espalda. Entrena a Varg en escudo y lanza con pinchazos intencionales. Informa positivamente de Varg a Glornir. Guia a Varg en la compra de equipo en Liga. Recomienda el hacha de lanzar y el yelmo como mas importantes que la brynja (filosofia: ganar la brynja del cadaver del enemigo es la batalla-fama). Participa en el muro de escudos en la batalla del muelle (ver nodo batalla-muelles).',
         star: '** Pragmatismo de guerrera veterana: el yelmo salva mas vidas que la brynja porque un golpe en la cabeza mata siempre. Entra al muro de escudos alrededor de Glornir instintivamente.'
     },
     {
@@ -411,7 +411,7 @@ const nodes = [
         star: ''
     },
     {
-        id: 'seax', label: 'Seax', group: 'NORSE', type: 'Arma — Cuchillo', desc: 'Cuchillo/daga de un solo filo, 20-75cm. Herramienta y arma. Todo hombre libre lleva uno. Combate cercano, trabajo diario, símbolo de estatus de hombre libre. La thrall-guerrera de Sigrún usa dos seaxes. Thorkel clava uno en tierra para ahuyentar al Nacken. [Histórico: el seax era el cuchillo universal germánico/nórdico. Desde utensilio hasta arma de guerra. El nombre "sajón" (Saxon) viene de seax. Gwynne lo usa como marcador cultural: llevar seax = hombre libre.]',
+        id: 'seax', label: 'Seax', group: 'NORSE', type: 'Arma — Cuchillo', desc: '[Pronunciación: "Sax".] Cuchillo/daga de un solo filo, 20-75cm. Herramienta y arma. Todo hombre libre lleva uno. Combate cercano, trabajo diario, símbolo de estatus de hombre libre. La thrall-guerrera de Sigrún usa dos seaxes. Thorkel clava uno en tierra para ahuyentar al Nacken. [Histórico: el seax era el cuchillo universal germánico/nórdico. Desde utensilio hasta arma de guerra. El nombre "sajón" (Saxon) viene de seax. Gwynne lo usa como marcador cultural: llevar seax = hombre libre.]',
         star: '★★ La thrall de Sigrún mató a Virk con dos seaxes. Thorkel usa el suyo ritualmente contra vaesen. Símbolo de libertad que los thralls no pueden portar.'
     },
     {
@@ -419,7 +419,7 @@ const nodes = [
         star: 'Arild aconsejó a Guðvarr — ¿qué le dijo? Orka como segundo de Virk muestra que ella tiene estatus social reconocido en Fellur a pesar de vivir aislada.'
     },
     {
-        id: 'seidr', label: 'Seiðr', group: 'MAGIA', type: 'Magia', desc: 'Magia de influencia, invocación y canto. El akáll invoca espíritus de muertos para interrogarlos. El canto protege de vaesen o los controla. Practicado por brujas (völva). El uso extenuante desgasta el cuerpo. Ligado frecuentemente a sangre divina. [Contexto: en la mitología nórdica histórica, el Seiðr era una práctica ritual chamánica de Freyja y Odín, usada para profecía y manipulación del destino. Las völvur viajaban entre comunidades sentadas en plataformas elevadas (seiðhjallr). En Vigríð este saber sobrevive en las thrall-brujas que los mercenarios encadenan.]',
+        id: 'seidr', label: 'Seiðr', group: 'MAGIA', type: 'Magia', desc: '[Pronunciación: "Seithr" — la ð suena como la "th" de "they".] Magia de influencia, invocación y canto. El akáll invoca espíritus de muertos para interrogarlos. El canto protege de vaesen o los controla. Practicado por brujas (völva). El uso extenuante desgasta el cuerpo. Ligado frecuentemente a sangre divina. [Contexto: en la mitología nórdica histórica, el Seiðr era una práctica ritual chamánica de Freyja y Odín, usada para profecía y manipulación del destino. Las völvur viajaban entre comunidades sentadas en plataformas elevadas (seiðhjallr). En Vigríð este saber sobrevive en las thrall-brujas que los mercenarios encadenan.]',
         star: 'Las dos brujas conocidas (Vol, Kráka) son thralls encadenadas. ¿Hay Seiðr libre en Vigríð?'
     },
     {
@@ -468,7 +468,7 @@ const nodes = [
         star: 'Elvar reacciona emocionalmente ante este nombre. Algo personal la une a este lugar.'
     },
     {
-        id: 'snekkja', label: 'Snekkja', group: 'NORSE', type: 'Embarcación — Incursión', desc: 'Barco de guerra ligero y rápido (20-30 remos). Más pequeño que drakkar pero más ágil. Ideal para incursiones rápidas, exploración, mensajería. Nombre significa "el que se desliza". [Histórico: la snekkja era el barco de incursión vikingo clásico. Más común que el drakkar (que era caro). Velocidad sobre capacidad de carga. Gwynne podría usarlas para bandidos, exploradores o mensajeros de jarls.]',
+        id: 'snekkja', label: 'Snekkja / Snekke', group: 'NORSE', type: 'Embarcación — Guerra Ligera / Incursión', desc: 'Barco de guerra ligero y rápido (20-30 remos). Más pequeño que drakkar pero más ágil y de menor calado. Ideal para incursiones rápidas, ríos, costas poco profundas, exploración y mensajería. Tripulación reducida. Nombre significa "el que se desliza" / "serpiente". [Histórico: la snekkja (snekke) era el langskip más pequeño de la tipología nórdica. Más común que el drakkar (que era caro). Podía navegar aguas muy someras. Velocidad sobre capacidad de carga. Gwynne podría usarlas para bandidos, exploradores o mensajeros de jarls.]',
         star: 'Posible embarcación de los raptores de niños: rápida, silenciosa, perfecta para huir por ríos.'
     },
     {
@@ -560,7 +560,7 @@ const nodes = [
         star: '*** Su juramento de sangre con Breca sigue activo. Pasa de carga a activo: curadora, testigo, narradora. El lazo de sangre con Breca la hace un activo potencial en la persecucion de Orka.'
     },
     {
-        id: 'vigrið', label: 'Vigríð', group: 'LUGAR', type: 'Lugar — Continente', desc: 'La Llanura de Batalla. El continente principal. Construido literalmente sobre los huesos de Snaka. Dividido entre jarls, reinas y hombres libres. Los vaesen son una presencia constante en las zonas remotas.',
+        id: 'vigrið', label: 'Vigríð', group: 'LUGAR', type: 'Lugar — Continente', desc: '[Pronunciación: "Vigrith" — la ð suena como la "th" de "they".] La Llanura de Batalla. El continente principal. Construido literalmente sobre los huesos de Snaka. Dividido entre jarls, reinas y hombres libres. Los vaesen son una presencia constante en las zonas remotas.',
         star: ''
     },
     {
@@ -819,5 +819,78 @@ const nodes = [
         id: 'thorkel-transformacion', label: 'Transformacion de Thorkel (Confirmacion)', group: 'TRAMA', type: 'Trama -- Revelacion',
         desc: 'Vesli describe la batalla y dice: Thorkel fierce. Thorkel change, become... (no completa). Orka asiente sin sorpresa -- lo sabia. Esto confirma que Thorkel tenia capacidad de transformacion en combate, muy probablemente sangre Tainted de lobo. Evidencia acumulada: patronimico Ulfsson (hijo de Ulfrir); conocia el termino Ulfhednar con precision exacta sin titubear; acepto huir del steading ante esa amenaza especificamente; eligio morir peleando afuera en el umbral (no escondido). Murio siendo lo que era.',
         star: '*** La confirmacion mas directa posible sin decirlo explicitamente. Vesli lo vio transformarse. Orka asiente sin cuestionarlo. 19 capitulos de insinuaciones culminan en ese asentimiento silencioso.'
+    },
+
+    // ── Nuevos nodos del glosario ─────────────────────────────────────────
+    {
+        id: 'akall-concepto', label: 'Akáll (Invocación de Muertos)', group: 'MAGIA', type: 'Concepto — Ritual Mágico',
+        desc: 'Ceremonia de invocación mágica que permite revelar los últimos momentos de un muerto. Tipo específico de Seiðr practicado por brujas völva. El akáll interroga al espíritu del difunto para obtener información sobre las circunstancias de su muerte. Requiere una practicante con poder suficiente. El ritual es extenuante y conlleva un coste físico. [Histórico: en las sagas nórdicas, las völvur podían comunicarse con los muertos. El seiðr de muerte (útiseta, "sentarse fuera") implicaba contacto con el mundo de los muertos. Gwynne lo sistematiza como procedimiento: interrogar al muerto para obtener testimonio.]',
+        star: '★★★ El akáll es la clave de la trama de Varg: su petición a Glornir representa la primera articulación pública de su objetivo principal. Ver nodo akall para el evento específico.'
+    },
+    {
+        id: 'berserkir', label: 'Berserkir (Guerrero-Oso)', group: 'COSMO', type: 'Concepto — Élite Tainted Oso',
+        desc: 'Clase de Tainted descendiente de Berser el dios-oso. Poseen fuerza sobrehumana, ojos ambarinos en combate y capacidad de transformación parcial. Equivalente ursino de los Ulfhéðnar (guerreros-lobo). Los Berserkir son los Tainted de mayor fuerza bruta conocida en Vigríð. [Histórico: los berserkir nórdicos eran guerreros sagrados de Odín que entraban en trance animal (berserkergang). En las sagas se describen como invulnerables al acero y al fuego durante el frenesí. Gwynne los reinterpreta como linaje de sangre divina literal de Berser.]',
+        star: '★★★ Berak es Berserkir confirmado. Su captura por los Terrores de la batalla lo convierte en activo de altísimo valor estratégico para quien lo controle. Paralelismo deliberado con Ulfhéðnar: oso vs lobo.'
+    },
+    {
+        id: 'blod-svarid', label: 'Blóð Svarið (Juramento de Sangre)', group: 'MAGIA', type: 'Concepto — Magia Vinculante',
+        desc: '[Pronunciación: "Bloth Svarith" — la ð suena como la "th" de "they".] Juramento mágico sellado con sangre. Vínculo que va más allá del compromiso verbal: la magia lo hace vinculante y su ruptura tiene consecuencias. Mecanismo de lealtad absoluta en Vigríð, más fuerte que cualquier contrato verbal. [Histórico: los juramentos de sangre nórdicos (blóðeiðr) se consideraban sagrados e irrompibles. La sangre era la sede del honor y el alma. Gwynne lo eleva a mecanismo mágico activo: no solo promesa social sino pacto con consecuencias sobrenaturales.]',
+        star: '★★ El blóð svarið define la jerarquía moral de Vigríð: los juramentos importan. Su posible ruptura o uso para controlar a los Tainted es una pregunta latente.'
+    },
+    {
+        id: 'galdrabok', label: 'Galdrabók (Libro de Magia)', group: 'MAGIA', type: 'Concepto — Texto Mágico',
+        desc: 'Libro de magia que contiene runas, hechizos y conocimiento arcano. Término genérico para los textos de poder en Vigríð. Los galdrabók más conocidos son la Graskinna (piel gris) y la Rauðskinna (piel roja), fabricados en pieles curtidas. El conocimiento contenido en un galdrabók puede ser peligroso o prohibido. [Histórico: los galdrabók islandeses reales (s. XVII) contenían hechizos rúnicos, conjuros de protección y maldiciones. Gwynne adapta el concepto a Vigríð con libros de poder genuinamente mágico escritos en materiales perturbadores.]',
+        star: '★★ Los galdrabók representan el conocimiento mágico sistematizado. La Rauðskinna en particular, hecha de piel de dios muerto, es el texto de mayor poder conocido.'
+    },
+    {
+        id: 'graskinna', label: 'Graskinna (Piel Gris)', group: 'MAGIA', type: 'Concepto — Texto Mágico',
+        desc: 'Libro de magia (galdrabók) escrito sobre piel curtida gris. Contiene conocimiento arcano de nivel intermedio. Menos poderosa que la Rauðskinna pero igualmente peligrosa. El material de escritura — piel humana desollada — indica el origen oscuro del conocimiento que contiene.',
+        star: '★ Uno de los dos galdrabók de piel nombrados explícitamente en Vigríð. Su posesión y uso están reservados a magos de nivel considerable.'
+    },
+    {
+        id: 'raudskinna', label: 'Rauðskinna (Piel Roja)', group: 'MAGIA', type: 'Concepto — Texto Mágico',
+        desc: '[Pronunciación: "Rauthskinna" — la ð suena como la "th" de "they".] El más poderoso de los libros de magia conocidos, escrito sobre la piel desollada de un dios muerto. Su color rojo proviene de la sangre divina que impregna el pergamino. Contiene conocimiento mágico de nivel superior al de cualquier otro galdrabók. [Histórico: la Rauðskinna (Piel Roja) islandesa histórica era un grimorio legendario atribuido al obispo Gottskálk el Cruel (s. XVI), considerado el libro de magia más peligroso jamás escrito. Gwynne toma el nombre y lo amplifica: no piel de animal sino de dios.]',
+        star: '★★★ Fabricado con piel de dios muerto — el material más cargado de poder en Vigríð. Su existencia implica que alguien desollÃ³ un cadáver divino. ¿Quién lo hizo? ¿Quién lo posee ahora?'
+    },
+    {
+        id: 'gudljos', label: 'Guðljós (Luces de Dioses)', group: 'COSMO', type: 'Concepto — Fenómeno Cosmológico',
+        desc: '[Pronunciación: "Guthlyos" — la ð suena como la "th" de "they"; la j suena como la "y" de "yellow".] Luces divinas visibles en el cielo de Vigríð, remanente del poder de los dioses tras el Guðfalla. Fenómeno cosmológico que recuerda a los habitantes de Vigríð que los dioses existieron y que su poder aún permea el mundo.',
+        star: '★ Detalle cosmológico que subraya cómo el mundo de Vigríð vive bajo la sombra literal del poder divino perdido.'
+    },
+
+    {
+        id: 'tafl', label: 'Tafl (Juego de Estrategia)', group: 'NORSE', type: 'Concepto — Cultura Lúdica',
+        desc: 'Juego de estrategia sobre tablero con figuras talladas, equivalente nórdico del ajedrez. Jugado en los salones de los jarls y en los campos de batalla. Símbolo de inteligencia táctica. [Histórico: el hnefatafl ("tablero del rey") era el juego de mesa nórdico por excelencia antes de la llegada del ajedrez. Jugado asimétricamente: un rey rodeado defiende contra un atacante. Gwynne lo usa como marcador cultural de las élites de Vigríð.]',
+        star: ''
+    },
+    {
+        id: 'whale-road', label: 'Whale-Road (El Mar Abierto)', group: 'NORSE', type: 'Concepto — Kenning Poético',
+        desc: 'Kenning (figura poética nórdica) para el mar abierto. Los skalds de Vigríð usan kennings como whale-road (camino de las ballenas) para referirse al océano con resonancia épica. Refleja la cultura oral y poética de la sociedad nórdica. [Histórico: hronrād ("camino de la ballena") es una de las kennings más famosas del inglés antiguo, del poema Beowulf. Los skalds nórdicos construían kennings como metáforas compuestas: kennings de mar incluyen también "camino del cisne", "casa del viento".]',
+        star: ''
+    },
+    {
+        id: 'winnigas', label: 'Winnigas (Vendas de Pierna)', group: 'NORSE', type: 'Concepto — Vestimenta',
+        desc: 'Tiras de tela que cubren las piernas desde el tobillo hasta justo debajo de la rodilla. Protección práctica contra el frío y la rozadura. Usadas por guerreros y civiles por igual. [Histórico: las winnigas (del anglosajón winnigan) eran vendas de pierna comunes en el norte de Europa medieval. Se enrollaban en espiral. Baratas y funcionales: cualquiera podía llevarlas, independientemente del estatus.]',
+        star: ''
+    },
+    {
+        id: 'hangerock', label: 'Hangerock (Vestido Nórdico)', group: 'NORSE', type: 'Concepto — Vestimenta',
+        desc: 'Tipo de vestido o sobrevestido femenino nórdico. Prenda exterior característica de las mujeres en la cultura de Vigríð. [Histórico: el hangeroc (anglosajón) o höngeroc era el sobrevestido de lana típico de las mujeres vikingas, sujeto con broches a los hombros sobre una camisa de lino. Marcador cultural de la femineidad en la sociedad nórdica.]',
+        star: ''
+    },
+    {
+        id: 'nalbinding', label: 'Nålbinding (Tejido Arcaico)', group: 'NORSE', type: 'Concepto — Artesanía',
+        desc: 'Técnica antigua de tejer con aguja que precede al tejido de punto moderno. Usada para fabricar ropa, calcetines y gorros. Más resistente que el tejido moderno. Técnica artesanal cotidiana en la sociedad de Vigríð. [Histórico: el nålebinding ("atar con aguja") es una de las técnicas textiles más antiguas conocidas (restos de más de 6.500 años). La tela resultante no se deshilacha al cortar, a diferencia del tejido de punto.]',
+        star: ''
+    },
+    {
+        id: 'madur-boy', label: 'Maður-Boy (Niño Humano)', group: 'NORSE', type: 'Concepto — Término Cultural',
+        desc: '[Pronunciación: "Mathur-Boy" — la ð suena como la "th" de "they".] Término para designar un niño humano puro, sin sangre divina. Contrasta con los Tainted, descendientes de dioses. En el contexto de Vigríð, la distinción entre maður (humano) y Tainted es legalmente relevante: determina derechos, estatus y peligrosidad percibida.',
+        star: '★ La distinción maður/Tainted es la fractura social central de Vigríð. Breca es sospechoso de no ser maður-boy puro.'
+    },
+    {
+        id: 'skal', label: 'Skál (Brindis)', group: 'NORSE', type: 'Concepto — Cultura Social',
+        desc: 'Brindis ritual de buena salud. Expresión de camaradería y celebración en los salones de los jarls. Parte del ritual del mead-hall: el skáld canta, se sirve hidromiel y se pronuncian skál. [Histórico: skál (nórdico antiguo) es el origen del inglés "skull" en expresiones de brindis ("skull" como copa). Acompañaba el consumo ritual de hidromiel en las salas comunales.]',
+        star: ''
     },
 ];
