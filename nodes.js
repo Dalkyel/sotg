@@ -25,8 +25,8 @@ const nodes = [
         star: '¿Qué le aconsejó a Guðvarr antes del duelo? Sigrún también le habló pero su consejo fue distinto al de Arild.'
     },
     {
-        id: 'armring', label: 'Armring (Anillo de Brazo)', group: 'NORSE', type: 'Símbolo — Lealtad', desc: 'Anillo de metal (plata, oro, bronce) enrollado en el brazo. Símbolo de lealtad a un señor. Los jarls los otorgan a guerreros leales ("dador de anillos" = epíteto de buen jarl). Sigrún lleva "anillos en los brazos". Svik lleva "anillos de plata enrollados en los brazos". Glornir es llamado "Dador-de-Oro". [Histórico: los armrings eran la moneda social vikinga. Un jarl generoso distribuía anillos a su séquito. Romper un anillo para pagar era común. Símbolo físico del vínculo señor-guerrero.]',
-        star: 'Glornir "Dador-de-Oro" distribuye anillos a Hermanos de Sangre. Sistema de lealtad económica: el oro compra juramentos. Orka y Thorkel no llevan anillos — no deben lealtad a nadie.'
+        id: 'armring', label: 'Armring (Anillo de Brazo)', group: 'NORSE', type: 'Simbolo -- Lealtad', desc: 'Anillo de metal (plata, oro, bronce) enrollado en el brazo. Simbolo de lealtad a un senor. Los jarls los otorgan a guerreros leales; el epiteto dador-de-anillos describe a un buen senor. Llevar armrings es senal de pertenecer a un sequito. No llevarlos puede ser senal deliberada de no deber lealtad a nadie. [Historico: los armrings eran la moneda social vikinga. Un jarl generoso distribuia anillos a su sequito. Simbolo fisico del vinculo senor-guerrero.]',
+        star: 'Sistema de lealtad economica: el oro compra juramentos. Quien lleva muchos armrings tiene muchas deudas de honor -- o las cobra.'
     },
     {
         id: 'asgrim', label: 'Asgrim (†)', group: 'ORKA', type: 'Personaje — Muerto', desc: 'Vecino de Orka y Thorkel en las colinas sobre el fiordo de Fellur. Encontrado muerto de una estocada al corazón en el umbral de su steading. Tenía runa de warding en la puerta —el asesino fue humano, no vaesen.',
@@ -41,7 +41,7 @@ const nodes = [
         star: ''
     },
     {
-        id: 'berak', label: 'Berak Bjornasson', group: 'ELVAR', type: 'Personaje — Berserkir', desc: 'Alto y grande con cicatrices en la cara, barba hasta el cinturón. Sangre del dios muerto Berser. Ojos ambarinos cuando entra en furia, dientes afilados, fuerza brutal. Vivía escondido y fue capturado en Iskalt. Se le acusa de haber matado a tres Jarls. El collar de hierro suprime su transformación Berserkir. Destino: Snakavik, Jarl Störr. Fuerza sobrehumana incluso sin transformación y encadenado. Protege instintivamente a Uspa y Bjarn ante cualquier amenaza (ver nodo night-wyrm). Intenta proteger a su mujer cuando Agnar le permite hablar.',
+        id: 'berak', label: 'Berak Bjornasson', group: 'ELVAR', type: 'Personaje -- Berserkir', desc: 'Alto y grande con cicatrices en la cara, barba hasta el cinturon. Sangre del dios muerto Berser (ver nodo berser). Ojos ambarinos cuando entra en furia, dientes afilados, fuerza brutal -- transformacion Berserkir (ver nodo berserkergang). Vivia escondido y fue capturado en Iskalt. Se le acusa de haber matado a tres Jarls. El collar de hierro suprime su transformacion. Destino: Snakavik, Jarl Storr. Fuerza sobrehumana incluso encadenado y sin transformacion. Protege instintivamente a Uspa y Bjarn ante cualquier amenaza.',
         star: '★ Incluso encadenado y con el collar puesto, su fuerza es prodigiosa. El gesto de proteger primero a su familia revela que bajo la bestia hay un padre.'
     },
     {
@@ -53,8 +53,8 @@ const nodes = [
         star: 'Berak Bjornasson porta su sangre. Los Berserkir son muy cotizados por los jarls como guardia personal. El collar de hierro los detiene — pero ¿cuánto tiempo?'
     },
     {
-        id: 'berserkergang', label: 'Berserkergang (Furia de Batalla)', group: 'NORSE', type: 'Combate — Trance', desc: 'Estado de furia disociativa en combate. Ojos ambarinos, dientes afilados, fuerza sobrehumana, pérdida de control racional. Berak entra en berserkergang cuando se transforma. Varg tiene episodios de "furia roja" que no recuerda — posible berserkergang. [Histórico: los berserkir históricos entraban en trance de batalla (quizá con drogas/rituales). Mordían escudos, aullaban, peleaban sin armadura. Gwynne lo reinterpreta como manifestación literal de sangre divina Tainted.]',
-        star: 'Varg tiene furia roja sin memoria = posible sangre Tainted no descubierta. Berak en berserkergang es imparable — el collar de hierro es lo único que lo detiene.'
+        id: 'berserkergang', label: 'Berserkergang (Furia de Batalla)', group: 'NORSE', type: 'Combate -- Trance', desc: 'Estado de furia disociativa en combate. Ojos ambarinos, dientes afilados, fuerza sobrehumana, perdida de control racional. Puede ser manifestacion de sangre Tainted o de entrenamiento extremo. [Historico: los berserkir historicos entraban en trance de batalla. Gwynne lo reinterpreta como manifestacion literal de sangre divina Tainted.]',
+        star: 'Marcador clave de posible sangre Tainted: quien entra en berserkergang involuntariamente puede estar manifestando herencia divina sin saberlo.'
     },
     {
         id: 'biorr', label: 'Biórr', group: 'ELVAR', type: 'Personaje — Terrores de la batalla', desc: 'Pelo negro, botas largas (objeto de burlas). Interesado en Elvar. Sigue sus pasos en el bosque de Iskalt. Grend lo odia. Ofrece gachas al prisionero Berak y su familia. Explora el terreno y encuentra el lugar de acampada (la meseta con la piedra de juramento). Su iniciativa con la antorcha salva a toda la compañía durante el ataque de wyrms (ver nodo night-wyrm).',
@@ -65,8 +65,8 @@ const nodes = [
         star: '★★ Doble sangre: Snaka (Seiðr/serpiente) + Berser (fuerza/oso). ¿Cuál de los dos prevalecerá? ¿O podrá manifestar ambas? El Tainted más potencialmente poderoso de todos los prisioneros.'
     },
     {
-        id: 'blood-oath', label: 'Juramento de Sangre', group: 'NORSE', type: 'Ritual — Pacto', desc: 'Pacto inquebrantable sellado con sangre. Sigrún juró lealtad de sangre a Helka. Breca y Vesli están unidos por juramento de sangre. Romperlo es traición absoluta. [Histórico: los juramentos de sangre (blóðbræðralag) creaban hermandad artificial entre guerreros nórdicos. Gwynne lo eleva a magia vinculante: el juramento de sangre en Vigríð tiene poder literal.]',
-        star: '★★ El título de la trilogía (Bloodsworn) se refiere a esto. Los juramentos de sangre son el tejido que une (y rompe) Vigríð.'
+        id: 'blood-oath', label: 'Juramento de Sangre', group: 'NORSE', type: 'Ritual -- Pacto', desc: 'Pacto inquebrantable sellado con sangre. Romperlo es traicion absoluta. Une a guerreros, humanos y vaesen en obligaciones mutuas de lealtad, proteccion y servicio. [Historico: los juramentos de sangre creaban hermandad artificial entre guerreros nordicos. Gwynne lo eleva a magia vinculante: el juramento de sangre en Vigrið tiene poder literal.]',
+        star: '** El titulo de la trilogia (Bloodsworn) se refiere a esto. Los juramentos de sangre son el tejido que une (y rompe) Vigrið. Su poder vinculante es literal, no solo simbolico.'
     },
     {
         id: 'bloodsworn', label: 'Bloodsworn (Hermanos de Sangre)', group: 'FACCION', type: 'Faccion -- Mercenarios', desc: 'Compania mercenaria de elite, legendaria. Escudo negro con salpicaduras rojas. Cazan vaesen, buscan reliquias, protegen ricos. Drakkar: Sea-Wolf. Jefe: Glornir. Seidr-thrall: Vol. Funcion en Liga: protegen el puerto de piratas y saqueadores a cambio de hospitalidad de Logur. El jefe anterior, Skullsplitter, regalo a Logur una astilla del Cuerno Vackna.',
@@ -120,8 +120,8 @@ const nodes = [
         star: '★ Wave-Jarl (Terrores de la batalla) es un drakkar. Los Hermanos de Sangre también tienen uno. Símbolo de estatus para compañías mercenarias.'
     },
     {
-        id: 'drengr', label: 'Drengr', group: 'NORSE', type: 'Concepto — Honor', desc: 'Guerrero honorable, valiente, leal. Título de respeto. Guðvarr se considera drengr pero su conducta lo contradice. [Histórico: drengr era el ideal del guerrero nórdico: valentía, lealtad, generosidad, autocontrol. Lo opuesto al níðing. Gwynne lo usa como marcador de estatus social y moral.]',
-        star: 'Guðvarr reclama el título pero no vive según él. Contraste con Thorkel, que nunca lo reclama pero lo encarna.'
+        id: 'drengr', label: 'Drengr', group: 'NORSE', type: 'Concepto -- Honor', desc: 'Guerrero honorable, valiente, leal. Titulo de respeto. El ideal del drengr es el opuesto al niding: valentía, lealtad, generosidad, autocontrol. Se puede reclamar el titulo sin poseerlo -- la brecha entre el reclamo y la conducta es un motor de conflicto social en Vigrið. [Historico: drengr era el ideal del guerrero nordico. Lo opuesto al niding. Gwynne lo usa como marcador de estatus social y moral.]',
+        star: 'La tension entre quien reclama ser drengr y quien lo demuestra con hechos es uno de los grandes temas de la novela.'
     },
     {
         id: 'einar', label: 'Einar Medio-Trol', group: 'VARG', type: 'Personaje — Hermanos', desc: 'Campeon de los Hermanos. Enorme, barba roja hasta la cintura, manos como yunques. Proteccion de hierro en la entrepierna (forjada por Jokul). Pelea con Varg para ganarse su puesto. En la batalla del muelle (ver nodo batalla-muelles) demuestra precision letal ademas de fuerza bruta.',
@@ -156,16 +156,16 @@ const nodes = [
         star: ''
     },
     {
-        id: 'froa', label: 'Froa (dagger)', group: 'VAESEN', type: 'Vaesen -- Espiritu del Arbol (Muerta)', desc: 'Espiritu guardian ligado a un arbol de fresno nacido de una semilla del gran Osktured. Forma: mujer-estatua tallada en madera, mas alta que Orka, pelo largo hasta la cintura entretejido de hojas y ramitas. Las Froa viven y mueren con su arbol y luchan salvajemente para defenderlo. MUERTA junto con su arbol (ver nodo arbol-froa). Encontrada en la ladera del montIculo: cuerpo picado a hachazos y quemado, boca abierta en un grito de agonia congelado, brazos extendidos hacia el tronco caido. Orka la describe como alguien que en su ultimo encuentro "reia y bailaba y le ofrecio la mano".',
-        star: '*** ASESINADA junto con su arbol. Alguien con recursos y poder suficiente para matar a un vaesen guardian poderoso recorrio el bosque de Orka. La conexion con los asesinos de Asgrim es inevitable. Los gritos al oeste al final del capitulo sugieren que la amenaza ya esta actuando cerca del steading.'
+        id: 'froa', label: 'Froa (dagger)', group: 'VAESEN', type: 'Vaesen -- Espiritu del Arbol (Muerta)', desc: 'Espiritu guardian ligado a un arbol de fresno nacido de una semilla del gran Osktured. Forma: mujer-estatua tallada en madera, mas alta que Orka, pelo largo hasta la cintura entretejido de hojas y ramitas. Las Froa viven y mueren con su arbol y luchan salvajemente para defenderlo. Estado actual: MUERTA junto con su arbol (ver nodo arbol-froa). Orka la conocia: en su ultimo encuentro reía, bailaba y le ofrecia la mano de amistad.',
+        star: '*** ASESINADA junto con su arbol. La destruccion requirio muchos hombres con hachas y magia de fuego -- misma organizacion que opera los robos de ninos (ver nodo ninos-robados).'
     },
     {
         id: 'froya', label: 'Frøya (†)', group: 'VARG', type: 'Personaje — Muerta', desc: 'Hermana de Varg, 1 invierno menor. Ambos fueron vendidos a los 5 y 4 años por sus padres. Murió en circunstancias desconocidas. Su muerte es el motor de toda la historia de Varg.',
         star: 'Varg necesita un akáll (invocación Seiðr) para descubrir cómo murió y quién la mató.'
     },
     {
-        id: 'funeral-rites', label: 'Ritos Funerarios', group: 'NORSE', type: 'Ritual — Muerte', desc: 'Los guerreros son enterrados con armas en la mano para luchar en Vergelmir contra Lik-Rifa en su camino al más allá. Morir con arma = morir con honor. Grend explica esto a Elvar: "los guerreros atraviesan Vergelmir en el camino del alma". Mord y Lif envuelven el cuerpo de Virk con ayuda de Thorkel. [Histórico: los vikingos enterraban a guerreros con armas, herramientas, incluso barcos. La creencia era que llevarían estos objetos al más allá]',
-        star: '★★ La creencia en Vergelmir hace que los ritos funerarios sean preparación para batalla post-mortem, no solo honor simbólico.'
+        id: 'funeral-rites', label: 'Ritos Funerarios', group: 'NORSE', type: 'Ritual -- Muerte', desc: 'Los guerreros son enterrados con armas en la mano para luchar en Vergelmir contra Lik-Rifa en su camino al mas alla. Morir con arma = morir con honor. Barrows (tumulos) de madera y piedra marcan el lugar de reposo de los guerreros de rango. [Historico: los vikingos enterraban a guerreros con armas, herramientas, incluso barcos. Gwynne lo reinterpreta: las armas son necesarias literalmente para combatir a Lik-Rifa en el inframundo.]',
+        star: '** La creencia en Vergelmir hace que los ritos funerarios sean preparacion para batalla post-mortem, no solo honor simbolico.'
     },
     {
         id: 'gachas', label: 'Gachas/Porridge', group: 'NORSE', type: 'Vida Diaria — Comida', desc: 'Comida básica diaria: avena/cebada cocida con agua o leche. Grend sirve gachas a Elvar. Biórr ofrece gachas a Berak prisionero. Comida de supervivencia en viajes largos y campamentos. [Histórico: el porridge (grautr) era alimento básico escandinavo. Barato, nutritivo, fácil de preparar en barco o campaña. Se comía con mantequilla, miel, o solo. Gwynne lo usa como marcador de vida cotidiana — incluso guerreros de élite comen simple.]',
@@ -180,7 +180,7 @@ const nodes = [
         star: 'Saber esta lengua es poder absoluto sobre los Tainted. ¿Cuántos la conocen realmente?'
     },
     {
-        id: 'glornir', label: 'Glornir', group: 'VARG', type: 'Personaje -- Jefe', desc: 'Jefe de los Hermanos de Sangre. Calvo, barba gris trenzada. Long-axe como baston. Oro y plata en brazos y cuello. Habla lengua Galdur. Epítetos: Rompe-Escudos, Dador-de-Oro, Robador-de-Almas, Cortador-Golpeador-Aplastador. Filosofia del Bloodsworn: habilidad + lealtad + devocion. Lleva brynja brillante y yelmo al salir de Liga. Da a Varg la lanza de Aslog y el escudo negro. Derribo una flecha de Jaromir en vuelo con un golpe de hacha (ver nodo batalla-muelles). Se niega dos veces a entregar a Sulich (ver nodo sulich-crisis).',
+        id: 'glornir', label: 'Glornir', group: 'VARG', type: 'Personaje -- Jefe', desc: 'Jefe de los Hermanos de Sangre. Calvo, barba gris trenzada. Long-axe como baston. Oro y plata en brazos y cuello. Habla lengua Galdur. Lleva brynja brillante cuando lidera en combate o en marcha. Epítetos: Rompe-Escudos, Dador-de-Oro, Robador-de-Almas, Cortador-Golpeador-Aplastador. Filosofia del Bloodsworn: habilidad + lealtad + devocion. Estado actual: bloquea el akall de Varg (ver nodo akall). Se niega dos veces a entregar a Sulich (ver nodo sulich-crisis). Derriba una flecha en vuelo con su hacha (ver nodo batalla-muelles).',
         star: '*** Derribar una flecha en vuelo con la hacha define por que todos lo siguen. No habla de valor -- lo demuestra bajo fuego real. El gesto resume sus cuatro kennings en un instante.'
     },
     {
@@ -240,8 +240,8 @@ const nodes = [
         star: '★★ Las leyes del holmganga están por encima de la victoria: el honor importa más que ganar. Las leyes nórdicas antiguas siguen vivas en Vigríð — romperlas tiene consecuencias letales.'
     },
     {
-        id: 'holmganga-event', label: 'Holmganga Virk vs Guðvarr', group: 'EVENTO', type: 'Evento', desc: 'Guðvarr reta a duelo a Virk. Virk acepta y ganó el duelo —le hundió el hacha en el hombro a Guðvarr, seccionándole los músculos—. Pero Virk alzó el arma para matar tras la rendición, violando las reglas. La thrall de Sigrún intervino y lo mató.',
-        star: 'Virk murió. Sus hijos Mord y Lif presenciaron todo. La thrall de Sigrún desbordó el control y mordió el cadáver — Sigrún misma parece incómoda con lo sucedido. Thorkel recibió un corte de seax.'
+        id: 'holmganga-event', label: 'Holmganga Virk vs Guðvarr', group: 'EVENTO', type: 'Evento', desc: 'Guðvarr reta a duelo a Virk. Virk acepta y gano el duelo: le hundio el hacha en el hombro a Gudvarr, seccionandole los musculos. Gudvarr se rindio. Pero Virk alzo el arma para matar tras la rendicion, violando las reglas del holmganga. La thrall-guerrera de Sigrun intervino y lo mato con dos seaxes en frenesí bestial, mordiendole la cara. Sigrun justifico la muerte: Virk rompio las reglas, la justicia esta hecha. Mord y Lif (hijos de Virk) exigieron justicia y no la obtuvieron. Thorkel recibio un corte de seax de la thrall.',
+        star: '*** Virk murio. Sus hijos presenciaron todo. Sigrun justifico legalmente la muerte. La thrall desbordó el control y mordio el cadaver -- Sigrun misma parece incomoda. Thorkel fue herido: la thrall lo identifico como objetivo? Ver nodo thrall-sigrun.'
     },
     {
         id: 'howbyr', label: 'Howbyr', group: 'LUGAR', type: 'Lugar — Villa', desc: 'Villa a 10–12 leguas al norte de Fellur. Domicilio de los Haraldurson, que perdieron tres hijos. Segundo nodo confirmado del patrón geográfico de robos.',
@@ -280,8 +280,8 @@ const nodes = [
         star: ''
     },
     {
-        id: 'jarl-logur', label: 'Jarl Logur', group: 'FACCION', type: 'Personaje -- Politica', desc: 'Jarl de Liga. Sus escudos son azules y sus velas rojas. Barriludo, vientre que estira la tunica bordada, cabello gris largo y trenzado con hilo de oro, oro en cuello y brazos. Hombre que rie mucho. Viejo amigo de Sergei el mercader. Sienta a Glornir a su izquierda. Defensor de la ley ante Jaromir. Despide a los Hermanos con generosidad. Promete enviarlos con barriles llenos y vientres llenos. Abraza a Glornir.',
-        star: '* Su hospitalidad es genuina y sin condicion. La dinamica con Salla -- ella gestiona, el promete -- es un detalle humano que los hace reales.'
+        id: 'jarl-logur', label: 'Jarl Logur', group: 'FACCION', type: 'Personaje -- Politica', desc: 'Jarl de Liga. Sus escudos son azules y sus velas rojas. Barriludo, cabello gris trenzado con hilo de oro, oro en cuello y brazos. Hombre que rie mucho. Viejo amigo de Sergei el mercader. Sienta a Glornir a su izquierda en la mesa de honor. Estado actual: mantuvo la neutralidad entre Glornir y Jaromir apelando a la ley (ver nodo sulich-crisis). Liga ahora es el escenario de la llegada de Helka (ver nodo llegada-helka). Su esposa es Salla.',
+        star: '* Equilibrista politico: no desafia a Jaromir abiertamente pero tampoco traiciona a los Hermanos. La hospitalidad es genuina, no diplomatica.'
     },
     {
         id: 'jarl-orlyg', label: 'Jarl Orlyg', group: 'ORKA', type: 'Personaje — Política', desc: 'Jarl de Svelgarth, al este de Vigríð. Presente en el contexto político del Althing. Otro jarl menor cuya posición ante la expansión de Helka y Störr está por definirse.',
@@ -312,8 +312,8 @@ const nodes = [
         star: 'Aún no aparece knarr nombrado explícitamente en la narrativa, pero el comercio entre Liga, Fellur y otras ciudades requiere este tipo de barco.'
     },
     {
-        id: 'kraka', label: 'Kráka', group: 'ELVAR', type: 'Personaje — Thrall Tainted', desc: 'Thrall Tainted de Terrores de la batalla. Cabello negro como un cuervo, tatuajes azules en mandíbula y garganta (similar a Vol), cara gris agotada. Canta magia Seiðr para proteger el casco de serpientes marinas. El canto la destruye físicamente. Maltratada por los guardias. Agnar le dio un asta de trol como fuente de poder para el viaje de regreso. Reconoce la piedra de juramento al instante, antes que cualquier guerrero (ver nodo oath-stone-frost-isles). Declara: "Son los padres y madres de todos nosotros los Tainted. Snaka amaba sus creaciones... y también las devoraba." Contempla las espirales con emoción reverencial.',
-        star: '★ Kráka y Uspa son las únicas que reaccionan con reconocimiento ante la piedra, no con asombro. Para los Tainted de sangre Snaka, ver la historia de su padre grabada en piedra tiene peso diferente.'
+        id: 'kraka', label: 'Kráka', group: 'ELVAR', type: 'Personaje -- Thrall Tainted', desc: 'Thrall Tainted de Terrores de la batalla. Cabello negro como un cuervo, tatuajes azules en mandibula y garganta (similar a Vol), cara gris agotada. Canta magia Seiðr para proteger el casco de serpientes marinas. El canto la destruye fisicamente. Maltratada por los guardias. Agnar le dio un asta de trol como fuente de poder. Reacciona con reconocimiento (no asombro) ante la piedra de juramento (ver nodo oath-stone-frost-isles).',
+        star: '★ Para los Tainted de sangre Snaka, ver la historia de su padre grabada en piedra tiene un peso diferente. Su reaccion reverencial contrasta con el asombro de los humanos.'
     },
     {
         id: 'langsoex', label: 'Langsax / Espada', group: 'NORSE', type: 'Arma — Espada', desc: 'Espada de doble filo, 70-90cm. Arma de estatus: cara de forjar, se heredan, tienen nombres. Guðvarr lleva espada al cinto (símbolo de su rango). Svik lleva espada. Sulich usa espada curva de un filo (estilo Iskidan). [Histórico: las espadas vikingas eran objetos de prestigio. Acero de patrón soldado, empuñaduras decoradas, nombres propios ("Mordedora de Piernas", "Rompehielos"). Solo guerreros ricos las poseían. Gwynne las reserva para personajes de élite.]',
@@ -340,8 +340,8 @@ const nodes = [
         star: 'La sala de Logur es donde Varg es juzgado. El longhouse de Fellur es donde Sigrún gobierna.'
     },
     {
-        id: 'mord-lif', label: 'Mord y Lif', group: 'ORKA', type: 'Personaje -- Huerfanos', desc: 'Hijos de Virk. Mord mayor, Lif menor. Presenciaron la muerte de su padre (ver nodo holmganga-event). Mord exigio justicia; Lif llamo niding a Gudvarr. Sigrun desestimo su reclamo. Construyeron el tumulo de Virk con ayuda de Orka y Thorkel (ver nodo barrow-virk). Lif llora sin parar; Mord murmura juramentos de venganza. Mord casi agarro el hacha de su padre sobre Gudvarr -- Orka y Thorkel lo contuvieron. Thorkel les advierte que no regresen al Althing. Declinaron la invitacion de refugiarse en el steading. Se quedan palidos y ojerosos.',
-        star: '** Su sed de venganza es real pero son demasiado jovenes e inexpertos.'
+        id: 'mord-lif', label: 'Mord y Lif', group: 'ORKA', type: 'Personaje -- Huerfanos', desc: 'Hijos de Virk. Mord mayor, Lif menor. Quedan huerfanos tras la muerte de su padre (ver nodo holmganga-event). Sigrun desestimo su reclamo de justicia. Estado actual: construyeron el tumulo de Virk (ver nodo barrow-virk), palidos y ojerosos, Lif llorando, Mord con juramentos de venganza. Demasiado jovenes e inexpertos para actuar. Thorkel les aconsejo no regresar al Althing.',
+        star: '** Su sed de venganza es real. La informacion de Virk sobre los robos de ninos -- ¿la heredaron? Ver nodo ninos-robados.'
     },
     {
         id: 'uspa', label: 'Uspa', group: 'ELVAR', type: 'Personaje — Tainted (Snaka)', desc: 'Rubia, ojos gris-azul pálido. Tatuajes espirales bajo la ropa. Arrojó un objeto al lago de lava antes de ser capturada. Controló la serpiente marina con canto Seiðr. Sangre de Snaka. Activa la piedra de juramento con su sangre (ver nodo oath-stone-frost-isles). Sabe la causa verdadera de la guerra de los dioses cuando nadie más la conoce. Cuando Elvar afirma que los dragon-born son un cuento de hadas, Uspa escupe sin decir una palabra.',
@@ -356,8 +356,8 @@ const nodes = [
         star: '★★ Guðvarr usó la palabra como arma tras perder. Virk prefirió morir antes que aceptar el insulto.'
     },
     {
-        id: 'ninos-robados', label: 'Robos de Ninos', group: 'TRAMA', type: 'Trama -- Abierta (Urgente)', desc: 'Patron organizado bajo el mando de Drekr. Casos conocidos: Harek (colinas de Fellur), 3 hijos de los Haraldurson (Howbyr), familia de Kergarth, y ahora BRECA. Patron de operacion confirmado -- queman la proteccion galdr-runica (necesitan un Galdurman o Seidr-witch), atacan con fuerza numerosa, huyen en botes por los rios. Thorkel siguio sus rastros tras el caso Asgrim: tres botes entonces; Quedan huellas de tres botes (uno recuperado por Orka en el rio, dos ya partidos con Breca y los supervivientes). El interrogado revelo que el lider se llama Drekr. Los captores llevan a los ninos vivos -- algun proposito especifico.',
-        star: '*** trama escalada al maximo. Drekr es el nombre del antagonista. Breca es el ultimo raptado. El rio se bifurca -- Orka no sabe que camino tomaron. La red es mucho mayor de lo que parecia: necesitan magia (Galdurman) para romper protecciones.'
+        id: 'ninos-robados', label: 'Robos de Ninos', group: 'TRAMA', type: 'Trama -- Abierta (Urgente)', desc: 'Patron organizado bajo el mando de Drekr. Casos conocidos: Harek (colinas de Fellur), 3 hijos de los Haraldurson (Howbyr), familia de Kergarth, y ahora BRECA. Modus operandi: quemar galdr-runas (Galdurman), atacar con fuerza mixta (humanos + vaesen + skraelings + Tainted), huir en botes por rios. Los tennur de Drekr buscaban ESPECIFICAMENTE a Breca -- no fue captura oportunista. Esto sugiere que Drekr sabe que Breca tiene sangre Tainted.',
+        star: '*** Los tennur iban a por Breca con intencion. ¿Como sabe Drekr quienes son los Tainted en la region? ¿Tiene informadores? ¿O el dragon-born puede detectar sangre divina?'
     },
     {
         id: 'oath-stone-fellur', label: 'Roca del Juramento de Fellur', group: 'OBJETO', type: 'Objeto — Althing', desc: 'Islote en el fiordo de Fellur. Monolito de runas destruido a martillazos (adorar a los dioses es ilegal). Aquí se celebra el Althing de Fellur.',
@@ -368,8 +368,8 @@ const nodes = [
         star: '★★★ Es un archivo de la historia del mundo, activable solo con sangre Tainted. Su supervivencia es casi un milagro. La luz que emite puede atraer vaesen. ¿Existen otras piedras ocultas en lugares remotos?'
     },
     {
-        id: 'orka', label: 'Orka', group: 'ORKA', type: 'POV -- Personaje', desc: 'Mujer alta y rubia, ojos gris-verde. Exguerrera. Flashbacks violentos, episodios de rabia cegadora. Padre violento en la infancia. Capturo a Spert mediante vinculo de sangre. Tras el ataque al steading (ver nodo ataque-steading) y la muerte de Thorkel (ver nodo thorkel-muerte), persigue a los rezagados de Drekr hasta el rio y mata a cuatro: uno con lanza en la espalda, uno viejo con seax en el vientre y tripas fuera, la mujer con hacha repetida hasta pulpa en un acceso de rabia feral. Interroga al chico joven hasta obtener el nombre del lider: Drekr. Lo mata. Queda sola junto al rio con el nombre de quien le robo al hijo y mato al marido.',
-        star: '*** Transformacion completa. El personaje que intentaba vivir en paz se convierte en maquina de venganza. La escena de la mujer a hachazos es la primera vez que vemos el lado verdaderamente oscuro de Orka -- no defensa, sino furia pura. Ahora tiene un objetivo: Drekr.'
+        id: 'orka', label: 'Orka', group: 'ORKA', type: 'POV -- Personaje', desc: 'Mujer alta y rubia, ojos gris-verde. Exguerrera de alto rango con pasado enterrado (ver nodo Cofre Enterrado de Orka). Flashbacks violentos, episodios de rabia cegadora. Padre violento en la infancia. Vinculo de sangre con Spert. Estado actual: Thorkel muerto (ver nodo thorkel-muerte), steading destruido (ver nodo ataque-steading), Breca raptado por Drekr (ver nodo ninos-robados). Ha pronunciado el voto de venganza (ver nodo orka-vow) y sale en persecucion (ver nodo drekr-cazadora). Lleva los seaxes del dragon-born que mato a Thorkel (ver nodo seaxes-tainted).',
+        star: '*** La Orka que intentaba vivir en paz se ha ido. La guerrera de alto rango que enterro bajo sus pies vuelve. Ahora tiene un nombre: Drekr.'
     },
     {
         id: 'orl', label: 'Orl', group: 'VARG', type: 'Personaje — Antagonista menor', desc: 'Viejo de cabello gris lacio. Compañero personal de armas (Hird) de Leif Kolskeggson. Tiene una perra/hound. Cuida al perro quemado por la hoguera de Varg en la granja de Kolskegg, revelando así la conexión de Leif con el lugar.',
@@ -418,7 +418,6 @@ const nodes = [
         id: 'second-combat', label: 'Segundo en Combate', group: 'NORSE', type: 'Combate — Rol', desc: 'Testigo y consejero en duelos formales. Arild fue segundo de Guðvarr en el holmganga — le aconsejó antes del duelo, le vendó tras la derrota. Orka fue segundo de Virk. El segundo no puede intervenir en el combate pero puede detenerlo si las reglas se rompen. [Histórico: en duelos formales nórdicos, cada combatiente tenía testigos/segundos. Su rol era garantizar que las reglas se cumplieran y que el resultado fuera reconocido legalmente. Gwynne lo preserva como parte del ritual del holmganga.]',
         star: 'Arild aconsejó a Guðvarr — ¿qué le dijo? Orka como segundo de Virk muestra que ella tiene estatus social reconocido en Fellur a pesar de vivir aislada.'
     },
-    //---------------------------------------Revisado----------------------------------//
     {
         id: 'seidr', label: 'Seiðr', group: 'MAGIA', type: 'Magia', desc: 'Magia de influencia, invocación y canto. El akáll invoca espíritus de muertos para interrogarlos. El canto protege de vaesen o los controla. Practicado por brujas (völva). El uso extenuante desgasta el cuerpo. Ligado frecuentemente a sangre divina. [Contexto: en la mitología nórdica histórica, el Seiðr era una práctica ritual chamánica de Freyja y Odín, usada para profecía y manipulación del destino. Las völvur viajaban entre comunidades sentadas en plataformas elevadas (seiðhjallr). En Vigríð este saber sobrevive en las thrall-brujas que los mercenarios encadenan.]',
         star: 'Las dos brujas conocidas (Vol, Kráka) son thralls encadenadas. ¿Hay Seiðr libre en Vigríð?'
@@ -431,6 +430,7 @@ const nodes = [
         id: 'sigrun', label: 'Jarl Sigrún', group: 'ORKA', type: 'Personaje — Política', desc: 'Jarl de Fellur durante 8 años. Mujer alta y guerrera. Lleva torc de plata, anillos en los brazos. Convocada a Darl por la Reina Helka; allí juró lealtad de sangre. Siempre acompañada por su thrall-guerrera',
         star: 'La thrall-guerrera que la sigue es un misterio: ojos planos que hielan hasta a Orka. ¿Quién era antes de ser encadenada?'
     },
+    //---------------------------------------Revisado----------------------------------//
     {
         id: 'sjavarom', label: 'Sjávarorm (Serpiente Marina)', group: 'VAESEN', type: 'Vaesen', desc: 'Cabeza del tamaño de una cabaña, hileras de dientes, cuerpo sinuoso gris-verde. Atacó el Wave-Jarl. Controlada por Uspa con canto Seiðr (sangre de Snaka).',
         star: 'Revela el poder de Uspa: sangre de Snaka controla criaturas del mar.'
@@ -448,8 +448,8 @@ const nodes = [
         star: '★ Los colores de escudo identifican facciones al instante. Røkia entrena a Varg específicamente en combate de escudo — habilidad fundamental para Hermanos de Sangre.'
     },
     {
-        id: 'skraeling', label: 'Skraeling', group: 'VAESEN', type: 'Vaesen', desc: 'Vaesen mencionado en el mundo de Vigríð. Detalles por revelar en la historia. Parte del catálogo de criaturas liberadas en el Guðfalla.',
-        star: ''
+        id: 'skraeling', label: 'Skraeling', group: 'VAESEN', type: 'Vaesen -- Combatiente', desc: 'Vaesen que participo en el ataque al steading de Orka (ver nodo ataque-steading). Mencionado por Vesli al narrar la batalla junto a guerreros humanos, vaesen y el Tainted-garras. Sus caracteristicas fisicas y habilidades no han sido detalladas aun en los capitulos leidos. [Historico: skraeling era el termino nordico para los nativos de America del Norte y Groenlandia. Gwynne lo reutiliza como nombre de un vaesen de Vigrið.]',
+        star: '¿Que hace un skraeling? Participaron activamente en el ataque -- no son solo acompanantes. Primera vez que se los ve en accion (sin descripcion fisica todavia).'
     },
     {
         id: 'skuta', label: 'Skúta', group: 'NORSE', type: 'Embarcación — Transporte', desc: 'Barco de transporte pequeño-mediano. Híbrido entre knarr y karvi. Comercio regional, transporte de pasajeros, suministros. [Histórico: término genérico para barcos de transporte en nórdico antiguo. Menos especializado que knarr o drakkar. En Vigríð serían comunes en rutas comerciales secundarias.]',
@@ -476,8 +476,8 @@ const nodes = [
         star: 'Varg mató a su amo sin recordarlo. La furia roja que borró el acto es la misma que lo hace sospechoso de sangre Tainted.'
     },
     {
-        id: 'spert', label: 'Spert', group: 'ORKA', type: 'Vaesen -- Guardian (Herido)', desc: 'Spertus. Artropodo segmentado con cara casi humana, aguijon, antenas, vapor negro venenoso. Capturado por Orka con vinculo de sangre. Guarda el steading. Come papilla de sangre y saliva de Orka diariamente. HERIDO tras el ataque al steading (ver nodo ataque-steading): encontrado inmovil sobre la roca junto al arroyo, con un agujero en su cuerpo segmentado del que mana icor negro, rodeado de una docena de cuerpos de tennur muertos. Aparentemente muerto o moribundo.',
-        star: '¿Esta muerto o es recuperable? Si muere, Orka pierde su guardian de sangre. Los tennur muertos sugieren que hubo una batalla de vaesen en el steading -- quien o que los mato junto con Spert?'
+        id: 'spert', label: 'Spert', group: 'ORKA', type: 'Vaesen -- Guardian (Recuperandose)', desc: 'Spertus. Artropodo segmentado con cara casi humana, aguijon, antenas, vapor negro venenoso. Capturado por Orka con vinculo de sangre. Guarda el steading de otros vaesen. Come papilla de sangre y saliva de Orka diariamente. Estado actual: gravemente herido durante el ataque al steading (ver nodo ataque-steading). Mato a al menos un atacante con su veneno antes de caer. Liberado de su juramento por Orka tras el ataque. Siendo curado por Vesli (ver nodo vesli-saliva).',
+        star: 'Su veneno mata incluso a guerreros armados. Hizo su trabajo. Fue liberado -- gesto de honra genuina de Orka.'
     },
     {
         id: 'spertus', label: 'Spertus', group: 'VAESEN', type: 'Vaesen — Artrópodo', desc: 'Tipo de vaesen artropodo. Ver nodo spert para el ejemplar capturado por Orka.',
@@ -508,20 +508,20 @@ const nodes = [
         star: '* Su sonrisa salpicada de sangre y la pregunta a Varg tras el combate revelan admiracion bajo el sarcasmo habitual. Es el primero en reconocer que lo que hizo Varg, aunque incorrecto tacticamente, funciono.'
     },
     {
-        id: 'tainted', label: 'Tainted', group: 'COSMO', type: 'Facción — Perseguidos', desc: 'Descendientes de los dioses muertos. Portadores de poderes heredados. Perseguidos y cazados desde el Guðfalla. Controlados con collares de hierro activados por lengua Galdur. Vendidos a jarls poderosos. Hundur el Sabueso (Hundur-thrall), Berser el Oso (Berak), Snaka la Serpiente (Kráka y Uspa). Linajes vistos en Iskidan: el Toro, el Halcón, el Caballo — confirma que los Tainted están dispersos por todo el mundo conocido, no solo en Vigríð. Linaje dragon-born de Lik-Rifa: confirmado (ver nodo dragon-born).',
-        star: '★★★ ¿Varg tiene sangre Tainted? ¿Y Breca? Los dos protagonistas muestran señales. El linaje dragon-born de Lik-Rifa ha sido confirmado (ver nodo dragon-born).'
+        id: 'tainted', label: 'Tainted', group: 'COSMO', type: 'Faccion -- Perseguidos', desc: 'Descendientes de los dioses muertos. Portadores de poderes heredados de su linaje divino. Perseguidos y cazados desde el Gudfalla. Controlados con collares de hierro activados por lengua Galdur. Vendidos a jarls poderosos. Linajes conocidos en Vigrið e Iskidan: oso (Berser), lobo (Ulfrir), serpiente (Snaka), sabueso (Hundur), toro, halcon, caballo y dragon (ver nodo dragon-born). Los Tainted estan dispersos por todo el mundo conocido, no solo en Vigrið.',
+        star: '*** ¿Varg tiene sangre Tainted? ¿Y Breca? Los dos protagonistas muestran senales. El linaje dragon-born de Lik-Rifa ha sido confirmado como activo en Vigrið (ver nodo dragon-born).'
     },
     {
         id: 'tennur', label: 'Tennur', group: 'VAESEN', type: 'Criatura', desc: 'A los Tennur les gustan los dientes y en manada son letales',
         star: ''
     },
     {
-        id: 'thorkel', label: 'Thorkel Ulfsson (dagger)', group: 'ORKA', type: 'Personaje -- MUERTO', desc: 'Grande como un penasco. Barba trenzada con cicatriz de mejilla a mandibula. Ex-thrall. El mejor rastreador. Profundamente amoroso con Orka y Breca. Hacha de mango largo con hoja barbada. Capa de lobo. Identifico a la thrall de Sigrun como Ulfhednar. Acepto la huida sin resistencia. MUERTO defendiendo el steading contra la banda de Drekr (ver nodo thorkel-muerte).',
-        star: '*** Contraste con Gudvarr: Thorkel nunca reclama el titulo de drengr pero lo encarna. Su nombre Ulfsson (hijo de Ulf/lobo) puede ocultar su linaje. Conocia subtipos de Tainted con certeza -- su pasado le dio ese conocimiento.'
+        id: 'thorkel', label: 'Thorkel Ulfsson (dagger)', group: 'ORKA', type: 'Personaje -- MUERTO', desc: 'Grande como un penasco. Barba trenzada con cicatriz de mejilla a mandibula. Ex-thrall. El mejor rastreador. Profundamente amoroso con Orka y Breca. Hacha de mango largo con hoja barbada. Capa de lobo. Identifico a la thrall de Sigrun como Ulfhednar. Acepto la huida sin resistencia. MUERTO defendiendo el steading (ver nodo thorkel-muerte). Enterrado por Orka en barrow con su hacha, los seaxes ornamentados y brazaletes de oro (ver nodo tumulo-thorkel). Ultimas palabras: Dragon-born (ver nodo dragon-born).',
+        star: '*** Sus ultimas dos palabras son las revelaciones mas grandes del libro. Cap.19 confirma implicitamente que el mismo era Tainted (ver nodo thorkel-transformacion). Su patronimico Ulfsson y su conocimiento preciso de los Ulfhednar apuntan a sangre de lobo.'
     },
     {
-        id: 'thrall', label: 'Thrall (Esclavo)', group: 'NORSE', type: 'Clase Social', desc: 'Esclavo. Collar de hierro como símbolo. Sin derechos legales. Varg y Thorkel fueron thralls. Los Tainted son esclavizados sistemáticamente. [Histórico: los þræll eran la clase más baja en la sociedad nórdica: prisioneros de guerra, deudores, hijos de esclavos. Gwynne expande esto: en Vigríð los Tainted son thralls por ley, controlados con collares mágicos.]',
-        star: '★★★ La esclavitud es institución central en Vigríð. Los tres POV tienen conexión directa con ella: Varg y Thorkel ex-thralls, Orka usa thrall-vaesen.'
+        id: 'thrall', label: 'Thrall (Esclavo)', group: 'NORSE', type: 'Clase Social', desc: 'Esclavo. Collar de hierro como simbolo. Sin derechos legales: no puede portar armas, no puede hablar en el Althing, su vida pertenece a su amo. Los Tainted son esclavizados sistematicamente con collares de control magico. [Historico: los thralls eran la clase mas baja en la sociedad nordica: prisioneros de guerra, deudores, hijos de esclavos. Gwynne expande esto: en Vigrið los Tainted son thralls por ley, controlados con collares magicos.]',
+        star: '*** La esclavitud es institucion central en Vigrið. La experiencia de haber sido thrall deja marcas fisicas y psicologicas que definen a quien la vivio.'
     },
     {
         id: 'thrall-sigrun', label: 'Thrall-Guerrera de Sigrun (Ulfhednar)', group: 'ORKA', type: 'Personaje -- Tainted (Lobo)', desc: 'Sin nombre revelado. Ojos ambarinos en combate, dientes que se agudizan, fuerza para saltar metros. Ejecuto a Virk en el holmganga con dos seaxes en frenesi bestial; le mordio la cara (ver nodo holmganga-event). Thorkel la identifica como Ulfrir-kin y mas precisamente como Ulfhednar -- guerrera-lobo de elite. Lamer la sangre de Thorkel preocupa a Orka como posible rastreo, aunque Thorkel senala que las Ulfhednar no son rastreadores de sangre como los Hundur-kin -- aunque admite que los Tainted estan mestizados. Su existencia es la razon principal por la que Orka y Thorkel deciden huir del steading.',
@@ -548,16 +548,16 @@ const nodes = [
         star: ''
     },
     {
-        id: 'varg', label: 'Varg', group: 'VARG', type: 'POV -- Personaje', desc: 'Ex-thrall de Snepil, ~30 inviernos. Hermana Froya muerta. Episodios de furia roja. Boxeador formidable. Bolsa de cuero con algo de Froya. Aprendiz de los Hermanos. Compra equipo en Liga con Svik y Rokia: tunicas, pantalones, winnigas, zapatos, gorra de nalbinding, seax, hacha de lanzar, yelmo de cuatro placas con forro de piel, instrumental medico, capa de foca. Recibe la lanza de Aslog (Hermano caido) de Glornir y el escudo negro de entrenamiento. Sintio presion extraña al acercarse a la astilla del Vackna (ver nodo objeto-viga). Primera batalla real en los muelles de Liga (ver nodo batalla-muelles): olvido quitar la cubierta de cuero de la lanza y subio a un caballo por primera vez -- instinto de combate bueno, tecnica en construccion.',
-        star: '*** Primera muerte en combate. La cubierta de la lanza es el error mas revelador. Subir al caballo sin haberlo hecho nunca -- reaccion pura. La sensacion extraña del relic en la viga confirma posible sensibilidad magica -- otro indicador de sangre Tainted?'
+        id: 'varg', label: 'Varg', group: 'VARG', type: 'POV -- Personaje', desc: 'Ex-thrall de Snepil, ~30 inviernos. Hermana Froya muerta. Episodios de furia roja disociativa. Boxeador formidable (100 combates). Bolsa de cuero con algo de Froya. Estado actual: aprendiz de los Hermanos de Sangre (ver nodo varg-aprendiz). Kit de combate completo adquirido en Liga (ver nodo kit-varg). Primera batalla real (ver nodo batalla-muelles). Siente atraccion extraña hacia relics divinos (ver nodo objeto-viga). El akall sigue siendo su objetivo final (ver nodo akall).',
+        star: '*** Su sensibilidad a relics divinos antes de saber lo que son es una senal discreta de posible sangre Tainted. La furia roja sin memoria es la mas directa. Primera muerte en combate.'
     },
     {
         id: 'vergelmir', label: 'Vergelmir', group: 'LUGAR', type: 'Lugar — Mítico', desc: 'Cámara subterránea bajo Oskutreð. Allí Lik-Rifa está encadenada y devora almas de guerreros muertos. El camino de los muertos pasa por aquí: por eso los guerreros nórdicos son enterrados con armas en la mano, para poder combatirla. Grend afirma que los guerreros «atraviesan Vergelmir en el camino del alma».',
         star: '★★ Los terremotos de Iskalt son interpretados por Grend como Lik-Rifa forcejeando en Vergelmir. El umbral entre el mundo de los vivos y los muertos está vibrando.'
     },
     {
-        id: 'vesli', label: 'Vesli', group: 'ORKA', type: 'Vaesen -- Aliada de Breca (Herida)', desc: 'Tennur hembra. Pequena, alas membranosas, dos filas de dientes, venas oscuras en piel rosada. Herida y expulsada de su manada. Breca la salvo. Juro lealtad de sangre al nino. Integrada en la familia de Orka. HERIDA GRAVE tras el ataque al steading (ver nodo ataque-steading): encontrada bajo un cuerpo en el hall en llamas, alas sueltas, cara empapada en sangre. Aparentemente muerta pero dio senales de vida. Orka la dejo junto al cuerpo de Thorkel al salir a perseguir a los raptores.',
-        star: '** Sobrevivio al ataque pese a sus heridas previas. Su juramento de sangre con Breca sigue activo -- ¿podra rastrearlo cuando se recupere? ¿Intentara seguir a Orka? El lazo de sangre con Breca la hace un activo potencial en la persecucion.'
+        id: 'vesli', label: 'Vesli', group: 'ORKA', type: 'Vaesen -- Aliada (Recuperandose)', desc: 'Tennur hembra. Pequena, alas membranosas, dos filas de dientes, venas oscuras en piel rosada. Herida y expulsada de su manada. Breca la salvo. Juro lealtad de sangre al nino. Integrada en la familia de Orka. Estado actual: gravemente herida durante el ataque al steading (ver nodo ataque-steading), recuperandose junto a Spert. Su saliva tiene propiedades curativas (ver nodo vesli-saliva). Narra la escena del ataque y la transformacion de Thorkel a Orka (ver nodo thorkel-transformacion). Rechaza la libertad ofrecida por Orka -- su lealtad es a Breca.',
+        star: '*** Su juramento de sangre con Breca sigue activo. Pasa de carga a activo: curadora, testigo, narradora. El lazo de sangre con Breca la hace un activo potencial en la persecucion de Orka.'
     },
     {
         id: 'vigrið', label: 'Vigríð', group: 'LUGAR', type: 'Lugar — Continente', desc: 'La Llanura de Batalla. El continente principal. Construido literalmente sobre los huesos de Snaka. Dividido entre jarls, reinas y hombres libres. Los vaesen son una presencia constante en las zonas remotas.',
@@ -674,8 +674,8 @@ const nodes = [
         star: '¿Qué otros poderes tiene la sangre de Hundur además del olfato? ¿Sus Tainted pueden rastrear magia además de personas?'
     },
     {
-        id: 'dragon-born', label: 'Dragon-Born (Tainted de Lik-Rifa)', group: 'TRAMA', type: 'Trama -- CONFIRMADA', desc: 'Tainted con sangre de la diosa-dragon Lik-Rifa. Elvar arguye que nunca se ha confirmado ninguno -- nadie en sus viajes lo ha visto. Uspa escupe. CONFIRMACION DEFINITIVA. Las ultimas palabras de Thorkel (moribundo tras defender el steading) son: Dragon-born. Thorkel, el mejor rastreador e identificador de Tainted conocido en la novela, murio combatiendo a alguien de linaje dragon. Eso significa que Drekr opera con al menos un dragon-born en su banda. Elvar estaba completamente equivocada. Uspa lo sabia.',
-        star: '*** CONFIRMADO. Thorkel lo dice con su ultimo aliento -- el hombre que identifico a una Ulfhednar sin titubear no se equivocaria en esto. Un dragon-born (Tainted de Lik-Rifa) esta activo en Vigrið, trabajando para Drekr. Cambia toda la cosmologia del libro.'
+        id: 'dragon-born', label: 'Dragon-Born (Tainted de Lik-Rifa)', group: 'TRAMA', type: 'Trama -- ACTIVO EN VIGRIÐ', desc: 'Tainted con sangre de la diosa-dragon Lik-Rifa. Cap.14: Elvar niega su existencia, Uspa escupe. Cap.17: CONFIRMADO por las ultimas palabras de Thorkel. Cap.19: DESCRIPCION FISICA por Vesli (ver nodo tainted-garras): humano pero no del todo, con dos garras largas y afiladas, OJOS QUE BRILLAN ROJO COMO BRASAS (marcador visual unico del linaje dragon -- distinto del ambar de Ulfrir/Berser). Fiero y eficaz en combate. Trabaja para Drekr (ver nodo drekr).',
+        star: '*** OJOS ROJOS = linaje Lik-Rifa. Marcador que distingue el linaje dragon de todos los otros Tainted (ambar = Ulfrir/Berser, rojo = dragon). Sus armas mataron a Thorkel. Orka las lleva al cinto para devolverselas (ver nodo seaxes-tainted).'
     },
 
     // ==========================================================
@@ -727,14 +727,12 @@ const nodes = [
     // CAPITULO 17 -- NUEVOS NODOS
     // ==========================================================
     {
-        id: 'drekr', label: 'Drekr', group: 'ORKA', type: 'Personaje -- Antagonista Principal',
-        desc: 'Nombre obtenido por Orka al interrogar al joven superviviente en el rio. Es el lider (gold-giver) de la organizacion que rapta ninos en la region de Fellur. Organizo el ataque al steading de Orka: quemo las galdr-runas protectoras (necesito un Galdurman o Seidr-witch), dirigio una banda numerosa, y se llevo a Breca vivo. Su operacion utiliza al menos un dragon-born Tainted (confirmado por las ultimas palabras de Thorkel). Huye por el rio con los supervivientes y los ninos raptados. Probablemente conectado con los casos anteriores: Harek, los Haraldurson, los de Kergarth.',
-        star: '*** ANTAGONISTA PRINCIPAL del arco Orka. El libro entero del arco Orka ha sido la construccion lenta hacia este nombre. Opera con magia (Galdurman/Seidr), con dragon-born, con grupos numerosos y organizados. Sus motivos y destino final de los ninos son la gran pregunta abierta.'
+        id: 'drekr', label: 'Drekr', group: 'ORKA', type: 'Personaje -- Antagonista Principal', desc: 'Lider de la organizacion que rapta ninos en la region de Fellur. Nombre obtenido por Orka al interrogar a un superviviente. Su operacion usa un Galdurman o Seidr-witch para quemar las protecciones runicas, ataca con fuerza numerosa mixta y huye en botes por rios. Composicion de su banda (Cap.19, via Vesli): guerreros humanos en cueros de bosque, vaesen, tennur sin juramento, skraelings y al menos un Tainted de linaje dragon con ojos rojos y garras largas (ver nodo tainted-garras). Los tennur de su banda buscaban especificamente a Breca. Sigue rio abajo con los ninos raptados.',
+        star: '*** La composicion de la banda es extraordinariamente variada: humanos + vaesen + skraelings + dragon-born. Requiere recursos y redes de un nivel muy superior al de un bandolero. ¿Quien financia a Drekr? ¿Quien le da acceso a un dragon-born?'
     },
     {
-        id: 'ataque-steading', label: 'Ataque al Steading de Orka', group: 'EVENTO', type: 'Evento -- Crisis',
-        desc: 'La banda de Drekr ataca el steading de Orka mientras ella esta en el bosque buscando a Froa. Cronologia del ataque: (1) queman o destruyen las galdr-runas de proteccion (solo un Galdurman o Seidr-witch puede hacer esto), (2) el joven infiltrado abre la puerta desde dentro, (3) la banda entra en el steading, (4) Thorkel retrocede hasta el hall, barra la puerta y aguanta el umbral mas estrecho matando a 5-6 atacantes, (5) le clavan dos seaxes (pecho y vientre), (6) se llevan a Breca vivo en dos botes por el rio, (7) cuatro rezagados se quedan a matar el pony Snort para comida. Spert queda herido rodeado de tennur muertos. Vesli queda bajo un cuerpo, gravemente herida pero viva.',
-        star: '*** Evento pivote del libro. Thorkel muerto. Breca raptado. Steading destruido. El atacante con magia confirma que Drekr tiene recursos sobrenaturales. El infiltrado (el chico joven) abrio la puerta desde dentro -- acceso interno.'
+        id: 'ataque-steading', label: 'Ataque al Steading de Orka', group: 'EVENTO', type: 'Evento -- Crisis', desc: 'La banda de Drekr ataca el steading de Orka mientras ella esta en el bosque buscando a Froa. Cronologia completa (reconstruida en Cap.19 por Vesli): (1) destruyen las galdr-runas (Galdurman o Seidr-witch), (2) el infiltrado joven abre la puerta desde dentro, (3) guerreros + vaesen + skraelings + tennur sin juramento + el Tainted-garras de ojos rojos escalan la empalizada, (4) Spert mata a uno con su veneno antes de ser apunalado, (5) Thorkel barro el hall y lucho en el umbral matando a 5-6 atacantes, (6) Thorkel se transformo en el combate (ver nodo thorkel-transformacion), (7) el Tainted-garras de ojos rojos mato a Thorkel con sus garras, (8) los tennur de Drekr intentaron raptar especificamente a Breca -- Vesli los combatio y fue herida, (9) Breca es llevado vivo en los botes.',
+        star: '*** Evento pivote de la novela. Dos detalles cruciales: Thorkel se TRANSFORMO en el combate (sangre Tainted de lobo confirmada implicitamente, ver nodo thorkel-transformacion), y los tennur buscaban especificamente a Breca.'
     },
     {
         id: 'thorkel-muerte', label: 'Muerte de Thorkel', group: 'EVENTO', type: 'Evento -- Muerte POV',
@@ -753,8 +751,8 @@ const nodes = [
     },
     {
         id: 'drekr-cazadora', label: 'La Caza de Drekr', group: 'TRAMA', type: 'Trama -- Nueva Direccion',
-        desc: 'inicio del nuevo arco de Orka: con Thorkel muerto y Breca raptado, Orka tiene un objetivo unico -- encontrar a Drekr y recuperar a su hijo. Solo sabe el nombre y que los botes tomaron el rio hacia el norte (hacia el fiordo y Fellur). El rio se bifurca en dos canales pasado un penasco de granito -- no sabe que camino tomaron. Puntos de partida: el rio lleva al fiordo y a Fellur, y la red de raptos parece tener radio de accion en la region.',
-        star: '*** Nuevo motor narrativo del arco Orka. Pasa de ser una madre que intentaba vivir en paz a una cazadora sin nada que perder. Tiene el nombre, tiene las armas de Thorkel, tiene el rastro en el rio. No tiene a nadie a quien pedir ayuda. ¿O si?'
+        desc: 'Nuevo arco de Orka tras el ataque al steading: Thorkel muerto (ver nodo thorkel-muerte), Breca raptado. Orka sigue las huellas hasta el rio donde cuatro rezagados de Drekr estan matando a su pony Snort. Los mata a todos: lanza a uno en la espalda, seax al viejo en el vientre, hacha repetida sobre la mujer hasta pulpa en acceso de rabia feral, lanza al chico joven en el pecho tras interrogarlo. El chico revela que Breca fue llevado en los botes por el rio y que el lider se llama Drekr. El rio se bifurca en dos canales pasado un penasco de granito -- Orka no sabe que camino tomaron. Sale a buscar a Drekr con el nombre, las armas de Thorkel y las de su cofre enterrado.',
+        star: '*** Nuevo motor narrativo del arco Orka. Tiene el nombre, tiene las armas, tiene el rastro en el rio. La rabia feral sobre la mujer es la primera vez que vemos ese lado sin control -- no defensa, sino furia pura. ¿Cual camino tomo Drekr?'
     },
     // ==========================================================
     // CAPITULO 18 -- NUEVOS NODOS
@@ -783,5 +781,43 @@ const nodes = [
         id: 'llegada-helka', label: 'Llegada de Helka a Liga', group: 'EVENTO', type: 'Evento -- Politico Mayor',
         desc: 'tres drakkars enormes y elegantes glidan por el fiordo hacia Liga. Velas negras con imagen de aguila de alas extendidas, pico y garras en ataque -- emblema de Helka y su dominio sobre los huesos de Orna. Cuernos suenan desde sus cubiertas. Toda la batalla en los muelles se detiene al instante. Hasta Varg, recien llegado al mundo de la politica, reconoce ese estandarte.',
         star: '*** MAYOR. Primera aparicion fisica de Helka en la novela. ¿Por que viene a Liga? Tres posibilidades: (1) viene por los Hermanos, (2) sabe lo de Sulich y viene a mediar, (3) la crisis con Iskidan es mas grande de lo que parecia. O las tres.'
+    },
+    // ==========================================================
+    // CAPITULO 19 -- NUEVOS NODOS
+    // ==========================================================
+    {
+        id: 'tainted-garras', label: 'Tainted-Garras (Dragon-Born)', group: 'ORKA', type: 'Personaje -- Tainted Antagonista',
+        desc: 'El Tainted de linaje dragon que mato a Thorkel en el ataque al steading (ver nodo ataque-steading). Descrito por Vesli: humano pero no del todo -- dos garras largas y afiladas, ojos que brillan rojo como brasas (marcador visual unico del linaje Lik-Rifa, distinto del ambar de Ulfrir/Berser). Fiero y mortal en combate. Trabaja para Drekr. Los seaxes de filo largo y ancho que Orka saco del cuerpo de Thorkel son sus armas (ver nodo seaxes-tainted). Orka los lleva al cinto con intencion de devolverselos.',
+        star: '*** Primera descripcion fisica de un dragon-born en la novela. Ojos ROJOS = linaje Lik-Rifa. Sus armas mataron a Thorkel. Orka las lleva al cinto como declaracion de guerra personal contra este individuo. Sin nombre todavia.'
+    },
+    {
+        id: 'tumulo-thorkel', label: 'Tumulo de Thorkel', group: 'EVENTO', type: 'Evento -- Rito Funerario',
+        desc: 'Orka entierra a Thorkel en el patio del steading destruido. Proceso: cava la tumba, arrastra el cuerpo dentro con la hacha larga aun en el puno, coloca el seax ornamentado (recuperado del cofre enterrado, ver nodo cofre-enterrado) a su lado, le pone brazaletes de oro en los brazos, construye un barrow de madera y piedra. Deja solo la cara visible al final. Vierte su propia sangre sobre el rostro de Thorkel como rito de despedida y guerra (ver nodo orka-vow). Cubre el resto.',
+        star: '*** El entierro con los brazaletes de oro revela que Orka les daba a el sus propios simbolos de rango. El rito de sangre es personal y violento -- no lloro, sino voto.'
+    },
+    {
+        id: 'orka-vow', label: 'Voto de Venganza de Orka', group: 'EVENTO', type: 'Evento -- Declaracion Ritual',
+        desc: 'Orka pronuncia un voto ritual sobre el barrow de Thorkel antes de partir. Palabras exactas: Soy sangre. Soy muerte. Soy venganza. Lo dice con voz plana y vacia -- no con rabia sino con frialdad. Toma los dos seaxes que mataron a Thorkel (ver nodo seaxes-tainted) y los mete en su cinturon. Declara a Vesli que su unica companera es la muerte. Rechaza la compania de Vesli.',
+        star: '*** Declaracion de identidad y proposito. Orka no promete venganza como emocion -- la declara como estado de ser. La frialdad es mas aterradora que la rabia.'
+    },
+    {
+        id: 'cofre-enterrado', label: 'Cofre Enterrado de Orka', group: 'OBJETO', type: 'Objeto -- Pasado Oculto',
+        desc: 'Cofre de madera enterrado bajo el suelo del patio del steading, al oeste del hall, guardado por mas de 10 anos. Contenido: brynja de malla remachada (perfecta, conservada en grasa), seax en funda de cuero pulido con knotwork y empunadura de marfil de morsa con herrajes de plata, un puno de brazaletes de plata y oro trenzados, y una bolsa de monedas. Al abrirla Orka experimenta una avalancha de recuerdos de batalla, muerte, viejos amigos y viejos enemigos (algunos que fueron las dos cosas).',
+        star: '*** Una brynja de esa calidad y esos brazaletes de plata y oro no son de una granjera -- son de una guerrera de alto rango, posiblemente de una compania o guardia de un jarl. ¿Quien era Orka antes del steading? ¿Por que lo enterro todo?'
+    },
+    {
+        id: 'seaxes-tainted', label: 'Seaxes del Tainted-Garras', group: 'OBJETO', type: 'Objeto -- Armas del Enemigo',
+        desc: 'Los dos seaxes que mataron a Thorkel, sacados por Orka de su cuerpo. Descripcion: tan largos como su antebrazo, gruesos en la guarda, filo unico y hoja ancha con taper brusco hacia la punta. Empunadura tallada en fresno con knotwork en espiral, capuchon de bronce, pasador enhebrado con cuero. Orka los toma deliberadamente y los mete en su cinturon. Su intencion declarada: encontrar al dueno y devolvercelos.',
+        star: '*** Las armas del asesino de Thorkel como instrumentos de venganza. El detalle de la descripcion (fresno, knotwork, bronce) hace de estos seaxes objetos identificables. Orka los convierte en su declaracion de intencion.'
+    },
+    {
+        id: 'vesli-saliva', label: 'Saliva Curativa de Vesli', group: 'VAESEN', type: 'Concepto -- Magia Vaesen',
+        desc: 'La saliva de Vesli (tennur) tiene propiedades medicinales y adhesivas. Escupida en un glob glutinoso, amasada con los dedos se vuelve fibrosa como tendon. Aplicada sobre heridas: acelera la curacion, reduce el dolor en heartbeats, sirve como hilo y como coating sellador de heridas. Usada en Cap.19 para coser y tratar la herida de Spert y las laceraciones de Orka.',
+        star: '** Convierte a Vesli de carga a recurso tacticamente valioso. ¿Es capacidad de todas las tennur o especifica de Vesli? ¿Funciona en heridas magicas o solo fisicas?'
+    },
+    {
+        id: 'thorkel-transformacion', label: 'Transformacion de Thorkel (Confirmacion)', group: 'TRAMA', type: 'Trama -- Revelacion',
+        desc: 'Vesli describe la batalla y dice: Thorkel fierce. Thorkel change, become... (no completa). Orka asiente sin sorpresa -- lo sabia. Esto confirma que Thorkel tenia capacidad de transformacion en combate, muy probablemente sangre Tainted de lobo. Evidencia acumulada: patronimico Ulfsson (hijo de Ulfrir); conocia el termino Ulfhednar con precision exacta sin titubear; acepto huir del steading ante esa amenaza especificamente; eligio morir peleando afuera en el umbral (no escondido). Murio siendo lo que era.',
+        star: '*** La confirmacion mas directa posible sin decirlo explicitamente. Vesli lo vio transformarse. Orka asiente sin cuestionarlo. 19 capitulos de insinuaciones culminan en ese asentimiento silencioso.'
     },
 ];
