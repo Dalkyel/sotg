@@ -30,6 +30,11 @@ const links = [
     { source: 'orka', target: 'drekr-cazadora', label: 'protagoniza', type: 'rel' },
     { source: 'orka', target: 'drekr', label: 'caza a', type: 'conflict' },
     { source: 'orka', target: 'chico-joven', label: 'interrogo y mato', type: 'event' },
+    { source: 'orka', target: 'tumulo-thorkel', label: 'construyo', type: 'event' },
+    { source: 'orka', target: 'orka-vow', label: 'pronuncio', type: 'event' },
+    { source: 'orka', target: 'cofre-enterrado', label: 'desenterra / pertenecía a', type: 'event' },
+    { source: 'orka', target: 'seaxes-tainted', label: 'lleva al cinto', type: 'rel' },
+    { source: 'orka', target: 'tainted-garras', label: 'busca a', type: 'conflict' },
     // Thorkel
     { source: 'thorkel', target: 'virk', label: 'comercian', type: 'history' },
     { source: 'thorkel', target: 'breca', label: 'Hijo', type: 'rel' },
@@ -85,6 +90,10 @@ const links = [
     { source: 'falki', target: 'oath-stone-fellur', label: 'asiste Althing', type: 'event' },
     // Vesli
     { source: 'vesli', target: 'tennur', label: 'Es un', type: 'lore' },
+    { source: 'vesli', target: 'tumulo-thorkel', label: 'ayudo a construir', type: 'event' },
+    { source: 'vesli', target: 'thorkel-transformacion', label: 'fue testigo de / narrada por', type: 'event' },
+    { source: 'vesli', target: 'tainted-garras', label: 'lo describio a Orka', type: 'event' },
+    { source: 'vesli', target: 'vesli-saliva', label: 'usa su / habilidad de', type: 'lore' },
     // Spert
     { source: 'spert', target: 'spertus', label: 'Es un', type: 'lore' },
     // Spert
@@ -103,6 +112,14 @@ const links = [
     // Chico joven
     { source: 'chico-joven', target: 'drekr', label: 'revelo el nombre', type: 'event' },
     { source: 'chico-joven', target: 'ataque-steading', label: 'abrio la puerta', type: 'event' },
+    // tainted-garras
+    { source: 'tainted-garras', target: 'cat-orka', label: '', type: 'arc' },
+    { source: 'tainted-garras', target: 'dragon-born', label: 'es el', type: 'lore' },
+    { source: 'tainted-garras', target: 'drekr', label: 'trabaja para', type: 'rel' },
+    { source: 'tainted-garras', target: 'thorkel', label: 'mato a', type: 'conflict' },
+    { source: 'tainted-garras', target: 'ataque-steading', label: 'participo en', type: 'event' },
+    { source: 'tainted-garras', target: 'seaxes-tainted', label: 'dueno de', type: 'rel' },
+    { source: 'tainted-garras', target: 'likrafa', label: 'sangre de', type: 'lore' },
 
     // -------------------------------------------------------------------------------------- //
     // Cat-varg to varg chars
@@ -480,6 +497,11 @@ const links = [
     { source: 'objeto-viga', target: 'cat-objetos', label: '', type: 'arc' },
     { source: 'objeto-viga', target: 'liga', label: 'ubicado en hall de', type: 'geo' },
     { source: 'objeto-viga', target: 'gods-bones', label: 'posible reliquia', type: 'trama' },
+    { source: 'cofre-enterrado', target: 'cat-objetos', label: '', type: 'arc' },
+    { source: 'cofre-enterrado', target: 'brynja', label: 'contenia brynja de', type: 'rel' },
+    { source: 'seaxes-tainted', target: 'cat-objetos', label: '', type: 'arc' },
+    { source: 'seaxes-tainted', target: 'thorkel', label: 'mataron a', type: 'event' },
+
 
     // -------------------------------------------------------------------------------------- //
     // ── ENLACES CULTURA NÓRDICA ────────────────────────────────────
@@ -720,4 +742,25 @@ const links = [
     { source: 'llegada-helka', target: 'cat-eventos', label: '', type: 'event' },
     { source: 'llegada-helka', target: 'liga', label: 'destino', type: 'geo' },
     { source: 'llegada-helka', target: 'orna', label: 'aguila en velas = emblema de', type: 'lore' },
+    // ==========================================================
+    // CAPITULO 19 -- NUEVOS ENLACES
+    // ==========================================================
+    { source: 'tumulo-thorkel', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'tumulo-thorkel', target: 'thorkel', label: 'tumulo de', type: 'event' },
+    { source: 'tumulo-thorkel', target: 'funeral-rites', label: 'practica de', type: 'lore' },
+    { source: 'tumulo-thorkel', target: 'cofre-enterrado', label: 'brazaletes de', type: 'rel' },
+    { source: 'orka-vow', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'orka-vow', target: 'thorkel', label: 'sobre la tumba de', type: 'event' },
+    { source: 'orka-vow', target: 'drekr-cazadora', label: 'declaracion de la', type: 'rel' },
+    { source: 'orka-vow', target: 'seaxes-tainted', label: 'sellado con', type: 'rel' },
+    { source: 'vesli-saliva', target: 'tennur', label: 'capacidad de los', type: 'lore' },
+    { source: 'vesli-saliva', target: 'orka', label: 'curo a', type: 'event' },
+    { source: 'vesli-saliva', target: 'spert', label: 'curo herida de', type: 'event' },
+    { source: 'thorkel-transformacion', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'thorkel-transformacion', target: 'thorkel', label: 'confirma sobre', type: 'lore' },
+    { source: 'thorkel-transformacion', target: 'ulfrir', label: 'sangre posible de', type: 'trama' },
+    { source: 'thorkel-transformacion', target: 'tainted', label: 'era Tainted', type: 'trama' },
+    { source: 'dragon-born', target: 'thorkel-transformacion', label: 'mato a Thorkel en', type: 'event' },
+    { source: 'skraeling', target: 'drekr', label: 'en banda de', type: 'rel' },
+    { source: 'skraeling', target: 'ataque-steading', label: 'participo en', type: 'event' },
 ];
