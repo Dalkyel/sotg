@@ -1,7 +1,7 @@
 
 const nodes = [
     {
-        id: 'agnar', label: 'Agnar', group: 'ELVAR', type: 'Personaje — Jefe', desc: 'Jefe de Terrores de la batalla. Franja gruesa de cabello rubio en el centro de la cabeza (warrior-braid), el resto rapado, capote de oso negro, torc de plata. Carismático, valiente, implacable. Mató al Jarl Hrut sin dudar. Planea llevar a Berak al Jarl Störr en Snakavik. Ante la piedra de juramento iluminada, revela su filosofía: no caza Tainted solo por dinero. Los dioses destruyeron casi el mundo por celos, asesinatos y venganza de sangre, "nunca pueden volver a tener poder en este mundo, ni siquiera en forma de sus hijos Tainted." Sobrevive al ataque de los gusanos nocturnos; es el primero en rescatar a Elvar, aplastando y cortando wyrms.',
+        id: 'agnar', label: 'Agnar', group: 'ELVAR', type: 'Personaje — Jefe', desc: 'Jefe de Terrores de la batalla. Franja gruesa de cabello rubio en el centro de la cabeza (warrior-braid), el resto rapado, capote de oso negro, torc de plata. Carismático, valiente, implacable. Mató al Jarl Hrut sin dudar. Planea llevar a Berak al Jarl Störr en Snakavik. Filosofía ideológica: no caza Tainted solo por dinero — cree que la herencia divina es un peligro para el mundo (ver nodo oath-stone-frost-isles). Rescata a Elvar durante el ataque de wyrms (ver nodo night-wyrm).',
         star: '★★ Su motivación ideológica queda clara, no es solo mercenario, es creyente de que la herencia divina es un peligro para el mundo. Esto lo convierte en antagonista más matizado y más peligroso.'
     },
     {
@@ -41,7 +41,7 @@ const nodes = [
         star: ''
     },
     {
-        id: 'berak', label: 'Berak Bjornasson', group: 'ELVAR', type: 'Personaje — Berserkir', desc: 'Alto y grande con cicatrices en la cara, barba hasta el cinturón. Sangre del dios muerto Berser. Ojos ambarinos cuando entra en furia, dientes afilados, fuerza brutal. Vivía escondido y fue capturado en Iskalt. Se le acusa de haber matado a tres Jarls. El collar de hierro suprime su transformación Berserkir. Destino: Snakavik, Jarl Störr. Durante el ataque de los gusanos nocturnos, es el primero en liberarse —arranca las criaturas de su cuerpo con un rugido sordo, venas en el cuello a punto de reventar, fuerza sobrehumana incluso sin transformación. Inmediatamente arranca los wyrms de Uspa y Bjarn y los pone en pie. Intenta proteger a su mujer cuando Agnar le permite hablar.',
+        id: 'berak', label: 'Berak Bjornasson', group: 'ELVAR', type: 'Personaje — Berserkir', desc: 'Alto y grande con cicatrices en la cara, barba hasta el cinturón. Sangre del dios muerto Berser. Ojos ambarinos cuando entra en furia, dientes afilados, fuerza brutal. Vivía escondido y fue capturado en Iskalt. Se le acusa de haber matado a tres Jarls. El collar de hierro suprime su transformación Berserkir. Destino: Snakavik, Jarl Störr. Fuerza sobrehumana incluso sin transformación y encadenado. Protege instintivamente a Uspa y Bjarn ante cualquier amenaza (ver nodo night-wyrm). Intenta proteger a su mujer cuando Agnar le permite hablar.',
         star: '★ Incluso encadenado y con el collar puesto, su fuerza es prodigiosa. El gesto de proteger primero a su familia revela que bajo la bestia hay un padre.'
     },
     {
@@ -57,11 +57,11 @@ const nodes = [
         star: 'Varg tiene furia roja sin memoria = posible sangre Tainted no descubierta. Berak en berserkergang es imparable — el collar de hierro es lo único que lo detiene.'
     },
     {
-        id: 'biorr', label: 'Biórr', group: 'ELVAR', type: 'Personaje — Terrores de la batalla', desc: 'Pelo negro, botas largas (objeto de burlas). Interesado en Elvar. Sigue sus pasos en el bosque de Iskalt. Grend lo odia. Ofrece gachas al prisionero Berak y su familia. Explora el terreno y encuentra el lugar de acampada (la meseta con la piedra de juramento). Durante el ataque de wyrms es el primero en actuar: clava una rama en las brasas del fuego y usa la antorcha para quemar a los gusanos nocturnos, repeliendo el ataque. Su iniciativa salva a toda la compañía.',
+        id: 'biorr', label: 'Biórr', group: 'ELVAR', type: 'Personaje — Terrores de la batalla', desc: 'Pelo negro, botas largas (objeto de burlas). Interesado en Elvar. Sigue sus pasos en el bosque de Iskalt. Grend lo odia. Ofrece gachas al prisionero Berak y su familia. Explora el terreno y encuentra el lugar de acampada (la meseta con la piedra de juramento). Su iniciativa con la antorcha salva a toda la compañía durante el ataque de wyrms (ver nodo night-wyrm).',
         star: '★ Su reacción rápida bajo presión extrema lo muestra como guerrero de verdad, no solo acompañante de Elvar.'
     },
     {
-        id: 'bjarn', label: 'Bjarn', group: 'ELVAR', type: 'Personaje — Tainted', desc: 'Hijo de Berak y Uspa. Fue rescatado del mar helado por Elvar. Lleva sangre de Snaka por parte de madre y sangre de Berser por parte de padre — doble linaje divino. Berak y Uspa lo protegen instintivamente incluso encadenados. Durante el ataque de gusanos nocturnos, Berak lo arranca del suelo y lo pone en pie.',
+        id: 'bjarn', label: 'Bjarn', group: 'ELVAR', type: 'Personaje — Tainted', desc: 'Hijo de Berak y Uspa. Fue rescatado del mar helado por Elvar. Lleva sangre de Snaka por parte de madre y sangre de Berser por parte de padre — doble linaje divino. Berak y Uspa lo protegen instintivamente incluso encadenados (ver nodo night-wyrm).',
         star: '★★ Doble sangre: Snaka (Seiðr/serpiente) + Berser (fuerza/oso). ¿Cuál de los dos prevalecerá? ¿O podrá manifestar ambas? El Tainted más potencialmente poderoso de todos los prisioneros.'
     },
     {
@@ -128,7 +128,7 @@ const nodes = [
         star: '* Precision real en combate, no solo fuerza. Es el primero en atacar desde el muro.'
     },
     {
-        id: 'elvar', label: 'Elvar', group: 'ELVAR', type: 'POV — Personaje', desc: 'Guerrera más joven de Terrores de la batalla. Rubia, trenza guerrera, escudo rojo con armas cruzadas. Impulsiva y valiente hasta la temeridad. Siempre trata de hacer más que los demás, así ganó su puesto en el muro de escudos. Saltó al mar helado para salvar al hijo de Berak. Reacciona ante el nombre de Snakavik. Ante la piedra de juramento iluminada defiende el escepticismo empírico — solo cree en lo que puede ver y tocar. Acepta la existencia de los Tainted porque hay evidencia directa (Berak, Kráka, Uspa, Hundur). Pero niega que existan dragon-born porque nadie en sus viajes —ni en Iskidan— ha visto uno jamás. Sobrevive al ataque de los gusanos nocturnos: un wyrm llega a introducirse en su nariz antes de que pueda extraerlo. Grend y Agnar la liberan.',
+        id: 'elvar', label: 'Elvar', group: 'ELVAR', type: 'POV — Personaje', desc: 'Guerrera más joven de Terrores de la batalla. Rubia, trenza guerrera, escudo rojo con armas cruzadas. Impulsiva y valiente hasta la temeridad. Siempre trata de hacer más que los demás, así ganó su puesto en el muro de escudos. Saltó al mar helado para salvar al hijo de Berak. Reacciona ante el nombre de Snakavik. Escéptica empírica: solo cree en lo que puede ver y tocar. Acepta los Tainted por evidencia directa pero niega los dragon-born (ver nodo oath-stone-frost-isles para el debate). Sobrevive al ataque de wyrms con ayuda de Grend y Agnar (ver nodo night-wyrm).',
         star: '★★ Su epistemología es su rasgo más interesante — es la escéptica del grupo, lo cual la hace narrativamente incómoda cuando la magia la contradice. ¿Seguirá negando los dragon-born cuando se enfrente a uno?'
     },
     {
@@ -196,7 +196,7 @@ const nodes = [
         star: '¿Qué le debe a Elvar para protegerla así?'
     },
     {
-        id: 'gudfall', label: 'Guðfalla (Caída de Dioses)', group: 'EVENTO', type: 'Evento Histórico', desc: 'Hace ~300 años. Los hijos de Snaka se rebelaron contra su padre. La guerra de los dioses rompió el mundo: continentes hundidos, mares desbordados. Los vaesen escaparon de su foso. El mundo nunca se recuperó. (saga de Galinn): el Vackna sonó al alba; Ulfrir corrió aullando; Orna llegó con garras; Lik-Rifa desde las Colinas de Luna Oscura; Berser en furia; Svin, Tosk, Rotta también combatieron. Resultado: Berser perforado, Orna desgarrada, Ulfrir muerto, Lik-Rifa encadenada bajo Oskutreð, Snaka caído sobre el Monte Eldrafell. CAUSA VERDADERA (Uspa, ante la piedra de juramento): Lik-Rifa creyó que Orna planeaba asesinarla — Rotta el Traidor alimentó activamente esa paranoia. Por eso Lik-Rifa mató a la hija primogénita de Orna y Ulfrir y le arrancó las alas (el Bosque de las Horcas). Creó los vaesen en secreto como arma. Orna descubrió el plan, tendió una trampa y encadenó a Lik-Rifa en las raíces de Oskutreð — eso detonó la guerra total. Lo que empezó como una vendetta doméstica casi destruyó todo.',
+        id: 'gudfall', label: 'Guðfalla (Caída de Dioses)', group: 'EVENTO', type: 'Evento Histórico', desc: 'Hace ~300 años. Los hijos de Snaka se rebelaron contra su padre. La guerra de los dioses rompió el mundo: continentes hundidos, mares desbordados. Los vaesen escaparon de su foso. El mundo nunca se recuperó. (saga de Galinn, ver nodo gudfall-saga-galinn): el Vackna sonó al alba; todos los dioses combatieron. Resultado: Berser perforado, Orna desgarrada, Ulfrir muerto, Lik-Rifa encadenada bajo Oskutreð, Snaka caído sobre el Monte Eldrafell. CAUSA VERDADERA (Uspa, ver nodo oath-stone-frost-isles): Rotta alimentó la paranoia de Lik-Rifa, que mató a la hija de Orna y Ulfrir (ver nodo gallows-wood). Orna encadenó a Lik-Rifa — eso detonó la guerra total.',
         star: '★★★ No fue una rebelión abstracta sino una venganza de sangre detonada por Rotta el Manipulador. La primera víctima: la hija sin nombre de Orna y Ulfrir. El blood-eagle nació como imitación del crimen de Lik-Rifa.'
     },
     {
@@ -252,12 +252,12 @@ const nodes = [
         star: '★★ La reacción de Breca al hueso de dios es una de las señales más tempranas de su posible sangre Tainted. Un niño normal no debería sentir nada.'
     },
     {
-        id: 'hundur', label: 'Hundur (Thrall)', group: 'ELVAR', type: 'Personaje — Thrall Tainted', desc: 'Thrall de Terrores de la batalla con olfato sobrehumano de sabueso. Camina encorvado con ojos hundidos como pozos negros. Controlado por Sighvat con cadena de hierro. Fue clave para rastrear a Berak en Iskalt. Elvar lo señala explícitamente ante la piedra de juramento: "Veo la sangre de Hundur el Sabueso en ti" — confirmando que su nombre y sus poderes de rastreo vienen del dios-sabueso Hundur, uno de los hijos de Snaka. También detecta el olor de "sangre derramada y juramentos" en la piedra de juramento, lo cual confirma que tiene capacidades olfativas que van más allá de lo físico.',
+        id: 'hundur', label: 'Hundur (Thrall)', group: 'ELVAR', type: 'Personaje — Thrall Tainted', desc: 'Thrall de Terrores de la batalla con olfato sobrehumano de sabueso. Camina encorvado con ojos hundidos como pozos negros. Controlado por Sighvat con cadena de hierro. Fue clave para rastrear a Berak en Iskalt. Elvar confirma su linaje: sangre del dios-sabueso Hundur. Capacidades olfativas que van más allá de lo físico — detecta "sangre derramada y juramentos" en la piedra (ver nodo oath-stone-frost-isles).',
         star: '★★ Su amo es Sighvat — ¿seguirá siendo así toda la historia? Nótese la ironía: un sabueso-dios rastreando a sus propios parientes Tainted.'
     },
     {
-        id: 'idrun', label: 'Idrun (†)', group: 'ORKA', type: 'Personaje — Muerta', desc: 'Esposa de Asgrim. Encontrada crucificada en el portón del steading con el vientre abierto. La brutalidad del acto sugiere un mensaje deliberado o una ejecución ritual. Su hijo Harek desapareció.',
-        star: '★ La forma de su muerte —crucificada, vientre abierto— podría ser un rito, no solo un asesinato. ¿A qué tradición pertenece?'
+        id: 'idrun', label: 'Idrun (†)', group: 'ORKA', type: 'Personaje — Muerta', desc: 'Esposa de Asgrim. Asesinada en el ataque a su steading (ver nodo asgrim-death). La brutalidad del acto sugiere un mensaje deliberado o una ejecución ritual. Su hijo Harek desapareció.',
+        star: '★ La forma de su muerte podría ser un rito, no solo un asesinato. ¿A qué tradición pertenece?'
     },
     {
         id: 'iskalt', label: 'Isla de Iskalt', group: 'LUGAR', type: 'Lugar — Isla', desc: 'Isla volcánica al norte con montaña de fuego y venas de lava. Clima ártico extremo. Villa de pescadores en la costa. Los terremotos aquí son atribuidos a Lik-Rifa forcejeando bajo el Árbol de Ceniza.',
@@ -312,7 +312,7 @@ const nodes = [
         star: 'Aún no aparece knarr nombrado explícitamente en la narrativa, pero el comercio entre Liga, Fellur y otras ciudades requiere este tipo de barco.'
     },
     {
-        id: 'kraka', label: 'Kráka', group: 'ELVAR', type: 'Personaje — Thrall Tainted', desc: 'Thrall Tainted de Terrores de la batalla. Cabello negro como un cuervo, tatuajes azules en mandíbula y garganta (similar a Vol), cara gris agotada. Canta magia Seiðr para proteger el casco de serpientes marinas. El canto la destruye físicamente. Maltratada por los guardias. Agnar le dio un asta de trol como fuente de poder para el viaje de regreso. Reconoce la piedra de juramento al instante (incluso cubierta de musgo), algo que ningún guerrero de la compañía detectó. Toca la roca con sus dedos y la identifica. Después de que Uspa la activa, declara: "Son los padres y madres de todos nosotros los Tainted. Snaka amaba sus creaciones... y también las devoraba." Contempla las espirales de la serpiente con una emoción que roza lo reverencial.',
+        id: 'kraka', label: 'Kráka', group: 'ELVAR', type: 'Personaje — Thrall Tainted', desc: 'Thrall Tainted de Terrores de la batalla. Cabello negro como un cuervo, tatuajes azules en mandíbula y garganta (similar a Vol), cara gris agotada. Canta magia Seiðr para proteger el casco de serpientes marinas. El canto la destruye físicamente. Maltratada por los guardias. Agnar le dio un asta de trol como fuente de poder para el viaje de regreso. Reconoce la piedra de juramento al instante, antes que cualquier guerrero (ver nodo oath-stone-frost-isles). Declara: "Son los padres y madres de todos nosotros los Tainted. Snaka amaba sus creaciones... y también las devoraba." Contempla las espirales con emoción reverencial.',
         star: '★ Kráka y Uspa son las únicas que reaccionan con reconocimiento ante la piedra, no con asombro. Para los Tainted de sangre Snaka, ver la historia de su padre grabada en piedra tiene peso diferente.'
     },
     {
@@ -344,7 +344,7 @@ const nodes = [
         star: '** Su sed de venganza es real pero son demasiado jovenes e inexpertos.'
     },
     {
-        id: 'uspa', label: 'Uspa', group: 'ELVAR', type: 'Personaje — Tainted (Snaka)', desc: 'Rubia, ojos gris-azul pálido. Tatuajes espirales bajo la ropa. Arrojó un objeto al lago de lava antes de ser capturada. Controló la serpiente marina con canto Seiðr. Sangre de Snaka. Se ofrece voluntariamente a activar la piedra de juramento — pide que le corten la palma, deja que la sangre se derrame, la presiona contra la roca y la piedra entera se ilumina como metal fundido, revelando el tapiz completo del Guðfalla. Sabe la causa verdadera de la guerra de los dioses cuando nadie más la conoce. Cuando Elvar afirma que los dragon-born son un cuento de hadas, Uspa escupe sin decir una palabra.',
+        id: 'uspa', label: 'Uspa', group: 'ELVAR', type: 'Personaje — Tainted (Snaka)', desc: 'Rubia, ojos gris-azul pálido. Tatuajes espirales bajo la ropa. Arrojó un objeto al lago de lava antes de ser capturada. Controló la serpiente marina con canto Seiðr. Sangre de Snaka. Activa la piedra de juramento con su sangre (ver nodo oath-stone-frost-isles). Sabe la causa verdadera de la guerra de los dioses cuando nadie más la conoce. Cuando Elvar afirma que los dragon-born son un cuento de hadas, Uspa escupe sin decir una palabra.',
         star: 'Su sangre activa la piedra de juramento. Su conocimiento del Guðfalla es enciclopédico. El escupitajo ante la afirmación de Elvar sobre los dragon-born es la señal más cargada del capítulo — ¿sabe de dragon-born vivos? ¿Qué había en el pergamino que destruyó?'
     },
     {
@@ -480,7 +480,7 @@ const nodes = [
         star: '¿Esta muerto o es recuperable? Si muere, Orka pierde su guardian de sangre. Los tennur muertos sugieren que hubo una batalla de vaesen en el steading -- quien o que los mato junto con Spert?'
     },
     {
-        id: 'spertus', label: 'Spertus', group: 'VAESEN', type: 'Vaesen — Agua', desc: 'Spertus',
+        id: 'spertus', label: 'Spertus', group: 'VAESEN', type: 'Vaesen — Agua', desc: 'Tipo de vaesen artropodo. Ver nodo spert para el ejemplar capturado por Orka.',
         star: ''
     },
     {
@@ -509,7 +509,7 @@ const nodes = [
     },
     {
         id: 'tainted', label: 'Tainted', group: 'COSMO', type: 'Facción — Perseguidos', desc: 'Descendientes de los dioses muertos. Portadores de poderes heredados. Perseguidos y cazados desde el Guðfalla. Controlados con collares de hierro activados por lengua Galdur. Vendidos a jarls poderosos. Hundur el Sabueso (Hundur-thrall), Berser el Oso (Berak), Snaka la Serpiente (Kráka y Uspa). Linajes vistos en Iskidan: el Toro, el Halcón, el Caballo — confirma que los Tainted están dispersos por todo el mundo conocido, no solo en Vigríð. Linaje dragon-born de Lik-Rifa: confirmado (ver nodo dragon-born).',
-        star: '★★★ ¿Varg tiene sangre Tainted? ¿Y Breca? Los dos protagonistas muestran señales. Y el linaje de Lik-Rifa sigue sin confirmar... o sin que nadie quiera admitirlo.'
+        star: '★★★ ¿Varg tiene sangre Tainted? ¿Y Breca? Los dos protagonistas muestran señales. El linaje dragon-born de Lik-Rifa ha sido confirmado (ver nodo dragon-born).'
     },
     {
         id: 'tennur', label: 'Tennur', group: 'VAESEN', type: 'Criatura', desc: 'A los Tennur les gustan los dientes y en manada son letales',
