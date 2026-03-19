@@ -196,8 +196,8 @@ const nodes = [
         star: '¿Qué le debe a Elvar para protegerla así?'
     },
     {
-        id: 'gudfall', label: 'Guðfalla (Caída de Dioses) [pron. Guthfalla]', group: 'EVENTO', type: 'Evento Histórico', desc: 'Hace ~300 años. Los hijos de Snaka entraron en guerra entre si. La guerra de los dioses rompió el mundo: continentes hundidos, mares desbordados. Los vaesen escaparon de su foso. El mundo nunca se recuperó. (saga de Galinn, ver nodo gudfall-saga-galinn): el Vackna sonó al alba; todos los dioses combatieron. Resultado: Berser perforado, Orna desgarrada, Ulfrir muerto, Lik-Rifa encadenada bajo Oskutreð, Snaka caído sobre el Monte Eldrafell. CAUSA VERDADERA (Uspa, ver nodo oath-stone-frost-isles): Rotta alimentó la paranoia de Lik-Rifa, que mató a la hija de Orna y Ulfrir (ver nodo gallows-wood). Orna encadenó a Lik-Rifa — eso detonó la guerra total.',
-        star: '★★★ No fue una rebelión abstracta sino una venganza de sangre detonada por Rotta el Manipulador. La primera víctima: la hija sin nombre de Orna y Ulfrir. El blood-eagle nació como imitación del crimen de Lik-Rifa.'
+        id: 'gudfall', label: 'Guðfalla (Caída de Dioses) [pron. Guthfalla]', group: 'EVENTO', type: 'Evento Histórico', desc: 'Hace ~300 años. Los hijos de Snaka entraron en guerra entre si. La guerra de los dioses rompió el mundo: continentes hundidos, mares desbordados. Los vaesen escaparon de su foso. El mundo nunca se recuperó. El Vackna sonó al alba; todos los dioses combatieron. Resultado: Berser perforado, Orna desgarrada, Ulfrir muerto, Lik-Rifa encadenada bajo Oskutreð, Snaka caído sobre el Monte Eldrafell. CAUSA VERDADERA (Uspa, ver nodo oath-stone-frost-isles): Rotta alimentó la paranoia de Lik-Rifa, que mató a la hija de Orna y Ulfrir (ver nodo gallows-wood). Orna encadenó a Lik-Rifa — eso detonó la guerra total. REVELADO EN ESCENA (Cap.13): el Skáld Galinn recita la saga completa en el festín del Jarl Logur — Svin el Valiente, Tosk el Travieso, Rotta el Engañoso, Snaka cayendo sobre Eldrafell, los vaesen trepando desde el foso. Toda la sala queda paralizada; Varg siente que está de pie en la Llanura de Batalla. La saga se interrumpe cuando los mensajeros de Iskidan aporrean las puertas.',
+        star: '★★★ No fue una rebelión abstracta sino una venganza de sangre detonada por Rotta el Manipulador. La primera víctima: la hija sin nombre de Orna y Ulfrir. El blood-eagle nació como imitación del crimen de Lik-Rifa. Función narrativa dual de la saga de Galinn: cosmología completa + tensión dramática por la llegada de Jaromir.'
     },
     {
         id: 'gudvarr', label: 'Guðvarr', group: 'ORKA', type: 'Personaje — Antagonista menor', desc: '[Pronunciación: "Guthvarr" — la ð suena como la "th" de "they".] Drengr, Sobrino de Jarl Sigrún. Pelo negro aceitado, espada al cinto, gota permanente de moco. Vanidoso, arrogante, con algo de técnica de combate pero sin experiencia real en batalla. Humillado en el holmganga contra Virk: hombro derecho seccionado, se rindió (ver nodo holmganga-event). Su insulto post-duelo provocó la muerte de Virk. Sigue siendo niðing moral aunque sobrevivió.',
@@ -368,7 +368,7 @@ const nodes = [
         star: '★★★ Es un archivo de la historia del mundo, activable solo con sangre Tainted. Su supervivencia es casi un milagro. La luz que emite puede atraer vaesen. ¿Existen otras piedras ocultas en lugares remotos?'
     },
     {
-        id: 'orka', label: 'Orka', group: 'ORKA', type: 'POV -- Personaje', desc: 'Mujer alta y rubia, ojos gris-verde. Exguerrera de alto rango con pasado enterrado (ver nodo Cofre Enterrado de Orka). Flashbacks violentos, episodios de rabia cegadora. Padre violento en la infancia. Vinculo de sangre con Spert. Estado actual: Thorkel muerto (ver nodo thorkel-muerte), steading destruido (ver nodo ataque-steading), Breca raptado por Drekr (ver nodo ninos-robados). Ha pronunciado el voto de venganza (ver nodo orka-vow) y sale en persecucion (ver nodo drekr-cazadora). Lleva los seaxes del dragon-born que mato a Thorkel (ver nodo seaxes-tainted).',
+        id: 'orka', label: 'Orka', group: 'ORKA', type: 'POV -- Personaje', desc: 'Mujer alta y rubia, ojos gris-verde. Exguerrera de alto rango con pasado enterrado (ver nodo Cofre Enterrado de Orka). Flashbacks violentos, episodios de rabia cegadora. Padre violento en la infancia. Vinculo de sangre con Spert. Estado actual: Thorkel muerto (ver nodo thorkel-muerte), steading destruido (ver nodo ataque-steading), Breca raptado por Drekr (ver nodo ninos-robados). Ha pronunciado el voto de venganza (ver nodo tumulo-thorkel) y sale en persecucion (ver nodo drekr-cazadora). Lleva los seaxes del dragon-born que mato a Thorkel (ver nodo seaxes-tainted).',
         star: '*** La Orka que intentaba vivir en paz se ha ido. La guerrera de alto rango que enterro bajo sus pies vuelve. Ahora tiene un nombre: Drekr.'
     },
     {
@@ -646,10 +646,7 @@ const nodes = [
         id: 'salla', label: 'Salla', group: 'FACCION', type: 'Personaje -- Secundario', desc: 'Esposa del Jarl Logur de Liga. Alta y elegante, cara abierta y honesta. Cabello trenzado y apilado, mas gris que rubio. Viste vestido de lana azul profundo con hangerock bordado y cinturon de tablet-weave con llaves -- senora del hall. Se sienta a la derecha de Logur en la mesa de honor. Cuando Logur promete generosamente enviar a los Hermanos con barriles y vientres llenos, Salla se queda un momento y dice con una sonrisa a Glornir: "Quiere decir que me pedira a mi que lo organice todo." Glornir le hace una reverencia de cabeza y la llama por su nombre.',
         star: 'Nombre confirmado: Salla. Su comentario ironico sobre Logur revela una relacion de pareja real -- ella gestiona, el promete y se lleva el credito. Glornir le hace una reverencia -- la respeta.'
     },
-    {
-        id: 'gudfall-saga-galinn', label: 'Saga del Guðfalla (Galinn)', group: 'EVENTO', type: 'Evento', desc: 'El Skáld Galinn recita la saga completa del Guðfalla en el festín del Jarl Logur. Es la primera narración poética completa de la caída de los dioses en la novela. Revela: el Vackna que inició la guerra, los nombres y epítetos de todos los dioses que combatieron, cómo murieron (Berser perforado, Orna desgarrada, Ulfrir muerto, Lik-Rifa encadenada, Snaka caído en Eldrafell), y que los vaesen "treparon desde el foso" tras la caída. Toda la sala queda absorta — Varg siente que está de pie en la Llanura de Batalla viendo la guerra. La saga se interrumpe cuando los mensajeros de Iskidan aporrean las puertas.',
-        star: '★★ Función narrativa dual: proporciona al lector la cosmología completa Y el timing de la llegada de Jaromir genera tensión dramática máxima al interrumpir el momento más épico del festín.'
-    },
+
     // ══════════════════════════════════════════════════════════════
     // CAPÍTULO 14 — NUEVOS NODOS
     // ══════════════════════════════════════════════════════════════
@@ -791,14 +788,9 @@ const nodes = [
         star: '*** Primera descripcion fisica de un dragon-born en la novela. Ojos ROJOS = linaje Lik-Rifa. Sus armas mataron a Thorkel. Orka las lleva al cinto como declaracion de guerra personal contra este individuo. Sin nombre todavia.'
     },
     {
-        id: 'tumulo-thorkel', label: 'Tumulo de Thorkel', group: 'EVENTO', type: 'Evento -- Rito Funerario',
-        desc: 'Orka entierra a Thorkel en el patio del steading destruido. Proceso: cava la tumba, arrastra el cuerpo dentro con la hacha larga aun en el puno, coloca el seax ornamentado (recuperado del cofre enterrado, ver nodo cofre-enterrado) a su lado, le pone brazaletes de oro en los brazos, construye un barrow de madera y piedra. Deja solo la cara visible al final. Vierte su propia sangre sobre el rostro de Thorkel como rito de despedida y guerra (ver nodo orka-vow). Cubre el resto.',
-        star: '*** El entierro con los brazaletes de oro revela que Orka les daba a el sus propios simbolos de rango. El rito de sangre es personal y violento -- no lloro, sino voto.'
-    },
-    {
-        id: 'orka-vow', label: 'Voto de Venganza de Orka', group: 'EVENTO', type: 'Evento -- Declaracion Ritual',
-        desc: 'Orka pronuncia un voto ritual sobre el barrow de Thorkel antes de partir. Palabras exactas: Soy sangre. Soy muerte. Soy venganza. Lo dice con voz plana y vacia -- no con rabia sino con frialdad. Toma los dos seaxes que mataron a Thorkel (ver nodo seaxes-tainted) y los mete en su cinturon. Declara a Vesli que su unica companera es la muerte. Rechaza la compania de Vesli.',
-        star: '*** Declaracion de identidad y proposito. Orka no promete venganza como emocion -- la declara como estado de ser. La frialdad es mas aterradora que la rabia.'
+        id: 'tumulo-thorkel', label: 'Entierro de Thorkel y Voto de Orka', group: 'EVENTO', type: 'Evento -- Rito y Declaracion',
+        desc: 'Orka entierra a Thorkel en el patio del steading destruido. Cava la tumba, arrastra el cuerpo con la hacha larga aun en el puno, coloca el seax ornamentado (ver nodo cofre-enterrado) a su lado, desliza los brazaletes de oro por sus brazos -- sus propios simbolos de rango, entregados a el. Construye un barrow de madera y piedra hasta que solo queda visible la cara. Vierte su propia sangre sobre el rostro de Thorkel. Entonces pronuncia el voto: Soy sangre. Soy muerte. Soy venganza. Voz plana y vacia -- no rabia, sino frialdad. Toma los dos seaxes que mataron a Thorkel (ver nodo seaxes-tainted) y los mete en su cinturon. Cubre el barrow. Al salir, rechaza la compania de Vesli: su unica companera es la muerte.',
+        star: '*** El entierro con los brazaletes de oro y el voto son una sola escena inseparable. La frialdad es mas aterradora que la rabia. Orka no promete venganza como emocion -- la declara como estado de ser.'
     },
     {
         id: 'cofre-enterrado', label: 'Cofre Enterrado de Orka', group: 'OBJETO', type: 'Objeto -- Pasado Oculto',
