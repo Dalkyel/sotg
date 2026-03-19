@@ -31,7 +31,6 @@ const links = [
     { source: 'orka', target: 'drekr', label: 'caza a', type: 'conflict' },
     { source: 'orka', target: 'chico-joven', label: 'interrogo y mato', type: 'event' },
     { source: 'orka', target: 'tumulo-thorkel', label: 'construyo', type: 'event' },
-    { source: 'orka', target: 'orka-vow', label: 'pronuncio', type: 'event' },
     { source: 'orka', target: 'cofre-enterrado', label: 'desenterra / pertenecía a', type: 'event' },
     { source: 'orka', target: 'seaxes-tainted', label: 'lleva al cinto', type: 'rel' },
     { source: 'orka', target: 'tainted-garras', label: 'busca a', type: 'conflict' },
@@ -102,10 +101,6 @@ const links = [
     { source: 'helka', target: 'orna', label: 'huesos en fortaleza', type: 'lore' },
     { source: 'helka', target: 'llegada-helka', label: 'protagoniza', type: 'event' },
     { source: 'helka', target: 'liga', label: 'llega a', type: 'geo' },
-    { source: 'helka', target: 'hakon', label: 'hijo', type: 'rel' },
-    { source: 'helka', target: 'ulfhednar', label: 'guardia personal', type: 'rel' },
-    { source: 'helka', target: 'jaromir', label: 'media entre Logur y', type: 'event' },
-    { source: 'helka', target: 'glornir', label: 'convoca a la mision', type: 'event' },
     // Drekr
     { source: 'drekr', target: 'cat-orka', label: '', type: 'arc' },
     { source: 'drekr', target: 'ninos-robados', label: 'lider de la operacion', type: 'rel' },
@@ -145,8 +140,6 @@ const links = [
     { source: 'varg', target: 'batalla-muelles', label: 'primera batalla', type: 'event' },
     { source: 'varg', target: 'aslog', label: 'hereda lanza y banco de', type: 'rel' },
     { source: 'varg', target: 'sea-wolf', label: 'servira en', type: 'rel' },
-    { source: 'varg', target: 'mision-helka-norte', label: 'primera mision en', type: 'rel' },
-    { source: 'varg', target: 'sea-wolf', label: 'rema en', type: 'event' },
     // bloodsworn
     { source: 'bloodsworn', target: 'cat-varg', label: '', type: 'arc' },
     { source: 'bloodsworn', target: 'cat-facciones', label: '', type: 'arc' },
@@ -178,8 +171,6 @@ const links = [
     { source: 'glornir', target: 'partida-liga', label: 'ordena', type: 'event' },
     { source: 'glornir', target: 'batalla-muelles', label: 'lidera en', type: 'event' },
     { source: 'glornir', target: 'aslog', label: 'entrego lanza de Aslog a Varg', type: 'rel' },
-    { source: 'glornir', target: 'mision-helka-norte', label: 'lidera', type: 'rel' },
-    { source: 'glornir', target: 'skalk', label: 'ordena remar a', type: 'event' },
     // Snepil
     { source: 'einar', target: 'varg', label: 'enfrenta por puesto', type: 'event' },
     { source: 'snepil', target: 'varg', label: 'fue su amo', type: 'rel' },
@@ -195,7 +186,7 @@ const links = [
     { source: 'torvik', target: 'skullsplitter', label: 'conoce la historia de', type: 'lore' },
     // Galinn
     { source: 'galinn', target: 'liga', label: 'skáld de', type: 'geo' },
-    { source: 'galinn', target: 'gudfall-saga-galinn', label: 'recita', type: 'event' },
+    { source: 'galinn', target: 'gudfall', label: 'recita la saga del', type: 'event' },
     { source: 'galinn', target: 'cat-varg', label: '', type: 'arc' },
     { source: 'galinn', target: 'skald', label: 'Es un', type: 'lore' },
     // Sergei
@@ -227,16 +218,6 @@ const links = [
     { source: 'skullsplitter', target: 'bloodsworn', label: 'jefe anterior de', type: 'rel' },
     { source: 'skullsplitter', target: 'jarl-logur', label: 'regalo relic a', type: 'rel' },
     { source: 'skullsplitter', target: 'objeto-viga', label: 'regalo la astilla', type: 'rel' },
-    // Hakon
-    { source: 'hakon', target: 'cat-facciones', label: '', type: 'arc' },
-    { source: 'hakon', target: 'helka', label: 'hijo de', type: 'rel' },
-    { source: 'hakon', target: 'skalk', label: 'conversa con', type: 'event' },
-    // Skalk
-    { source: 'skalk', target: 'cat-facciones', label: '', type: 'arc' },
-    { source: 'skalk', target: 'helka', label: 'galdurman/skald de', type: 'rel' },
-    { source: 'skalk', target: 'galdramadr', label: 'es un', type: 'lore' },
-    { source: 'skalk', target: 'skald', label: 'es un', type: 'lore' },
-    { source: 'skalk', target: 'sea-wolf', label: 'embarca en', type: 'event' },
 
     // -------------------------------------------------------------------------------------- //
     // Cat-elvar to elvar chars
@@ -258,7 +239,7 @@ const links = [
     { source: 'berak', target: 'uspa', label: 'esposo', type: 'rel' },
     { source: 'berak', target: 'bjarn', label: 'padre', type: 'rel' },
     { source: 'berak', target: 'berser', label: 'sangre y herencia confirmada', type: 'lore' },
-    { source: 'berak', target: 'berserkir', label: 'es Berserkir', type: 'lore' },
+    { source: 'berak', target: 'tainted', label: 'Berserkir', type: 'lore' },
     // battle Grim
     { source: 'battle-grim', target: 'cat-facciones', label: '', type: 'arc' },
     { source: 'battle-grim', target: 'cat-elvar', label: '', type: 'arc' },
@@ -405,7 +386,7 @@ const links = [
     // Eldrafell
     { source: 'eldrafell', target: 'vigrið', label: 'montaña en', type: 'geo' },
     { source: 'eldrafell', target: 'snaka', label: 'lugar de caída', type: 'lore' },
-    { source: 'eldrafell', target: 'gudfall-saga-galinn', label: 'mencionado en', type: 'lore' },
+    { source: 'eldrafell', target: 'gudfall', label: 'mencionado en', type: 'lore' },
 
     // -------------------------------------------------------------------------------------- //
     // Vaesen y magia
@@ -504,7 +485,6 @@ const links = [
     // Vackna
     { source: 'vackna', target: 'cat-dioses', label: '', type: 'arc' },
     { source: 'vackna', target: 'gudfall', label: 'inició la batalla', type: 'lore' },
-    { source: 'vackna', target: 'gudfall-saga-galinn', label: 'mencionado en', type: 'lore' },
     { source: 'vackna', target: 'objeto-viga', label: 'astilla en la viga', type: 'rel' },
     { source: 'vackna', target: 'skullsplitter', label: 'relic en posesion de', type: 'lore' },
     // Arbol-Froa
@@ -666,11 +646,6 @@ const links = [
     { source: 'sulich-crisis', target: 'jarl-logur', label: 'árbitro potencial', type: 'rel' },
     { source: 'sulich-crisis', target: 'althing', label: 'resolución prevista', type: 'event' },
     // Saga del Gudfall (evento)
-    { source: 'gudfall-saga-galinn', target: 'cat-eventos', label: '', type: 'event' },
-    { source: 'gudfall-saga-galinn', target: 'gudfall', label: 'narra', type: 'lore' },
-    { source: 'gudfall-saga-galinn', target: 'svin', label: 'menciona', type: 'lore' },
-    { source: 'gudfall-saga-galinn', target: 'tosk', label: 'menciona', type: 'lore' },
-    { source: 'gudfall-saga-galinn', target: 'rotta', label: 'menciona', type: 'lore' },
     // Relaciones nuevas de nodos ya existentes
     { source: 'sulich', target: 'iskidan', label: 'origen probable', type: 'trama' },
 
@@ -767,10 +742,8 @@ const links = [
     { source: 'tumulo-thorkel', target: 'thorkel', label: 'tumulo de', type: 'event' },
     { source: 'tumulo-thorkel', target: 'funeral-rites', label: 'practica de', type: 'lore' },
     { source: 'tumulo-thorkel', target: 'cofre-enterrado', label: 'brazaletes de', type: 'rel' },
-    { source: 'orka-vow', target: 'cat-eventos', label: '', type: 'event' },
-    { source: 'orka-vow', target: 'thorkel', label: 'sobre la tumba de', type: 'event' },
-    { source: 'orka-vow', target: 'drekr-cazadora', label: 'declaracion de la', type: 'rel' },
-    { source: 'orka-vow', target: 'seaxes-tainted', label: 'sellado con', type: 'rel' },
+    { source: 'tumulo-thorkel', target: 'drekr-cazadora', label: 'voto que lanza la', type: 'rel' },
+    { source: 'tumulo-thorkel', target: 'seaxes-tainted', label: 'sellado con', type: 'rel' },
     { source: 'vesli-saliva', target: 'tennur', label: 'capacidad de los', type: 'lore' },
     { source: 'vesli-saliva', target: 'orka', label: 'curo a', type: 'event' },
     { source: 'vesli-saliva', target: 'spert', label: 'curo herida de', type: 'event' },
@@ -790,6 +763,7 @@ const links = [
     { source: 'berserkir', target: 'ulfhednar', label: 'paralelo oso/lobo', type: 'lore' },
     { source: 'berserkir', target: 'tainted', label: 'tipo de Tainted', type: 'lore' },
     { source: 'berserkir', target: 'cat-mundo', label: '', type: 'arc' },
+    { source: 'berak', target: 'berserkir', label: 'es Berserkir', type: 'lore' },
     { source: 'blod-svarid', target: 'seidr', label: 'magia vinculante', type: 'magic' },
     { source: 'blod-svarid', target: 'cat-magia', label: '', type: 'arc' },
     { source: 'galdrabok', target: 'galdramadr', label: 'texto usado por', type: 'magic' },
@@ -804,6 +778,16 @@ const links = [
     // ══════════════════════════════════════════════════════════════
     // CAPÍTULO 20 — NUEVOS ENLACES
     // ══════════════════════════════════════════════════════════════
+    // Hakon
+    { source: 'hakon', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'hakon', target: 'helka', label: 'hijo de', type: 'rel' },
+    { source: 'hakon', target: 'skalk', label: 'conversa con', type: 'event' },
+    // Skalk
+    { source: 'skalk', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'skalk', target: 'helka', label: 'galdurman/skald de', type: 'rel' },
+    { source: 'skalk', target: 'galdramadr', label: 'es un', type: 'lore' },
+    { source: 'skalk', target: 'skald', label: 'es un', type: 'lore' },
+    { source: 'skalk', target: 'sea-wolf', label: 'embarca en', type: 'event' },
     // Varg primera muerte
     { source: 'varg-primera-muerte', target: 'cat-eventos', label: '', type: 'arc' },
     { source: 'varg-primera-muerte', target: 'batalla-muelles', label: 'ocurre en', type: 'event' },
@@ -822,4 +806,15 @@ const links = [
     { source: 'botin-guerra', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'botin-guerra', target: 'kennings', label: 'trofeos como kennings vivos', type: 'lore' },
     { source: 'botin-guerra', target: 'drengr', label: 'parte del codigo del', type: 'lore' },
+    // Helka — nuevas conexiones del cap 20
+    { source: 'helka', target: 'hakon', label: 'hijo', type: 'rel' },
+    { source: 'helka', target: 'ulfhednar', label: 'guardia personal', type: 'rel' },
+    { source: 'helka', target: 'jaromir', label: 'media entre Logur y', type: 'event' },
+    { source: 'helka', target: 'glornir', label: 'convoca a la mision', type: 'event' },
+    // Varg — nuevas conexiones cap 20
+    { source: 'varg', target: 'mision-helka-norte', label: 'primera mision en', type: 'rel' },
+    { source: 'varg', target: 'sea-wolf', label: 'rema en', type: 'event' },
+    // Glornir — cap 20
+    { source: 'glornir', target: 'mision-helka-norte', label: 'lidera', type: 'rel' },
+    { source: 'glornir', target: 'skalk', label: 'ordena remar a', type: 'event' },
 ];
