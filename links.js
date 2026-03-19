@@ -102,6 +102,10 @@ const links = [
     { source: 'helka', target: 'orna', label: 'huesos en fortaleza', type: 'lore' },
     { source: 'helka', target: 'llegada-helka', label: 'protagoniza', type: 'event' },
     { source: 'helka', target: 'liga', label: 'llega a', type: 'geo' },
+    { source: 'helka', target: 'hakon', label: 'hijo', type: 'rel' },
+    { source: 'helka', target: 'ulfhednar', label: 'guardia personal', type: 'rel' },
+    { source: 'helka', target: 'jaromir', label: 'media entre Logur y', type: 'event' },
+    { source: 'helka', target: 'glornir', label: 'convoca a la mision', type: 'event' },
     // Drekr
     { source: 'drekr', target: 'cat-orka', label: '', type: 'arc' },
     { source: 'drekr', target: 'ninos-robados', label: 'lider de la operacion', type: 'rel' },
@@ -141,6 +145,8 @@ const links = [
     { source: 'varg', target: 'batalla-muelles', label: 'primera batalla', type: 'event' },
     { source: 'varg', target: 'aslog', label: 'hereda lanza y banco de', type: 'rel' },
     { source: 'varg', target: 'sea-wolf', label: 'servira en', type: 'rel' },
+    { source: 'varg', target: 'mision-helka-norte', label: 'primera mision en', type: 'rel' },
+    { source: 'varg', target: 'sea-wolf', label: 'rema en', type: 'event' },
     // bloodsworn
     { source: 'bloodsworn', target: 'cat-varg', label: '', type: 'arc' },
     { source: 'bloodsworn', target: 'cat-facciones', label: '', type: 'arc' },
@@ -172,6 +178,8 @@ const links = [
     { source: 'glornir', target: 'partida-liga', label: 'ordena', type: 'event' },
     { source: 'glornir', target: 'batalla-muelles', label: 'lidera en', type: 'event' },
     { source: 'glornir', target: 'aslog', label: 'entrego lanza de Aslog a Varg', type: 'rel' },
+    { source: 'glornir', target: 'mision-helka-norte', label: 'lidera', type: 'rel' },
+    { source: 'glornir', target: 'skalk', label: 'ordena remar a', type: 'event' },
     // Snepil
     { source: 'einar', target: 'varg', label: 'enfrenta por puesto', type: 'event' },
     { source: 'snepil', target: 'varg', label: 'fue su amo', type: 'rel' },
@@ -219,6 +227,16 @@ const links = [
     { source: 'skullsplitter', target: 'bloodsworn', label: 'jefe anterior de', type: 'rel' },
     { source: 'skullsplitter', target: 'jarl-logur', label: 'regalo relic a', type: 'rel' },
     { source: 'skullsplitter', target: 'objeto-viga', label: 'regalo la astilla', type: 'rel' },
+    // Hakon
+    { source: 'hakon', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'hakon', target: 'helka', label: 'hijo de', type: 'rel' },
+    { source: 'hakon', target: 'skalk', label: 'conversa con', type: 'event' },
+    // Skalk
+    { source: 'skalk', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'skalk', target: 'helka', label: 'galdurman/skald de', type: 'rel' },
+    { source: 'skalk', target: 'galdramadr', label: 'es un', type: 'lore' },
+    { source: 'skalk', target: 'skald', label: 'es un', type: 'lore' },
+    { source: 'skalk', target: 'sea-wolf', label: 'embarca en', type: 'event' },
 
     // -------------------------------------------------------------------------------------- //
     // Cat-elvar to elvar chars
@@ -240,7 +258,7 @@ const links = [
     { source: 'berak', target: 'uspa', label: 'esposo', type: 'rel' },
     { source: 'berak', target: 'bjarn', label: 'padre', type: 'rel' },
     { source: 'berak', target: 'berser', label: 'sangre y herencia confirmada', type: 'lore' },
-    { source: 'berak', target: 'tainted', label: 'Berserkir', type: 'lore' },
+    { source: 'berak', target: 'berserkir', label: 'es Berserkir', type: 'lore' },
     // battle Grim
     { source: 'battle-grim', target: 'cat-facciones', label: '', type: 'arc' },
     { source: 'battle-grim', target: 'cat-elvar', label: '', type: 'arc' },
@@ -772,7 +790,6 @@ const links = [
     { source: 'berserkir', target: 'ulfhednar', label: 'paralelo oso/lobo', type: 'lore' },
     { source: 'berserkir', target: 'tainted', label: 'tipo de Tainted', type: 'lore' },
     { source: 'berserkir', target: 'cat-mundo', label: '', type: 'arc' },
-    { source: 'berak', target: 'berserkir', label: 'es Berserkir', type: 'lore' },
     { source: 'blod-svarid', target: 'seidr', label: 'magia vinculante', type: 'magic' },
     { source: 'blod-svarid', target: 'cat-magia', label: '', type: 'arc' },
     { source: 'galdrabok', target: 'galdramadr', label: 'texto usado por', type: 'magic' },
@@ -783,4 +800,26 @@ const links = [
     { source: 'gudljos', target: 'gudfall', label: 'remanente del', type: 'lore' },
     { source: 'gudljos', target: 'cat-mundo', label: '', type: 'arc' },
     { source: 'madur-boy', target: 'tainted', label: 'opuesto a', type: 'lore' },
+
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 20 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    // Varg primera muerte
+    { source: 'varg-primera-muerte', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'varg-primera-muerte', target: 'batalla-muelles', label: 'ocurre en', type: 'event' },
+    { source: 'varg-primera-muerte', target: 'varg', label: 'protagonizada por', type: 'rel' },
+    { source: 'varg-primera-muerte', target: 'botin-guerra', label: 'aprende el codigo del', type: 'lore' },
+    { source: 'varg-primera-muerte', target: 'sulich', label: 'Sulich ofrece botín en', type: 'event' },
+    { source: 'varg-primera-muerte', target: 'rokia', label: 'Rokia atestigua', type: 'event' },
+    // Misión Helka norte
+    { source: 'mision-helka-norte', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'mision-helka-norte', target: 'helka', label: 'encargada por', type: 'rel' },
+    { source: 'mision-helka-norte', target: 'bloodsworn', label: 'protagonistas de', type: 'rel' },
+    { source: 'mision-helka-norte', target: 'skalk', label: 'Skalk embarca para', type: 'event' },
+    { source: 'mision-helka-norte', target: 'sea-wolf', label: 'a bordo del', type: 'rel' },
+    { source: 'mision-helka-norte', target: 'lik-rifa-amenaza', label: 'posible vinculo con', type: 'trama' },
+    // Botín de guerra
+    { source: 'botin-guerra', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'botin-guerra', target: 'kennings', label: 'trofeos como kennings vivos', type: 'lore' },
+    { source: 'botin-guerra', target: 'drengr', label: 'parte del codigo del', type: 'lore' },
 ];
