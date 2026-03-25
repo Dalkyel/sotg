@@ -101,7 +101,7 @@ const links = [
     { source: 'helka', target: 'orna', label: 'huesos en fortaleza', type: 'lore' },
     { source: 'helka', target: 'llegada-helka', label: 'protagoniza', type: 'event' },
     { source: 'helka', target: 'liga', label: 'llega a', type: 'geo' },
-    { source: 'helka', target: 'hakon', label: 'hijo', type: 'rel' },
+    { source: 'helka', target: 'hakon', label: 'hijo / hijo de', type: 'rel' },
     { source: 'helka', target: 'ulfhednar', label: 'guardia personal', type: 'rel' },
     { source: 'helka', target: 'jaromir', label: 'media entre Logur y', type: 'event' },
     { source: 'helka', target: 'glornir', label: 'convoca a la mision', type: 'event' },
@@ -125,7 +125,6 @@ const links = [
     { source: 'tainted-garras', target: 'likrafa', label: 'sangre de', type: 'lore' },
     // Hakon
     { source: 'hakon', target: 'cat-facciones', label: '', type: 'arc' },
-    { source: 'hakon', target: 'helka', label: 'hijo de', type: 'rel' },
     { source: 'hakon', target: 'skalk', label: 'conversa con', type: 'event' },
     // Skalk
     { source: 'skalk', target: 'cat-facciones', label: '', type: 'arc' },
@@ -153,9 +152,8 @@ const links = [
     { source: 'varg', target: 'objeto-viga', label: 'nota sin entender pero no pregunta', type: 'trama' },
     { source: 'varg', target: 'batalla-muelles', label: 'primera batalla', type: 'event' },
     { source: 'varg', target: 'aslog', label: 'hereda lanza y banco de', type: 'rel' },
-    { source: 'varg', target: 'sea-wolf', label: 'servira en', type: 'rel' },
+    { source: 'varg', target: 'sea-wolf', label: 'servira en / rema en', type: 'rel' },
     { source: 'varg', target: 'mision-helka-norte', label: 'primera mision en', type: 'rel' },
-    { source: 'varg', target: 'sea-wolf', label: 'rema en', type: 'event' },
     // bloodsworn
     { source: 'bloodsworn', target: 'cat-varg', label: '', type: 'arc' },
     { source: 'bloodsworn', target: 'cat-facciones', label: '', type: 'arc' },
@@ -434,7 +432,6 @@ const links = [
     { source: 'froa', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
     { source: 'froa', target: 'arbol-froa', label: 'ligada a / murio con', type: 'lore' },
     { source: 'froa', target: 'oskutred', label: 'nacida de semilla de', type: 'lore' },
-    { source: 'froa', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
     { source: 'froa', target: 'ninos-robados', label: 'destruida por mismos agresores?', type: 'trama' },
     // Night-wyrm
     { source: 'night-wyrm', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
@@ -460,7 +457,6 @@ const links = [
     { source: 'berak-venta', target: 'snakavik', label: 'destino', type: 'geo' },
     { source: 'berak-venta', target: 'cat-eventos', label: '', type: 'event' },
     { source: 'berak-venta', target: 'wave-jarl', label: 'navegado en', type: 'rel' },
-    { source: 'berak-venta', target: 'snakavik', label: 'destino', type: 'geo' },
     { source: 'helka-poder', target: 'cat-tramas', label: '', type: 'arc' },
     { source: 'helka-poder', target: 'helka', label: 'protagoniza', type: 'trama' },
     { source: 'helka-poder', target: 'sigrun', label: 'juró lealtad', type: 'event' },
@@ -530,7 +526,6 @@ const links = [
     { source: 'seaxes-tainted', target: 'cat-objetos', label: '', type: 'arc' },
     { source: 'seaxes-tainted', target: 'thorkel', label: 'mataron a', type: 'event' },
 
-
     // -------------------------------------------------------------------------------------- //
     // ── ENLACES CULTURA NÓRDICA ────────────────────────────────────
     { source: 'holmganga', target: 'cat-norse', label: '', type: 'arc' },
@@ -541,7 +536,6 @@ const links = [
     { source: 'nalbinding', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'winnigas', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'holmganga', target: 'second-combat', label: 'rol en duelo', type: 'lore' },
-    { source: 'holmganga', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'althing', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'niding', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'drengr', target: 'cat-norse', label: '', type: 'arc' },
@@ -701,10 +695,9 @@ const links = [
     { source: 'gallows-wood', target: 'ulfrir', label: 'Ulfrir vengó a su hija', type: 'history' },
     // Dragon-born
     { source: 'dragon-born', target: 'cat-tramas', label: '', type: 'arc' },
-    { source: 'dragon-born', target: 'likrafa', label: 'posible descendencia', type: 'trama' },
+    { source: 'dragon-born', target: 'likrafa', label: 'posible descendencia / descendencia activa de', type: 'trama' },
     { source: 'dragon-born', target: 'tainted', label: 'linaje no confirmado', type: 'trama' },
     { source: 'dragon-born', target: 'thorkel-muerte', label: 'confirmado al morir', type: 'lore' },
-    { source: 'dragon-born', target: 'likrafa', label: 'descendencia activa de', type: 'lore' },
 
     // ==========================================================
     // CAPITULO 15 -- NUEVOS ENLACES
@@ -737,6 +730,7 @@ const links = [
     { source: 'partida-liga', target: 'bloodsworn', label: 'protagonista', type: 'rel' },
     { source: 'partida-liga', target: 'liga', label: 'desde', type: 'geo' },
     { source: 'partida-liga', target: 'sulich-crisis', label: 'sin resolver al partir', type: 'trama' },
+
     // ==========================================================
     // CAPITULO 17 -- NUEVOS ENLACES
     // ==========================================================
