@@ -101,6 +101,10 @@ const links = [
     { source: 'helka', target: 'orna', label: 'huesos en fortaleza', type: 'lore' },
     { source: 'helka', target: 'llegada-helka', label: 'protagoniza', type: 'event' },
     { source: 'helka', target: 'liga', label: 'llega a', type: 'geo' },
+    { source: 'helka', target: 'hakon', label: 'hijo', type: 'rel' },
+    { source: 'helka', target: 'ulfhednar', label: 'guardia personal', type: 'rel' },
+    { source: 'helka', target: 'jaromir', label: 'media entre Logur y', type: 'event' },
+    { source: 'helka', target: 'glornir', label: 'convoca a la mision', type: 'event' },
     // Drekr
     { source: 'drekr', target: 'cat-orka', label: '', type: 'arc' },
     { source: 'drekr', target: 'ninos-robados', label: 'lider de la operacion', type: 'rel' },
@@ -119,6 +123,16 @@ const links = [
     { source: 'tainted-garras', target: 'ataque-steading', label: 'participo en', type: 'event' },
     { source: 'tainted-garras', target: 'seaxes-tainted', label: 'dueno de', type: 'rel' },
     { source: 'tainted-garras', target: 'likrafa', label: 'sangre de', type: 'lore' },
+    // Hakon
+    { source: 'hakon', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'hakon', target: 'helka', label: 'hijo de', type: 'rel' },
+    { source: 'hakon', target: 'skalk', label: 'conversa con', type: 'event' },
+    // Skalk
+    { source: 'skalk', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'skalk', target: 'helka', label: 'galdurman/skald de', type: 'rel' },
+    { source: 'skalk', target: 'galdramadr', label: 'es un', type: 'lore' },
+    { source: 'skalk', target: 'skald', label: 'es un', type: 'lore' },
+    { source: 'skalk', target: 'sea-wolf', label: 'embarca en', type: 'event' },
 
     // -------------------------------------------------------------------------------------- //
     // Cat-varg to varg chars
@@ -140,6 +154,8 @@ const links = [
     { source: 'varg', target: 'batalla-muelles', label: 'primera batalla', type: 'event' },
     { source: 'varg', target: 'aslog', label: 'hereda lanza y banco de', type: 'rel' },
     { source: 'varg', target: 'sea-wolf', label: 'servira en', type: 'rel' },
+    { source: 'varg', target: 'mision-helka-norte', label: 'primera mision en', type: 'rel' },
+    { source: 'varg', target: 'sea-wolf', label: 'rema en', type: 'event' },
     // bloodsworn
     { source: 'bloodsworn', target: 'cat-varg', label: '', type: 'arc' },
     { source: 'bloodsworn', target: 'cat-facciones', label: '', type: 'arc' },
@@ -171,6 +187,8 @@ const links = [
     { source: 'glornir', target: 'partida-liga', label: 'ordena', type: 'event' },
     { source: 'glornir', target: 'batalla-muelles', label: 'lidera en', type: 'event' },
     { source: 'glornir', target: 'aslog', label: 'entrego lanza de Aslog a Varg', type: 'rel' },
+    { source: 'glornir', target: 'mision-helka-norte', label: 'lidera', type: 'rel' },
+    { source: 'glornir', target: 'skalk', label: 'ordena remar a', type: 'event' },
     // Snepil
     { source: 'einar', target: 'varg', label: 'enfrenta por puesto', type: 'event' },
     { source: 'snepil', target: 'varg', label: 'fue su amo', type: 'rel' },
@@ -228,6 +246,8 @@ const links = [
     { source: 'elvar', target: 'battle-grim', label: 'miembro', type: 'rel' },
     { source: 'elvar', target: 'oath-stone-frost-isles', label: 'presenció activación', type: 'event' },
     { source: 'elvar', target: 'dragon-born', label: 'niega existencia', type: 'conflict' },
+    { source: 'elvar', target: 'storr', label: 'hija de', type: 'rel' },
+    { source: 'elvar', target: 'snakavik', label: 'creció y vivió en', type: 'geo' },
     // Agnar
     { source: 'agnar', target: 'sighvat', label: 'jefe/subof.', type: 'rel' },
     { source: 'agnar', target: 'iskalt', label: 'asaltó buscando a Berak', type: 'geo' },
@@ -284,6 +304,15 @@ const links = [
     { source: 'storr', target: 'berak', label: 'comprador', type: 'trama' },
     // wave-jarl
     { source: 'wave-jarl', target: 'drakkar', label: 'Es un', type: 'rel' },
+    // Silrið
+    { source: 'silrid', target: 'storr', label: 'sirve a', type: 'rel' },
+    { source: 'silrid', target: 'hrung', label: 'despierta e interactúa con', type: 'rel' },
+    { source: 'silrid', target: 'berak', label: 'toma sangre de', type: 'event' },
+    // Hrung
+    { source: 'hrung', target: 'storr', label: 'oráculo de', type: 'rel' },
+    { source: 'hrung', target: 'snakavik', label: 'reside en', type: 'geo' },
+    { source: 'hrung', target: 'elvar', label: 'la identifica por olfato', type: 'event' },
+    { source: 'hrung', target: 'berak', label: 'confirma linaje de', type: 'event' },
 
     // -------------------------------------------------------------------------------------- //
     // Lenguajes
@@ -353,6 +382,7 @@ const links = [
     { source: 'iskalt', target: 'oskutred', label: 'terremotos = Lik-Rifa', type: 'magic' },
     // snakavik
     { source: 'snakavik', target: 'vigrið', label: 'ciudad en', type: 'geo' },
+    { source: 'snakavik', target: 'gods-bones', label: 'construida sobre', type: 'lore' },
     // darl
     { source: 'darl', target: 'vigrið', label: 'capital', type: 'geo' },
     // howbyr
@@ -504,6 +534,12 @@ const links = [
     // -------------------------------------------------------------------------------------- //
     // ── ENLACES CULTURA NÓRDICA ────────────────────────────────────
     { source: 'holmganga', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'tafl', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'hangerock', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'skal', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'whale-road', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'nalbinding', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'winnigas', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'holmganga', target: 'second-combat', label: 'rol en duelo', type: 'lore' },
     { source: 'holmganga', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'althing', target: 'cat-norse', label: '', type: 'arc' },
@@ -778,16 +814,6 @@ const links = [
     // ══════════════════════════════════════════════════════════════
     // CAPÍTULO 20 — NUEVOS ENLACES
     // ══════════════════════════════════════════════════════════════
-    // Hakon
-    { source: 'hakon', target: 'cat-facciones', label: '', type: 'arc' },
-    { source: 'hakon', target: 'helka', label: 'hijo de', type: 'rel' },
-    { source: 'hakon', target: 'skalk', label: 'conversa con', type: 'event' },
-    // Skalk
-    { source: 'skalk', target: 'cat-facciones', label: '', type: 'arc' },
-    { source: 'skalk', target: 'helka', label: 'galdurman/skald de', type: 'rel' },
-    { source: 'skalk', target: 'galdramadr', label: 'es un', type: 'lore' },
-    { source: 'skalk', target: 'skald', label: 'es un', type: 'lore' },
-    { source: 'skalk', target: 'sea-wolf', label: 'embarca en', type: 'event' },
     // Varg primera muerte
     { source: 'varg-primera-muerte', target: 'cat-eventos', label: '', type: 'arc' },
     { source: 'varg-primera-muerte', target: 'batalla-muelles', label: 'ocurre en', type: 'event' },
@@ -806,15 +832,24 @@ const links = [
     { source: 'botin-guerra', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'botin-guerra', target: 'kennings', label: 'trofeos como kennings vivos', type: 'lore' },
     { source: 'botin-guerra', target: 'drengr', label: 'parte del codigo del', type: 'lore' },
-    // Helka — nuevas conexiones del cap 20
-    { source: 'helka', target: 'hakon', label: 'hijo', type: 'rel' },
-    { source: 'helka', target: 'ulfhednar', label: 'guardia personal', type: 'rel' },
-    { source: 'helka', target: 'jaromir', label: 'media entre Logur y', type: 'event' },
-    { source: 'helka', target: 'glornir', label: 'convoca a la mision', type: 'event' },
-    // Varg — nuevas conexiones cap 20
-    { source: 'varg', target: 'mision-helka-norte', label: 'primera mision en', type: 'rel' },
-    { source: 'varg', target: 'sea-wolf', label: 'rema en', type: 'event' },
-    // Glornir — cap 20
-    { source: 'glornir', target: 'mision-helka-norte', label: 'lidera', type: 'rel' },
-    { source: 'glornir', target: 'skalk', label: 'ordena remar a', type: 'event' },
+
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 21 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'llegada-snakavik', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'llegada-snakavik', target: 'snakavik', label: 'ocurre en', type: 'geo' },
+    { source: 'llegada-snakavik', target: 'agnar', label: 'organizada por', type: 'rel' },
+    { source: 'llegada-snakavik', target: 'berak', label: 'destino de', type: 'event' },
+    { source: 'llegada-snakavik', target: 'storr', label: 'comprador en', type: 'event' },
+    { source: 'llegada-snakavik', target: 'silrid', label: 'verificación por', type: 'event' },
+    { source: 'llegada-snakavik', target: 'hrung', label: 'confirma linaje vía', type: 'event' },
+    { source: 'llegada-snakavik', target: 'elvar', label: 'revela identidad de', type: 'trama' },
+    { source: 'berak-venta', target: 'llegada-snakavik', label: 'culmina en', type: 'trama' },
+    // Cap.21 — Raven-Feeders / Ilska
+    { source: 'raven-feeders', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'raven-feeders', target: 'snakavik', label: 'presentes en', type: 'geo' },
+    { source: 'ilska', target: 'raven-feeders', label: 'lidera', type: 'rel' },
+    { source: 'raven-feeders', target: 'battle-grim', label: 'rival mercenaria de', type: 'trama' },
+    // Snakavik — huesos de Snaka como escudo vaesen
+    { source: 'gods-bones', target: 'sjavarom', label: 'repele vaesen como', type: 'lore' },
 ];
