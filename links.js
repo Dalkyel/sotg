@@ -19,7 +19,7 @@ const links = [
     { source: 'orka', target: 'spert', label: 'vínculo sangre', type: 'magic' },
     { source: 'orka', target: 'virk', label: 'comercian', type: 'event' },
     { source: 'orka', target: 'sigrun', label: 'la cuestiona en el Althing', type: 'event' },
-    { source: 'orka', target: 'thrall-sigrun', label: 'observa lamiendo sangre de Thorkel', type: 'event' },
+    { source: 'orka', target: 'vafri', label: 'observa lamiendo sangre de Thorkel', type: 'event' },
     { source: 'orka', target: 'second-combat', label: 'segundo de Virk', type: 'event' },
     { source: 'orka', target: 'karl', label: 'vive como', type: 'rel' },
     { source: 'orka', target: 'froa', label: 'encontro muerta / buscaba consejo', type: 'event' },
@@ -34,11 +34,14 @@ const links = [
     { source: 'orka', target: 'cofre-enterrado', label: 'desenterra / pertenecía a', type: 'event' },
     { source: 'orka', target: 'seaxes-tainted', label: 'lleva al cinto', type: 'rel' },
     { source: 'orka', target: 'tainted-garras', label: 'busca a', type: 'conflict' },
+    { source: 'orka', target: 'raid-camara-sigrun', label: 'protagoniza', type: 'rel' },
+    { source: 'orka', target: 'mord-lif', label: 'viaja junto a', type: 'rel' },
+    { source: 'orka', target: 'hakon', label: 'nuevo objetivo conocido', type: 'conflict' },
     // Thorkel
     { source: 'thorkel', target: 'virk', label: 'comercian', type: 'history' },
     { source: 'thorkel', target: 'breca', label: 'Hijo', type: 'rel' },
     { source: 'thorkel', target: 'asgrim-death', label: 'descubre', type: 'event' },
-    { source: 'thorkel', target: 'thrall-sigrun', label: 'pateó / identificó Ulfrir-kin', type: 'event' },
+    { source: 'thorkel', target: 'vafri', label: 'pateó / identificó Ulfrir-kin', type: 'event' },
     { source: 'thorkel', target: 'drengr', label: 'se considera', type: 'rel' },
     { source: 'thorkel', target: 'thrall', label: 'ex-thrall', type: 'rel' },
     { source: 'thorkel', target: 'karl', label: 'vive como', type: 'rel' },
@@ -60,6 +63,7 @@ const links = [
     { source: 'gudvarr', target: 'sigrun', label: 'sobrino', type: 'rel' },
     { source: 'gudvarr', target: 'niding', label: 'insultó a Virk', type: 'event' },
     { source: 'gudvarr', target: 'holmganga-event', label: 'Combatiente y se rindió legalmente', type: 'event' },
+    { source: 'gudvarr', target: 'mord-lif', label: 'capturó tras intento de asesinato', type: 'event' },
     // Arild
     { source: 'arild', target: 'sigrun', label: 'Drengr de', type: 'rel' },
     { source: 'arild', target: 'gudvarr', label: 'acompaña a', type: 'rel' },
@@ -68,11 +72,12 @@ const links = [
     { source: 'virk', target: 'mord-lif', label: 'hijos', type: 'trama' },
     { source: 'virk', target: 'funeral-rites', label: 'cuerpo envuelto', type: 'event' },
     { source: 'virk', target: 'holmganga-event', label: 'combatiente y violó las reglas', type: 'rel' },
-    // Thrall de Sigrun
-    { source: 'thrall-sigrun', target: 'sigrun', label: 'sirve a / guardaespaldas', type: 'rel' },
-    { source: 'thrall-sigrun', target: 'tainted', label: '¿sangre divina?', type: 'trama' },
-    { source: 'thrall-sigrun', target: 'ulfrir', label: 'sangre confirmada', type: 'rel' },
-    { source: 'thrall-sigrun', target: 'seax', label: 'usa dos', type: 'rel' },
+    // vafri - Thrall de Sigrun
+    { source: 'vafri', target: 'sigrun', label: 'sirve a / guardaespaldas', type: 'rel' },
+    { source: 'vafri', target: 'tainted', label: '¿sangre divina?', type: 'trama' },
+    { source: 'vafri', target: 'ulfrir', label: 'sangre confirmada', type: 'rel' },
+    { source: 'vafri', target: 'seax', label: 'usa dos', type: 'rel' },
+    { source: 'vafri', target: 'drekr', label: 'informaba a través de', type: 'rel' },
     // Asgrim
     { source: 'asgrim', target: 'idrun', label: 'esposo/a', type: 'rel' },
     { source: 'asgrim', target: 'asgrim-death', label: 'muerto en', type: 'event' },
@@ -126,6 +131,9 @@ const links = [
     // Hakon
     { source: 'hakon', target: 'cat-facciones', label: '', type: 'arc' },
     { source: 'hakon', target: 'skalk', label: 'conversa con', type: 'event' },
+    { source: 'hakon', target: 'vafri', label: 'ordenó espiar vía', type: 'rel' },
+    { source: 'hakon', target: 'drekr', label: 'comanda operación vía', type: 'rel' },
+    { source: 'hakon', target: 'darl', label: 'posible destino de Breca según Vafri', type: 'trama' },
     // Skalk
     { source: 'skalk', target: 'cat-facciones', label: '', type: 'arc' },
     { source: 'skalk', target: 'helka', label: 'galdurman/skald de', type: 'rel' },
@@ -327,7 +335,7 @@ const links = [
     // holmganga virk vs gudvarr
     { source: 'holmganga-event', target: 'cat-eventos', label: '', type: 'event' },
     { source: 'holmganga-event', target: 'orka', label: 'segundo de Virk', type: 'rel' },
-    { source: 'holmganga-event', target: 'thrall-sigrun', label: 'mató a Virk', type: 'event' },
+    { source: 'holmganga-event', target: 'vafri', label: 'mató a Virk', type: 'event' },
     { source: 'holmganga-event', target: 'arild', label: 'segundo de Guðvarr', type: 'rel' },
     { source: 'holmganga-event', target: 'mord-lif', label: 'presenciaron', type: 'event' },
     { source: 'holmganga-event', target: 'oath-stone-fellur', label: 'lugar', type: 'geo' },
@@ -656,7 +664,7 @@ const links = [
     { source: 'patronymics', target: 'leif', label: 'Kolskeggson', type: 'rel' },
     { source: 'berserkergang', target: 'berak', label: 'entra en', type: 'rel' },
     { source: 'berserkergang', target: 'varg', label: 'furia roja similar', type: 'trama' },
-    { source: 'berserkergang', target: 'thrall-sigrun', label: 'furia de lobo', type: 'rel' },
+    { source: 'berserkergang', target: 'vafri', label: 'furia de lobo', type: 'rel' },
     { source: 'berserkergang', target: 'berser', label: 'origen divino', type: 'lore' },
     // Blood-Eagle
     { source: 'blood-eagle', target: 'cat-norse', label: '', type: 'arc' },
@@ -703,13 +711,13 @@ const links = [
     // CAPITULO 15 -- NUEVOS ENLACES
     // ==========================================================
     // Ulfhednar (concepto)
-    { source: 'ulfhednar', target: 'thrall-sigrun', label: 'es una', type: 'lore' },
+    { source: 'ulfhednar', target: 'vafri', label: 'es una', type: 'lore' },
     { source: 'ulfhednar', target: 'ulfrir', label: 'linaje de', type: 'lore' },
     { source: 'ulfhednar', target: 'tainted', label: 'subtipo de', type: 'lore' },
     { source: 'ulfhednar', target: 'decision-huida', label: 'amenaza que motiva', type: 'trama' },
     // Decision de huida
     { source: 'decision-huida', label: '', target: 'cat-tramas', type: 'arc' },
-    { source: 'decision-huida', target: 'thrall-sigrun', label: 'motivada por amenaza de', type: 'trama' },
+    { source: 'decision-huida', target: 'vafri', label: 'motivada por amenaza de', type: 'trama' },
     { source: 'decision-huida', target: 'ataque-steading', label: 'interrumpida por', type: 'event' },
     // Barrow de Virk
     { source: 'barrow-virk', target: 'cat-eventos', label: '', type: 'event' },
@@ -846,4 +854,13 @@ const links = [
     { source: 'raven-feeders', target: 'battle-grim', label: 'rival mercenaria de', type: 'trama' },
     // Snakavik — huesos de Snaka como escudo vaesen
     { source: 'gods-bones', target: 'sjavarom', label: 'repele vaesen como', type: 'lore' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 22 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    // Evento central
+    { source: 'raid-camara-sigrun', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'raid-camara-sigrun', target: 'fellur', label: 'ocurre en', type: 'geo' },
+    { source: 'raid-camara-sigrun', target: 'vafri', label: 'Vafri muere en', type: 'event' },
+    { source: 'raid-camara-sigrun', target: 'sigrun', label: 'Sigrún herida en', type: 'event' },
+    { source: 'raid-camara-sigrun', target: 'mord-lif', label: 'Orka libera a', type: 'event' },
 ];
