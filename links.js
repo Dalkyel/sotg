@@ -420,7 +420,7 @@ const links = [
     { source: 'rio-skarpain', target: 'vigrið', label: 'río en', type: 'geo' },
     // islas hielo
     { source: 'islas-hielo', target: 'vigrið', label: 'islas al norte', type: 'geo' },
-    { source: 'islas-hielo', target: 'iskalt', label: 'al sur de', type: 'geo' },
+    { source: 'islas-hielo', target: 'iskalt', label: 'al norte de', type: 'geo' },
     { source: 'islas-hielo', target: 'araña-hielo', label: 'hábitat', type: 'lore' },
     // fellur
     { source: 'fellur', target: 'vigrið', label: 'ciudad en', type: 'geo' },
@@ -653,7 +653,6 @@ const links = [
     { source: 'langsoex', target: 'svik', label: 'lleva', type: 'rel' },
     { source: 'langsoex', target: 'sulich', label: 'espada curva', type: 'rel' },
     { source: 'ox', target: 'thorkel', label: 'hacha larga barbada', type: 'rel' },
-    { source: 'ox', target: 'virk', label: 'usó en holmganga', type: 'event' },
     { source: 'ox', target: 'glornir', label: 'long-axe', type: 'rel' },
     { source: 'ox', target: 'gudvarr', label: 'herido por', type: 'event' },
     { source: 'destral', target: 'thorkel', label: 'arma principal', type: 'rel' },
@@ -754,7 +753,7 @@ const links = [
     { source: 'ulfhednar', target: 'tainted', label: 'subtipo de', type: 'lore' },
     { source: 'ulfhednar', target: 'decision-huida', label: 'amenaza que motiva', type: 'trama' },
     // Decision de huida
-    { source: 'decision-huida', label: '', target: 'cat-tramas', type: 'arc' },
+    { source: 'decision-huida', target: 'cat-tramas', label: '', type: 'arc' },
     { source: 'decision-huida', target: 'vafri', label: 'motivada por amenaza de', type: 'trama' },
     { source: 'decision-huida', target: 'ataque-steading', label: 'interrumpida por', type: 'event' },
     // Barrow de Virk
