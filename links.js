@@ -37,6 +37,7 @@ const links = [
     { source: 'orka', target: 'raid-camara-sigrun', label: 'protagoniza', type: 'rel' },
     { source: 'orka', target: 'mord-lif', label: 'viaja junto a', type: 'rel' },
     { source: 'orka', target: 'hakon', label: 'nuevo objetivo conocido', type: 'conflict' },
+    { source: 'orka', target: 'darl', label: 'se dirige a', type: 'trama' },
     // Thorkel
     { source: 'thorkel', target: 'virk', label: 'comercian', type: 'history' },
     { source: 'thorkel', target: 'breca', label: 'Hijo', type: 'rel' },
@@ -881,4 +882,13 @@ const links = [
     { source: 'raven-feeders', target: 'battle-grim', label: 'rival mercenaria de', type: 'trama' },
     // Snakavik — huesos de Snaka como escudo vaesen
     { source: 'gods-bones', target: 'sjavarom', label: 'repele vaesen como', type: 'lore' },
+
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 24 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'fuga-fiordo', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'fuga-fiordo', target: 'orka', label: 'protagoniza', type: 'rel' },
+    { source: 'fuga-fiordo', target: 'mord-lif', label: 'pacto sellado en', type: 'event' },
+    { source: 'fuga-fiordo', target: 'gudvarr', label: 'maniobra para despistar a', type: 'event' },
+    { source: 'fuga-fiordo', target: 'darl', label: 'destino acordado', type: 'geo' },
 ];
