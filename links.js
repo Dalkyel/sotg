@@ -1,5 +1,7 @@
 const links = [
+    // ══════════════════════════════════════════════════════════════
     // Root to cats
+    // ══════════════════════════════════════════════════════════════
     { source: 'root', target: 'cat-orka', label: 'POV 1', type: 'cat' },
     { source: 'root', target: 'cat-varg', label: 'POV 2', type: 'cat' },
     { source: 'root', target: 'cat-elvar', label: 'POV 3', type: 'cat' },
@@ -9,8 +11,9 @@ const links = [
     { source: 'root', target: 'cat-eventos', label: '', type: 'arc' },
     { source: 'root', target: 'cat-norse', label: 'cultura', type: 'cat' },
 
-    // -------------------------------------------------------------------------------------- //
+    // ══════════════════════════════════════════════════════════════
     // Cat-orka to orka chars
+    // ══════════════════════════════════════════════════════════════
     // Orka
     { source: 'orka', target: 'cat-orka', label: '', type: 'arc' },
     { source: 'orka', target: 'thorkel', label: 'Esposo', type: 'rel' },
@@ -142,8 +145,9 @@ const links = [
     { source: 'skalk', target: 'skald', label: 'es un', type: 'lore' },
     { source: 'skalk', target: 'sea-wolf', label: 'embarca en', type: 'event' },
 
-    // -------------------------------------------------------------------------------------- //
+    // ══════════════════════════════════════════════════════════════
     // Cat-varg to varg chars
+    // ══════════════════════════════════════════════════════════════
     // Varg
     { source: 'varg', target: 'cat-varg', label: '', type: 'arc' },
     { source: 'varg', target: 'froya', label: 'hermana', type: 'rel' },
@@ -171,9 +175,10 @@ const links = [
     // Rokia
     { source: 'rokia', target: 'varg', label: 'entrena', type: 'goal' },
     { source: 'rokia', target: 'bloodsworn', label: 'miembro', type: 'rel' },
-    // Guerrero Oscuro
+    // sulich Guerrero Oscuro
     { source: 'sulich', target: 'glornir', label: 'sparring / misterio', type: 'trama' },
     { source: 'sulich', target: 'bloodsworn', label: 'miembro', type: 'rel' },
+    { source: 'sulich', target: 'iskidan', label: 'origen probable', type: 'trama' },
     // Edel
     { source: 'edel', target: 'cat-varg', label: '', type: 'arc' },
     { source: 'edel', target: 'bloodsworn', label: 'escoutmaestre', type: 'rel' },
@@ -243,9 +248,18 @@ const links = [
     { source: 'skullsplitter', target: 'bloodsworn', label: 'jefe anterior de', type: 'rel' },
     { source: 'skullsplitter', target: 'jarl-logur', label: 'regalo relic a', type: 'rel' },
     { source: 'skullsplitter', target: 'objeto-viga', label: 'regalo la astilla', type: 'rel' },
+    // logur
+    { source: 'jarl-logur', target: 'liga', label: 'jarl de', type: 'geo' },
+    { source: 'jarl-logur', target: 'bloodsworn', label: 'hospeda', type: 'rel' },
+    // salla
+    { source: 'salla', target: 'jarl-logur', label: 'esposa de', type: 'rel' },
+    { source: 'salla', target: 'liga', label: 'señora del hall de', type: 'geo' },
+    { source: 'salla', target: 'partida-liga', label: 'organiza la despedida', type: 'event' },
+    { source: 'salla', target: 'glornir', label: 'Glornir la llama Salla', type: 'rel' },
 
-    // -------------------------------------------------------------------------------------- //
+    // ══════════════════════════════════════════════════════════════
     // Cat-elvar to elvar chars
+    // ══════════════════════════════════════════════════════════════
     // Elvar
     { source: 'elvar', target: 'cat-elvar', label: '', type: 'arc' },
     { source: 'elvar', target: 'grend', label: 'guardián', type: 'rel' },
@@ -267,8 +281,8 @@ const links = [
     // Berak
     { source: 'berak', target: 'uspa', label: 'esposo', type: 'rel' },
     { source: 'berak', target: 'bjarn', label: 'padre', type: 'rel' },
-    { source: 'berak', target: 'berser', label: 'sangre y herencia confirmada', type: 'lore' },
     { source: 'berak', target: 'tainted', label: 'Berserkir', type: 'lore' },
+    { source: 'berak', target: 'berserkir', label: 'es Berserkir, sangre y herencia confirmada', type: 'lore' },
     // battle Grim
     { source: 'battle-grim', target: 'cat-facciones', label: '', type: 'arc' },
     { source: 'battle-grim', target: 'cat-elvar', label: '', type: 'arc' },
@@ -339,18 +353,44 @@ const links = [
     { source: 'brodir', target: 'storr', label: 'hijo menor de', type: 'rel' },
     { source: 'brodir', target: 'elvar', label: 'hermano menor — afecto', type: 'rel' },
     { source: 'brodir', target: 'cat-facciones', label: '', type: 'arc' },
+    // Raven-Feeders / Ilska
+    { source: 'raven-feeders', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'raven-feeders', target: 'snakavik', label: 'presentes en', type: 'geo' },
+    { source: 'raven-feeders', target: 'battle-grim', label: 'rival mercenaria de', type: 'trama' },
+    { source: 'ilska', target: 'raven-feeders', label: 'lidera', type: 'rel' },
 
-    // -------------------------------------------------------------------------------------- //
-    // Lenguajes
+    // ══════════════════════════════════════════════════════════════
+    // LANGUAGES
+    // ══════════════════════════════════════════════════════════════
     { source: 'galdur', target: 'cat-magia', label: 'Lenguaje Magico', type: 'arc' },
     { source: 'galdur', target: 'collares', label: 'activa', type: 'magic' },
 
-    // -------------------------------------------------------------------------------------- //
+    // ══════════════════════════════════════════════════════════════
     // Cat-mundo
+    // ══════════════════════════════════════════════════════════════
     { source: 'tainted', target: 'cat-mundo', label: '', type: 'arc' },
+    { source: 'madur-boy', target: 'tainted', label: 'opuesto a', type: 'lore' },
+    { source: 'gudljos', target: 'cat-mundo', label: '', type: 'arc' },
+    { source: 'gudljos', target: 'gudfall', label: 'remanente del', type: 'lore' },
+    { source: 'berserkir', target: 'cat-mundo', label: '', type: 'arc' },
+    { source: 'berserkir', target: 'berser', label: 'descendientes de', type: 'lore' },
+    { source: 'berserkir', target: 'ulfhednar', label: 'paralelo oso/lobo', type: 'lore' },
+    { source: 'berserkir', target: 'tainted', label: 'tipo', type: 'lore' },
+    // Dragon-born
+    { source: 'dragon-born', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'dragon-born', target: 'likrafa', label: 'posible descendencia / descendencia activa de', type: 'trama' },
+    { source: 'dragon-born', target: 'tainted', label: 'Tipo', type: 'trama' },
+    { source: 'dragon-born', target: 'thorkel-muerte', label: 'confirmado al morir', type: 'lore' },
+    { source: 'dragon-born', target: 'thorkel-transformacion', label: 'mato a Thorkel en', type: 'event' },
+    // Ulfhednar
+    { source: 'ulfhednar', target: 'vafri', label: 'es una', type: 'lore' },
+    { source: 'ulfhednar', target: 'ulfrir', label: 'linaje de', type: 'lore' },
+    { source: 'ulfhednar', target: 'tainted', label: 'tipo', type: 'lore' },
+    { source: 'ulfhednar', target: 'decision-huida', label: 'amenaza que motiva', type: 'trama' },
 
-    // -------------------------------------------------------------------------------------- //
+    // ══════════════════════════════════════════════════════════════
     // Cat-eventos
+    // ══════════════════════════════════════════════════════════════
     { source: 'asgrim-death', target: 'cat-eventos', label: '', type: 'event' },
     // holmganga virk vs gudvarr
     { source: 'holmganga-event', target: 'cat-eventos', label: '', type: 'event' },
@@ -366,9 +406,136 @@ const links = [
     { source: 'gudfall', target: 'orna', label: 'murió en', type: 'history' },
     { source: 'gudfall', target: 'berser', label: 'murió en', type: 'history' },
     { source: 'gudfall', target: 'likrafa', label: 'encadenada', type: 'history' },
+    { source: 'akall', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'ninos-robados', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'ninos-robados', target: 'harek', label: 'primer caso', type: 'trama' },
+    { source: 'ninos-robados', target: 'asgrim-death', label: 'conecta con', type: 'trama' },
+    { source: 'ninos-robados', target: 'orka', label: 'investiga', type: 'trama' },
+    { source: 'ninos-robados', target: 'haraldurson', label: 'víctima', type: 'trama' },
+    { source: 'ninos-robados', target: 'kergarth', label: 'caso en', type: 'geo' },
+    { source: 'ninos-robados', target: 'howbyr', label: 'caso en', type: 'geo' },
+    { source: 'ninos-robados', target: 'rio-skarpain', label: 'ruta de huida', type: 'geo' },
+    { source: 'ninos-robados', target: 'asgrim', label: 'víctimas', type: 'trama' },
+    // Berak-venta-event
+    { source: 'berak-venta', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'berak-venta', target: 'berak', label: 'Sera vendido', type: 'trama' },
+    { source: 'berak-venta', target: 'snakavik', label: 'destino', type: 'geo' },
+    { source: 'berak-venta', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'berak-venta', target: 'wave-jarl', label: 'navegado en', type: 'rel' },
+    { source: 'berak-venta', target: 'llegada-snakavik', label: 'culmina en', type: 'trama' },
+    { source: 'helka-poder', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'helka-poder', target: 'helka', label: 'protagoniza', type: 'trama' },
+    { source: 'helka-poder', target: 'sigrun', label: 'juró lealtad', type: 'event' },
+    { source: 'lik-rifa-amenaza', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'lik-rifa-amenaza', target: 'likrafa', label: 'es ella', type: 'trama' },
+    { source: 'lik-rifa-amenaza', target: 'iskalt', label: 'epicentro', type: 'geo' },
+    // Evento reunión
+    { source: 'reunion-storr-elvar', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'reunion-storr-elvar', target: 'snakavik', label: 'ocurre en', type: 'geo' },
+    { source: 'reunion-storr-elvar', target: 'thorun', label: 'enfrenta a Elvar', type: 'event' },
+    { source: 'reunion-storr-elvar', target: 'brodir', label: 'pide a Elvar que vuelva', type: 'event' },
+    { source: 'raid-camara-sigrun', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'raid-camara-sigrun', target: 'fellur', label: 'ocurre en', type: 'geo' },
+    { source: 'raid-camara-sigrun', target: 'vafri', label: 'Vafri muere en', type: 'event' },
+    { source: 'raid-camara-sigrun', target: 'sigrun', label: 'Sigrún herida en', type: 'event' },
+    { source: 'raid-camara-sigrun', target: 'mord-lif', label: 'Orka libera a', type: 'event' },
+    { source: 'llegada-snakavik', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'llegada-snakavik', target: 'snakavik', label: 'ocurre en', type: 'geo' },
+    { source: 'llegada-snakavik', target: 'agnar', label: 'organizada por', type: 'rel' },
+    { source: 'llegada-snakavik', target: 'berak', label: 'destino de', type: 'event' },
+    { source: 'llegada-snakavik', target: 'storr', label: 'comprador en', type: 'event' },
+    { source: 'llegada-snakavik', target: 'silrid', label: 'verificación por', type: 'event' },
+    { source: 'llegada-snakavik', target: 'hrung', label: 'confirma linaje vía', type: 'event' },
+    { source: 'llegada-snakavik', target: 'elvar', label: 'revela identidad de', type: 'trama' },
+    { source: 'fuga-fiordo', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'fuga-fiordo', target: 'orka', label: 'protagoniza', type: 'rel' },
+    { source: 'fuga-fiordo', target: 'mord-lif', label: 'pacto sellado en', type: 'event' },
+    { source: 'fuga-fiordo', target: 'gudvarr', label: 'maniobra para despistar a', type: 'event' },
+    { source: 'fuga-fiordo', target: 'darl', label: 'destino acordado', type: 'geo' },
+    // Varg primera muerte
+    { source: 'varg-primera-muerte', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'varg-primera-muerte', target: 'batalla-muelles', label: 'ocurre en', type: 'event' },
+    { source: 'varg-primera-muerte', target: 'varg', label: 'protagonizada por', type: 'rel' },
+    { source: 'varg-primera-muerte', target: 'botin-guerra', label: 'aprende el codigo del', type: 'lore' },
+    { source: 'varg-primera-muerte', target: 'sulich', label: 'Sulich ofrece botín en', type: 'event' },
+    { source: 'varg-primera-muerte', target: 'rokia', label: 'Rokia atestigua', type: 'event' },
+    // Misión Helka norte
+    { source: 'mision-helka-norte', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'mision-helka-norte', target: 'helka', label: 'encargada por', type: 'rel' },
+    { source: 'mision-helka-norte', target: 'bloodsworn', label: 'protagonistas de', type: 'rel' },
+    { source: 'mision-helka-norte', target: 'skalk', label: 'Skalk embarca para', type: 'event' },
+    { source: 'mision-helka-norte', target: 'sea-wolf', label: 'a bordo del', type: 'rel' },
+    { source: 'mision-helka-norte', target: 'lik-rifa-amenaza', label: 'posible vinculo con', type: 'trama' },
+    { source: 'batalla-muelles', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'batalla-muelles', target: 'sulich-crisis', label: 'escalacion de', type: 'event' },
+    { source: 'batalla-muelles', target: 'jaromir', label: 'iniciada por', type: 'event' },
+    { source: 'batalla-muelles', target: 'einar', label: 'lanza la lanza en', type: 'event' },
+    { source: 'batalla-muelles', target: 'edel', label: 'hounds en', type: 'event' },
+    { source: 'batalla-muelles', target: 'llegada-helka', label: 'interrumpida por', type: 'event' },
+    { source: 'batalla-muelles', target: 'liga', label: 'ocurre en', type: 'geo' },
+    { source: 'llegada-helka', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'llegada-helka', target: 'liga', label: 'destino', type: 'geo' },
+    { source: 'llegada-helka', target: 'orna', label: 'aguila en velas = emblema de', type: 'lore' },
+    { source: 'tumulo-thorkel', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'tumulo-thorkel', target: 'thorkel', label: 'tumulo de', type: 'event' },
+    { source: 'tumulo-thorkel', target: 'funeral-rites', label: 'practica de', type: 'lore' },
+    { source: 'tumulo-thorkel', target: 'cofre-enterrado', label: 'brazaletes de', type: 'rel' },
+    { source: 'tumulo-thorkel', target: 'drekr-cazadora', label: 'voto que lanza la', type: 'rel' },
+    { source: 'tumulo-thorkel', target: 'seaxes-tainted', label: 'sellado con', type: 'rel' },
+    { source: 'vesli-saliva', target: 'tennur', label: 'capacidad de los', type: 'lore' },
+    { source: 'vesli-saliva', target: 'orka', label: 'curo a', type: 'event' },
+    { source: 'vesli-saliva', target: 'spert', label: 'curo herida de', type: 'event' },
+    { source: 'thorkel-transformacion', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'thorkel-transformacion', target: 'thorkel', label: 'confirma sobre', type: 'lore' },
+    { source: 'thorkel-transformacion', target: 'ulfrir', label: 'sangre posible de', type: 'trama' },
+    { source: 'thorkel-transformacion', target: 'tainted', label: 'era Tainted', type: 'trama' },
+    // Ataque steading
+    { source: 'ataque-steading', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'ataque-steading', target: 'thorkel-muerte', label: 'causa', type: 'event' },
+    { source: 'ataque-steading', target: 'spert', label: 'Spert herido en', type: 'event' },
+    { source: 'ataque-steading', target: 'vesli', label: 'Vesli herida en', type: 'event' },
+    { source: 'ataque-steading', target: 'galdurman-drekr', label: 'destruyo runas en', type: 'magic' },
+    { source: 'ataque-steading', target: 'steading', label: 'destruyo el', type: 'event' },
+    // Muerte de Thorkel
+    { source: 'thorkel-muerte', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'thorkel-muerte', target: 'funeral-rites', label: 'axe en manos', type: 'lore' },
+    // Galdurman de Drekr
+    { source: 'galdurman-drekr', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'galdurman-drekr', target: 'runa-ward', label: 'destruyo', type: 'magic' },
+    { source: 'galdurman-drekr', target: 'dragon-born', label: 'podria ser el mismo', type: 'trama' },
+    // Caza de Drekr
+    { source: 'drekr-cazadora', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'drekr-cazadora', target: 'drekr', label: 'busca a', type: 'conflict' },
+    { source: 'drekr-cazadora', target: 'breca', label: 'para recuperar a', type: 'goal' },
+    // Varg-aprendiz
+    { source: 'varg-aprendiz', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'varg-aprendiz', target: 'akall', label: 'condiciona el', type: 'trama' },
+    { source: 'varg-aprendiz', target: 'bloodsworn', label: 'paso previo a unirse a', type: 'rel' },
+    // Partida de Liga
+    { source: 'partida-liga', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'partida-liga', target: 'bloodsworn', label: 'protagonista', type: 'rel' },
+    { source: 'partida-liga', target: 'liga', label: 'desde', type: 'geo' },
+    { source: 'partida-liga', target: 'sulich-crisis', label: 'sin resolver al partir', type: 'trama' },
+    // Decision de huida
+    { source: 'decision-huida', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'decision-huida', target: 'vafri', label: 'motivada por amenaza de', type: 'trama' },
+    { source: 'decision-huida', target: 'ataque-steading', label: 'interrumpida por', type: 'event' },
+    // Barrow de Virk
+    { source: 'barrow-virk', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'barrow-virk', target: 'virk', label: 'tumulo de', type: 'event' },
+    { source: 'barrow-virk', target: 'mord-lif', label: 'construido por', type: 'event' },
+    { source: 'barrow-virk', target: 'thorkel', label: 'ayudo a construir', type: 'event' },
+    { source: 'barrow-virk', target: 'funeral-rites', label: 'practica de', type: 'lore' },
+    // Sulich crisis
+    { source: 'sulich-crisis', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'sulich-crisis', target: 'sulich', label: 'reclamado', type: 'conflict' },
+    { source: 'sulich-crisis', target: 'glornir', label: 'defiende a Sulich', type: 'event' },
+    { source: 'sulich-crisis', target: 'jarl-logur', label: 'árbitro potencial', type: 'rel' },
+    { source: 'sulich-crisis', target: 'althing', label: 'resolución prevista', type: 'event' },
 
-    // -------------------------------------------------------------------------------------- //
+    // ══════════════════════════════════════════════════════════════
     // Cat-dioses
+    // ══════════════════════════════════════════════════════════════
     { source: 'cat-dioses', target: 'cat-mundo', label: '', type: 'arc' },
     { source: 'snaka', target: 'cat-dioses', label: '', type: 'lore' },
     { source: 'snaka', target: 'vigrið', label: 'sus huesos = montañas', type: 'lore' },
@@ -391,16 +558,28 @@ const links = [
     { source: 'hundur-dios', target: 'cat-dioses', label: '', type: 'lore' },
     { source: 'hundur-dios', target: 'gudfall', label: 'combatió en', type: 'history' },
 
-    // -------------------------------------------------------------------------------------- //
+    // ══════════════════════════════════════════════════════════════
     // Cat-magia
+    // ══════════════════════════════════════════════════════════════
     { source: 'cat-magia', target: 'cat-mundo', label: '', type: 'arc' },
     { source: 'runa-ward', target: 'cat-magia', label: '', type: 'arc' },
     { source: 'seidr', target: 'cat-magia', label: '', type: 'arc' },
     { source: 'seidr', target: 'akall', label: 'técnica', type: 'magic' },
     { source: 'galdramadr', target: 'cat-magia', label: '', type: 'arc' },
+    { source: 'blod-svarid', target: 'cat-magia', label: '', type: 'arc' },
+    { source: 'blod-svarid', target: 'seidr', label: 'magia vinculante', type: 'magic' },
+    { source: 'akall-concepto', target: 'cat-magia', label: '', type: 'arc' },
+    { source: 'akall-concepto', target: 'seidr', label: 'tipo de ritual', type: 'magic' },
+    { source: 'akall-concepto', target: 'akall', label: 'evento específico', type: 'lore' },
+    { source: 'galdrabok', target: 'cat-magia', label: '', type: 'arc' },
+    { source: 'galdrabok', target: 'galdramadr', label: 'texto usado por', type: 'magic' },
+    { source: 'graskinna', target: 'galdrabok', label: 'tipo de', type: 'lore' },
+    { source: 'raudskinna', target: 'galdrabok', label: 'tipo de', type: 'lore' },
+    { source: 'raudskinna', target: 'graskinna', label: 'libro hermano', type: 'lore' },
 
-    // -------------------------------------------------------------------------------------- //
-    // Lugares
+    // ══════════════════════════════════════════════════════════════
+    // Locations
+    // ══════════════════════════════════════════════════════════════
     // vigrið
     { source: 'vigrið', target: 'cat-mundo', label: '', type: 'arc' },
     // iskalt
@@ -444,8 +623,9 @@ const links = [
     { source: 'eldrafell', target: 'snaka', label: 'lugar de caída', type: 'lore' },
     { source: 'eldrafell', target: 'gudfall', label: 'mencionado en', type: 'lore' },
 
-    // -------------------------------------------------------------------------------------- //
-    // Vaesen y magia
+    // ══════════════════════════════════════════════════════════════
+    // Vaesen
+    // ══════════════════════════════════════════════════════════════
     { source: 'vaesen-gen', target: 'cat-mundo', label: '', type: 'arc' },
     { source: 'tennur', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
     { source: 'spertus', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
@@ -456,6 +636,8 @@ const links = [
     { source: 'nacken', target: 'rio-skarpain', label: 'posible hábitat', type: 'lore' },
     { source: 'araña-hielo', target: 'vaesen-gen', label: 'Es un vaesen ártico', type: 'lore' },
     { source: 'skraeling', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
+    { source: 'skraeling', target: 'drekr', label: 'en banda de', type: 'rel' },
+    { source: 'skraeling', target: 'ataque-steading', label: 'participo en', type: 'event' },
     { source: 'faunir', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
     { source: 'froa', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
     { source: 'froa', target: 'arbol-froa', label: 'ligada a / murio con', type: 'lore' },
@@ -468,58 +650,7 @@ const links = [
     { source: 'night-wyrm', target: 'biorr', label: 'repelidos con fuego por', type: 'event' },
 
     // -------------------------------------------------------------------------------------- //
-    // Tramas
-    { source: 'akall', target: 'cat-tramas', label: '', type: 'arc' },
-    { source: 'ninos-robados', target: 'cat-tramas', label: '', type: 'arc' },
-    { source: 'ninos-robados', target: 'harek', label: 'primer caso', type: 'trama' },
-    { source: 'ninos-robados', target: 'asgrim-death', label: 'conecta con', type: 'trama' },
-    { source: 'ninos-robados', target: 'orka', label: 'investiga', type: 'trama' },
-    { source: 'ninos-robados', target: 'haraldurson', label: 'víctima', type: 'trama' },
-    { source: 'ninos-robados', target: 'kergarth', label: 'caso en', type: 'geo' },
-    { source: 'ninos-robados', target: 'howbyr', label: 'caso en', type: 'geo' },
-    { source: 'ninos-robados', target: 'rio-skarpain', label: 'ruta de huida', type: 'geo' },
-    { source: 'ninos-robados', target: 'asgrim', label: 'víctimas', type: 'trama' },
-    // Berak-venta-event
-    { source: 'berak-venta', target: 'cat-tramas', label: '', type: 'arc' },
-    { source: 'berak-venta', target: 'berak', label: 'Sera vendido', type: 'trama' },
-    { source: 'berak-venta', target: 'snakavik', label: 'destino', type: 'geo' },
-    { source: 'berak-venta', target: 'cat-eventos', label: '', type: 'event' },
-    { source: 'berak-venta', target: 'wave-jarl', label: 'navegado en', type: 'rel' },
-    { source: 'berak-venta', target: 'llegada-snakavik', label: 'culmina en', type: 'trama' },
-    { source: 'helka-poder', target: 'cat-tramas', label: '', type: 'arc' },
-    { source: 'helka-poder', target: 'helka', label: 'protagoniza', type: 'trama' },
-    { source: 'helka-poder', target: 'sigrun', label: 'juró lealtad', type: 'event' },
-    { source: 'lik-rifa-amenaza', target: 'cat-tramas', label: '', type: 'arc' },
-    { source: 'lik-rifa-amenaza', target: 'likrafa', label: 'es ella', type: 'trama' },
-    { source: 'lik-rifa-amenaza', target: 'iskalt', label: 'epicentro', type: 'geo' },
-    // Evento reunión
-    { source: 'reunion-storr-elvar', target: 'cat-eventos', label: '', type: 'arc' },
-    { source: 'reunion-storr-elvar', target: 'snakavik', label: 'ocurre en', type: 'geo' },
-    { source: 'reunion-storr-elvar', target: 'thorun', label: 'enfrenta a Elvar', type: 'event' },
-    { source: 'reunion-storr-elvar', target: 'brodir', label: 'pide a Elvar que vuelva', type: 'event' },
-    { source: 'raid-camara-sigrun', target: 'cat-eventos', label: '', type: 'arc' },
-    { source: 'raid-camara-sigrun', target: 'fellur', label: 'ocurre en', type: 'geo' },
-    { source: 'raid-camara-sigrun', target: 'vafri', label: 'Vafri muere en', type: 'event' },
-    { source: 'raid-camara-sigrun', target: 'sigrun', label: 'Sigrún herida en', type: 'event' },
-    { source: 'raid-camara-sigrun', target: 'mord-lif', label: 'Orka libera a', type: 'event' },
-    { source: 'llegada-snakavik', target: 'cat-eventos', label: '', type: 'arc' },
-    { source: 'llegada-snakavik', target: 'snakavik', label: 'ocurre en', type: 'geo' },
-    { source: 'llegada-snakavik', target: 'agnar', label: 'organizada por', type: 'rel' },
-    { source: 'llegada-snakavik', target: 'berak', label: 'destino de', type: 'event' },
-    { source: 'llegada-snakavik', target: 'storr', label: 'comprador en', type: 'event' },
-    { source: 'llegada-snakavik', target: 'silrid', label: 'verificación por', type: 'event' },
-    { source: 'llegada-snakavik', target: 'hrung', label: 'confirma linaje vía', type: 'event' },
-    { source: 'llegada-snakavik', target: 'elvar', label: 'revela identidad de', type: 'trama' },
-
-    // -------------------------------------------------------------------------------------- //
     // ── ENLACES PERSONAJES SECUNDARIOS ────────────────────────────
-    { source: 'jarl-logur', target: 'liga', label: 'jarl de', type: 'geo' },
-    { source: 'jarl-logur', target: 'bloodsworn', label: 'hospeda', type: 'rel' },
-    // Esposa de Logur
-    { source: 'salla', target: 'jarl-logur', label: 'esposa de', type: 'rel' },
-    { source: 'salla', target: 'liga', label: 'señora del hall de', type: 'geo' },
-    { source: 'salla', target: 'partida-liga', label: 'organiza la despedida', type: 'event' },
-    { source: 'salla', target: 'glornir', label: 'Glornir la llama Salla', type: 'rel' },
     { source: 'orl', target: 'leif', label: 'Hird / compañero', type: 'rel' },
     { source: 'trud', target: 'battle-grim', label: 'miembro', type: 'rel' },
     { source: 'jokul', target: 'bloodsworn', label: 'herrero', type: 'rel' },
@@ -544,6 +675,7 @@ const links = [
     { source: 'colmillo-trol', target: 'trol', label: 'origen', type: 'lore' },
     { source: 'anillo-oro', target: 'elvar', label: 'otorgado a', type: 'rel' },
     { source: 'gods-bones', target: 'cat-magia', label: '', type: 'arc' },
+    { source: 'gods-bones', target: 'sjavarom', label: 'repele vaesen como', type: 'lore' },
     { source: 'hueso-dios-fellur', target: 'fellur', label: 'protege', type: 'magic' },
     { source: 'hueso-dios-fellur', target: 'gods-bones', label: 'Es un', type: 'rel' },
     { source: 'drakkar', target: 'cat-objetos', label: '', type: 'arc' },
@@ -573,8 +705,9 @@ const links = [
     { source: 'seaxes-tainted', target: 'cat-objetos', label: '', type: 'arc' },
     { source: 'seaxes-tainted', target: 'thorkel', label: 'mataron a', type: 'event' },
 
-    // -------------------------------------------------------------------------------------- //
-    // ── ENLACES CULTURA NÓRDICA ────────────────────────────────────
+    // ══════════════════════════════════════════════════════════════
+    // ENLACES CULTURA NÓRDICA
+    // ══════════════════════════════════════════════════════════════
     { source: 'holmganga', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'tafl', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'hangerock', target: 'cat-norse', label: '', type: 'arc' },
@@ -706,6 +839,10 @@ const links = [
     // Blood-Eagle
     { source: 'blood-eagle', target: 'cat-norse', label: '', type: 'arc' },
     { source: 'blood-eagle', target: 'gallows-wood', label: 'imitación humana de', type: 'lore' },
+    // Botín de guerra
+    { source: 'botin-guerra', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'botin-guerra', target: 'kennings', label: 'trofeos como kennings vivos', type: 'lore' },
+    { source: 'botin-guerra', target: 'drengr', label: 'parte del codigo del', type: 'lore' },
 
     // ══════════════════════════════════════════════════════════════
     // CAPÍTULO 13 — NUEVOS ENLACES
@@ -714,15 +851,6 @@ const links = [
     { source: 'druzhina', target: 'cat-facciones', label: '', type: 'arc' },
     { source: 'druzhina', target: 'emp-kirill', label: 'guardia del', type: 'rel' },
     { source: 'druzhina', target: 'iskidan', label: 'institución de', type: 'lore' },
-    // Sulich crisis
-    { source: 'sulich-crisis', target: 'cat-tramas', label: '', type: 'arc' },
-    { source: 'sulich-crisis', target: 'sulich', label: 'reclamado', type: 'conflict' },
-    { source: 'sulich-crisis', target: 'glornir', label: 'defiende a Sulich', type: 'event' },
-    { source: 'sulich-crisis', target: 'jarl-logur', label: 'árbitro potencial', type: 'rel' },
-    { source: 'sulich-crisis', target: 'althing', label: 'resolución prevista', type: 'event' },
-    // Saga del Gudfall (evento)
-    // Relaciones nuevas de nodos ya existentes
-    { source: 'sulich', target: 'iskidan', label: 'origen probable', type: 'trama' },
 
     // ══════════════════════════════════════════════════════════════
     // CAPÍTULO 14 — NUEVOS ENLACES
@@ -738,157 +866,4 @@ const links = [
     { source: 'gallows-wood', target: 'likrafa', label: 'crimen que lo detonó', type: 'history' },
     { source: 'gallows-wood', target: 'orna', label: 'Orna vengó a su hija', type: 'history' },
     { source: 'gallows-wood', target: 'ulfrir', label: 'Ulfrir vengó a su hija', type: 'history' },
-    // Dragon-born
-    { source: 'dragon-born', target: 'cat-tramas', label: '', type: 'arc' },
-    { source: 'dragon-born', target: 'likrafa', label: 'posible descendencia / descendencia activa de', type: 'trama' },
-    { source: 'dragon-born', target: 'tainted', label: 'linaje no confirmado', type: 'trama' },
-    { source: 'dragon-born', target: 'thorkel-muerte', label: 'confirmado al morir', type: 'lore' },
-
-    // ==========================================================
-    // CAPITULO 15 -- NUEVOS ENLACES
-    // ==========================================================
-    // Ulfhednar (concepto)
-    { source: 'ulfhednar', target: 'vafri', label: 'es una', type: 'lore' },
-    { source: 'ulfhednar', target: 'ulfrir', label: 'linaje de', type: 'lore' },
-    { source: 'ulfhednar', target: 'tainted', label: 'subtipo de', type: 'lore' },
-    { source: 'ulfhednar', target: 'decision-huida', label: 'amenaza que motiva', type: 'trama' },
-    // Decision de huida
-    { source: 'decision-huida', target: 'cat-tramas', label: '', type: 'arc' },
-    { source: 'decision-huida', target: 'vafri', label: 'motivada por amenaza de', type: 'trama' },
-    { source: 'decision-huida', target: 'ataque-steading', label: 'interrumpida por', type: 'event' },
-    // Barrow de Virk
-    { source: 'barrow-virk', target: 'cat-eventos', label: '', type: 'event' },
-    { source: 'barrow-virk', target: 'virk', label: 'tumulo de', type: 'event' },
-    { source: 'barrow-virk', target: 'mord-lif', label: 'construido por', type: 'event' },
-    { source: 'barrow-virk', target: 'thorkel', label: 'ayudo a construir', type: 'event' },
-    { source: 'barrow-virk', target: 'funeral-rites', label: 'practica de', type: 'lore' },
-
-    // ==========================================================
-    // CAPITULO 16 -- NUEVOS ENLACES
-    // ==========================================================
-    // Varg-aprendiz
-    { source: 'varg-aprendiz', target: 'cat-tramas', label: '', type: 'arc' },
-    { source: 'varg-aprendiz', target: 'akall', label: 'condiciona el', type: 'trama' },
-    { source: 'varg-aprendiz', target: 'bloodsworn', label: 'paso previo a unirse a', type: 'rel' },
-    // Partida de Liga
-    { source: 'partida-liga', target: 'cat-eventos', label: '', type: 'event' },
-    { source: 'partida-liga', target: 'bloodsworn', label: 'protagonista', type: 'rel' },
-    { source: 'partida-liga', target: 'liga', label: 'desde', type: 'geo' },
-    { source: 'partida-liga', target: 'sulich-crisis', label: 'sin resolver al partir', type: 'trama' },
-
-    // ==========================================================
-    // CAPITULO 17 -- NUEVOS ENLACES
-    // ==========================================================
-    // Ataque steading
-    { source: 'ataque-steading', target: 'cat-eventos', label: '', type: 'event' },
-    { source: 'ataque-steading', target: 'thorkel-muerte', label: 'causa', type: 'event' },
-    { source: 'ataque-steading', target: 'spert', label: 'Spert herido en', type: 'event' },
-    { source: 'ataque-steading', target: 'vesli', label: 'Vesli herida en', type: 'event' },
-    { source: 'ataque-steading', target: 'galdurman-drekr', label: 'destruyo runas en', type: 'magic' },
-    { source: 'ataque-steading', target: 'steading', label: 'destruyo el', type: 'event' },
-    // Muerte de Thorkel
-    { source: 'thorkel-muerte', target: 'cat-eventos', label: '', type: 'event' },
-    { source: 'thorkel-muerte', target: 'funeral-rites', label: 'axe en manos', type: 'lore' },
-    // Galdurman de Drekr
-    { source: 'galdurman-drekr', target: 'cat-tramas', label: '', type: 'arc' },
-    { source: 'galdurman-drekr', target: 'runa-ward', label: 'destruyo', type: 'magic' },
-    { source: 'galdurman-drekr', target: 'dragon-born', label: 'podria ser el mismo', type: 'trama' },
-    // Caza de Drekr
-    { source: 'drekr-cazadora', target: 'cat-tramas', label: '', type: 'arc' },
-    { source: 'drekr-cazadora', target: 'drekr', label: 'busca a', type: 'conflict' },
-    { source: 'drekr-cazadora', target: 'breca', label: 'para recuperar a', type: 'goal' },
-    // ==========================================================
-    // CAPITULO 18 -- NUEVOS ENLACES
-    // ==========================================================
-    { source: 'batalla-muelles', target: 'cat-eventos', label: '', type: 'event' },
-    { source: 'batalla-muelles', target: 'sulich-crisis', label: 'escalacion de', type: 'event' },
-    { source: 'batalla-muelles', target: 'jaromir', label: 'iniciada por', type: 'event' },
-    { source: 'batalla-muelles', target: 'einar', label: 'lanza la lanza en', type: 'event' },
-    { source: 'batalla-muelles', target: 'edel', label: 'hounds en', type: 'event' },
-    { source: 'batalla-muelles', target: 'llegada-helka', label: 'interrumpida por', type: 'event' },
-    { source: 'batalla-muelles', target: 'liga', label: 'ocurre en', type: 'geo' },
-    { source: 'llegada-helka', target: 'cat-eventos', label: '', type: 'event' },
-    { source: 'llegada-helka', target: 'liga', label: 'destino', type: 'geo' },
-    { source: 'llegada-helka', target: 'orna', label: 'aguila en velas = emblema de', type: 'lore' },
-    // ==========================================================
-    // CAPITULO 19 -- NUEVOS ENLACES
-    // ==========================================================
-    { source: 'tumulo-thorkel', target: 'cat-eventos', label: '', type: 'event' },
-    { source: 'tumulo-thorkel', target: 'thorkel', label: 'tumulo de', type: 'event' },
-    { source: 'tumulo-thorkel', target: 'funeral-rites', label: 'practica de', type: 'lore' },
-    { source: 'tumulo-thorkel', target: 'cofre-enterrado', label: 'brazaletes de', type: 'rel' },
-    { source: 'tumulo-thorkel', target: 'drekr-cazadora', label: 'voto que lanza la', type: 'rel' },
-    { source: 'tumulo-thorkel', target: 'seaxes-tainted', label: 'sellado con', type: 'rel' },
-    { source: 'vesli-saliva', target: 'tennur', label: 'capacidad de los', type: 'lore' },
-    { source: 'vesli-saliva', target: 'orka', label: 'curo a', type: 'event' },
-    { source: 'vesli-saliva', target: 'spert', label: 'curo herida de', type: 'event' },
-    { source: 'thorkel-transformacion', target: 'cat-tramas', label: '', type: 'arc' },
-    { source: 'thorkel-transformacion', target: 'thorkel', label: 'confirma sobre', type: 'lore' },
-    { source: 'thorkel-transformacion', target: 'ulfrir', label: 'sangre posible de', type: 'trama' },
-    { source: 'thorkel-transformacion', target: 'tainted', label: 'era Tainted', type: 'trama' },
-    { source: 'dragon-born', target: 'thorkel-transformacion', label: 'mato a Thorkel en', type: 'event' },
-    { source: 'skraeling', target: 'drekr', label: 'en banda de', type: 'rel' },
-    { source: 'skraeling', target: 'ataque-steading', label: 'participo en', type: 'event' },
-
-    // ── Links de nuevos nodos del glosario ──────────────────────────────
-    { source: 'akall-concepto', target: 'seidr', label: 'tipo de ritual', type: 'magic' },
-    { source: 'akall-concepto', target: 'akall', label: 'evento específico', type: 'lore' },
-    { source: 'akall-concepto', target: 'cat-magia', label: '', type: 'arc' },
-    { source: 'berserkir', target: 'berser', label: 'descendientes de', type: 'lore' },
-    { source: 'berserkir', target: 'ulfhednar', label: 'paralelo oso/lobo', type: 'lore' },
-    { source: 'berserkir', target: 'tainted', label: 'tipo de Tainted', type: 'lore' },
-    { source: 'berserkir', target: 'cat-mundo', label: '', type: 'arc' },
-    { source: 'berak', target: 'berserkir', label: 'es Berserkir', type: 'lore' },
-    { source: 'blod-svarid', target: 'seidr', label: 'magia vinculante', type: 'magic' },
-    { source: 'blod-svarid', target: 'cat-magia', label: '', type: 'arc' },
-    { source: 'galdrabok', target: 'galdramadr', label: 'texto usado por', type: 'magic' },
-    { source: 'galdrabok', target: 'cat-magia', label: '', type: 'arc' },
-    { source: 'graskinna', target: 'galdrabok', label: 'tipo de', type: 'lore' },
-    { source: 'raudskinna', target: 'galdrabok', label: 'tipo de', type: 'lore' },
-    { source: 'raudskinna', target: 'graskinna', label: 'libro hermano', type: 'lore' },
-    { source: 'gudljos', target: 'gudfall', label: 'remanente del', type: 'lore' },
-    { source: 'gudljos', target: 'cat-mundo', label: '', type: 'arc' },
-    { source: 'madur-boy', target: 'tainted', label: 'opuesto a', type: 'lore' },
-
-    // ══════════════════════════════════════════════════════════════
-    // CAPÍTULO 20 — NUEVOS ENLACES
-    // ══════════════════════════════════════════════════════════════
-    // Varg primera muerte
-    { source: 'varg-primera-muerte', target: 'cat-eventos', label: '', type: 'arc' },
-    { source: 'varg-primera-muerte', target: 'batalla-muelles', label: 'ocurre en', type: 'event' },
-    { source: 'varg-primera-muerte', target: 'varg', label: 'protagonizada por', type: 'rel' },
-    { source: 'varg-primera-muerte', target: 'botin-guerra', label: 'aprende el codigo del', type: 'lore' },
-    { source: 'varg-primera-muerte', target: 'sulich', label: 'Sulich ofrece botín en', type: 'event' },
-    { source: 'varg-primera-muerte', target: 'rokia', label: 'Rokia atestigua', type: 'event' },
-    // Misión Helka norte
-    { source: 'mision-helka-norte', target: 'cat-tramas', label: '', type: 'arc' },
-    { source: 'mision-helka-norte', target: 'helka', label: 'encargada por', type: 'rel' },
-    { source: 'mision-helka-norte', target: 'bloodsworn', label: 'protagonistas de', type: 'rel' },
-    { source: 'mision-helka-norte', target: 'skalk', label: 'Skalk embarca para', type: 'event' },
-    { source: 'mision-helka-norte', target: 'sea-wolf', label: 'a bordo del', type: 'rel' },
-    { source: 'mision-helka-norte', target: 'lik-rifa-amenaza', label: 'posible vinculo con', type: 'trama' },
-    // Botín de guerra
-    { source: 'botin-guerra', target: 'cat-norse', label: '', type: 'arc' },
-    { source: 'botin-guerra', target: 'kennings', label: 'trofeos como kennings vivos', type: 'lore' },
-    { source: 'botin-guerra', target: 'drengr', label: 'parte del codigo del', type: 'lore' },
-
-    // ══════════════════════════════════════════════════════════════
-    // CAPÍTULO 21 — NUEVOS ENLACES
-    // ══════════════════════════════════════════════════════════════
-    // Cap.21 — Raven-Feeders / Ilska
-    { source: 'raven-feeders', target: 'cat-facciones', label: '', type: 'arc' },
-    { source: 'raven-feeders', target: 'snakavik', label: 'presentes en', type: 'geo' },
-    { source: 'ilska', target: 'raven-feeders', label: 'lidera', type: 'rel' },
-    { source: 'raven-feeders', target: 'battle-grim', label: 'rival mercenaria de', type: 'trama' },
-    // Snakavik — huesos de Snaka como escudo vaesen
-    { source: 'gods-bones', target: 'sjavarom', label: 'repele vaesen como', type: 'lore' },
-
-    // ══════════════════════════════════════════════════════════════
-    // CAPÍTULO 24 — NUEVOS ENLACES
-    // ══════════════════════════════════════════════════════════════
-    { source: 'fuga-fiordo', target: 'cat-eventos', label: '', type: 'arc' },
-    { source: 'fuga-fiordo', target: 'orka', label: 'protagoniza', type: 'rel' },
-    { source: 'fuga-fiordo', target: 'mord-lif', label: 'pacto sellado en', type: 'event' },
-    { source: 'fuga-fiordo', target: 'gudvarr', label: 'maniobra para despistar a', type: 'event' },
-    { source: 'fuga-fiordo', target: 'darl', label: 'destino acordado', type: 'geo' },
 ];
