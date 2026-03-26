@@ -254,6 +254,8 @@ const links = [
     { source: 'elvar', target: 'dragon-born', label: 'niega existencia', type: 'conflict' },
     { source: 'elvar', target: 'storr', label: 'hija de', type: 'rel' },
     { source: 'elvar', target: 'snakavik', label: 'creció y vivió en', type: 'geo' },
+    { source: 'elvar', target: 'reunion-storr-elvar', label: 'protagoniza', type: 'rel' },
+    { source: 'elvar', target: 'hakon', label: 'rechazó matrimonio con', type: 'conflict' },
     // Agnar
     { source: 'agnar', target: 'sighvat', label: 'jefe/subof.', type: 'rel' },
     { source: 'agnar', target: 'iskalt', label: 'asaltó buscando a Berak', type: 'geo' },
@@ -283,6 +285,7 @@ const links = [
     { source: 'uspa', target: 'gudfall', label: 'explica causa', type: 'lore' },
     { source: 'uspa', target: 'bjarn', label: 'madre de Bjarn', type: 'rel' },
     { source: 'uspa', target: 'dragon-born', label: 'escupitajo sospechoso', type: 'trama' },
+    { source: 'uspa', target: 'snakavik', label: 'teme / quiere huir de', type: 'conflict' },
     // Hijo-berak (Bjarn)
     { source: 'bjarn', target: 'snaka', label: 'sangre (por Uspa)', type: 'lore' },
     { source: 'bjarn', target: 'berser', label: 'sangre (por Berak)', type: 'lore' },
@@ -308,17 +311,33 @@ const links = [
     { source: 'storr', target: 'cat-facciones', label: '', type: 'arc' },
     { source: 'storr', target: 'snakavik', label: 'sede', type: 'geo' },
     { source: 'storr', target: 'berak', label: 'comprador', type: 'trama' },
+    { source: 'storr', target: 'reunion-storr-elvar', label: 'convoca', type: 'rel' },
+    { source: 'storr', target: 'hakon', label: 'quiso casar a Elvar con', type: 'trama' },
+    { source: 'storr', target: 'helka', label: 'alianza matrimonial propuesta', type: 'trama' },
     // wave-jarl
     { source: 'wave-jarl', target: 'drakkar', label: 'Es un', type: 'rel' },
     // Silrið
     { source: 'silrid', target: 'storr', label: 'sirve a', type: 'rel' },
     { source: 'silrid', target: 'hrung', label: 'despierta e interactúa con', type: 'rel' },
     { source: 'silrid', target: 'berak', label: 'toma sangre de', type: 'event' },
+    { source: 'silrid', target: 'reunion-storr-elvar', label: 'presente — conseja en', type: 'event' },
     // Hrung
     { source: 'hrung', target: 'storr', label: 'oráculo de', type: 'rel' },
     { source: 'hrung', target: 'snakavik', label: 'reside en', type: 'geo' },
     { source: 'hrung', target: 'elvar', label: 'la identifica por olfato', type: 'event' },
     { source: 'hrung', target: 'berak', label: 'confirma linaje de', type: 'event' },
+    // Gytha
+    { source: 'gytha', target: 'storr', label: 'campeona de', type: 'rel' },
+    { source: 'gytha', target: 'grend', label: 'le hace reverencia — se conocen', type: 'rel' },
+    { source: 'gytha', target: 'cat-facciones', label: '', type: 'arc' },
+    // thorun
+    { source: 'thorun', target: 'storr', label: 'hijo mayor de', type: 'rel' },
+    { source: 'thorun', target: 'elvar', label: 'hermano mayor — conflicto', type: 'conflict' },
+    { source: 'thorun', target: 'cat-facciones', label: '', type: 'arc' },
+    // brodir
+    { source: 'brodir', target: 'storr', label: 'hijo menor de', type: 'rel' },
+    { source: 'brodir', target: 'elvar', label: 'hermano menor — afecto', type: 'rel' },
+    { source: 'brodir', target: 'cat-facciones', label: '', type: 'arc' },
 
     // -------------------------------------------------------------------------------------- //
     // Lenguajes
@@ -465,12 +484,31 @@ const links = [
     { source: 'berak-venta', target: 'snakavik', label: 'destino', type: 'geo' },
     { source: 'berak-venta', target: 'cat-eventos', label: '', type: 'event' },
     { source: 'berak-venta', target: 'wave-jarl', label: 'navegado en', type: 'rel' },
+    { source: 'berak-venta', target: 'llegada-snakavik', label: 'culmina en', type: 'trama' },
     { source: 'helka-poder', target: 'cat-tramas', label: '', type: 'arc' },
     { source: 'helka-poder', target: 'helka', label: 'protagoniza', type: 'trama' },
     { source: 'helka-poder', target: 'sigrun', label: 'juró lealtad', type: 'event' },
     { source: 'lik-rifa-amenaza', target: 'cat-tramas', label: '', type: 'arc' },
     { source: 'lik-rifa-amenaza', target: 'likrafa', label: 'es ella', type: 'trama' },
     { source: 'lik-rifa-amenaza', target: 'iskalt', label: 'epicentro', type: 'geo' },
+    // Evento reunión
+    { source: 'reunion-storr-elvar', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'reunion-storr-elvar', target: 'snakavik', label: 'ocurre en', type: 'geo' },
+    { source: 'reunion-storr-elvar', target: 'thorun', label: 'enfrenta a Elvar', type: 'event' },
+    { source: 'reunion-storr-elvar', target: 'brodir', label: 'pide a Elvar que vuelva', type: 'event' },
+    { source: 'raid-camara-sigrun', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'raid-camara-sigrun', target: 'fellur', label: 'ocurre en', type: 'geo' },
+    { source: 'raid-camara-sigrun', target: 'vafri', label: 'Vafri muere en', type: 'event' },
+    { source: 'raid-camara-sigrun', target: 'sigrun', label: 'Sigrún herida en', type: 'event' },
+    { source: 'raid-camara-sigrun', target: 'mord-lif', label: 'Orka libera a', type: 'event' },
+    { source: 'llegada-snakavik', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'llegada-snakavik', target: 'snakavik', label: 'ocurre en', type: 'geo' },
+    { source: 'llegada-snakavik', target: 'agnar', label: 'organizada por', type: 'rel' },
+    { source: 'llegada-snakavik', target: 'berak', label: 'destino de', type: 'event' },
+    { source: 'llegada-snakavik', target: 'storr', label: 'comprador en', type: 'event' },
+    { source: 'llegada-snakavik', target: 'silrid', label: 'verificación por', type: 'event' },
+    { source: 'llegada-snakavik', target: 'hrung', label: 'confirma linaje vía', type: 'event' },
+    { source: 'llegada-snakavik', target: 'elvar', label: 'revela identidad de', type: 'trama' },
 
     // -------------------------------------------------------------------------------------- //
     // ── ENLACES PERSONAJES SECUNDARIOS ────────────────────────────
@@ -838,15 +876,6 @@ const links = [
     // ══════════════════════════════════════════════════════════════
     // CAPÍTULO 21 — NUEVOS ENLACES
     // ══════════════════════════════════════════════════════════════
-    { source: 'llegada-snakavik', target: 'cat-eventos', label: '', type: 'arc' },
-    { source: 'llegada-snakavik', target: 'snakavik', label: 'ocurre en', type: 'geo' },
-    { source: 'llegada-snakavik', target: 'agnar', label: 'organizada por', type: 'rel' },
-    { source: 'llegada-snakavik', target: 'berak', label: 'destino de', type: 'event' },
-    { source: 'llegada-snakavik', target: 'storr', label: 'comprador en', type: 'event' },
-    { source: 'llegada-snakavik', target: 'silrid', label: 'verificación por', type: 'event' },
-    { source: 'llegada-snakavik', target: 'hrung', label: 'confirma linaje vía', type: 'event' },
-    { source: 'llegada-snakavik', target: 'elvar', label: 'revela identidad de', type: 'trama' },
-    { source: 'berak-venta', target: 'llegada-snakavik', label: 'culmina en', type: 'trama' },
     // Cap.21 — Raven-Feeders / Ilska
     { source: 'raven-feeders', target: 'cat-facciones', label: '', type: 'arc' },
     { source: 'raven-feeders', target: 'snakavik', label: 'presentes en', type: 'geo' },
@@ -854,13 +883,4 @@ const links = [
     { source: 'raven-feeders', target: 'battle-grim', label: 'rival mercenaria de', type: 'trama' },
     // Snakavik — huesos de Snaka como escudo vaesen
     { source: 'gods-bones', target: 'sjavarom', label: 'repele vaesen como', type: 'lore' },
-    // ══════════════════════════════════════════════════════════════
-    // CAPÍTULO 22 — NUEVOS ENLACES
-    // ══════════════════════════════════════════════════════════════
-    // Evento central
-    { source: 'raid-camara-sigrun', target: 'cat-eventos', label: '', type: 'arc' },
-    { source: 'raid-camara-sigrun', target: 'fellur', label: 'ocurre en', type: 'geo' },
-    { source: 'raid-camara-sigrun', target: 'vafri', label: 'Vafri muere en', type: 'event' },
-    { source: 'raid-camara-sigrun', target: 'sigrun', label: 'Sigrún herida en', type: 'event' },
-    { source: 'raid-camara-sigrun', target: 'mord-lif', label: 'Orka libera a', type: 'event' },
 ];
