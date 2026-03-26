@@ -13,7 +13,7 @@ const nodes = [
         star: ''
     },
     {
-        id: 'anillo-oro', label: 'Anillo de Oro', group: 'ELVAR', type: 'Objeto — Distinción', desc: '',
+        id: 'anillo-oro', label: 'Anillo de Oro', group: 'ELVAR', type: 'Objeto — Distinción', desc: 'Anillo de oro entregado a Elvar por Agnar tras la venta de Berak en Snakavik (ver nodo llegada-snakavik). Gesto de reconocimiento económico o distinción dentro de la compañía. Símbolo de participación en el beneficio del botín. [Histórico: los jarls y jefes nórdicos usaban la entrega de oro — anillos, brazaletes, torcs — como lenguaje de lealtad y recompensa. Gwynne preserva esta economía de objetos como marcador de rango dentro de las compañías mercenarias.]',
         star: ''
     },
     {
@@ -201,7 +201,7 @@ const nodes = [
         star: '★★ Sigue siendo niðing moral. La herida del hombro lo ha ralentizado pero no ha aprendido nada. Su juramento de venganza contra Orka desde el muelle lo convierte en perseguidor activo — aunque por ahora sin barca.'
     },
     {
-        id: 'guest-right', label: 'Derecho de Huésped', group: 'NORSE', type: 'Ley — Hospitalidad', desc: 'Obligación sagrada de proteger y alimentar a huéspedes bajo tu techo. Romperlo es deshonra grave. Jarl Logur hospeda a los Hermanos de Sangre en su sala. Agnar ofrece gachas a Berak prisionero (mínima cortesía incluso a enemigos). [Histórico: la hospitalidad (gestrisni) era ley sagrada nórdica. Matar a un huésped bajo tu techo era uno de los peores crímenes. Las sagas están llenas de traiciones que violan guest-right. Gwynne lo preserva como código social vigente.]',
+        id: 'guest-right', label: 'Derecho de Huésped', group: 'NORSE', type: 'Ley — Hospitalidad', desc: 'Obligación sagrada de proteger y alimentar a huéspedes bajo tu techo. Romperlo es deshonra grave, independientemente del rango del huésped o la relación entre las partes — la ley se aplica incluso a enemigos bajo custodia. En Vigríð se observa en el hall del Jarl Logur y en el trato a prisioneros durante el viaje a Snakavik (ver nodo llegada-snakavik). [Histórico: la hospitalidad (gestrisni) era ley sagrada nórdica. Matar a un huésped bajo tu techo era uno de los peores crímenes. Las sagas están llenas de traiciones que violan guest-right. Gwynne lo preserva como código social vigente.]',
         star: 'Logur hospeda a Hermanos de Sangre — vínculo de protección mutua. Incluso prisioneros como Berak reciben comida: mínimo de humanidad requerido.'
     },
     {
@@ -225,7 +225,7 @@ const nodes = [
         star: '★ Orl es Hird de Leif — lealtad personal que sobrevive la muerte de Snepil. El "hird-offering" que Orka menciona es conscripción forzada: Helka exigirá guerreros a los jarls sometidos.'
     },
     {
-        id: 'hird-offering', label: 'Hird-offering (Leva Militar)', group: 'NORSE', type: 'Ley — Conscripción', desc: 'Leva militar obligatoria. Los jarls deben proporcionar guerreros a su señor superior en tiempos de guerra. Orka advierte en el Althing que Helka exigirá hird-offering a Sigrún: Fellur deberá enviar hombres a la guerra de Helka contra Störr. [Histórico: el leiðangr era el sistema de leva naval/militar escandinavo. Cada región debía proporcionar barcos y hombres según su tamaño. Gwynne lo adapta como "hird-offering": tributo de guerreros que los jarls vasallos deben a su reina.]',
+        id: 'hird-offering', label: 'Hird-offering (Leva Militar)', group: 'NORSE', type: 'Ley — Conscripción', desc: 'Leva militar obligatoria. Los jarls deben proporcionar guerreros a su señor superior en tiempos de guerra. Obligación que activa la cadena de vasallaje: un jarl que jura lealtad a una reina debe proveer hombres cuando se le exija. Su activación implica que el señor superior está en pie de guerra (ver nodo helka-poder y nodo sigrun). [Histórico: el leiðangr era el sistema de leva naval/militar escandinavo. Cada región debía proporcionar barcos y hombres según su tamaño. Gwynne lo adapta como "hird-offering": tributo de guerreros que los jarls vasallos deben a su reina.]',
         star: '★★★ Orka advierte que esto viene — Fellur perderá sus hombres a la guerra de Helka. Impacto directo en familias: padres, hijos, esposos conscriptados.'
     },
     {
@@ -261,7 +261,7 @@ const nodes = [
         star: 'El volcán tiembla. Lik-Rifa está activa.'
     },
     {
-        id: 'iskidan', label: 'Iskidan', group: 'LUGAR', type: 'Lugar — Imperio Lejano', desc: 'Imperio lejano al sur/este, gobernado por el Gran Khagan Kirill desde Gravka. El Príncipe Jaromir y su guardia druzhina llegan a Liga en barco. Sus guerreros visten armadura laminar (lamellar plate) que brilla como escamas de pez, yelmos de hierro con plumón de crin de caballo y cortinas de malla remachada para proteger el cuello, portan carcajs y arcos, sables curvos y hachas de asta larga. Cabello en una sola trenza larga desde bajo el yelmo. El sistema político es de Khagan/príncipes, no jarls.',
+        id: 'iskidan', label: 'Iskidan', group: 'LUGAR', type: 'Lugar — Imperio Lejano', desc: 'Imperio lejano al sur/este, gobernado por el Gran Khagan Kirill desde Gravka. El Príncipe Jaromir llega a Liga con su guardia druzhina reclamando a Sulich. Sistema político de Khagan/príncipes — no jarls. Para el equipo y aspecto de sus guerreros, ver nodo druzhina. [Geopolítica: Iskidan representa la mayor potencia exterior a Vigríð — su presencia directa en Liga es un escalada sin precedentes. Gwynne lo usa para señalar que el mundo más allá de Vigríð está empezando a interesarse por lo que ocurre en el norte.]',
         star: '★★ Iskidan ya no es solo rumor — sus guerreros están en Liga. El sistema de poder (Khagan → príncipes → druzhina) es radicalmente distinto al sistema jarl nórdico de Vigríð.'
     },
     {
@@ -381,7 +381,7 @@ const nodes = [
         star: ''
     },
     {
-        id: 'outlawry', label: 'Proscripción (Outlawry)', group: 'NORSE', type: 'Ley — Castigo', desc: 'Exilio legal. El proscrito pierde todos los derechos: cualquiera puede matarlo sin consecuencias, no puede recibir ayuda, debe abandonar el territorio. Peor que muerte: muerte social. Varg es técnicamente proscrito tras matar a Snepil (aunque nadie lo sabe excepto él). [Histórico: el útlagr (outlaw) era castigo severo nórdico. Dos tipos: menor (3 años) y mayor (permanente). El proscrito era "hombre lobo" — fuera de la ley humana. Gwynne lo implica en la huida de Varg.]',
+        id: 'outlawry', label: 'Proscripción (Outlawry)', group: 'NORSE', type: 'Ley — Castigo', desc: 'Exilio legal. El proscrito pierde todos los derechos: cualquiera puede matarlo sin consecuencias, no puede recibir ayuda, debe abandonar el territorio. Peor que muerte: muerte social. En Vigríð el estatus de proscrito puede ser declarado formalmente por el Althing o existir de facto cuando el crimen es conocido solo por el culpable (ver nodo varg). [Histórico: el útlagr (outlaw) era castigo severo nórdico. Dos tipos: menor (3 años) y mayor (permanente). El proscrito era "hombre lobo" — fuera de la ley humana. Gwynne lo usa para subrayar la fragilidad del estatus de Varg: su libertad depende del silencio.]',
         star: '★ Varg huye como proscrito de facto. Si Leif probara que mató a Snepil, Varg sería declarado útlagr formalmente — cazado legalmente por todos.'
     },
     {
@@ -668,7 +668,7 @@ const nodes = [
         star: '¿Qué otros poderes tiene la sangre de Hundur además del olfato? ¿Sus Tainted pueden rastrear magia además de personas?'
     },
     {
-        id: 'dragon-born', label: 'Dragon-Born (Tainted de Lik-Rifa)', group: 'TRAMA', type: 'Trama — ACTIVO EN VIGRIÐ', desc: 'Tainted con sangre de la diosa-dragon Lik-Rifa. Elvar niega su existencia, Uspa escupe. CONFIRMADO por las ultimas palabras de Thorkel. DESCRIPCION FISICA por Vesli (ver nodo tainted-garras): humano pero no del todo, con dos garras largas y afiladas, OJOS QUE BRILLAN ROJO COMO BRASAS (marcador visual unico del linaje dragon -- distinto del ambar de Ulfrir/Berser). Fiero y eficaz en combate. Trabaja para Drekr (ver nodo drekr).',
+        id: 'dragon-born', label: 'Dragon-Born (Tainted de Lik-Rifa)', group: 'TRAMA', type: 'Trama — ACTIVO EN VIGRIÐ', desc: 'Tainted con sangre de la diosa-dragon Lik-Rifa. Linaje confirmado: marcador visual único (ojos rojo-brasa, distinto del ámbar de Ulfrir/Berser). CONFIRMADO en Vigríð — presencia activa (ver nodo tainted-garras para descripción física completa y ver nodo drekr para su operación). [Implicación cósmica: si Lik-Rifa sigue encadenada bajo Oskutreð pero sus descendientes actúan en el mundo, alguien los está movilizando con propósito.]',
         star: '*** OJOS ROJOS = linaje Lik-Rifa. Marcador que distingue el linaje dragon de todos los otros Tainted (ambar = Ulfrir/Berser, rojo = dragon). Sus armas mataron a Thorkel. Orka las lleva al cinto para devolverselas (ver nodo seaxes-tainted).'
     },
 
@@ -677,7 +677,7 @@ const nodes = [
     // ==========================================================
     {
         id: 'ulfhednar', label: 'Ulfhednar (Guerrera-Lobo)', group: 'COSMO', type: 'Concepto — Elite Tainted Lobo',
-        desc: 'Clase de elite dentro de los Tainted de sangre Ulfrir. No son simplemente portadores de sangre de dios-lobo -- son guerreros-lobo de elite, equivalente lupino a los Berserkir de Berser. Thorkel identifica a la thrall de Sigrun como Ulfhednar con certeza, sin titubear. Distingue entre Ulfhednar (guerreras-lobo) y Hundur-kin (rastreadores de sangre) -- son tipos distintos de Tainted, aunque los linajes pueden mezclarse. La guardia personal de Helka en Liga: una docena larga de Ulfhednar con collares de thrall -- su "manada de lobos" (Svik). Cabezas rapadas con tatuajes espirales, cloaks grises con ribete de piel, sables y seaxes al cinto. Se mueven como bandada de pajaros o manada de lobos -- sin mirarse, cada uno sabe donde estan los otros. Olisquean a los extraños (Jaromir fue olisqueado). Sus ojos muestran MISERIA, no arrogancia: son tratados con lo mas fino pero son esclavos. Svik: "nadie quiere vivir de rodillas." [Historico: los ulfhednar nordicos eran guerreros consagrados a Odin que vestian pieles de lobo y entraban en trance de furia animal, paralelos a los berserkir pero de lobo en vez de oso. Gwynne los reinterpreta como linaje divino real de Ulfrir.]',
+        desc: 'Clase de élite dentro de los Tainted de sangre Ulfrir. No son simples portadores del linaje — son guerreros-lobo de élite entrenados, equivalente lupino a los Berserkir de Berser. Subtipos: Ulfhednar (guerreras-lobo, combat-oriented) y Hundur-kin (rastreadores de sangre, reconnaissance-oriented) — linajes distintos aunque pueden mezclarse. Identificables por tatuajes espirales, ojos ámbar en combate y movimiento de manada sin comunicación verbal. En Vigríð operan bajo la guardia de Helka (ver nodo helka) y de Sigrún (ver nodo sigrun). [Histórico: los ulfhéðnar nórdicos eran guerreros consagrados a Odín que vestían pieles de lobo y entraban en trance de furia animal, paralelos a los berserkir pero de lobo en vez de oso. Gwynne los reinterpreta como linaje divino real de Ulfrir.]',
         star: '*** Helka tiene una manada de Ulfhednar-thrall -- no solo una como Sigrun. Escala de poder diferente. Que muestren miseria en los ojos es el detalle mas humano y politicamente peligroso: guerreros perfectos que desean la libertad.'
     },
     {
@@ -801,7 +801,7 @@ const nodes = [
     },
     {
         id: 'vesli-saliva', label: 'Saliva Curativa de Vesli', group: 'VAESEN', type: 'Concepto — Magia Vaesen',
-        desc: 'La saliva de Vesli (tennur) tiene propiedades medicinales y adhesivas. Escupida en un glob glutinoso, amasada con los dedos se vuelve fibrosa como tendon. Aplicada sobre heridas: acelera la curacion, reduce el dolor en heartbeats, sirve como hilo y como coating sellador de heridas. Usada para coser y tratar la herida de Spert y las laceraciones de Orka.',
+        desc: 'La saliva de Vesli (tennur) tiene propiedades medicinales y adhesivas. Escupida en un glob glutinoso, amasada con los dedos se vuelve fibrosa como tendón. Aplicada sobre heridas: acelera la curación, reduce el dolor en heartbeats, sirve como hilo y como sellador de tejidos. Capacidad probada en campo tras el ataque al steading (ver nodo ataque-steading). [Implicación: convierte a Vesli de carga percibida a recurso táctico. Aún no se sabe si es capacidad universal de los tennur o específica de Vesli.]',
         star: '** Convierte a Vesli de carga a recurso tacticamente valioso. ¿Es capacidad de todas las tennur o especifica de Vesli? ¿Funciona en heridas magicas o solo fisicas?'
     },
     {
@@ -908,7 +908,7 @@ const nodes = [
     },
     {
         id: 'botin-guerra', label: 'Botín de Guerra (Despojo de Caídos)', group: 'NORSE', type: 'Concepto — Honor de Batalla',
-        desc: 'Costumbre del guerrero nórdico: despojar al enemigo caído de su equipo de guerra es derecho y obligación. Ambos bandos lo hacen mutuamente — Bloodsworn despojan a druzhina, druzhina despojan al Bloodsworn caído. Reglas de honor: (1) el botín pertenece a quien hizo la muerte — tomarlo de otro es robo y deshonra; (2) rechazar el botín de tu propia muerte insulta la memoria del caído; (3) ofrecer el botín de tu muerte a otro es privarle de su batalla-fama. Sulich explica a Varg: "el ganado muere; todo lo que respira un día fallará. Solo pervive nuestra batalla-fama, y esto [el yelmo] cuenta tu historia." [Histórico: los despojos de honor nórdicos eran evidencia tangible de valor. Los objetos del enemigo eran kennings vivos — trofeos que narraban hazañas sin palabras.]',
+        desc: 'Costumbre del guerrero nórdico: despojar al enemigo caído de su equipo de guerra es derecho y obligación. Ambos bandos lo hacen mutuamente. Reglas de honor: (1) el botín pertenece a quien hizo la muerte — tomarlo de otro es robo y deshonra; (2) rechazar el botín de tu propia muerte insulta la memoria del caído; (3) ofrecer el botín de tu muerte a otro es privarle de su batalla-fama. La transmisión de este código en la novela ocurre entre veteranos de los Hermanos de Sangre (ver nodo varg-primera-muerte). [Histórico: los despojos de honor nórdicos eran evidencia tangible de valor. Los objetos del enemigo eran kennings vivos — trofeos que narraban hazañas sin palabras.]',
         star: '★ Los objetos del caído son páginas de una saga. El equipo del druzhina ya no es del muerto — es la primera página de la saga de Varg como guerrero libre.'
     },
     // ══════════════════════════════════════════════════════════════
