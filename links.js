@@ -144,6 +144,7 @@ const links = [
     { source: 'skalk', target: 'galdramadr', label: 'es un', type: 'lore' },
     { source: 'skalk', target: 'skald', label: 'es un', type: 'lore' },
     { source: 'skalk', target: 'sea-wolf', label: 'embarca en', type: 'event' },
+    { source: 'skalk', target: 'vol', label: 'insulta por ser thrall / Glornir lo obliga a retractarse', type: 'conflict' },
 
     // ══════════════════════════════════════════════════════════════
     // Cat-varg to varg chars
@@ -167,6 +168,7 @@ const links = [
     { source: 'varg', target: 'aslog', label: 'hereda lanza y banco de', type: 'rel' },
     { source: 'varg', target: 'sea-wolf', label: 'servira en / rema en', type: 'rel' },
     { source: 'varg', target: 'mision-helka-norte', label: 'primera mision en', type: 'rel' },
+    { source: 'varg', target: 'skalk', label: 'lo ve como posible atajo al akáll', type: 'trama' },
     // bloodsworn
     { source: 'bloodsworn', target: 'cat-varg', label: '', type: 'arc' },
     { source: 'bloodsworn', target: 'cat-facciones', label: '', type: 'arc' },
@@ -201,6 +203,7 @@ const links = [
     { source: 'glornir', target: 'aslog', label: 'entrego lanza de Aslog a Varg', type: 'rel' },
     { source: 'glornir', target: 'mision-helka-norte', label: 'lidera', type: 'rel' },
     { source: 'glornir', target: 'skalk', label: 'ordena remar a', type: 'event' },
+    { source: 'glornir', target: 'skullsplitter', label: 'hermano de / llora su muerte', type: 'rel' },
     // Snepil
     { source: 'einar', target: 'varg', label: 'enfrenta por puesto', type: 'event' },
     { source: 'snepil', target: 'varg', label: 'fue su amo', type: 'rel' },
@@ -278,6 +281,7 @@ const links = [
     { source: 'agnar', target: 'battle-grim', label: 'jefe', type: 'rel' },
     { source: 'agnar', target: 'oath-stone-frost-isles', label: 'presenció / reflexionó', type: 'event' },
     { source: 'agnar', target: 'dragon-born', label: 'esperaría encontrar', type: 'trama' },
+    { source: 'agnar', target: 'elvar', label: 'nombra Troll-Slayer / banco permanente en Wave-Jarl', type: 'rel' },
     // Berak
     { source: 'berak', target: 'uspa', label: 'esposo', type: 'rel' },
     { source: 'berak', target: 'bjarn', label: 'padre', type: 'rel' },
@@ -301,6 +305,7 @@ const links = [
     { source: 'uspa', target: 'bjarn', label: 'madre de Bjarn', type: 'rel' },
     { source: 'uspa', target: 'dragon-born', label: 'escupitajo sospechoso', type: 'trama' },
     { source: 'uspa', target: 'snakavik', label: 'teme / quiere huir de', type: 'conflict' },
+    { source: 'uspa', target: 'elvar', label: 'exige huida de Snakavik', type: 'trama' },
     // Hijo-berak (Bjarn)
     { source: 'bjarn', target: 'snaka', label: 'sangre (por Uspa)', type: 'lore' },
     { source: 'bjarn', target: 'berser', label: 'sangre (por Berak)', type: 'lore' },
@@ -532,6 +537,11 @@ const links = [
     { source: 'sulich-crisis', target: 'glornir', label: 'defiende a Sulich', type: 'event' },
     { source: 'sulich-crisis', target: 'jarl-logur', label: 'árbitro potencial', type: 'rel' },
     { source: 'sulich-crisis', target: 'althing', label: 'resolución prevista', type: 'event' },
+    { source: 'consulta-hrung', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'consulta-hrung', target: 'elvar', label: 'protagoniza', type: 'rel' },
+    { source: 'consulta-hrung', target: 'hrung', label: 'consulta a', type: 'rel' },
+    { source: 'consulta-hrung', target: 'storr', label: 'interrumpida por llegada de', type: 'event' },
+    { source: 'consulta-hrung', target: 'gytha', label: 'escoltada por', type: 'rel' },
 
     // ══════════════════════════════════════════════════════════════
     // Cat-dioses
@@ -866,4 +876,25 @@ const links = [
     { source: 'gallows-wood', target: 'likrafa', label: 'crimen que lo detonó', type: 'history' },
     { source: 'gallows-wood', target: 'orna', label: 'Orna vengó a su hija', type: 'history' },
     { source: 'gallows-wood', target: 'ulfrir', label: 'Ulfrir vengó a su hija', type: 'history' },
+
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 26 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    // Evento: briefing de Skalk
+    { source: 'mision-briefing-skalk', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'mision-briefing-skalk', target: 'skalk', label: 'protagonizado por', type: 'rel' },
+    { source: 'mision-briefing-skalk', target: 'glornir', label: 'defiende a Vol en', type: 'event' },
+    { source: 'mision-briefing-skalk', target: 'vol', label: 'pregunta sobre Grimholt en', type: 'event' },
+    { source: 'mision-briefing-skalk', target: 'mision-helka-norte', label: 'detalla', type: 'rel' },
+    { source: 'mision-briefing-skalk', target: 'grimholt', label: 'pregunta abierta sobre', type: 'trama' },
+    // Nuevas localidades
+    { source: 'rio-slagen', target: 'vigrið', label: 'río en', type: 'geo' },
+    { source: 'rio-slagen', target: 'snakavik', label: 'nace en las estribaciones de las Boneback, zona de', type: 'geo' },
+    { source: 'rio-slagen', target: 'mision-helka-norte', label: 'ruta de la misión', type: 'geo' },
+    { source: 'grimholt', target: 'vigrið', label: 'guarnición en', type: 'geo' },
+    { source: 'grimholt', target: 'mision-helka-norte', label: 'punto clave no explicado de', type: 'trama' },
+    { source: 'grimholt', target: 'helka', label: 'bajo control de', type: 'rel' },
+    // Olvir y Yrsa
+    { source: 'olvir-yrsa', target: 'skalk', label: 'escoltan a', type: 'rel' },
+    { source: 'olvir-yrsa', target: 'helka', label: 'guardia de', type: 'rel' },
 ];
