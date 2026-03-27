@@ -327,6 +327,7 @@ const links = [
     { source: 'hundur', target: 'oath-stone-frost-isles', label: 'detectó con olfato', type: 'event' },
     // biorr
     { source: 'biorr', target: 'battle-grim', label: 'miembro', type: 'rel' },
+    { source: 'biorr', target: 'storr', label: 'conoce la identidad de Elvar como hija de', type: 'trama' },
     // storr
     { source: 'storr', target: 'cat-facciones', label: '', type: 'arc' },
     { source: 'storr', target: 'snakavik', label: 'sede', type: 'geo' },
@@ -549,9 +550,12 @@ const links = [
     { source: 'cat-dioses', target: 'cat-mundo', label: '', type: 'arc' },
     { source: 'snaka', target: 'cat-dioses', label: '', type: 'lore' },
     { source: 'snaka', target: 'vigrið', label: 'sus huesos = montañas', type: 'lore' },
+    { source: 'snaka', target: 'hrung', label: 'devoró a / origen residual del poder de', type: 'lore' },
+    { source: 'snaka', target: 'snakavik', label: 'cráneo forma la ciudad', type: 'geo' },
     { source: 'likrafa', target: 'cat-dioses', label: '', type: 'lore' },
     { source: 'likrafa', target: 'vergelmir', label: 'encadenada en oskutred', type: 'lore' },
     { source: 'orna', target: 'cat-dioses', label: '', type: 'lore' },
+    { source: 'orna', target: 'darl', label: 'huesos coronan la fortaleza de Helka en', type: 'lore' },
     { source: 'ulfrir', target: 'cat-dioses', label: '', type: 'lore' },
     // Svin
     { source: 'svin', target: 'cat-dioses', label: '', type: 'lore' },
@@ -897,4 +901,25 @@ const links = [
     // Olvir y Yrsa
     { source: 'olvir-yrsa', target: 'skalk', label: 'escoltan a', type: 'rel' },
     { source: 'olvir-yrsa', target: 'helka', label: 'guardia de', type: 'rel' },
+
+    // ══════════════════════════════════════════════════════════════
+    // REVISIÓN DE CONSISTENCIA — ENLACES FALTANTES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'sea-wolf', target: 'rio-slagen', label: 'navega hacia la fuente del', type: 'geo' },
+    { source: 'akall', target: 'froya', label: 'busca justicia por la muerte de', type: 'trama' },
+    { source: 'asgrim-death', target: 'virk', label: 'Virk investigó el patrón de', type: 'event' },
+    { source: 'grend', target: 'storr', label: 'pasado en Snakavik / conocido de', type: 'trama' },
+    { source: 'grimholt', target: 'rio-slagen', label: 'guarnece la cabecera del', type: 'geo' },
+    { source: 'tainted', target: 'hakon', label: 'Hákon caza y documenta a los', type: 'trama' },
+    { source: 'vaesen-gen', target: 'spert', label: 'tipo de vaesen', type: 'lore' },
+    { source: 'vaesen-gen', target: 'vesli', label: 'tipo de vaesen', type: 'lore' },
+    { source: 'liga', target: 'battle-grim', label: 'base operativa de los', type: 'rel' },
+    { source: 'niding', target: 'holmganga-event', label: 'detonante en', type: 'event' },
+    { source: 'althing', target: 'fellur', label: 'celebrado en el fiordo de', type: 'geo' },
+    { source: 'althing', target: 'orka', label: 'asistió al', type: 'event' },
+    { source: 'karl', target: 'virk', label: 'Virk era', type: 'lore' },
+    { source: 'second-combat', target: 'holmganga-event', label: 'rol definido en', type: 'event' },
+    { source: 'runa-ward', target: 'steading', label: 'protegía el', type: 'lore' },
+    { source: 'runa-ward', target: 'ataque-steading', label: 'obliteradas en el', type: 'event' },
+    { source: 'galdramadr', target: 'galdur', label: 'practica el arte del', type: 'lore' },
 ];
