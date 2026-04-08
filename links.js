@@ -973,7 +973,6 @@ const links = [
     // ══════════════════════════════════════════════════════════════
     { source: 'granja-abandonada', target: 'rio-slagen', label: 'en la orilla del', type: 'geo' },
     { source: 'granja-abandonada', target: 'mision-helka-norte', label: 'primera evidencia física de la', type: 'trama' },
-    { source: 'desembarco-slagen', target: 'varg', label: 'POV de', type: 'event' },
     { source: 'desembarco-slagen', target: 'granja-abandonada', label: 'ocurre en la', type: 'event' },
     { source: 'desembarco-slagen', target: 'bloodsworn', label: 'protagonizado por los', type: 'event' },
     { source: 'edel', target: 'granja-abandonada', label: 'rastreó desde', type: 'event' },
