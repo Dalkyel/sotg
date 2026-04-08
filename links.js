@@ -922,4 +922,62 @@ const links = [
     { source: 'runa-ward', target: 'steading', label: 'protegía el', type: 'lore' },
     { source: 'runa-ward', target: 'ataque-steading', label: 'obliteradas en el', type: 'event' },
     { source: 'galdramadr', target: 'galdur', label: 'practica el arte del', type: 'lore' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 27 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'raid-raven-feeders', target: 'thrud', label: 'muerto en el', type: 'event' },
+    { source: 'raid-raven-feeders', target: 'biorr', label: 'herido en el', type: 'event' },
+    { source: 'raid-raven-feeders', target: 'bjarn', label: 'secuestrado en el', type: 'event' },
+    { source: 'raid-raven-feeders', target: 'uspa', label: 'objetivo real del', type: 'trama' },
+    { source: 'raid-raven-feeders', target: 'elvar', label: 'participó / mató al líder del', type: 'event' },
+    { source: 'raid-raven-feeders', target: 'agnar', label: 'abre feudo de sangre con Ilska', type: 'conflict' },
+    { source: 'ilska', target: 'bjarn', label: 'secuestró como palanca', type: 'conflict' },
+    { source: 'ilska', target: 'uspa', label: 'objetivo real del raid', type: 'trama' },
+    { source: 'ilska', target: 'agnar', label: 'feudo de sangre / atacó a', type: 'conflict' },
+    { source: 'raven-feeders', target: 'bjarn', label: 'secuestraron en el raid', type: 'conflict' },
+    { source: 'uspa', target: 'oskutred', label: 'conoce el camino hasta', type: 'trama' },
+    { source: 'elvar', target: 'raid-raven-feeders', label: 'combatió en el', type: 'event' },
+    { source: 'thrud', target: 'battle-grim', label: 'miembro de los', type: 'rel' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 28 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'combate-nacken', target: 'orka', label: 'protagonista del', type: 'event' },
+    { source: 'combate-nacken', target: 'mord-lif', label: 'Mord herido en el', type: 'event' },
+    { source: 'combate-nacken', target: 'nacken', label: 'enfrentamiento con el', type: 'event' },
+    { source: 'orka', target: 'nacken', label: 'hirió y repelió al', type: 'event' },
+    { source: 'orka', target: 'seidr', label: 'aplica fórmulas de combate', type: 'magic' },
+    { source: 'nacken', target: 'seidr', label: 'vulnerable a fórmulas de', type: 'magic' },
+    { source: 'orka', target: 'dragon-born', label: 'rumiando la afirmación de Thorkel', type: 'trama' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 29 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'juramento-sangre-brim', target: 'elvar', label: 'sellado con sangre de', type: 'event' },
+    { source: 'juramento-sangre-brim', target: 'agnar', label: 'sellado con sangre de', type: 'event' },
+    { source: 'juramento-sangre-brim', target: 'grend', label: 'sellado con sangre de', type: 'event' },
+    { source: 'juramento-sangre-brim', target: 'sighvat', label: 'sellado con sangre de', type: 'event' },
+    { source: 'juramento-sangre-brim', target: 'kraka', label: 'sellado con sangre de', type: 'event' },
+    { source: 'juramento-sangre-brim', target: 'uspa', label: 'sellado con sangre de', type: 'event' },
+    { source: 'juramento-sangre-brim', target: 'blod-svarid', label: 'ritual aplicado en', type: 'magic' },
+    { source: 'juramento-sangre-brim', target: 'oskutred', label: 'compromiso de ir a', type: 'trama' },
+    { source: 'graskinna', target: 'oskutred', label: 'contenía el camino a', type: 'lore' },
+    { source: 'graskinna', target: 'ilska', label: 'fue robada de', type: 'trama' },
+    { source: 'graskinna', target: 'uspa', label: 'destruida por en Iskalt', type: 'trama' },
+    { source: 'graskinna', target: 'berak', label: 'robada junto a / Berak mató por ella', type: 'trama' },
+    { source: 'berak', target: 'raven-feeders', label: 'mató a miembros de durante la huida', type: 'conflict' },
+    { source: 'elvar', target: 'storr', label: 'rechazó oferta de warband de', type: 'conflict' },
+    { source: 'elvar', target: 'juramento-sangre-brim', label: 'participó en', type: 'event' },
+    { source: 'grend', target: 'juramento-sangre-brim', label: 'participó solo por Elvar', type: 'event' },
+    { source: 'iskalt', target: 'graskinna', label: 'lugar de destrucción de la', type: 'event' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 30 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'granja-abandonada', target: 'rio-slagen', label: 'en la orilla del', type: 'geo' },
+    { source: 'granja-abandonada', target: 'mision-helka-norte', label: 'primera evidencia física de la', type: 'trama' },
+    { source: 'desembarco-slagen', target: 'varg', label: 'POV de', type: 'event' },
+    { source: 'desembarco-slagen', target: 'granja-abandonada', label: 'ocurre en la', type: 'event' },
+    { source: 'desembarco-slagen', target: 'bloodsworn', label: 'protagonizado por los', type: 'event' },
+    { source: 'edel', target: 'granja-abandonada', label: 'rastreó desde', type: 'event' },
+    { source: 'jokul', target: 'granja-abandonada', label: 'recuperó ponies en', type: 'event' },
+    { source: 'sea-wolf', target: 'granja-abandonada', label: 'amarrado en el muelle de la', type: 'geo' },
+    { source: 'varg', target: 'desembarco-slagen', label: 'participó en el', type: 'event' },
 ];
