@@ -1,1194 +1,1073 @@
-
-const nodes = [
-    {
-        id: 'agnar', label: 'Agnar', group: 'ELVAR', type: 'Personaje — Jefe', desc: 'Jefe de Terrores de la batalla. Franja gruesa de cabello rubio en el centro de la cabeza (warrior-braid), el resto rapado, capote de oso negro, torc de plata. Carismático, valiente, implacable. Mató al Jarl Hrut sin dudar. Filosofía ideológica: no caza Tainted solo por dinero — cree que la herencia divina es un peligro para el mundo (ver nodo oath-stone-frost-isles). Rescata a Elvar durante el ataque de wyrms (ver nodo night-wyrm). En presencia de Störr habla deferentemente — algo que Elvar nunca le había oído hacer con nadie. Vendió a Berak a Störr por el doble del precio de mercado (ver nodo llegada-snakavik). Agnar queda como proveedor de confianza de Störr para futuros Tainted capturados. Reunió a Elvar y Grend en privado en la taberna: les entregó su parte del botín (Störr pagó bien por Berak y la carne de trol tiene buen precio en Snakavik) y la llamó formalmente «Elvar Troll-Slayer» — su sobrenombre ganado. Le ofreció banco de remo permanente en el Wave-Jarl haga lo que haga: brazo cruzado de guerrero a guerrera. Le dijo que siguiera adonde el corazón y el juicio la llevaran. Tras el raid de los Alimentadores de Cuervos: persiguió a los fugitivos hasta el muelle; vio escapar a Ilska en su drakkar; golpeó el escudo con la empuñadura al ritmo de remo — promesa de sangre. Declaró «aprenderá a arrepentirse de robarme». Pagó daños al posadero (cálculo estratégico de reputación). Negoció con Uspa: su secreto por la recuperación de Bjarn — y cuando escuchó el susurro, retrocedió de golpe (ver nodo raid-raven-feeders). Sobrenombre ganado: «Puño-de-Fuego» (Agnar Fire-Fist) — título aclamado por Biórr ante los Terrores de la batalla al revelar la misión de Oskutreð. Mostró las cicatrices del blóð svarið en mano y muñeca ante toda la compañía como prueba del compromiso irrevocable. Reveló la Graskinna, el papel de Uspa y la amenaza potencial de Ilska en el seguimiento. Declaró que si Ilska los sigue, le facilitará cumplir su juramento de venganza. Hizo rodar un barril de hidromiel como sello de la alianza recién extendida. Estado actual: navegando al norte en el Lago Horndal, cruzando las Boneback hacia la Llanura de Batalla (ver nodo revelacion-oskutred-battle-grim).',
-        star: '★★ Su motivación ideológica queda clara, no es solo mercenario, es creyente de que la herencia divina es un peligro para el mundo. Esto lo convierte en antagonista más matizado y más peligroso.'
-    },
-    {
-        id: 'akall', label: 'Akall de Varg', group: 'TRAMA', type: 'Trama — Abierta', desc: 'Varg necesita que Vol realice un akall para invocar el espiritu de Froya y descubrir como murio. Varg le hace la peticion directamente a Glornir y Vol en presencia de toda la compania, la primera vez que lo pide en voz alta. Vol escucha y comienza a responder afirmativamente pero Glornir la interrumpe y dice no. Glornir explica que Varg no es aun Hermano de Sangre -- es aprendiz -- y debe ganarse el derecho primero. La petición sigue en pie pero ahora es pública y tanto Glornir como Vol la conocen. TERCER RECHAZO: Glornir vuelve a cerrar la puerta con «no; quizás habrá un tiempo, si demuestras lo que hace falta, pero ese tiempo no es ahora.» Vol lo detiene con pena en lugar de enfado — lo que duele más. ESCALADA: Varg escucha la voz interna que le señala a Skalk como alternativa y por primera vez no la silencia. Si Glornir no lo permitirá, el Galdurman de Helka a bordo de la expedición podría hacerlo — al margen de la cadena de mando. La decisión está pendiente.',
-        star: '*** la peticion ya no es secreta. Glornir la bloquea pero no la niega para siempre -- dice que Varg debe probarse primero. Vol empezo a responder positivamente antes de ser interrumpida: ella esta dispuesta. La tension narrativa cambia: el obstaculo ya no es llegar a Vol sino ganarse el derecho ante Glornir.'
-    },
-    {
-        id: 'althing', label: 'Alþing (Althing)', group: 'NORSE', type: 'Institución — Asamblea', desc: 'Asamblea pública donde se anuncian juramentos, se resuelven disputas y se proclaman leyes. Celebrada en la Roca del Juramento en Fellur. Sigrún anunció allí su lealtad a Helka. [Histórico: el Alþingi islandés (fundado 930 d.C.) es el parlamento más antiguo del mundo. Era asamblea anual donde se recitaban leyes, se juzgaban casos y se hacían alianzas. Gwynne lo adapta como institución política clave en Vigríð.]',
-        star: ''
-    },
-    {
-        id: 'anillo-oro', label: 'Anillo de Oro', group: 'ELVAR', type: 'Objeto — Distinción', desc: 'Anillo de oro entregado a Elvar por Agnar tras la venta de Berak en Snakavik (ver nodo llegada-snakavik). Gesto de reconocimiento económico o distinción dentro de la compañía. Símbolo de participación en el beneficio del botín. [Histórico: los jarls y jefes nórdicos usaban la entrega de oro — anillos, brazaletes, torcs — como lenguaje de lealtad y recompensa. Gwynne preserva esta economía de objetos como marcador de rango dentro de las compañías mercenarias.]',
-        star: ''
-    },
-    {
-        id: 'araña-hielo', label: 'Arañas del Hielo', group: 'VAESEN', type: 'Vaesen — Ártico', desc: 'Vaesen de las regiones árticas. Su veneno hiela la sangre y detiene el corazón. Amenaza en los territorios del norte cercanos a las Islas del Hielo, al norte de Iskalt.',
-        star: ''
-    },
-    {
-        id: 'arild', label: 'Arild', group: 'ORKA', type: 'Personaje — Drengr (mujer)', desc: 'Drengr de la Jarl Sigrún. Acompañó a Guðvarr al steading de Orka para convocar el Althing. Fue la segunda de Guðvarr en el holmganga, le aconsejó en voz baja antes del duelo y le vendó el hombro tras la derrota.',
-        star: '¿Qué le aconsejó a Guðvarr antes del duelo? Sigrún también le habló pero su consejo fue distinto al de Arild.'
-    },
-    {
-        id: 'armring', label: 'Armring (Anillo de Brazo)', group: 'NORSE', type: 'Simbolo — Lealtad', desc: 'Anillo de metal (plata, oro, bronce) enrollado en el brazo. Simbolo de lealtad a un senor. Los jarls los otorgan a guerreros leales; el epiteto dador-de-anillos describe a un buen senor. Llevar armrings es senal de pertenecer a un sequito. No llevarlos puede ser senal deliberada de no deber lealtad a nadie. [Historico: los armrings eran la moneda social vikinga. Un jarl generoso distribuia anillos a su sequito. Simbolo fisico del vinculo senor-guerrero.]',
-        star: 'Sistema de lealtad economica: el oro compra juramentos. Quien lleva muchos armrings tiene muchas deudas de honor -- o las cobra.'
-    },
-    {
-        id: 'asgrim', label: 'Asgrim (†)', group: 'ORKA', type: 'Personaje — Muerto', desc: 'Vecino de Orka y Thorkel en las colinas sobre el fiordo de Fellur. Encontrado muerto de una estocada al corazón en el umbral de su steading. Tenía runa de warding en la puerta —el asesino fue humano, no vaesen.',
-        star: 'Que un hombre con runa warding fuera asesinado confirma que la amenaza viene de personas, no de criaturas.'
-    },
-    {
-        id: 'asgrim-death', label: 'Tragedia de Familia Asgrim', group: 'EVENTO', type: 'Evento', desc: 'Asgrim y su esposa son encontrados muertos en su granja a las afueras de Fellur por Orka. Su hijo Harek esta desaparecido. Orka lleva los cuerpos a Fellur. Thorkel investiga: tres botes en el rio Skarpain. El modus operandi es identico al ataque posterior al steading de Orka (ver nodo ataque-steading) -- misma banda, mismo lider: Drekr (ver nodo drekr).',
-        star: '** Harek fue el primer caso de Drekr en la zona. Ahora Breca es el mas reciente. La misma organizacion opero en ambos casos con anos de diferencia -- o la red de Drekr es antigua y extensa.'
-    },
-    {
-        id: 'battle-grim', label: 'Terrores de la batalla (Battle-Grim)', group: 'FACCION', type: 'Facción — Mercenarios', desc: 'Compañía mercenaria. Drakkar: Wave-Jarl. Cazan Tainted para venderlos a jarls. Jefe: Agnar. Thrall Tainted: Kráka (Seiðr) y Hundur (rastreador).',
-        star: ''
-    },
-    {
-        id: 'berak', label: 'Berak Bjornasson', group: 'ELVAR', type: 'Personaje — Berserkir', desc: 'Alto y grande con cicatrices en la cara, barba hasta el cinturón. Sangre del dios muerto Berser (ver nodo berser). Ojos ambarinos cuando entra en furia, dientes afilados, fuerza brutal — transformación Berserkir (ver nodo berserkergang). Vivía escondido y fue capturado en Iskalt. Se le acusa de haber matado a tres Jarls. El collar de hierro suprime su transformación. Fuerza sobrehumana incluso encadenado. Protege instintivamente a Uspa y Bjarn ante cualquier amenaza. Vendido al Jarl Störr en Snakavik. Linaje confirmado por el oráculo Hrung al saborear su sangre. Los Berserkir-thralls de Störr lo rodearon al entrar, gruñéndole "bienvenido, hermano." Ignoró el saludo. Se marchó cabeza gacha siguiendo a Silrið. REVELACIÓN RETROACTIVA: junto a Uspa robó la Graskinna de los Alimentadores de Cuervos — el libro con el camino a Oskutreð. Mató a varios Raven-Feeders durante la huida; Ilska los persiguió desde entonces. En Iskalt combatió al trol para dar tiempo a Uspa de destruir el libro lanzándolo a la laguna de lava. Estado actual: thrall de Jarl Störr en Snakavik.',
-        star: '★★ Ahora es thrall de Störr — el jarl más poderoso del noroeste. Guardado junto a una docena de Berserkirs ya esclavizados. ¿Puede Uspa rescatarlo? ¿O Bjarn, con su doble linaje, se convierte en el punto de negociación?'
-    },
-    {
-        id: 'berak-venta', label: 'Viaje y venta de Berak en Snakavik', group: 'EVENTO', type: 'Evento', desc: 'Agnar navega hacia Snakavik para vender a Berak el Berserkir al Jarl Störr. Elvar reacciona personalmente ante el destino. Uspa y Bjarn a bordo durante todo el viaje. Terrores de la batalla navega dos días desde Iskalt; hacen escala en las Islas de la Escarcha huyendo de una tormenta, donde descubren la piedra de juramento y son atacados por gusanos nocturnos. Continúan a Snakavik. Amarran en el puerto de Snakavik, Agnar paga derechos de amarre, sube a la fortaleza con Elvar, Sighvat, Huld, Sólín, Kráka y el Hundur-thrall. Silrið toma sangre de Berak para verificación; el oráculo Hrung confirma su linaje de Berser. Störr compra a Berak al doble del precio de mercado. EFECTO SECUNDARIO: en el mismo acto, Hrung huele a Elvar y la delata ante todos como hija de Störr (ver nodo llegada-snakavik).',
-        star: '★★★ La venta es excusa narrativa para la verdadera bomba: la identidad de Elvar. El arco "llevar a Berak a Störr" estaba sembrado de revelaciones cosmológicas desde el principio.'
-    },
-    {
-        id: 'berser', label: 'Berser (Dios-Oso)', group: 'DIOS', type: 'Dios Muerto', desc: 'Hijo de Snaka. Muerto en el Guðfalla. Sus descendientes son los Berserkir: Tainted con fuerza sobrehumana, ojos ambarinos y transformación parcial en combate. [Nota histórica: en la mitología nórdica real, berserkr significa «camisa de oso» — guerreros sagrados de Odín que entraban en trance de furia animal (berserkergang). Gwynne reinterpreta esto como herencia de sangre divina literal: el «oso» fue un dios real que murió.]',
-        star: 'Berak Bjornasson porta su sangre. Los Berserkir son muy cotizados por los jarls como guardia personal. El collar de hierro los detiene — pero ¿cuánto tiempo?'
-    },
-    {
-        id: 'berserkergang', label: 'Berserkergang (Furia de Batalla)', group: 'NORSE', type: 'Combate — Trance', desc: 'Estado de furia disociativa en combate. Ojos ambarinos, dientes afilados, fuerza sobrehumana, perdida de control racional. Puede ser manifestacion de sangre Tainted o de entrenamiento extremo. [Historico: los berserkir historicos entraban en trance de batalla. Gwynne lo reinterpreta como manifestacion literal de sangre divina Tainted.]',
-        star: 'Marcador clave de posible sangre Tainted: quien entra en berserkergang involuntariamente puede estar manifestando herencia divina sin saberlo.'
-    },
-    {
-        id: 'biorr', label: 'Biórr', group: 'ELVAR', type: 'Personaje — Terrores de la batalla', desc: 'Pelo negro, botas largas (objeto de burlas). Interesado en Elvar — la sigue en el bosque de Iskalt, busca su aprobación. Grend desconfía profundamente de él. Ofrece gachas a Berak y su familia como prisioneros. Explorador: encuentra la meseta con la piedra de juramento. Su iniciativa con la antorcha salvó a toda la compañía en el ataque de wyrms (ver nodo night-wyrm). Miente con compasión a Bjarn sobre el paradero de Berak — «tu padre tuvo que irse un tiempo, nos pidió que te cuidáramos» — en lugar de decirle que su padre es thrall de Störr. Elvar queda sorprendida por esa ternura. Mientras Elvar procesa la oferta de su padre, juega al tafl con Bjarn y demuestra que ya sabe su identidad: la llama «Elvar Störrsdottir» con voz tranquila. Comenta su belleza pero enseguida gira hacia algo más agudo: ve que está librando una batalla interior y se ofrece a ayudar. Cuando Grend le agarra la muñeca, la sonrisa y el humor habituales desaparecen un instante y se asoma algo frío y duro — primera grieta en su máscara afable. Se culpa de la muerte de Thrud: no pudo protegerle durante el raid; Elvar le recuerda que todos viven con «las garras de la muerte en el hombro» — lo que Thrud sabía tan bien como cualquiera. Jugador de tafl: perdió contra Bjarn en Snakavik y quiere la revancha — la única razón que da para alegrarse de rescatar al niño. Estado actual: recuperado del raid (herida de hombro cerrada). En el campamento del Lago Horndal norte, sentado junto al fuego con Elvar, primero beso entre ambos — Grend interrumpe con ceño profundo. Biórr da a Elvar su segundo sobrenombre: «Puño-de-Fuego» junto al de «Matadora de Troles». Destaca en Elvar algo que llama «cosa rara» — la voluntad de ganarse la fama en lugar de heredarla (ver nodo biorr-elvar-beso). Rumbo a Oskutreð junto al resto de los Terrores de la batalla (ver nodo revelacion-oskutred-battle-grim).',
-        star: '★★ La mentira compasiva a Bjarn revela una dimensión de Biórr que no encaja con el perfil de mercenario simple. Su insistencia en quedarse con Elvar podría ser protección genuina o algo más calculado — Grend lo conoce mejor.'
-    },
-    {
-        id: 'bjarn', label: 'Bjarn', group: 'ELVAR', type: 'Personaje — Tainted', desc: 'Hijo de Berak y Uspa. Fue rescatado del mar helado por Elvar. Lleva sangre de Snaka por parte de madre y sangre de Berser por parte de padre — doble linaje divino. Berak y Uspa lo protegen instintivamente incluso encadenados (ver nodo night-wyrm). Estado actual: secuestrado por Ilska y los Alimentadores de Cuervos durante el raid a la taberna de los Terrores de la batalla en Snakavik (ver nodo raid-raven-feeders). Uspa revela que Ilska no lo quería a él — lo tomaron como palanca para llegar a su madre, que guarda un secreto de valor incalculable.',
-        star: '★★ Doble sangre: Snaka (Seiðr/serpiente) + Berser (fuerza/oso). ¿Cuál de los dos prevalecerá? ¿O podrá manifestar ambas? El Tainted más potencialmente poderoso de todos los prisioneros.'
-    },
-    {
-        id: 'blood-oath', label: 'Juramento de Sangre', group: 'NORSE', type: 'Ritual — Pacto', desc: 'Pacto inquebrantable sellado con sangre. Romperlo es traicion absoluta. Une a guerreros, humanos y vaesen en obligaciones mutuas de lealtad, proteccion y servicio. [Historico: los juramentos de sangre creaban hermandad artificial entre guerreros nordicos. Gwynne lo eleva a magia vinculante: el juramento de sangre en Vigrið tiene poder literal.]',
-        star: '** El titulo de la trilogia (Bloodsworn) se refiere a esto. Los juramentos de sangre son el tejido que une (y rompe) Vigrið. Su poder vinculante es literal, no solo simbolico.'
-    },
-    {
-        id: 'bloodsworn', label: 'Bloodsworn (Hermanos de Sangre)', group: 'FACCION', type: 'Faccion — Mercenarios', desc: 'Compania mercenaria de elite, legendaria. Escudo negro con salpicaduras rojas. Cazan vaesen, buscan reliquias, protegen ricos. Drakkar: Sea-Wolf. Jefe: Glornir. Seidr-thrall: Vol. Funcion en Liga: protegen el puerto de piratas y saqueadores a cambio de hospitalidad de Logur. El jefe anterior, Skullsplitter, regalo a Logur una astilla del Cuerno Vackna. Estado actual: cincuenta guerreros marchando a pie desde una granja abandonada en el Slågen hacia las estribaciones de las Boneback; diez quedan de guardia en el Sea-Wolf. Escout adelantado: Edel con sus sabuesos, Torvik y otros scouts jóvenes. Carga: dos ponies con provisiones, a cargo de Jökul.',
-        star: '* Nombre del drakkar revelado: Sea-Wolf. Su relacion con Logur es simbiosis: proteccion a cambio de hospitalidad y el relic del Vackna.'
-    },
-    {
-        id: 'bogi', label: 'Bogi (Arco)', group: 'NORSE', type: 'Arma — Distancia', desc: 'Arco largo de madera (tejo, fresno, olmo). Alcance 200+ metros. Caza y guerra. Menos prestigioso que combate cuerpo a cuerpo pero tácticamente vital. Flechas con punta de hierro. [Histórico: los vikingos eran arqueros competentes pero el arco tenía menos prestigio cultural que espada/hacha. Matar desde lejos era menos "honorable". Gwynne probablemente lo usa para emboscadas y caza.]',
-        star: 'Trud (Terrores de la batalla) fue herida por flecha en Iskalt. Los arcos aparecen en combate pero no son armas de héroes.'
-    },
-    {
-        id: 'breca', label: 'Breca (RAPTADO)', group: 'ORKA', type: 'Personaje — Orka (Desaparecido)', desc: '10 inviernos. Pelo negro como cuervo, ojos de Orka. Sensible, curioso, valiente. Vinculado a Vesli por juramento de sangre. Lleva colgante de madera con forma de espada. RAPTADO por la banda de Drekr durante el ataque al steading (ver nodo ataque-steading). Llevado vivo por el rio en dos botes. Hay sangre entre las huellas que llevan al bote -- posiblemente herido. CONFIRMADO EN DARL: fue mantenido en el desván de El Drengr Muerto junto a otros niños (~20 colchonetas de junco en condiciones deplorables — olor a orina y excrementos). Su colgante de espada de madera fue encontrado allí por Orka, en las cañas de una colchoneta, con el cordón de cuero roto (ver nodo colgante-espada). Ya había sido trasladado antes de que Orka llegara. Destino actual: desconocido — una tanda previa de niños ya había salido de Darl. Drekr reveló a Orka: «tu hijo cambiará el mundo» — confirma que Drekr comprende la naturaleza y el potencial de Breca, posiblemente su sangre Tainted.',
-        star: '*** RAPTADO. El mismo patron que Harek y los otros ninos. Llevado vivo -- tienen algun uso para los ninos. ¿Sabe Drekr que Breca tiene posible sangre Tainted? ¿Es ese el criterio de seleccion para todos los raptos?'
-    },
-    {
-        id: 'brynja', label: 'Brynja (Cota de Mallas)', group: 'NORSE', type: 'Armadura — Torso', desc: '[Pronunciación: "Brynya" — la j suena como la "y" de "yellow".] Cota de mallas de anillos entrelazados. Protección flexible contra cortes. Cara de fabricar: 20,000-30,000 anillos por cota. Símbolo de riqueza y estatus guerrero. Sigrún lleva una "remachada" (anillos remachados = calidad superior). [Histórico: la brynja era la armadura de élite vikinga. Pesaba 10-15kg. Solo jarls, campeones y guerreros ricos podían pagarla. La mayoría luchaba con cuero o sin armadura. Gwynne la usa como marcador visual de poder.]',
-        star: 'Sigrún lleva brynja remachada = jarl guerrera de verdad, no solo política. Agnar probablemente también.'
-    },
-    {
-        id: 'byrding', label: 'Byrðingr', group: 'NORSE', type: 'Embarcación — Carga Pesada', desc: '[Pronunciación: "Byrthing" — la ð suena como la "th" de "they".] Barco de carga pesada. Más grande y robusto que knarr. Transporte de materiales de construcción, piedra, madera, grandes cantidades de grano. Diseño sacrifica velocidad por capacidad. [Histórico: el byrðingr era el "camión de carga" nórdico. Usado para proyectos de construcción grandes: iglesias, fortalezas, puentes.]',
-        star: ''
-    },
-    { id: 'cat-dioses', label: 'PANTEÓN DIVINO', group: 'CAT', type: 'Mitología', desc: 'Los dioses caídos y su legado en Vigríð. Adorar a los dioses muertos está prohibido y se castiga con la muerte', star: '' },
-    { id: 'cat-elvar', label: 'ARCO ELVAR', group: 'CAT', type: 'Arco Narrativo', desc: 'Guerrera joven de Terrores de la batalla. Caza Tainted para venderlos a jarls ricos.', star: '' },
-    { id: 'cat-eventos', label: 'EVENTOS CLAVE', group: 'CAT', type: 'Cronología', desc: 'Sucesos históricos y actuales que moldean la narrativa.', star: '' },
-    { id: 'cat-facciones', label: 'FACCIONES Y PODER', group: 'CAT', type: 'Política', desc: 'El tablero político de Vigríð: jarls, reinas, mercenarios.', star: '' },
-    { id: 'cat-magia', label: 'MAGIA', group: 'CAT', type: 'Sistema Mágico', desc: 'Seiðr, Galdur, vínculos de sangre y el poder residual de los dioses muertos.', star: '' },
-    { id: 'cat-mundo', label: 'MUNDO & COSMOS', group: 'CAT', type: 'Worldbuilding', desc: 'Los dioses muertos, el Guðfalla, los Tainted, los vaesen. La realidad rota de Vigríð.', star: '' },
-    { id: 'cat-norse', label: 'CULTURA NÓRDICA', group: 'CAT', type: 'Tradiciones', desc: 'Costumbres, rituales, leyes y tradiciones del mundo de Vigríð basadas en la cultura nórdica histórica.', star: '' },
-    { id: 'cat-objetos', label: 'OBJETOS', group: 'CAT', type: 'Artefactos', desc: 'Armas, artefactos mágicos y objetos significativos.', star: '' },
-    { id: 'cat-orka', label: 'ARCO ORKA', group: 'CAT', type: 'Arco Narrativo', desc: 'Trampera en las colinas sobre Fellur. Madre feroz, exguerrera con un pasado oscuro que regresa.', star: '' },
-    { id: 'cat-tramas', label: 'TRAMAS ACTIVAS', group: 'CAT', type: 'Tramas', desc: 'Los hilos narrativos abiertos', star: '' },
-    { id: 'cat-varg', label: 'ARCO VARG', group: 'CAT', type: 'Arco Narrativo', desc: 'Ex-thrall en busca de un Seiðr para invocar a su hermana muerta. Recién reclutado por los Hermanos de Sangre.', star: '' },
-    {
-        id: 'collares', label: 'Collares de Hierro', group: 'OBJETO', type: 'Objeto Mágico', desc: 'Collar de hierro que controla a los Tainted mediante palabras Galdur. El metal se calienta con venas de fuego rojo al activarse. Símbolo de esclavitud y control. Vol, Kráka y los Tainted capturados los llevan.',
-        star: 'El control de los Tainted depende de que solo los "dueños" conozcan las palabras Galdur.'
-    },
-    {
-        id: 'colmillo-trol', label: 'Colmillo de Trol', group: 'ELVAR', type: 'Objeto — Distinción', desc: 'Máxima distinción en Terrores de la batalla. Agnar se lo entregó a Elvar como colmillo-collar tras la batalla del bull-troll en Iskalt, junto con un anillo. Reconocimiento de su valentía al asestar el golpe mortal en la arteria femoral. Símbolo de estatus dentro de la compañía.',
-        star: '★ El colmillo marca el ascenso de Elvar. Toda Terrores de la batalla la ve recibir el premio.'
-    },
-    {
-        id: 'darl', label: 'Darl', group: 'LUGAR', type: 'Lugar — Capital de Helka', desc: 'Sede y fortaleza de la Reina Helka. Se alza sobre una colina que domina un río ancho, profundo, oscuro y marrón; cien hogares lanzan humo al cielo. Los muelles bulliciosos albergan al menos una docena de drakkars con proas talladas en forma de águila, más barcos de todo tipo en un centenar de muelles y embarcaderos de madera. Más allá de los muelles: tabernas y edificios apiñados en la ladera de la colina, muralla de madera, fortaleza. En la cima del mead hall: el esqueleto del dios-águila Orna — dos alas colosales extendidas sobre el techo de paja como manos protectoras, el cráneo con el pico de cuchilla alzado por encima. El tamaño es sobrecogedor: cada ala es como una colina pequeña. El poder residual del hueso divino mantiene a los vaesen alejados de la ciudad en muchas leguas a la redonda. Detrás del mead hall: la torre Galdur de Darl, donde los Galdurmen aprenden sus artes rúnicas. Centro del poder político de Vigríð. Infraestructura interna: una red de canales excavados desde el río que serpentea bajo las calles, usada para transporte de mercancías y — como confirma Orka — para mover niños capturados en barcas cubiertas. Calles llenas de tabernas, prostitutas y carteristas; patios de curtidores con pieles estiradas sobre marcos. La operación de Drekr opera abiertamente en la ciudad con cobertura de la guardia de Helka: El Drengr Muerto (taberna con señal de drengr herido en rojo) es un nodo activo de la red de rapto (ver nodo dead-drengr). Los niños raptados no están aquí por accidente — la presencia de una drengr de Helka en la puerta del establecimiento confirma que la operación cuenta con protección de la corona (ver nodo hakon, ver nodo rescate-ninos-canal). [Contexto: la fortaleza de Darl combina dos elementos de poder distintos — la reliquia divina de Orna como escudo físico y la torre Galdur como brazo intelectual de control. Ninguna otra sede conocida reúne ambos.',
-        star: ''
-    },
-
-    {
-        id: 'drakkar', label: 'Drakkar (Langskip)', group: 'NORSE', type: 'Embarcación — Guerra', desc: 'Barco largo de guerra (langskip). Proa tallada con cabeza de dragón o serpiente. Diseño estrecho y rápido para incursiones y batalla. Remos + vela cuadrada. Calado bajo permite navegar ríos y desembarcar en playas. Wave-Jarl es un drakkar. [Histórico: los drakkars (drakar, "dragón") eran los barcos de guerra vikingos por excelencia. Podían llevar 20-60 guerreros. El diseño simétrico proa-popa permitía remar en ambas direcciones sin girar. Gwynne los preserva como símbolo de poder militar en Vigríð.]',
-        star: '★ Wave-Jarl (Terrores de la batalla) es un drakkar. Los Hermanos de Sangre también tienen uno. Símbolo de estatus para compañías mercenarias.'
-    },
-    {
-        id: 'drengr', label: 'Drengr', group: 'NORSE', type: 'Concepto — Honor', desc: 'Guerrero honorable, valiente, leal. Titulo de respeto. El ideal del drengr es el opuesto al niding: valentía, lealtad, generosidad, autocontrol. Se puede reclamar el titulo sin poseerlo -- la brecha entre el reclamo y la conducta es un motor de conflicto social en Vigrið. [Historico: drengr era el ideal del guerrero nordico. Lo opuesto al niding. Gwynne lo usa como marcador de estatus social y moral.]',
-        star: 'La tension entre quien reclama ser drengr y quien lo demuestra con hechos es uno de los grandes temas de la novela.'
-    },
-    {
-        id: 'einar', label: 'Einar Medio-Trol', group: 'VARG', type: 'Personaje — Hermanos', desc: 'Campeón de los Hermanos. Enorme, barba roja hasta la cintura, manos como yunques. Protección de hierro en la entrepierna (forjada por Jökul). Pelea con Varg para ganarse su puesto. En la batalla del muelle (ver nodo batalla-muelles) demuestra precisión letal además de fuerza bruta. Durante el oar-dance, en lugar de dejar que el oar suba cuando Varg aterriza, lo empuja deliberadamente hacia abajo — lanzándolo al fiordo. El intercambio tiene precio: Svik le da una hogaza de pan. Su tregua con Varg es minimalista y obstinada: pan compartido, promesa de no morder, y un «no estamos en paz» que en realidad sí lo está.',
-        star: '* Precision real en combate, no solo fuerza. Es el primero en atacar desde el muro.'
-    },
-    {
-        id: 'elvar', label: 'Elvar Störrsdottir', group: 'ELVAR', type: 'POV — Personaje', desc: 'Guerrera más joven de Terrores de la batalla. Rubia, trenza guerrera, escudo rojo con armas cruzadas. Impulsiva y valiente hasta la temeridad. Siempre trata de hacer más que los demás, así ganó su puesto en el muro de escudos. Saltó al mar helado para salvar al hijo de Berak. Escéptica empírica: solo cree en lo que puede ver y tocar. Acepta los Tainted por evidencia directa pero negaba los dragon-born (ver nodo dragon-born). Sobrevive al ataque de wyrms con ayuda de Grend y Agnar (ver nodo night-wyrm). Lleva colmillo de trol al cuello (ver nodo colmillo-trol). Jarl Störr es su padre (ver nodo storr). Hrung la reconoció por olfato antes de que se quitara la capucha (ver nodo llegada-snakavik). BACKSTORY REVELADA: huyó de Snakavik hace ~4 años, tenía 17 en su último nombre-día al marcharse. Razón principal: Störr quería casarla con Hákon (hijo de Helka) para unir sus reinos — ella se negó. Confrontación en la taberna con Störr, Thorun (hermano mayor, hostil) y Broðir (hermano menor, afectuoso) (ver nodo reunion-storr-elvar). Störr le ofrece su propio warband si regresa. Grend la defiende públicamente ante Thorun: "ha ganado su propia reputación y es un nombre que debe respetarse y temerse" — elogio sin precedentes en él. Agnar le da formalmente el sobrenombre Troll-Slayer (Matadora de Troles) y le ofrece banco de remo permanente en el Wave-Jarl independientemente de su elección (ver nodo consulta-hrung). Acude en secreto a Hrung para pedirle consejo sobre si aceptar la oferta de su padre; recibe un acertijo en lugar de respuesta y huye antes de que Störr llegue. En el raid de los Alimentadores de Cuervos, mata al guerrero Tainted rubio que salió en cabeza del grupo y hiere mortalmente al segundo antes de que Grend lo acabe. Identifica a los atacantes por la pluma de cuervo en el pelo. Persigue a los fugitivos hasta el muelle con Agnar y la compañía, pero la nave de Ilska ya está en el fiordo. Despoja al guerrero caído de su equipo (espada, brynja, torc de plata, tres aros de brazo, dados, monedas) como es su derecho. De los aros de brazo regala uno a Grend — espiral de plata con terminales en forma de lobo o perro — como reconocimiento de amistad, no de deuda. Estado actual: presente cuando Uspa susurra a Agnar «sé el camino a Oskutreð» — el secreto que todo lo cambia. Carga el peso de no haber transmitido la advertencia de Uspa: esa omisión le costó la vida a Thrud (ver nodo raid-raven-feeders). DECISIÓN DEFINITIVA: cuando Agnar le pregunta si se queda con los Terrores de la batalla o regresa con su padre, responde sin dudar: «me quedo». Aplica el acertijo de Hrung — «un lobo no puede volverse cordero» — como respuesta: la naturaleza de Störr no cambia, toda oferta suya lleva trampa. Rechaza el warband de forma irrevocable. Participa en el blóð svarið junto a Agnar, Grend, Sighvat, Kráka y Uspa — lleva la marca roja permanente del juramento en mano y muñeca. Objetivo: Oskutreð, con recuperación de Bjarn como condición del trato (ver nodo juramento-sangre-brim). Segundo sobrenombre: «Puño-de-Fuego» (Elvar Fire-Fist), otorgado por Biórr en el campamento del Lago Horndal norte al llamarla «cosa rara», rozarle las cicatrices del juramento y besarla — primer momento romántico entre ambos (ver nodo biorr-elvar-beso). Grend interrumpe la escena con un ceño profundo. Confesó a Agnar su sospecha tardía de que el guerrero rubio que mató en el raid era Tainted — los dientes y ojos cambiaron al acercarse la muerte. Agnar señala la pregunta sin respuesta: si Ilska lo sabía, ¿por qué no le puso collar? Recuerdos de su madre: imágenes fragmentadas y en desintegración — su sonrisa, su risa, su tacto — casi sin contexto. Estado actual: en cala oculta del Lago Horndal norte, ya al otro lado de las Boneback, en la antesala de la Llanura de Batalla (ver nodo revelacion-oskutred-battle-grim).',
-        star: '★★★ La oferta de su propio warband ataca exactamente la ambición que la define. El acertijo de Hrung («¿puede el lobo volverse cordero?») le da la respuesta que no quería escuchar: Störr no puede cambiar su naturaleza. Elvar tampoco. La pregunta es qué hace con eso.'
-    },
-    {
-        id: 'emp-kirill', label: 'Gran Khagan Kirill', group: 'FACCION', type: 'Personaje — Poder Lejano', desc: '"Gran Khagan, Kirill el Magnífico". Gobierna el vasto Iskidan desde la gran ciudad de Gravka. tiene 200 concubinas, mil hijos (según rumores) y una guardia druzhina de 200 guerreros que lo escolta en todo momento. Donde un príncipe tiene solo 2 druzhina, el Khagan tiene 200 — escala del poder. Virk lo acusó de tener más thralls que hombres libres y de sacrificar niños —rumores que Sigrun descartó como saga.',
-        star: '★★ El enviado de Kirill (su hijo Jaromir) ya está en Liga reclamando a Sulich. Iskidan tiene presencia activa en Vigríð. ¿Tiene el patrón de robos de niños alguna conexión con Iskidan?'
-    },
-    {
-        id: 'faering', label: 'Færing', group: 'NORSE', type: 'Embarcación — Pesca', desc: 'Bote pequeño de remos (2-4 remos). Pesca costera, transporte local entre villa y granja. Diseño simple pero robusto. Cada familia de pescadores tiene uno. [Histórico: el færing ("de cuatro remos") era el bote de trabajo diario en Noruega. Aún se construyen réplicas hoy. Diseño casi idéntico por 1000+ años. En Vigríð serían omnipresentes en villas costeras como Fellur.]',
-        star: 'Virk era pescador — probablemente tenía un færing. Las tres barcas que huyeron por el río Skarpain tras matar a Asgrim podrían ser færings.'
-    },
-    {
-        id: 'falki', label: 'Fálki Torilsson', group: 'ORKA', type: 'Personaje — Althing', desc: 'Granjero y minero enriquecido por depósitos de estaño encontrados bajo su tierra de pastoreo. Lleva sombrero de fieltro rojo fino con piel y barba pálida con anillos de oro. Asistente al Althing en la Roca del Juramento.',
-        star: ''
-    },
-    {
-        id: 'faunir', label: 'Faunir', group: 'VAESEN', type: 'Vaesen', desc: 'Vaesen del catálogo de criaturas liberadas en el Guðfalla. Sus características específicas aún no han sido detalladas en los capítulos leídos.',
-        star: 'Gwynne menciona vaesen por nombre antes de introducirlos en acción.'
-    },
-    {
-        id: 'fell-wolf', label: 'Fell-Wolf', group: 'VAESEN', type: 'Vaesen', desc: 'Lobo enorme, pelaje gris pizarra, garras largas. Encontrado herido, alguien ya lo había atacado antes de que llegaran Orka y su familia. Irrumpió en el calvero y dispersó los renos.',
-        star: '¿Quién hirió al fell-wolf antes? Posible pista sobre los asesinos de Asgrim.'
-    },
-    {
-        id: 'fellur', label: 'Fellur', group: 'LUGAR', type: 'Lugar — Villa', desc: 'Villa pesquera en el fiordo. ~100 habitantes. Longhouse central, muralla parcialmente podrida. Knuckle-bone de dios muerto en el umbral: protege contra vaesen. Dominio de Jarl Sigrún.',
-        star: ''
-    },
-    {
-        id: 'froa', label: 'Froa (†)', group: 'VAESEN', type: 'Vaesen — Espiritu del Arbol (Muerta)', desc: 'Espiritu guardian ligado a un arbol de fresno nacido de una semilla del gran Osktured. Forma: mujer-estatua tallada en madera, mas alta que Orka, pelo largo hasta la cintura entretejido de hojas y ramitas. Las Froa viven y mueren con su arbol y luchan salvajemente para defenderlo. Estado actual: MUERTA junto con su arbol (ver nodo arbol-froa). Orka la conocia: en su ultimo encuentro reía, bailaba y le ofrecia la mano de amistad.',
-        star: '*** ASESINADA junto con su arbol. La destruccion requirio muchos hombres con hachas y magia de fuego -- misma organizacion que opera los robos de ninos (ver nodo ninos-robados).'
-    },
-    {
-        id: 'froya', label: 'Frøya (†)', group: 'VARG', type: 'Personaje — Muerta', desc: '[Pronunciación: "Frirya" — la ø suena como la "ir" de "bird".] Hermana de Varg, 1 invierno menor. Ambos fueron vendidos a los 5 y 4 años por sus padres. Murió en circunstancias desconocidas. Su muerte es el motor de toda la historia de Varg.',
-        star: 'Varg necesita un akáll (invocación Seiðr) para descubrir cómo murió y quién la mató.'
-    },
-    {
-        id: 'funeral-rites', label: 'Ritos Funerarios', group: 'NORSE', type: 'Ritual — Muerte', desc: 'Los guerreros son enterrados con armas en la mano para luchar en Vergelmir contra Lik-Rifa en su camino al mas alla. Morir con arma = morir con honor. Barrows (tumulos) de madera y piedra marcan el lugar de reposo de los guerreros de rango. [Historico: los vikingos enterraban a guerreros con armas, herramientas, incluso barcos. Gwynne lo reinterpreta: las armas son necesarias literalmente para combatir a Lik-Rifa en el inframundo.]',
-        star: '** La creencia en Vergelmir hace que los ritos funerarios sean preparacion para batalla post-mortem, no solo honor simbolico.'
-    },
-    {
-        id: 'gachas', label: 'Gachas/Porridge', group: 'NORSE', type: 'Vida Diaria — Comida', desc: 'Comida básica diaria: avena/cebada cocida con agua o leche. Grend sirve gachas a Elvar. Biórr ofrece gachas a Berak prisionero. Comida de supervivencia en viajes largos y campamentos. [Histórico: el porridge (grautr) era alimento básico escandinavo. Barato, nutritivo, fácil de preparar en barco o campaña. Se comía con mantequilla, miel, o solo. Gwynne lo usa como marcador de vida cotidiana — incluso guerreros de élite comen simple.]',
-        star: 'Grend cuida a Elvar sirviéndole gachas — gesto paternal. Incluso prisioneros reciben gachas: mínimo de humanidad.'
-    },
-    {
-        id: 'galdramadr', label: 'Galdramaðr', group: 'MAGIA', type: 'Magia — Runas', desc: '[Pronunciación: "Galdramathr" — la ð suena como la "th" de "they".] Hechicero especializado en magia rúnica (galdrar). A diferencia de los practicantes de Seiðr, el galdramaðr trabaja con runas grabadas y cantadas, no con invocación de espíritus. Usa el galdrabók como texto de referencia. [Histórico: galdrar eran los hechizos rúnicos nórdicos, distintos del seiðr. La distinción era de género y método: seiðr se asociaba con mujeres, galdrar con hombres. Gwynne preserva esta distinción.]',
-        star: ''
-    },
-    {
-        id: 'galdur', label: 'Galdur', group: 'MAGIA', type: 'Magia — Lengua', desc: 'Lengua mágica de comandos rúnicos. Activa los collares de hierro sobre los Tainted. Palabras conocidas: Hlýða (obedece / escucha), Á HNÉN (de rodillas), Hlýða og fá verðlaun (obedece y recibe recompensa). NIðUR, Á JÖRðU, HLŸDDU MÉR (abajo, al suelo, obedéceme) — comando de sometimiento total; Brenna, sársauki (arde, dolor) — castigo de quemadura directa a través del collar. [Contexto: el galdr histórico nórdico era el canto o recitación de runas mágicas —opuesto al seiðr, era más público y menos estigmatizado. En Vigríð Gwynne lo convierte en lengua de control sobre la herencia divina.]',
-        star: 'Saber esta lengua es poder absoluto sobre los Tainted. ¿Cuántos la conocen realmente?'
-    },
-    {
-        id: 'glornir', label: 'Glornir', group: 'VARG', type: 'Personaje — Jefe', desc: 'Jefe de los Hermanos de Sangre. Calvo, barba gris trenzada. Long-axe como bastón. Oro y plata en brazos y cuello. Habla lengua Galdur. Lleva brynja brillante cuando lidera en combate o en marcha. Epítetos: Rompe-Escudos, Dador-de-Oro, Robador-de-Almas, Cortador-Golpeador-Aplastador. Filosofía del Bloodsworn: habilidad + lealtad + devoción. Bloquea el akáll de Varg (ver nodo akall). Se niega dos veces a entregar a Sulich (ver nodo sulich-crisis). Derriba una flecha en vuelo con su hacha (ver nodo batalla-muelles). Hermano de Skullsplitter (jefe anterior de los Hermanos, muerto en combate naval) — su muerte pesa en él como duelo no resuelto; Svik advierte a Torvik que no mencione el tema en voz alta cerca de Glornir. En el campamento del primer fiordo, defiende a Vol con firmeza frente a Skalk: quien viaja en su barco arriesga la vida y merece respeto, thrall o no (ver nodo mision-briefing-skalk). Estado actual: ocho días de marcha desde la granja abandonada del Slågen; los Hermanos de Sangre se acercan a las estribaciones de las Boneback. Ordenó acampar sin fuego al entrar en las colinas — demasiado cercanos a territorio de vaesen. Rechazó el akáll de Varg por tercera vez con firmeza. Reconoce que espera a alguien (una mujer, según Vol) que no ha llegado: «ha dejado su ruta sin secretos» para que pueda encontrarlos; sabe que no tiene dónde buscar. Lleva la brynja brillante en marcha — señal de que considera el terreno ya peligroso.',
-        star: '*** Derribar una flecha en vuelo con la hacha define por que todos lo siguen. No habla de valor -- lo demuestra bajo fuego real. El gesto resume sus cuatro kennings en un instante.'
-    },
-    {
-        id: 'gods-bones', label: 'Huesos de los Dioses', group: 'MAGIA', type: 'Objeto — Magia', desc: 'Los huesos de los dioses muertos (Snaka, Orna, Berser, Ulfrir) son objetos de gran poder. Se usan para protección (knuckle-bone en umbrales), como fuente de poder para magia, y como símbolos de autoridad (alas de Orna en la fortaleza de Helka). El poder específico que otorgan varía según el dios y el contexto. Los huesos de los dioses repelen activamente a los vaesen — hay algún poder latente en su estructura de hueso y médula que los mantiene alejados. Los vaesen evitan cualquier resto o reliquia divina. Esto hace que Snakavik (construida sobre el cráneo de Snaka) sea un lugar seguro de noche — ningún vaesen puede acercarse.',
-        star: '★★ Detalle estratégico: ciudades construidas sobre huesos divinos son zonas seguras. Darl (Helka, alas de Orna) también podría beneficiarse de esta protección. ¿Por qué exactamente los repele? Nadie en el libro lo sabe todavía.'
-    },
-    {
-        id: 'gravka', label: 'Gravka', group: 'LUGAR', type: 'Lugar — Capital Imperial', desc: 'Gran ciudad capital del Imperio de Iskidan. Sede del Emperador Kirill. Lejana al este, más allá del mar. Representa el mundo exterior a Vigríð.',
-        star: ''
-    },
-    {
-        id: 'grend', label: 'Grend', group: 'ELVAR', type: 'Personaje — Guardián', desc: 'Guerrero mayor. Cabello negro trenzado, barba gris. Siempre junto a Elvar. No es su padre (él lo niega). Lacónico; su cara no traiciona lo que siente. Salta al mar helado tras Elvar. Le sirve gachas y le cubre los turnos de guardia. Armado con hacha y seax en su cinturón de armas. Vivió en Snakavik por más años de los que Elvar ha vivido — fue guardián de la madre de Elvar antes que de ella. Gytha (campeona de Störr) le hace una reverencia al entrar — señal de que Grend tiene rango y reputación en Snakavik que preceden a su papel actual. Durante la confrontación con Störr, cuando Thorun insinúa que Elvar solo tiene fama por estar bajo el ala de Grend, Grend responde sin que le pregunten: "Elvar pelea sus propias batallas. Ha ganado su propia reputación, y es un nombre que debe respetarse y temerse." El mayor elogio que se le conoce — y dicho ante Störr y sus hijos. Le dice a Thorun "yo me sentaría, si fuera tú." Durante el raid de los Alimentadores de Cuervos mata a una guerrera que atacaba a Elvar — hacha al hombro. Recibe de Elvar un aro de brazo de plata con terminales en forma de lobo o perro como reconocimiento de amistad; lo acepta con los ojos brillantes y una inclinación de cabeza, sin palabras. Estado actual: junto a Elvar en Snakavik cuando Uspa revela su secreto a Agnar (ver nodo raid-raven-feeders). REVELACIÓN CLAVE: se niega inicialmente al blóð svarið con una frase cortante: «he hecho un juramento; no haré otro» — y mira la cicatriz blanca en su palma izquierda. Su juramento anterior es a la madre muerta de Elvar: fue su guardián antes que el de Elvar, y ese vínculo todavía lo rige. Finalmente cede cuando Elvar le dice que donde ella vaya él la seguirá — la lógica de su lealtad hace inevitable el sí. Declara: «lo haré solo por Elvar. Nada de esto me importa.» Lleva la marca roja del juramento en mano y muñeca (ver nodo juramento-sangre-brim)',
-        star: '★★★ ¿Qué le une a Störr? ¿Por qué protege a la hija del jarl en lugar de servirle a él? Su pasado en Snakavik es la pieza que falta. El aro de plata que Elvar le regala — rechazado como pago, aceptado como amistad — cierra algo que llevaba capítulos sin decirse.'
-    },
-    {
-        id: 'gudfall', label: 'Guðfalla (Caída de Dioses) [pron. Guthfalla]', group: 'EVENTO', type: 'Evento Histórico', desc: 'Hace ~300 años. Los hijos de Snaka entraron en guerra entre si. La guerra de los dioses rompió el mundo: continentes hundidos, mares desbordados. Los vaesen escaparon de su foso. El mundo nunca se recuperó. El Vackna sonó al alba; todos los dioses combatieron. Resultado: Berser perforado, Orna desgarrada, Ulfrir muerto, Lik-Rifa encadenada bajo Oskutreð, Snaka caído sobre el Monte Eldrafell. CAUSA VERDADERA (Uspa, ver nodo oath-stone-frost-isles): Rotta alimentó la paranoia de Lik-Rifa, que mató a la hija de Orna y Ulfrir (ver nodo gallows-wood). Orna encadenó a Lik-Rifa — eso detonó la guerra total. El Skáld Galinn recita la saga completa en el festín del Jarl Logur — Svin el Valiente, Tosk el Travieso, Rotta el Engañoso, Snaka cayendo sobre Eldrafell, los vaesen trepando desde el foso. Toda la sala queda paralizada; Varg siente que está de pie en la Llanura de Batalla. La saga se interrumpe cuando los mensajeros de Iskidan aporrean las puertas.',
-        star: '★★★ No fue una rebelión abstracta sino una venganza de sangre detonada por Rotta el Manipulador. La primera víctima: la hija sin nombre de Orna y Ulfrir. El blood-eagle nació como imitación del crimen de Lik-Rifa. Función narrativa dual de la saga de Galinn: cosmología completa + tensión dramática por la llegada de Jaromir.'
-    },
-    {
-        id: 'gudvarr', label: 'Guðvarr', group: 'ORKA', type: 'Personaje — Antagonista menor', desc: '[Pronunciación: "Guthvarr" — la ð suena como la "th" de "they".] Drengr, sobrino de Jarl Sigrún. Pelo negro aceitado, espada al cinto, gota permanente de moco. Vanidoso, arrogante, con algo de técnica pero sin experiencia real. Humillado en el holmganga contra Virk: hombro derecho seccionado, se rindió (ver nodo holmganga-event). Su insulto post-duelo provocó la muerte de Virk. Mord y Lif intentaron matarlo — los capturaron. Hombro aún vendado de la herida de Virk. Fue el primero en irrumpir en la cámara de Sigrún cuando Orka atacó. Orka le lanzó su seax para frenar la entrada y escapó por la ventana. Lo último visto: en el muelle gritando insultos y jurando venganza mientras la barca de Orka se alejaba.',
-        star: '★★ Sigue siendo niðing moral. La herida del hombro lo ha ralentizado pero no ha aprendido nada. Su juramento de venganza contra Orka desde el muelle lo convierte en perseguidor activo — aunque por ahora sin barca.'
-    },
-    {
-        id: 'guest-right', label: 'Derecho de Huésped', group: 'NORSE', type: 'Ley — Hospitalidad', desc: 'Obligación sagrada de proteger y alimentar a huéspedes bajo tu techo. Romperlo es deshonra grave, independientemente del rango del huésped o la relación entre las partes — la ley se aplica incluso a enemigos bajo custodia. En Vigríð se observa en el hall del Jarl Logur y en el trato a prisioneros durante el viaje a Snakavik (ver nodo llegada-snakavik). [Histórico: la hospitalidad (gestrisni) era ley sagrada nórdica. Matar a un huésped bajo tu techo era uno de los peores crímenes. Las sagas están llenas de traiciones que violan guest-right. Gwynne lo preserva como código social vigente.]',
-        star: 'Logur hospeda a Hermanos de Sangre — vínculo de protección mutua. Incluso prisioneros como Berak reciben comida: mínimo de humanidad requerido.'
-    },
-    {
-        id: 'haraldurson', label: 'Familia Haraldurson', group: 'TRAMA', type: 'Personaje — Víctimas', desc: 'Familia de Howbyr (10–12 leguas al norte de Fellur). Perdieron tres hijos (dos hijas y un hijo) en el mismo patrón de robos que el caso de Harek. Segundo caso confirmado del patrón que Virk está documentando.',
-        star: ''
-    },
-    {
-        id: 'harek', label: 'Harek (†?)', group: 'TRAMA', type: 'Personaje — Desaparecido', desc: 'Hijo de Asgrim e Idrun. Amigo de Breca. Desaparecido cuando sus padres fueron asesinados. Los asesinos huyeron en barcas por el río Skarpain.',
-        star: 'Primer eslabón del patrón de robos de niños.'
-    },
-    {
-        id: 'helka', label: 'Reina Helka', group: 'FACCION', type: 'Faccion — Poder politico', desc: 'Auto-proclamada reina de media Vigrið. Sede: Darl. Moneda propia. Fortaleza coronada con huesos de Orna. Rival: Jarl Storr. Emblema: aguila de alas extendidas, pico y garras en ataque (velas negras). Alta, pelo negro largo como alas de cuervo, recogido en la nuca y trenzado con hilos de oro. Capa roja prendida con broche de oro. Anillos de brazo que destellan bajo la capa. Espada con pomo, guarda y chapa de oro, funda con grabados ornamentales. Camina como guerrera. Hijo: Hakon (ver nodo hakon). Skald/Galdurman: Skalk (ver nodo skalk). Guardia personal: Ulfhednar con collares de thrall -- su manada de lobos (ver nodo ulfhednar). Mision asignada a los Bloodsworn: cazar algo en el norte que devora a su pueblo (ver nodo mision-helka-norte). Descripción física confirmada en persona: pelo negro largo trenzado con hilos de oro; capa roja sobre los hombros; anillos de brazo de oro; espada con pomo, guarda, chape y empuñadura envuelta en hilo de oro, funda con grabados ornamentales. Camina como guerrera. Llegó a Darl a bordo de tres drakkars gigantes de 70-80 remos cada uno, acompañada por su hijo Hákon y un enviado de Iskidan. La recibió guardia de honor que emergió de las calles para escoltar el cortejo a la fortaleza (ver nodo llegada-darl).',
-        star: '*** Primera aparicion directa en Liga. Resuelve la crisis Bloodsworn/Jaromir en segundos con solo su presencia. No viene a negociar -- viene a asignar misiones. Eso define su poder real frente al protocolo diplomatico.'
-    },
-    {
-        id: 'helka-poder', label: 'Expansión de Helka', group: 'TRAMA', type: 'Trama — Política', desc: 'Helka absorbe los dominios de los jarls menores. Sigrún juró. Störr es su rival al noroeste. Orka advierte en el Althing: habrá hird-offering (leva de guerreros). La guerra de Vigríð se acerca.',
-        star: 'El destino de Fellur está ligado al resultado de la guerra Helka-Störr.'
-    },
-    {
-        id: 'hird', label: 'Hird (Séquito)', group: 'NORSE', type: 'Institución — Militar', desc: 'Guardia personal y compañeros de armas de un jarl o señor. Vínculo de lealtad mutua: el señor da protección y riqueza, el Hird da servicio militar. Orl es Hird de Leif. Los jarls tienen su propio Hird. Orka advierte en el Althing sobre "hird-offering" (leva militar obligatoria). [Histórico: el hirð era la guardia personal del rey/jarl nórdico. Vivían en su hall, comían en su mesa, luchaban a su lado. Vínculo más fuerte que simple empleo: hermandad de armas. Gwynne lo preserva como institución militar básica de Vigríð.]',
-        star: '★ Orl es Hird de Leif — lealtad personal que sobrevive la muerte de Snepil. El "hird-offering" que Orka menciona es conscripción forzada: Helka exigirá guerreros a los jarls sometidos.'
-    },
-    {
-        id: 'hird-offering', label: 'Hird-offering (Leva Militar)', group: 'NORSE', type: 'Ley — Conscripción', desc: 'Leva militar obligatoria. Los jarls deben proporcionar guerreros a su señor superior en tiempos de guerra. Obligación que activa la cadena de vasallaje: un jarl que jura lealtad a una reina debe proveer hombres cuando se le exija. Su activación implica que el señor superior está en pie de guerra (ver nodo helka-poder y nodo sigrun). [Histórico: el leiðangr era el sistema de leva naval/militar escandinavo. Cada región debía proporcionar barcos y hombres según su tamaño. Gwynne lo adapta como "hird-offering": tributo de guerreros que los jarls vasallos deben a su reina.]',
-        star: '★★★ Orka advierte que esto viene — Fellur perderá sus hombres a la guerra de Helka. Impacto directo en familias: padres, hijos, esposos conscriptados.'
-    },
-    {
-        id: 'hjalmar', label: 'Hjálmr (Yelmo)', group: 'NORSE', type: 'Armadura — Cabeza', desc: 'Yelmo de hierro. Diseños: cónico simple, con protección nasal, con protección facial completa (más raro). Muy caro: solo élite guerrera. La mayoría luchaba sin yelmo o con gorro de cuero. [Histórico: los yelmos vikingos eran raros y caros. NO tenían cuernos (mito moderno). Diseño cónico para desviar golpes. Encontrados en tumbas de élite. Gwynne probablemente los reserva para jarls y campeones.]',
-        star: 'Glornir lleva yelmo al salir de Liga. Varg compra yelmo de cuatro placas. Sigrún y Agnar probablemente también los usan.'
-    },
-    {
-        id: 'holmganga', label: 'Holmganga', group: 'NORSE', type: 'Ritual — Duelo', desc: 'Duelo legal para resolver disputas de honor, herencias o insultos. Se realiza en isla (hólmr) o terreno delimitado. Código estricto: cuadrado marcado con varas de avellano; un pie fuera = rendición; dos pies fuera = huida; tres escudos destruidos = derrota; se puede pactar primera herida, rendición o muerte. Atacar tras rendición rompe el código y justifica ejecución inmediata (ver nodo holmganga-event para caso Virk vs Guðvarr). [Histórico: el hólmganga era un duelo formal nórdico. El espacio sagrado (vǫllr) estaba delimitado. Las reglas eran precisas y documentadas en sagas — romperlas era deshonra absoluta. Gwynne lo preserva como institución legal vigente en Vigríð: las reglas son ley, no sugerencia.]',
-        star: '★★ Las leyes del holmganga están por encima de la victoria: el honor importa más que ganar. Las leyes nórdicas antiguas siguen vivas en Vigríð — romperlas tiene consecuencias letales.'
-    },
-    {
-        id: 'holmganga-event', label: 'Holmganga Virk vs Guðvarr', group: 'EVENTO', type: 'Evento', desc: 'Guðvarr reta a duelo a Virk. Virk acepta y gano el duelo: le hundio el hacha en el hombro a Gudvarr, seccionandole los musculos. Gudvarr se rindio. Pero Virk alzo el arma para matar tras la rendicion, violando las reglas del holmganga. La thrall-guerrera de Sigrun intervino y lo mato con dos seaxes en frenesí bestial, mordiendole la cara. Sigrun justifico la muerte: Virk rompio las reglas, la justicia esta hecha. Mord y Lif (hijos de Virk) exigieron justicia y no la obtuvieron. Thorkel recibio un corte de seax de la thrall.',
-        star: '*** Virk murio. Sus hijos presenciaron todo. Sigrun justifico legalmente la muerte. La thrall desbordó el control y mordio el cadaver -- Sigrun misma parece incomoda. Thorkel fue herido: la thrall lo identifico como objetivo? Ver nodo vafri.'
-    },
-    {
-        id: 'howbyr', label: 'Howbyr', group: 'LUGAR', type: 'Lugar — Villa', desc: 'Villa a 10–12 leguas al norte de Fellur. Domicilio de los Haraldurson, que perdieron tres hijos. Segundo nodo confirmado del patrón geográfico de robos.',
-        star: ''
-    },
-    {
-        id: 'hueso-dios-fellur', label: 'Nudillo de Dios (Fellur)', group: 'VAESEN', type: 'Objeto Mágico — Reliquia', desc: 'Nudillo de un dios muerto clavado en el travesaño de la puerta de Fellur. Mantiene los vaesen fuera del pueblo. Breca reaccionó visiblemente al pasar junto a él.',
-        star: '★★ La reacción de Breca al hueso de dios es una de las señales más tempranas de su posible sangre Tainted. Un niño normal no debería sentir nada.'
-    },
-    {
-        id: 'hundur', label: 'Hundur (Thrall)', group: 'ELVAR', type: 'Personaje — Thrall Tainted', desc: 'Thrall de Terrores de la batalla con olfato sobrehumano de sabueso. Camina encorvado con ojos hundidos como pozos negros. Controlado por Sighvat con cadena de hierro. Fue clave para rastrear a Berak en Iskalt. Elvar confirma su linaje: sangre del dios-sabueso Hundur. Capacidades olfativas que van más allá de lo físico — detecta "sangre derramada y juramentos" en la piedra (ver nodo oath-stone-frost-isles).',
-        star: '★★ Su amo es Sighvat — ¿seguirá siendo así toda la historia? Nótese la ironía: un sabueso-dios rastreando a sus propios parientes Tainted.'
-    },
-    {
-        id: 'idrun', label: 'Idrun (†)', group: 'ORKA', type: 'Personaje — Muerta', desc: 'Esposa de Asgrim. Asesinada en el ataque a su steading (ver nodo asgrim-death). La brutalidad del acto sugiere un mensaje deliberado o una ejecución ritual. Su hijo Harek desapareció.',
-        star: '★ La forma de su muerte podría ser un rito, no solo un asesinato. ¿A qué tradición pertenece?'
-    },
-    {
-        id: 'iskalt', label: 'Isla de Iskalt', group: 'LUGAR', type: 'Lugar — Isla', desc: 'Isla volcánica al norte con montaña de fuego y venas de lava. Clima ártico extremo. Villa de pescadores en la costa. Los terremotos aquí son atribuidos a Lik-Rifa forcejeando bajo el Árbol de Ceniza. Lugar donde Uspa destruyó la Graskinna arrojándola a la laguna de lava mientras Berak combatía al trol — el acto que Elvar presenció sin comprender en el momento (ver nodo graskinna).',
-        star: 'El volcán tiembla. Lik-Rifa está activa.'
-    },
-    {
-        id: 'iskidan', label: 'Iskidan', group: 'LUGAR', type: 'Lugar — Imperio Lejano', desc: 'Imperio lejano al sur/este, gobernado por el Gran Khagan Kirill desde Gravka. El Príncipe Jaromir llega a Liga con su guardia druzhina reclamando a Sulich. Sistema político de Khagan/príncipes — no jarls. Para el equipo y aspecto de sus guerreros, ver nodo druzhina. [Geopolítica: Iskidan representa la mayor potencia exterior a Vigríð — su presencia directa en Liga es un escalada sin precedentes. Gwynne lo usa para señalar que el mundo más allá de Vigríð está empezando a interesarse por lo que ocurre en el norte.]',
-        star: '★★ Iskidan ya no es solo rumor — sus guerreros están en Liga. El sistema de poder (Khagan → príncipes → druzhina) es radicalmente distinto al sistema jarl nórdico de Vigríð.'
-    },
-    {
-        id: 'islas-hielo', label: 'Islas del Hielo', group: 'LUGAR', type: 'Lugar — Ártico', desc: 'Al norte de Iskalt. En primavera el hielo se rompe y deriva hacia el sur, afectando la navegación. Hogar de las Arañas del Hielo y vaesen del ártico. Frontera natural del mundo conocido.',
-        star: ''
-    },
-    {
-        id: 'jarl', label: 'Jarl (Noble)', group: 'NORSE', type: 'Clase Social', desc: '[Pronunciación: "Yarl" — la j suena como la "y" de "yellow".] Noble, señor de tierras. Controla villas, recauda tributos, administra justicia. Sigrún (Fellur), Störr (Snakavik), Logur (Liga). Por encima: reinas como Helka. [Histórico: jarl era título de nobleza escandinava, equivalente a conde. Gwynne los convierte en señores feudales de Vigríð, compitiendo por poder en la era post-Guðfalla.]',
-        star: 'Los jarls son el tablero político de Vigríð. Helka los está unificando bajo su corona.'
-    },
-    {
-        id: 'jarl-hrut', label: 'Jarl Hrut (†)', group: 'ELVAR', type: 'Personaje — Muerto', desc: 'Barba trenzada múltiples veces con anillos de hueso. Vestido en pieles y piel de foca. Empuñadura de cuchillo tallada en marfil de morsa. Asesinado sin dudar por Agnar cuando se interpuso al desembarco de Terrores de la batalla.',
-        star: ''
-    },
-    {
-        id: 'jarl-logur', label: 'Jarl Logur', group: 'FACCION', type: 'Personaje — Politica', desc: 'Jarl de Liga. Sus escudos son azules y sus velas rojas. Barriludo, cabello gris trenzado con hilo de oro, oro en cuello y brazos. Hombre que rie mucho. Viejo amigo de Sergei el mercader. Sienta a Glornir a su izquierda en la mesa de honor. Estado actual: mantuvo la neutralidad entre Glornir y Jaromir apelando a la ley (ver nodo sulich-crisis). Liga ahora es el escenario de la llegada de Helka (ver nodo llegada-helka). Su esposa es Salla.',
-        star: '* Equilibrista politico: no desafia a Jaromir abiertamente pero tampoco traiciona a los Hermanos. La hospitalidad es genuina, no diplomatica.'
-    },
-    {
-        id: 'jarl-orlyg', label: 'Jarl Orlyg', group: 'ORKA', type: 'Personaje — Política', desc: 'Jarl de Svelgarth, al este de Vigríð. Presente en el contexto político del Althing. Otro jarl menor cuya posición ante la expansión de Helka y Störr está por definirse.',
-        star: ''
-    },
-    {
-        id: 'jokul', label: 'Jökul Mano-Martillo', group: 'VARG', type: 'Personaje — Hermanos', desc: 'Herrero de los Hermanos de Sangre. Apodo: Mano-Martillo. Ancho de cintura, sentado cerca de Svik y Røkia (lugar de honor). Torvik lo describe como "el mejor herrero de todo Vigríð" — y también el más rápido, para mantener el equipo de la compañía en campaña. Forjó el armring de plata y bronce de Torvik (dos cabezas de sabueso en los terminales) — pieza de belleza y valor excepcionales. También forjó la protección de hierro en la entrepierna de Einar Medio-Trol. En la granja abandonada del Slågen, capturó los dos ponies sueltos con manzanas y los aparejó con arreos encontrados en el establo; los cargó con barriles de provisiones y equipo de la compañía para el avance a pie hacia las Boneback.',
-        star: '★ Su habilidad va más allá de la utilidad — crea arte. El armring de Torvik vale más que todo lo que Varg ganó en el ring de boxeo.'
-    },
-    {
-        id: 'karl', label: 'Karl (Hombre Libre)', group: 'NORSE', type: 'Clase Social', desc: 'Hombre libre. Granjeros, artesanos, comerciantes. Pueden portar armas, poseer tierra, hablar en el Althing. Orka y Thorkel viven como karls en las colinas. [Histórico: los karlar eran la clase media nórdica: libres pero no nobles. Gwynne preserva la estructura social tripartita (thrall-karl-jarl) como base de Vigríð.]',
-        star: 'Orka y Thorkel eligieron vida de karls aislados tras dejar su pasado. Libertad comprada con sangre.'
-    },
-    {
-        id: 'karvi', label: 'Karvi', group: 'NORSE', type: 'Embarcación — Versátil', desc: 'Barco mediano (13-16 pares de remos). Más pequeño que drakkar, más grande que faering. Versátil: guerra costera, comercio regional, transporte. El "todoterreno" nórdico. [Histórico: el karvi era el barco más común en Escandinavia. Suficientemente grande para travesías costeras pero lo bastante pequeño para ser manejado por tripulaciones modestas. Ideal para jarls menores y comerciantes prósperos.]',
-        star: 'Probable embarcación de jarls menores como Sigrún para patrullar fiordos y cobrar tributos.'
-    },
-    {
-        id: 'kennings', label: 'Kennings / Epítetos', group: 'NORSE', type: 'Lenguaje — Poético', desc: 'Nombres poéticos descriptivos. Glornir: "Rompe-Escudos" (Røkia), "Dador-de-Oro" (él mismo), "Robador-de-Almas" (Svik), "Cortador-Golpeador-Aplastador" (Einar). Einar "Medio-Trol". Svik "Pelo-Enredado" (irónico). Jökul "Mano-Martillo". Varg "Sin-Sentido" (Varg No-Sense — por morder a Einar). Los epítetos describen hazañas, características, o son irónicos. [Histórico: los kennings eran metáforas poéticas nórdicas complejas ("camino de la ballena" = mar). Los epítetos (viðrnefni) eran más simples: apodos descriptivos. Gwynne los usa para caracterización rápida.]',
-        star: '★ Glornir acumula al menos 4 kennings distintos, cada compañero lo ve diferente. Varg recibe su primer apodo: "Sin-Sentido". Los kennings son identidad en Vigríð.'
-    },
-    {
-        id: 'kergarth', label: 'Kergarth', group: 'LUGAR', type: 'Lugar — Villa', desc: 'Villa a 6 leguas al este de Fellur. Una familia entera fue asesinada y sus hijos desaparecieron. Tercer caso conocido del patrón de robos. El patrón se extiende por un radio de al menos 12 leguas.',
-        star: '★ Los tres casos (Fellur, Howbyr, Kergarth) forman un triángulo geográfico. ¿Hacia dónde convergen?'
-    },
-    {
-        id: 'knarr', label: 'Knarr', group: 'NORSE', type: 'Embarcación — Comercio', desc: 'Barco mercante robusto. Más ancho y profundo que el drakkar, diseñado para carga (hasta 24 toneladas). Menos remos, más dependiente de vela. Travesías largas: comercio, colonización, transporte de ganado. Tripulación pequeña (10-15). [Histórico: el knarr era el caballo de batalla del comercio nórdico. Cruzaba el Atlántico Norte llevando colonos a Islandia, Groenlandia y Vinland. Más lento que el drakkar pero mucho más práctico para comercio. Gwynne probablemente los usa para el comercio entre ciudades de Vigríð.]',
-        star: 'Aún no aparece knarr nombrado explícitamente en la narrativa, pero el comercio entre Liga, Fellur y otras ciudades requiere este tipo de barco.'
-    },
-    {
-        id: 'kraka', label: 'Kráka', group: 'ELVAR', type: 'Personaje — Thrall Tainted', desc: 'Thrall Tainted de Terrores de la batalla. Cabello negro como un cuervo, tatuajes azules en mandibula y garganta (similar a Vol), cara gris agotada. Canta magia Seiðr para proteger el casco de serpientes marinas. El canto la destruye fisicamente. Maltratada por los guardias. Agnar le dio un asta de trol como fuente de poder. Reacciona con reconocimiento (no asombro) ante la piedra de juramento (ver nodo oath-stone-frost-isles). Confirma a Agnar que todos los Tainted saben que Oskutreð es real: «el Guðfalla es como una canción en nuestra sangre.» Reacciona con emoción contenida — excitación visible en el temblor de su cuerpo — cuando se menciona la Graskinna. Actuó como traductora de las palabras de poder del blóð svarið del nórdico antiguo. Lleva la marca roja del juramento en mano y muñeca (ver nodo juramento-sangre-brim).',
-        star: '★ Para los Tainted de sangre Snaka, ver la historia de su padre grabada en piedra tiene un peso diferente. Su reaccion reverencial contrasta con el asombro de los humanos.'
-    },
-    {
-        id: 'langsoex', label: 'Langsax / Espada', group: 'NORSE', type: 'Arma — Espada', desc: 'Espada de doble filo, 70-90cm. Arma de estatus: cara de forjar, se heredan, tienen nombres. Guðvarr lleva espada al cinto (símbolo de su rango). Svik lleva espada. Sulich usa espada curva de un filo (estilo Iskidan). [Histórico: las espadas vikingas eran objetos de prestigio. Acero de patrón soldado, empuñaduras decoradas, nombres propios ("Mordedora de Piernas", "Rompehielos"). Solo guerreros ricos las poseían. Gwynne las reserva para personajes de élite.]',
-        star: 'Guðvarr lleva espada pero no sabe usarla bien. Contraste con guerreros reales como Glornir. La espada curva del guerrero oscuro confirma origen extranjero.'
-    },
-    {
-        id: 'leif', label: 'Leif Kolskeggson', group: 'VARG', type: 'Personaje — Antagonista', desc: 'Hijo de Snepil Kolskegg. Cicatriz en el labio. Quiso esclavizar a Varg y amputarle la mano como castigo. Derrotado por los Hermanos. Se revela que hirió a Varg con una lanza antes de huir.',
-        star: '¿Volverá Leif con más recursos? Tiene motivo de venganza y a Orl como Hird leal.'
-    },
-    {
-        id: 'liga', label: 'Liga', group: 'LUGAR', type: 'Lugar — Ciudad Puerto', desc: 'Ciudad mercado y puerto al pie del fiordo. Sala del Jarl Logur en la colina. Plaza de combate donde Varg lucho contra Einar. Mercado con vaesen disecados, marfil, moneda Helka. Escenario de la batalla entre Hermanos y druzhina (ver nodo batalla-muelles) y la llegada de Helka (ver nodo llegada-helka). Liga es ahora cruce de tres poderes: Logur, Jaromir, Helka.',
-        star: '*** Liga pasa de puerto tranquilo a punto de convergencia de poderes. La llegada de Helka aqui -- no en Darl -- tiene implicaciones politicas enormes.'
-    },
-    {
-        id: 'lik-rifa-amenaza', label: 'Lik-Rifa Despertando', group: 'TRAMA', type: 'Trama — Cósmica', desc: 'Los terremotos de Iskalt y las venas de lava parpadeando sugieren que la diosa-dragón Lik-Rifa no está muerta, sino activa bajo el Árbol de Ceniza. Grend lo afirma; Elvar es escéptica.',
-        star: '★★★ Si Lik-Rifa rompe sus cadenas, todo cambia. ¿Alguien la está ayudando a escapar?'
-    },
-    {
-        id: 'likrafa', label: 'Lik-Rifa (Diosa-Dragon)', group: 'DIOS', type: 'Dios — Viva (Encadenada)', desc: 'La diosa-dragon, hija de Snaka. NO murio en el Gudfalla: fue encadenada bajo Oskutreð, el Arbol de Ceniza. Su causa en el Gudfalla: mato a la hija de Orna por paranoia alimentada por Rotta; creo los vaesen en secreto. Sus descendientes Tainted (dragon-born) fueron considerados extintos hasta su confirmacion definitiva (ver nodo dragon-born). Al menos uno opera activamente en Vigrið, trabajando para Drekr en el rapto de ninos.',
-        star: '*** Los dragon-born son REALES. La pregunta ahora es: cuantos hay, quien es el que trabaja con Drekr, y que relacion tienen con Lik-Rifa encadenada bajo Oskutreð. ¿Es la red de Drekr una operacion para beneficiar a Lik-Rifa de alguna forma?'
-    },
-    {
-        id: 'mead-hall', label: 'Mead Hall / Longhouse', group: 'NORSE', type: 'Vida Diaria — Arquitectura', desc: 'Centro social y político. Sala larga con hogar central, bancos a los lados. El jarl preside desde el asiento alto. Aquí se festeja, se distribuyen recompensas, se toman decisiones. Fellur tiene longhouse central. Jarl Logur hospeda a Hermanos de Sangre en su sala. [Histórico: el hall (hǫll) era corazón de la comunidad nórdica. Símbolo de poder del jarl. Quemar el hall de un enemigo era insulto máximo. Gwynne los preserva como centros de poder político.]',
-        star: 'La sala de Logur es donde Varg es juzgado. El longhouse de Fellur es donde Sigrún gobierna.'
-    },
-    {
-        id: 'mord-lif', label: 'Mord y Lif', group: 'ORKA', type: 'Personaje — Huerfanos', desc: 'Hijos de Virk. Mord mayor, Lif menor. Quedaron huérfanos tras la muerte de su padre (ver nodo holmganga-event). Sigrún desestimó su reclamo de justicia. Construyeron el túmulo de Virk (ver nodo barrow-virk). Regresaron al Althing e intentaron matar a Guðvarr — fracasaron. Capturados por Sigrún, estacados en el patio del mead hall, aguardando juicio: proscripción o ejecución. Liberados en plena noche por Orka (ver nodo raid-camara-sigrun). Físico: Lif es de pelo negro como cuervo, alto como su padre pero esbelto y ágil donde Virk era compacto; barba escasa y piel pálida que delatan unos diecisiete o dieciocho inviernos. Mord es rubio, de cara ancha y complexión maciza —más parecido a Virk—, con una densa barba en la barbilla; lleva vendaje en la cabeza por un golpe recibido al ser capturado. Ambos gobiernan su propia barca de pesca. Tras la huida y el campamento bajo un sauce junto al río, revelaron su intención: matar a Guðvarr y a la thrall de Sigrún. Orka les aconsejó esperar a que la calma vuelva a Fellur antes de actuar. Lif propuso un acuerdo: remar a Orka hasta Darl a cambio de instrucción en armas (ver nodo fuga-fiordo). Mord se opuso, pero Lif fue el artífice del pacto. Estado actual: segundo día de travesía río arriba en red de arroyos menores. Lif rema junto a Orka; Mord construía una trampa de mimbre en la popa. Al cruzar rápidos con un Näcken emboscado, Mord cayó al agua — mordido en el hombro y arrastrado al fondo. Orka saltó, usó Seiðr e hirió al Näcken; Lif llevó la barca a orilla y tendió la lanza para sacar a Orka. Mord: herido en el hombro, pálido y conmocionado tras el Näcken. El hombro sanó bien durante el viaje; la cicatriz roja de la cabeza se cerró. Estado actual: en Darl, libres, con algo de coin dado por Orka — quien insistió en que se lo habían ganado remándola y aprendiéndola. El trato fue honrado y cerrado (ver nodo despedida-mord-lif). Durante los ~15 días de travesía Orka los entrenó en combate a diario (ver nodo viaje-darl). Recibieron su consejo final: esperar, ganar coin, alejarse de Darl, dejar pasar el tiempo y en el momento elegido poner acero en Guðvarr. La decisión y la venganza son suyas. NO OBEDECIERON EL CONSEJO: en lugar de marcharse de Darl, Mord y Lif obtuvieron caballos y siguieron a Orka a través de la ciudad. Cuando Drekr rodeó a Orka con sus hombres en la calle frente a El Drengr Muerto, los hermanos irrumpieron a caballo: Lif lanzó a un guardia de un tajo desde la silla, Mord derribó al otro con el caballo. Lif agarró a Orka por el cuello de la cota de malla y la arrastró mientras el caballo avanzaba; Orka saltó y se montó detrás de él. Ambos huyeron con Orka por las callejuelas de Darl. Acción: salvaron la vida de Orka. Estado actual: huidos de Darl a caballo junto a Orka.',
-        star: '★★ Pasaron del duelo pasivo a la acción directa. El intento de matar a Guðvarr los habría costado la vida; Orka los salvó recordando las palabras de Breca. Su deuda con Orka y la memoria de su padre los lleva ahora a mar abierto.'
-    },
-    {
-        id: 'uspa', label: 'Uspa', group: 'ELVAR', type: 'Personaje — Tainted (Snaka)', desc: 'Rubia, ojos gris-azul pálido. Tatuajes espirales bajo la ropa. Arrojó un objeto al lago de lava antes de ser capturada. Controló la serpiente marina con canto Seiðr. Sangre de Snaka. Activa la piedra de juramento con su sangre (ver nodo oath-stone-frost-isles). Sabe la causa verdadera de la guerra de los dioses cuando nadie más la conoce. Cuando Elvar afirma que los dragon-born son un cuento de hadas, Uspa escupe sin decir una palabra. Pide a Elvar con urgencia visible «tenemos que salir de Snakavik» — dos veces, con ojos y fosas nasales dilatados de miedo. Elvar le señala que quedarse cerca significa al menos poder ver a Berak ocasionalmente; Uspa insiste de todos modos. En el segundo encuentro, espera a Elvar en la puerta de la taberna con la capucha puesta y a Thrud vigilándola desde las sombras; reitera la urgencia pero se niega a explicar la razón hasta que Elvar esté sobria. Su miedo a Snakavik supera incluso el deseo de estar cerca de Berak. Razón no declarada — algo en Snakavik, Störr, Silrið o Hrung la pone en peligro directo. Durante el raid de los Alimentadores de Cuervos, quedó inconsciente y fue golpeada en la mandíbula; a su alrededor aparecieron cuatro o cinco cadáveres de Raven-Feeders con la carne del rostro y las manos carbonizada y ennegrecida — calor que todavía irradiaba al ser encontrados. Kráka y Elvar la incorporaron al despertar. Al enterarse del secuestro de Bjarn lanzó un alarido y se arañó la cara con las uñas hasta sangrar. Reveló la verdad a Agnar: los Raven-Feeders no querían a Bjarn sino a ella — Bjarn era solo la palanca. Cuando Agnar le pregunta por qué arriesgarían tanto, Uspa negocia: su secreto a cambio de que Agnar recupere a su hijo. El secreto que susurra al oído de Agnar es de tal magnitud que él retrocede de golpe, convencido de que miente — hasta que ve sus ojos. Estado actual: en manos de los Terrores de la batalla en Snakavik; Bjarn secuestrado por Ilska; portadora del único conocimiento que puede cambiar el destino de Vigríð (ver nodo raid-raven-feeders, ver nodo oskutred).',
-        star: '★★★ El miedo de Uspa a Snakavik es más intenso que su amor por Berak. Algo en este lugar la aterra con una urgencia que va más allá de ser thrall en poder de Agnar. ¿Teme que Störr reconozca su sangre de Snaka como la más valiosa de todas las Tainted que ha comprado? ¿O sabe que Hrung puede revelar algo sobre ella que no quiere revelar?'
-    },
-    {
-        id: 'nacken', label: 'Näcken', group: 'VAESEN', type: 'Vaesen — Agua',
-        desc: 'Vaesen de ríos y corrientes de montaña. Apariencia: cuerpo de hombre, pelo flotante como manojos de cañas en descomposición, ojos oscuros con destellos de jade, boca y mandíbula desproporcionadamente grandes con hileras de dientes finos como agujas, brazos gruesos y resbaladizos cubiertos de limo verde, cuerpo estriado rodeado de una aureola de aceite negro que se enrosca como humo. Comportamiento: lura a sus presas con una melodía hipnótica que se filtra a través del sonido del agua — dulce, helada, nostálgica; quien la escucha queda paralizado en mitad del movimiento, inmerso en recuerdos dichosos, incapaz de reaccionar. El efecto cesa al sumergirse en el agua fría. Lair: nido de huesos de elk, oso, lobo y humanos en el lecho del río, coronado por una gran lira de cuerdas de tripa putrefacta con la que genera su música. Ataque: arrastra víctimas al fondo, las estrangula con los brazos y las muerde en el hombro. Debilidades: el hierro les repele con fuerza — sienten su presencia a través de la tierra y el agua (clavar un seax o una lanza de hierro en la orilla mantiene al Näcken alejado); las palabras de poder Seiðr aplicadas al filo causan heridas que no sanan con facilidad. Fórmulas confirmadas en combate: «Járn og stál, skorið og brennt» (hierro y acero, cortado y quemado) y «Skörp járn brenna og bíta» (hierro afilado que arde y muerde). [Histórico: el Näcken o Nøkk de la mitología escandinava es un espíritu masculino del agua que toca el violín o la lira para atraer víctimas, especialmente mujeres y niños, hacia el ahogamiento. Gwynne preserva la música como arma y añade la vulnerabilidad al hierro como ley física.]',
-        star: '★★ El Näcken en la novela deja de ser advertencia y se convierte en combate real. La melodía hipnótica es su arma principal — y el agua fría su antídoto. Que Orka recuerde las palabras exactas mid-combate, bajo el agua y con los pulmones ardiendo, dice más de su entrenamiento que cualquier descripción directa.'
-    },
-    {
-        id: 'niding', label: 'Níðing', group: 'NORSE', type: 'Concepto — Deshonra', desc: '[Pronunciación: "Nithing" — la ð suena como la "th" de "they".] El peor insulto en la cultura nórdica: cobarde sin honor. Ser níðing es estar socialmente muerto. [Histórico: níð era la deshonra absoluta en la sociedad nórdica. Acusar a alguien de níðing (cobardía, homosexualidad pasiva, falta de honor) podía justificar violencia legal. Gwynne lo usa como detonante de conflicto (ver nodo holmganga-event para caso Guðvarr/Virk).]',
-        star: '★★ Guðvarr usó la palabra como arma tras perder. Virk prefirió morir antes que aceptar el insulto.'
-    },
-    {
-        id: 'ninos-robados', label: 'Robos de Ninos', group: 'TRAMA', type: 'Trama — Abierta (Urgente)', desc: 'Patron organizado bajo el mando de Drekr. Casos conocidos: Harek (colinas de Fellur), 3 hijos de los Haraldurson (Howbyr), familia de Kergarth, y ahora BRECA. Modus operandi: quemar galdr-runas (Galdurman), atacar con fuerza mixta (humanos + vaesen + skraelings + Tainted), huir en botes por rios. Los tennur de Drekr buscaban ESPECIFICAMENTE a Breca -- no fue captura oportunista. Esto sugiere que Drekr sabe que Breca tiene sangre Tainted. OPERACIÓN ACTIVA EN DARL: los niños se mantienen en El Drengr Muerto y se transportan por los canales de la ciudad en barcas cubiertas. Hay al menos dos tandas confirmadas: una ya movida (destino desconocido) y otra liberada por Orka. Breca no estaba entre los liberados — sigue en paradero desconocido (ver nodo rescate-ninos-canal). Los niños liberados no saben por qué los quieren: el chico mayor (12-13 inviernos, pelo rizado oscuro) dice que nadie se lo explicó. CONDICIONES DE CAUTIVERIO CONFIRMADAS: los niños eran mantenidos en el desván de El Drengr Muerto — una habitación sin ventanas con ~20 colchonetas de junco y olor penetrante a orina y excrementos. Breca estuvo entre ellos: su colgante de espada fue encontrado allí con el cordón roto (ver nodo colgante-espada). Tanda previa ya trasladada: destino final desconocido.',
-        star: '*** Los tennur iban a por Breca con intencion. ¿Como sabe Drekr quienes son los Tainted en la region? ¿Tiene informadores? ¿O el dragon-born puede detectar sangre divina?'
-    },
-    {
-        id: 'oath-stone-fellur', label: 'Roca del Juramento de Fellur', group: 'OBJETO', type: 'Objeto — Althing', desc: 'Islote en el fiordo de Fellur. Monolito de runas destruido a martillazos (adorar a los dioses es ilegal). Aquí se celebra el Althing de Fellur.',
-        star: ''
-    },
-    {
-        id: 'oath-stone-frost-isles', label: 'Roca de Juramento de Islas de Escarcha', group: 'OBJETO', type: 'Objeto Mágico — Reliquia', desc: 'Monolito de granito cubierto de musgo y líquenes, tan alto y ancho como un mead hall. Grabada con runas e imágenes de la cosmología de Vigríð. Activada mediante sangre de un Tainted: la sangre corre por la roca, se ilumina como metal fundido, quema el musgo y revela el tapiz completo grabado. Las imágenes muestran el Guðfalla: Lik-Rifa enjaulada, Ulfrir encadenado, el Bosque de las Horcas, los dioses en guerra, Snaka enrollada sobre todos. Huele a "sangre derramada y juramentos" según Hundur. única piedra de juramento que sobrevivió a la destrucción sistemática (los demás fueron destruidos por mandato post-Guðfalla). Ubicada en la meseta más al sur de las Islas de la Escarcha. [Histórico: las piedras de juramento (vé-steinn) eran lugares sagrados nórdicos donde se juraban alianzas. La destrucción sistemática de estas piedras es el equivalente de borrar la historia religiosa del mundo.]',
-        star: '★★★ Es un archivo de la historia del mundo, activable solo con sangre Tainted. Su supervivencia es casi un milagro. La luz que emite puede atraer vaesen. ¿Existen otras piedras ocultas en lugares remotos?'
-    },
-    {
-        id: 'orka', label: 'Orka', group: 'ORKA', type: 'POV — Personaje', desc: 'Mujer alta y rubia, ojos gris-verde. Exguerrera de alto rango con pasado enterrado (ver nodo cofre-enterrado). Flashbacks violentos, episodios de rabia cegadora. Padre violento en la infancia. Vínculo de sangre con Spert. Infiltró Fellur de noche, liberó a Mord y Lif, mató al guardia que los custodiaba, penetró en la cámara de Sigrún (ver nodo raid-camara-sigrun). Obtuvo la inteligencia clave: la red de espionaje la comandaba Hákon (hijo de Helka), y el receptor de los informes era Drekr. Mató a Vafri (ver nodo vafri). Hirió gravemente a Sigrún. Lleva al cinto tres seaxes: dos de Thorkel (ver nodo seaxes-tainted) y uno arrebatado a Vafri moribunda, con knotwork de cabezas de lobo en el asta — marca del Úlfhéðnar. Cara cubierta de sangre costrosa de la mujer que mató en la orilla. Engañó la persecución de Guðvarr remando en círculo por el fiordo antes de esconderse en cañaverales al amanecer. Ha sellado un pacto con Mord y Lif (ver nodo fuga-fiordo): ellos la remanran hasta Darl; ella les enseñará combate. Dos días de remar desde Fellur, ha cambiado al laberinto de ríos y arroyos menores para evitar las snekkes de Sigrún. Rumiando sin descanso las palabras de Thorkel agonizante — «uno era dragon-born, semilla de Lik-Rifa» — sin poder descartarlas ni confirmarlas, y los motivos del rapto de Breca. Primera aplicación activa de fórmulas Seiðr en combate real: «Járn og stál, skorið og brennt» y «Skörp járn brenna og bíta» contra el Näcken del río, con efecto confirmado. Conoce la debilidad del hierro contra los Näcken y la aplica de inmediato (seax y lanza clavados en la orilla). Estado actual: en Darl, en la antesala de El Drengr Muerto. Pasó ~un día visitando once tabernas buscando a Drekr — siempre recibida con silencio, miedo y órdenes de marcharse. Se ha deshecho de la lanza (la dejó en su habitación alquilada para pasar más desapercibida) y del saco de viaje; lleva encima: brynja bajo capa, dos seaxes al cinto y en la espalda, hacha de mano — aunque perdió esta última en el canal al matar a Bersi (ver nodo rescate-ninos-canal). Lleva capa nueva de lana gris con espiguilla y capucha de sarga marrón: disfraz que cubre las armas y le echa la cara en sombras. Sigue llevando el gorro de nålbinding de Thorkel debajo. Siguió a un hombre quemado hasta El Drengr Muerto; rodeó el edificio por calles laterales; mató a dos guardianes de Drekr en el canal trasero; liberó a ~8 niños capturados (ninguno es Breca); supo por los propios niños que Drekr está dentro de la taberna y que hubo una tanda previa de niños ya trasladada. El exterior de El Drengr Muerto está vigilado por dos matones y al menos una drengr de Helka — lo que confirma el vínculo entre Drekr y la corona (ver nodo rescate-ninos-canal, ver nodo dead-drengr). COMBATE EN EL DRENGR MUERTO (ver nodo combate-dead-drengr): encontró el colgante de espada de Breca en las cañas del desván — prueba física de que estuvo allí; lo lleva ahora en la bolsa del cinturón. Mató a una guardia femenina al entrar, al drengr de Hákon en combate, y herio a varios más. Identificó a Hákon en persona — estaba reunido con Drekr con capucha y broche de ala de águila. Luchó mano a mano con Drekr: le hizo heridas pero también las recibió (tajo en la pierna, golpe en la espalda que rompió anillas de la brynja, corte en el antebrazo). Bajo la llave de hacha de Drekr al cuello, cuando ya perdía el conocimiento, experimentó algo primal y sin nombre: la sangre se heló y ardió a la vez, los sentidos se agudizaron, la fuerza regresó de golpe — posible manifestación de sangre Tainted (ver nodo orka-poder-oculto). Arrancó la presa de Drekr rompiendo un dedo de su mano. Oyó la revelación más importante del viaje: «tu hijo cambiará el mundo» — Drekr sabe algo sobre Breca que Orka aún no comprende del todo. Escapó en caballo con Mord y Lif, que no obedecieron su consejo de marcharse y en cambio la siguieron y la salvaron. Estado actual: fuera de Darl a caballo con Mord y Lif, herida pero viva, con el colgante de Breca y la revelación de Drekr grabada en la mente.',
-        star: '★★★ Orka ya no solo persigue a Drekr — ahora sabe que hay una cadena de mando: Hákon → Vafri → Drekr. El robo de Breca no fue bandolerismo: fue operación de inteligencia sobre Tainted. Darl como destino la pone en ruta de colisión con la red de la reina Helka.'
-    },
-    {
-        id: 'orl', label: 'Orl', group: 'VARG', type: 'Personaje — Antagonista menor', desc: 'Viejo de cabello gris lacio. Compañero personal de armas (Hird) de Leif Kolskeggson. Tiene una perra/hound. Cuida al perro quemado por la hoguera de Varg en la granja de Kolskegg, revelando así la conexión de Leif con el lugar.',
-        star: ''
-    },
-    {
-        id: 'orna', label: 'Orna (Dios-Águila)', group: 'DIOS', type: 'Dios Muerto', desc: 'El dios-águila, hijo de Snaka. Muerto en el Guðfalla. Sus huesos (incluyendo sus alas) están en la fortaleza de la Reina Helka en Darl, como símbolo de poder.',
-        star: 'Helka gobierna bajo las alas de un dios muerto. ¿Solo símbolo, o hay poder real en esos huesos?'
-    },
-    {
-        id: 'oskutred', label: 'Oskutreð (Árbol de Ceniza) [pron. Oskutreth]', group: 'LUGAR', type: 'Lugar — Mítico', desc: 'El gran árbol fresno de Vigríð, análogo al Yggdrasil nórdico. Lik-Rifa fue encadenada bajo sus raíces tras el Guðfalla. La semilla de Oskutreð puede dar vida a vaesen (ver nodo froa). Los terremotos en Iskalt se interpretan como sacudidas de Lik-Rifa bajo el árbol. La cámara subterránea bajo él es Vergelmir (ver nodo vergelmir). Su localización es desconocida para el mundo — o lo era: Uspa, Seiðr-witch de sangre de Snaka, conoce el camino hasta él porque memorizó la Graskinna antes de destruirla. Geografía confirmada: más allá del pozo de los vaesen, más allá del Puente Isbrún y más allá de las Colinas de Luna Oscura. Allí se encuentran los restos de los dioses caídos, sus tesoros y las armas de sus hijos — un arsenal que podría dar a quien lo encontrara un poder sin precedentes, y con él una nueva guerra. Han pasado 297 años desde el Guðfalla sin que nadie lo hallara a pesar de las leyendas. Misión activa de los Terrores de la batalla sellada por blóð svarið: Uspa guía a la compañía → Agnar recupera a Bjarn (ver nodo juramento-sangre-brim). [Histórico: Yggdrasil, el fresno cósmico de la mitología nórdica, conectaba los nueve mundos. Gwynne reinterpreta este árbol como carcel y ancla de la diosa-dragón.]',
-        star: ''
-    },
-    {
-        id: 'outlawry', label: 'Proscripción (Outlawry)', group: 'NORSE', type: 'Ley — Castigo', desc: 'Exilio legal. El proscrito pierde todos los derechos: cualquiera puede matarlo sin consecuencias, no puede recibir ayuda, debe abandonar el territorio. Peor que muerte: muerte social. En Vigríð el estatus de proscrito puede ser declarado formalmente por el Althing o existir de facto cuando el crimen es conocido solo por el culpable (ver nodo varg). [Histórico: el útlagr (outlaw) era castigo severo nórdico. Dos tipos: menor (3 años) y mayor (permanente). El proscrito era "hombre lobo" — fuera de la ley humana. Gwynne lo usa para subrayar la fragilidad del estatus de Varg: su libertad depende del silencio.]',
-        star: '★ Varg huye como proscrito de facto. Si Leif probara que mató a Snepil, Varg sería declarado útlagr formalmente — cazado legalmente por todos.'
-    },
-    {
-        id: 'ox', label: 'Öx (Hacha)', group: 'NORSE', type: 'Arma — Hacha', desc: 'Hacha de una o dos manos. Herramienta y arma. Hacha de mano (handöx): combate con escudo. Hacha larga (langöx): dos manos, alcance largo, golpes devastadores. Thorkel usa hacha de mango largo "tan alto como él" con hoja "con barba" (skeggöx) — su arma principal. Virk usó hacha de granjero en holmganga. Glornir porta long-axe. [Histórico: el hacha era el arma nórdica icónica. Más barata que espada, igual de letal. La skeggöx (hacha barbada / destral) tenía filo extendido hacia abajo: enganchaba escudos enemigos y protegía la mano del portador. Podía usarse con una o dos manos. Gwynne la usa como arma de trabajadores convertidos en guerreros.]',
-        star: '★★ Thorkel usa hacha larga con hoja barbada — arma de campeón. Virk usó hacha de granjero y casi mata a Guðvarr. El hacha es el gran ecualizador social.'
-    },
-    {
-        id: 'patronymics', label: 'Patronímicos', group: 'NORSE', type: 'Lenguaje — Nombres', desc: 'Nombre basado en el padre: -son (hijo de) o -dóttir (hija de). Thorkel Ulfsson (hijo de Ulf). Berak Bjornasson (hijo de Bjorn). Leif Kolskeggson (hijo de Kolskegg/Snepil). Sistema de identificación familiar. [Histórico: los nórdicos no tenían apellidos hereditarios. Cada generación tomaba el nombre del padre como patronímico. Gwynne lo preserva fielmente en Vigríð.]',
-        star: 'Thorkel Ulfsson — "hijo de Ulf/lobo". ¿Coincidencia que conozca el término "Ulfrir-kin"? Su nombre puede ocultar su linaje.'
-    },
-    {
-        id: 'rio-skarpain', label: 'Río Skarpain', group: 'LUGAR', type: 'Lugar — Geografía', desc: 'Río donde Thorkel rastreó a los asesinos de Asgrim e Idrun. Tres barcas habían atracado allí: los raptores huyeron por agua tras la masacre. Nexo fluvial entre las villas del norte y el posible destino de los niños robados.',
-        star: '★ Los raptores viajan por ríos, no por tierra. Organización logística detrás del patrón de robos.'
-    },
-    {
-        id: 'rokia', label: 'Røkia', group: 'VARG', type: 'Personaje — Hermanos', desc: '[Pronunciación: «Rirkia» — la ø suena como la «ir» de «bird».] Guerrera alta, rubia, mirada de halcón. Escudo negro a la espalda. Entrena a Varg cada noche con pinchazos intencionales — sin concesiones por condiciones adversas. Informa positivamente de Varg a Glornir. Guía a Varg en la compra de equipo en Liga. Recomienda el hacha de lanzar y el yelmo como más importantes que la brynja (filosofía: ganar la brynja del cadáver del enemigo es la batalla-fama). Participa en el muro de escudos en la batalla del muelle (ver nodo batalla-muelles). Entrenamiento documentado: escudo como arma y defensa (boss de hierro + borde); dos agarres de lanza — empuñadura alta (mayor alcance, agarre más débil, recomendada para aproximación) y empuñadura invertida (menor alcance, golpe interior, usada por Røkia). Lección actual: pasos laterales para buscar apertura; si el ataque falla, romper distancia y cambiar agarre. Cuando Varg sale del fiordo empapado, lo espera en la orilla con escudo y lanza: «¿crees que el enemigo esperará a que te seques?»',
-        star: '** Pragmatismo de guerrera veterana: el yelmo salva mas vidas que la brynja porque un golpe en la cabeza mata siempre. Entra al muro de escudos alrededor de Glornir instintivamente.'
-    },
-    {
-        id: 'root', label: 'La Sombra de los Dioses', group: 'CENTER', type: 'Obra', desc: 'Libro I de la Trilogía Bloodsworn. John Gwynne. Año 297 del Friðaröld. Tres líneas narrativas convergen en un mundo roto por la guerra de los dioses.', star: ''
-    },
-    {
-        id: 'runa-ward', label: 'Runa Warding', group: 'OBJETO', type: 'Magia — Protección', desc: 'Runas talladas en puertas/umbrales. Repelen vaesen menores. No detienen a seres de gran poder ni a humanos. Reforzadas con knuckle-bone de dios muerto (Fellur, Asgrim). Confirma que Asgrim no fue atacado por vaesen.',
-        star: ''
-    },
-    {
-        id: 'seax', label: 'Seax', group: 'NORSE', type: 'Arma — Cuchillo', desc: '[Pronunciación: "Sax".] Cuchillo/daga de un solo filo, 20-75cm. Herramienta y arma. Todo hombre libre lleva uno. Combate cercano, trabajo diario, símbolo de estatus de hombre libre. La thrall-guerrera de Sigrún usa dos seaxes. Thorkel clava uno en tierra para ahuyentar al Nacken. [Histórico: el seax era el cuchillo universal germánico/nórdico. Desde utensilio hasta arma de guerra. El nombre "sajón" (Saxon) viene de seax. Gwynne lo usa como marcador cultural: llevar seax = hombre libre.]',
-        star: '★★ La thrall de Sigrún mató a Virk con dos seaxes. Thorkel usa el suyo ritualmente contra vaesen. Símbolo de libertad que los thralls no pueden portar.'
-    },
-    {
-        id: 'second-combat', label: 'Segundo en Combate', group: 'NORSE', type: 'Combate — Rol', desc: 'Testigo y consejero en duelos formales. Arild fue segundo de Guðvarr en el holmganga — le aconsejó antes del duelo, le vendó tras la derrota. Orka fue segundo de Virk. El segundo no puede intervenir en el combate pero puede detenerlo si las reglas se rompen. [Histórico: en duelos formales nórdicos, cada combatiente tenía testigos/segundos. Su rol era garantizar que las reglas se cumplieran y que el resultado fuera reconocido legalmente. Gwynne lo preserva como parte del ritual del holmganga.]',
-        star: 'Arild aconsejó a Guðvarr — ¿qué le dijo? Orka como segundo de Virk muestra que ella tiene estatus social reconocido en Fellur a pesar de vivir aislada.'
-    },
-    {
-        id: 'seidr', label: 'Seiðr', group: 'MAGIA', type: 'Magia', desc: '[Pronunciación: "Seithr" — la ð suena como la "th" de "they".] Magia de influencia, invocación y canto. El akáll invoca espíritus de muertos para interrogarlos. El canto protege de vaesen o los controla. Practicado por brujas (völva). El uso extenuante desgasta el cuerpo. Ligado frecuentemente a sangre divina. Uso en combate confirmado: Orka aplica fórmulas de vinculación al hierro contra vaesen — las palabras deben pronunciarse mientras el filo conecta con el cuerpo del vaesen para activar el efecto. Fórmulas documentadas: «Járn og stál, skorið og brennt» (hierro y acero, cortado y quemado) y «Skörp járn brenna og bíta» (hierro afilado que arde y muerde). [Contexto: en la mitología nórdica histórica, el Seiðr era una práctica ritual chamánica de Freyja y Odín, usada para profecía y manipulación del destino. Las völvur viajaban entre comunidades sentadas en plataformas elevadas (seiðhjallr). En Vigríð este saber sobrevive en las thrall-brujas que los mercenarios encadenan.]',
-        star: 'Las dos brujas conocidas (Vol, Kráka) son thralls encadenadas. ¿Hay Seiðr libre en Vigríð?'
-    },
-    {
-        id: 'thrud', label: 'Thrud (†)', group: 'ELVAR', type: 'Personaje — Terrores de la batalla',
-        desc: 'Guerrero de los Terrores de la batalla. Cumplía funciones de guardia y vigilancia dentro de la compañía — fue asignado a custodiar a Uspa y Bjarn durante la estancia en Snakavik. Agnar lo consideraba un buen guerrero y amigo. Murió degollado y con otra herida en la espalda durante el raid de los Alimentadores de Cuervos a la taberna donde descansaba la compañía (ver nodo raid-raven-feeders). Su cuerpo fue envuelto en su capa y trasladado al Wave-Jarl para ser arrojado al mar en aguas abiertas, según costumbre. Su muerte pesó en la conciencia de Elvar, que había recibido la advertencia de Uspa sin transmitirla a Agnar.',
-        star: '★★ Thrud es el coste humano de la información que Elvar no compartió. Su nombre importa exactamente por eso: tenía nombre, tenía amistad, tenía lugar en la compañía — y su muerte convierte el silencio de Elvar en una decisión con consecuencias irreversibles.'
-    },
-    {
-        id: 'sighvat', label: 'Sighvat', group: 'ELVAR', type: 'Personaje — Terrores de la batalla', desc: 'Obeso, brutal, fornido. Suboficial de Terrores de la batalla. Marca el ritmo de remo con un barril. Cadenas y collares para prisioneros. Golpea a Kráka. Hundur-thrall bajo su control. Durante el raid de los Alimentadores de Cuervos a la taberna, quedó atrapado en el altillo con Agnar; derribó el techo a hachazos y cayó a la sala principal en mitad de la batalla. Vigiló la puerta de la cocina durante la negociación secreta con Uspa. Visiblemente inquieto ante las consecuencias del blóð svarið — «no me gusta nada lo que suena» — pero participó en el ritual. Lleva colgante de garra de araña de hielo: primer vaesen que mató al ingresar a los Terrores de la batalla. Lleva la marca roja del juramento en mano y muñeca (ver nodo juramento-sangre-brim).',
-        star: ''
-    },
-    {
-        id: 'sigrun', label: 'Jarl Sigrún', group: 'ORKA', type: 'Personaje — Política', desc: 'Jarl de Fellur durante 8 años. Mujer alta y guerrera. Lleva torc de plata, anillos en los brazos. Convocada a Darl por la Reina Helka; allí juró lealtad de sangre. Acompañada por Vafri como thrall-guerrera y espía (ver nodo vafri). Orka irrumpió en su cámara de noche (ver nodo raid-camara-sigrun). Sigrún despertó y trató de combatir; Orka le cruzó la cara con un tajo diagonal — herida profunda de frente a barbilla, desfigurante. Su amante fue degollado en el lecho antes de poder reaccionar. Estado: viva pero gravemente herida; lanza a sus drengrs en persecución de Orka.',
-        star: '★★ Sigrún pierde a su espía Vafri, a su amante y su dignidad en la misma noche. La cicatriz en la cara es el sello de Orka. ¿Pedirá venganza personal o lo reportará a Helka como fracaso de inteligencia?'
-    },
-    //---------------------------------------Revisado----------------------------------//
-    {
-        id: 'sjavarom', label: 'Sjávarorm (Serpiente Marina)', group: 'VAESEN', type: 'Vaesen', desc: 'Cabeza del tamaño de una cabaña, hileras de dientes, cuerpo sinuoso gris-verde. Atacó el Wave-Jarl. Controlada por Uspa con canto Seiðr (sangre de Snaka).',
-        star: 'Revela el poder de Uspa: sangre de Snaka controla criaturas del mar.'
-    },
-    {
-        id: 'skald', label: 'Skald (Bardo)', group: 'NORSE', type: 'Rol Social', desc: 'Poeta y narrador oral. Preservan historia, genealogías, hazañas. Galinn es el skáld de Liga (ver nodo galinn). Grend también cumple función de narrador oral con Elvar. [Histórico: los skalds eran poetas cortesanos escandinavos que componían en metros complejos (dróttkvætt). Gwynne los usa como portadores de memoria cosmológica.]',
-        star: 'Galinn recita la saga del Guðfalla completa. La tradición oral es clave para entender cómo se recuerda la historia en Vigríð.'
-    },
-    {
-        id: 'skjaldborg', label: 'Skjaldborg (Muro de Escudos)', group: 'NORSE', type: 'Tactica — Formacion', desc: 'Formacion de combate: guerreros hombro con hombro, escudos superpuestos formando muro. Primera linea usa lanzas. Tactica defensiva de infanteria nordica. Elvar gano su puesto en el muro. Rokia entrena a Varg para el muro. Usado en combate real en los muelles de Liga (ver nodo batalla-muelles).',
-        star: '** Primer combate real de Varg en el muro. Su instinto de abandonarlo y montar el caballo enemigo es tacticamente incorrecto pero funciona. La tension entre doctrina e instinto define su potencial como guerrero.'
-    },
-    {
-        id: 'skjoldr', label: 'Skjöldr (Escudo)', group: 'NORSE', type: 'Armadura — Defensa', desc: 'Escudo redondo de madera (80-90cm diámetro), centro con umbo de hierro. Pintado con colores de facción: negro (Hermanos de Sangre), rojo (Terrores de la batalla), azul (Jarl Logur). Formación de muro de escudos (skjaldborg). Varg entrena con escudo bajo Røkia. [Histórico: el escudo era la defensa primaria vikinga. Madera de tilo o abeto, cubierta de cuero. Se rompían en batalla y se reemplazaban. El muro de escudos era la táctica de infantería nórdica básica. Gwynne lo preserva fielmente.]',
-        star: '★ Los colores de escudo identifican facciones al instante. Røkia entrena a Varg específicamente en combate de escudo — habilidad fundamental para Hermanos de Sangre.'
-    },
-    {
-        id: 'skraeling', label: 'Skraeling', group: 'VAESEN', type: 'Vaesen — Combatiente', desc: 'Vaesen que participo en el ataque al steading de Orka (ver nodo ataque-steading). Mencionado por Vesli al narrar la batalla junto a guerreros humanos, vaesen y el Tainted-garras. Sus caracteristicas fisicas y habilidades no han sido detalladas aun en los capitulos leidos. [Historico: skraeling era el termino nordico para los nativos de America del Norte y Groenlandia. Gwynne lo reutiliza como nombre de un vaesen de Vigrið.]',
-        star: '¿Que hace un skraeling? Participaron activamente en el ataque -- no son solo acompanantes. Primera vez que se los ve en accion (sin descripcion fisica todavia).'
-    },
-    {
-        id: 'skuta', label: 'Skúta', group: 'NORSE', type: 'Embarcación — Transporte', desc: 'Barco de transporte pequeño-mediano. Híbrido entre knarr y karvi. Comercio regional, transporte de pasajeros, suministros. [Histórico: término genérico para barcos de transporte en nórdico antiguo. Menos especializado que knarr o drakkar. En Vigríð serían comunes en rutas comerciales secundarias.]',
-        star: 'Probable embarcación para comerciantes que visitan el mercado de Liga.'
-    },
-    {
-        id: 'slyda', label: 'Slyda', group: 'VARG', type: 'Personaje — Liga', desc: 'Guardiana de la puerta de Liga. Mujer de cabello oscuro trenzado, cara dura y ojos fríos. Dejó pasar a Varg con el pretexto de que iba adelante de su «amo Snepil» —sin saber que Snepil ya estaba muerto.',
-        star: ''
-    },
-    {
-        id: 'snaka', label: 'Snaka', group: 'DIOS', type: 'Dios Muerto — Padre', desc: 'El dios-serpiente primordial. Padre de todos los dioses. El más grande y antiguo. Sus huesos forman las cordilleras del norte de Vigríð. Fue derrocado y muerto por sus propios hijos.',
-        star: 'Uspa y Kráka portan su sangre. ¿Qué otros Tainted de Snaka hay en Vigríð?'
-    },
-    {
-        id: 'snakavik', label: 'Snakavik', group: 'LUGAR', type: 'Lugar — Ciudad del Jarl Störr', desc: 'Ciudad-fortaleza del Jarl Störr construida dentro y sobre el cráneo gigante del dios-serpiente Snaka, en el extremo occidental de las Montañas Boneback. El cráneo emerge a medias de la ladera; los colmillos superiores brotan del agua formando la entrada al puerto: veinte drakkars caben de frente entre ellos. La mandíbula inferior reposa en el fondo del fiordo. El interior existe en penumbra permanente: la única luz natural entra por las cuencas de los ojos, la mandíbula abierta y grietas en el hueso, todo complementado por miles de antorchas de aceite de ballena y foca. La ciudad crece en la ladera interna: muelles, casas de pescado, tabernas, corredores oscuros con prostitutas y cortadores de gargantas. En el muelle hay postes con jaulas de hierro oxidado que exhiben esqueletos y cadáveres de criminales, con letreros rúnicos indicando sus crímenes (p.ej., "adorador de un dios muerto"). Una escalera de madera de 212 escalones — tan ancha que doce marchan en fila — trepa por la parte posterior del cráneo hasta una grieta que conduce a la cima. En la cumbre, una meseta de granito alberga la fortaleza: sala de festines con vigas esculpidas en serpientes (tan grande como algunas ciudades), una torre Galdur donde los Galdurmen aprenden sus artes rúnicas, establos, forjas y una hilera de casas largas para el hird de Störr. Los guardias de la fortaleza llevan escudos amarillos con serpiente anudada alrededor del boss. Los huesos de Snaka actúan de escudo contra los vaesen (ver nodo gods-bones). Berak fue vendido (ver nodo llegada-snakavik). Hogar de infancia de Elvar; hogar de Grend por más años de los que Elvar ha respirado.',
-        star: 'Jarl Störr es el padre de Elvar. La reacción emocional de Elvar ante el nombre de Snakavik en capítulos anteriores cobra ahora todo su significado.'
-    },
-    {
-        id: 'snekkja', label: 'Snekkja / Snekke', group: 'NORSE', type: 'Embarcación — Guerra Ligera / Incursión', desc: 'Barco de guerra ligero y rápido (20-30 remos). Más pequeño que drakkar pero más ágil y de menor calado. Ideal para incursiones rápidas, ríos, costas poco profundas, exploración y mensajería. Tripulación reducida. Nombre significa "el que se desliza" / "serpiente". [Histórico: la snekkja (snekke) era el langskip más pequeño de la tipología nórdica. Más común que el drakkar (que era caro). Podía navegar aguas muy someras. Velocidad sobre capacidad de carga. Gwynne podría usarlas para bandidos, exploradores o mensajeros de jarls.]',
-        star: 'Posible embarcación de los raptores de niños: rápida, silenciosa, perfecta para huir por ríos.'
-    },
-    {
-        id: 'snepil', label: 'Snepil Kolskegg (†)', group: 'VARG', type: 'Personaje — Muerto', desc: 'Antiguo dueño de Varg. Asesinado por Varg en un episodio de furia roja disociativa del que Varg no recuerda nada. Tenía una granja 20 leguas al noreste de Liga, río arriba. Su muerte es el detonante de toda la huida y búsqueda de Varg. Orl era su thrall de confianza.',
-        star: 'Varg mató a su amo sin recordarlo. La furia roja que borró el acto es la misma que lo hace sospechoso de sangre Tainted.'
-    },
-    {
-        id: 'spert', label: 'Spert', group: 'ORKA', type: 'Vaesen — Guardian (Recuperandose)', desc: 'Spertus. Artropodo segmentado con cara casi humana, aguijon, antenas, vapor negro venenoso. Capturado por Orka con vinculo de sangre. Guarda el steading de otros vaesen. Come papilla de sangre y saliva de Orka diariamente. Estado actual: gravemente herido durante el ataque al steading (ver nodo ataque-steading). Mato a al menos un atacante con su veneno antes de caer. Liberado de su juramento por Orka tras el ataque. Siendo curado por Vesli (ver nodo vesli-saliva).',
-        star: 'Su veneno mata incluso a guerreros armados. Hizo su trabajo. Fue liberado -- gesto de honra genuina de Orka.'
-    },
-    {
-        id: 'spertus', label: 'Spertus', group: 'VAESEN', type: 'Vaesen — Artrópodo', desc: 'Tipo de vaesen artropodo. Ver nodo spert para el ejemplar capturado por Orka.',
-        star: ''
-    },
-    {
-        id: 'spjot', label: 'Spjót (Lanza)', group: 'NORSE', type: 'Arma — Asta', desc: 'Lanza de 2-3 metros. Arma primaria de infantería nórdica. Más común que espada (más barata). Punta de hierro con aleta para evitar penetración excesiva. Arrojadiza o de empuje. Leif hirió a Varg con lanza. [Histórico: la lanza era el arma más común en ejércitos vikingos. Versátil: primera línea en muro de escudos, arma arrojadiza, caza. Odín portaba la lanza Gungnir. Gwynne la usa como arma estándar de soldados.]',
-        star: 'Leif hirió a Varg con lanza antes de huir. Arma del soldado común, no del héroe — pero letal igual.'
-    },
-    {
-        id: 'steading', label: 'Steading (Granja)', group: 'NORSE', type: 'Vida Diaria — Vivienda', desc: 'Granja autosuficiente. Casa principal, establos, almacenes, cercas. Unidad basica de vida rural. Orka y Thorkel construyeron su steading en las colinas sobre Fellur con sus propias manos. Asgrim tenia steading donde fue asesinado. El steading de Orka fue DESTRUIDO por la banda de Drekr (ver nodo ataque-steading): hall incendiado, galdr-runas obliteradas, animales muertos, establo vacio, pony Snort matado.',
-        star: 'El steading de Orka ya no existe. La familia que lo construyo esta rota: Thorkel muerto, Breca raptado. El lugar fisico de la vida que eligieron ya no esta.'
-    },
-    {
-        id: 'storr', label: 'Jarl Störr', group: 'FACCION', type: 'Facción — Amenaza', desc: 'Jarl poderoso del noroeste, sede en Snakavik. En expansión constante hacia el sur y el este. Alto, delgado, túnica de lana azul oscuro, seax finamente trabajado, cadena de plata con colmillo de serpiente, anillo de brazo con serpiente-que-se-muerde-la-cola. Cejas pesadas, nariz fina. Carácter: señor estricto — su reino prospera pero los infractores acaban en jaulas de hierro en el muelle. Guardia personal: Berserkir-thralls. Agente Seiðr: Silrið (ver nodo silrid). Oráculo: Hrung (ver nodo hrung). Compró a Berak al doble del precio de mercado. Padre biológico de Elvar (ver nodo elvar). Hijos: Thorun (mayor, hostil, obediente) y Broðir (menor, tímido y afectuoso) (ver nodos thorun, brodir). Tenía planeado casar a Elvar con Hákon (hijo de Helka) para unir ambos reinos — una alianza que habría cubierto más de la mitad de Vigríð. La huida de Elvar hace ~4 años le costó sangre para reconsolidar su poder: "tuve que derramar mucha sangre para recuperar el control." En la reunión en la taberna ofrece a Elvar reconciliación y posiblemente su propio warband de drengrs como alternativa al matrimonio. Silrið insinúa que hay "otros caminos por el bosque" además del matrimonio con Helka.',
-        star: '★★★ El plan matrimonial Störr-Helka habría fusionado los dos mayores poderes de Vigríð. Elvar lo frustró huyendo. Störr no la castiga — la tienta con lo que ella más desea: un warband propio. Conoce a su hija mejor de lo que ella cree.'
-    },
-    {
-        id: 'sulich', label: 'Sulich', group: 'VARG', type: 'Personaje — Hermanos (Iskidano)', desc: 'Delgado, estatura media. Cabeza rapada excepto una larga trenza negra brillante como azabache. Piel oscura (único de tez oscura entre los Hermanos). Kaftan gris de lana abrochado al centro, calzones anchos con vendas ajustadas tobillo-rodilla. Escudo negro con salpicaduras rojas. Espada curva de un solo filo. Varg lo reconoce sin saber por qué. Miembro pleno de los Hermanos de Sangre, ha prestado juramento de sangre. Origen: Iskidan (su apariencia y armamento coinciden con los druzhina). Jaromir lo reclama por "grandes crímenes" (ver nodo sulich-crisis). Sulich come mutton ahumado con total calma mientras el príncipe lo confronta, sin dignarse mirarlo. Codigo del botin: tras la batalla ofrece a Varg el yelmo del druzhina que este mato, explicando el codigo de honor del botin de guerra (ver nodo botin-guerra). Pronuncia "viaja bien, hermano mio" sobre el caido antes de ofrecerselo a Varg. Cuando Varg dice "quédatelo tú", Sulich se ofende gravemente y se marcha -- tomar el botin ajeno es robo, no honor.',
-        star: '★★★ ¿Qué crímenes cometió en Iskidan que hacen que un príncipe cruce el whale road para reclamarlo? La palabra "hermano mío" al druzhina caído -- compatriota quizás conocido -- revela capas de su pasado. Su código de honor es más estricto de lo esperado en un mercenario.'
-    },
-    {
-        id: 'svelgarth', label: 'Svelgarth', group: 'LUGAR', type: 'Lugar — Ciudad', desc: 'Ciudad al este de Vigríð. Dominio del Jarl Orlyg. Mencionada en el contexto político del Althing como otro territorio que debe decidir su postura ante la expansión de Helka.',
-        star: ''
-    },
-    {
-        id: 'svik', label: 'Svik Hrulfsson', group: 'VARG', type: 'Personaje — Hermanos', desc: 'Pelo rojo trenzado, apuesto de barba aceitada. Túnica verde, anillos de plata, torc de serpientes. Apodo: Pelo-Enredado (irónico). Sarcástico, cuidó a Varg de fiebre. Reclutador/negociador. Momento de profundidad: aceptar ayuda no es debilidad. Acompañó a Varg a comprar equipo. Lucha en el muro de escudos en la batalla del muelle (ver nodo batalla-muelles). Gana el oar-dance del Sea-Wolf — pies ligeros y equilibrio fino son su forma de evitar mojarse el bigote. Soborna a Einar con pan para que derribe a Varg del remo. Muestra melancolía genuina al hablar de Skullsplitter — Glornir aún lleva el peso de ese duelo; Svik advierte en voz baja que no se mencione cerca del jefe. BACKSTORY REVELADA: creció en un steading al límite de un bosque; tenía dos hermanos mayores; con ~14-15 inviernos se enfrentó solo a un trol que había expulsado a sus hermanos del bosque con amenazas. Salió victorioso gracias a un queso y a la astucia: engañó al trol haciéndole creer que estrujaba piedras, lo hizo trabajar para él, y luego lo convenció de rajarse el vientre en una competición de comer papilla (ver nodo saga-queso-troll). La cueva del trol tenía tesoro: armas, monedas, aros de bronce y plata. Confirmado narrador de sagas excepcional: todo el campamento — incluidos Skalk, Olvir y Yrsa — se inclinó hacia adelante olvidando la papilla fría. La razón por la que siempre lleva queso: ese día el queso salvó su vida.',
-        star: '* Su sonrisa salpicada de sangre y la pregunta a Varg tras el combate revelan admiracion bajo el sarcasmo habitual. Es el primero en reconocer que lo que hizo Varg, aunque incorrecto tacticamente, funciono.'
-    },
-    {
-        id: 'tainted', label: 'Tainted', group: 'COSMO', type: 'Faccion — Perseguidos', desc: 'Descendientes de los dioses muertos. Portadores de poderes heredados de su linaje divino. Perseguidos y cazados desde el Gudfalla. Controlados con collares de hierro activados por lengua Galdur. Vendidos a jarls poderosos. Linajes conocidos en Vigrið e Iskidan: oso (Berser), lobo (Ulfrir), serpiente (Snaka), sabueso (Hundur), toro, halcon, caballo y dragon (ver nodo dragon-born). Los Tainted estan dispersos por todo el mundo conocido, no solo en Vigrið.',
-        star: '*** ¿Varg tiene sangre Tainted? ¿Y Breca? Los dos protagonistas muestran senales. El linaje dragon-born de Lik-Rifa ha sido confirmado como activo en Vigrið (ver nodo dragon-born).'
-    },
-    {
-        id: 'tennur', label: 'Tennur', group: 'VAESEN', type: 'Criatura', desc: 'A los Tennur les gustan los dientes y en manada son letales',
-        star: ''
-    },
-    {
-        id: 'thorkel', label: 'Thorkel Ulfsson (†)', group: 'ORKA', type: 'Personaje — MUERTO', desc: 'Grande como un penasco. Barba trenzada con cicatriz de mejilla a mandibula. Ex-thrall. El mejor rastreador. Profundamente amoroso con Orka y Breca. Hacha de mango largo con hoja barbada. Capa de lobo. Identifico a la thrall de Sigrun como Ulfhednar. Acepto la huida sin resistencia. MUERTO defendiendo el steading (ver nodo thorkel-muerte). Enterrado por Orka en barrow con su hacha, los seaxes ornamentados y brazaletes de oro (ver nodo tumulo-thorkel). Ultimas palabras: Dragon-born (ver nodo dragon-born).',
-        star: '*** Sus ultimas dos palabras son las revelaciones mas grandes del libro. Su patronimico Ulfsson y su conocimiento preciso de los Ulfhednar apuntan a sangre de lobo.'
-    },
-    {
-        id: 'thrall', label: 'Thrall (Esclavo)', group: 'NORSE', type: 'Clase Social', desc: 'Esclavo. Collar de hierro como simbolo. Sin derechos legales: no puede portar armas, no puede hablar en el Althing, su vida pertenece a su amo. Los Tainted son esclavizados sistematicamente con collares de control magico. [Historico: los thralls eran la clase mas baja en la sociedad nordica: prisioneros de guerra, deudores, hijos de esclavos. Gwynne expande esto: en Vigrið los Tainted son thralls por ley, controlados con collares magicos.]',
-        star: '*** La esclavitud es institucion central en Vigrið. La experiencia de haber sido thrall deja marcas fisicas y psicologicas que definen a quien la vivio.'
-    },
-    {
-        id: 'vafri', label: 'Vafri (†)', group: 'ORKA', type: 'Personaje — Tainted (Lobo) — Muerta', desc: 'Descendiente de Ulfrir (el gran dios-lobo) y Hundur el sabueso — linaje mixto lobo-sabueso, orgullosa de ello pese a ser thrall: "orgullosos y fuertes éramos." Ojos ambarinos en combate, dientes que se agudizan, uñas afiladas como garras. Ejecutó a Virk en el holmganga (ver nodo holmganga-event). Función real: espía de Hákon — ordenada a reportar cualquier señal de Tainted en la región; informaba a través de Drekr como intermediario. Lamer la sangre de Thorkel era rastreo activo, no solo frenesí. Estado: MUERTA — Orka la apuñaló en el vientre en la cámara de Sigrún (ver nodo raid-camara-sigrun); murió sin su seax, que Orka le arrebató de las manos moribundas.',
-        star: '★★★ Vafri cierra el arco del misterio: era los ojos de Hákon en la región. Lamer la sangre de Thorkel era rastreo, no frenesí. Su linaje Hundur le daba capacidad de seguir pistas — Thorkel tenía razón en preocuparse. La cadena completa queda expuesta: Hákon → Vafri → Drekr → ataque al steading.'
-    },
-    {
-        id: 'torc', label: 'Torc (Collar de Estatus)', group: 'NORSE', type: 'Símbolo — Riqueza', desc: 'Collar rígido de metal precioso (plata, oro) retorcido. Símbolo de riqueza, poder, juramentos. Sigrún lleva torc de plata. Svik lleva torc de plata retorcida con cabezas de serpiente. Agnar lleva torc de plata. Se otorgan como recompensa por servicio. [Histórico: los torcs eran joyas de estatus en culturas celtas y germánicas. En contexto nórdico, los anillos de brazo (armrings) eran más comunes, pero los torcs aparecen. Gwynne los usa como marcador visual de rango.]',
-        star: '★ Torc = poder visible. Sigrún, Agnar, Svik los llevan. Contraste con Orka y Thorkel que no llevan joyas — rechazo deliberado de su pasado.'
-    },
-    {
-        id: 'trol', label: 'Trol (bull-troll)', group: 'VAESEN', type: 'Vaesen', desc: 'Joven macho. Astas en el cráneo cubierto de musgo, piel escamada con musgo y liquen, colmillos de marfil, testiculos y territorios propios. Solitarios salvo en época de celo. Mató a varios guerreros de Terrores de la batalla antes de ser abatido. Sus partes (dientes, piel, testículos, corazón, hígado, uñas en polvo) se venden a buen precio.',
-        star: ''
-    },
-    {
-        id: 'trud', label: 'Trud', group: 'ELVAR', type: 'Personaje — Terrores de la batalla', desc: 'Guerrera de Terrores de la batalla. Herida de flecha en la pantorrilla durante el asalto a Iskalt. Su determinación de seguir en combate a pesar de la herida muestra el ethos de la compañía.',
-        star: ''
-    },
-    {
-        id: 'ulfrir', label: 'Ulfrir (Dios-Lobo)', group: 'DIOS', type: 'Dios Muerto — Lobo', desc: 'El dios-lobo, hijo de Snaka. Muerto en el Guðfalla. Sus descendientes son los Ulfrir-kin: Tainted con transformación parcial de lobo —ojos ambarinos, dientes que se agudizan, fuerza y velocidad bestiales, instinto depredador que supera el raciocinio—. La thrall-guerrera de Sigrún porta su sangre. [En la mitología nórdica real, los lobos Fenrir, Sköll y Háti son hijos del dios Loki, no de Odín. Gwynne reinterpreta la figura del lobo divino como un dios-padre independiente al igual que hizo con el oso Berser.]',
-        star: '★★★ La thrall de Sigrún es Ulfrir-kin. Que Thorkel conozca el nombre exacto «Ulfrir-kin» sin titubear sugiere que tiene experiencia directa con este tipo de Tainted —o que su pasado oculto lo conecta con este mundo.'
-    },
-    {
-        id: 'vaesen-gen', label: 'Vaesen', group: 'VAESEN', type: 'Criatura', desc: 'Criaturas del mundo subterráneo liberadas en el Guðfalla. Presencia en zonas remotas. Van desde peligrosos (trol, serpiente marina, araña de hielo) hasta domesticables (tennúr, Spertus). Los vaesen traders venden sus partes. Se vinculan con sangre a las criaturas ',
-        star: ''
-    },
-    {
-        id: 'varg', label: 'Varg', group: 'VARG', type: 'POV — Personaje', desc: 'Ex-thrall de Snepil, ~30 inviernos. Hermana Frøya muerta. Episodios de furia roja disociativa. Boxeador formidable (100 combates). Bolsa de cuero con algo de Frøya. Aprendiz de los Hermanos de Sangre (ver nodo varg-aprendiz). Kit de combate completo adquirido en Liga (ver nodo varg-aprendiz). Primera muerte consciente en combate (ver nodo varg-primera-muerte). Asignado sea-chest y banco de remos en el Sea-Wolf; aprendió el código del botín de guerra (ver nodo botin-guerra). Participa en el oar-dance a bordo del Sea-Wolf: completa el recorrido entero de estribor a babor antes de ser derribado por el oar de Einar (que lo lanzó deliberadamente). Røkia lo espera en la orilla con escudo y lanza — entrenamiento inmediato mojado: aprende los dos agarres de lanza (empuñadura alta con alcance largo y empuñadura invertida para el cuerpo a cuerpo) y el uso del escudo como arma además de defensa. Tregua precaria con Einar: un trozo de pan, una promesa de no morder. Identifica a Skalk como posible atajo para el akáll — un Galdurman a bordo que podría realizarlo sin esperar la aprobación de Glornir. Siente el peso del juramento a Frøya contra la chispa inesperada de alegría que la compañía le da. Estado actual: navegando hacia el Río Slågen, entrenando cada noche, con el akáll siempre presente. Siente atracción extraña hacia relics divinos (ver nodo objeto-viga). Tras cinco días de duro remo río arriba, desembarca en una granja abandonada a los pies de las Boneback. Elige no ponerse la coraza laminar del druzhina (ganada con una estocada de suerte por la espalda, no con verdadera habilidad) y lleva en su lugar: túnica gris de lana, yelmo de hierro simple, seax, hacha arrojadiza, cuchilla, lanza, escudo y capa de piel de foca abrochada con broche de hierro. Svik se burla de su falta de cota de malla. Los barrows entre el muelle y la granja — túmulos de thralls muertos al servicio de la finca — desencadenan memorias oscuras de Kolskegg y sus años de collar; la rabia se retuerce en sus venas. Estado actual: marchando a pie hacia las estribaciones de las Boneback junto a los Hermanos de Sangre (ver nodo granja-abandonada). Estado actual: ocho días de marcha desde el Sea-Wolf y la granja abandonada. Las Montañas Boneback llenan el horizonte: picos nevados y laderas densas de pino como pelo blanco y capa de musgo sobre los hombros de un gigante antiguo. Acercándose al solsticio de verano — los días se alargan hacia la luz perpetua. Torvik lo llamó «hermano» al romper el campamento, de pasada, sin peso intencional — pero la palabra detonó en Varg el recuerdo completo de Frøya: la única persona que lo llamó así toda su vida. Conflicto entre culpa (juramento sin cumplir) y gratitud (ya no está solo). Tercer intento de pedir el akáll a Glornir — rechazado con firmeza. Vol no lo rechaza con ira sino con pena, lo que es más duro. Varg escucha esa voz interna que le señala a Skalk como alternativa — y esta vez no la acalla. Posible decisión inminente de acercarse al Galdurman de Helka para el akáll fuera de la cadena de mando de Glornir (ver nodo akall).',
-        star: '*** La diferencia entre recordar y no recordar una muerte es la fractura central de su arco. Sensibilidad a relics divinos + furia roja disociativa + primera muerte consciente: tres capas de un posible Tainted que aun no sabe que es.'
-    },
-    {
-        id: 'vergelmir', label: 'Vergelmir', group: 'LUGAR', type: 'Lugar — Mítico', desc: 'Cámara subterránea bajo Oskutreð. Allí Lik-Rifa está encadenada y devora almas de guerreros muertos. El camino de los muertos pasa por aquí: por eso los guerreros nórdicos son enterrados con armas en la mano, para poder combatirla. Grend afirma que los guerreros «atraviesan Vergelmir en el camino del alma».',
-        star: '★★ Los terremotos de Iskalt son interpretados por Grend como Lik-Rifa forcejeando en Vergelmir. El umbral entre el mundo de los vivos y los muertos está vibrando.'
-    },
-    {
-        id: 'vesli', label: 'Vesli', group: 'ORKA', type: 'Vaesen — Aliada (Recuperandose)', desc: 'Tennur hembra. Pequena, alas membranosas, dos filas de dientes, venas oscuras en piel rosada. Herida y expulsada de su manada. Breca la salvo. Juro lealtad de sangre al nino. Integrada en la familia de Orka. Estado actual: gravemente herida durante el ataque al steading (ver nodo ataque-steading), recuperandose junto a Spert. Su saliva tiene propiedades curativas (ver nodo vesli-saliva). Narra la escena del ataque y la transformacion de Thorkel a Orka (ver nodo thorkel-transformacion). Rechaza la libertad ofrecida por Orka -- su lealtad es a Breca.',
-        star: '*** Su juramento de sangre con Breca sigue activo. Pasa de carga a activo: curadora, testigo, narradora. El lazo de sangre con Breca la hace un activo potencial en la persecucion de Orka.'
-    },
-    {
-        id: 'vigrið', label: 'Vigríð', group: 'LUGAR', type: 'Lugar — Continente', desc: '[Pronunciación: "Vigrith" — la ð suena como la "th" de "they".] La Llanura de Batalla. El continente principal. Construido literalmente sobre los huesos de Snaka. Dividido entre jarls, reinas y hombres libres. Los vaesen son una presencia constante en las zonas remotas.',
-        star: ''
-    },
-    {
-        id: 'virk', label: 'Virk (†)', group: 'ORKA', type: 'Personaje — Muerto', desc: 'Pescador y exguerrero de Fellur. Dos hijos: Mord (mayor) y Lif (menor). MUERTO tras violar las reglas del holmganga contra Guðvarr -- ejecutado por la thrall de Sigrún (ver nodo holmganga-event). Documentaba el patrón de robos de niños en la región.',
-        star: '★★ Su muerte deja a Mord y Lif huérfanos y con deseos de venganza. Los robos de niños que él documentaba quedan sin investigador. La información que tenía sobre el patrón muere con él —¿o la heredó alguien?'
-    },
-    {
-        id: 'vol', label: 'Vol', group: 'VARG', type: 'Personaje — Seidr', desc: 'Bruja Seiðr de los Hermanos. Cara de líneas duras acentuada por tatuajes azules anudados en cuello y mandíbula inferior. Collar de thrall bajo los tatuajes. Voz sorprendentemente suave para su aspecto severo. Actúa con confianza y dignidad absolutamente inusuales en un thrall — Varg lo nota. Cuando Varg pide el akáll, ella comienza a responder afirmativamente pero Glornir la interrumpe. Ocupa su lugar habitual en la proa del Sea-Wolf. En el campamento del primer fiordo, lanza una pregunta estratégica que nadie más ha planteado: si los vaesen están cruzando las Boneback y llegando al territorio de Helka, ¿cómo han atravesado el Grimholt? Skalk la insulta por ser thrall y se niega a responderle. Vol ignora el insulto y mantiene la compostura; Glornir sale en su defensa con firmeza (ver nodo mision-briefing-skalk). Su pregunta sobre el Grimholt queda sin respuesta — y eso es más revelador que cualquier respuesta. En la marcha hacia las Boneback, le dice a Glornir en voz baja: «debería haber llegado ya» y «deberíamos buscarla, no andar hacia las Boneback con el proxeneta de Helka» — referencia a una mujer esperada que no ha llegado al punto de encuentro previsto, y a Skalk con el más despectivo de los títulos. Glornir reconoce que él también se preocupa, pero señala que Vigríð es grande y que ha dejado su ruta sin secretos para que ella los encuentre. Cuando Varg pide el akáll por tercera vez, Vol no lo rechaza con ira como Glornir — lo detiene con una mano levantada y una mirada de pena, lo que pesa más que el enfado. Su apodo para Skalk, «proxeneta de Helka», sugiere que sabe algo de Skalk que los demás no dicen en voz alta.',
-        star: '*** Vol esta DISPUESTA a hacer el akall -- es Glornir quien lo bloquea, no ella. Su mirada larga a Varg antes de seguir a Glornir puede ser curiosidad, simpatia o algo mas. Su dignidad a pesar del collar es uno de los paralelos mas fuertes con Kráka (Terrores de la batalla).'
-    },
-    {
-        id: 'warrior-braid', label: 'Trenza de Guerrero', group: 'NORSE', type: 'Símbolo — Estatus', desc: 'Trenza o mechón largo en cabeza rapada/parcialmente rapada. Símbolo de estatus guerrero. Agnar (franja central), Elvar (trenza rubia), el guerrero oscuro de los Hermanos (trenza negra). [Histórico: evidencia arqueológica sugiere que algunos guerreros vikingos llevaban el cabello rapado en los lados con mechón largo arriba. Gwynne lo convierte en marcador visual de guerreros profesionales.]',
-        star: 'Marcador visual instantáneo: si lleva trenza de guerrero, es combatiente experimentado.'
-    },
-    {
-        id: 'wave-jarl', label: 'Wave-Jarl', group: 'ELVAR', type: 'Objeto — Drakkar', desc: 'Drakkar de los Terrores de la batalla. Kráka canta magia Seiðr desde él para mantener a las serpientes marinas lejos del casco. Transportó prisioneros (Berak, su familia) y cargamento de monstruo desde Iskalt a Snakavik. Descripción operativa: vela cuadrada de lana tratada con sebo de cordero y grasa para impermeabilizarla y hacerla hermética al viento — procedimiento histórico: los veleros nórdicos trataban sus velas de lana con mezcla de alquitrán de abeto, aceite de pescado y sebo animal, lo que las hacía resistentes al agua y capaces de capturar el viento sin dejarlo pasar. Equipado para una expedición terrestre larga: adquirió en Starl cinco carros desmontados (ruedas, ejes y armazones cargados en cubierta) y ocho ponies de carga de raza resistente. Estado actual: anclado en una cala oculta flanqueada de alisos, abedules y espinos en la orilla norte del Lago Horndal — ya al otro lado de las Montañas Boneback. Doce días y ~100 leguas navegadas desde Snakavik. Guardado mientras los Terrores de la batalla marchan a pie hacia la Llanura de Batalla.',
-        star: ''
-    },
-    {
-        id: 'weregild', label: 'Weregild (Precio de Sangre)', group: 'NORSE', type: 'Ley — Compensación', desc: 'Compensación monetaria por asesinato. Alternativa a la venganza de sangre. El asesino/su familia paga al clan de la víctima. Evita ciclos de venganza interminables. No mencionado explícitamente pero implícito en el sistema legal nórdico de Vigríð. [Histórico: el wergild era fundamental en ley germánica/nórdica. Cada persona tenía un "precio" según su estatus. Pagar wergild cerraba la deuda de sangre legalmente. Gwynne probablemente lo usa off-screen.]',
-        star: 'Mord y Lif no reciben weregild por Virk — Sigrún justificó la muerte como legal. Esto alimenta su sed de venganza: sin compensación, solo queda la sangre.'
-    },
-    {
-        id: 'wyrd', label: 'Wyrd (Destino)', group: 'NORSE', type: 'Concepto — Filosofía', desc: 'Destino inevitable. Los guerreros nórdicos de Vigríð creen que su wyrd está tejido y no puede evitarse. Morir con honor es cumplir el wyrd. [Histórico: wyrd (nórdico antiguo: urðr) era el concepto nórdico del destino tejido por las Nornas. No era predestinación cristiana sino red de consecuencias. Gwynne lo preserva como filosofía de vida en Vigríð.]',
-        star: 'Los personajes hablan de wyrd como fuerza real. ¿Es solo creencia o hay magia del destino en Vigríð?'
-    },
+const links = [
     // ══════════════════════════════════════════════════════════════
-    // CAPÍTULO 13 — NUEVOS NODOS
+    // Root to cats
     // ══════════════════════════════════════════════════════════════
-    {
-        id: 'torvik', label: 'Torvik', group: 'VARG', type: 'Personaje — Aspirante Hermanos', desc: 'Joven con la mitad de la edad de Varg. Pelo negro, mechones en barbilla, ojos azules. Tunica chamuscada, munecas gruesas. Scout bajo Edel; aprendiz de Jokul. Aspirante sin juramento como Varg. Entusiasta. Porta armring de Jokul con cabezas de sabueso. Marcha junto a Varg al salir de Liga. Revela que el objeto en la viga de la sala de Logur es una astilla del Cuerno Vackna -- regalo de Skullsplitter (jefe anterior de los Hermanos) a Logur. Explica el rol de los Hermanos: protegen Liga de piratas a cambio de hospitalidad. Confirmado como scout activo: en la granja abandonada del Slågen lidera el grupo de exploradores junto a Edel. Avanza como explorador adelantado con Edel y sus sabuesos hacia las estribaciones de las Boneback. Llamó a Varg «hermano» de pasada al romper el campamento — casual, sin cargar de intención, pero el efecto en Varg fue detonador de memorias de Frøya y de la conciencia de que ya no está solo en el mundo.',
-        star: '** fuente de informacion clave sobre el relic del Vackna y la historia de los Hermanos. Conoce a Skullsplitter por nombre -- lleva mas tiempo en la orbita del grupo que Varg.'
-    },
-    {
-        id: 'edel', label: 'Edel', group: 'VARG', type: 'Personaje — Escoutmaestre', desc: 'Escoutmaestre de los Hermanos. Mujer de cabello plateado. Sabuesos-lobo constantes a su lado. Torvik es su scout. En la batalla del muelle, sus sabuesos-lobo derriban un caballo de los druzhina. Edel y sus hounds actuan como unidad tactica separada del muro -- flanquean y cazan monturas en vez de guerreros. En la granja abandonada del Slågen, tomó la iniciativa de rastreo: cortó una túnica de la granja en dos mitades y las ofreció a sus sabuesos-lobo para que identificaran el rastro. Salió al campo de cebada con Torvik y los scouts para rastrear antes que el grueso de la compañía.',
-        star: '** Sus hounds son armas de combate. Tumbar un caballo en batalla requiere animales especificamente entrenados. ¿Son los mismos sabuesos que tienen relacion con los Tainted Hundur-kin?'
-    },
-    {
-        id: 'galinn', label: 'Galinn el Skáld', group: 'VARG', type: 'Personaje — Skáld', desc: 'El Skáld de Liga. Según Jarl Logur: "el mejor skáld de todo el mundo." Apariencia: pelo oscuro, apuesto, túnica verde de lana con trabajo de nudos bordado en cuello y dobladillo, anillos de plata brillando rojos en la luz de las antorchas. Toca una lira de siete cuerdas con música "dulce y melancólica". interpreta la saga completa de la Guðfalla ante toda la asamblea, llevando a los oyentes mentalmente al campo de batalla de los dioses. Desaparece en las sombras cuando llegan los visitantes de Iskidan.',
-        star: '★ Nuevo detalle cosmológico: Svin, Tosk, Rotta, el Vackna, el Monte Eldrafell. El skáld como portador de historia y memoria del mundo.'
-    },
-    {
-        id: 'sergei', label: 'Sergei Yanasson de Ulaz', group: 'FACCION', type: 'Personaje — Mercader Iskidano', desc: 'Mercader de Ulaz (ciudad o región de Iskidan). Viejo amigo y "viejo zorro" según Jarl Logur — se conocen hace mucho. Vestimenta: kaftan fino de lana, gorro con ribete de piel, pantalones amplios y a rayas con vendas ajustadas desde el tobillo hasta la rodilla. Sirve de intermediario y herald para el Príncipe Jaromir: anuncia su llegada de forma ceremonial aunque Logur le corta el protocolo por ser viejos amigos. Cuando el enfrentamiento entre Glornir y Jaromir escala, salta entre ellos para evitar el derramamiento de sangre en el hall.',
-        star: '★ Su papel de mediador es clave. Conoce las costumbres de Vigríð ("sus maneras no son las nuestras") y las usa para calmar al príncipe. ¿Tiene agenda propia además de servir a Jaromir?'
-    },
-    {
-        id: 'jaromir', label: 'Principe Jaromir', group: 'FACCION', type: 'Personaje — Poder Externo', desc: 'Hijo del Gran Khagan Kirill. Principe de Gravka. Cabeza rapada, trenza rubia, armadura laminar, yelmo de borde de oro, halcon. Llega a Liga reclamando a Sulich (ver nodo sulich-crisis). Escala de ultimatum a combate total cuando Glornir se niega (ver nodo batalla-muelles). Detiene el combate al ver llegar los tres drakkars de Helka.',
-        star: '*** Lanzar una flecha a Glornir en persona es un insulto extremo. Escala de ultimatum a combate total en segundos. La llegada de Helka es lo unico que lo para.'
-    },
-    {
-        id: 'ilia', label: 'Ilia', group: 'FACCION', type: 'Personaje — Druzhina', desc: 'Una de las dos druzhina que escoltan al Príncipe Jaromir. Mujer. Armadura laminar, yelmo con penacho de crin, malla remachada. cuando Glornir se niega a entregar a Sulich, Ilia da un paso al frente y agarra su sable, ofreciéndose a "tomar su cabeza por su insolencia". El príncipe la detiene con una palabra ("Hold, Ilia"). Temperamento: leal, explosiva, sin miedo a confrontar a toda una sala de guerreros.',
-        star: 'Dispuesta a desafiar a 60+ Hermanos de Sangre armados sin dudarlo — o es fanática o confía ciegamente en Jaromir.'
-    },
-    {
-        id: 'druzhina', label: 'Druzhina (Élite de Iskidan)', group: 'FACCION', type: 'Concepto — Institución Militar', desc: 'Guardia de élite personal de los príncipes y del Gran Khagan de Iskidan. Escalan con el rango: un príncipe tiene 2 druzhina; el Gran Khagan tiene 200. Equipo distintivo: armadura laminar (lamellar plate) que brilla como escamas de pez, yelmos de hierro con plumón de crin de caballo y cortinas de malla remachada, carcajs y arcos, sables curvos, hachas de asta larga y hoja pequeña. Cabello en una sola trenza larga. [Histórico: la druzhina histórica era la guardia personal de los príncipes eslavos y rusos (s. IX-XIII). Sistema de lealtad personal similar al hird nórdico. Gwynne la adapta a Iskidan como equivalente oriental del hird.]',
-        star: '★ Paralelo cultural con el hird nórdico: en ambos sistemas la lealtad personal al señor lo es todo. La diferencia es la escala — el Khagan proyecta poder a escala imperial.'
-    },
-    {
-        id: 'sulich-crisis', label: 'Crisis por Sulich', group: 'TRAMA', type: 'Trama — Interrumpida por Helka', desc: 'Jaromir de Iskidan exige a Sulich de los Hermanos. Confrontacion en el mead-hall, Glornir se niega. Jaromir bloquea el muelle cuando ve zarpar el Sea-Wolf. Lanza flecha a Glornir (que la derriba). Desata lluvia de flechas y carga. Batalla total hasta que la flota de Helka entra al fiordo y detiene todo. Sulich nunca fue entregado. Crisis suspendida -- no resuelta.',
-        star: '** Resuelta provisionalmente por la llegada de Helka. Jaromir no tiene a Sulich, Glornir no ha zarpado, y ahora hay una reina de media Vigrið en el puerto. La dinamica de poder cambia completamente.'
-    },
-    {
-        id: 'vackna', label: 'Vackna (Cuerno-Despertador)', group: 'COSMO', type: 'Objeto Mitico — Reliquia Real', desc: 'El cuerno que sono al alba e inicio el Gudfalla, llamando a los dioses a la batalla. Cantado por Galinn. CONFIRMADO como reliquia fisica real -- una astilla sobrevive incrustada en la viga de la sala de Logur (ver nodo objeto-viga).',
-        star: '*** Reliquia fisica activa en el mundo. El relic confiere riqueza -- los relics divinos tienen poder real en Vigrið, no solo simbolico. ¿Cuantos fragmentos del Vackna existen? ¿Quien tiene los demas?'
-    },
-    {
-        id: 'eldrafell', label: 'Monte Eldrafell', group: 'LUGAR', type: 'Lugar — Mítico', desc: 'Montaña volcánica donde cayó Snaka durante el Guðfalla. Según la saga de Galinn: "Snaka cayó — su veneno ardiente, su cuerpo rompiendo la tierra, montaña quebrando, quebró las laderas del Monte Eldrafell." Su caída formó el volcán o lo amplió. [Eldrafell = posiblemente del nórdico "eldur" (fuego) + "fell" (montaña) = "Montaña de Fuego". En la mitología real nórdica, el cuerpo de Ymir formó el mundo; Gwynne hace que el cuerpo de Snaka forme el paisaje volcánico de Vigríð.]',
-        star: '¿Es Eldrafell la misma montaña de fuego de Iskalt que tiembla en los capítulos anteriores? Si Snaka cayó allí, su cuerpo podría ser el origen literal de los temblores — no Lik-Rifa.'
-    },
-    {
-        id: 'svin', label: 'Svin (Dios-Jabalí)', group: 'DIOS', type: 'Dios Muerto', desc: 'Uno de los hijos de Snaka. Epíteto en la saga de Galinn: "Svin el Valiente". Combatió en la Guðfalla. Su linaje entre los Tainted y su forma de muerte no han sido revelados aún. [Del nórdico svín = jabalí. En la mitología nórdica, el jabalí era animal sagrado asociado con Freyr y la fertilidad. Gwynne lo convierte en una deidad independiente dentro de su panteón de hijos de Snaka.]',
-        star: '¿Cuál es el poder de los Tainted con sangre de Svin? ¿Dónde está su cuerpo muerto?'
-    },
-    {
-        id: 'tosk', label: 'Tosk (Dios Travieso)', group: 'DIOS', type: 'Dios Muerto', desc: 'Uno de los hijos de Snaka. Epíteto en la saga de Galinn: "Tosk el Travieso". Combatió en la Guðfalla. Su aspecto, linaje y muerte no han sido revelados aún. [Paralelo posible con Loki nórdico: el embaucador/trickster del panteón. Gwynne lo incluye entre los hijos de Snaka que lucharon en la guerra de los dioses.]',
-        star: '¿Hay Tainted de sangre Tosk con poderes de engaño o ilusión? Su epíteto "travieso" insinúa habilidades no directamente marciales.'
-    },
-    {
-        id: 'rotta', label: 'Rotta (Dios Rata)', group: 'DIOS', type: 'Dios Muerto — Traidor', desc: 'Uno de los hijos de Snaka. Epíteto: Rotta el Engañoso. Del nórdico rotta = rata — animal de la traición. Fue Rotta quien alimentó la paranoia de Lik-Rifa haciéndola creer que Orna planeaba matarla. Sin Rotta, Lik-Rifa no habría asesinado a la hija de Orna. Rotta es el detonante oculto de la guerra que destruyó el mundo. No un combatiente de frente — un susurrador. Su muerte y Tainted no revelados aún.',
-        star: '★★ Rotta no solo luchó en la guerra — la CAUSÓ. Convirtió una paranoia en un asesinato y ese asesinato en apocalipsis. El Tainted de sangre Rotta sería maestro de desinformación y traición.'
-    },
-    {
-        id: 'salla', label: 'Salla', group: 'FACCION', type: 'Personaje — Secundario', desc: 'Esposa del Jarl Logur de Liga. Alta y elegante, cara abierta y honesta. Cabello trenzado y apilado, mas gris que rubio. Viste vestido de lana azul profundo con hangerock bordado y cinturon de tablet-weave con llaves -- senora del hall. Se sienta a la derecha de Logur en la mesa de honor. Cuando Logur promete generosamente enviar a los Hermanos con barriles y vientres llenos, Salla se queda un momento y dice con una sonrisa a Glornir: "Quiere decir que me pedira a mi que lo organice todo." Glornir le hace una reverencia de cabeza y la llama por su nombre.',
-        star: 'Nombre confirmado: Salla. Su comentario ironico sobre Logur revela una relacion de pareja real -- ella gestiona, el promete y se lleva el credito. Glornir le hace una reverencia -- la respeta.'
-    },
+    { source: 'root', target: 'cat-orka', label: 'POV 1', type: 'cat' },
+    { source: 'root', target: 'cat-varg', label: 'POV 2', type: 'cat' },
+    { source: 'root', target: 'cat-elvar', label: 'POV 3', type: 'cat' },
+    { source: 'root', target: 'cat-mundo', label: 'mundo', type: 'cat' },
+    { source: 'root', target: 'cat-tramas', label: 'tramas', type: 'cat' },
+    { source: 'root', target: 'cat-facciones', label: 'poder', type: 'cat' },
+    { source: 'root', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'root', target: 'cat-norse', label: 'cultura', type: 'cat' },
 
     // ══════════════════════════════════════════════════════════════
-    // CAPÍTULO 14 — NUEVOS NODOS
+    // Cat-orka to orka chars
     // ══════════════════════════════════════════════════════════════
-    {
-        id: 'night-wyrm', label: 'Gusanos Nocturnos (Night-Wyrms)', group: 'VAESEN', type: 'Vaesen — Subterráneo', desc: 'Vaesen vermiformes que viven en el subsuelo. Delgados y pálidos, cada uno tan grueso como un pulgar, tan largos como un seax. Se mueven en colonias de miles de individuos. Emergen de noche del suelo como un cubo de gusanos cubiertos de baba. Sus cerdas rascan la piel. Se introducen por nariz y boca para asfixiar a las presas. Paralizan con su peso colectivo envolviéndose alrededor de muñecas, tobillos y garganta. Repelidos eficazmente por el fuego. Atacan al campamento de Terrores de la batalla en la meseta de las Islas de la Escarcha, posiblemente atraídos por la luz de la piedra de juramento. Matan a al menos un guerrero (garganta llena de wyrms). Biórr los repele con una antorcha.',
-        star: '★★ Primera vez que aparece este vaesen. Su capacidad de surgir del suelo en miles y de introducirse en el cuerpo los hace singularmente aterradores. ¿Los atrajo la piedra de juramento o simplemente la noche?'
-    },
-    {
-        id: 'frost-isles', label: 'Islas de la Escarcha', group: 'LUGAR', type: 'Lugar — Archipiélago', desc: 'Archipiélago al sur de Iskalt. La isla más meridional tiene una meseta con la única piedra de juramento superviviente conocida. Playas de grava estrechas, laderas escarpadas, alerces en el borde oriental de la meseta. Dos días al sur de Iskalt. El Wave-Jarl acampa aquí huyendo de una tormenta que se aproxima por el este.',
-        star: 'Ubicación de la piedra de juramento superviviente. Su aislamiento explica por qué nadie la destruyó.'
-    },
-    {
-        id: 'gallows-wood', label: 'Bosque de las Horcas', group: 'COSMO', type: 'Evento Mítico', desc: 'El primer acto de venganza de sangre en la historia de Vigríð. Lik-Rifa mató a la hija primogénita de Orna y Ulfrir y le arrancó las alas de la espalda. Como venganza, Orna y Ulfrir cazaron a la descendencia Tainted de Lik-Rifa, les abrieron la espalda, les arrancaron las costillas hacia afuera imitando alas, y colgaron los cadáveres de los árboles. Ese acto fundacional se convirtió en el blood-eagle (Águila de Sangre) —una forma de ejecución que los humanos de Vigríð heredaron de los dioses. Revelado ante la piedra de juramento a través de las imágenes grabadas — figuras con alas esqueléticas colgadas de ramas. Elvar recuerda la historia.',
-        star: '★★★ El blood-eagle no es una invención humana — es un ritual copiado del primer acto de venganza divina. Los humanos de Vigríð están repitiendo sin saberlo los crímenes de los dioses. La violencia sagrada tiene un linaje.'
-    },
-    {
-        id: 'blood-eagle', label: 'Águila de Sangre (Blood-Eagle)', group: 'NORSE', type: 'Ritual — Ejecución', desc: 'Forma extrema de ejecución ritual: abrir la espalda, separar las costillas hacia afuera como alas, exponer los pulmones. En Vigríð se practica como acto de venganza máxima. Origen revelado — es una imitación directa de cómo Orna y Ulfrir ejecutaron a los hijos Tainted de Lik-Rifa en venganza por el asesinato de su hija. El primer blood-eagle lo practicaron los propios dioses. [Histórico: el blóðörn aparece en sagas nórdicas como ejecución de alta traición. Su historicidad es debatida, pero Gwynne lo reinterpreta dándole un origen mítico explícito: los dioses lo inventaron.]',
-        star: '★★ Los humanos de Vigríð practican rituales que copiaron inconscientemente de los dioses. La violencia tiene memoria más larga que quienes la ejercen.'
-    },
-    {
-        id: 'hundur-dios', label: 'Hundur (Dios-Sabueso)', group: 'DIOS', type: 'Dios Muerto — Sabueso', desc: 'Uno de los hijos de Snaka. Dios-sabueso. Su sangre en el Hundur-thrall confiere olfato sobrehumano que puede detectar rastros de "sangre derramada y juramentos" en una piedra cubierta de musgo. Elvar lo nombra explícitamente al señalar al thrall-Hundur: "Veo la sangre de Hundur el Sabueso en ti." Su muerte en el Guðfalla no ha sido detallada. [Posible paralelo con Garm, el perro guardián del Hel nórdico, o con los sabuesos de Odín, Geri y Freki.]',
-        star: '¿Qué otros poderes tiene la sangre de Hundur además del olfato? ¿Sus Tainted pueden rastrear magia además de personas?'
-    },
-    {
-        id: 'dragon-born', label: 'Dragon-Born (Tainted de Lik-Rifa)', group: 'TRAMA', type: 'Trama — ACTIVO EN VIGRIÐ', desc: 'Tainted con sangre de la diosa-dragon Lik-Rifa. Linaje confirmado: marcador visual único (ojos rojo-brasa, distinto del ámbar de Ulfrir/Berser). CONFIRMADO en Vigríð — presencia activa (ver nodo tainted-garras para descripción física completa y ver nodo drekr para su operación). Orka, rumbo al norte, rumiando las últimas palabras de Thorkel, no puede ni descartar ni confirmar la afirmación — Thorkel no cometía errores, lo que hace la afirmación más perturbadora. [Implicación cósmica: si Lik-Rifa sigue encadenada bajo Oskutreð pero sus descendientes actúan en el mundo, alguien los está movilizando con propósito.]',
-        star: '*** OJOS ROJOS = linaje Lik-Rifa. Marcador que distingue el linaje dragon de todos los otros Tainted (ambar = Ulfrir/Berser, rojo = dragon). Sus armas mataron a Thorkel. Orka las lleva al cinto para devolverselas (ver nodo seaxes-tainted).'
-    },
-
-    // ==========================================================
-    // CAPITULO 15 -- NUEVOS NODOS
-    // ==========================================================
-    {
-        id: 'ulfhednar', label: 'Ulfhednar (Guerrera-Lobo)', group: 'COSMO', type: 'Concepto — Elite Tainted Lobo',
-        desc: 'Clase de élite dentro de los Tainted de sangre Ulfrir. No son simples portadores del linaje — son guerreros-lobo de élite entrenados, equivalente lupino a los Berserkir de Berser. Subtipos: Ulfhednar (guerreras-lobo, combat-oriented) y Hundur-kin (rastreadores de sangre, reconnaissance-oriented) — linajes distintos aunque pueden mezclarse. Identificables por tatuajes espirales, ojos ámbar en combate y movimiento de manada sin comunicación verbal. En Vigríð operan bajo la guardia de Helka (ver nodo helka) y de Sigrún (ver nodo sigrun). [Histórico: los ulfhéðnar nórdicos eran guerreros consagrados a Odín que vestían pieles de lobo y entraban en trance de furia animal, paralelos a los berserkir pero de lobo en vez de oso. Gwynne los reinterpreta como linaje divino real de Ulfrir.]',
-        star: '*** Helka tiene una manada de Ulfhednar-thrall -- no solo una como Sigrun. Escala de poder diferente. Que muestren miseria en los ojos es el detalle mas humano y politicamente peligroso: guerreros perfectos que desean la libertad.'
-    },
-    {
-        id: 'arbol-froa', label: 'Arbol de Froa (destruido)', group: 'LUGAR', type: 'Lugar — Destruido',
-        desc: 'Arbol de fresno en un montIculo sobre un prado cruzado por un rio, al sureste del steading de Orka. Froa lo habitaba y guardaba. Nacido de una semilla del gran Oskutred. Destruido -- derribado con muchas hachas y quemado en grandes manchas. El tronco yace astillado. Las raices azotaron a los atacantes levantando la tierra. Manchas de sangre oscura congelada confirman bajas entre los agresores. Significado para Orka: era su lugar de paz y referencia espiritual en el bosque. Acudia alli a pedir consejo y agradecer la proteccion.',
-        star: '** Su destruccion es deliberada y organizada. Requirio muchos hombres y sufrieron perdidas. Alguien esta eliminando sistematicamente los guardianes del bosque. ¿Por que? ¿Para que la region quede sin proteccion?'
-    },
-    {
-        id: 'decision-huida', label: 'Decision de Huir', group: 'TRAMA', type: 'Trama — Activa',
-        desc: 'Orka propone a Thorkel abandonar el steading antes de que sea demasiado tarde, motivada por la amenaza de la Ulfhednar de Sigrun que probo la sangre de Thorkel. Thorkel acepta sorprendentemente rapido -- sin resistencia. Plan de Orka: pedir consejo a Froa sobre adonde ir, a un lugar donde haya otro de sus parientes. El plan queda en suspension al encontrar a Froa muerta y escuchar gritos al oeste.',
-        star: '*** Trama activa urgente. El plan de huida se rompe antes de ejecutarse. Los gritos al oeste sugieren que la amenaza ya llego a su umbral. ¿Podran huir a tiempo?'
-    },
-    {
-        id: 'colgante-espada', label: 'Colgante de Espada (Breca)', group: 'OBJETO', type: 'Objeto — Simbolico',
-        desc: 'Pequeno colgante de madera tallado con forma de espada, con pomo de tres lobulos y guarda curva. Colgado de un cordon de cuero al cuello de Breca. Orka lo ve cuando mira a Breca dormido -- lo describe como bien tallado. Thorkel debe haberlo taladrado y encontrado el cordon. Recordatorio del deseo de Breca de aprender esgrima. RECUPERADO por Orka en el desván de El Drengr Muerto: hallado en las cañas de una colchoneta de junco, con el cordón de cuero roto. Primera prueba física de que Breca estuvo vivo en Darl. La visión del colgante desató un aluvión de recuerdos de la última noche en el steading. Ahora en la bolsa del cinturón de Orka. [Nota: el pomo de tres lóbulos es diseño típico de espada vikinga s. IX-X.]',
-        star: '* Pequeno objeto con peso simbolico grande -- anticipa el destino guerrero de Breca. El que Thorkel lo haya hecho revela que acepta, aunque no comparta, la aspiracion de su hijo.'
-    },
-    {
-        id: 'barrow-virk', label: 'Tumulo de Virk', group: 'EVENTO', type: 'Evento',
-        desc: 'Tumulo funerario (barrow) construido sobre la tumba de Virk en Fellur por sus hijos Mord y Lif con ayuda de Orka y Thorkel. Despues del Althing, la familia de Orka se quedo en Fellur el tiempo necesario para ayudar a levantarlo. Mord y Lif recibieron a Orka y familia en su hogar con bacalao salado y salmon ahumado. [Historico: los tumulos funerarios nordicos (haugr) eran montIculos de tierra sobre la tumba del guerrero, marcadores de honor en el paisaje. Enterrar al muerto correctamente era obligacion de los vivos para asegurar su paso por Vergelmir.]',
-        star: 'El barrow convierte la muerte de Virk en hecho permanente del paisaje. Mord y Lif cumplieron con su deber de hijos -- ahora la venganza pesa sobre ellos.'
-    },
-    // ==========================================================
-    // CAPITULO 16 -- NUEVOS NODOS
-    // ==========================================================
-    {
-        id: 'objeto-viga', label: 'Astilla del Cuerno Vackna (en la Viga)', group: 'OBJETO', type: 'Objeto — Reliquia Divina', desc: 'Varg nota algo palido como hueso con extremo de plata incrustado en la viga de la sala de Logur, con cuervo posado encima. Siente presion extraña al acercarse. IDENTIFICADO por Torvik como astilla del Cuerno Vackna -- el cuerno que inicio el Gudfalla. Regalo de Skullsplitter (jefe anterior de los Hermanos) al Jarl Logur. Ha enriquecido a Logur.',
-        star: '*** Misterio resuelto. La sensacion de presion que Varg sintio revela posible sensibilidad magica -- otro indicador de sangre Tainted?'
-    },
-    {
-        id: 'varg-aprendiz', label: 'Estatus de Aprendiz (Varg)', group: 'TRAMA', type: 'Trama — Estado Actual',
-        desc: 'Glornir define el estatus formal de Varg dentro de los Hermanos de Sangre. No es Hermano -- es aprendiz. Los tres pilares que debe demostrar para convertirse en Hermano pleno: (1) habilidad en combate (Rokia dice que es rapido, equilibrado y tiene espiritu guerrero -- el bloque es la falta de tecnica con armas), (2) cualidades de la cabeza = lealtad, y (3) cualidades del corazon = devocion hasta la muerte. Durante el periodo de aprendizaje: la compania lo alimenta, protege y ensena; el obedece, aprende y lucha. El juramento de sangre y el akall de Froya quedan suspendidos hasta que se gane el derecho.',
-        star: '*** Marco narrativo claro para el arco de Varg: el lector sabe exactamente que tiene que demostrar y que obtendra a cambio. El akall es el premio al final del camino de prueba.'
-    },
-    {
-        id: 'partida-liga', label: 'Partida de Liga (Bloodsworn)', group: 'EVENTO', type: 'Evento',
-        desc: 'Los Hermanos de Sangre zarpan de Liga con la marea. Glornir declina la hospitalidad adicional de Logur (la tripulacion esta inquieta por la inactividad). Logur los despide prometiendo barriles llenos -- Salla sera quien lo organice. Varg zarpa con ellos como aprendiz, con equipo comprado con la bolsa de monedas de Glornir. NOTA: la crisis de Sulich/Jaromir queda sin resolucion visible -- Jaromir prometio regresar al dia siguiente pero los Hermanos se van.',
-        star: '** La partida sin resolver el asunto de Jaromir es llamativa. ¿Se fueron antes de que llegara? ¿Se resolvio off-screen? ¿O Glornir deliberadamente huyo de la confrontacion del Althing?'
-    },
-    // ==========================================================
-    // CAPITULO 17 -- NUEVOS NODOS
-    // ==========================================================
-    {
-        id: 'drekr', label: 'Drekr', group: 'ORKA', type: 'Personaje — Antagonista Principal', desc: 'Líder de la operación que rapta niños Tainted en la región de Fellur. Su operación usa un Galdurman o Seiðr-witch para quemar las protecciones rúnicas, ataca con fuerza mixta y huye en botes por ríos. Composición de su banda (vía Vesli): guerreros humanos en cueros de bosque, vaesen, tennur sin juramento, skraelings y al menos un Tainted de linaje dragón con ojos rojos y garras largas (ver nodo tainted-garras). REVELADO (vía Vafri): actúa bajo las órdenes de Hákon, hijo de la Reina Helka. Era el receptor de los informes de espionaje de Vafri sobre Tainted en la región. Destino posible con los niños raptados: Darl (sede de Helka), aunque Vafri lo afirmó con los ojos desviados — posible engaño. DESCRIPCIÓN FÍSICA COMPLETA (visto por Orka en El Drengr Muerto): enorme, más alto y más ancho que Orka — en el combate parece grande suficiente para tapar el cielo. Pelo de cuervo recogido en una trenza apretada que le baja por la espalda. Barba negra con aros de plata. Cara que habría sido atractiva — pómulos marcados, mandíbula afilada, cejas espesas — DESTRUIDA por cuatro marcas de garra que le atraviesan la cara de frente a barbilla, recientes, en carne viva, cosidas. Tatuaje en hombro y pecho: una serpiente de fauces abiertas y colmillos, con el cuerpo en knotwork retorcido. Lleva hacha con asta suficientemente larga para empuñarla a dos manos. En combate: maneja el hacha como un palo corto — bloqueos, cortes, uso rotacional. Footwork sorprendentemente ágil para su tamaño. Sin armadura: solo túnica de lana con bordado de knotwork en cuello y pecho. LOCALIZACIÓN CONFIRMADA: dentro de El Drengr Muerto, taberna en Darl, al amparo de guardias propios y de una drengr de Helka en la puerta principal. Confirmó haber matado a Thorkel personalmente («chilló como un cerdo cuando lo clavé»). Reveló sobre Breca: «tu hijo cambiará el mundo» — sabe algo sobre la naturaleza de Breca que va más allá del rapto. Salud tras el combate: herida en el muslo, pulgar o dedo roto, corte en el torso. Se quedó mirando cómo Orka escapaba a caballo y levantó el hacha en un saludo-promesa de reencuentro. Las cuatro marcas de garra en la cara son recientes — ¿qué se las hizo? (ver nodo garras-drekr). OPERACIÓN EN DARL: niños mantenidos en el desván de El Drengr Muerto (~20 colchonetas); Breca entre ellos, ya trasladado antes de la llegada de Orka. Bersi era su hombre para el transporte, muerto por Orka (ver nodo rescate-ninos-canal). Hákon estaba presente en la misma mesa durante el ataque (ver nodo hakon, ver nodo combate-dead-drengr).',
-        star: '★★★ La pregunta de quién financiaba a Drekr tiene respuesta: Hákon / Helka. El rapto de niños Tainted no es bandolerismo — es política de estado. Darl como destino coloca a Breca en el corazón del poder de Helka. La pregunta que persiste: ¿para qué quiere Helka a los niños Tainted?'
-    },
-    {
-        id: 'ataque-steading', label: 'Ataque al Steading de Orka', group: 'EVENTO', type: 'Evento — Crisis', desc: 'La banda de Drekr ataca el steading de Orka mientras ella esta en el bosque buscando a Froa. Cronologia completa (reconstruida por Vesli): (1) destruyen las galdr-runas (Galdurman o Seidr-witch), (2) el infiltrado joven abre la puerta desde dentro, (3) guerreros + vaesen + skraelings + tennur sin juramento + el Tainted-garras de ojos rojos escalan la empalizada, (4) Spert mata a uno con su veneno antes de ser apunalado, (5) Thorkel barro el hall y lucho en el umbral matando a 5-6 atacantes, (6) Thorkel se transformo en el combate (ver nodo thorkel-transformacion), (7) el Tainted-garras de ojos rojos mato a Thorkel con sus garras, (8) los tennur de Drekr intentaron raptar especificamente a Breca -- Vesli los combatio y fue herida, (9) Breca es llevado vivo en los botes.',
-        star: '*** Evento pivote de la novela. Dos detalles cruciales: Thorkel se TRANSFORMO en el combate (sangre Tainted de lobo confirmada implicitamente, ver nodo thorkel-transformacion), y los tennur buscaban especificamente a Breca.'
-    },
-    {
-        id: 'thorkel-muerte', label: 'Muerte de Thorkel', group: 'EVENTO', type: 'Evento — Muerte POV',
-        desc: 'Thorkel Ulfsson muere en brazos de Orka tras defender el steading contra la banda de Drekr. Defendio solo: retrocedio hasta el hall, barro la puerta y aguanto el umbral mas estrecho donde el numero no contaba. Mato a cinco o seis atacantes -- uno con la cabeza partida de corona a menton por su hacha larga. Fue apunalado con dos seaxes -- uno alto en el pecho, uno en el vientre. Aun respiraba cuando Orka llego. Ultimas palabras: They took Breca y despues Dragon-born. Orka pasa sus dedos por sus labios y frota su sangre sobre su propia cara en franjas (ritual de duelo/guerra). Le coloca su hacha larga en las manos para el paso por Vergelmir. El hall se derrumba encima del lugar donde yacia.',
-        star: '*** Muerte de personaje principal POV. Sus dos ultimas palabras son las revelaciones mas grandes del libro: (1) confirma que Drekr se llevo a Breca vivo, (2) Dragon-born -- murio combatiendo a un Tainted de linaje de Lik-Rifa. Elvar estaba equivocada. Uspa tenia razon. Orka le da un final digno con el hacha en las manos -- morira bien armado para Vergelmir.'
-    },
-    {
-        id: 'galdurman-drekr', label: 'Galdurman/Seidr de Drekr', group: 'TRAMA', type: 'Trama — Personaje sin Nombre',
-        desc: 'Alguien en la banda de Drekr tiene poder de Galdur o Seidr suficiente para quemar y destruir completamente las galdr-runas de proteccion del steading. Orka lo confirma al ver el poste de runas destruido: solo un Galdurman o Seidr-witch podria haberlo hecho. Este individuo sin nombre es un activo clave de la organizacion de Drekr -- sin el, no podrian penetrar los steadings protegidos. Puede ser el mismo dragon-born que identifico Thorkel, o un segundo miembro magico del grupo.',
-        star: '*** Sin nombre. Sin descripcion. Pero su existencia confirma que Drekr no es solo un jefe de banda comun -- tiene acceso a magia de alto nivel. ¿Es el dragon-born el Galdurman? ¿O son dos personas diferentes?'
-    },
-    {
-        id: 'chico-joven', label: 'Joven Infiltrado (†)', group: 'ORKA', type: 'Personaje — Muerto',
-        desc: 'sobrino del hombre muerto encima de Snort el pony. Fue contratado por su tio para abrir la puerta del steading de Orka desde dentro -- ojos agudos, brazos largos y pies silenciosos, contratado a cambio de oro. No era un guerrero -- fue un medio de acceso. Interrogado por Orka en el rio: revela que Breca fue llevado por el rio y que el lider se llama Drekr. Muere a manos de Orka cuando la informacion ha sido obtenida.',
-        star: 'El infiltrado fue el punto de quiebre del steading -- la proteccion galdr-runica no sirve contra un humano que abre la puerta. La vulnerabilidad no era magica sino humana.'
-    },
-    {
-        id: 'drekr-cazadora', label: 'La Caza de Drekr', group: 'TRAMA', type: 'Trama — Nueva Direccion',
-        desc: 'Nuevo arco de Orka tras el ataque al steading: Thorkel muerto (ver nodo thorkel-muerte), Breca raptado. Orka sigue las huellas hasta el rio donde cuatro rezagados de Drekr estan matando a su pony Snort. Los mata a todos: lanza a uno en la espalda, seax al viejo en el vientre, hacha repetida sobre la mujer hasta pulpa en acceso de rabia feral, lanza al chico joven en el pecho tras interrogarlo. El chico revela que Breca fue llevado en los botes por el rio y que el lider se llama Drekr. El rio se bifurca en dos canales pasado un penasco de granito -- Orka no sabe que camino tomaron. Sale a buscar a Drekr con el nombre, las armas de Thorkel y las de su cofre enterrado.',
-        star: '*** Nuevo motor narrativo del arco Orka. Tiene el nombre, tiene las armas, tiene el rastro en el rio. La rabia feral sobre la mujer es la primera vez que vemos ese lado sin control -- no defensa, sino furia pura. ¿Cual camino tomo Drekr?'
-    },
-    // ==========================================================
-    // CAPITULO 18 -- NUEVOS NODOS
-    // ==========================================================
-    {
-        id: 'sea-wolf', label: 'Sea-Wolf (Lobo del Mar)', group: 'VARG', type: 'Objeto — Drakkar',
-        desc: 'El drakkar de los Hermanos de Sangre. Tras cinco días remando río arriba por el Slågen, amarrado ahora en el muelle de una granja abandonada en las estribaciones noroccidentales de las Boneback. Diez Hermanos de Sangre quedaron a bordo como guardia; el resto marchó a pie hacia las montañas. Amarrado en el muelle de Liga. Jaromir pone jinetes con antorchas en la entrada del muelle amenazando con quemarlo si Glornir no entrega a Sulich. Hay figuras moviendose en su cubierta. Glornir se niega y la batalla estalla antes de que pueda zarpar. La llegada de Helka interrumpe la crisis.',
-        star: 'Nombre confirmado: Sea-Wolf. La amenaza de quemarlo es la presion maxima sobre Glornir -- el drakkar es la vida operativa de los Hermanos.'
-    },
-    {
-        id: 'aslog', label: 'Aslog (†)', group: 'VARG', type: 'Personaje — Muerto (Hermanos)',
-        desc: 'Hermano de Sangre fallecido cuyo lugar en el banco de remos ocupa Varg. Glornir le entrega a Varg la lanza de Aslog con las palabras: era un hombre fino, aunque no lo suficientemente fino como para conservar la cabeza. Ha tomado el camino del alma. Que te traiga batalla-fama. El detalle de la cabeza sugiere que murio decapitado en combate.',
-        star: '¿Como murio Aslog exactamente? Su lanza y su banco pasan a Varg -- Varg hereda su lugar en los Hermanos en todos los sentidos.'
-    },
-    {
-        id: 'skullsplitter', label: 'Skullsplitter (Rompe-Craneos) (†)', group: 'VARG', type: 'Personaje — Muerto (Jefe Anterior)',
-        desc: 'Jefe anterior de los Hermanos de Sangre. Hermano de Glornir. Físico: grande y macizo como un oso — el oar-dance no era su fuerte, pero partir cráneos con la long-axe sí. Fue quien regaló al Jarl Logur la astilla del Cuerno Vackna como parte de la relación de protección entre los Hermanos y Liga. MUERTE CONFIRMADA: cayó por la borda del Sea-Wolf en plena batalla naval, con cota de malla puesta, y se ahogó. Glornir aún lo llora — Svik advierte en voz baja que no se mencione su caída cerca del jefe. Mencionado en historias de fogata entre los thralls de la granja de Kolskegg antes incluso de que Varg se uniera.',
-        star: '★★ La muerte de Skullsplitter explica la austeridad de Glornir: lidera una compañía cuyos ojos aún buscan al hermano mayor. La brynja y la long-axe que lo hundieron son el precio del combate naval con armadura completa — lección tácita para todos los Bloodsworn.'
-    },
-    {
-        id: 'batalla-muelles', label: 'Batalla en los Muelles de Liga', group: 'EVENTO', type: 'Evento — Combate',
-        desc: 'Jaromir bloquea el muelle con caballeria druzhina cuando ve preparar el Sea-Wolf para zarpar. Glornir se niega a entregar a Sulich. Jaromir le dispara una flecha (Glornir la derriba en el aire con su hacha). Grita LOOSE y desata 40-50 flechas. Los Hermanos forman skjaldborg. Los druzhina cargan por frente y retaguardia. Einar lanza una lanza y mata a un druzhina a caballo. Edel y sus sabuesos derriban otro caballo. Varg abandona el muro, sube a un caballo y mata a un druzhina con el seax. Jarl Logur llega con guardias de escudo azul. La batalla se detiene cuando la flota de Helka entra al fiordo.',
-        star: '*** Primera batalla campal del arco Varg. Bloodsworn vs druzhina iskidanos -- dos estilos de combate del mundo de Gwynne. Interrumpida por la llegada de un tercer poder.'
-    },
-    {
-        id: 'llegada-helka', label: 'Llegada de Helka a Liga', group: 'EVENTO', type: 'Evento — Politico Mayor',
-        desc: 'tres drakkars enormes y elegantes glidan por el fiordo hacia Liga. Velas negras con imagen de aguila de alas extendidas, pico y garras en ataque -- emblema de Helka y su dominio sobre los huesos de Orna. Cuernos suenan desde sus cubiertas. Toda la batalla en los muelles se detiene al instante. Hasta Varg, recien llegado al mundo de la politica, reconoce ese estandarte.',
-        star: '*** MAYOR. Primera aparicion fisica de Helka en la novela. ¿Por que viene a Liga? Tres posibilidades: (1) viene por los Hermanos, (2) sabe lo de Sulich y viene a mediar, (3) la crisis con Iskidan es mas grande de lo que parecia. O las tres.'
-    },
-    // ==========================================================
-    // CAPITULO 19 -- NUEVOS NODOS
-    // ==========================================================
-    {
-        id: 'tainted-garras', label: 'Tainted-Garras (Dragon-Born)', group: 'ORKA', type: 'Personaje — Tainted Antagonista',
-        desc: 'El Tainted de linaje dragon que mato a Thorkel en el ataque al steading (ver nodo ataque-steading). Descrito por Vesli: humano pero no del todo -- dos garras largas y afiladas, ojos que brillan rojo como brasas (marcador visual unico del linaje Lik-Rifa, distinto del ambar de Ulfrir/Berser). Fiero y mortal en combate. Trabaja para Drekr. Los seaxes de filo largo y ancho que Orka saco del cuerpo de Thorkel son sus armas (ver nodo seaxes-tainted). Orka los lleva al cinto con intencion de devolverselos.',
-        star: '*** Primera descripcion fisica de un dragon-born en la novela. Ojos ROJOS = linaje Lik-Rifa. Sus armas mataron a Thorkel. Orka las lleva al cinto como declaracion de guerra personal contra este individuo. Sin nombre todavia.'
-    },
-    {
-        id: 'tumulo-thorkel', label: 'Entierro de Thorkel y Voto de Orka', group: 'EVENTO', type: 'Evento — Rito y Declaracion',
-        desc: 'Orka entierra a Thorkel en el patio del steading destruido. Cava la tumba, arrastra el cuerpo con la hacha larga aun en el puno, coloca el seax ornamentado (ver nodo cofre-enterrado) a su lado, desliza los brazaletes de oro por sus brazos -- sus propios simbolos de rango, entregados a el. Construye un barrow de madera y piedra hasta que solo queda visible la cara. Vierte su propia sangre sobre el rostro de Thorkel. Entonces pronuncia el voto: Soy sangre. Soy muerte. Soy venganza. Voz plana y vacia -- no rabia, sino frialdad. Toma los dos seaxes que mataron a Thorkel (ver nodo seaxes-tainted) y los mete en su cinturon. Cubre el barrow. Al salir, rechaza la compania de Vesli: su unica companera es la muerte.',
-        star: '*** El entierro con los brazaletes de oro y el voto son una sola escena inseparable. La frialdad es mas aterradora que la rabia. Orka no promete venganza como emocion -- la declara como estado de ser.'
-    },
-    {
-        id: 'cofre-enterrado', label: 'Cofre Enterrado de Orka', group: 'OBJETO', type: 'Objeto — Pasado Oculto',
-        desc: 'Cofre de madera enterrado bajo el suelo del patio del steading, al oeste del hall, guardado por mas de 10 anos. Contenido: brynja de malla remachada (perfecta, conservada en grasa), seax en funda de cuero pulido con knotwork y empunadura de marfil de morsa con herrajes de plata, un puno de brazaletes de plata y oro trenzados, y una bolsa de monedas. Al abrirla Orka experimenta una avalancha de recuerdos de batalla, muerte, viejos amigos y viejos enemigos (algunos que fueron las dos cosas).',
-        star: '*** Una brynja de esa calidad y esos brazaletes de plata y oro no son de una granjera -- son de una guerrera de alto rango, posiblemente de una compania o guardia de un jarl. ¿Quien era Orka antes del steading? ¿Por que lo enterro todo?'
-    },
-    {
-        id: 'seaxes-tainted', label: 'Seaxes del Tainted-Garras', group: 'OBJETO', type: 'Objeto — Armas del Enemigo',
-        desc: 'Los dos seaxes que mataron a Thorkel, sacados por Orka de su cuerpo. Descripcion: tan largos como su antebrazo, gruesos en la guarda, filo unico y hoja ancha con taper brusco hacia la punta. Empunadura tallada en fresno con knotwork en espiral, capuchon de bronce, pasador enhebrado con cuero. Orka los toma deliberadamente y los mete en su cinturon. Su intencion declarada: encontrar al dueno y devolvercelos.',
-        star: '*** Las armas del asesino de Thorkel como instrumentos de venganza. El detalle de la descripcion (fresno, knotwork, bronce) hace de estos seaxes objetos identificables. Orka los convierte en su declaracion de intencion.'
-    },
-    {
-        id: 'vesli-saliva', label: 'Saliva Curativa de Vesli', group: 'VAESEN', type: 'Concepto — Magia Vaesen',
-        desc: 'La saliva de Vesli (tennur) tiene propiedades medicinales y adhesivas. Escupida en un glob glutinoso, amasada con los dedos se vuelve fibrosa como tendón. Aplicada sobre heridas: acelera la curación, reduce el dolor en heartbeats, sirve como hilo y como sellador de tejidos. Capacidad probada en campo tras el ataque al steading (ver nodo ataque-steading). [Implicación: convierte a Vesli de carga percibida a recurso táctico. Aún no se sabe si es capacidad universal de los tennur o específica de Vesli.]',
-        star: '** Convierte a Vesli de carga a recurso tacticamente valioso. ¿Es capacidad de todas las tennur o especifica de Vesli? ¿Funciona en heridas magicas o solo fisicas?'
-    },
-    {
-        id: 'thorkel-transformacion', label: 'Transformacion de Thorkel (Confirmacion)', group: 'TRAMA', type: 'Trama — Revelacion',
-        desc: 'Vesli describe la batalla y dice: Thorkel fierce. Thorkel change, become... (no completa). Orka asiente sin sorpresa -- lo sabia. Esto confirma que Thorkel tenia capacidad de transformacion en combate, muy probablemente sangre Tainted de lobo. Evidencia acumulada: patronimico Ulfsson (hijo de Ulfrir); conocia el termino Ulfhednar con precision exacta sin titubear; acepto huir del steading ante esa amenaza especificamente; eligio morir peleando afuera en el umbral (no escondido). Murio siendo lo que era.',
-        star: '*** La confirmacion mas directa posible sin decirlo explicitamente. Vesli lo vio transformarse. Orka asiente sin cuestionarlo. 19 capitulos de insinuaciones culminan en ese asentimiento silencioso.'
-    },
-
-    {
-        id: 'fuga-fiordo', label: 'Fuga por el Fiordo y Pacto con Mord y Lif', group: 'EVENTO', type: 'Evento — Fuga y Acuerdo',
-        desc: 'Tras la huida nocturna del mead hall de Sigrún, Orka, Mord y Lif reman en círculo alrededor del fiordo para engañar a Guðvarr, quien los había visto partir hacia el sur. Al amanecer, esconden la barca en un banco de cañas y desembarcan bajo un sauce junto al río. Mord, con la herida en la cabeza reabierta y vendaje empapado en sangre, se desploma en un montón de cuerdas mientras Lif le rehace el vendaje. Orka aparece cubierta de sangre costrosa, con un fragmento de hueso enredado en el cabello —restos de la mujer que mató en la orilla antes de la redada—. Distribuye carne de cerdo salada, pan negro y queso. Durante el descanso, Mord y Lif preguntan por Thorkel y Breca; Orka responde con sequedad: Thorkel está muerto y Breca fue raptado. Declara que fue a Sigrún a exigir explicaciones —y le abrió la cara. Revela también que la thrall de Sigrún tiene una herida de vientre que puede ser mortal, lo que deja a Mord sin su segundo objetivo de vendetta. Los hermanos expresan su intención de regresar a matar a Guðvarr; Orka les aconseja esperar meses hasta que Fellur esté tranquilo. Lif propone el pacto: ellos remanán a Orka adonde vaya; ella les enseñará armas. Mord se niega al principio, pero Lif señala que sin barca Orka va a pie —y los que se llevaron a Breca viajan en bote. Orka cede. Destino: norte y oeste, hacia Darl, al pie de los picos nevados de las Montañas Boneback. El pacto se sella en silencio y con los remos al agua.',
-        star: '★★★ El pacto convierte a Mord y Lif de huérfanos a la deriva en compañeros de camino de Orka. Lif es el agente intelectual del trato: observador, pragmático, capaz de presionar sin provocar. Mord es el corazón herido que necesita ser dirigido. La descripción de Orka mirando el lugar donde estaba su granja —«un túmulo, no un hogar»— es el cierre emocional de esa arco antes de que la historia gire hacia Darl.'
-    },
-
-    // ── Nuevos nodos del glosario ─────────────────────────────────────────
-    {
-        id: 'akall-concepto', label: 'Akáll (Invocación de Muertos)', group: 'MAGIA', type: 'Concepto — Ritual Mágico',
-        desc: 'Ceremonia de invocación mágica que permite revelar los últimos momentos de un muerto. Tipo específico de Seiðr practicado por brujas völva. El akáll interroga al espíritu del difunto para obtener información sobre las circunstancias de su muerte. Requiere una practicante con poder suficiente. El ritual es extenuante y conlleva un coste físico. [Histórico: en las sagas nórdicas, las völvur podían comunicarse con los muertos. El seiðr de muerte (útiseta, "sentarse fuera") implicaba contacto con el mundo de los muertos. Gwynne lo sistematiza como procedimiento: interrogar al muerto para obtener testimonio.]',
-        star: '★★★ El akáll es la clave de la trama de Varg: su petición a Glornir representa la primera articulación pública de su objetivo principal. Ver nodo akall para el evento específico.'
-    },
-    {
-        id: 'berserkir', label: 'Berserkir (Guerrero-Oso)', group: 'COSMO', type: 'Concepto — Élite Tainted Oso',
-        desc: 'Clase de Tainted descendiente de Berser el dios-oso. Poseen fuerza sobrehumana, ojos ambarinos en combate y capacidad de transformación parcial. Equivalente ursino de los Ulfhéðnar (guerreros-lobo). Los Berserkir son los Tainted de mayor fuerza bruta conocida en Vigríð. [Histórico: los berserkir nórdicos eran guerreros sagrados de Odín que entraban en trance animal (berserkergang). En las sagas se describen como invulnerables al acero y al fuego durante el frenesí. Gwynne los reinterpreta como linaje de sangre divina literal de Berser.]',
-        star: '★★★ Berak es Berserkir confirmado. Su captura por los Terrores de la batalla lo convierte en activo de altísimo valor estratégico para quien lo controle. Paralelismo deliberado con Ulfhéðnar: oso vs lobo.'
-    },
-    {
-        id: 'blod-svarid', label: 'Blóð Svarið (Juramento de Sangre)', group: 'MAGIA', type: 'Concepto — Magia Vinculante',
-        desc: '[Pronunciación: "Bloth Svarith" — la ð suena como la "th" de "they".] Juramento mágico sellado con sangre, runas y palabras de poder. Va más allá del compromiso verbal: la magia lo hace físicamente vinculante. RITUAL: una Seiðr-witch talla cuatro runas en madera — Líf (vida), Dauða (muerte), Blóð svarið (juramento de sangre), Kvöl (tormento). Cada participante corta la palma de su mano y deja caer su sangre sobre las runas. La witch pronuncia las palabras de vinculación en nórdico antiguo: «Blóð eið munum við gera, að binda hver við annan með rúnir af krafti...» La sangre se eleva sola de la madera, forma un cordón que flota, envuelve las manos y muñecas de todos los participantes y las quema — dejando una marca roja permanente alrededor de la muñeca como tatuaje. Palabras de cierre pronunciadas en conjunto: «Svo skal það vera» (así sea). CONSECUENCIAS: mientras la sangre corra en las venas, el juramento es inviolable. Quebrantarlo antes de morir hace que la sangre hierva dentro del cuerpo — muerte en agonía. Solo una Seiðr-witch puede dirigir el ritual. [Histórico: los juramentos de sangre nórdicos (blóðeiðr) se consideraban sagrados e irrompibles. La sangre era la sede del honor y el alma. Gwynne lo eleva a mecanismo mágico activo: no solo promesa social sino pacto con consecuencias sobrenaturales.]',
-        star: '★★★ El blóð svarið es el dispositivo más importante del arco de Elvar: convierte un acuerdo verbal entre extraños en un vínculo que ninguno puede traicionar sin morir. La marca en la muñeca es el sello visible — y el recordatorio permanente de lo que está en juego.'
-    },
-    {
-        id: 'galdrabok', label: 'Galdrabók (Libro de Magia)', group: 'MAGIA', type: 'Concepto — Texto Mágico',
-        desc: 'Libro de magia que contiene runas, hechizos y conocimiento arcano. Término genérico para los textos de poder en Vigríð. Los galdrabók más conocidos son la Graskinna (piel gris) y la Rauðskinna (piel roja), fabricados en pieles curtidas. El conocimiento contenido en un galdrabók puede ser peligroso o prohibido. [Histórico: los galdrabók islandeses reales (s. XVII) contenían hechizos rúnicos, conjuros de protección y maldiciones. Gwynne adapta el concepto a Vigríð con libros de poder genuinamente mágico escritos en materiales perturbadores.]',
-        star: '★★ Los galdrabók representan el conocimiento mágico sistematizado. La Rauðskinna en particular, hecha de piel de dios muerto, es el texto de mayor poder conocido.'
-    },
-    {
-        id: 'graskinna', label: 'Graskinna (Piel Gris)', group: 'MAGIA', type: 'Objeto — Texto Mágico (DESTRUIDO)',
-        desc: 'Galdrabók de piel curtida gris que contenía el único camino conocido hasta Oskutreð, escrito en el lenguaje arcano de los viejos poderes — solo legible por Galdurmen, Seiðr-witches y quienes dominan las formas antiguas. Perteneció a Ilska y los Alimentadores de Cuervos, que lo custodiaban como su mayor activo. Berak y Uspa lo robaron durante su huida de la compañía — Berak mató a varios Raven-Feeders en el proceso; desde entonces Ilska los persiguió sin descanso. En Iskalt, mientras los Terrores de la batalla capturaban a Berak y Uspa, Uspa lanzó el libro a la laguna de lava de la montaña de fuego y pronunció las palabras de desvinculación mientras Berak luchaba contra el trol para ganarle tiempo — Elvar lo vio sin saber qué era lo que arrojaba. El libro es ceniza. Uspa es ahora la única persona viva que conoce el camino a Oskutreð, guardado en su memoria. DESTRUIDO en Iskalt (ver nodo iskalt).',
-        star: '★★★ La destrucción de la Graskinna transforma a Uspa de presa en llave. No hay forma de confirmar ni replicar su conocimiento — solo su palabra y el blóð svarið pueden garantizar la alianza. Irónicamente, Uspa destruyó el libro para que nadie llegara a Oskutreð, y ahora la obligan a llevar a otros allí de todos modos. El precio de proteger al mundo fue su propia libertad.'
-    },
-    {
-        id: 'raudskinna', label: 'Rauðskinna (Piel Roja)', group: 'MAGIA', type: 'Concepto — Texto Mágico',
-        desc: '[Pronunciación: "Rauthskinna" — la ð suena como la "th" de "they".] El más poderoso de los libros de magia conocidos, escrito sobre la piel desollada de un dios muerto. Su color rojo proviene de la sangre divina que impregna el pergamino. Contiene conocimiento mágico de nivel superior al de cualquier otro galdrabók. [Histórico: la Rauðskinna (Piel Roja) islandesa histórica era un grimorio legendario atribuido al obispo Gottskálk el Cruel (s. XVI), considerado el libro de magia más peligroso jamás escrito. Gwynne toma el nombre y lo amplifica: no piel de animal sino de dios.]',
-        star: '★★★ Fabricado con piel de dios muerto — el material más cargado de poder en Vigríð. Su existencia implica que alguien desollÃ³ un cadáver divino. ¿Quién lo hizo? ¿Quién lo posee ahora?'
-    },
-    {
-        id: 'gudljos', label: 'Guðljós (Luces de Dioses)', group: 'COSMO', type: 'Concepto — Fenómeno Cosmológico',
-        desc: '[Pronunciación: "Guthlyos" — la ð suena como la "th" de "they"; la j suena como la "y" de "yellow".] Luces divinas visibles en el cielo de Vigríð, remanente del poder de los dioses tras el Guðfalla. Fenómeno cosmológico que recuerda a los habitantes de Vigríð que los dioses existieron y que su poder aún permea el mundo.',
-        star: '★ Detalle cosmológico que subraya cómo el mundo de Vigríð vive bajo la sombra literal del poder divino perdido.'
-    },
-
-    {
-        id: 'tafl', label: 'Tafl (Juego de Estrategia)', group: 'NORSE', type: 'Concepto — Cultura Lúdica',
-        desc: 'Juego de estrategia sobre tablero con figuras talladas, equivalente nórdico del ajedrez. Jugado en los salones de los jarls y en los campos de batalla. Símbolo de inteligencia táctica. [Histórico: el hnefatafl ("tablero del rey") era el juego de mesa nórdico por excelencia antes de la llegada del ajedrez. Jugado asimétricamente: un rey rodeado defiende contra un atacante. Gwynne lo usa como marcador cultural de las élites de Vigríð.]',
-        star: ''
-    },
-    {
-        id: 'whale-road', label: 'Whale-Road (El Mar Abierto)', group: 'NORSE', type: 'Concepto — Kenning Poético',
-        desc: 'Kenning (figura poética nórdica) para el mar abierto. Los skalds de Vigríð usan kennings como whale-road (camino de las ballenas) para referirse al océano con resonancia épica. Refleja la cultura oral y poética de la sociedad nórdica. [Histórico: hronrād ("camino de la ballena") es una de las kennings más famosas del inglés antiguo, del poema Beowulf. Los skalds nórdicos construían kennings como metáforas compuestas: kennings de mar incluyen también "camino del cisne", "casa del viento".]',
-        star: ''
-    },
-    {
-        id: 'winnigas', label: 'Winnigas (Vendas de Pierna)', group: 'NORSE', type: 'Concepto — Vestimenta',
-        desc: 'Tiras de tela que cubren las piernas desde el tobillo hasta justo debajo de la rodilla. Protección práctica contra el frío y la rozadura. Usadas por guerreros y civiles por igual. [Histórico: las winnigas (del anglosajón winnigan) eran vendas de pierna comunes en el norte de Europa medieval. Se enrollaban en espiral. Baratas y funcionales: cualquiera podía llevarlas, independientemente del estatus.]',
-        star: ''
-    },
-    {
-        id: 'hangerock', label: 'Hangerock (Vestido Nórdico)', group: 'NORSE', type: 'Concepto — Vestimenta',
-        desc: 'Tipo de vestido o sobrevestido femenino nórdico. Prenda exterior característica de las mujeres en la cultura de Vigríð. [Histórico: el hangeroc (anglosajón) o höngeroc era el sobrevestido de lana típico de las mujeres vikingas, sujeto con broches a los hombros sobre una camisa de lino. Marcador cultural de la femineidad en la sociedad nórdica.]',
-        star: ''
-    },
-    {
-        id: 'nalbinding', label: 'Nålbinding (Tejido Arcaico)', group: 'NORSE', type: 'Concepto — Artesanía',
-        desc: 'Técnica antigua de tejer con aguja que precede al tejido de punto moderno. Usada para fabricar ropa, calcetines y gorros. Más resistente que el tejido moderno. Técnica artesanal cotidiana en la sociedad de Vigríð. [Histórico: el nålebinding ("atar con aguja") es una de las técnicas textiles más antiguas conocidas (restos de más de 6.500 años). La tela resultante no se deshilacha al cortar, a diferencia del tejido de punto.]',
-        star: ''
-    },
-    {
-        id: 'madur-boy', label: 'Maður-Boy (Niño Humano)', group: 'NORSE', type: 'Concepto — Término Cultural',
-        desc: '[Pronunciación: "Mathur-Boy" — la ð suena como la "th" de "they".] Término para designar un niño humano puro, sin sangre divina. Contrasta con los Tainted, descendientes de dioses. En el contexto de Vigríð, la distinción entre maður (humano) y Tainted es legalmente relevante: determina derechos, estatus y peligrosidad percibida.',
-        star: '★ La distinción maður/Tainted es la fractura social central de Vigríð. Breca es sospechoso de no ser maður-boy puro.'
-    },
-    {
-        id: 'skal', label: 'Skál (Brindis)', group: 'NORSE', type: 'Concepto — Cultura Social',
-        desc: 'Brindis ritual de buena salud. Expresión de camaradería y celebración en los salones de los jarls. Parte del ritual del mead-hall: el skáld canta, se sirve hidromiel y se pronuncian skál. [Histórico: skál (nórdico antiguo) es el origen del inglés "skull" en expresiones de brindis ("skull" como copa). Acompañaba el consumo ritual de hidromiel en las salas comunales.]',
-        star: ''
-    },
+    // Orka
+    { source: 'orka', target: 'cat-orka', label: '', type: 'arc' },
+    { source: 'orka', target: 'thorkel', label: 'Esposo', type: 'rel' },
+    { source: 'orka', target: 'breca', label: 'Hijo', type: 'rel' },
+    { source: 'orka', target: 'asgrim-death', label: 'descubre', type: 'event' },
+    { source: 'orka', target: 'spert', label: 'vínculo sangre', type: 'magic' },
+    { source: 'orka', target: 'virk', label: 'comercian', type: 'event' },
+    { source: 'orka', target: 'sigrun', label: 'la cuestiona en el Althing', type: 'event' },
+    { source: 'orka', target: 'vafri', label: 'observa lamiendo sangre de Thorkel', type: 'event' },
+    { source: 'orka', target: 'second-combat', label: 'segundo de Virk', type: 'event' },
+    { source: 'orka', target: 'karl', label: 'vive como', type: 'rel' },
+    { source: 'orka', target: 'froa', label: 'encontro muerta / buscaba consejo', type: 'event' },
+    { source: 'orka', target: 'barrow-virk', label: 'ayudo a construir', type: 'event' },
+    { source: 'orka', target: 'decision-huida', label: 'propone huir', type: 'event' },
+    { source: 'orka', target: 'thorkel-muerte', label: 'presencio', type: 'event' },
+    { source: 'orka', target: 'ataque-steading', label: 'llego tarde a', type: 'event' },
+    { source: 'orka', target: 'drekr-cazadora', label: 'protagoniza', type: 'rel' },
+    { source: 'orka', target: 'drekr', label: 'caza a', type: 'conflict' },
+    { source: 'orka', target: 'chico-joven', label: 'interrogo y mato', type: 'event' },
+    { source: 'orka', target: 'tumulo-thorkel', label: 'construyo', type: 'event' },
+    { source: 'orka', target: 'cofre-enterrado', label: 'desenterra / pertenecía a', type: 'event' },
+    { source: 'orka', target: 'seaxes-tainted', label: 'lleva al cinto', type: 'rel' },
+    { source: 'orka', target: 'tainted-garras', label: 'busca a', type: 'conflict' },
+    { source: 'orka', target: 'raid-camara-sigrun', label: 'protagoniza', type: 'rel' },
+    { source: 'orka', target: 'mord-lif', label: 'viaja junto a', type: 'rel' },
+    { source: 'orka', target: 'hakon', label: 'nuevo objetivo conocido', type: 'conflict' },
+    { source: 'orka', target: 'darl', label: 'se dirige a', type: 'trama' },
+    // Thorkel
+    { source: 'thorkel', target: 'virk', label: 'comercian', type: 'history' },
+    { source: 'thorkel', target: 'breca', label: 'Hijo', type: 'rel' },
+    { source: 'thorkel', target: 'asgrim-death', label: 'descubre', type: 'event' },
+    { source: 'thorkel', target: 'vafri', label: 'pateó / identificó Ulfrir-kin', type: 'event' },
+    { source: 'thorkel', target: 'drengr', label: 'se considera', type: 'rel' },
+    { source: 'thorkel', target: 'thrall', label: 'ex-thrall', type: 'rel' },
+    { source: 'thorkel', target: 'karl', label: 'vive como', type: 'rel' },
+    { source: 'thorkel', target: 'ulfhednar', label: 'identifica el tipo', type: 'trama' },
+    { source: 'thorkel', target: 'decision-huida', label: 'acepta sin resistencia', type: 'event' },
+    { source: 'thorkel', target: 'colgante-espada', label: 'tallo para Breca', type: 'rel' },
+    { source: 'thorkel', target: 'thorkel-muerte', label: 'muere en', type: 'event' },
+    { source: 'thorkel', target: 'ataque-steading', label: 'defensor', type: 'event' },
+    { source: 'thorkel', target: 'dragon-born', label: 'confirma con ultima palabra', type: 'lore' },
+    { source: 'thorkel', target: 'drekr', label: 'muerto por banda de', type: 'conflict' },
+    // Breca
+    { source: 'breca', target: 'vesli', label: 'protege / jura', type: 'magic' },
+    { source: 'breca', target: 'hueso-dios-fellur', label: 'reacción', type: 'trama' },
+    { source: 'breca', target: 'asgrim-death', label: 'descubre', type: 'event' },
+    { source: 'breca', target: 'tainted', label: 'posible sangre', type: 'trama' },
+    { source: 'breca', target: 'drekr', label: 'raptado por', type: 'conflict' },
+    { source: 'breca', target: 'ataque-steading', label: 'raptado en', type: 'event' },
+    // Gudvarr
+    { source: 'gudvarr', target: 'sigrun', label: 'sobrino', type: 'rel' },
+    { source: 'gudvarr', target: 'niding', label: 'insultó a Virk', type: 'event' },
+    { source: 'gudvarr', target: 'holmganga-event', label: 'Combatiente y se rindió legalmente', type: 'event' },
+    { source: 'gudvarr', target: 'mord-lif', label: 'capturó tras intento de asesinato', type: 'event' },
+    // Arild
+    { source: 'arild', target: 'sigrun', label: 'Drengr de', type: 'rel' },
+    { source: 'arild', target: 'gudvarr', label: 'acompaña a', type: 'rel' },
+    { source: 'arild', target: 'second-combat', label: 'segundo de Guðvarr', type: 'event' },
+    // Virk
+    { source: 'virk', target: 'mord-lif', label: 'hijos', type: 'trama' },
+    { source: 'virk', target: 'funeral-rites', label: 'cuerpo envuelto', type: 'event' },
+    { source: 'virk', target: 'holmganga-event', label: 'combatiente y violó las reglas', type: 'rel' },
+    // vafri - Thrall de Sigrun
+    { source: 'vafri', target: 'sigrun', label: 'sirve a / guardaespaldas', type: 'rel' },
+    { source: 'vafri', target: 'tainted', label: '¿sangre divina?', type: 'trama' },
+    { source: 'vafri', target: 'ulfrir', label: 'sangre confirmada', type: 'rel' },
+    { source: 'vafri', target: 'seax', label: 'usa dos', type: 'rel' },
+    { source: 'vafri', target: 'drekr', label: 'informaba a través de', type: 'rel' },
+    // Asgrim
+    { source: 'asgrim', target: 'idrun', label: 'esposo/a', type: 'rel' },
+    { source: 'asgrim', target: 'asgrim-death', label: 'muerto en', type: 'event' },
+    { source: 'asgrim', target: 'harek', label: 'padre', type: 'rel' },
+    // Idrun
+    { source: 'idrun', target: 'harek', label: 'madre', type: 'rel' },
+    { source: 'idrun', target: 'asgrim-death', label: 'muerta en', type: 'event' },
+    // Sigrun
+    { source: 'sigrun', target: 'fellur', label: 'jarl de', type: 'arc' },
+    { source: 'sigrun', target: 'helka', label: 'juro lealtad', type: 'rel' },
+    { source: 'sigrun', target: 'althing', label: 'anunció juramento', type: 'event' },
+    { source: 'sigrun', target: 'brynja', label: 'lleva remachada', type: 'rel' },
+    // Falki
+    { source: 'falki', target: 'oath-stone-fellur', label: 'asiste Althing', type: 'event' },
+    // Vesli
+    { source: 'vesli', target: 'tennur', label: 'Es un', type: 'lore' },
+    { source: 'vesli', target: 'tumulo-thorkel', label: 'ayudo a construir', type: 'event' },
+    { source: 'vesli', target: 'thorkel-transformacion', label: 'fue testigo de / narrada por', type: 'event' },
+    { source: 'vesli', target: 'tainted-garras', label: 'lo describio a Orka', type: 'event' },
+    { source: 'vesli', target: 'vesli-saliva', label: 'usa su / habilidad de', type: 'lore' },
+    // Spert
+    { source: 'spert', target: 'spertus', label: 'Es un', type: 'lore' },
+    // Spert
+    { source: 'helka', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'helka', target: 'darl', label: 'sede', type: 'geo' },
+    { source: 'helka', target: 'orna', label: 'huesos en fortaleza', type: 'lore' },
+    { source: 'helka', target: 'llegada-helka', label: 'protagoniza', type: 'event' },
+    { source: 'helka', target: 'liga', label: 'llega a', type: 'geo' },
+    { source: 'helka', target: 'hakon', label: 'hijo / hijo de', type: 'rel' },
+    { source: 'helka', target: 'ulfhednar', label: 'guardia personal', type: 'rel' },
+    { source: 'helka', target: 'jaromir', label: 'media entre Logur y', type: 'event' },
+    { source: 'helka', target: 'glornir', label: 'convoca a la mision', type: 'event' },
+    // Drekr
+    { source: 'drekr', target: 'cat-orka', label: '', type: 'arc' },
+    { source: 'drekr', target: 'ninos-robados', label: 'lider de la operacion', type: 'rel' },
+    { source: 'drekr', target: 'ataque-steading', label: 'ordeno el ataque', type: 'event' },
+    { source: 'drekr', target: 'galdurman-drekr', label: 'tiene en su banda', type: 'rel' },
+    { source: 'drekr', target: 'dragon-born', label: 'opera con al menos uno', type: 'trama' },
+    { source: 'drekr', target: 'asgrim-death', label: 'posiblemente ordeno', type: 'trama' },
+    // Chico joven
+    { source: 'chico-joven', target: 'drekr', label: 'revelo el nombre', type: 'event' },
+    { source: 'chico-joven', target: 'ataque-steading', label: 'abrio la puerta', type: 'event' },
+    // tainted-garras
+    { source: 'tainted-garras', target: 'cat-orka', label: '', type: 'arc' },
+    { source: 'tainted-garras', target: 'dragon-born', label: 'es el', type: 'lore' },
+    { source: 'tainted-garras', target: 'drekr', label: 'trabaja para', type: 'rel' },
+    { source: 'tainted-garras', target: 'thorkel', label: 'mato a', type: 'conflict' },
+    { source: 'tainted-garras', target: 'ataque-steading', label: 'participo en', type: 'event' },
+    { source: 'tainted-garras', target: 'seaxes-tainted', label: 'dueno de', type: 'rel' },
+    { source: 'tainted-garras', target: 'likrafa', label: 'sangre de', type: 'lore' },
+    // Hakon
+    { source: 'hakon', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'hakon', target: 'skalk', label: 'conversa con', type: 'event' },
+    { source: 'hakon', target: 'vafri', label: 'ordenó espiar vía', type: 'rel' },
+    { source: 'hakon', target: 'drekr', label: 'comanda operación vía', type: 'rel' },
+    { source: 'hakon', target: 'darl', label: 'posible destino de Breca según Vafri', type: 'trama' },
+    // Skalk
+    { source: 'skalk', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'skalk', target: 'helka', label: 'galdurman/skald de', type: 'rel' },
+    { source: 'skalk', target: 'galdramadr', label: 'es un', type: 'lore' },
+    { source: 'skalk', target: 'skald', label: 'es un', type: 'lore' },
+    { source: 'skalk', target: 'sea-wolf', label: 'embarca en', type: 'event' },
+    { source: 'skalk', target: 'vol', label: 'insulta por ser thrall / Glornir lo obliga a retractarse', type: 'conflict' },
 
     // ══════════════════════════════════════════════════════════════
-    // CAPÍTULO 20 — NUEVOS NODOS
+    // Cat-varg to varg chars
     // ══════════════════════════════════════════════════════════════
-    {
-        id: 'hakon', label: 'Hákon (hijo de Helka)', group: 'FACCION', type: 'Personaje — Hijo de Helka',
-        desc: 'Hijo de la Reina Helka. Joven, pelo negro, alto y fornido. Viste casi con la misma fineza que su madre pero donde ella lleva oro, él lleva plata. Visto por primera vez cruzando el gangplank de la flota de Helka en Liga, conversando con el Galdurman Skalk (ver nodo skalk). REVELADO (vía Vafri): Hákon es el comandante directo de la red de espionaje sobre Tainted en la región de Fellur. Ordenó a Vafri reportar cualquier señal de Tainted. Vafri informaba a través de Drekr como intermediario. Cadena: Hákon → Vafri → Drekr → rapto de niños Tainted. REVELADO (vía Elvar y Störr): era el prometido designado de Elvar — Störr quería casarlos para unir Snakavik y el reino de Helka en una alianza que habría cubierto más de la mitad de Vigríð. Elvar huyó en parte para evitar ese matrimonio. Descripción física confirmada por Orka en Darl: joven, pelo negro, alto y fornido, ropa de lanas finas y sedas, anillos de plata en brazos y cuello — donde su madre lleva oro, él lleva plata (ver nodo llegada-darl). CONFIRMACIÓN OPERATIVA: la presencia de una drengr de Helka guardando El Drengr Muerto refuerza la cadena de mando. PRESENCIA DIRECTA CONFIRMADA: Orka lo encontró sentado en la misma mesa que Drekr en El Drengr Muerto, con capucha subida y broche de ala de águila para disimular la identidad. Cuando Orka mató a la guardia femenina, Hákon se puso en pie y su capucha cayó — Orka lo reconoció de los muelles. Ordenó a su drengr personal que matara a Orka. Huyó durante el combate bajo la protección del drengr cuando llegó la compañía de soldados. Ya no queda duda: la cadena de mando es directa, sin intermediarios, Hákon → Drekr (ver nodo combate-dead-drengr).',
-        star: '★★★ Hákon es arquitecto de inteligencia y era el prometido designado de Elvar. La ironía es perfecta: el hombre que Störr quería para su hija es el mismo que ordenó el rapto de Breca en el arco de Orka. Si Elvar y Orka alguna vez cruzan caminos, Hákon será el nudo que las conecta.'
-    },
-    {
-        id: 'skalk', label: 'Skalk', group: 'FACCION', type: 'Personaje — Galdurman de Helka',
-        desc: 'Skáld y Galdurman de la Reina Helka. Físico: hombre alto de cara honesta con líneas de risa profundas como patas de cuervo; hombros y pecho anchos — porte de guerrero, no de mago. Cabello rubio trenzado con pequeños huesos (cráneos de rata y pájaro) y anillos de peltre. Manos cubiertas de tatuajes en knotwork. Torc grueso retorcido al cuello como serpiente dormida. Bastón nudoso en el puño — sin armas al cinto. Embaracado en el Sea-Wolf como enlace de Helka para la misión al norte (ver nodo mision-helka-norte), acompañado por sus dos guardias Olvir y Yrsa (ver nodo olvir-yrsa). Da el briefing completo de la misión en el campamento del primer fiordo (ver nodo mision-briefing-skalk). Ante la pregunta de Vol sobre el Grimholt, responde negándose a hablar con thralls; Glornir lo confronta y lo obliga a retractarse. Cede con frialdad y abandona el fuego. Varg lo identifica como posible Galdurman para realizar su akáll sin esperar la aprobación de Glornir. Vol lo llama «proxeneta de Helka» — el insulto más cargado que se le ha dirigido hasta ahora; sugiere que Vol conoce algo de la naturaleza real del trabajo de Skalk para Helka, más allá de ser su skáld y Galdurman. Varg observa a Skalk aproximándose en la marcha y decide no acallar la voz que le dice que se dirija a él.',
-        star: '★★★ El conflicto con Vol revela el carácter de Skalk: jerarquía sobre utilidad, orgullo sobre pragmatismo. Que Glornir lo doble en público es un insulto que no olvidará. Su frialdad al ceder («es mi moneda») insinúa que el poder real sobre la misión lo tiene él, no Glornir. ¿Qué sabe del Grimholt que no quiso revelar?'
-    },
-    {
-        id: 'varg-primera-muerte', label: 'Primera Muerte Consciente de Varg', group: 'EVENTO', type: 'Evento — Personal POV',
-        desc: 'Durante la batalla en los muelles (ver nodo batalla-muelles), Varg monta el caballo de un druzhina y hunde el seax entre las placas de la armadura laminar. A diferencia de la muerte de Snepil/Kolskegg (que no recuerda por furia disociativa), esta la recuerda con todo detalle: el metal raspando las placas, la carne cediendo, el calor de la sangre, la fuerza del hombre vaciándose. Vomita al terminar. Røkia observa y confirma: su primera muerte. Le dice "se vuelve más fácil." Sulich le ofrece el yelmo del caído y le explica el código del botín de guerra (ver nodo botin-guerra). Varg rechaza el yelmo al decir "quédatelo tú", insulta sin querer a Sulich. Finalmente aprende a despojar al druzhina con ayuda de Svik: lamellar coat, sabre, bow, arrows, belt-knife. Røkia lo llama "No-Sense": atacó a un druzhina con la cubierta en la lanza y el yelmo colgado del cinturón.',
-        star: '★★★ La diferencia entre esta muerte y la de Snepil es el núcleo del arco de Varg: una fue disociativa (¿sangre Tainted?), esta fue plenamente consciente y deja huella física (vómito) y emocional. Recordar el calor de la sangre es el inicio del endurecimiento que Røkia predice.'
-    },
-    {
-        id: 'mision-helka-norte', label: 'Misión al Norte (Helka → Bloodsworn)', group: 'TRAMA', type: 'Trama — Nueva Dirección',
-        desc: 'Tras la reunión en el hall de Logur, Helka encarga a los Hermanos de Sangre una misión: algo en el norte de su reino está devorando a su pueblo. Glornir anuncia a la tripulación: «encontraremos lo que sea y lo mataremos.» Skalk y sus dos guardias (ver nodo olvir-yrsa) embarcan en el Sea-Wolf. Los Hermanos zarpan desde Liga. DETALLES REVELADOS POR SKALK en campamento del primer fiordo (ver nodo mision-briefing-skalk): destino final es la fuente del Río Slågen (ver nodo rio-slagen), en las estribaciones noroccidentales de las Montañas Boneback, en la frontera del dominio de Helka con el territorio de Störr. Primero desaparecieron personas de granjas y lugares remotos — se creyó que eran raids de Störr. Luego comenzaron a aparecer restos: partes de cuerpos, marcas de mordida y garras. Los muertos han sido consumidos parcialmente. Número estimado: ~30 víctimas. Vaesen desconocidos — posiblemente trolls, huldra-folk, Vittor o wights. Pregunta abierta de Vol (sin respuesta de Skalk): ¿cómo cruzaron el Grimholt (ver nodo grimholt) las criaturas que vienen del otro lado de las Boneback? Naturaleza de la amenaza: desconocida — ¿vaesen? ¿Tainted? ¿algo ligado al despertar de Lik-Rifa? Estado actual: los Bloodsworn han completado los cinco días de navegación por el Slågen y ahora avanzan a pie desde una granja de la orilla oriental — primera evidencia física de la amenaza: granja completamente abandonada, sin cuerpos ni rastro de violencia, cosechas muertas, animales sueltos (ver nodo granja-abandonada).',
-        star: '★★★ La amenaza sin nombre en el norte es el nuevo motor del arco Varg. Con Skalk (Galdurman) y Vol (Seiðr-thrall) a bordo, el Sea-Wolf lleva potencia mágica combinada. El círculo se cierra: Varg empezó buscando al Seiðr para su hermana; ahora navega con uno hacia algo que devora vidas.'
-    },
-    {
-        id: 'botin-guerra', label: 'Botín de Guerra (Despojo de Caídos)', group: 'NORSE', type: 'Concepto — Honor de Batalla',
-        desc: 'Costumbre del guerrero nórdico: despojar al enemigo caído de su equipo de guerra es derecho y obligación. Ambos bandos lo hacen mutuamente. Reglas de honor: (1) el botín pertenece a quien hizo la muerte — tomarlo de otro es robo y deshonra; (2) rechazar el botín de tu propia muerte insulta la memoria del caído; (3) ofrecer el botín de tu muerte a otro es privarle de su batalla-fama. La transmisión de este código en la novela ocurre entre veteranos de los Hermanos de Sangre (ver nodo varg-primera-muerte). [Histórico: los despojos de honor nórdicos eran evidencia tangible de valor. Los objetos del enemigo eran kennings vivos — trofeos que narraban hazañas sin palabras.]',
-        star: '★ Los objetos del caído son páginas de una saga. El equipo del druzhina ya no es del muerto — es la primera página de la saga de Varg como guerrero libre.'
-    },
-    // ══════════════════════════════════════════════════════════════
-    // CAPÍTULO 21 — NUEVOS NODOS
-    // ══════════════════════════════════════════════════════════════
-    {
-        id: 'llegada-snakavik', label: 'Llegada a Snakavik y Venta de Berak', group: 'EVENTO', type: 'Evento',
-        desc: 'Secuencia completa: (1) LLEGADA AL PUERTO: el Wave-Jarl entra por la boca del cráneo de Snaka — los remeros en silencio, el sonido cambia al cavernoso eco del interior. Una funcionaria del puerto (lana roja con ribete de marta cibelina, plata en brazos y cuello, guardia con malla) cobra derechos de amarre y entrega bloque de madera con runas talladas. Agnar deja guardia en el barco y sube con un grupo selecto: Elvar, Grend, Sighvat (con Berak encadenado), Biórr y Thrud (guardia de Uspa y Bjarn), Kráka y el Hundur-thrall. Pasan por el muelle con las jaulas de criminales — un letrero: "adorador de un dios muerto." (2) ASCENSO: suben 212 escalones de madera hasta la cima del cráneo, cruzan la meseta de granito hasta la fortaleza, pasan múltiples checkpoints donde Agnar muestra los derechos de amarre y paga coin. (3) EN LA SALA: esperan en el patio de la sala de festines. Entran al gran hall con cuervos en las vigas y hogueras centrales donde los thralls asan jabalíes y ciervos. Al fondo hay una cabeza enorme de mármol — el oráculo Hrung. (4) STÖRR RECIBE: Störr entra con su guardia de Berserkir-thralls y tres personas más: dos hombres jóvenes (cejas oscuras, nariz fina — parientes cercanos de Störr) y una mujer rubia mayor: Silrið, su agente de Seiðr. (5) LA VENTA: Silrið corta el brazo de Berak, lleva la sangre a Hrung, que la saborea y confirma: "Sangre de Berser, o soy un enano." Störr compra a Berak al doble del precio. Los Berserkir-thralls de Störr rodean a Berak gruñendo "bienvenido, hermano." Berak los ignora. (6) LA REVELACIÓN: mientras Agnar se retira, Hrung olfatea el aire y dice "Elvar." Störr niega que pueda ser. Hrung insiste: "Elvar está aquí." Elvar se quita la capucha y dice: "Hola, padre."',
-        star: '★★★ El punto de giro del arco de Elvar. Todo el viaje culmina aquí: la incomodidad con Snakavik, la reacción emocional al nombre de Störr, la huida de casa — ahora tienen explicación.'
-    },
-    {
-        id: 'silrid', label: 'Silrið', group: 'ELVAR', type: 'Personaje — Agente Seiðr de Störr',
-        desc: 'Mujer rubia, mayor que los hombres jóvenes que flanquean a Störr. Collar de huesos alrededor del cuello. Tatuajes de runas densos en el dorso de las manos. Túnica de lana amarilla. Seax corto de uso ritual, no de combate. Actúa como verificadora de linaje para Störr: despertó a Hrung con sangre de Berak (ver nodo llegada-snakavik). Es de confianza absoluta — Störr la llama solo por su nombre. Presente en la reunión con Elvar en la taberna. Cuando Störr sugiere que el matrimonio con Helka quizás no es el único camino, Silrið añade con voz calma: "siempre hay más de un camino por el bosque, si uno es lo bastante valiente para buscarlo, y quizás lo bastante fuerte para talar unos cuantos árboles." Función doble: consejera política y mágica de Störr. [Histórico: las völur nórdicas servían como adivinas y consejeras de líderes. Silrið es völva libre — sin collar de thrall, a diferencia de Kráka y Vol.]',
-        star: '★★★ Su frase sobre "los caminos del bosque" resuena como insinuación de que hay un tercer plan disponible — uno que no depende ni del matrimonio ni de la reconciliación simple. ¿Tiene Silrið su propia agenda o es el brazo largo de Störr? Que Störr le ceda la palabra en un momento tan cargado indica que su consejo tiene peso real.'
-    },
-    {
-        id: 'hrung', label: 'Hrung', group: 'ELVAR', type: 'Entidad — Gigante Superviviente',
-        desc: 'Cabeza gigante en la sala de festines de Störr — tan alta como un hombre, de mármol oscuro con venas que brillan a la luz de las antorchas. Frente alta, nariz ancha, labios gruesos, largas cejas y bigote caído. Cuando duerme la musculatura facial está fláccida; al despertar, los ojos se abren opacos y brumosos como perlas que giran lentamente hasta enfocar. Su voz es baja y reverberante — se siente pasar por el cuerpo como un trueno lejano. ORIGEN: era un gigante vivo devorado por Snaka el dios-serpiente, que le arrancó la cabeza de un mordisco. Un fragmento del poder moribundo de Snaka se filtró en él y lo condenó a seguir consciente sin cuerpo, contra su voluntad. Pasó trescientos años en el fondo del fiordo —solo los colmillos de Snaka y los peces como compañía— hasta que Störr y Silrið lo izaron a la superficie cuando Elvar tenía tres inviernos. El mead que ingiere le gotea por la garganta y empapa la madera del estrado: no tiene cuerpo que lo absorba. Duerme cada vez más largo y profundo. Habla en versos y acertijos: atribuye este rasgo a Snaka, que sembró en él y en los gigantes el amor por las palabras y los enigmas. CAPACIDADES: detecta y clasifica linaje Tainted saboreando sangre con precisión absoluta; identifica personas por olfato aunque estén encapuchadas. RELACIÓN CON ELVAR: fue su confidente de infancia — ella lo visitaba cuando era niña, y esas conversaciones son de sus escasos recuerdos cálidos de Snakavik. La llama «pequeña». Cuando Elvar regresa tras cuatro años, Hrung admite que no ha pasado un día sin desear que Störr y Silrið lo hubieran dejado morir. Estado: dormido la mayor parte del tiempo en el estrado de Störr; Silrið es su interlocutora habitual (ver nodo consulta-hrung). [Paralelo mitológico: Hrungnir, el Jǫtunn más poderoso del panteón nórdico, tenía corazón y escudo de piedra. Gwynne lo reinterpreta: un gigante de carne condenado a existencia incorpórea por el poder residual de un dios muerto. El nombre «Hrungnir» en nórdico antiguo significa «el que pelea».]',
-        star: '★★★ El origen de Hrung en las entrañas de Snaka lo vincula directamente a la cosmología del Guðfalla — es memoria viviente de los dioses. Su acertijo a Elvar («¿puede el sol ser frío, o el mar estar seco, o el lobo volverse cordero?») apunta a la naturaleza inmutable de Störr: siempre habrá un plan dentro del plan. Hrung no quiere estar vivo — ese resentimiento lo convierte en testigo trágico, no en arma. ¿Qué más sabe de la era anterior al Guðfalla que aún no ha dicho?'
-    },
-    {
-        id: 'raven-feeders', label: 'Los Alimentadores de Cuervos (Raven-Feeders)', group: 'FACCION', type: 'Facción — Mercenarios',
-        desc: 'Compañía mercenaria con reputación de crueldad, liderada por Ilska Raven-Feeder, también llamada Ilska la Cruel. Identificación visual: cada miembro lleva una pluma de cuervo negra atada en el cabello. Escudos pintados en gris con alas negras desplegadas alrededor del boss. Buen equipo de guerra: malla, cuero y lana de calidad, varios con espadas — señal de jefe con buena mano de oro. Una docena de miembros descansaban en una taberna de la ladera interna de Snakavik cuando Agnar y su grupo pasaron. Uno de ellos, rubio con barba pelirroja y oro en cuello y brazos, intentó ligar con Elvar. Grend lo miró con ojos de muerte; Elvar lo cortó con una comparación con un jabalí muerto y siguió andando. [Paralelo histórico: los cuervos eran aves de Odín y de los campos de batalla nórdicos — el nombre "alimentadores de cuervos" es kenning para "guerreros que alimentan a los cuervos con los cadáveres de sus enemigos." Una compañía con ese nombre no esconde sus métodos.] Operación confirmada: asaltaron la taberna donde descansaban los Terrores de la batalla en Snakavik; mataron a Thrud, hirieron a Biórr, incapacitaron a Uspa y huyeron con Bjarn. Cinco o más caídos entre los atacantes — varios carbonizados por el Seiðr de Uspa, uno muerto por Elvar (Tainted rubio de ojos cambiantes), una mujer muerta por Grend. El drakkar escapó por el fiordo antes de poder ser interceptado. Feudo de sangre abierto con los Terrores de la batalla (ver nodo raid-raven-feeders). DETALLE RETROACTIVO: el guerrero rubio que Elvar mató (con brynja, torc y aros de plata) mostró señales de transformación Tainted al acercarse la muerte — los dientes y los ojos cambiaron. Elvar no lo reportó de inmediato; lo revela a Agnar más tarde con la duda de si fue real o efecto de la oscuridad y la urgencia del combate. Agnar señala la pregunta estratégica sin respuesta: si Ilska sabía que tenía un Tainted en su compañía, ¿por qué no le puso collar de thrall?',
-        star: '★★★ La duda ya no existe: los Raven-Feeders cruzaron caminos con los Terrores de la batalla de la peor manera posible. El raid deja un muerto, un herido grave, un niño secuestrado y un feudo de sangre abierto. La pregunta es cómo Ilska supo que Uspa estaba en esa taberna — y qué otros secretos conoce.'
-    },
-    {
-        id: 'ilska', label: 'Ilska Raven-Feeder (la Cruel)', group: 'FACCION', type: 'Personaje — Jefa Mercenaria',
-        desc: 'Jefa de la compañía mercenaria Los Alimentadores de Cuervos. También conocida como Ilska la Cruel. Su compañía tiene una reputación de crueldad bien ganada que precede a Ilska en conversaciones. Descripción física: cabello negro como alas de cuervo, recogido con plata en la nuca; túnica de lana gris; espada al cinto con guarda y hebilla que brillan en oro. Constitución de mando — se ve a sí misma como un igual frente a Agnar, no como fugitiva. Fue vista al timón de su drakkar saliendo del puerto de Snakavik después del raid: volvió la vista hacia los Terrores de la batalla en el muelle con una sonrisa de dientes blancos y saludó con el brazo — saludo o burla. A su lado en la popa, un hombre enorme de cabeza rapada en los flancos con pelo negro y piel de lobo sobre los hombros, apoyado en una hacha larga. Operación en Snakavik: ordenó el ataque a la taberna de los Terrores de la batalla, la muerte de Thrud y el secuestro de Bjarn para usarlo como palanca para capturar a Uspa — que guarda el secreto del camino a Oskutreð. Escapa antes de que la compañía pueda interceptarla. Agnar jura que aprenderá a arrepentirse (ver nodo raid-raven-feeders). INTERROGANTE ABIERTO: si el guerrero rubio que Elvar mató durante el raid era Tainted — sus ojos y dientes cambiaron al acercarse la muerte — y si Ilska lo sabía, surge una pregunta sin respuesta: ¿por qué no le puso collar de thrall? Las opciones son que no sabía, que lo toleraba como aliado libre (raro e imprudente), o que su compañía acepta conscientemente Tainted sin collar — una política que la haría singularmente peligrosa.',
-        star: '★★★ Ilska ya no es solo una sombra de reputación — es una fuerza con objetivo. Sabe lo que vale Uspa. Que arrasara una taberna llena de mercenarios experimentados por capturar a una Seiðr-witch implica que tiene información — o a alguien que se la proporcionó. El hombre de piel de lobo a su lado es una presencia sin nombre todavía, pero su posición y tamaño lo marcan como figura de peso.'
-    },
-    // ══════════════════════════════════════════════════════════════
-    // CAPÍTULO 22 — NUEVOS NODOS
-    // ══════════════════════════════════════════════════════════════
-    {
-        id: 'raid-camara-sigrun', label: 'Raid Nocturno a la Cámara de Sigrún', group: 'EVENTO', type: 'Evento — POV Orka',
-        desc: 'Secuencia completa: (1) LLEGADA: Orka abandona su steading y camina más de medio día hasta Fellur, llegando en plena oscuridad antes del alba. Esconde lanza y saco — no los necesita. (2) INFILTRACIÓN: cruza el campo de tiendas del Althing, salta la muralla sin guardia, se mueve hasta el patio del mead hall. (3) MORD Y LIF: descubre a los dos hermanos estacados en el patio — intentaron matar a Guðvarr y fracasaron; esperaban juicio: proscripción o ejecución. Recuerda las palabras de Breca ("me da pena Mord y Lif, mamá"). Decide actuar. (4) GUARDIAS: mata a la guardia dormida en los escalones del mead hall — seax en la garganta, le corta la columna, la recuesta en su posición dormida. (5) LIBERACIÓN: corta las cuerdas de Mord y Lif; ordena a Lif llevar a su hermano al bote, coger provisiones y esperarla en el fiordo. (6) LA CÁMARA: abre la contraventana con la hoja del seax; entra en la cámara de Sigrún. Sorprende a Sigrún y a un amante en el lecho. Degüella al amante antes de que reaccione. Golpea a Sigrún en la mandíbula con la empuñadura. (7) EL INTERROGATORIO: encañona a Vafri con el seax. Interroga: ¿quién ordenó matar a Thorkel y raptar a Breca? Vafri revela: su amo es Hákon, hijo de la Reina Helka; fue ordenada a reportar señales de Tainted; informaba a través de Drekr. Destino posible de los niños: Darl (aunque los ojos de Vafri se desviaron al decirlo). (8) COMBATE Y FUGA: Sigrún intenta alcanzar su espada; Vafri aprovecha el momento de distracción y golpea a Orka. Orka hiere a Sigrún con un tajo diagonal en la cara (frente a barbilla). Guðvarr irrumpe primero entre los drengrs; Orka le lanza su seax, arrebata el de Vafri y lo apuñala en el vientre. Le roba el seax a la moribunda Vafri. Vafri muere sin su arma. (9) ESCAPE: salta por la ventana, corre por el pueblo con los drengrs y el pueblo despertando; alcanza el muelle; salta a la barca de Mord y Lif. Orden: sur, hacia el mar. Guðvarr en el muelle jura venganza mientras la barca se aleja.',
-        star: '★★★ El nodo pivote del arco de Orka: de perseguidora ciega a perseguidora con mapa. La cadena Hákon→Vafri→Drekr queda expuesta. Darl emerge como destino — aunque la mirada esquiva de Vafri siembra duda. Orka sale de Fellur con aliados inesperados (Mord y Lif) y un enemigo nuevo en el horizonte: la corona de Helka.'
-    },
+    // Varg
+    { source: 'varg', target: 'cat-varg', label: '', type: 'arc' },
+    { source: 'varg', target: 'froya', label: 'hermana', type: 'rel' },
+    { source: 'varg', target: 'leif', label: 'enemigo', type: 'conflict' },
+    { source: 'varg', target: 'liga', label: 'visita', type: 'geo' },
+    { source: 'varg', target: 'svik', label: 'compañero', type: 'rel' },
+    { source: 'varg', target: 'sulich', label: 'lo reconoce sin saber', type: 'trama' },
+    { source: 'varg', target: 'vol', label: 'la busca para akáll', type: 'goal' },
+    { source: 'varg', target: 'bloodsworn', label: 'nuevo miembro', type: 'event' },
+    { source: 'varg', target: 'akall', label: 'necesita', type: 'goal' },
+    { source: 'varg', target: 'tainted', label: 'posible sangre', type: 'trama' },
+    { source: 'varg', target: 'thrall', label: 'ex-thrall', type: 'rel' },
+    { source: 'varg', target: 'varg-aprendiz', label: 'definido como', type: 'rel' },
+    { source: 'varg', target: 'partida-liga', label: 'zarpa en', type: 'event' },
+    { source: 'varg', target: 'objeto-viga', label: 'nota sin entender pero no pregunta', type: 'trama' },
+    { source: 'varg', target: 'batalla-muelles', label: 'primera batalla', type: 'event' },
+    { source: 'varg', target: 'aslog', label: 'hereda lanza y banco de', type: 'rel' },
+    { source: 'varg', target: 'sea-wolf', label: 'servira en / rema en', type: 'rel' },
+    { source: 'varg', target: 'mision-helka-norte', label: 'primera mision en', type: 'rel' },
+    { source: 'varg', target: 'skalk', label: 'lo ve como posible atajo al akáll', type: 'trama' },
+    // bloodsworn
+    { source: 'bloodsworn', target: 'cat-varg', label: '', type: 'arc' },
+    { source: 'bloodsworn', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'bloodsworn', target: 'glornir', label: 'jefe', type: 'rel' },
+    { source: 'bloodsworn', target: 'liga', label: 'base en', type: 'geo' },
+    // Rokia
+    { source: 'rokia', target: 'varg', label: 'entrena', type: 'goal' },
+    { source: 'rokia', target: 'bloodsworn', label: 'miembro', type: 'rel' },
+    // sulich Guerrero Oscuro
+    { source: 'sulich', target: 'glornir', label: 'sparring / misterio', type: 'trama' },
+    { source: 'sulich', target: 'bloodsworn', label: 'miembro', type: 'rel' },
+    { source: 'sulich', target: 'iskidan', label: 'origen probable', type: 'trama' },
+    // Edel
+    { source: 'edel', target: 'cat-varg', label: '', type: 'arc' },
+    { source: 'edel', target: 'bloodsworn', label: 'escoutmaestre', type: 'rel' },
+    // Einar
+    { source: 'einar', target: 'bloodsworn', label: 'miembro', type: 'rel' },
+    { source: 'snepil', target: 'cat-varg', label: '', type: 'arc' },
+    // Svik
+    { source: 'svik', target: 'bloodsworn', label: 'miembro', type: 'rel' },
+    { source: 'svik', target: 'varg-aprendiz', label: 'guia al aprendiz', type: 'rel' },
+    // Vol
+    { source: 'vol', target: 'bloodsworn', label: 'miembro / thrall', type: 'rel' },
+    { source: 'vol', target: 'seidr', label: 'practica', type: 'magic' },
+    { source: 'vol', target: 'thrall', label: 'thrall', type: 'rel' },
+    { source: 'vol', target: 'akall', label: 'dispuesta pero bloqueada', type: 'goal' },
+    { source: 'vol', target: 'partida-liga', label: 'zarpa con Hermanos', type: 'event' },
+    // Glornir
+    { source: 'glornir', target: 'varg-aprendiz', label: 'define condiciones', type: 'rel' },
+    { source: 'glornir', target: 'partida-liga', label: 'ordena', type: 'event' },
+    { source: 'glornir', target: 'batalla-muelles', label: 'lidera en', type: 'event' },
+    { source: 'glornir', target: 'aslog', label: 'entrego lanza de Aslog a Varg', type: 'rel' },
+    { source: 'glornir', target: 'mision-helka-norte', label: 'lidera', type: 'rel' },
+    { source: 'glornir', target: 'skalk', label: 'ordena remar a', type: 'event' },
+    { source: 'glornir', target: 'skullsplitter', label: 'hermano de / llora su muerte', type: 'rel' },
+    // Snepil
+    { source: 'einar', target: 'varg', label: 'enfrenta por puesto', type: 'event' },
+    { source: 'snepil', target: 'varg', label: 'fue su amo', type: 'rel' },
+    { source: 'snepil', target: 'leif', label: 'padre', type: 'rel' },
+    { source: 'snepil', target: 'orl', label: 'thrall de confianza', type: 'rel' },
+    // Torvik
+    { source: 'torvik', target: 'cat-varg', label: '', type: 'arc' },
+    { source: 'torvik', target: 'bloodsworn', label: 'aspirante', type: 'rel' },
+    { source: 'torvik', target: 'edel', label: 'scout bajo mando de', type: 'rel' },
+    { source: 'torvik', target: 'jokul', label: 'aprendiz de', type: 'rel' },
+    { source: 'torvik', target: 'varg', label: 'compañero aspirante', type: 'rel' },
+    { source: 'torvik', target: 'objeto-viga', label: 'revela identidad a Varg', type: 'event' },
+    { source: 'torvik', target: 'skullsplitter', label: 'conoce la historia de', type: 'lore' },
+    // Galinn
+    { source: 'galinn', target: 'liga', label: 'skáld de', type: 'geo' },
+    { source: 'galinn', target: 'gudfall', label: 'recita la saga del', type: 'event' },
+    { source: 'galinn', target: 'cat-varg', label: '', type: 'arc' },
+    { source: 'galinn', target: 'skald', label: 'Es un', type: 'lore' },
+    // Sergei
+    { source: 'sergei', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'sergei', target: 'jaromir', label: 'herald de', type: 'rel' },
+    { source: 'sergei', target: 'jarl-logur', label: 'viejo amigo', type: 'rel' },
+    { source: 'sergei', target: 'iskidan', label: 'mercader de', type: 'geo' },
+    { source: 'sergei', target: 'sulich-crisis', label: 'mediador', type: 'event' },
+    // Jaromir
+    { source: 'jaromir', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'jaromir', target: 'emp-kirill', label: 'hijo del', type: 'rel' },
+    { source: 'jaromir', target: 'sulich-crisis', label: 'protagoniza', type: 'event' },
+    { source: 'jaromir', target: 'sulich', label: 'exige por crímenes', type: 'conflict' },
+    { source: 'jaromir', target: 'glornir', label: 'confrontación', type: 'conflict' },
+    { source: 'jaromir', target: 'jarl-logur', label: 'visita / ultimátum', type: 'event' },
+    { source: 'jaromir', target: 'ilia', label: 'druzhina', type: 'rel' },
+    { source: 'jaromir', target: 'druzhina', label: 'escoltado por', type: 'rel' },
+    // Ilia
+    { source: 'ilia', target: 'druzhina', label: 'es', type: 'lore' },
+    { source: 'ilia', target: 'sulich-crisis', label: 'dispuesta a matar', type: 'event' },
+    // sea-wolf
+    { source: 'sea-wolf', target: 'drakkar', label: 'es un', type: 'rel' },
+    { source: 'sea-wolf', target: 'cat-varg', label: '', type: 'arc' },
+    { source: 'sea-wolf', target: 'bloodsworn', label: 'drakkar de', type: 'rel' },
+    { source: 'sea-wolf', target: 'batalla-muelles', label: 'amenazado en', type: 'event' },
+    // aslog
+    { source: 'aslog', target: 'bloodsworn', label: 'fue miembro de', type: 'rel' },
+    // skullsplitter
+    { source: 'skullsplitter', target: 'bloodsworn', label: 'jefe anterior de', type: 'rel' },
+    { source: 'skullsplitter', target: 'jarl-logur', label: 'regalo relic a', type: 'rel' },
+    { source: 'skullsplitter', target: 'objeto-viga', label: 'regalo la astilla', type: 'rel' },
+    // logur
+    { source: 'jarl-logur', target: 'liga', label: 'jarl de', type: 'geo' },
+    { source: 'jarl-logur', target: 'bloodsworn', label: 'hospeda', type: 'rel' },
+    // salla
+    { source: 'salla', target: 'jarl-logur', label: 'esposa de', type: 'rel' },
+    { source: 'salla', target: 'liga', label: 'señora del hall de', type: 'geo' },
+    { source: 'salla', target: 'partida-liga', label: 'organiza la despedida', type: 'event' },
+    { source: 'salla', target: 'glornir', label: 'Glornir la llama Salla', type: 'rel' },
 
     // ══════════════════════════════════════════════════════════════
-    // CAPÍTULO 23 — NUEVOS NODOS
+    // Cat-elvar to elvar chars
     // ══════════════════════════════════════════════════════════════
-    {
-        id: 'thorun', label: 'Thorun', group: 'ELVAR', type: 'Personaje — Hermano de Elvar',
-        desc: 'Hijo mayor de Jarl Störr. Hostil hacia Elvar desde su regreso. Considera que la fuga de Elvar fue una deshonra para la familia y que ella tiene obligaciones por ser hija de jarl: obedecer la voluntad de su padre, incluyendo casarse con quien él decida. Voz de las tradiciones y la jerarquía — hace de vocero de lo que Störr no dice directamente. Cuando Elvar llegó el día anterior, fue el más vocal en reprocharle. En la reunión de la taberna, defiende el plan matrimonial con Helka ("el reino combinado de padre y Helka cubriría más de la mitad de Vigríð") y suelta que Elvar no tiene reputación propia sino que viaja a la sombra de Grend. Elvar lo amenaza con el filo de su espada. Cuando Störr lo manda callar, obedece al instante. Físico: cejas oscuras y nariz fina — rasgos de kin de Störr.',
-        star: '★ Thorun es el espejo de lo que Elvar habría sido si se hubiera quedado: alguien que confunde obediencia con honor. Su desprecio por Grend y por la vida mercenaria de Elvar tiene raíces en envidia no reconocida — ella se fue y construyó algo; él se quedó y obedeció.'
-    },
-    {
-        id: 'brodir', label: 'Broðir', group: 'ELVAR', type: 'Personaje — Hermano de Elvar',
-        desc: 'Hijo menor de Jarl Störr, hermano menor de Elvar. Tímido y afectuoso, contraste total con Thorun. Durante la reunión apenas habla — "principalmente se limitó a mirarla, con cara de decepcionado." Al final, cuando todos salen, se detiene en la puerta: "Vuelve con nosotros, hermana. Thorun es un imbécil, y te he echado de menos." Sonrisa tímida. Físico: cejas oscuras y nariz fina como Thorun — rasgos de kin de Störr.',
-        star: '★★ Broðir es el gancho emocional más honesto de toda la familia. No tiene agenda política — solo quiere a su hermana. Su brevedad y timidez lo hacen más creíble que cualquier discurso de Störr. La sonrisa tímida en la puerta es el momento más humano de todo el capítulo.'
-    },
-    {
-        id: 'gytha', label: 'Gytha', group: 'ELVAR', type: 'Personaje — Campeona de Störr',
-        desc: 'Campeona y portavoz de Jarl Störr. Brynja reluciente como recién pulida con arena. Pelo oscuro trenzado. Cicatriz que atraviesa una mejilla hasta el labio superior. Entra en la taberna con autoridad: el posadero aparece en el umbral y hace una reverencia a medias. Entrega el cofre de pago de Störr a Agnar (por la compra de Berak) y escolta a Elvar para la reunión privada con su padre. Al ver a Grend, le dedica una reverencia — señal de que lo conoce y le reconoce rango. Permanece en la taberna durante la reunión familiar con los últimos guardias; cierra la puerta cuando todos salen. Más adelante escolta a Elvar hasta la sala de festines de Störr para que visite a Hrung; advierte que informará al jarl de la presencia de Elvar. Al marcharse, sus yemas de dedos rozan el brazo de Grend — gesto breve, cargado. Elvar le dice a Grend que debería pasar tiempo con ella mientras están en Snakavik; Grend se niega sin explicación.',
-        star: '★ La reverencia a Grend es la pieza más interesante: implica que Grend era figura conocida en Snakavik, posiblemente sirvió a Störr antes de partir con Elvar. ¿Qué historia une a Grend con el clan de Störr antes de que Elvar naciera?'
-    },
-    {
-        id: 'reunion-storr-elvar', label: 'Reunión en la Taberna (Störr y Elvar)', group: 'EVENTO', type: 'Evento — POV Elvar',
-        desc: 'Secuencia completa: (1) PRÓLOGO: Elvar despierta en el pajar de una taberna de Snakavik con los Terrores de la batalla. Desayuno con Biórr, Uspa, Bjarn, Grend y Thrud. Uspa le pide con urgencia salir de Snakavik — dos veces. (2) GYTHA LLEGA: entra la campeona de Störr con el cofre de pago para Agnar (por Berak). Anuncia que Störr quiere ver a su hija en privado. Agnar saca a todos los Terrores de la batalla. Biórr ofrece quedarse; Elvar lo manda afuera con un reproche. (3) LA REUNIÓN: Störr entra con Thorun, Broðir y Silrið. Se sienta frente a Elvar. Recriminaciones: debería no haber huido, eso le costó sangre para reconsolidar su poder. Elvar defiende su reputación y a los Terrores de la batalla. (4) EL NUDO — EL MATRIMONIO: Störr quería casarla con Hákon (hijo de Helka) para crear una alianza que cubriría más de la mitad de Vigríð. Elvar lo rechaza de plano. Thorun explota; Elvar lo amenaza con la espada; Grend manda a Thorun que se siente. Störr lo silencia. (5) LA OFERTA: Störr sugiere que quizás el matrimonio no es el único camino. Silrið añade su enigmática frase sobre los caminos del bosque. Störr ofrece a Elvar su propio warband de drengrs si regresa. Se levanta y se va: "piénsalo." (6) EPÍLOGO: Broðir se detiene en la puerta y le pide que vuelva con una sonrisa tímida. Gytha cierra la puerta. Elvar se queda sola con Grend, se sienta en las piernas que de repente le fallan, y empieza a reír.',
-        star: '★★★ El capítulo más psicológicamente denso del arco de Elvar. Störr no la amenaza ni la controla — la tienta con exactamente lo que ella desea. La oferta del warband es más peligrosa que cualquier ultimátum. Silrið insinúa un tercer camino. Broðir abre la herida del afecto familiar. Elvar termina riendo — ¿alivio, ironía, o el primer paso hacia una decisión?'
-    },
+    // Elvar
+    { source: 'elvar', target: 'cat-elvar', label: '', type: 'arc' },
+    { source: 'elvar', target: 'grend', label: 'guardián', type: 'rel' },
+    { source: 'elvar', target: 'biorr', label: 'tensión', type: 'trama' },
+    { source: 'elvar', target: 'battle-grim', label: 'miembro', type: 'rel' },
+    { source: 'elvar', target: 'oath-stone-frost-isles', label: 'presenció activación', type: 'event' },
+    { source: 'elvar', target: 'dragon-born', label: 'niega existencia', type: 'conflict' },
+    { source: 'elvar', target: 'storr', label: 'hija de', type: 'rel' },
+    { source: 'elvar', target: 'snakavik', label: 'creció y vivió en', type: 'geo' },
+    { source: 'elvar', target: 'reunion-storr-elvar', label: 'protagoniza', type: 'rel' },
+    { source: 'elvar', target: 'hakon', label: 'rechazó matrimonio con', type: 'conflict' },
+    // Agnar
+    { source: 'agnar', target: 'sighvat', label: 'jefe/subof.', type: 'rel' },
+    { source: 'agnar', target: 'iskalt', label: 'asaltó buscando a Berak', type: 'geo' },
+    { source: 'agnar', target: 'jarl-hrut', label: 'Mató a Jarl Hrut durante el asalto a Iskalt', type: 'event' },
+    { source: 'agnar', target: 'battle-grim', label: 'jefe', type: 'rel' },
+    { source: 'agnar', target: 'oath-stone-frost-isles', label: 'presenció / reflexionó', type: 'event' },
+    { source: 'agnar', target: 'dragon-born', label: 'esperaría encontrar', type: 'trama' },
+    { source: 'agnar', target: 'elvar', label: 'nombra Troll-Slayer / banco permanente en Wave-Jarl', type: 'rel' },
+    // Berak
+    { source: 'berak', target: 'uspa', label: 'esposo', type: 'rel' },
+    { source: 'berak', target: 'bjarn', label: 'padre', type: 'rel' },
+    { source: 'berak', target: 'tainted', label: 'Berserkir', type: 'lore' },
+    { source: 'berak', target: 'berserkir', label: 'es Berserkir, sangre y herencia confirmada', type: 'lore' },
+    // battle Grim
+    { source: 'battle-grim', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'battle-grim', target: 'cat-elvar', label: '', type: 'arc' },
+    { source: 'battle-grim', target: 'berak', label: 'Buscado y capturado', type: 'event' },
+    { source: 'battle-grim', target: 'wave-jarl', label: 'Navio', type: 'rel' },
+    { source: 'battle-grim', target: 'sjavarom', label: 'Pelearon contra', type: 'Evento' },
+    // grend
+    { source: 'grend', target: 'battle-grim', label: 'miembro', type: 'rel' },
+    // Uspa mujer Berak
+    { source: 'uspa', target: 'sjavarom', label: 'controló', type: 'magic' },
+    { source: 'uspa', target: 'seidr', label: 'practica', type: 'magic' },
+    { source: 'uspa', target: 'snaka', label: 'sangre y herencia confirmada', type: 'lore' },
+    { source: 'uspa', target: 'tainted', label: 'sangre Snaka', type: 'lore' },
+    { source: 'uspa', target: 'oath-stone-frost-isles', label: 'activa con sangre', type: 'magic' },
+    { source: 'uspa', target: 'gudfall', label: 'explica causa', type: 'lore' },
+    { source: 'uspa', target: 'bjarn', label: 'madre de Bjarn', type: 'rel' },
+    { source: 'uspa', target: 'dragon-born', label: 'escupitajo sospechoso', type: 'trama' },
+    { source: 'uspa', target: 'snakavik', label: 'teme / quiere huir de', type: 'conflict' },
+    { source: 'uspa', target: 'elvar', label: 'exige huida de Snakavik', type: 'trama' },
+    // Hijo-berak (Bjarn)
+    { source: 'bjarn', target: 'snaka', label: 'sangre (por Uspa)', type: 'lore' },
+    { source: 'bjarn', target: 'berser', label: 'sangre (por Berak)', type: 'lore' },
+    { source: 'bjarn', target: 'tainted', label: 'doble linaje divino', type: 'lore' },
+    // Sighvat
+    { source: 'sighvat', target: 'kraka', label: 'controla', type: 'rel' },
+    { source: 'sighvat', target: 'hundur', label: 'controla', type: 'rel' },
+    // kraka
+    { source: 'kraka', target: 'battle-grim', label: 'miembro/thrall', type: 'rel' },
+    { source: 'kraka', target: 'wave-jarl', label: 'protege con Seiðr', type: 'magic' },
+    { source: 'kraka', target: 'seidr', label: 'practica', type: 'magic' },
+    { source: 'kraka', target: 'tainted', label: 'Tainted', type: 'lore' },
+    { source: 'kraka', target: 'thrall', label: 'thrall', type: 'rel' },
+    { source: 'kraka', target: 'oath-stone-frost-isles', label: 'identificó / reconoció', type: 'magic' },
+    // hundur (thrall)
+    { source: 'hundur', target: 'battle-grim', label: 'miembro/thrall', type: 'rel' },
+    { source: 'hundur', target: 'berak', label: 'rastreó', type: 'event' },
+    { source: 'hundur', target: 'hundur-dios', label: 'sangre de', type: 'lore' },
+    { source: 'hundur', target: 'oath-stone-frost-isles', label: 'detectó con olfato', type: 'event' },
+    // biorr
+    { source: 'biorr', target: 'battle-grim', label: 'miembro', type: 'rel' },
+    { source: 'biorr', target: 'storr', label: 'conoce la identidad de Elvar como hija de', type: 'trama' },
+    // storr
+    { source: 'storr', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'storr', target: 'snakavik', label: 'sede', type: 'geo' },
+    { source: 'storr', target: 'berak', label: 'comprador', type: 'trama' },
+    { source: 'storr', target: 'reunion-storr-elvar', label: 'convoca', type: 'rel' },
+    { source: 'storr', target: 'hakon', label: 'quiso casar a Elvar con', type: 'trama' },
+    { source: 'storr', target: 'helka', label: 'alianza matrimonial propuesta', type: 'trama' },
+    // wave-jarl
+    { source: 'wave-jarl', target: 'drakkar', label: 'Es un', type: 'rel' },
+    // Silrið
+    { source: 'silrid', target: 'storr', label: 'sirve a', type: 'rel' },
+    { source: 'silrid', target: 'hrung', label: 'despierta e interactúa con', type: 'rel' },
+    { source: 'silrid', target: 'berak', label: 'toma sangre de', type: 'event' },
+    { source: 'silrid', target: 'reunion-storr-elvar', label: 'presente — conseja en', type: 'event' },
+    // Hrung
+    { source: 'hrung', target: 'storr', label: 'oráculo de', type: 'rel' },
+    { source: 'hrung', target: 'snakavik', label: 'reside en', type: 'geo' },
+    { source: 'hrung', target: 'elvar', label: 'la identifica por olfato', type: 'event' },
+    { source: 'hrung', target: 'berak', label: 'confirma linaje de', type: 'event' },
+    // Gytha
+    { source: 'gytha', target: 'storr', label: 'campeona de', type: 'rel' },
+    { source: 'gytha', target: 'grend', label: 'le hace reverencia — se conocen', type: 'rel' },
+    { source: 'gytha', target: 'cat-facciones', label: '', type: 'arc' },
+    // thorun
+    { source: 'thorun', target: 'storr', label: 'hijo mayor de', type: 'rel' },
+    { source: 'thorun', target: 'elvar', label: 'hermano mayor — conflicto', type: 'conflict' },
+    { source: 'thorun', target: 'cat-facciones', label: '', type: 'arc' },
+    // brodir
+    { source: 'brodir', target: 'storr', label: 'hijo menor de', type: 'rel' },
+    { source: 'brodir', target: 'elvar', label: 'hermano menor — afecto', type: 'rel' },
+    { source: 'brodir', target: 'cat-facciones', label: '', type: 'arc' },
+    // Raven-Feeders / Ilska
+    { source: 'raven-feeders', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'raven-feeders', target: 'snakavik', label: 'presentes en', type: 'geo' },
+    { source: 'raven-feeders', target: 'battle-grim', label: 'rival mercenaria de', type: 'trama' },
+    { source: 'ilska', target: 'raven-feeders', label: 'lidera', type: 'rel' },
 
     // ══════════════════════════════════════════════════════════════
-    // CAPÍTULO 25 — NUEVOS NODOS
+    // LANGUAGES
     // ══════════════════════════════════════════════════════════════
-    {
-        id: 'consulta-hrung', label: 'Consulta de Elvar a Hrung', group: 'EVENTO', type: 'Evento — POV Elvar',
-        desc: 'Esa misma noche, mientras la taberna zumba y Elvar lleva horas bebiendo mead y rumiando las palabras de su padre, toma una decisión repentina y se pone en pie. Uspa la intercepta en la puerta con la capucha puesta, custodiada por Thrud en las sombras, para reiterar su urgencia de abandonar Snakavik — Elvar la aplaza hasta estar sobria. Gytha la escolta a través del cráneo y hasta la sala de festines de Störr, ya preparada para la cena de la noche con thralls girando asadores. Gytha advierte que informará al jarl. Elvar sube al estrado, pasa el sitial vacío de Störr y se planta ante Hrung, que duerme con la musculatura fláccida. Lo despierta gotéando mead en sus labios con los dedos. Hrung la recibe como a su «favorita» — bromas cómplices sobre lo poco que vale ese honor entre su padre, sus hermanos y ella. Elvar le vierte mead en la garganta; el líquido empapa la madera del estrado bajo sus pies. Hrung declara que no ha pasado un día desde su marcha sin desear que Störr y Silrið lo hubieran dejado morir en el fondo del fiordo. Elvar le formula la pregunta directa: ¿debe aceptar la oferta de su padre? Gytha aparece en la entrada y gesticula para que se marche — Störr se acerca. Hrung responde con un verso: «silente, pensativo y audaz en la lucha debe ser el hijo del jarl.» Elvar presiona para una respuesta directa: ¿es su padre «la lucha»? ¿O debe ser audaz uniéndose a él contra Helka? Hrung, con el rumor de voces en el pasillo, lanza su acertijo final: «¿puede el sol ser frío, o el mar estar seco, o el lobo volverse cordero?» Grend gruñe que de qué sirve una cabeza parlante si solo dice sandeces. Hrung le dedica a Grend el apodo de «Grend el Parlanchín» y pregunta sarcásticamente qué va a hacer un guerrero ofendido — cortarle la cabeza. Elvar ríe, vierte el resto del mead en la boca de Hrung, y huye antes de que Störr cruce las puertas. Escapa al exterior al viento del atardecer justo cuando la sombra de su padre llena el corredor.',
-        star: '★★★ El acertijo de Hrung («¿puede el lobo volverse cordero?») es la respuesta que Elvar no quería: Störr no puede cambiar su naturaleza. Planificación detrás de toda oferta, manipulación dentro de toda apertura. La pregunta que Hrung deja sin responder es si Elvar tampoco puede cambiar la suya — y qué significa eso para la decisión que todavía no ha tomado. La escena también confirma el vínculo afectivo real entre Elvar y Hrung: es el único habitante de Snakavik del que se despide con algo parecido a ternura.'
-    },
-    // ══════════════════════════════════════════════════════════════
-    // CAPÍTULO 26 — NUEVOS NODOS
-    // ══════════════════════════════════════════════════════════════
-    {
-        id: 'mision-briefing-skalk', label: 'Briefing de la Misión (Skalk en el Campamento)', group: 'EVENTO', type: 'Evento — POV Varg',
-        desc: 'La primera noche en el fiordo del Río Slågen, tras sobrevivir una tormenta de verano y celebrar con el oar-dance, Glornir reúne a los Bloodsworn junto al fuego del campamento y cede la palabra a Skalk. El Galdurman explica la misión: viajan a la fuente del Río Slågen, en las estribaciones noroccidentales de las Montañas Boneback, frontera del dominio de Helka con el territorio de Störr. Al principio las desapariciones se atribuyeron a raiders de Störr. Luego aparecieron restos: partes de cuerpos con marcas de mordida y garras; aproximadamente treinta muertos consumidos parcialmente. La naturaleza exacta de los vaesen es desconocida — trolls, huldra-folk, Vittor o wights, especula Skalk. Un cofre de plata de Helka es la paga. Vol interviene con una pregunta estratégica: si los vaesen cruzan las Boneback desde el otro lado, ¿cómo han burlado el Grimholt? Skalk la corta en seco: no tiene costumbre de responder a thralls. Glornir interviene con dureza: quien zarpa en su barco arriesga la vida y merece respeto — si Skalk no puede aceptarlo, puede irse caminando. Skalk cede con frialdad y una sonrisa de fachada, afirmando que como ellos son los que van a pelear y morir, poco le importa. Se sirve un cuenco de estofado y abandona el fuego acompañado de sus guardias Olvir y Yrsa. La pregunta de Vol sobre el Grimholt queda sin respuesta.',
-        star: '★★★ La confrontación Skalk/Vol/Glornir en el fuego del campamento es el momento de mayor tensión interna del capítulo. Glornir protege a Vol públicamente ante un agente de la propia reina que los contrata — señal de que sus principios no están en venta. La pregunta sin respuesta sobre el Grimholt es la grieta en el briefing: Skalk sabe algo que no dice, o teme algo que no puede admitir.'
-    },
-    {
-        id: 'grimholt', label: 'Grimholt', group: 'LUGAR', type: 'Lugar — Guarnición Fronteriza',
-        desc: 'Torre o conjunto de posiciones de guardia en las Montañas Boneback que sirven como barrera entre el territorio de la Reina Helka y lo que hay al otro lado de las montañas. Los vaesen que están atacando a la gente de Helka han cruzado las Boneback — lo que implica que han pasado o bordeado el Grimholt. Vol señala esta contradicción en el briefing de Skalk; Skalk se niega a responder. Localización exacta: frontera noroccidental del dominio de Helka, cerca de la fuente del Río Slågen. [El término «grimholt» combina «grim» (severo, oscuro) y «holt» (bosque pequeño o asentamiento) en nórdico antiguo — sugiere una posición defensiva en terreno boscoso de montaña.]',
-        star: '★★★ La pregunta de Vol es la más importante del capítulo: ¿cómo atravesaron los vaesen el Grimholt? Las posibles respuestas son perturbadoras — o el Grimholt ha caído, o los vaesen no vienen de donde Skalk dice, o alguien los dejó pasar.'
-    },
-    {
-        id: 'rio-slagen', label: 'Río Slågen', group: 'LUGAR', type: 'Lugar — Río',
-        desc: 'Río cuya fuente nace en las estribaciones noroccidentales de las Montañas Boneback, en la frontera entre el dominio de la Reina Helka y el territorio de Jarl Störr. Su curso discurre hacia el sur y desemboca en el fiordo donde el Sea-Wolf ancló la primera noche. La misión de los Bloodsworn es remontar el Slågen hasta su fuente para encontrar y eliminar los vaesen que están atacando a la gente de Helka (ver nodo mision-helka-norte). El río es la única ruta práctica hacia el interior de las Boneback por ese flanco. Tras cinco días de duro remo desde el fiordo, los Bloodsworn desembarcaron en una granja de la orilla oriental — abandonada, sin cuerpos ni sangre, con las puertas abiertas y las cosechas sin atender. Desde allí continúan a pie hacia las estribaciones (ver nodo granja-abandonada)',
-        star: '★★ El Slågen es la arteria de la misión: remontarlo es entrar en territorio más salvaje y más cerca del borde donde algo devora personas. Su cercanía a la frontera con Störr añade ambigüedad política — raids de Störr y vaesen son amenazas difíciles de distinguir.'
-    },
-    {
-        id: 'olvir-yrsa', label: 'Olvir y Yrsa (Escoltas de Skalk)', group: 'FACCION', type: 'Personaje — Guardia de Helka',
-        desc: 'Los dos guerreros de la Reina Helka asignados como escolta personal de Skalk durante la misión. Olvir: hombre con cicatriz sobre una ceja que desplaza la posición de sus ojos; capa oscura y espada al cinto; broche de plata en forma de alas de águila — emblema de Helka. Yrsa: mujer de cara orgullosa y labios apretados; misma capa y broche de plata. Ambos llevan brynja fina y comparten turnos de remo con los Bloodsworn. Durante la tormenta de verano fueron vistos achicando agua furiosamente. Siguen a Skalk a todas partes. Cuando Glornir confronta a Skalk sobre el trato a Vol, las yemas de los dedos de Olvir y Yrsa rozan la empuñadura de sus espadas — la tensión cede cuando Skalk retrocede.',
-        star: '★ Primer escuadrón de Helka integrado en el Sea-Wolf. El toque de espada durante la tensión con Glornir los sitúa como leales a Skalk primero, a la misión después. El broche de alas de águila los identifica como guardia personal — no hird ordinario.'
-    },
-
+    { source: 'galdur', target: 'cat-magia', label: 'Lenguaje Magico', type: 'arc' },
+    { source: 'galdur', target: 'collares', label: 'activa', type: 'magic' },
 
     // ══════════════════════════════════════════════════════════════
-    // CAPÍTULO 27 — NUEVOS NODOS
+    // Cat-mundo
     // ══════════════════════════════════════════════════════════════
-    {
-        id: 'raid-raven-feeders', label: 'Raid de los Raven-Feeders a la Taberna', group: 'EVENTO', type: 'Evento — POV Elvar',
-        desc: 'Secuencia completa: (1) SEÑAL: Elvar y Grend regresan del cráneo de Snaka al amanecer. A una manzana de la taberna, Grend huele algo y saca el hacha. Gritos, choque de hierro y un destello de luz cegadora estallan desde el interior. (2) COMBATE EXTERIOR: siete u ocho figuras irrumpen por la puerta — buena malla, hierro en los puños, pluma de cuervo en el pelo. Elvar afronta al líder rubio: guerrero corpulento con brynja, torc de plata, aros de brazos y pluma de cuervo trenzada en el cabello. Sus ojos son grises con el iris móvil como tormenta y la pupila reducida a un punto — es Tainted. El combate es veloz: Elvar le taja la pantorrilla con la espada y cuando cae a un rodilla le atraviesa el cuello con el seax. Grend aplasta a una guerrera que lo flanqueaba y la deja escurrir por la pared. Los demás huyen cuesta abajo hacia los muelles. (3) INTERIOR: estancia con olor a sangre, vísceras y carne quemada. Thrud atravesado sobre la mesa con el cuello abierto y una herida en la espalda, ojos en blanco (†). Biórr desplomado contra la pared, herida de hombro pulsando sangre, cara ensangrentada, inconsciente. Uspa boca abajo en el suelo rodeada de cuatro o cinco cadáveres de Raven-Feeders con el pelo, la ropa y la piel de manos y rostros carbonizados y ennegrecidos — calor residual que todavía irradia. Sighvat derriba el techo del altillo a hachazos y cae a la sala. Agnar desciende por la escotilla. (4) IDENTIFICACIÓN: Elvar reconoce la pluma de cuervo. Los atacantes son los Alimentadores de Cuervos — Ilska los envió. Se han llevado algo: un bulto blando sobre el hombro de uno de los que huyeron. Bjarn. (5) PERSECUCIÓN: Agnar reúne a la compañía en segundos y corren hacia los muelles. El Hundur-thrall olfatea el rastro. Llegan al muelle a tiempo de ver el drakkar de Ilska saliendo al fiordo a remo: escudos grises con alas negras en la regala, Ilska al timón — sonríe y saluda con el brazo. A su lado, un hombre de piel de lobo con hacha larga. La compañía golpea sus escudos al ritmo de remo: promesa de sangre. (6) BOTÍN Y DUELO: Elvar despoja al guerrero rubio (espada, brynja, torc de plata, tres aros de brazo, dados, monedas de cobre). Regala a Grend uno de los aros — lo acepta. Agnar paga los daños al posadero. (7) USPA DESPIERTA: Kráka ayuda a Uspa a incorporarse. Al saber que se llevaron a Bjarn lanza un alarido y se araña la cara. Confronta a Elvar por no haber transmitido su advertencia. Agnar interviene: Thrud era su hombre y su amigo; exige saber por qué le atacaron. (8) EL SECRETO: Uspa negocia — su secreto a cambio de que Agnar recupere a Bjarn. Agnar acepta condicionalmente. Uspa explica: Ilska no quería al niño — lo quería a ella, como palanca. Se inclina y susurra al oído de Agnar cuatro palabras: «sé el camino a Oskutreð.» Agnar retrocede como si lo hubieran quemado.',
-        star: '★★★ El punto de inflexión absoluto del arco de Elvar. El raid convierte a los Raven-Feeders de rival abstracto en amenaza personal y abre el feudo de sangre. La muerte de Thrud pesa sobre la conciencia de Elvar — su silencio tuvo un precio. Pero lo que cambia todo es el secreto de Uspa: el camino a Oskutreð es el mapa hacia Lik-Rifa encadenada. Quien lo tenga tiene el poder de desatar — o de mantener encadenada — a la diosa dragón. La misión de los Terrores de la batalla ha mutado en algo de escala cósmica.'
-    },
-
-
-    // ══════════════════════════════════════════════════════════════
-    // CAPÍTULO 28 — NUEVOS NODOS
-    // ══════════════════════════════════════════════════════════════
-    {
-        id: 'combate-nacken', label: 'Combate contra el Näcken del Río', group: 'EVENTO', type: 'Evento — POV Orka',
-        desc: 'Secuencia completa: (1) APROXIMACIÓN: Orka, Lif y Mord reman río arriba por un arroyo de colinas con laderas de acebo y brezo. La corriente se endurece. Orka advierte roca vieja de embarcación destrozada entre las piedras del cauce — señal ignorada por Mord. La melodía hipnótica del Näcken se filtra bajo el rugido del agua: dulce, helada, evocadora de recuerdos dichosos. Lif se paraliza en mitad del golpe de remo con una sonrisa congelada. Orka resiste sacudiéndose la cabeza, esquiva una roca, ve huesos en el lecho del río. (2) ATAQUE: algo golpea la quilla de abajo arriba, la proa se alza, Mord cae al agua con un grito cortado. Orka deja el remo a Lif — «no entres en el agua» — y salta. (3) COMBATE SUBACUÁTICO — PRIMER TURNO: bajo la superficie la melodía desaparece. Ve al Näcken arrastrando a Mord: boca abierta en un grito de burbujas, el vaesen con los brazos enroscados en su cuello. Orka alcanza al Näcken y pronuncia «Járn og stál, skorið og brennt» mientras el seax muerde el costado de la criatura — carne aceitosa que se abre, sangre verde que fluye como savia. El Näcken suelta a Mord y abre la boca en un grito silencioso. Orka arrastra a Mord hacia arriba. (4) SEGUNDO ATAQUE: ya en la superficie, algo le rodea el tobillo. Empuja a Mord hacia la orilla y la arrastran hacia abajo. El seax rebota en la piel escamosa de la muñeca del Näcken. Pánico — recuerda: palabras y acción juntas. Pronuncia «Skörp járn brenna og bíta» mientras corta la boca del vaesen: dientes que salen volando, sangre verde a borbotones. Lo repite mientras clava en su hombro. Un alarido que se siente como presión en todo el cuerpo la lanza lejos. (5) DESENLACE: el Näcken huye como una nube oscura que se disuelve en la corriente. Orka arrastra los pies hasta el fondo y sale a la luz. Lif la ayuda con una lanza desde la orilla. (6) DESPUÉS: clava el seax y la lanza en la orilla del río — el hierro en tierra repele al Näcken. Mord: pálido, hombro lacerado, conmocionado. Orka cae a cuatro patas y vomita agua y limo.',
-        star: '★★★ El Näcken es la primera prueba de Seiðr en combate para Orka: recuerda las fórmulas bajo el agua con los pulmones ardiendo y las aplica correctamente en el segundo intento — primero fallaron porque no combinó palabras y acción. La lección que se extrae es técnica, no instintiva: el Seiðr requiere precisión ritual incluso en pánico. El patrón de dos fases (fórmula incompleta → fórmula correcta) es pedagógico — el lector aprende las reglas junto con Orka.'
-    },
-
-
-    // ══════════════════════════════════════════════════════════════
-    // CAPÍTULO 29 — NUEVOS NODOS
-    // ══════════════════════════════════════════════════════════════
-    {
-        id: 'juramento-sangre-brim', label: 'El Blóð Svarið de los Terrores de la Batalla', group: 'EVENTO', type: 'Evento — POV Elvar',
-        desc: 'Secuencia completa: (1) ACCESO AL SECRETO: Agnar lleva a Uspa, Kráka y Sighvat a la cocina de la taberna. Elvar los sigue sin ser invitada — declara que oyó las palabras de Uspa. Agnar, con mirada plana, la hace entrar. Grend entra también cuando Agnar lo autoriza. (2) LA PREGUNTA: antes de permitir que Elvar escuche el secreto, Agnar le exige una respuesta definitiva: ¿se queda con los Terrores de la batalla o vuelve con su padre? Elvar responde sin vacilar: «me quedo.» Añade: «un lobo no puede volverse cordero» — el acertijo de Hrung convertido en decisión irrevocable. (3) EL DEBATE SOBRE OSKUTREÐ: Agnar lo califica de mito; Uspa refuta señalando que el mundo donde viven — construido sobre huesos de dioses — es prueba suficiente de que Oskutreð existe. Kráka confirma que todos los Tainted saben que el árbol es real. Elvar aporta la geografía de las leyendas (más allá del pozo de vaesen, el Puente Isbrún, las Colinas de Luna Oscura) — Uspa la confirma. (4) LA GRASKINNA: Agnar exige prueba — que Kráka examine el libro. Uspa revela que lo destruyó en Iskalt arrojándolo a la lava mientras Berak combatía al trol. Kráka lanza un siseo agudo de consternación. Elvar comprende en ese momento lo que presenció en la isla. (5) EL THRALL-COLLAR: Agnar amenaza con ponerle el collar a Uspa para forzar su obediencia. Uspa rechaza con absoluta serenidad: moriría antes de ponérselo, porque sin Bjarn su vida ya no tiene valor. Le recuerda lo que hizo a los guerreros de Ilska con su Seiðr. Agnar cede. (6) NEGOCIACIÓN DE LA SECUENCIA: Agnar quiere Oskutreð primero; Uspa quiere a Bjarn primero. Impasse. Uspa propone el blóð svarið como única garantía que puede aceptar. (7) EL JURAMENTO DE GREND: Grend se niega en seco («he hecho un juramento; no haré otro») mirando la cicatriz de su palma izquierda — vestigio del vínculo a la madre muerta de Elvar. Uspa insiste: todos o ninguno. Elvar le dice que donde ella vaya él la seguirá. Grend asiente: «lo haré solo por Elvar.» (8) EL RITUAL: Uspa talla cuatro runas en una tabla de cortar (Líf, Dauða, Blóð svarið, Kvöl). Cada participante corta su palma y deja caer sangre sobre las runas. Uspa pronuncia las palabras de vinculación en nórdico antiguo; Kráka las traduce. La sangre se eleva de la madera formando un cordón rojo que flota, envuelve las manos y muñecas de todos y las quema — olor a carne chamuscada, un dolor que ninguno esquiva. «Svo skal það vera» — todos lo repiten. El cordón se evapora. En mano y muñeca de cada uno queda una marca roja permanente. (9) CIERRE: Agnar sonríe y dice: «a Oskutreð.» Elvar no puede reprimir la risa — excitación, miedo y resolución mezclados.',
-        star: '★★★ El capítulo de cierre del arco snakavik de Elvar. La decisión que llevaba capítulos pendiente queda sellada en dos sentidos: con palabras (rechaza a su padre) y con sangre (jura con su compañía). La cicatriz de Grend es el detalle más cargado — revela que su lealtad a Elvar es herencia de un vínculo más antiguo y más profundo. La risa final de Elvar no es alivio sino combustible: Oskutreð se ha convertido en lo que más desea en el mundo.'
-    },
-
+    { source: 'tainted', target: 'cat-mundo', label: '', type: 'arc' },
+    { source: 'madur-boy', target: 'tainted', label: 'opuesto a', type: 'lore' },
+    { source: 'gudljos', target: 'cat-mundo', label: '', type: 'arc' },
+    { source: 'gudljos', target: 'gudfall', label: 'remanente del', type: 'lore' },
+    { source: 'berserkir', target: 'cat-mundo', label: '', type: 'arc' },
+    { source: 'berserkir', target: 'berser', label: 'descendientes de', type: 'lore' },
+    { source: 'berserkir', target: 'ulfhednar', label: 'paralelo oso/lobo', type: 'lore' },
+    { source: 'berserkir', target: 'tainted', label: 'tipo', type: 'lore' },
+    // Dragon-born
+    { source: 'dragon-born', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'dragon-born', target: 'likrafa', label: 'posible descendencia / descendencia activa de', type: 'trama' },
+    { source: 'dragon-born', target: 'tainted', label: 'Tipo', type: 'trama' },
+    { source: 'dragon-born', target: 'thorkel-muerte', label: 'confirmado al morir', type: 'lore' },
+    { source: 'dragon-born', target: 'thorkel-transformacion', label: 'mato a Thorkel en', type: 'event' },
+    // Ulfhednar
+    { source: 'ulfhednar', target: 'vafri', label: 'es una', type: 'lore' },
+    { source: 'ulfhednar', target: 'ulfrir', label: 'linaje de', type: 'lore' },
+    { source: 'ulfhednar', target: 'tainted', label: 'tipo', type: 'lore' },
+    { source: 'ulfhednar', target: 'decision-huida', label: 'amenaza que motiva', type: 'trama' },
 
     // ══════════════════════════════════════════════════════════════
-    // CAPÍTULO 35 — NUEVOS NODOS
+    // Cat-eventos
     // ══════════════════════════════════════════════════════════════
-    {
-        id: 'combate-dead-drengr', label: 'Combate en El Drengr Muerto', group: 'EVENTO', type: 'Evento — POV Orka',
-        desc: 'Secuencia completa: (1) ENTRADA: Orka entra por el patio trasero mientras los niños liberados reman por el canal. Revisa el local de servicio; sube al desván — oscuro, sin ventanas, ~20 colchonetas de junco con olor a orina y excrementos. En una de las colchonetas encuentra el colgante de espada de Breca con el cordón roto. Lo guarda en la bolsa del cinturón. (2) PRIMERA SANGRE: entra al salón con el seax en mano y agarra a la guardia femenina (alta, túnica acolchada, hacha y seax) por el cabello; le clava el seax en la garganta y le taja la arteria. Se queda con su hacha cuando la suelta al caer. (3) RECONOCIMIENTO: el encapuchado de la mesa se pone en pie y la capucha cae — Orka reconoce a Hákon de los muelles. Hákon ordena a su drengr personal (guerrero de malla, escudo y espada) que la mate. (4) EL DRENGR DE HÁKON: Orka engancha el escudo con la hacha, lo arrastra desequilibrado, seax al costado rompiendo los aros de malla — el drengr colapsa sobre una mesa rota. (5) BATALLA GENERAL: los seis o siete de la mesa de dados atacan; el tabernero salta la barra con un seax; los dos guardias de la puerta y la drengr de Helka entran. Drekr se levanta despacio y recoge su hacha. (6) ORKA VS DREKR — INTERIOR: Orka embiste, hombro en el pecho de Drekr, lo lanza a una mesa que se astilla. Él rueda, ella pica con la hacha, falla. Una mujer la ataca por la izquierda; Orka la rebana con el seax, luego le clava la hacha en el torso — el cadáver la sirve de escudo humano cuando un segundo atacante la golpea accidentalmente. Lo usa para derribar a otros a través de la ventana entablada. Un golpe de hacha en la espalda rompe anillas de la brynja — línea de fuego ardiente. (7) A LA CALLE: Orka y Drekr caen juntos por la ventana rota al barro del exterior. Multitud. Apuestas. Orka encima, seax levantado — pero Drekr le da un cabezazo y la lanza. (8) DUELO EN LA CALLE: se miden mientras una compañía de ~30-40 drengrs avanza por la calle (trompeta de cuerno, pies marchando). Orka recibe una herida en la pierna debajo de la rodilla. Drekr recibe heridas en torso y hombro. (9) LA LLAVE: Drekr bloquea el hacha de Orka, le desvía el seax y le da una patada en la pierna herida. Ella cae de rodillas; él le rodea la garganta con el asta del hacha y aprieta. Visión negando. Drekr dice: «tu hijo cambiará el mundo». (10) EL SURGE: algo primal despierta — sangre que arde y se hiela a la vez, sentidos aguzados, fuerza repentina. Orka le rompe un dedo a Drekr, se libera, lo hiere en el muslo. (11) RESCATE: Drekr reagrupa a sus hombres en un círculo. Llegan Mord y Lif a caballo — Lif abre el círculo de un tajo desde la silla, Mord derriba al otro guardia. Lif agarra a Orka por la cota y galopa; ella salta a la grupa. Escape por callejuelas. Drekr los ve marchar y levanta el hacha — saludo y promesa.',
-        star: '★★★ El capítulo más denso de acción del arco de Orka. Tres revelaciones en una escena: el colgante de Breca (estuvo aquí), Hákon en persona (la cadena de mando sin intermediarios), y el poder oculto de Orka (el surge bajo la llave). La frase de Drekr es la mayor bomba: «tu hijo cambiará el mundo» — ¿qué sabe Drekr de Breca que Orka aún ignora?'
-    },
-    {
-        id: 'orka-poder-oculto', label: 'Poder Oculto de Orka (Surge Primal)', group: 'TRAMA', type: 'Trama — Abierta (Urgente)',
-        desc: 'Bajo la llave de hacha de Drekr, con la visión negándose y la conciencia disolviéndose, Orka experimentó algo que el texto describe con precisión: «algo se movió, profundo dentro de ella, su conciencia y claridad volviendo de golpe. Sintió que la sangre le hervía en las venas, el calor de la rabia cambiando, de repente frío, primal, recorriendo su cuerpo — fuego y hielo mezclados. Un aluvión de fuerza inundó sus músculos, la visión regresó de golpe, más nítida, los sentidos más agudos.» Con ese surge rompió la presa de Drekr quebrándole un hueso. El fenómeno es paralelo a otras manifestaciones Tainted conocidas: los Berserkir (fuerza sobrehumana, sentidos agudizados en trance), los Úlfhéðnar (transformación bajo tensión extrema). Indicios acumulados de sangre Tainted en Orka: (1) flashbacks de rabia cegadora sin control; (2) padre violento en la infancia — posible línea Tainted paterna; (3) apellido «Ulfsson» de Thorkel — ¿sangre de Ulfrir en la familia?; (4) el propio Breca fue raptado específicamente por ser Tainted; (5) el surge bajo amenaza de muerte en este capítulo. Si Orka tiene sangre Tainted, ¿de qué dios? ¿Lo sabe? ¿Lo supo Thorkel?',
-        star: '★★★ El surge de Orka es el momento más importante de su arco hasta ahora. Si es Tainted, todo lo que le ha pasado adquiere una dimensión nueva: el ataque al steading no fue aleatorio (Drekr sabía), el rapto de Breca no fue solo por él (fue por los dos), y la revelación «tu hijo cambiará el mundo» podría referirse tanto al linaje de Breca como al de su madre.'
-    },
-    {
-        id: 'garras-drekr', label: 'Las Cuatro Marcas de Garra (Drekr)', group: 'TRAMA', type: 'Trama — Misterio Abierto',
-        desc: 'Cuatro marcas de garra profundas atraviesan la cara de Drekr de frente a barbilla — recientes, en carne viva, cosidas. El tipo de herida (cuatro líneas paralelas de profundidad uniforme) es consistente con: (1) las garras de un Tainted en transformación parcial; (2) un vaesen de familia felina o ursina; (3) posiblemente el tailed-garras (Tainted de linaje dragón) que trabaja para Drekr o alguien de poder similar. La recentidad de las heridas plantea una pregunta: ¿Drekr fue atacado por uno de sus propios activos? ¿O fue atacado por un enemigo en una operación anterior? ¿Podría haber sido Breca, en un momento de rabia o de manifestación Tainted involuntaria, quien lo arañó?',
-        star: '★★ Las garras en la cara de Drekr son una pregunta abierta con respuesta potencialmente explosiva. Si un niño con poderes nacientes fue capaz de marcar así a un guerrero de ese calibre, la frase «tu hijo cambiará el mundo» adquiere un peso completamente diferente.'
-    },
+    { source: 'asgrim-death', target: 'cat-eventos', label: '', type: 'event' },
+    // holmganga virk vs gudvarr
+    { source: 'holmganga-event', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'holmganga-event', target: 'orka', label: 'segundo de Virk', type: 'rel' },
+    { source: 'holmganga-event', target: 'vafri', label: 'mató a Virk', type: 'event' },
+    { source: 'holmganga-event', target: 'arild', label: 'segundo de Guðvarr', type: 'rel' },
+    { source: 'holmganga-event', target: 'mord-lif', label: 'presenciaron', type: 'event' },
+    { source: 'holmganga-event', target: 'oath-stone-fellur', label: 'lugar', type: 'geo' },
+    { source: 'holmganga-event', target: 'holmganga', label: 'Reglas', type: 'rel' },
+    // gudfall
+    { source: 'gudfall', target: 'cat-eventos', label: '', type: 'history' },
+    { source: 'gudfall', target: 'snaka', label: 'murió en', type: 'history' },
+    { source: 'gudfall', target: 'orna', label: 'murió en', type: 'history' },
+    { source: 'gudfall', target: 'berser', label: 'murió en', type: 'history' },
+    { source: 'gudfall', target: 'likrafa', label: 'encadenada', type: 'history' },
+    { source: 'akall', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'ninos-robados', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'ninos-robados', target: 'harek', label: 'primer caso', type: 'trama' },
+    { source: 'ninos-robados', target: 'asgrim-death', label: 'conecta con', type: 'trama' },
+    { source: 'ninos-robados', target: 'orka', label: 'investiga', type: 'trama' },
+    { source: 'ninos-robados', target: 'haraldurson', label: 'víctima', type: 'trama' },
+    { source: 'ninos-robados', target: 'kergarth', label: 'caso en', type: 'geo' },
+    { source: 'ninos-robados', target: 'howbyr', label: 'caso en', type: 'geo' },
+    { source: 'ninos-robados', target: 'rio-skarpain', label: 'ruta de huida', type: 'geo' },
+    { source: 'ninos-robados', target: 'asgrim', label: 'víctimas', type: 'trama' },
+    // Berak-venta-event
+    { source: 'berak-venta', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'berak-venta', target: 'berak', label: 'Sera vendido', type: 'trama' },
+    { source: 'berak-venta', target: 'snakavik', label: 'destino', type: 'geo' },
+    { source: 'berak-venta', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'berak-venta', target: 'wave-jarl', label: 'navegado en', type: 'rel' },
+    { source: 'berak-venta', target: 'llegada-snakavik', label: 'culmina en', type: 'trama' },
+    { source: 'helka-poder', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'helka-poder', target: 'helka', label: 'protagoniza', type: 'trama' },
+    { source: 'helka-poder', target: 'sigrun', label: 'juró lealtad', type: 'event' },
+    { source: 'lik-rifa-amenaza', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'lik-rifa-amenaza', target: 'likrafa', label: 'es ella', type: 'trama' },
+    { source: 'lik-rifa-amenaza', target: 'iskalt', label: 'epicentro', type: 'geo' },
+    // Evento reunión
+    { source: 'reunion-storr-elvar', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'reunion-storr-elvar', target: 'snakavik', label: 'ocurre en', type: 'geo' },
+    { source: 'reunion-storr-elvar', target: 'thorun', label: 'enfrenta a Elvar', type: 'event' },
+    { source: 'reunion-storr-elvar', target: 'brodir', label: 'pide a Elvar que vuelva', type: 'event' },
+    { source: 'raid-camara-sigrun', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'raid-camara-sigrun', target: 'fellur', label: 'ocurre en', type: 'geo' },
+    { source: 'raid-camara-sigrun', target: 'vafri', label: 'Vafri muere en', type: 'event' },
+    { source: 'raid-camara-sigrun', target: 'sigrun', label: 'Sigrún herida en', type: 'event' },
+    { source: 'raid-camara-sigrun', target: 'mord-lif', label: 'Orka libera a', type: 'event' },
+    { source: 'llegada-snakavik', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'llegada-snakavik', target: 'snakavik', label: 'ocurre en', type: 'geo' },
+    { source: 'llegada-snakavik', target: 'agnar', label: 'organizada por', type: 'rel' },
+    { source: 'llegada-snakavik', target: 'berak', label: 'destino de', type: 'event' },
+    { source: 'llegada-snakavik', target: 'storr', label: 'comprador en', type: 'event' },
+    { source: 'llegada-snakavik', target: 'silrid', label: 'verificación por', type: 'event' },
+    { source: 'llegada-snakavik', target: 'hrung', label: 'confirma linaje vía', type: 'event' },
+    { source: 'llegada-snakavik', target: 'elvar', label: 'revela identidad de', type: 'trama' },
+    { source: 'fuga-fiordo', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'fuga-fiordo', target: 'orka', label: 'protagoniza', type: 'rel' },
+    { source: 'fuga-fiordo', target: 'mord-lif', label: 'pacto sellado en', type: 'event' },
+    { source: 'fuga-fiordo', target: 'gudvarr', label: 'maniobra para despistar a', type: 'event' },
+    { source: 'fuga-fiordo', target: 'darl', label: 'destino acordado', type: 'geo' },
+    // Varg primera muerte
+    { source: 'varg-primera-muerte', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'varg-primera-muerte', target: 'batalla-muelles', label: 'ocurre en', type: 'event' },
+    { source: 'varg-primera-muerte', target: 'varg', label: 'protagonizada por', type: 'rel' },
+    { source: 'varg-primera-muerte', target: 'botin-guerra', label: 'aprende el codigo del', type: 'lore' },
+    { source: 'varg-primera-muerte', target: 'sulich', label: 'Sulich ofrece botín en', type: 'event' },
+    { source: 'varg-primera-muerte', target: 'rokia', label: 'Rokia atestigua', type: 'event' },
+    // Misión Helka norte
+    { source: 'mision-helka-norte', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'mision-helka-norte', target: 'helka', label: 'encargada por', type: 'rel' },
+    { source: 'mision-helka-norte', target: 'bloodsworn', label: 'protagonistas de', type: 'rel' },
+    { source: 'mision-helka-norte', target: 'skalk', label: 'Skalk embarca para', type: 'event' },
+    { source: 'mision-helka-norte', target: 'sea-wolf', label: 'a bordo del', type: 'rel' },
+    { source: 'mision-helka-norte', target: 'lik-rifa-amenaza', label: 'posible vinculo con', type: 'trama' },
+    { source: 'batalla-muelles', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'batalla-muelles', target: 'sulich-crisis', label: 'escalacion de', type: 'event' },
+    { source: 'batalla-muelles', target: 'jaromir', label: 'iniciada por', type: 'event' },
+    { source: 'batalla-muelles', target: 'einar', label: 'lanza la lanza en', type: 'event' },
+    { source: 'batalla-muelles', target: 'edel', label: 'hounds en', type: 'event' },
+    { source: 'batalla-muelles', target: 'llegada-helka', label: 'interrumpida por', type: 'event' },
+    { source: 'batalla-muelles', target: 'liga', label: 'ocurre en', type: 'geo' },
+    { source: 'llegada-helka', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'llegada-helka', target: 'liga', label: 'destino', type: 'geo' },
+    { source: 'llegada-helka', target: 'orna', label: 'aguila en velas = emblema de', type: 'lore' },
+    { source: 'tumulo-thorkel', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'tumulo-thorkel', target: 'thorkel', label: 'tumulo de', type: 'event' },
+    { source: 'tumulo-thorkel', target: 'funeral-rites', label: 'practica de', type: 'lore' },
+    { source: 'tumulo-thorkel', target: 'cofre-enterrado', label: 'brazaletes de', type: 'rel' },
+    { source: 'tumulo-thorkel', target: 'drekr-cazadora', label: 'voto que lanza la', type: 'rel' },
+    { source: 'tumulo-thorkel', target: 'seaxes-tainted', label: 'sellado con', type: 'rel' },
+    { source: 'vesli-saliva', target: 'tennur', label: 'capacidad de los', type: 'lore' },
+    { source: 'vesli-saliva', target: 'orka', label: 'curo a', type: 'event' },
+    { source: 'vesli-saliva', target: 'spert', label: 'curo herida de', type: 'event' },
+    { source: 'thorkel-transformacion', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'thorkel-transformacion', target: 'thorkel', label: 'confirma sobre', type: 'lore' },
+    { source: 'thorkel-transformacion', target: 'ulfrir', label: 'sangre posible de', type: 'trama' },
+    { source: 'thorkel-transformacion', target: 'tainted', label: 'era Tainted', type: 'trama' },
+    // Ataque steading
+    { source: 'ataque-steading', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'ataque-steading', target: 'thorkel-muerte', label: 'causa', type: 'event' },
+    { source: 'ataque-steading', target: 'spert', label: 'Spert herido en', type: 'event' },
+    { source: 'ataque-steading', target: 'vesli', label: 'Vesli herida en', type: 'event' },
+    { source: 'ataque-steading', target: 'galdurman-drekr', label: 'destruyo runas en', type: 'magic' },
+    { source: 'ataque-steading', target: 'steading', label: 'destruyo el', type: 'event' },
+    // Muerte de Thorkel
+    { source: 'thorkel-muerte', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'thorkel-muerte', target: 'funeral-rites', label: 'axe en manos', type: 'lore' },
+    // Galdurman de Drekr
+    { source: 'galdurman-drekr', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'galdurman-drekr', target: 'runa-ward', label: 'destruyo', type: 'magic' },
+    { source: 'galdurman-drekr', target: 'dragon-born', label: 'podria ser el mismo', type: 'trama' },
+    // Caza de Drekr
+    { source: 'drekr-cazadora', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'drekr-cazadora', target: 'drekr', label: 'busca a', type: 'conflict' },
+    { source: 'drekr-cazadora', target: 'breca', label: 'para recuperar a', type: 'goal' },
+    // Varg-aprendiz
+    { source: 'varg-aprendiz', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'varg-aprendiz', target: 'akall', label: 'condiciona el', type: 'trama' },
+    { source: 'varg-aprendiz', target: 'bloodsworn', label: 'paso previo a unirse a', type: 'rel' },
+    // Partida de Liga
+    { source: 'partida-liga', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'partida-liga', target: 'bloodsworn', label: 'protagonista', type: 'rel' },
+    { source: 'partida-liga', target: 'liga', label: 'desde', type: 'geo' },
+    { source: 'partida-liga', target: 'sulich-crisis', label: 'sin resolver al partir', type: 'trama' },
+    // Decision de huida
+    { source: 'decision-huida', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'decision-huida', target: 'vafri', label: 'motivada por amenaza de', type: 'trama' },
+    { source: 'decision-huida', target: 'ataque-steading', label: 'interrumpida por', type: 'event' },
+    // Barrow de Virk
+    { source: 'barrow-virk', target: 'cat-eventos', label: '', type: 'event' },
+    { source: 'barrow-virk', target: 'virk', label: 'tumulo de', type: 'event' },
+    { source: 'barrow-virk', target: 'mord-lif', label: 'construido por', type: 'event' },
+    { source: 'barrow-virk', target: 'thorkel', label: 'ayudo a construir', type: 'event' },
+    { source: 'barrow-virk', target: 'funeral-rites', label: 'practica de', type: 'lore' },
+    // Sulich crisis
+    { source: 'sulich-crisis', target: 'cat-tramas', label: '', type: 'arc' },
+    { source: 'sulich-crisis', target: 'sulich', label: 'reclamado', type: 'conflict' },
+    { source: 'sulich-crisis', target: 'glornir', label: 'defiende a Sulich', type: 'event' },
+    { source: 'sulich-crisis', target: 'jarl-logur', label: 'árbitro potencial', type: 'rel' },
+    { source: 'sulich-crisis', target: 'althing', label: 'resolución prevista', type: 'event' },
+    { source: 'consulta-hrung', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'consulta-hrung', target: 'elvar', label: 'protagoniza', type: 'rel' },
+    { source: 'consulta-hrung', target: 'hrung', label: 'consulta a', type: 'rel' },
+    { source: 'consulta-hrung', target: 'storr', label: 'interrumpida por llegada de', type: 'event' },
+    { source: 'consulta-hrung', target: 'gytha', label: 'escoltada por', type: 'rel' },
 
     // ══════════════════════════════════════════════════════════════
-    // CAPÍTULO 34 — NUEVOS NODOS
+    // Cat-dioses
     // ══════════════════════════════════════════════════════════════
-    {
-        id: 'saga-queso-troll', label: 'La Saga del Queso y el Trol (Svik)', group: 'COSMO', type: 'Concepto — Saga Personal',
-        desc: 'Historia que Svik Hrulfsson relata al campamento en las estribaciones de las Boneback durante el desayuno de papilla fría. Estructura en tres actos adaptada del cuentacuentos nórdico clásico: (1) EL ENGAÑO DE LA ROCA: Svik, de ~14-15 inviernos, entra al bosque para cortar leña porque sus dos hermanos mayores huyeron ante un trol que amenazaba con comérselos. El trol se aproxima con cuernos y colmillos bajos. Svik, paralizado de miedo pero con el queso en la mano, aprieta el redondo sin querer — el suero escurre al suelo. El trol, viendo lo que cree que es agua exprimida de una roca, retrocede convencido de la fuerza sobrehumana del niño y ofrece su ayuda para cortar la leña. (2) LA CUEVA DEL TESORO: el trol invita a Svik a su cueva (oscura, húmeda, grande, con un tesoro de armas, monedas y aros de bronce y plata de guerreros que mató). El trol cocina papilla. Propone una competición de comer. Svik, en cuanto el trol distrae la mirada, mete el saco de cáñamo vacío del queso bajo la túnica, la boca del saco oculta en el cuello. Cucharada a cucharada vierte la papilla en el saco mientras simula comer. Cuando el saco está a punto de reventar, Svik clava el cuchillo en su propia tripa frente al trol — y en lugar de tripas cae papilla. «Ahh, qué alivio», dice, y empieza a comer de nuevo metiendo más papilla en el agujero del saco que gotea. (3) EL FIN DEL TROL: el trol, convencido de que perder significará la muerte y admirando el valor del niño, se raja el vientre con su propia hoja de sílex para vaciar sitio y seguir comiendo. Sus tripas se desparraman en su regazo. Svik toma el tesoro de la cueva y regresa a casa. Moral y uso: razón por la que Svik lleva siempre un redondo de queso encima. [Contexto folklórico: Gwynne adapta el cuento noruego «Askeladden som kappåt med trollet» (El chico que tuvo una competición de comer con un trol), recopilado por Asbjørnsen y Moe en 1841. El Askeladden original es el hijo menor que sale al bosque mientras los mayores huyen — el arquetipo nórdico del ingenioso desvalido que supera a la fuerza bruta con astucia. Gwynne le da el rol a Svik, convirtiéndolo en backstory personal.]',
-        star: '★★ La historia encapsula la filosofía de Svik mejor que cualquier descripción directa: no es el más fuerte ni el más valiente, pero sí el más rápido de mente. El tesoro del trol como pago de deudas familiares en el original folk-tale aquí queda implícito — Svik no lo dice. Lo que importa es la lección táctica: en el mundo de los Hermanos de Sangre, la astucia vale más que la fuerza.'
-    },
-    {
-        id: 'ella-misteriosa', label: 'La Mujer Esperada (sin nombre)', group: 'TRAMA', type: 'Trama — Misterio Abierto',
-        desc: 'Persona femenina cuya identidad se desconoce, a quien Vol esperaba que hubiera llegado al punto de encuentro con los Hermanos de Sangre antes de entrar en las Boneback. Vol dice «debería haber llegado ya» y propone que los Hermanos deberían buscarla activamente en lugar de avanzar. Glornir confirma que también se preocupa por ella: «Vigríð es un lugar grande y no sabemos dónde buscar.» Señala que ha dejado su ruta sin secretos para que pueda seguirles el rastro y encontrarlos. La naturaleza del vínculo entre esta mujer y los Hermanos no se revela — podría ser una aliada, una Seiðr-witch contactada previamente, una guía, o alguien con conocimiento del Grimholt o del territorio al norte de las Boneback. La preocupación real de Glornir (que admite con incomodidad) y la urgencia de Vol sugieren que su ausencia no es trivial.',
-        star: '★★★ La mujer esperada es la primera variable desconocida introducida en el arco de los Hermanos de Sangre que no forma parte del equipo embarcado. Su ausencia cambia la disposición emocional de Vol — generalmente estoica — y hace que Glornir, que normalmente domina la situación, admita una vulnerabilidad. Quién es y por qué no llegó son preguntas activas.'
-    },
+    { source: 'cat-dioses', target: 'cat-mundo', label: '', type: 'arc' },
+    { source: 'snaka', target: 'cat-dioses', label: '', type: 'lore' },
+    { source: 'snaka', target: 'vigrið', label: 'sus huesos = montañas', type: 'lore' },
+    { source: 'snaka', target: 'hrung', label: 'devoró a / origen residual del poder de', type: 'lore' },
+    { source: 'snaka', target: 'snakavik', label: 'cráneo forma la ciudad', type: 'geo' },
+    { source: 'likrafa', target: 'cat-dioses', label: '', type: 'lore' },
+    { source: 'likrafa', target: 'vergelmir', label: 'encadenada en oskutred', type: 'lore' },
+    { source: 'orna', target: 'cat-dioses', label: '', type: 'lore' },
+    { source: 'orna', target: 'darl', label: 'huesos coronan la fortaleza de Helka en', type: 'lore' },
+    { source: 'ulfrir', target: 'cat-dioses', label: '', type: 'lore' },
+    // Svin
+    { source: 'svin', target: 'cat-dioses', label: '', type: 'lore' },
+    { source: 'svin', target: 'gudfall', label: 'combatió en', type: 'history' },
+    // Tosk
+    { source: 'tosk', target: 'cat-dioses', label: '', type: 'lore' },
+    { source: 'tosk', target: 'gudfall', label: 'combatió en', type: 'history' },
+    // Rotta
+    { source: 'rotta', target: 'cat-dioses', label: '', type: 'lore' },
+    { source: 'rotta', target: 'gudfall', label: 'combatió en', type: 'history' },
+    { source: 'rotta', target: 'likrafa', label: 'alimentó su paranoia', type: 'history' },
+    { source: 'rotta', target: 'gallows-wood', label: 'detonante indirecto', type: 'history' },
+    // Hundur
+    { source: 'hundur-dios', target: 'cat-dioses', label: '', type: 'lore' },
+    { source: 'hundur-dios', target: 'gudfall', label: 'combatió en', type: 'history' },
 
     // ══════════════════════════════════════════════════════════════
-    // CAPÍTULO 33 — NUEVOS NODOS
+    // Cat-magia
     // ══════════════════════════════════════════════════════════════
-    {
-        id: 'dead-drengr', label: 'El Drengr Muerto (taberna)', group: 'LUGAR', type: 'Lugar — Operación de Drekr',
-        desc: 'Taberna en Darl, nodo activo de la red de rapto de niños de Drekr. Señal exterior: un drengr herido pintado en rojo con runas — el nombre «El Drengr Muerto» es una inversión oscura del concepto: un drengr es el guerrero de honor por excelencia en la cultura nórdica («hombres valientes que ejercen buena influencia» — Snorri Sturluson); llamar a un local «el drengr muerto» es una declaración de que aquí el honor está enterrado. El edificio se alza en una calle de tabernas y es de gran tamaño. Estructura: entrada principal con dos guardias thickset (uno calvo con porra) y al menos una drengr de Helka en la puerta — escudo negro con alas de águila doradas. Parte trasera: patio cerrado con muralla alta de zarzo, establos y salidas al canal. Drekr está dentro. Antes de la llegada de Orka, los niños se mantenían en el local; Bersi los sacaba por el canal. Una tanda previa de niños ya había sido movida antes. [Contexto: en la antigua Islandia, una taberna que usara el término «drengr muerto» señalizaría exactamente lo que es — un lugar donde el código de honor (drengskapr) ha muerto. Era el opuesto de la sala del jarl, que era símbolo del honor vivo.]',
-        star: '★★★ El nombre del local es la primera ironía explícita de la novela sobre el concepto drengr. Operan bajo protección de la guardia de Helka — no son forajidos que se esconden; son agentes con cobertura institucional. Orka está a punto de entrar sola.'
-    },
-    {
-        id: 'busqueda-drekr-darl', label: 'La Búsqueda de Drekr en Darl', group: 'EVENTO', type: 'Evento — POV Orka',
-        desc: 'Poco más de un día después de entrar en Darl, Orka ha visitado once tabernas siguiendo el mismo método: sentarse en la esquina más oscura, pedir cerveza aguada, escuchar. A veces hacer una o dos preguntas a la mesonera o el posadero. La respuesta invariable: silencio o miradas hostiles. En la undécima taberna pronuncia el nombre de Drekr en voz alta — suficientemente alto para llenar el salón. Efecto inmediato: la mesonera parpadea, varias cabezas giran, el posadero viene a echarla. El hombre quemado (un lado de la cabeza con cicatrices de quemadura, el pelo restante atado al cuello; lleva hacha corta, dos seaxes — uno en el cinto, otro en la bota) no reacciona visiblemente; sigue mirando su cuenco. Orka acepta la expulsión sin violencia — a propósito. Se esconde en un callejón, cuenta hasta cien. El hombre quemado sale de la taberna, mira en ambas direcciones y gira a la derecha. Orka lo sigue a través de los canales, las curtidurías y las calles de tabernas de Darl hasta El Drengr Muerto.',
-        star: '★★★ La táctica de Orka es deliberada: nombrar a Drekr en voz alta no es torpeza — es cebo. Sabe que alguien en el local tiene que saberlo y tendrá que reportarlo. El hombre quemado era el informante de guardia: su salida calmada y sus dos seaxes (uno escondido en la bota — reserva táctica) lo confirman como profesional, no como curioso.'
-    },
-    {
-        id: 'rescate-ninos-canal', label: 'Rescate de los Niños en el Canal', group: 'EVENTO', type: 'Evento — POV Orka',
-        desc: 'Secuencia completa: (1) RODEO: Orka evita la puerta principal de El Drengr Muerto (vigilada por dos matones y una drengr de Helka) y circula por callejones hasta el canal trasero. (2) EL HALLAZGO: un hombre alto y robusto (Bersi) conduce a 7-8 niños con capas y capuchas, las manos atadas con cuero, algunos llorando, hacia una barca con toldo de lana en el canal. Otro hombre los sigue por la cola. Uno de los niños se niega a subir y cae de rodillas; el segundo hombre le golpea la cabeza y la lanza a la barca por el pelo. (3) EVALUACIÓN: Orka maldice en silencio haber dejado la lanza en la habitación alquilada — quería pasar desapercibida. Revisa los dos seaxes de Thorkel (fundas nuevas y llanas para no llamar la atención). Agarra el hacha de mano. (4) ATAQUE: corre por el sendero fangoso. Su hacha sale en vuelo y da a Bersi en la cara — «un golpe húmedo como partir madera». Bersi cae al canal. El segundo hombre intenta alcanzar su hacha y abre la boca para gritar; Orka lo alcanza antes: seax en el vientre, cabezazo en la nariz, tajo lateral al torso. Lo empuja al canal. Silencio: nadie en la taberna oyó. (5) BÚSQUEDA: Orka busca a Breca entre los niños — no está. Ella pregunta dos veces su nombre en voz alta. Los niños la miran en silencio con ojos hundidos y caras sucias. Un niño de pelo rizado oscuro y ojos grandes (12-13 inviernos) dice que no hay ningún Breca entre ellos. (6) LIBERACIÓN: Orka corta los lazos de cuero de todos. Una niña le dice que Bersi había mencionado «otros como nosotros» que estuvieron en la taberna y ya se fueron. (7) DREKR: el chico mayor confirma que Drekr está dentro de la taberna. (8) CIERRE: Orka ordena al chico mayor que lleve a los niños a un lugar seguro en barca o huyan a pie. Ella se dirige a la taberna. Nota táctica: perdió el hacha en el canal con Bersi. Solo lleva los dos seaxes.',
-        star: '★★★ El capítulo con el coste más alto de la novela hasta ahora para Orka: encontró la operación, liberó a los niños, llegó a Drekr — pero Breca no estaba. La esperanza y la decepción en la misma secuencia. La pérdida del hacha es un detalle de consecuencias futuras: entra en la taberna con un seax en cada mano, sin arma de alcance.'
-    },
-    {
-        id: 'bersi', label: 'Bersi (†)', group: 'ORKA', type: 'Personaje — Muerto (Red de Drekr)',
-        desc: 'Hombre de la red de Drekr en Darl. Alto y robusto. Encargado de mover niños desde El Drengr Muerto por los canales de la ciudad usando barcas con toldo de lana — transporte encubierto. Sabía de la existencia de una tanda previa de niños ya movidos antes de que Orka llegara. Muerto: hacha de Orka en la cara, cuerpo en el canal. Estado: muerto; hacha de Orka perdida en el canal con él.',
-        star: '★ Bersi es la primera pieza de Drekr que Orka elimina en Darl. Su muerte abre el paso al canal pero le cuesta el hacha a Orka.'
-    },
-    {
-        id: 'hombre-quemado', label: 'El Hombre Quemado', group: 'ORKA', type: 'Personaje — Identidad Desconocida',
-        desc: 'Figura en la undécima taberna que Orka visita. Un lado de la cabeza tiene cicatrices profundas de quemaduras; el pelo restante está atado en un nudo apretado en la nuca. Armado con hacha corta y dos seaxes — uno en el cinto, otro escondido en la bota (reserva táctica que lo marca como alguien entrenado, no como ladrón oportunista). No reaccionó visiblemente cuando Orka pronunció el nombre de Drekr en voz alta — se quedó mirando su cuenco. Pero salió de la taberna poco después de que el posadero echara a Orka y fue directo a El Drengr Muerto. El portero calvo lo reconoció y lo dejó pasar sin obstáculos. Rol y nombre desconocidos.',
-        star: '★★ El hombre quemado es un agente de Drekr con entrenamiento visible. Las cicatrices de quemadura son su rasgo definitorio — posible historia de combate, incendio o castigo. Su reacción nula al nombre de Drekr es demasiado disciplinada para ser inocencia.'
-    },
-    {
-        id: 'nino-mayor-canal', label: 'Chico Mayor del Canal (sin nombre)', group: 'ORKA', type: 'Personaje — Secundario',
-        desc: 'El mayor de los niños liberados por Orka en el canal trasero de El Drengr Muerto. Doce o trece inviernos, pelo rizado oscuro, ojos grandes. El primero en hablar cuando Orka busca a Breca: «no hay nadie llamado Breca aquí.» Confirma que Drekr está dentro de la taberna cuando Orka lo pregunta con un gruñido. Acepta la responsabilidad que Orka le propone: cuidar del resto de los niños, huir en barca o a pie. Físico y madurez sugieren que lleva más tiempo en cautividad o que ha pasado por más.',
-        star: '★ El chico mayor es el punto de contacto humano de la escena: en un capítulo de violencia y búsqueda, es la única voz que confirma tanto la ausencia de Breca como la presencia de Drekr. Su voluntad de cuidar a los demás niños lo convierte en un personaje menor de peso moral.'
-    },
+    { source: 'cat-magia', target: 'cat-mundo', label: '', type: 'arc' },
+    { source: 'runa-ward', target: 'cat-magia', label: '', type: 'arc' },
+    { source: 'seidr', target: 'cat-magia', label: '', type: 'arc' },
+    { source: 'seidr', target: 'akall', label: 'técnica', type: 'magic' },
+    { source: 'galdramadr', target: 'cat-magia', label: '', type: 'arc' },
+    { source: 'blod-svarid', target: 'cat-magia', label: '', type: 'arc' },
+    { source: 'blod-svarid', target: 'seidr', label: 'magia vinculante', type: 'magic' },
+    { source: 'akall-concepto', target: 'cat-magia', label: '', type: 'arc' },
+    { source: 'akall-concepto', target: 'seidr', label: 'tipo de ritual', type: 'magic' },
+    { source: 'akall-concepto', target: 'akall', label: 'evento específico', type: 'lore' },
+    { source: 'galdrabok', target: 'cat-magia', label: '', type: 'arc' },
+    { source: 'galdrabok', target: 'galdramadr', label: 'texto usado por', type: 'magic' },
+    { source: 'graskinna', target: 'galdrabok', label: 'tipo de', type: 'lore' },
+    { source: 'raudskinna', target: 'galdrabok', label: 'tipo de', type: 'lore' },
+    { source: 'raudskinna', target: 'graskinna', label: 'libro hermano', type: 'lore' },
 
     // ══════════════════════════════════════════════════════════════
-    // CAPÍTULO 32 — NUEVOS NODOS
+    // Locations
     // ══════════════════════════════════════════════════════════════
-    {
-        id: 'lake-horndal', label: 'Lago Horndal', group: 'LUGAR', type: 'Lugar — Paso Natural',
-        desc: 'Lago de interior tan ancho como un pequeño mar, con aguas profundas, negras de noche e impenetrables. Uno de los dos únicos pasos navegables a través de las Montañas Boneback hacia la Llanura de Batalla al norte. La razón geológica de su existencia: los costillares de Snaka no fueron cubiertos aquí por la tierra tras el Guðfalla — posiblemente porque ya había un lago preexistente que impidió la sedimentación y el colapso. El resultado es que el esqueleto de Snaka asoma visible sobre sus aguas: en su orilla este hay una costilla gigantesca que se curva hacia el cielo tan alto como las nubes, bajo cuya sombra se construyó la ciudad comercial de Starl. Las pendientes orientales y occidentales de las Boneback se alzan sobre el lago con bosques densos de pino, cascadas y afloramientos de roca amarilla o gris donde los huesos colosales del dios afloran. El paso a las aguas del norte desemboca en la Llanura de Batalla — zona de mayor densidad vaesen de Vigríð. El Wave-Jarl cruzó el lago con el viento del sureste en poco más de dos jornadas.',
-        star: '★★ El lago es geografía activa: la visibilidad de los huesos de Snaka sobre el agua convierte la travesía en un recordatorio permanente de la era de los dioses. El hecho de que sea uno de solo dos pasos hace de él un punto estratégico — quien controle Starl y el lago controla el acceso norte de Vigríð.'
-    },
-    {
-        id: 'starl', label: 'Starl', group: 'LUGAR', type: 'Lugar — Ciudad Comercial',
-        desc: 'Ciudad comercial a orillas del Lago Horndal, construida bajo una costilla colosal del dios-serpiente Snaka que se curva hacia arriba hasta las nubes — uno de los pocos lugares donde el esqueleto del antiguo dios sigue visible. La sombra de la costilla proyecta un arco largo sobre el agua del lago. El Wave-Jarl se detuvo aquí dos días para reabastecer provisiones: barriles de agua y hidromiel, pescado seco y carnes ahumadas; recalafateado de las cuadernas desgastadas con alquitrán de pino y crin de caballo; capa nueva de sebo para las velas; raspado de la quilla de algas y limo. También adquirió Agnar aquí el equipo para el viaje terrestre al norte: cinco carros desmontados (ruedas y ejes) y ocho ponies resistentes de carga. Escala logística obligatoria antes del cruce a la Llanura de Batalla.',
-        star: '★ Starl es el último umbral civilizado antes del norte vaesen-infestado. El reaprovisionamiento aquí no es rutina — es preparación deliberada para un viaje sin vuelta a tramos conocidos.'
-    },
-    {
-        id: 'llanura-batalla-norte', label: 'Llanura de Batalla (norte)', group: 'LUGAR', type: 'Lugar — Territorio Salvaje',
-        desc: 'El territorio norte de las Montañas Boneback: el lugar donde el Guðfalla fue más intenso, donde los dioses lucharon con más fuerza y cayeron. Su nombre mismo es el nombre de Vigríð — «llanura de batalla» — pero aquí es más que un nombre: es descripción literal del terreno. Tiene más vaesen por legua cuadrada que cualquier otra región del mundo conocido; las águilas y el terreno abierto son señales de que el bosque y la civilización se acaban. Elvar ve aves de presa en el cielo al cruzar el lago hacia el norte. Más allá de los vaesen: en algún lugar de esta vastedad se encuentra Oskutreð, el gran árbol de fresno. Destino activo de los Terrores de la batalla.',
-        star: '★★★ La Llanura de Batalla norte es donde confluirán los tres arcos narrativos: los Terrores de la batalla (desde Snakavik), los Hermanos de Sangre (desde el Slågen) y eventualmente quizás Orka (desde Darl). Los tres grupos se dirigen hacia las Boneback desde distintos ángulos y ninguno sabe que los otros lo hacen.'
-    },
-    {
-        id: 'revelacion-oskutred-battle-grim', label: 'Revelación de Oskutreð a los Terrores de la Batalla', group: 'EVENTO', type: 'Evento — POV Elvar',
-        desc: 'En el campamento de la primera noche tras desembarcar en la orilla norte del Lago Horndal, Agnar reúne a todos los Terrores de la batalla alrededor de un fuego en un copse de árboles. La mayoría llevaba días remando sin saber el destino real — Agnar había dicho solo que había un nuevo trabajo y que pagaría bien. En el campamento, con las Boneback a la espalda y la Llanura de Batalla ante ellos, lo revela todo: (1) Uspa robó la Graskinna de Ilska, memorizó el camino a Oskutreð y destruyó el libro; (2) el blóð svarið vincula a Agnar, Elvar, Grend, Sighvat y Kráka a la misión: Uspa los guía a Oskutreð, Agnar recupera a Bjarn; (3) quienes sigan sin haber jurado el blóð svarið quedan igualmente ligados por la lealtad al jefe. Agnar pinta el premio con tintes de saga: los restos de los dioses caídos, sus tesoros, sus armas, la fama que vivirá en canciones para siempre. Huld (la segunda más joven, pelo negro, garra de oso al cuello) y Sólín (flaca, pelo gris, limpiándose los dientes con un seax) reciben la noticia con la secuencia exacta que Elvar reconoce en sí misma: incredulidad → miedo → excitación. Biórr dice: «seguiremos a Agnar Puño-de-Fuego» — y el nombre prende. La sala de la sala estalla en vítores, heyas y juramentos. Agnar hace rodar un barril de hidromiel. La compañía bebe por Agnar, por Oskutreð, por los Terrores de la batalla. Sighvat y Grend están de guardia fuera del copse y se pierden la ceremonia del barril.',
-        star: '★★★ El momento en que los Terrores de la batalla dejan de ser una compañía mercenaria y se convierten en una expedición legendaria. La reacción de Huld es el espejo de Elvar hace capítulos: la misma secuencia de incredulidad-miedo-excitación. El sobrenombre «Puño-de-Fuego» para Agnar no es un título dado — es un título aclamado, lo que lo hace más sólido.'
-    },
-    {
-        id: 'biorr-elvar-beso', label: 'Primer Beso entre Biórr y Elvar', group: 'EVENTO', type: 'Evento — POV Elvar',
-        desc: 'Después de la revelación de la misión al campamento (ver nodo revelacion-oskutred-battle-grim), Biórr se sienta junto a Elvar con su cuenco de cebada. Conversan largo rato: por qué huyó Ilska tras el raid (Biórr: para evitar una negociación envenenada por el feudo de sangre activo — Thrud estaba recién muerto); Biórr admite que se culpa de la muerte de Thrud (Elvar lo contraargumenta: todos viven con la muerte sobre el hombro, Thrud lo sabía). Hablan de Snakavik y la familia: Elvar no extraña a Störr ni a Thorun; sí extraña a Broðir. Biórr pregunta si le costó dejar atrás a su kin — ella replica que su padre la trataba como «brood bitch» para casar con el heredero de Helka. Biórr menciona que algunos verían esa vida como deseable (calor, comida, plata, poder). Elvar lo descarta: quiere ganarse su fama y su plata, no heredarlas. Elvar piensa un instante en los recuerdos fragmentados de su madre — solo imágenes sueltas y en desintegración, sin contexto. En ese momento Biórr la mira fijo bajo la luz del fuego con los ojos brillantes, la llama «cosa rara» (Elvar Troll-Slayer, Elvar Puño-de-Fuego), le roza suavemente las cicatrices del juramento en el dorso de la mano haciéndola temblar, se inclina y la besa. Una caricia breve que le recorre la columna como un hilo de hielo. Elvar se retira sobresaltada. Biórr sonríe. Pasos en la oscuridad: Grend emerge y los mira a ambos con ceño profundo. «Tu guardia», dice. Elvar se levanta y desaparece en la noche.',
-        star: '★★ El beso de Biórr es deliberado, no impulsivo — lo precede la llamada «cosa rara» y el gesto de los dedos en las cicatrices: un movimiento calculado para ver qué hace ella. La reacción de Elvar (retirarse sobresaltada en lugar de rechazarlo con dureza) es más reveladora que cualquier diálogo. Grend como interruptor permanente es el triángulo tácito: su ceño no es el de un guardián haciendo su trabajo; es el de alguien que ya tiene una opinión sobre Biórr.'
-    },
-    {
-        id: 'huld', label: 'Huld', group: 'ELVAR', type: 'Personaje — Terrores de la Batalla',
-        desc: 'La segunda más joven de los Terrores de la batalla, después de Elvar. Cabello negro como la noche. Lleva una garra de oso colgada de un cordón de cuero al cuello. Reaccionó a la revelación de Oskutreð con la misma secuencia que Elvar reconoce en sí misma: incredulidad seguida de miedo y luego de excitación. La primera en hablar tras el anuncio de Agnar: «¿Oskutreð?» — su voz y su mano buscando la garra son el termómetro emocional del momento para el resto de la compañía.',
-        star: '★ Huld es el nuevo espejo de Elvar dentro de la compañía. La garra de oso sugiere vínculo personal con los Tainted de sangre Berser o con el dios-oso — detalle que podría desarrollarse.'
-    },
-    {
-        id: 'solin', label: 'Sólín', group: 'ELVAR', type: 'Personaje — Terrores de la Batalla',
-        desc: 'Guerrera de los Terrores de la batalla. Flaca, pelo gris. Estaba limpiándose los dientes con un seax cuando Agnar hizo el anuncio de Oskutreð; su brazo cayó al costado — el gesto más expresivo que los dientes limpios. Lleva experiencia en el cuerpo (el pelo gris la data como veterana) y aun así la noticia la descoloca.',
-        star: '★ Sólín es el representante de la guardia veterana de la compañía. Que incluso ella deje caer el seax de los dientes es la medida de lo que significa Oskutreð para quien lleva décadas en el oficio.'
-    },
+    // vigrið
+    { source: 'vigrið', target: 'cat-mundo', label: '', type: 'arc' },
+    // iskalt
+    { source: 'iskalt', target: 'vigrið', label: 'isla en', type: 'geo' },
+    { source: 'iskalt', target: 'oskutred', label: 'terremotos = Lik-Rifa', type: 'magic' },
+    // snakavik
+    { source: 'snakavik', target: 'vigrið', label: 'ciudad en', type: 'geo' },
+    { source: 'snakavik', target: 'gods-bones', label: 'construida sobre', type: 'lore' },
+    // darl
+    { source: 'darl', target: 'vigrið', label: 'capital', type: 'geo' },
+    // howbyr
+    { source: 'howbyr', target: 'vigrið', label: 'villa en', type: 'geo' },
+    // kergarth
+    { source: 'kergarth', target: 'vigrið', label: 'villa en', type: 'geo' },
+    // svelgarth
+    { source: 'svelgarth', target: 'vigrið', label: 'ciudad en', type: 'geo' },
+    // skarpain
+    { source: 'rio-skarpain', target: 'vigrið', label: 'río en', type: 'geo' },
+    // islas hielo
+    { source: 'islas-hielo', target: 'vigrið', label: 'islas al norte', type: 'geo' },
+    { source: 'islas-hielo', target: 'iskalt', label: 'al norte de', type: 'geo' },
+    { source: 'islas-hielo', target: 'araña-hielo', label: 'hábitat', type: 'lore' },
+    // fellur
+    { source: 'fellur', target: 'vigrið', label: 'ciudad en', type: 'geo' },
+    { source: 'fellur', target: 'oath-stone-fellur', label: 'isla en el fiordo', type: 'geo' },
+    // liga
+    { source: 'liga', target: 'vigrið', label: 'ciudad en', type: 'geo' },
+    // vergelmir
+    { source: 'vergelmir', target: 'oskutred', label: 'bajo él', type: 'lore' },
+    // iskidan
+    { source: 'iskidan', target: 'cat-mundo', label: 'capital', type: 'geo' },
+    { source: 'gravka', target: 'iskidan', label: 'capital', type: 'geo' },
+    // oath-stone-fellur
+    { source: 'oath-stone-fellur', target: 'althing', label: 'lugar', type: 'geo' },
+    // Frost-Isles
+    { source: 'frost-isles', target: 'vigrið', label: 'archipiélago en', type: 'geo' },
+    { source: 'frost-isles', target: 'iskalt', label: 'al sur de', type: 'geo' },
+    { source: 'frost-isles', target: 'berak-venta', label: 'escala del viaje', type: 'geo' },
+    // Eldrafell
+    { source: 'eldrafell', target: 'vigrið', label: 'montaña en', type: 'geo' },
+    { source: 'eldrafell', target: 'snaka', label: 'lugar de caída', type: 'lore' },
+    { source: 'eldrafell', target: 'gudfall', label: 'mencionado en', type: 'lore' },
 
     // ══════════════════════════════════════════════════════════════
-    // CAPÍTULO 31 — NUEVOS NODOS
+    // Vaesen
     // ══════════════════════════════════════════════════════════════
-    {
-        id: 'viaje-darl', label: 'Travesía y Entrenamiento Hacia Darl', group: 'EVENTO', type: 'Evento — POV Orka',
-        desc: 'Los ~15 días de travesía desde Fellur hasta Darl. Para evitar ser rastreados, Orka abandonó el Río Drammur principal y llevó la barca de Mord y Lif en un lazo hacia el este y luego al norte por ríos menores, arrastrando la embarcación entre cuencas, cruzando tierras hasta el siguiente río, remando de nuevo. El campo estaba desierto — sin testigos que pudieran vender información sobre su paso. Solo al final retomaron cauces más transitados y pasaron ante granjas cuyos habitantes miraban desde la orilla. Durante el trayecto Orka entrenó a los hermanos en armas cada mañana: seaxes envueltos en lana como armas de práctica, golpes reales a la cara como consecuencia de los errores. Lecciones documentadas: nunca abalanzarse ni sobre-extenderse —aplica igual con puños, seax, lanza o espada—; pasos pequeños al entrar y al salir; no cargar de frente (solo toros, cerdos y troles); flanquear buscando huecos en la defensa; golpear en ráfagas de dos, tres o cuatro golpes — el golpe decisivo es el que el enemigo no ve venir; el dolor y los moratones son la lección en sí mismos. Mord, a pesar del hombro herido por el Näcken, se volcó en el entrenamiento sin excusa. Al llegar a Darl, ambos hermanos acumulaban moratones de todos los tonos: púrpura reciente, verde viejo, amarillo casi borrado — registro corporal de cada jornada del viaje. En conversación durante el trayecto se mencionaron guerreros de renombre: Ilska la Cruel, con múltiples victorias en holmganga que incluyen vaesen, warbands de Iskidan y al menos un Berserkir; Agnar Terrores-de-Batalla; el Rompecráneos —muerto, según Orka—. Orka cerró el debate con dos sentencias: no existe el mejor luchador, y el Rompecráneos está muerto.',
-        star: '★★ El período de viaje convierte a Mord y Lif de aficionados impulsivos en luchadores básicos capaces de sobrevivir una escaramuza. El método de Orka es brutal pero honesto: el cuerpo aprende lo que la mente olvida. El hecho de que Mord se entregara sin excusa a pesar de la herida del Näcken es el dato de carácter más revelador de los hermanos hasta ahora.'
-    },
-    {
-        id: 'llegada-darl', label: 'Llegada a Darl y Desembarco de Helka', group: 'EVENTO', type: 'Evento — POV Orka',
-        desc: 'Desde la cima de un cerro con el sol recién nacido, Orka divisa por primera vez Darl: sombra de ciudad sobre tierras altas en la orilla opuesta del río, humareda de cien hogares en el aire. El río es ancho, profundo, oscuro y marrón — nada que ver con los cristalinos arroyos del interior. Docenas de drakkars de proas talladas en águila duermen en los muelles; barcos y botes de todo tipo colman cien embarcaderos de madera. Más allá: tabernas y edificios en ladera apiñada, muralla de madera, fortaleza. En la cima del mead hall: el esqueleto del dios-águila Orna — dos alas colosales extendidas como manos protectoras, el cráneo de pico afilado alzado por encima. Cada ala es del tamaño de una colina pequeña. Orka concluye que ningún vaesen se acercará con semejante reliquia de guarda. Detrás del mead hall: la torre Galdur de Darl. Orka escupe al agua. Encuentran un muelle pequeño al este; Orka paga al harbourmaster sin regatear para no ser recordada, se pone la brynja y el cinturón de armas. Mientras se equipa en el muelle, trompetas suenan desde las murallas: tres drakkars gigantescos (estimación de Orka: 70-80 remos cada uno) entran al río en formación perfecta, remos al unísono. Son de la Reina Helka. Desembarco en el muelle principal reservado: primero desciende la escolta Úlfhéðnar (diez o doce guerreros con los lados de la cabeza afeitados y cubiertos de tatuajes en espiral, capas de lana gris ribeteadas en piel, espadas y seaxes al cinto, que se despliegan en semicírculo protector). Después cruza el gangplank la propia Helka: alta, pelo negro trenzado con hilo de oro, capa roja, anillos de brazo de oro, espada con guarda y pomo de oro. La siguen dos hombres: Hákon (joven, pelo negro, alto y fornido, lanas finas y sedas, plata donde su madre lleva oro) y un enviado de Iskidan sin nombre (cabeza afeitada salvo una trenza rubia larga, kaftan de lana fina, calzones holgados sobre la rodilla, winnigas de tobillo a rodilla, espada curva al cinto y arco con carcaj — atuendo típico de Iskidan). Una guardia de honor sale de las calles de Darl y escolta el cortejo fortaleza adentro. La ciudad retoma su actividad.',
-        star: '★★★ La llegada de Orka y la llegada de Helka ocurren simultáneamente en el mismo muelle. Orka ve con sus propios ojos a la reina cuyo hijo ordenó el rapto de Breca. El enviado de Iskidan con Helka añade una capa de complejidad política: ¿qué negocia Helka con Iskidan? La torre Galdur y los huesos de Orna juntos hacen de Darl la fortaleza más defendida de Vigríð — y Orka acaba de entrar en ella sola.'
-    },
-    {
-        id: 'despedida-mord-lif', label: 'Despedida en el Muelle de Darl', group: 'EVENTO', type: 'Evento — POV Orka',
-        desc: 'En el muelle de Darl, Orka anuncia que el trato se ha cumplido: ellos la remaron, ella los entrenó. Se marcha. Lif protesta — no estaban preparados para ser abandonados. Orka pregunta si tienen coin; tienen poco. Abre su bolsa, selecciona unas monedas y las presiona en la palma cerrada de Lif a pesar de su resistencia. Argumento de Orka: se las han ganado — remaron, aprendieron; la balanza no está equilibrada sin ese pago. Los hermanos invocan el código de su padre: no estar en deuda con nadie, ganarse el pan. Orka insiste: la deuda ya está saldada porque ellos pusieron el trabajo. Consejo final: esperar, ganar coin, buscar un lugar tranquilo lejos de Darl y de Fellur, dejar que el tiempo corra; y cuando llegue el momento indicado, regresar a Fellur y clavar acero en Guðvarr. La decisión es suya. Se pone el gorro de nålbinding de Thorkel — lana tejida con la antigua técnica de aguja única, más duradera que el punto o el ganchillo, prenda de invierno y de viaje—, se aleja por el muelle sin mirar atrás. Su pensamiento ya no está en los hermanos: está en Breca. [Histórico: el nålbinding (noruego: «unión con aguja») es una técnica textil anterior tanto al tejido de punto como al ganchillo. Usada en la era vikinga para confeccionar gorros, calcetines y manoplas, produce un tejido denso que no se deshace si se corta — cualidad valorada para equipamiento de guerra y viaje.]',
-        star: '★★ La transacción del coin es más que una transacción: es el modo de Orka de transferir responsabilidad sin crear dependencia. Lif no quería caridad — Orka lo sabe, y por eso enmarca el pago como deuda saldada. El gorro de Thorkel como primer gesto en Darl dice más que cualquier discurso: ella lleva a los muertos encima como armadura también.'
-    },
-    {
-        id: 'enviado-iskidan', label: 'Enviado de Iskidan (sin nombre)', group: 'FACCION', type: 'Personaje — Diplomático Iskidan',
-        desc: 'Figura sin nombre que llega a Darl con la flota de la Reina Helka. Físico: tan alto como Hákon, cabeza afeitada salvo una gruesa trenza rubia que desciende por la espalda, cara angular, barba corta y cuidada. Vestimenta inequívocamente de Iskidan: kaftan de lana fina en lugar de túnica, calzones holgados sobre la rodilla ceñidos desde el tobillo a la rodilla con winnigas —tiras de lana enrolladas en espiral que ofrecen calor, protección y compresión de pantorrillas—. Al cinto: espada curva de un solo filo (estilo Iskidan). Al dorso: arco con carcaj de flechas. Significado político: viaja A BORDO del drakkar de Helka —no llega por separado— lo que implica acuerdo previo, escolta regia o misión conjunta. Su presencia en Darl sugiere negociaciones entre el reino de Helka e Iskidan. Orka lo identifica de inmediato por la vestimenta: ha visto a otros vestidos igual, eran de Iskidan. [Histórico: los winnigas (también vindingr en nórdico antiguo) son vendas de lana enrolladas de tobillo a rodilla. Documentados arqueológicamente y en el Tapiz de Bayeux. Usados en toda Europa medieval del norte por su función práctica: calidez, compresión muscular y protección contra maleza. El kaftan y los calzones bombachos con winnigas combinados indican origen de las estepas orientales — adaptación de la ropa ecuestre a climas fríos.]',
-        star: '★★ El enviado de Iskidan junto a Helka es señal de que la expansión política de la reina no es solo doméstica. Iskidan ya tiene presencia en Liga a través del príncipe Jaromir — ahora también en la propia capital de Helka. ¿Cuántos frentes tiene abiertos el Imperio Iskidan en Vigríð?'
-    },
+    { source: 'vaesen-gen', target: 'cat-mundo', label: '', type: 'arc' },
+    { source: 'tennur', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
+    { source: 'spertus', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
+    { source: 'fell-wolf', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
+    { source: 'trol', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
+    { source: 'sjavarom', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
+    { source: 'nacken', target: 'vaesen-gen', label: 'vaesen agua', type: 'lore' },
+    { source: 'nacken', target: 'rio-skarpain', label: 'posible hábitat', type: 'lore' },
+    { source: 'araña-hielo', target: 'vaesen-gen', label: 'Es un vaesen ártico', type: 'lore' },
+    { source: 'skraeling', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
+    { source: 'skraeling', target: 'drekr', label: 'en banda de', type: 'rel' },
+    { source: 'skraeling', target: 'ataque-steading', label: 'participo en', type: 'event' },
+    { source: 'faunir', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
+    { source: 'froa', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
+    { source: 'froa', target: 'arbol-froa', label: 'ligada a / murio con', type: 'lore' },
+    { source: 'froa', target: 'oskutred', label: 'nacida de semilla de', type: 'lore' },
+    { source: 'froa', target: 'ninos-robados', label: 'destruida por mismos agresores?', type: 'trama' },
+    // Night-wyrm
+    { source: 'night-wyrm', target: 'vaesen-gen', label: 'Es un', type: 'lore' },
+    { source: 'night-wyrm', target: 'berak-venta', label: 'atacó en', type: 'event' },
+    { source: 'night-wyrm', target: 'oath-stone-frost-isles', label: 'posiblemente atraídos por', type: 'trama' },
+    { source: 'night-wyrm', target: 'biorr', label: 'repelidos con fuego por', type: 'event' },
+
+    // -------------------------------------------------------------------------------------- //
+    // ── ENLACES PERSONAJES SECUNDARIOS ────────────────────────────
+    { source: 'orl', target: 'leif', label: 'Hird / compañero', type: 'rel' },
+    { source: 'trud', target: 'battle-grim', label: 'miembro', type: 'rel' },
+    { source: 'jokul', target: 'bloodsworn', label: 'herrero', type: 'rel' },
+    { source: 'jokul', target: 'einar', label: 'forjó protección', type: 'rel' },
+    { source: 'jarl-hrut', target: 'iskalt', label: 'jarl de (†)', type: 'geo' },
+    { source: 'slyda', target: 'liga', label: 'guarda puerta', type: 'rel' },
+    { source: 'slyda', target: 'varg', label: 'dejó pasar', type: 'event' },
+    { source: 'jarl-orlyg', target: 'svelgarth', label: 'jarl de', type: 'geo' },
+    { source: 'haraldurson', target: 'howbyr', label: 'viven en', type: 'geo' },
+    { source: 'emp-kirill', target: 'gravka', label: 'gobierna desde', type: 'geo' },
+
+    // -------------------------------------------------------------------------------------- //
+    // ── ENLACES OBJETOS ────────────────────────────────────────────
+    { source: 'cat-objetos', target: 'cat-mundo', label: '', type: 'arc' },
+    { source: 'collares', target: 'cat-objetos', label: '', type: 'rel' },
+    { source: 'collares', target: 'cat-magia', label: '', type: 'arc' },
+    { source: 'collares', target: 'tainted', label: 'controla', type: 'magic' },
+    { source: 'hueso-dios-fellur', target: 'cat-objetos', label: 'protege', type: 'magic' },
+    { source: 'colmillo-trol', target: 'cat-objetos', label: '', type: 'rel' },
+    { source: 'colmillo-trol', target: 'elvar', label: 'otorgado a', type: 'rel' },
+    { source: 'colmillo-trol', target: 'agnar', label: 'otorga', type: 'rel' },
+    { source: 'colmillo-trol', target: 'trol', label: 'origen', type: 'lore' },
+    { source: 'anillo-oro', target: 'elvar', label: 'otorgado a', type: 'rel' },
+    { source: 'gods-bones', target: 'cat-magia', label: '', type: 'arc' },
+    { source: 'gods-bones', target: 'sjavarom', label: 'repele vaesen como', type: 'lore' },
+    { source: 'hueso-dios-fellur', target: 'fellur', label: 'protege', type: 'magic' },
+    { source: 'hueso-dios-fellur', target: 'gods-bones', label: 'Es un', type: 'rel' },
+    { source: 'drakkar', target: 'cat-objetos', label: '', type: 'arc' },
+    { source: 'drakkar', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'seax', target: 'cat-objetos', label: '', type: 'arc' },
+    { source: 'seax', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'brynja', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'brynja', target: 'cat-objetos', label: '', type: 'arc' },
+    // Colgante espada Breca
+    { source: 'colgante-espada', target: 'breca', label: 'lo lleva', type: 'rel' },
+    { source: 'colgante-espada', target: 'cat-objetos', label: '', type: 'arc' },
+    // Vackna
+    { source: 'vackna', target: 'cat-dioses', label: '', type: 'arc' },
+    { source: 'vackna', target: 'gudfall', label: 'inició la batalla', type: 'lore' },
+    { source: 'vackna', target: 'objeto-viga', label: 'astilla en la viga', type: 'rel' },
+    { source: 'vackna', target: 'skullsplitter', label: 'relic en posesion de', type: 'lore' },
+    // Arbol-Froa
+    { source: 'arbol-froa', target: 'cat-orka', label: '', type: 'arc' },
+    { source: 'arbol-froa', target: 'ninos-robados', label: 'destruido por mismos agresores?', type: 'trama' },
+    { source: 'arbol-froa', target: 'decision-huida', label: 'hallazgo rompe el plan', type: 'event' },
+    // Objeto en la viga
+    { source: 'objeto-viga', target: 'cat-objetos', label: '', type: 'arc' },
+    { source: 'objeto-viga', target: 'liga', label: 'ubicado en hall de', type: 'geo' },
+    { source: 'objeto-viga', target: 'gods-bones', label: 'posible reliquia', type: 'trama' },
+    { source: 'cofre-enterrado', target: 'cat-objetos', label: '', type: 'arc' },
+    { source: 'cofre-enterrado', target: 'brynja', label: 'contenia brynja de', type: 'rel' },
+    { source: 'seaxes-tainted', target: 'cat-objetos', label: '', type: 'arc' },
+    { source: 'seaxes-tainted', target: 'thorkel', label: 'mataron a', type: 'event' },
 
     // ══════════════════════════════════════════════════════════════
-    // CAPÍTULO 30 — NUEVOS NODOS
+    // ENLACES CULTURA NÓRDICA
     // ══════════════════════════════════════════════════════════════
-    {
-        id: 'granja-abandonada', label: 'Granja Abandonada del Slågen', group: 'LUGAR', type: 'Lugar — Evidencia de Amenaza',
-        desc: 'Granja en la orilla oriental del Río Slågen, a los pies de las estribaciones noroccidentales de las Montañas Boneback. Estructura: empalizada de madera con una sola puerta, casa larga techada de turba, dependencias, establo, paddock y campos de cebada y centeno. Estado cuando llegaron los Bloodsworn: completamente abandonada — sin cuerpos, sin sangre, sin rastro de violencia visible. Las puertas de la empalizada: entreabiertas, crujiendo con el viento. Las cosechas: invadidas de malas hierbas, sin laborar desde hace tiempo. El paddock: con la verja abierta, dos ponies sueltos que habían decidido quedarse por la hierba. Sin fuego en el hogar ni actividad en los campos. La ausencia de cadáveres es inquietante: no es una masacre sino una evacuación o desaparición. Edel cortó una túnica de la granja y la ofreció a sus sabuesos-lobo para rastrear el olor de los antiguos habitantes. Los ponies fueron capturados por Jökul con manzanas y cargados con provisiones para la marcha. Entre el muelle y la empalizada hay un campo de túmulos de musgo y hierba: barrows de thralls muertos al servicio de la granja.',
-        star: '★★★ La granja abandonada es la primera prueba física de lo que Skalk describió en el briefing. La ausencia de cuerpos es más perturbadora que su presencia: sugiere que las víctimas fueron arrastradas, no masacradas en el lugar. Los barrows de thralls entre el muelle y la puerta son el detalle que sacude a Varg — la memoria del collar no le deja ni en terreno ajeno.'
-    },
-    {
-        id: 'desembarco-slagen', label: 'Desembarco en el Slågen y Marcha a las Boneback', group: 'EVENTO', type: 'Evento — POV Varg',
-        desc: 'Secuencia completa: (1) LLEGADA: tras cinco días de remo río arriba, el Sea-Wolf atraca en el muelle de una granja de la orilla oriental. Svik y Røkia saltan al tablero y amarran. La granja está silenciosa — Varg sabe que está abandonada antes de que nadie lo diga: sin humo, sin movimiento, puertas abiertas. (2) PREPARACIÓN: los Bloodsworn abren sus cofres de mar. Svik instruye a Varg: llevar toda el equipo de guerra puesto, no en saco. Varg se pone túnica gris de lana sobre el lino de remo, monta el cinturón de armas con seax, hacha y cuchilla, ata el yelmo de hierro simple y la bolsa al cinto, y sujeta la capa de piel de foca con broche de hierro. Descarta la coraza laminar del druzhina — la ganó con una estocada de suerte por la espalda, no con mérito real; le parece indigna. Svik señala que podría arrepentirse cuando un troll le golpee en el pecho. (3) LA GRANJA: Glornir entra con un grupo selecto (Edel, Einar, Røkia, Vol, Sulich y otros; Skalk con Olvir y Yrsa). Svik despliega a los demás en línea de escudos alrededor de la empalizada. Interior: vacío. Sin cuerpos, sin sangre. Glornir sale con el ceño fruncido. Edel corta una túnica del interior en dos mitades y la ofrece a sus sabuesos para que identifiquen el rastro de los habitantes. Jökul captura los dos ponies con manzanas del establo, los apareja y carga con provisiones. Varg cruza el campo de barrows de thralls con los ojos al frente, sin mirar los túmulos, para no despertar los recuerdos de Kolskegg. (4) LA MARCHA: Glornir da la señal — un círculo cerrado con el dedo hacia arriba. Einar suena el cuerno. Torvik y los scouts jóvenes avanzan con Edel y sus hounds hacia el campo de cebada. Glornir sigue tras ellos. Los cincuenta guerreros se ponen en marcha. Diez quedan con el Sea-Wolf. Ante Varg: los prados que suben hacia las colinas de abedul y serbal, y más allá, los picos nevados de las Boneback envueltos en nubes.',
-        star: '★★ Capítulo de transición que pesa más de lo que parece. La elección de Varg de no ponerse la armadura del druzhina es un momento de honestidad radical: prefiere el riesgo físico a llevar algo que no siente suyo. Los barrows de thralls lo golpean como un puño — la libertad no borra el peso del collar. Y la granja vacía establece el tono: la amenaza no mata delante de ti, te hace desaparecer.'
-    },
+    { source: 'holmganga', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'tafl', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'hangerock', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'skal', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'whale-road', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'nalbinding', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'winnigas', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'holmganga', target: 'second-combat', label: 'rol en duelo', type: 'lore' },
+    { source: 'althing', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'niding', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'drengr', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'thrall', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'karl', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'jarl', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'blood-oath', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'wyrd', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'warrior-braid', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'skald', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'knarr', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'karvi', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'faering', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'snekkja', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'skuta', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'byrding', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'skjoldr', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'spjot', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'langsoex', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'ox', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'bogi', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'hjalmar', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'torc', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'armring', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'hird', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'skjaldborg', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'funeral-rites', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'guest-right', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'hird-offering', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'weregild', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'outlawry', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'gachas', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'mead-hall', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'steading', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'kennings', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'patronymics', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'berserkergang', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'second-combat', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'drengr', target: 'gudvarr', label: 'se considera', type: 'rel' },
+    { source: 'thrall', target: 'tainted', label: 'esclavizados', type: 'lore' },
+    { source: 'jarl', target: 'sigrun', label: 'es', type: 'rel' },
+    { source: 'jarl', target: 'storr', label: 'es', type: 'rel' },
+    { source: 'jarl', target: 'jarl-logur', label: 'es', type: 'rel' },
+    { source: 'blood-oath', target: 'breca', label: 'juramento con Vesli', type: 'magic' },
+    { source: 'blood-oath', target: 'sigrun', label: 'juró a Helka', type: 'event' },
+    { source: 'warrior-braid', target: 'agnar', label: 'lleva', type: 'rel' },
+    { source: 'warrior-braid', target: 'elvar', label: 'lleva', type: 'rel' },
+    { source: 'warrior-braid', target: 'sulich', label: 'lleva', type: 'rel' },
+    { source: 'wyrd', target: 'vergelmir', label: 'destino tras muerte', type: 'lore' },
+    { source: 'faering', target: 'virk', label: 'probablemente tenía', type: 'rel' },
+    { source: 'faering', target: 'rio-skarpain', label: 'huyeron en barcas', type: 'trama' },
+    { source: 'faering', target: 'fellur', label: 'villa pesquera', type: 'geo' },
+    { source: 'snekkja', target: 'ninos-robados', label: 'posible embarcación raptores', type: 'trama' },
+    { source: 'knarr', target: 'liga', label: 'comercio', type: 'geo' },
+    { source: 'seax', target: 'thorkel', label: 'usa ritualmente', type: 'rel' },
+    { source: 'seax', target: 'virk', label: 'asesinado con', type: 'event' },
+    { source: 'seax', target: 'nacken', label: 'ritual protección', type: 'magic' },
+    { source: 'seax', target: 'karl', label: 'símbolo hombre libre', type: 'lore' },
+    { source: 'brynja', target: 'agnar', label: 'probablemente lleva', type: 'rel' },
+    { source: 'skjoldr', target: 'varg', label: 'entrena con', type: 'rel' },
+    { source: 'skjoldr', target: 'rokia', label: 'entrena a Varg', type: 'rel' },
+    { source: 'skjoldr', target: 'bloodsworn', label: 'escudo negro', type: 'rel' },
+    { source: 'skjoldr', target: 'battle-grim', label: 'escudo rojo', type: 'rel' },
+    { source: 'skjoldr', target: 'elvar', label: 'escudo rojo', type: 'rel' },
+    { source: 'skjoldr', target: 'jarl-logur', label: 'escudo azul', type: 'rel' },
+    { source: 'spjot', target: 'leif', label: 'hirió a Varg', type: 'event' },
+    { source: 'spjot', target: 'varg', label: 'herido por', type: 'event' },
+    { source: 'langsoex', target: 'gudvarr', label: 'lleva al cinto', type: 'rel' },
+    { source: 'langsoex', target: 'svik', label: 'lleva', type: 'rel' },
+    { source: 'langsoex', target: 'sulich', label: 'espada curva', type: 'rel' },
+    { source: 'ox', target: 'thorkel', label: 'arma principal (hacha barbada)', type: 'rel' },
+    { source: 'ox', target: 'virk', label: 'usó en holmganga', type: 'event' },
+    { source: 'ox', target: 'glornir', label: 'long-axe', type: 'rel' },
+    { source: 'ox', target: 'gudvarr', label: 'herido por', type: 'event' },
+    { source: 'bogi', target: 'trud', label: 'herida por flecha', type: 'event' },
+    { source: 'torc', target: 'sigrun', label: 'lleva plata', type: 'rel' },
+    { source: 'torc', target: 'svik', label: 'lleva plata con serpientes', type: 'rel' },
+    { source: 'torc', target: 'agnar', label: 'lleva plata', type: 'rel' },
+    { source: 'armring', target: 'sigrun', label: 'lleva en brazos', type: 'rel' },
+    { source: 'armring', target: 'svik', label: 'lleva plata enrollados', type: 'rel' },
+    { source: 'armring', target: 'glornir', label: 'Dador-de-Oro', type: 'rel' },
+    { source: 'armring', target: 'bloodsworn', label: 'sistema lealtad', type: 'lore' },
+    { source: 'hird', target: 'orl', label: 'Hird de Leif', type: 'rel' },
+    { source: 'hird', target: 'leif', label: 'tiene Hird', type: 'rel' },
+    { source: 'hird-offering', target: 'orka', label: 'advierte en Althing', type: 'event' },
+    { source: 'hird-offering', target: 'helka', label: 'exigirá', type: 'trama' },
+    { source: 'hird-offering', target: 'sigrun', label: 'deberá proporcionar', type: 'trama' },
+    { source: 'skjaldborg', target: 'elvar', label: 'ganó puesto en muro', type: 'rel' },
+    { source: 'skjaldborg', target: 'varg', label: 'entrena para', type: 'rel' },
+    { source: 'skjaldborg', target: 'rokia', label: 'entrena a Varg', type: 'rel' },
+    { source: 'skjaldborg', target: 'skjoldr', label: 'usa escudos', type: 'lore' },
+    { source: 'funeral-rites', target: 'vergelmir', label: 'razón de armas', type: 'lore' },
+    { source: 'funeral-rites', target: 'mord-lif', label: 'envuelven a padre', type: 'event' },
+    { source: 'funeral-rites', target: 'thorkel', label: 'ayuda con cuerpo', type: 'event' },
+    { source: 'guest-right', target: 'jarl-logur', label: 'hospeda Hermanos', type: 'rel' },
+    { source: 'guest-right', target: 'bloodsworn', label: 'hospedados', type: 'rel' },
+    { source: 'guest-right', target: 'agnar', label: 'ofrece comida a prisioneros', type: 'rel' },
+    { source: 'weregild', target: 'mord-lif', label: 'no reciben', type: 'trama' },
+    { source: 'weregild', target: 'virk', label: 'muerte sin compensación', type: 'event' },
+    { source: 'outlawry', target: 'varg', label: 'proscrito de facto', type: 'trama' },
+    { source: 'outlawry', target: 'snepil', label: 'asesinato causa', type: 'event' },
+    { source: 'gachas', target: 'grend', label: 'sirve a Elvar', type: 'event' },
+    { source: 'gachas', target: 'elvar', label: 'recibe de Grend', type: 'event' },
+    { source: 'gachas', target: 'biorr', label: 'ofrece a prisioneros', type: 'event' },
+    { source: 'mead-hall', target: 'jarl-logur', label: 'sala en Liga', type: 'geo' },
+    { source: 'mead-hall', target: 'fellur', label: 'longhouse central', type: 'geo' },
+    { source: 'mead-hall', target: 'sigrun', label: 'gobierna desde', type: 'rel' },
+    { source: 'steading', target: 'orka', label: 'vive en', type: 'geo' },
+    { source: 'steading', target: 'thorkel', label: 'vive en', type: 'geo' },
+    { source: 'steading', target: 'asgrim', label: 'murió en su', type: 'event' },
+    { source: 'kennings', target: 'glornir', label: 'Rompe-Escudos, Dador-de-Oro', type: 'rel' },
+    { source: 'kennings', target: 'einar', label: 'Medio-Trol', type: 'rel' },
+    { source: 'kennings', target: 'svik', label: 'Pelo-Enredado', type: 'rel' },
+    { source: 'patronymics', target: 'thorkel', label: 'Ulfsson', type: 'rel' },
+    { source: 'patronymics', target: 'berak', label: 'Bjornasson', type: 'rel' },
+    { source: 'patronymics', target: 'leif', label: 'Kolskeggson', type: 'rel' },
+    { source: 'berserkergang', target: 'berak', label: 'entra en', type: 'rel' },
+    { source: 'berserkergang', target: 'varg', label: 'furia roja similar', type: 'trama' },
+    { source: 'berserkergang', target: 'vafri', label: 'furia de lobo', type: 'rel' },
+    { source: 'berserkergang', target: 'berser', label: 'origen divino', type: 'lore' },
+    // Blood-Eagle
+    { source: 'blood-eagle', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'blood-eagle', target: 'gallows-wood', label: 'imitación humana de', type: 'lore' },
+    // Botín de guerra
+    { source: 'botin-guerra', target: 'cat-norse', label: '', type: 'arc' },
+    { source: 'botin-guerra', target: 'kennings', label: 'trofeos como kennings vivos', type: 'lore' },
+    { source: 'botin-guerra', target: 'drengr', label: 'parte del codigo del', type: 'lore' },
 
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 13 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    // Druzhina (concepto)
+    { source: 'druzhina', target: 'cat-facciones', label: '', type: 'arc' },
+    { source: 'druzhina', target: 'emp-kirill', label: 'guardia del', type: 'rel' },
+    { source: 'druzhina', target: 'iskidan', label: 'institución de', type: 'lore' },
+
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 14 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    // Oath Stone
+    { source: 'oath-stone-frost-isles', target: 'cat-objetos', label: '', type: 'arc' },
+    { source: 'oath-stone-frost-isles', target: 'frost-isles', label: 'ubicada en', type: 'geo' },
+    { source: 'oath-stone-frost-isles', target: 'gudfall', label: 'narra', type: 'lore' },
+    { source: 'oath-stone-frost-isles', target: 'gallows-wood', label: 'muestra imagen de', type: 'lore' },
+    { source: 'oath-stone-frost-isles', target: 'gods-bones', label: 'conecta con reliquias', type: 'lore' },
+    // Gallows Wood
+    { source: 'gallows-wood', target: 'cat-dioses', label: '', type: 'lore' },
+    { source: 'gallows-wood', target: 'likrafa', label: 'crimen que lo detonó', type: 'history' },
+    { source: 'gallows-wood', target: 'orna', label: 'Orna vengó a su hija', type: 'history' },
+    { source: 'gallows-wood', target: 'ulfrir', label: 'Ulfrir vengó a su hija', type: 'history' },
+
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 26 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    // Evento: briefing de Skalk
+    { source: 'mision-briefing-skalk', target: 'cat-eventos', label: '', type: 'arc' },
+    { source: 'mision-briefing-skalk', target: 'skalk', label: 'protagonizado por', type: 'rel' },
+    { source: 'mision-briefing-skalk', target: 'glornir', label: 'defiende a Vol en', type: 'event' },
+    { source: 'mision-briefing-skalk', target: 'vol', label: 'pregunta sobre Grimholt en', type: 'event' },
+    { source: 'mision-briefing-skalk', target: 'mision-helka-norte', label: 'detalla', type: 'rel' },
+    { source: 'mision-briefing-skalk', target: 'grimholt', label: 'pregunta abierta sobre', type: 'trama' },
+    // Nuevas localidades
+    { source: 'rio-slagen', target: 'vigrið', label: 'río en', type: 'geo' },
+    { source: 'rio-slagen', target: 'snakavik', label: 'nace en las estribaciones de las Boneback, zona de', type: 'geo' },
+    { source: 'rio-slagen', target: 'mision-helka-norte', label: 'ruta de la misión', type: 'geo' },
+    { source: 'grimholt', target: 'vigrið', label: 'guarnición en', type: 'geo' },
+    { source: 'grimholt', target: 'mision-helka-norte', label: 'punto clave no explicado de', type: 'trama' },
+    { source: 'grimholt', target: 'helka', label: 'bajo control de', type: 'rel' },
+    // Olvir y Yrsa
+    { source: 'olvir-yrsa', target: 'skalk', label: 'escoltan a', type: 'rel' },
+    { source: 'olvir-yrsa', target: 'helka', label: 'guardia de', type: 'rel' },
+
+    // ══════════════════════════════════════════════════════════════
+    // REVISIÓN DE CONSISTENCIA — ENLACES FALTANTES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'sea-wolf', target: 'rio-slagen', label: 'navega hacia la fuente del', type: 'geo' },
+    { source: 'akall', target: 'froya', label: 'busca justicia por la muerte de', type: 'trama' },
+    { source: 'asgrim-death', target: 'virk', label: 'Virk investigó el patrón de', type: 'event' },
+    { source: 'grend', target: 'storr', label: 'pasado en Snakavik / conocido de', type: 'trama' },
+    { source: 'grimholt', target: 'rio-slagen', label: 'guarnece la cabecera del', type: 'geo' },
+    { source: 'tainted', target: 'hakon', label: 'Hákon caza y documenta a los', type: 'trama' },
+    { source: 'vaesen-gen', target: 'spert', label: 'tipo de vaesen', type: 'lore' },
+    { source: 'vaesen-gen', target: 'vesli', label: 'tipo de vaesen', type: 'lore' },
+    { source: 'liga', target: 'battle-grim', label: 'base operativa de los', type: 'rel' },
+    { source: 'niding', target: 'holmganga-event', label: 'detonante en', type: 'event' },
+    { source: 'althing', target: 'fellur', label: 'celebrado en el fiordo de', type: 'geo' },
+    { source: 'althing', target: 'orka', label: 'asistió al', type: 'event' },
+    { source: 'karl', target: 'virk', label: 'Virk era', type: 'lore' },
+    { source: 'second-combat', target: 'holmganga-event', label: 'rol definido en', type: 'event' },
+    { source: 'runa-ward', target: 'steading', label: 'protegía el', type: 'lore' },
+    { source: 'runa-ward', target: 'ataque-steading', label: 'obliteradas en el', type: 'event' },
+    { source: 'galdramadr', target: 'galdur', label: 'practica el arte del', type: 'lore' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 27 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'raid-raven-feeders', target: 'thrud', label: 'muerto en el', type: 'event' },
+    { source: 'raid-raven-feeders', target: 'biorr', label: 'herido en el', type: 'event' },
+    { source: 'raid-raven-feeders', target: 'bjarn', label: 'secuestrado en el', type: 'event' },
+    { source: 'raid-raven-feeders', target: 'uspa', label: 'objetivo real del', type: 'trama' },
+    { source: 'raid-raven-feeders', target: 'elvar', label: 'participó / mató al líder del', type: 'event' },
+    { source: 'raid-raven-feeders', target: 'agnar', label: 'abre feudo de sangre con Ilska', type: 'conflict' },
+    { source: 'ilska', target: 'bjarn', label: 'secuestró como palanca', type: 'conflict' },
+    { source: 'ilska', target: 'uspa', label: 'objetivo real del raid', type: 'trama' },
+    { source: 'ilska', target: 'agnar', label: 'feudo de sangre / atacó a', type: 'conflict' },
+    { source: 'raven-feeders', target: 'bjarn', label: 'secuestraron en el raid', type: 'conflict' },
+    { source: 'uspa', target: 'oskutred', label: 'conoce el camino hasta', type: 'trama' },
+    { source: 'elvar', target: 'raid-raven-feeders', label: 'combatió en el', type: 'event' },
+    { source: 'thrud', target: 'battle-grim', label: 'miembro de los', type: 'rel' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 28 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'combate-nacken', target: 'orka', label: 'protagonista del', type: 'event' },
+    { source: 'combate-nacken', target: 'mord-lif', label: 'Mord herido en el', type: 'event' },
+    { source: 'combate-nacken', target: 'nacken', label: 'enfrentamiento con el', type: 'event' },
+    { source: 'orka', target: 'nacken', label: 'hirió y repelió al', type: 'event' },
+    { source: 'orka', target: 'seidr', label: 'aplica fórmulas de combate', type: 'magic' },
+    { source: 'nacken', target: 'seidr', label: 'vulnerable a fórmulas de', type: 'magic' },
+    { source: 'orka', target: 'dragon-born', label: 'rumiando la afirmación de Thorkel', type: 'trama' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 29 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'juramento-sangre-brim', target: 'elvar', label: 'sellado con sangre de', type: 'event' },
+    { source: 'juramento-sangre-brim', target: 'agnar', label: 'sellado con sangre de', type: 'event' },
+    { source: 'juramento-sangre-brim', target: 'grend', label: 'sellado con sangre de', type: 'event' },
+    { source: 'juramento-sangre-brim', target: 'sighvat', label: 'sellado con sangre de', type: 'event' },
+    { source: 'juramento-sangre-brim', target: 'kraka', label: 'sellado con sangre de', type: 'event' },
+    { source: 'juramento-sangre-brim', target: 'uspa', label: 'sellado con sangre de', type: 'event' },
+    { source: 'juramento-sangre-brim', target: 'blod-svarid', label: 'ritual aplicado en', type: 'magic' },
+    { source: 'juramento-sangre-brim', target: 'oskutred', label: 'compromiso de ir a', type: 'trama' },
+    { source: 'graskinna', target: 'oskutred', label: 'contenía el camino a', type: 'lore' },
+    { source: 'graskinna', target: 'ilska', label: 'fue robada de', type: 'trama' },
+    { source: 'graskinna', target: 'uspa', label: 'destruida por en Iskalt', type: 'trama' },
+    { source: 'graskinna', target: 'berak', label: 'robada junto a / Berak mató por ella', type: 'trama' },
+    { source: 'berak', target: 'raven-feeders', label: 'mató a miembros de durante la huida', type: 'conflict' },
+    { source: 'elvar', target: 'storr', label: 'rechazó oferta de warband de', type: 'conflict' },
+    { source: 'elvar', target: 'juramento-sangre-brim', label: 'participó en', type: 'event' },
+    { source: 'grend', target: 'juramento-sangre-brim', label: 'participó solo por Elvar', type: 'event' },
+    { source: 'iskalt', target: 'graskinna', label: 'lugar de destrucción de la', type: 'event' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 30 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'granja-abandonada', target: 'rio-slagen', label: 'en la orilla del', type: 'geo' },
+    { source: 'granja-abandonada', target: 'mision-helka-norte', label: 'primera evidencia física de la', type: 'trama' },
+    { source: 'desembarco-slagen', target: 'granja-abandonada', label: 'ocurre en la', type: 'event' },
+    { source: 'desembarco-slagen', target: 'bloodsworn', label: 'protagonizado por los', type: 'event' },
+    { source: 'edel', target: 'granja-abandonada', label: 'rastreó desde', type: 'event' },
+    { source: 'jokul', target: 'granja-abandonada', label: 'recuperó ponies en', type: 'event' },
+    { source: 'sea-wolf', target: 'granja-abandonada', label: 'amarrado en el muelle de la', type: 'geo' },
+    { source: 'varg', target: 'desembarco-slagen', label: 'participó en el', type: 'event' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 31 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'viaje-darl', target: 'orka', label: 'protagoniza', type: 'event' },
+    { source: 'viaje-darl', target: 'mord-lif', label: 'entrenados durante el', type: 'event' },
+    { source: 'viaje-darl', target: 'darl', label: 'destino final del', type: 'geo' },
+    { source: 'viaje-darl', target: 'ilska', label: 'mencionada como luchadora de leyenda en', type: 'lore' },
+    { source: 'llegada-darl', target: 'orka', label: 'protagoniza', type: 'event' },
+    { source: 'llegada-darl', target: 'darl', label: 'escenario de la', type: 'geo' },
+    { source: 'llegada-darl', target: 'helka', label: 'desembarca en', type: 'event' },
+    { source: 'llegada-darl', target: 'hakon', label: 'avistado en', type: 'event' },
+    { source: 'llegada-darl', target: 'enviado-iskidan', label: 'avistado en', type: 'event' },
+    { source: 'llegada-darl', target: 'ulfhednar', label: 'escolta de Helka en', type: 'event' },
+    { source: 'despedida-mord-lif', target: 'orka', label: 'protagoniza', type: 'event' },
+    { source: 'despedida-mord-lif', target: 'mord-lif', label: 'separación sellada en', type: 'event' },
+    { source: 'despedida-mord-lif', target: 'darl', label: 'escenario de la', type: 'geo' },
+    { source: 'enviado-iskidan', target: 'iskidan', label: 'representa a', type: 'rel' },
+    { source: 'enviado-iskidan', target: 'helka', label: 'viaja con la flota de', type: 'event' },
+    { source: 'enviado-iskidan', target: 'darl', label: 'llega a', type: 'geo' },
+    { source: 'orka', target: 'darl', label: 'entra sola en busca de Breca', type: 'trama' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 32 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'revelacion-oskutred-battle-grim', target: 'agnar', label: 'liderada por', type: 'event' },
+    { source: 'revelacion-oskutred-battle-grim', target: 'elvar', label: 'presente en la', type: 'event' },
+    { source: 'revelacion-oskutred-battle-grim', target: 'biorr', label: 'presente en la', type: 'event' },
+    { source: 'revelacion-oskutred-battle-grim', target: 'uspa', label: 'fuente del secreto en la', type: 'event' },
+    { source: 'revelacion-oskutred-battle-grim', target: 'oskutred', label: 'destino revelado en la', type: 'trama' },
+    { source: 'revelacion-oskutred-battle-grim', target: 'lake-horndal', label: 'escenario de la', type: 'geo' },
+    { source: 'revelacion-oskutred-battle-grim', target: 'battle-grim', label: 'compañía convocada en la', type: 'event' },
+    { source: 'biorr-elvar-beso', target: 'biorr', label: 'protagoniza', type: 'event' },
+    { source: 'biorr-elvar-beso', target: 'elvar', label: 'protagoniza', type: 'event' },
+    { source: 'biorr-elvar-beso', target: 'grend', label: 'interrumpido por', type: 'event' },
+    { source: 'lake-horndal', target: 'vigrið', label: 'parte de', type: 'geo' },
+    { source: 'lake-horndal', target: 'llanura-batalla-norte', label: 'puerta de entrada a la', type: 'geo' },
+    { source: 'starl', target: 'lake-horndal', label: 'a orillas del', type: 'geo' },
+    { source: 'starl', target: 'wave-jarl', label: 'abastece al', type: 'event' },
+    { source: 'llanura-batalla-norte', target: 'gudfall', label: 'epicentro del', type: 'lore' },
+    { source: 'llanura-batalla-norte', target: 'oskutred', label: 'Oskutreð se encuentra en la', type: 'lore' },
+    { source: 'wave-jarl', target: 'lake-horndal', label: 'cruzó el', type: 'geo' },
+    { source: 'elvar', target: 'ilska', label: 'sospecha Tainted sin collar en las filas de', type: 'trama' },
+    { source: 'huld', target: 'battle-grim', label: 'miembro de los', type: 'rel' },
+    { source: 'solin', target: 'battle-grim', label: 'miembro de los', type: 'rel' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 33 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'busqueda-drekr-darl', target: 'orka', label: 'protagoniza la', type: 'event' },
+    { source: 'busqueda-drekr-darl', target: 'darl', label: 'escenario de la', type: 'geo' },
+    { source: 'busqueda-drekr-darl', target: 'drekr', label: 'objetivo de la', type: 'trama' },
+    { source: 'busqueda-drekr-darl', target: 'hombre-quemado', label: 'revela al', type: 'event' },
+    { source: 'hombre-quemado', target: 'dead-drengr', label: 'conduce a Orka hasta el', type: 'event' },
+    { source: 'hombre-quemado', target: 'drekr', label: 'agente de', type: 'rel' },
+    { source: 'rescate-ninos-canal', target: 'orka', label: 'protagoniza el', type: 'event' },
+    { source: 'rescate-ninos-canal', target: 'ninos-robados', label: 'descubre operación activa de', type: 'trama' },
+    { source: 'rescate-ninos-canal', target: 'bersi', label: 'Orka mata a', type: 'event' },
+    { source: 'rescate-ninos-canal', target: 'dead-drengr', label: 'escenario trasero del', type: 'geo' },
+    { source: 'rescate-ninos-canal', target: 'nino-mayor-canal', label: 'libera a', type: 'event' },
+    { source: 'dead-drengr', target: 'drekr', label: 'Drekr opera desde', type: 'trama' },
+    { source: 'dead-drengr', target: 'darl', label: 'ubicado en', type: 'geo' },
+    { source: 'dead-drengr', target: 'hakon', label: 'protegido por drengrs de Helka al mando de', type: 'trama' },
+    { source: 'dead-drengr', target: 'helka', label: 'guardia exterior de', type: 'rel' },
+    { source: 'bersi', target: 'drekr', label: 'hombre de', type: 'rel' },
+    { source: 'bersi', target: 'ninos-robados', label: 'transportaba niños de la red de', type: 'trama' },
+    { source: 'orka', target: 'drekr', label: 'converge sobre en El Drengr Muerto', type: 'trama' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 34 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'saga-queso-troll', target: 'svik', label: 'protagoniza la', type: 'lore' },
+    { source: 'ella-misteriosa', target: 'vol', label: 'esperada por', type: 'trama' },
+    { source: 'ella-misteriosa', target: 'glornir', label: 'preocupación de', type: 'trama' },
+    { source: 'ella-misteriosa', target: 'bloodsworn', label: 'esperaba reunirse con los', type: 'trama' },
+    { source: 'varg', target: 'skalk', label: 'considera acercarse para el akáll', type: 'trama' },
+    { source: 'varg', target: 'akall', label: 'tercer intento fallido del', type: 'event' },
+    { source: 'torvik', target: 'varg', label: 'llamó hermano a', type: 'rel' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 35 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'combate-dead-drengr', target: 'orka', label: 'protagoniza el', type: 'event' },
+    { source: 'combate-dead-drengr', target: 'drekr', label: 'primer encuentro directo con', type: 'event' },
+    { source: 'combate-dead-drengr', target: 'hakon', label: 'expuesto en el', type: 'event' },
+    { source: 'combate-dead-drengr', target: 'mord-lif', label: 'rescatan a Orka en el', type: 'event' },
+    { source: 'combate-dead-drengr', target: 'dead-drengr', label: 'escenario del', type: 'geo' },
+    { source: 'combate-dead-drengr', target: 'colgante-espada', label: 'Orka recupera el', type: 'event' },
+    { source: 'orka-poder-oculto', target: 'orka', label: 'primera manifestación en', type: 'trama' },
+    { source: 'orka-poder-oculto', target: 'tainted', label: 'posible manifestación de sangre', type: 'trama' },
+    { source: 'garras-drekr', target: 'drekr', label: 'cicatrices en la cara de', type: 'trama' },
+    { source: 'garras-drekr', target: 'breca', label: '¿posiblemente causadas por?', type: 'trama' },
+    { source: 'colgante-espada', target: 'breca', label: 'objeto de', type: 'rel' },
+    { source: 'colgante-espada', target: 'dead-drengr', label: 'encontrado en el', type: 'event' },
+    { source: 'orka', target: 'mord-lif', label: 'rescatada a caballo por', type: 'event' },
+    { source: 'drekr', target: 'breca', label: 'afirmó que cambiará el mundo', type: 'trama' },
 ];
