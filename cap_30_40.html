@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capítulos 30–40 · La Sombra de los Dioses</title>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:        #0f0c08;
+    --parchment:  #f2e6cc;
+    --aged:       #d9c9a0;
+    --blood:      #7a1515;
+    --iron:       #3d3528;
+    --gold:       #c8902a;
+    --mist:       #657560;
+    --ember:      #a84a10;
+    --frost:      #7da8b8;
+    --rune-glow:  rgba(200,144,42,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--ink);
+    color: var(--parchment);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background:
+      radial-gradient(ellipse 90% 50% at 50% 0%,   #1e1205 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 10% 100%,  #0f0806 0%, transparent 70%),
+      radial-gradient(ellipse 50% 35% at 90% 60%,   #120818 0%, transparent 65%);
+    pointer-events: none; z-index: 0;
+  }
+
+  .page { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 4rem 2.5rem 7rem; }
+
+  /* ─── Header ─── */
+  header { text-align: center; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(200,144,42,0.3); margin-bottom: 3rem; }
+
+  .eyebrow {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.62rem; letter-spacing: 0.38em; text-transform: uppercase;
+    color: var(--gold); opacity: 0.65; margin-bottom: 1rem;
+  }
+
+  header h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    color: var(--gold); line-height: 1.2;
+    text-shadow: 0 0 40px rgba(200,144,42,0.35);
+    margin-bottom: 0.4rem;
+  }
+
+  .header-sub {
+    font-family: 'IM Fell English', serif; font-style: italic;
+    font-size: 1rem; color: var(--aged); opacity: 0.65; margin-bottom: 1.4rem;
+  }
+
+  .rune-bar {
+    display: flex; align-items: center; gap: 0.8rem; justify-content: center;
+    color: var(--gold); opacity: 0.4; font-size: 1.1rem; letter-spacing: 0.5em;
+    margin: 0.8rem 0 1.2rem;
+  }
+  .rune-bar span { flex: 1; max-width: 120px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
+  .rune-bar span:last-child { background: linear-gradient(270deg, transparent, var(--gold)); }
+
+  .header-note { font-size: 0.88rem; color: var(--mist); font-style: italic; }
+
+  /* ─── Three-column arc overview ─── */
+  .arc-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    border: 1px solid rgba(200,144,42,0.18); border-radius: 2px;
+    overflow: hidden; margin-bottom: 2.8rem;
+  }
+  @media (max-width: 680px) { .arc-grid { grid-template-columns: 1fr; } }
+
+  .arc-col { padding: 1.4rem 1.3rem; background: rgba(255,255,255,0.02); }
+  .arc-col:not(:last-child) { border-right: 1px solid rgba(200,144,42,0.12); }
+  .arc-col:hover { background: rgba(255,255,255,0.04); }
+
+  .arc-name {
+    font-family: 'Cinzel Decorative', serif; font-size: 0.75rem;
+    letter-spacing: 0.12em; margin-bottom: 0.3rem;
+  }
+  .arc-orka  { color: #c06030; }
+  .arc-varg  { color: #7095b8; }
+  .arc-elvar { color: #88a870; }
+
+  .arc-tagline { font-style: italic; font-size: 0.82rem; color: var(--mist); margin-bottom: 0.85rem; }
+  .arc-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
+  .arc-col li {
+    font-size: 0.87rem; color: var(--aged); line-height: 1.45;
+    padding-left: 1.1rem; position: relative;
+  }
+  .arc-col li::before { content: '—'; position: absolute; left: 0; color: var(--gold); opacity: 0.4; }
+
+  /* ─── Section ─── */
+  section { margin-bottom: 3.2rem; }
+
+  .sh { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+  .sh-num {
+    font-family: 'Cinzel Decorative', serif; font-size: 0.68rem;
+    color: var(--gold); opacity: 0.55; letter-spacing: 0.15em; min-width: 1.6rem;
+  }
+  .sh h3 {
+    font-family: 'Cinzel Decorative', serif; font-size: 1rem;
+    color: var(--gold); letter-spacing: 0.05em;
+    text-shadow: 0 0 10px var(--rune-glow);
+  }
+  .sh-line { flex: 1; height: 1px; background: linear-gradient(90deg, rgba(200,144,42,0.35), transparent); }
+
+  /* ─── Scene cards ─── */
+  .scene-stack { display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1rem; }
+
+  .scene {
+    display: grid; grid-template-columns: 3.5rem 1fr;
+    gap: 0; border: 1px solid rgba(200,144,42,0.12); border-radius: 2px;
+    overflow: hidden;
+  }
+  .scene-tag {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 0.8rem 0.4rem;
+    background: rgba(200,144,42,0.06);
+    border-right: 1px solid rgba(200,144,42,0.15);
+    font-family: 'Cinzel Decorative', serif; font-size: 0.6rem;
+    letter-spacing: 0.1em; text-align: center; gap: 0.3rem;
+  }
+  .scene-tag .ch { color: var(--gold); opacity: 0.8; }
+  .scene-tag .who { font-size: 0.58rem; color: var(--mist); }
+  .scene-tag.orka-tag  { border-left: 2px solid #a84828; }
+  .scene-tag.varg-tag  { border-left: 2px solid #4878a0; }
+  .scene-tag.elvar-tag { border-left: 2px solid #608050; }
+
+  .scene-body { padding: 0.85rem 1.1rem; background: rgba(255,255,255,0.02); }
+  .scene-title {
+    font-weight: 600; font-size: 0.9rem; color: var(--parchment);
+    margin-bottom: 0.3rem;
+  }
+  .scene-body p { font-size: 0.88rem; color: var(--aged); line-height: 1.55; }
+  .scene-body em { color: var(--gold); font-style: normal; opacity: 0.85; }
+
+  /* ─── Quote pull ─── */
+  .pull-quote {
+    margin: 1.2rem 0;
+    padding: 1.1rem 1.6rem 1.1rem 2rem;
+    border-left: 3px solid var(--blood);
+    background: rgba(120,20,20,0.07);
+  }
+  .pull-quote blockquote {
+    font-family: 'IM Fell English', serif; font-style: italic;
+    font-size: 1.05rem; color: var(--parchment); line-height: 1.6; margin-bottom: 0.4rem;
+  }
+  .pull-quote cite { font-size: 0.8rem; color: var(--mist); }
+
+  .pull-gold {
+    margin: 1.2rem 0;
+    padding: 1.1rem 1.6rem 1.1rem 2rem;
+    border-left: 3px solid var(--gold);
+    background: rgba(200,144,42,0.06);
+  }
+  .pull-gold blockquote {
+    font-family: 'IM Fell English', serif; font-style: italic;
+    font-size: 1.05rem; color: var(--parchment); line-height: 1.6; margin-bottom: 0.4rem;
+  }
+  .pull-gold cite { font-size: 0.8rem; color: var(--mist); }
+
+  /* ─── Q list ─── */
+  .q-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+  .q-list li {
+    padding: 0.85rem 1.1rem 0.85rem 2.6rem;
+    background: rgba(255,255,255,0.022);
+    border: 1px solid rgba(200,144,42,0.1); border-radius: 2px;
+    position: relative; font-size: 0.95rem; color: var(--aged); line-height: 1.55;
+  }
+  .q-list li::before {
+    content: attr(data-rune); position: absolute; left: 0.8rem; top: 0.82rem;
+    font-size: 1rem; color: var(--gold); opacity: 0.42;
+  }
+  .q-list li strong { color: var(--parchment); font-weight: 600; }
+  .q-list li em { color: var(--mist); font-style: italic; }
+
+  /* ─── 2-col grid ─── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+  .card {
+    padding: 1.15rem 1.3rem;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(200,144,42,0.13); border-radius: 2px;
+  }
+  .card:hover { border-color: rgba(200,144,42,0.3); background: rgba(255,255,255,0.045); }
+  .card-label {
+    font-family: 'Cinzel Decorative', serif; font-size: 0.58rem;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);
+    opacity: 0.55; margin-bottom: 0.45rem;
+  }
+  .card p { font-size: 0.9rem; color: var(--aged); line-height: 1.55; }
+  .card p strong { color: var(--parchment); }
+
+  /* ─── Conspiracy map ─── */
+  .conspiracy {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(200,144,42,0.15);
+    border-radius: 2px; overflow: hidden; margin-bottom: 1.2rem;
+  }
+  .conspiracy-header {
+    background: rgba(200,144,42,0.07);
+    border-bottom: 1px solid rgba(200,144,42,0.15);
+    padding: 0.6rem 1.2rem;
+    font-family: 'Cinzel Decorative', serif; font-size: 0.65rem;
+    letter-spacing: 0.2em; color: var(--gold); opacity: 0.75;
+  }
+  .conspiracy-body { padding: 1.1rem 1.3rem; }
+  .conspiracy-row {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 0.55rem 0; border-bottom: 1px solid rgba(200,144,42,0.07);
+  }
+  .conspiracy-row:last-child { border-bottom: none; }
+  .c-actor { font-weight: 600; color: var(--parchment); font-size: 0.9rem; min-width: 8rem; }
+  .c-role { font-size: 0.88rem; color: var(--aged); line-height: 1.45; }
+
+  /* ─── Tension meter ─── */
+  .tension-block { margin-bottom: 0.75rem; }
+  .tension-label {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 0.3rem;
+  }
+  .tension-name { font-size: 0.88rem; color: var(--parchment); }
+  .tension-val  { font-family: 'Cinzel Decorative', serif; font-size: 0.65rem; color: var(--gold); opacity: 0.6; }
+  .tension-bar  { height: 4px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }
+  .tension-fill { height: 100%; border-radius: 2px; }
+  .fill-blood   { background: linear-gradient(90deg, var(--blood), #c04040); }
+  .fill-gold    { background: linear-gradient(90deg, #7a6020, var(--gold)); }
+  .fill-frost   { background: linear-gradient(90deg, #3a6a80, var(--frost)); }
+  .tension-note { font-size: 0.8rem; color: var(--mist); margin-top: 0.2rem; font-style: italic; }
+
+  /* ─── Geo box ─── */
+  .geo-strip {
+    display: flex; gap: 0; border: 1px solid rgba(200,144,42,0.15); border-radius: 2px;
+    overflow: hidden; margin-bottom: 1.2rem;
+  }
+  .geo-node {
+    flex: 1; padding: 0.85rem 0.9rem; background: rgba(255,255,255,0.02);
+    text-align: center; position: relative;
+  }
+  .geo-node:not(:last-child)::after {
+    content: '→'; position: absolute; right: -0.6rem; top: 50%;
+    transform: translateY(-50%); color: var(--gold); opacity: 0.5; font-size: 0.85rem; z-index: 1;
+  }
+  .geo-name { font-family: 'Cinzel Decorative', serif; font-size: 0.65rem; color: var(--gold); opacity: 0.85; margin-bottom: 0.2rem; }
+  .geo-node p { font-size: 0.8rem; color: var(--mist); line-height: 1.4; }
+  .geo-active { background: rgba(200,144,42,0.07); border-left: 2px solid var(--gold); }
+
+  /* ─── Info box ─── */
+  .info-box {
+    background: rgba(200,144,42,0.05); border: 1px solid rgba(200,144,42,0.22);
+    border-radius: 2px; padding: 1rem 1.3rem; margin-bottom: 1rem;
+    font-size: 0.9rem; color: var(--aged); line-height: 1.6;
+  }
+  .info-box strong { color: var(--gold); }
+
+  .warn-box {
+    background: rgba(120,20,20,0.07); border: 1px solid rgba(120,20,20,0.28);
+    border-left: 3px solid var(--blood); border-radius: 2px;
+    padding: 1rem 1.3rem; margin-bottom: 1rem;
+    font-size: 0.9rem; color: var(--aged); line-height: 1.6;
+  }
+  .warn-box strong { color: #d04040; }
+
+  .prose { margin-bottom: 0.9rem; color: var(--aged); font-size: 0.95rem; line-height: 1.7; }
+
+  /* ─── Footer ─── */
+  footer {
+    margin-top: 5rem; padding-top: 2rem;
+    border-top: 1px solid rgba(200,144,42,0.18);
+    text-align: center; font-size: 0.82rem; color: #4a4035; font-style: italic;
+  }
+
+  @keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+  section { animation: fadeUp 0.38s ease both; }
+  section:nth-child(2)  { animation-delay: .04s; }
+  section:nth-child(3)  { animation-delay: .08s; }
+  section:nth-child(4)  { animation-delay: .12s; }
+  section:nth-child(5)  { animation-delay: .16s; }
+  section:nth-child(6)  { animation-delay: .20s; }
+  section:nth-child(7)  { animation-delay: .24s; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="eyebrow">Club de Lectura · Sesión en curso · Enfoque</div>
+    <h1>Capítulos 30 – 40</h1>
+    <div class="header-sub">La Sombra de los Dioses · John Gwynne</div>
+    <div class="rune-bar"><span></span>ᚲ ᚷ ᚹ ᚺ ᚾ ᛁ<span></span></div>
+    <p class="header-note">El norte llama a los tres. Darl arde detrás. El Grimholt espera adelante.</p>
+  </header>
+
+
+  <!-- ═══════════════════ RESUMEN POR ARCO ═══════════════════ -->
+  <section>
+    <div class="sh"><span class="sh-num">I</span><h3>Los Tres Arcos: Qué Pasó</h3><div class="sh-line"></div></div>
+
+    <div class="arc-grid">
+      <div class="arc-col">
+        <div class="arc-name arc-orka">Orka</div>
+        <div class="arc-tagline">De madre buscando a una loba desatada</div>
+        <ul>
+          <li>Llega a Darl; intenta despedirse de Mord y Lif, pero la sangre la retiene</li>
+          <li>Libera a un grupo de niños Tainted que iban a ser transportados al norte</li>
+          <li>Encuentra el colgante de Breca: estuvo vivo en esa taberna</li>
+          <li>Combate brutal con Drekr; casi muere estrangulada — algo se quiebra en ella</li>
+          <li>Interroga y mata a Skefil: descubre que Drekr fue al norte, al Grimholt, y que Hákon está involucrado</li>
+          <li>La trampa para Guðvarr fracasa; quema el puente y gira al norte</li>
+        </ul>
+      </div>
+      <div class="arc-col">
+        <div class="arc-name arc-varg">Varg</div>
+        <div class="arc-tagline">De aprendiz solitario a hermano</div>
+        <ul>
+          <li>Los Juramentados de Sangre dejan el Sea-Wolf y marchan hacia las Boneback</li>
+          <li>Svik cuenta la saga del queso y el trol: la primera carcajada del grupo</li>
+          <li>Glornir niega de nuevo el akáll; Varg mira a Skalk</li>
+          <li>Descubren 24 drengrs de Helka colgados, destripados, con la runa <em>Bannað jörð</em></li>
+          <li>Torvik le promete ayuda; Varg llora en silencio por primera vez</li>
+          <li>Skalk y Vol debaten Galdur vs. Seiðr; Sulich y Skalk casi se matan</li>
+        </ul>
+      </div>
+      <div class="arc-col">
+        <div class="arc-name arc-elvar">Elvar</div>
+        <div class="arc-tagline">De guerrera de compañía a exploradora de mitos</div>
+        <ul>
+          <li>Lago Horndal: Agnar revela que el destino real siempre fue Oskutreð</li>
+          <li>Uspa destruyó la Graskinna — el conocimiento vive solo en su memoria</li>
+          <li>Grend y Elvar hablan de lo que dejan atrás; Biórr roza sus labios con los de ella</li>
+          <li>Ante el Foso de los Vaesen: Uspa invoca el Puente Isbrún con sangre</li>
+          <li>Ataque masivo de tennur — el nido entero despierta bajo sus pies</li>
+          <li>Grend es golpeado y cae; Biórr lo carga; cruzan el Isbrún al norte</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Geo movement strip -->
+    <p class="prose">El movimiento geográfico de los capítulos 30–40 es el más decisivo del libro: los tres protagonistas, que habían estado dispersos en el sur, inician o completan su marcha irreversible al norte:</p>
+    <div class="geo-strip">
+      <div class="geo-node">
+        <div class="geo-name">Fellur / Liga</div>
+        <p>Inicio. Mundo conocido. Ya atrás.</p>
+      </div>
+      <div class="geo-node">
+        <div class="geo-name">Darl</div>
+        <p>Nodo de poder. Helka, Hákon, Sigrún, Drekr. El fuego que obliga a huir.</p>
+      </div>
+      <div class="geo-node geo-active">
+        <div class="geo-name">Boneback ↑</div>
+        <p>Umbral. Los tres cruzan aquí hacia lo desconocido. Capítulos 30–40.</p>
+      </div>
+      <div class="geo-node">
+        <div class="geo-name">Grimholt / Oskutreð</div>
+        <p>Destino. Donde Breca, los niños y los dioses muertos esperan.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════ ESCENAS CLAVE ═══════════════════ -->
+  <section>
+    <div class="sh"><span class="sh-num">II</span><h3>Escenas Clave</h3><div class="sh-line"></div></div>
+
+    <div class="scene-stack">
+
+      <div class="scene">
+        <div class="scene-tag orka-tag"><span class="ch">C·33</span><span class="who">Orka</span></div>
+        <div class="scene-body">
+          <div class="scene-title">El colgante de Breca</div>
+          <p>En el desván de El Drengr Muerto, entre colchonetas de niños Tainted, Orka tira de un hilo de cuero y encuentra el colgante de espada tallada que vio por última vez alrededor del cuello de su hijo. <em>Breca estuvo aquí. Vivo.</em> La esperanza se enciende como una chispa en la que el libro lleva 33 capítulos apagando.</p>
+        </div>
+      </div>
+
+      <div class="scene">
+        <div class="scene-tag orka-tag"><span class="ch">C·35</span><span class="who">Orka</span></div>
+        <div class="scene-body">
+          <div class="scene-title">"Tu hijo cambiará el mundo" — el quiebre de Orka</div>
+          <p>Drekr rodea la garganta de Orka con el asta del hacha y aprieta. La visión se va poniendo negra. En ese momento de muerte inminente, <em>algo se quiebra en su interior</em>: la sangre hierve, los músculos se llenan de una fuerza que no reconoce como propia. Rompe la llave, lo taja y escapa. Primera señal explícita de que Orka es Tainted — y ella lo sabe.</p>
+        </div>
+      </div>
+
+      <div class="scene">
+        <div class="scene-tag varg-tag"><span class="ch">C·36</span><span class="who">Varg</span></div>
+        <div class="scene-body">
+          <div class="scene-title">Los 24 cuerpos y la runa Bannað jörð</div>
+          <p>Los Juramentados descubren a los 24 drengrs de Helka colgados de los árboles, destripados y desollados, con una runa grabada en el pecho: <em>tierra prohibida</em>. Vol la reconoce al instante; Skalk nunca la había visto. El norte no es solo un destino peligroso: algo antiguo y consciente lo custodia. Varg vomita en el arroyo seco.</p>
+        </div>
+      </div>
+
+      <div class="scene">
+        <div class="scene-tag varg-tag"><span class="ch">C·39</span><span class="who">Varg</span></div>
+        <div class="scene-body">
+          <div class="scene-title">Skalk demuestra el Galdur · El debate de la magia</div>
+          <p>En el campamento sin fuego, Skalk extiende la palma y dice <em>«Eldur»</em>: una llama brota y crepita. Primera demostración real de Galdur en el libro. Varg siente las ondas de poder en las venas. El debate que sigue — ¿es el Seiðr inferior porque "solo está en la sangre"? — convierte a Skalk en el ideólogo del prejuicio anti-Tainted, con voz de erudito y razonamiento de racista.</p>
+        </div>
+      </div>
+
+      <div class="scene">
+        <div class="scene-tag varg-tag"><span class="ch">C·39</span><span class="who">Varg / Torvik</span></div>
+        <div class="scene-body">
+          <div class="scene-title">La bolsa de pelo negro y la promesa de Torvik</div>
+          <p>Torvik toca sin querer la bolsa de Varg. Varg la abre: un mechón de pelo negro. Su hermana. Torvik escucha y promete sin dramatismo: cuando llegue el akáll, él lo rastreará hasta el final. Varg se limpia una lágrima sin mirarlo. <em>Toda su vida, solo Frøya fue su amigo.</em> El libro convierte la amistad en el contrapeso exacto de la violencia.</p>
+        </div>
+      </div>
+
+      <div class="scene">
+        <div class="scene-tag elvar-tag"><span class="ch">C·38</span><span class="who">Elvar / Uspa</span></div>
+        <div class="scene-body">
+          <div class="scene-title">El Puente Isbrún · Las sagas se hacen carne</div>
+          <p>Uspa se corta la palma, presiona la roca, canta, y da un paso sobre el vacío del Foso de los Vaesen. Bajo su pie: algo sólido. Los colores de las guðljós caen del cielo y se condensan en un puente de hielo que no se derrite sobre el río de fuego. Agnar grita y salta de alegría. Elvar sonríe. Dos segundos después, la colina entera erupciona en tennur.</p>
+        </div>
+      </div>
+
+      <div class="scene">
+        <div class="scene-tag elvar-tag"><span class="ch">C·38</span><span class="who">Biórr / Elvar / Grend</span></div>
+        <div class="scene-body">
+          <div class="scene-title">Biórr carga a Grend sobre sus hombros</div>
+          <p>Grend cae inconsciente en la ladera negra de tennur. Biórr abre paso a través del enjambre, se agacha, y levanta al guerrero corpulento sobre los hombros de un solo impulso. Elvar los cubre. Cruzan al Isbrún. Ella busca el pulso en el cuello de Grend y lo encuentra. Le aprieta el brazo a Biórr. El libro define a un personaje de pocas palabras con un solo gesto físico.</p>
+        </div>
+      </div>
+
+      <div class="scene">
+        <div class="scene-tag orka-tag"><span class="ch">C·40</span><span class="who">Orka</span></div>
+        <div class="scene-body">
+          <div class="scene-title">El giro al norte · "A encontrar a Drekr y a mi hijo"</div>
+          <p>La trampa para Guðvarr se invierte: él llega con veinte jinetes. Orka quema el puente, mira las Boneback en el horizonte y jala las riendas al norte. Cuando Mord le pregunta adónde, la respuesta pública es el Grimholt. La interna, que el libro le da al lector en cursiva: <em>a encontrar a Drekr y a mi hijo.</em> Las tres líneas narrativas convergen por primera vez hacia el mismo punto.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════ MOMENTOS PARA DISCUTIR ═══════════════════ -->
+  <section>
+    <div class="sh"><span class="sh-num">III</span><h3>Momentos para el Grupo</h3><div class="sh-line"></div></div>
+
+    <ul class="q-list">
+      <li data-rune="🔥"><strong>¿El "quiebre" de Orka en el capítulo 35 fue un momento de salvación o de pérdida?</strong><br><em>Su fuerza no es humana en ese instante y ella lo sabe. ¿Está "despertando" a algo que siempre fue, o cediendo a algo que siempre temió?</em></li>
+
+      <li data-rune="🧠"><strong>¿Svik cuenta la saga del queso en serio o con un propósito oculto?</strong><br><em>La historia llega justo después de que Varg empieza a considerar acudir a Skalk. El humor de Svik es siempre estratégico. ¿Es la saga una advertencia disfrazada — el engaño cuesta más de lo que parece?</em></li>
+
+      <li data-rune="⚖"><strong>¿La decisión de Orka de matar a Skefil fue justa?</strong><br><em>"Libre de esta vida." "Una cabeza hendida ya no conspira." Dos justificaciones, una acción. ¿Hay diferencia entre las dos?</em></li>
+
+      <li data-rune="❄"><strong>¿Qué es el Puente Isbrún: magia o milagro?</strong><br><em>Las almas de los dioses muertos se condensan en hielo que no se derrite. ¿Cómo responde el grupo a un fenómeno que el libro presenta sin explicación, solo asombro? ¿Funciona narrativamente?</em></li>
+
+      <li data-rune="🗡"><strong>¿Quién tiene la razón en el debate Skalk vs. Sulich?</strong><br><em>Skalk: el Seiðr es herencia sin mérito, peligroso por naturaleza. Sulich: juzgar por el parentesco es absurdo; juzgad por los actos. La ironía: Skalk acusa a Sulich de asesinato — juzgándolo por actos. ¿Aplica su propio principio o solo cuando le conviene?</em></li>
+
+      <li data-rune="🌊"><strong>¿Cuándo dejó de ser una historia de venganza y se convirtió en algo más grande?</strong><br><em>Hay un momento en estos capítulos en que la escala cambia. La búsqueda de Breca se conecta a una conspiración que involucra a la corona. Los Juramentados caminan sobre tierra que mató a 24 guerreros de la reina. Los Terrores de la batalla cruzan el umbral al norte de los dioses. ¿Cuándo lo sentiste?</em></li>
+    </ul>
+  </section>
+
+
+  <!-- ═══════════════════ CONSPIRACIÓN HÁKON-DREKR ═══════════════════ -->
+  <section>
+    <div class="sh"><span class="sh-num">IV</span><h3>La Conspiración del Norte</h3><div class="sh-line"></div></div>
+
+    <p class="prose">Entre los capítulos 33 y 37, el libro revela —por fragmentos— que hay una red organizada detrás del secuestro de niños Tainted. Lo que sabemos hasta el capítulo 40:</p>
+
+    <div class="conspiracy">
+      <div class="conspiracy-header">Lo que sabemos · Lo que intuimos · Lo que ignoramos</div>
+      <div class="conspiracy-body">
+        <div class="conspiracy-row">
+          <div class="c-actor">Drekr</div>
+          <div class="c-role">Líder operativo. Lleva los niños al norte, al Paso del Grimholt. Tatuaje de serpiente en knotwork. Tainted (marcas de garra en el rostro — ¿autoinfligidas?). Dice a Orka: <em>"tu hijo cambiará el mundo"</em>. Propósito desconocido.</div>
+        </div>
+        <div class="conspiracy-row">
+          <div class="c-actor">Hákon</div>
+          <div class="c-role">Hijo de la Reina Helka. Se reunía en secreto con Drekr en tabernas de Darl bajo capucha. Skefil dice que Helka probablemente no lo sabe. Tiene acceso a drengrs de la corona. Motivación: desconocida.</div>
+        </div>
+        <div class="conspiracy-row">
+          <div class="c-actor">Skefil</div>
+          <div class="c-role">Tainted Rotta-kin (dientes de roedor al transformarse). Ojos y oídos en Darl. Solo veía espaldas. No sabía qué harían con los niños. Ahora muerto.</div>
+        </div>
+        <div class="conspiracy-row">
+          <div class="c-actor">Los niños</div>
+          <div class="c-role">Todos Tainted, de distintos kin. Transportados en secreto al norte. Una "tanda anterior" ya había sido movida antes de que Orka llegara. ¿Cuántos? ¿Dónde están?</div>
+        </div>
+        <div class="conspiracy-row">
+          <div class="c-actor">La runa</div>
+          <div class="c-role"><em>Bannað jörð</em> — tierra prohibida. Grabada en los cuerpos de 24 drengrs de Helka. Vol la reconoce; Skalk nunca la había visto. Alguien viejo y poderoso custodia el norte. No es Drekr.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <blockquote>«Tu hijo cambiará el mundo.»</blockquote>
+      <cite>Drekr a Orka, en el momento en que la está matando · Capítulo 35</cite>
+    </div>
+
+    <ul class="q-list">
+      <li data-rune="🔭"><strong>¿Qué tipo de poder necesitarías de niños Tainted específicos para querer secuestrarlos?</strong><br><em>No es trabajo esclavo — ya existen los Ulfhéðnar para eso. ¿Ritual? ¿Sacrificio? ¿Algo que requiere sangre joven e impura de dioses? ¿O despertar algo?</em></li>
+      <li data-rune="🐍"><strong>¿Hákon actúa por ambición o por convicción?</strong><br><em>Si fuera solo codicia o poder, habría opciones más simples. La conspiración es compleja y arriesgada. ¿Cree en algo?</em></li>
+      <li data-rune="❓"><strong>¿Quién grabó la runa Bannað jörð?</strong><br><em>Ni Vol (Seiðr, descendiente de Snaka) ni Skalk (Galdurman) la conocen desde antes. Vol la "reconoció al instante" porque la siente en los huesos de Snaka. ¿Quién tiene ese poder ahora?</em></li>
+    </ul>
+  </section>
+
+
+  <!-- ═══════════════════ PERSONAJES EN TENSIÓN ═══════════════════ -->
+  <section>
+    <div class="sh"><span class="sh-num">V</span><h3>Personajes en Tensión · Capítulos 30–40</h3><div class="sh-line"></div></div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-label">Orka · ¿Quién está tomando el control?</div>
+        <p>Gruñe sin querer. Le twitchea la cara. Casi mata a doce hombres sola. En el momento de morir, algo la desborda. <strong>La bestia no está fuera de ella: está en ella.</strong> Y ya no puede ignorarlo. ¿Sigue siendo la madre buscando a su hijo, o la madre es ya solo el pretexto?</p>
+      </div>
+      <div class="card">
+        <div class="card-label">Varg · La tentación de Skalk</div>
+        <p>Glornir le niega el akáll. Skalk se lo ofrece — a cambio de una deuda de <em>blóð svarið</em> personal exigible cuando él decida. Varg sabe lo que perderá. <strong>Y sigue mirando a Skalk.</strong> ¿Es traición o desesperación? ¿Puede ser las dos?</p>
+      </div>
+      <div class="card">
+        <div class="card-label">Elvar · La deuda con Biórr</div>
+        <p>Biórr cargó a Grend cuando nadie más podía. Elvar lleva su cuenta interna de lealtades con la misma precisión que Orka lleva la suya de honor. <strong>¿Cuánto vale lo que Biórr hizo?</strong> ¿Y qué pasará cuando el pago que él quiera no sea algo que ella pueda dar fácilmente?</p>
+      </div>
+      <div class="card">
+        <div class="card-label">Skalk · ¿Aliado o amenaza?</div>
+        <p>Envió 24 guerreros al norte sin decírselo a nadie. Usó a los Juramentados de Sangre como escolta sabiendo más de lo que reveló. Le habla de deuda personal a un aprendiz desesperado. <strong>Cada acto tiene doble fondo.</strong> ¿Está en el mismo lado que Glornir o solo en el suyo?</p>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="tension-block">
+        <div class="tension-label"><span class="tension-name">Orka: Humanidad vs. Instinto</span><span class="tension-val">Capítulos 30→40</span></div>
+        <div class="tension-bar"><div class="tension-fill fill-blood" style="width:82%"></div></div>
+        <div class="tension-note">Alta y subiendo. La escena con Drekr fue el punto de no retorno.</div>
+      </div>
+      <div class="tension-block">
+        <div class="tension-label"><span class="tension-name">Varg: Lealtad vs. Urgencia</span><span class="tension-val">Capítulos 30→40</span></div>
+        <div class="tension-bar"><div class="tension-fill fill-gold" style="width:70%"></div></div>
+        <div class="tension-note">En ebullición. Torvik lo ancla; Skalk lo jala. La decisión viene.</div>
+      </div>
+      <div class="tension-block">
+        <div class="tension-label"><span class="tension-name">Elvar: Fama vs. Afecto</span><span class="tension-val">Capítulos 30→40</span></div>
+        <div class="tension-bar"><div class="tension-fill fill-frost" style="width:55%"></div></div>
+        <div class="tension-note">Creciente. Biórr, Grend, el norte: cada cosa que la ancla también la complica.</div>
+      </div>
+      <div class="tension-block">
+        <div class="tension-label"><span class="tension-name">Skalk vs. Vol: Galdur vs. Seiðr</span><span class="tension-val">Capítulos 30→40</span></div>
+        <div class="tension-bar"><div class="tension-fill fill-blood" style="width:90%"></div></div>
+        <div class="tension-note">Explosiva. Sulich casi lo termina antes. Algo va a estallar.</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════ TEMAS DE ESTA SECCIÓN ═══════════════════ -->
+  <section>
+    <div class="sh"><span class="sh-num">VI</span><h3>Temas que Dominan Estos Capítulos</h3><div class="sh-line"></div></div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-label">El umbral y la travesía</div>
+        <p>En mitología y en el Viaje del Héroe, el umbral es el punto de no retorno. En estos capítulos, los tres protagonistas lo cruzan físicamente: Orka quema el puente detrás de ella, Varg pasa al bosque de las Boneback, Elvar pisa el Isbrún. <strong>No hay marcha atrás narrativa ni geográfica.</strong></p>
+      </div>
+      <div class="card">
+        <div class="card-label">La familia elegida bajo presión máxima</div>
+        <p>Mord y Lif venden la barca. Torvik llama a Varg "hermano". Biórr carga a Grend. <strong>En los capítulos más oscuros del libro, los vínculos elegidos aguantan más que los de sangre.</strong> Ninguno de estos actos fue obligatorio. Todos fueron voluntarios.</p>
+      </div>
+      <div class="card">
+        <div class="card-label">El conocimiento como arma y como deuda</div>
+        <p>Uspa destruyó la Graskinna para ser irremplazable. Skalk ofrece el akáll a cambio de una deuda abierta. <strong>Saber algo que nadie más sabe es la moneda de poder más duradera en Vigríð.</strong> El libro ha mostrado esto con cada personaje mágico.</p>
+      </div>
+      <div class="card">
+        <div class="card-label">La herencia como identidad impuesta</div>
+        <p>Skalk sistematiza el prejuicio en el capítulo 39: el Seiðr "simplemente está" en los Tainted, sin mérito. Es la retórica de toda persecución: definir a alguien por su origen para justificar su condición de esclavo. <strong>Varg — él mismo ex-thrall — es quien hace la pregunta incómoda: ¿y por qué eso es tan malo?</strong></p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════ PREGUNTAS DE CIERRE ═══════════════════ -->
+  <section>
+    <div class="sh"><span class="sh-num">VII</span><h3>Preguntas de Cierre · Para Llevarse a Casa</h3><div class="sh-line"></div></div>
+
+    <div class="info-box">
+      <strong>Pregunta de fondo:</strong> Estos diez capítulos muestran que el libro tiene dos capas: una historia de venganza y familia, y debajo una sobre qué hace un mundo con los que llevan la sangre de sus dioses muertos. ¿Cuál te importa más? ¿Son inseparables?
+    </div>
+
+    <ul class="q-list">
+      <li data-rune="🌍"><strong>¿Cuándo fue el momento en que más miedo sentiste por un personaje?</strong><br><em>No necesariamente el más violento — sino el que más importó.</em></li>
+      <li data-rune="⚔"><strong>¿Qué personaje tomó la peor decisión en estos capítulos? ¿Qué habría pasado si decidía distinto?</strong></li>
+      <li data-rune="🔭"><strong>Teoría para el siguiente tramo:</strong> los tres arcos van al norte. ¿Cuándo y dónde se encontrarán Orka, Varg y Elvar por primera vez? ¿Quién llegará primero?</li>
+      <li data-rune="💀"><strong>¿Quién crees que no sobrevive el libro?</strong> Estos capítulos establecieron que el libro no respeta a nadie. Nombra uno y justifica.</li>
+    </ul>
+
+    <div class="pull-gold" style="margin-top:1.5rem;">
+      <blockquote>«Los planes siempre salen mal. Improvisaremos.»</blockquote>
+      <cite>Orka a Mord · Capítulo 40 — y en cierto modo, la filosofía narrativa del libro entero</cite>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="rune-bar" style="margin-bottom:0.8rem;"><span></span>ᚲ ᚷ ᚹ ᚺ ᚾ ᛁ<span></span></div>
+    Sección enfocada · Capítulos 30–40 · La Sombra de los Dioses · John Gwynne<br>
+    Club de Lectura · Vigríð, año 297 del Friðaröld
+  </footer>
+
+</div>
+</body>
+</html>
