@@ -1070,4 +1070,40 @@ const links = [
     { source: 'colgante-espada', target: 'dead-drengr', label: 'encontrado en el', type: 'event' },
     { source: 'orka', target: 'mord-lif', label: 'rescatada a caballo por', type: 'event' },
     { source: 'drekr', target: 'breca', label: 'afirmó que cambiará el mundo', type: 'trama' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 36 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'hallazgo-cuerpos-boneback', target: 'bloodsworn', label: 'descubierto por los', type: 'event' },
+    { source: 'hallazgo-cuerpos-boneback', target: 'skalk', label: 'cuerpos enviados por', type: 'trama' },
+    { source: 'hallazgo-cuerpos-boneback', target: 'helka', label: 'guardias de Helka muertos en el', type: 'event' },
+    { source: 'hallazgo-cuerpos-boneback', target: 'olvir-yrsa', label: 'Olvir conocía a las víctimas del', type: 'event' },
+    { source: 'hallazgo-cuerpos-boneback', target: 'bannath-jord', label: 'runa encontrada en el', type: 'lore' },
+    { source: 'hallazgo-cuerpos-boneback', target: 'mision-helka-norte', label: 'escalada confirmada de la', type: 'trama' },
+    { source: 'bannath-jord', target: 'vigrið', label: 'runa de territorio reclamado en', type: 'lore' },
+    { source: 'trato-skalk-akall', target: 'skalk', label: 'ofertante del', type: 'event' },
+    { source: 'trato-skalk-akall', target: 'varg', label: 'destinatario del', type: 'event' },
+    { source: 'trato-skalk-akall', target: 'akall', label: 'condiciones para el', type: 'trama' },
+    { source: 'varg', target: 'sulich', label: 'pidió disculpas a', type: 'rel' },
+    { source: 'skalk', target: 'helka', label: 'envió drengrs de en secreto a las Boneback', type: 'trama' },
+    { source: 'vol', target: 'skalk', label: 'confrontó la mentira de', type: 'conflict' },
+    { source: 'glornir', target: 'skalk', label: 'confrontó la traición de', type: 'conflict' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 37 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'interrogatorio-skefil', target: 'orka', label: 'ejecutado por', type: 'event' },
+    { source: 'interrogatorio-skefil', target: 'skefil', label: 'muere en el', type: 'event' },
+    { source: 'interrogatorio-skefil', target: 'grimholt', label: 'revela que Drekr fue al', type: 'trama' },
+    { source: 'interrogatorio-skefil', target: 'sigrun', label: 'revela presencia de Sigrún en Darl', type: 'event' },
+    { source: 'interrogatorio-skefil', target: 'hakon-operacion-oculta', label: 'revela la', type: 'trama' },
+    { source: 'skefil', target: 'drekr', label: 'informante de', type: 'rel' },
+    { source: 'skefil', target: 'rotta', label: 'Tainted de linaje', type: 'rel' },
+    { source: 'hakon-operacion-oculta', target: 'hakon', label: 'protagonizada por', type: 'trama' },
+    { source: 'hakon-operacion-oculta', target: 'helka', label: 'desconocida por', type: 'trama' },
+    { source: 'hakon-operacion-oculta', target: 'ninos-robados', label: 'motivación de la', type: 'trama' },
+    { source: 'drekr', target: 'grimholt', label: 'fue al norte con los niños al', type: 'trama' },
+    { source: 'ninos-robados', target: 'grimholt', label: 'destino final de los niños raptados', type: 'trama' },
+    { source: 'sigrun', target: 'helka', label: 'huésped de en el Eagle-Hall de Darl', type: 'rel' },
+    { source: 'sigrun', target: 'darl', label: 'rastreando proscritos en', type: 'trama' },
+    { source: 'mord-lif', target: 'darl', label: 'vendieron barca y compraron caballos en', type: 'event' },
+    { source: 'orka', target: 'grimholt', label: 'nueva dirección: norte hacia el', type: 'trama' },
 ];
