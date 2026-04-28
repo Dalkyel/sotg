@@ -1165,4 +1165,38 @@ const links = [
     { source: 'gudvarr', target: 'grimholt', label: 'persiguiendo a Orka hacia el', type: 'trama' },
     { source: 'mord-lif', target: 'grimholt', label: 'cabalgando hacia el', type: 'trama' },
     { source: 'orka', target: 'trur', label: 'cabalga en', type: 'rel' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 41 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'valle-boneback', target: 'bloodsworn', label: 'reconocido por los', type: 'event' },
+    { source: 'valle-boneback', target: 'troll-antlers', label: 'supervisado por el', type: 'trama' },
+    { source: 'valle-boneback', target: 'cueva-boneback', label: 'contiene la', type: 'geo' },
+    { source: 'valle-boneback', target: 'mision-helka-norte', label: 'objetivo de la', type: 'trama' },
+    { source: 'cueva-boneback', target: 'skraeling', label: 'guardada por', type: 'trama' },
+    { source: 'cueva-boneback', target: 'troll-antlers', label: 'controlada por el', type: 'trama' },
+    { source: 'ataque-cueva-boneback', target: 'bloodsworn', label: 'protagonizado por los', type: 'event' },
+    { source: 'ataque-cueva-boneback', target: 'glornir', label: 'señal dada por', type: 'event' },
+    { source: 'ataque-cueva-boneback', target: 'svik', label: 'subgrupo liderado por', type: 'event' },
+    { source: 'ataque-cueva-boneback', target: 'varg', label: 'primera batalla de', type: 'event' },
+    { source: 'ataque-cueva-boneback', target: 'cueva-boneback', label: 'objetivo del', type: 'geo' },
+    { source: 'troll-antlers', target: 'valle-boneback', label: 'opera en el', type: 'trama' },
+    { source: 'halja-vali', target: 'bloodsworn', label: 'miembros de los', type: 'rel' },
+    { source: 'halja-vali', target: 'ataque-cueva-boneback', label: 'participan en el', type: 'event' },
+    { source: 'varg', target: 'valle-boneback', label: 'reconoció el', type: 'event' },
+    { source: 'einar', target: 'ataque-cueva-boneback', label: 'flanquea en el', type: 'event' },
+    { source: 'jokul', target: 'ataque-cueva-boneback', label: 'flanquea en el', type: 'event' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 42 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'grend-despierta', target: 'grend', label: 'Grend despierta en el', type: 'event' },
+    { source: 'grend-despierta', target: 'elvar', label: 'Elvar presente en el', type: 'event' },
+    { source: 'grend-despierta', target: 'uspa', label: 'curación previa de Uspa permite el', type: 'event' },
+    { source: 'elvar-biorr-sauce', target: 'elvar', label: 'iniciado por', type: 'event' },
+    { source: 'elvar-biorr-sauce', target: 'biorr', label: 'protagoniza el', type: 'event' },
+    { source: 'elvar-biorr-sauce', target: 'llanura-batalla-norte', label: 'ocurre en la', type: 'geo' },
+    { source: 'agnar-pasado-esclavo', target: 'agnar', label: 'pasado revelado de', type: 'lore' },
+    { source: 'agnar-pasado-esclavo', target: 'elvar', label: 'revelado a', type: 'event' },
+    { source: 'solin', target: 'elvar', label: 'declaró deuda de sangre a', type: 'rel' },
+    { source: 'sighvat', target: 'grend', label: 'ayudó a bajar del carro a', type: 'event' },
+    { source: 'elvar', target: 'biorr', label: 'inició relación con bajo el sauce', type: 'rel' },
 ];
