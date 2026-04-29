@@ -1199,4 +1199,41 @@ const links = [
     { source: 'solin', target: 'elvar', label: 'declaró deuda de sangre a', type: 'rel' },
     { source: 'sighvat', target: 'grend', label: 'ayudó a bajar del carro a', type: 'event' },
     { source: 'elvar', target: 'biorr', label: 'inició relación con bajo el sauce', type: 'rel' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 43 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'batalla-cueva-boneback', target: 'bloodsworn', label: 'protagonizada por los', type: 'event' },
+    { source: 'batalla-cueva-boneback', target: 'varg', label: 'culmina con herida de', type: 'event' },
+    { source: 'batalla-cueva-boneback', target: 'glornir', label: 'Glornir herido en la', type: 'event' },
+    { source: 'batalla-cueva-boneback', target: 'hombre-ojos-rojos', label: 'Varg mata al', type: 'event' },
+    { source: 'batalla-cueva-boneback', target: 'troll-antlers', label: 'Bloodsworn combaten al', type: 'event' },
+    { source: 'batalla-cueva-boneback', target: 'cueva-boneback', label: 'escenario de la', type: 'geo' },
+    { source: 'hombre-ojos-rojos', target: 'espada-hueso', label: 'portaba la', type: 'rel' },
+    { source: 'hombre-ojos-rojos', target: 'cueva-boneback', label: 'comandaba la', type: 'trama' },
+    { source: 'hombre-ojos-rojos', target: 'varg', label: 'herido mortalmente por', type: 'event' },
+    { source: 'espada-hueso', target: 'varg', label: 'hirió a en la cintura a', type: 'event' },
+    { source: 'espada-hueso', target: 'glornir', label: 'lanzó por los aires a', type: 'event' },
+    { source: 'vol-sedr-rune', target: 'vol', label: 'conjurada por', type: 'event' },
+    { source: 'vol-sedr-rune', target: 'glornir', label: 'salvó temporalmente a', type: 'event' },
+    { source: 'vol-sedr-rune', target: 'espada-hueso', label: 'detenida por y luego destruida por la', type: 'magic' },
+    { source: 'varg-naturaleza-tainted', target: 'varg', label: 'hipótesis activa sobre', type: 'trama' },
+    { source: 'varg-naturaleza-tainted', target: 'ulfrir', label: 'posible linaje de', type: 'trama' },
+    { source: 'varg', target: 'hombre-ojos-rojos', label: 'mató al', type: 'event' },
+    { source: 'vol', target: 'glornir', label: 'salvó con Seiðr a', type: 'event' },
+    { source: 'svik', target: 'troll-antlers', label: 'apuñaló la espalda del', type: 'event' },
+    { source: 'einar', target: 'skraeling', label: 'mató al', type: 'event' },
+    // ══════════════════════════════════════════════════════════════
+    // CAPÍTULO 44 — NUEVOS ENLACES
+    // ══════════════════════════════════════════════════════════════
+    { source: 'debate-oskutred-valor', target: 'elvar', label: 'posición de', type: 'lore' },
+    { source: 'debate-oskutred-valor', target: 'uspa', label: 'posición de', type: 'lore' },
+    { source: 'debate-oskutred-valor', target: 'oskutred', label: 'debate sobre el futuro de', type: 'trama' },
+    { source: 'biorr-cicatrices', target: 'biorr', label: 'pertenecen a', type: 'lore' },
+    { source: 'biorr-cicatrices', target: 'elvar', label: 'descubiertas por', type: 'event' },
+    { source: 'amenaza-horizonte-sur-confirmada', target: 'agnar', label: 'avistada por segunda vez por', type: 'event' },
+    { source: 'amenaza-horizonte-sur-confirmada', target: 'ilska', label: 'candidata más probable', type: 'trama' },
+    { source: 'amenaza-horizonte-sur-confirmada', target: 'colinas-luna-oscura', label: 'detectada desde las', type: 'geo' },
+    { source: 'hundur', target: 'elvar', label: 'Elvar aprendió el nombre de Ilmur de', type: 'event' },
+    { source: 'uspa', target: 'oskutred', label: 'presiente la cercanía de', type: 'trama' },
+    { source: 'elvar', target: 'biorr', label: 'quiere conocer el pasado de', type: 'rel' },
 ];
