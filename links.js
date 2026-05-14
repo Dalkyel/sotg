@@ -1438,4 +1438,9 @@ const links = [
     { source: 'breca', target: 'ulfhednar', label: 'confirmado Tainted', type: 'lore' },
     { source: 'harek', target: 'tainted', label: 'confirmado Tainted', type: 'lore' },
     { source: 'einar', target: 'berserkir', label: 'confirmado como', type: 'lore' },
+    { source: 'vaesen-gen', target: 'likrafa', label: 'creados por', type: 'lore' },
+    { source: 'seidr', target: 'snaka', label: 'poder heredado de', type: 'lore' },
+    // RECAP confirmaciones
+    { source: 'biorr', target: 'bjarn', label: 'organizó el secuestro de', type: 'trama' },
+    { source: 'biorr', target: 'ilska', label: 'guió a Oskutreð a', type: 'trama' },
 ];
